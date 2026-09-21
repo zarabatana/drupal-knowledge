@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trust model — Drupal Knowledge</title>
+  <meta name="description" content="How Drupal Knowledge separates reviewed knowledge from sources, evidence, findings and signals.">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/">Drupal Knowledge</a>
+    <nav aria-label="Primary">
+      <ul>
+      <li><a href="/knowledge/">Knowledge</a></li>
+      <li><a href="/security/">Security</a></li>
+      <li><a href="/api/">API Changes</a></li>
+      <li><a href="/change-records/">Change Records</a></li>
+      <li><a href="/rules/">Rules</a></li>
+      <li><a href="/solved-cases/">Solved Cases</a></li>
+      <li><a href="/sources/">Sources</a></li>
+      <li><a href="/trust-model/" aria-current="page">Trust Model</a></li>
+      <li><a href="/cli/">CLI</a></li>
+      <li><a href="/api-docs/">API</a></li>
+      <li><a href="/search/">Search</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <article>
+    <h1>Trust model</h1>
+    <p class="lede">
+      Drupal Knowledge is useful only if you can tell what kind of claim you are
+      reading. Seven kinds exist, and exactly one of them is trusted knowledge.
+    </p>
+    <p>
+      The distinction is not pedantry. A security advisory published by the Drupal
+      Security Team is authoritative about Drupal — but it is a statement the
+      Security Team made, not a rule Drupal Knowledge reviewed and adopted. A fix
+      that was verified on one site is real, and it is still one site. Flattening
+      those into a single list of "things Drupal Knowledge says" would make the
+      whole thing worth less than the sources it reads.
+    </p>
+    <section aria-labelledby="refuse-heading">
+      <h2 id="refuse-heading">Why some conclusions are refused</h2>
+      <p>
+        Several states you might expect are deliberately absent. There is no
+        <em>passed</em>, no <em>secure</em>, no <em>compliant</em>. Absence of an
+        adverse observation is not a conformance verdict, so there is no passing
+        state to reach for.
+      </p>
+      <p>
+        <em>Not observed</em> means a search did not find something within a scope
+        that is stated alongside it. Where that scope is bounded — a code scan that
+        read some files, a rule set that covers nine checks — absence proves
+        nothing, and the record says so rather than letting silence imply safety.
+      </p>
+      <p>
+        <em>Unknown</em> is a real answer and is never collapsed into <em>no</em>.
+        A contributed project with no registered release feed is unknown, not
+        compatible. A deprecation with no stated replacement records that the
+        annotation was silent rather than inventing advice.
+      </p>
+    </section>
+    <section aria-labelledby="review-heading">
+      <h2 id="review-heading">How something becomes trusted knowledge</h2>
+      <p>
+        By a person deciding it should, and editing the repository to say so.
+        There is no automatic promotion at any point: a source that changed
+        creates review work, a corroborated community observation creates review
+        work, and a solved case that recurred creates a proposal awaiting review.
+        None of those paths ends in a record changing itself.
+      </p>
+    </section>
+    <section aria-labelledby="classes-heading">
+      <h2 id="classes-heading">The classes, and which one is trusted knowledge</h2>
+      <div class="table-scroll">
+      <table>
+        <caption>Every record Drupal Knowledge can return carries exactly one of these.</caption>
+        <thead>
+          <tr><th scope="col">Label</th><th scope="col">Record type</th>
+          <th scope="col">Trusted knowledge</th><th scope="col">What it means</th></tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Finding</th>
+          <td>finding</td>
+          <td>no</td>
+          <td>Produced by applying a reviewed rule or authoritative record to this project&#x27;s evidence. Its strength is whatever its state and evidence say.</td>
+        </tr>
+        <tr>
+          <th scope="row">Project Observation</th>
+          <td>project-derived evidence</td>
+          <td>no</td>
+          <td>Observed in this repository at this revision. It is a fact about this project and never a rule about Drupal.</td>
+        </tr>
+        <tr>
+          <th scope="row">Internal Proven Solved Case</th>
+          <td>solved case</td>
+          <td>no</td>
+          <td>Proven in the project context it was captured from. It is not universal Drupal truth and widening it requires review.</td>
+        </tr>
+        <tr>
+          <th scope="row">Reviewed Drupal Knowledge</th>
+          <td>trusted knowledge, reviewed by a human against authoritative sources</td>
+          <td>yes</td>
+          <td>A human reviewed this against registered authoritative sources. It states something about Drupal, not about any one project.</td>
+        </tr>
+        <tr>
+          <th scope="row">Reviewed Implementation Rule</th>
+          <td>reviewed rule evaluated against project evidence</td>
+          <td>no</td>
+          <td>A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.</td>
+        </tr>
+        <tr>
+          <th scope="row">Authoritative Drupal Source Record</th>
+          <td>source-derived authoritative record</td>
+          <td>no</td>
+          <td>Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.</td>
+        </tr>
+        <tr>
+          <th scope="row">Untrusted Discovery Signal</th>
+          <td>discovery signal</td>
+          <td>no</td>
+          <td>An untrusted ecosystem observation awaiting corroboration and review. It may not be acted on as Drupal Knowledge.</td>
+        </tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+    <section aria-labelledby="excluded-heading">
+      <h2 id="excluded-heading">What this site deliberately does not publish</h2>
+      <p>
+        Drupal Knowledge holds more than it publishes. These domains are excluded
+        by name so that a missing section reads as a decision rather than an oversight.
+      </p>
+      <ul class="excluded">
+        <li><strong>discovery_signal</strong> — Discovery signals are untrusted community observations awaiting corroboration and review. Publishing them beside reviewed knowledge would make untrusted material look like an answer, so this release publishes none of them.</li>
+        <li><strong>finding</strong> — A finding is a rule applied to one project&#x27;s evidence. Publishing it would turn one project&#x27;s state into a claim about Drupal.</li>
+        <li><strong>implementation_finding</strong> — A finding is a rule applied to one project&#x27;s evidence. The reviewed rule behind it is published instead.</li>
+        <li><strong>migration_work</strong> — Migration work items name files and lines in one project. The authoritative deprecation records behind them are published instead.</li>
+        <li><strong>project_evidence</strong> — Evidence describes one repository at one revision. It answers a local question and is never global Drupal content.</li>
+        <li><strong>remediation_plan</strong> — A remediation plan is computed for one project&#x27;s installed versions. The advisories behind it are published instead.</li>
+        <li><strong>upgrade_assessment</strong> — An upgrade assessment is bounded by one project&#x27;s evidence and is not a statement about Drupal.</li>
+      </ul>
+    </section>
+    </article>
+
+  </main>
+  <footer class="site-footer">
+    <p>
+      Generated from Drupal Knowledge 1.0.0,
+      dataset <code>dataset:e290b71c0e26ef1d0067be2f01713b7e</code>,
+      built 2026-09-21T22:02:05Z.
+    </p>
+    <p>
+      Every page on this site is generated from canonical Drupal Knowledge records.
+      Nothing here is edited by hand, and querying changes nothing.
+      <a href="https://github.com/zarabatana/drupal-knowledge">Repository</a> ·
+      <a href="/about/">About</a> ·
+      <a href="/trust-model/">Trust model</a>
+    </p>
+    <p>
+      Drupal Knowledge Community, maintained by Zarabatana. Drupal is a registered trademark of Dries Buytaert; this independent project is not affiliated with or endorsed by the Drupal Association or Dries Buytaert.
+    </p>
+  </footer>
+</body>
+</html>

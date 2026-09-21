@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drupal core - Moderately critical - Server-side request forgery - SA-CORE-2026-008 — Drupal Knowledge</title>
+  <meta name="description" content="core advisory for drupal">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/">Drupal Knowledge</a>
+    <nav aria-label="Primary">
+      <ul>
+      <li><a href="/knowledge/">Knowledge</a></li>
+      <li><a href="/security/" aria-current="page">Security</a></li>
+      <li><a href="/api/">API Changes</a></li>
+      <li><a href="/change-records/">Change Records</a></li>
+      <li><a href="/rules/">Rules</a></li>
+      <li><a href="/solved-cases/">Solved Cases</a></li>
+      <li><a href="/sources/">Sources</a></li>
+      <li><a href="/trust-model/">Trust Model</a></li>
+      <li><a href="/cli/">CLI</a></li>
+      <li><a href="/api-docs/">API</a></li>
+      <li><a href="/search/">Search</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/security/">Security</a></li>
+      </ol>
+    </nav>
+    <article>
+    <h1>Drupal core - Moderately critical - Server-side request forgery - SA-CORE-2026-008</h1>
+    <p class="trust"><span class="badge badge--source_derived_authoritative">Authoritative Drupal Source Record</span> <span class="trust-type">source-derived authoritative record</span></p>
+    <p class="trust-note">Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.</p>
+    <p class="lede">core advisory for drupal</p>
+    <p class="record-id">Record <code>SA-CORE-2026-008</code></p>
+    <section aria-labelledby="explain-heading">
+      <h2 id="explain-heading">What this is</h2>
+      <dl class="explain">
+        <dt>What is this</dt><dd>source-derived authoritative record: Drupal core - Moderately critical - Server-side request forgery - SA-CORE-2026-008</dd>
+        <dt>Why it exists</dt><dd>The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim.</dd>
+        <dt>What makes it authoritative</dt><dd>Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.</dd>
+        <dt>Project scope</dt><dd>Nothing: this record is about Drupal, not about any one project.</dd>
+        <dt>Recommended next step</dt><dd>Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.</dd>
+        <dt>Was anything changed</dt><dd>No. Querying Drupal Knowledge changes nothing.</dd>
+      </dl>
+      <h3>What is not known</h3>
+      <ul class="unknowns">
+        <li>Nothing was left unstated by this record.</li>
+      </ul>
+    </section>
+    <section aria-labelledby="detail-heading">
+      <h2 id="detail-heading">What the record states</h2>
+      <div class="table-scroll">
+      <table>
+        <caption>Values as published by the source. Blank means the source did not say.</caption>
+        <tbody>
+        <tr><th scope="row">Affected versions</th><td><code>&lt;10.5.12 || &gt;=10.6.0 &lt;10.6.11 || &gt;=11.2.0 &lt;11.2.14 || &gt;=11.3.0 &lt;11.3.12 || 11.0.* || 11.1.*</code></td></tr>
+        <tr><th scope="row">Affected-version expression state</th><td><code>parsed</code></td></tr>
+        <tr><th scope="row">Composer package</th><td><code>drupal/core</code></td></tr>
+        <tr><th scope="row">CVE state</th><td><code>sourced</code></td></tr>
+        <tr><th scope="row">CVEs</th><td><code>CVE-2026-55807</code></td></tr>
+        <tr><th scope="row">Fixed in</th><td><code>10.5.12</code>, <code>10.6.11</code>, <code>11.2.14</code>, <code>11.3.12</code>, <code>11.4.0-rc2</code></td></tr>
+        <tr><th scope="row">Fixed-version state</th><td><code>stated</code></td></tr>
+        <tr><th scope="row">Kind</th><td><code>core</code></td></tr>
+        <tr><th scope="row">Project</th><td><code>drupal</code></td></tr>
+        <tr><th scope="row">Published</th><td><code>2026-06-17T18:57:49Z</code></td></tr>
+        <tr><th scope="row">Remediation authored by Drupal Knowledge</th><td>no</td></tr>
+        <tr><th scope="row">Published remediation</th><td><code>sourced</code></td></tr>
+        <tr><th scope="row">Risk vector</th><td><code>AC:Basic/A:User/CI:Some/II:None/E:Theoretical/TD:Default</code></td></tr>
+        <tr><th scope="row">Risk vector state</th><td><code>sourced</code></td></tr>
+        <tr><th scope="row">Scored by Drupal Knowledge</th><td>no</td></tr>
+        <tr><th scope="row">Vulnerability type</th><td><code>Server-side request forgery</code></td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+    <section aria-labelledby="prov-heading">
+      <h2 id="prov-heading">Provenance</h2>
+      <p>The snapshot digest identifies the exact bytes this record was derived from, so the claim can be checked rather than believed.</p>
+      <ul class="provenance">
+        <li><strong>authoritative_source</strong> · <a href="/sources/drupal-security-advisories-core/">drupal-security-advisories-core</a><br><a class="canonical" href="https://www.drupal.org/sa-core-2026-008">https://www.drupal.org/sa-core-2026-008</a><br><span class="digest">snapshot <code>sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4</code></span></li>
+      </ul>
+    </section>
+    <section aria-labelledby="related-heading">
+      <h2 id="related-heading">Related records</h2>
+      <p>Only relationships the canonical records already declare. Nothing here is inferred.</p>
+      <h3>Derived from source</h3>
+      <ul class="related">
+        <li><a href="/sources/drupal-security-advisories-core/">drupal-security-advisories-core</a></li>
+      </ul>
+      <h3>Same Drupal project</h3>
+      <ul class="related">
+        <li><a href="/security/SA-CORE-2025-001/">SA-CORE-2025-001</a></li>
+        <li><a href="/security/SA-CORE-2025-002/">SA-CORE-2025-002</a></li>
+        <li><a href="/security/SA-CORE-2025-003/">SA-CORE-2025-003</a></li>
+        <li><a href="/security/SA-CORE-2025-004/">SA-CORE-2025-004</a></li>
+        <li><a href="/security/SA-CORE-2025-005/">SA-CORE-2025-005</a></li>
+        <li><a href="/security/SA-CORE-2025-006/">SA-CORE-2025-006</a></li>
+        <li><a href="/security/SA-CORE-2025-007/">SA-CORE-2025-007</a></li>
+        <li><a href="/security/SA-CORE-2025-008/">SA-CORE-2025-008</a></li>
+        <li><a href="/security/SA-CORE-2026-001/">SA-CORE-2026-001</a></li>
+        <li><a href="/security/SA-CORE-2026-002/">SA-CORE-2026-002</a></li>
+        <li><a href="/security/SA-CORE-2026-003/">SA-CORE-2026-003</a></li>
+        <li><a href="/security/SA-CORE-2026-004/">SA-CORE-2026-004</a></li>
+        <li><a href="/security/SA-CORE-2026-005/">SA-CORE-2026-005</a></li>
+        <li><a href="/security/SA-CORE-2026-006/">SA-CORE-2026-006</a></li>
+        <li><a href="/security/SA-CORE-2026-007/">SA-CORE-2026-007</a></li>
+        <li><a href="/security/SA-CORE-2026-009/">SA-CORE-2026-009</a></li>
+        <li><a href="/security/SA-CORE-2026-010/">SA-CORE-2026-010</a></li>
+        <li><a href="/security/SA-CORE-2026-011/">SA-CORE-2026-011</a></li>
+        <li><a href="/security/SA-CORE-2026-012/">SA-CORE-2026-012</a></li>
+      </ul>
+    </section>
+    </article>
+
+  </main>
+  <footer class="site-footer">
+    <p>
+      Generated from Drupal Knowledge 1.0.0,
+      dataset <code>dataset:e290b71c0e26ef1d0067be2f01713b7e</code>,
+      built 2026-09-21T22:02:05Z.
+    </p>
+    <p>
+      Every page on this site is generated from canonical Drupal Knowledge records.
+      Nothing here is edited by hand, and querying changes nothing.
+      <a href="https://github.com/zarabatana/drupal-knowledge">Repository</a> ·
+      <a href="/about/">About</a> ·
+      <a href="/trust-model/">Trust model</a>
+    </p>
+    <p>
+      Drupal Knowledge Community, maintained by Zarabatana. Drupal is a registered trademark of Dries Buytaert; this independent project is not affiliated with or endorsed by the Drupal Association or Dries Buytaert.
+    </p>
+  </footer>
+</body>
+</html>

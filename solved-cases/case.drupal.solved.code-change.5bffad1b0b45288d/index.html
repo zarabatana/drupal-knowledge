@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Managed-site update script fails to load when an optional toolchain module is absent — Drupal Knowledge</title>
+  <meta name="description" content="The managed-site update entry point aborted before performing any work when it was executed from a reconstructed toolchain that did not ship one of its imported modules.">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/">Drupal Knowledge</a>
+    <nav aria-label="Primary">
+      <ul>
+      <li><a href="/knowledge/">Knowledge</a></li>
+      <li><a href="/security/">Security</a></li>
+      <li><a href="/api/">API Changes</a></li>
+      <li><a href="/change-records/">Change Records</a></li>
+      <li><a href="/rules/">Rules</a></li>
+      <li><a href="/solved-cases/" aria-current="page">Solved Cases</a></li>
+      <li><a href="/sources/">Sources</a></li>
+      <li><a href="/trust-model/">Trust Model</a></li>
+      <li><a href="/cli/">CLI</a></li>
+      <li><a href="/api-docs/">API</a></li>
+      <li><a href="/search/">Search</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/solved-cases/">Solved Cases</a></li>
+      </ol>
+    </nav>
+    <article>
+    <h1>Managed-site update script fails to load when an optional toolchain module is absent</h1>
+    <p class="trust"><span class="badge badge--proven_case_context_only">Internal Proven Solved Case</span> <span class="trust-type">solved case</span></p>
+    <p class="trust-note">Proven in the project context it was captured from. It is not universal Drupal truth and widening it requires review.</p>
+    <p class="lede">The managed-site update entry point aborted before performing any work when it was executed from a reconstructed toolchain that did not ship one of its imported modules.</p>
+    <p class="record-id">Record <code>case.drupal.solved.code-change.5bffad1b0b45288d</code></p>
+    <section aria-labelledby="explain-heading">
+      <h2 id="explain-heading">What this is</h2>
+      <dl class="explain">
+        <dt>What is this</dt><dd>solved case: Managed-site update script fails to load when an optional toolchain module is absent</dd>
+        <dt>Why it exists</dt><dd>A real problem was solved and verified in one observed project context.</dd>
+        <dt>What makes it authoritative</dt><dd>Proven in the project context it was captured from. It is not universal Drupal truth and widening it requires review.</dd>
+        <dt>Project scope</dt><dd>This record is scoped to the context it names and is not a Drupal-wide rule.</dd>
+        <dt>Recommended next step</dt><dd>Treat it as a worked example for the context it names, not as a rule.</dd>
+        <dt>Was anything changed</dt><dd>No. Querying Drupal Knowledge changes nothing.</dd>
+      </dl>
+      <h3>What is not known</h3>
+      <ul class="unknowns">
+        <li>Proven in one observed project context. It is not universal Drupal truth.</li>
+      </ul>
+    </section>
+    <section aria-labelledby="detail-heading">
+      <h2 id="detail-heading">What the record states</h2>
+      <div class="table-scroll">
+      <table>
+        <caption>Values as recorded. Blank means the record did not state one.</caption>
+        <tbody>
+        <tr><th scope="row">Claimed scope</th><td><code>proven_context_only</code></td></tr>
+        <tr><th scope="row">Conditions</th><td><code>Applies to Node ESM entry points executed from a reconstructed partial toolchain</code></td></tr>
+        <tr><th scope="row">Drupal versions</th><td><code>11.4.5</code></td></tr>
+        <tr><th scope="row">Widening it requires review</th><td>yes</td></tr>
+        <tr><th scope="row">Limitations</th><td><code>Proven on a single project and a single Drupal core version</code>, <code>Verified through the repository test suite only, not under production load</code>, <code>Describes a tooling defect, not a Drupal core or contrib defect</code>, <code>Carries no security severity evidence</code></td></tr>
+        <tr><th scope="row">Projects it has been proven on</th><td><code>1</code></td></tr>
+        <tr><th scope="row">Php versions</th><td><code>8.3</code></td></tr>
+        <tr><th scope="row">Problem</th><td><code>The managed-site update entry point aborted before performing any work when it was executed from a reconstructed toolchain that did not ship one of its imported modules.</code></td></tr>
+        <tr><th scope="row">Project identity disclosed</th><td>no</td></tr>
+        <tr><th scope="row">Root cause</th><td><code>A static top-level ESM import created a hard load-time dependency on a module that the reconstructed toolchain deliberately does not copy, so module resolution failed before the entry point executed.</code></td></tr>
+        <tr><th scope="row">Root cause state</th><td><code>confirmed</code></td></tr>
+        <tr><th scope="row">Solution</th><td><code>Replace the static import with a call-time dynamic import so the entry point stays loadable.</code>, <code>Declare the module directory as part of the toolchain the reconstruction copies.</code></td></tr>
+        <tr><th scope="row">Status</th><td><code>verified</code></td></tr>
+        <tr><th scope="row">Symptoms</th><td><code>Node exited with ERR_MODULE_NOT_FOUND before any update logic ran</code>, <code>No machine-readable result document was produced</code>, <code>The failure occurred identically on every invocation, including dry-run</code></td></tr>
+        <tr><th scope="row">Verification</th><td><code>automated_test: passed (release pipeline phase 3 suite)</code>, <code>reproduction_before_and_after: passed (validate-pack exit code transition 1 -&gt; 0)</code></td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+    <section aria-labelledby="prov-heading">
+      <h2 id="prov-heading">Provenance</h2>
+      <p>This record&#x27;s authority is internal to Drupal Knowledge; no external source snapshot stands behind it.</p>
+      <ul class="provenance">
+        <li><strong>internal_solved_case</strong> · <code>case.drupal.solved.code-change.5bffad1b0b45288d</code></li>
+      </ul>
+    </section>
+    </article>
+
+  </main>
+  <footer class="site-footer">
+    <p>
+      Generated from Drupal Knowledge 1.0.0,
+      dataset <code>dataset:e290b71c0e26ef1d0067be2f01713b7e</code>,
+      built 2026-09-21T22:02:05Z.
+    </p>
+    <p>
+      Every page on this site is generated from canonical Drupal Knowledge records.
+      Nothing here is edited by hand, and querying changes nothing.
+      <a href="https://github.com/zarabatana/drupal-knowledge">Repository</a> ·
+      <a href="/about/">About</a> ·
+      <a href="/trust-model/">Trust model</a>
+    </p>
+    <p>
+      Drupal Knowledge Community, maintained by Zarabatana. Drupal is a registered trademark of Dries Buytaert; this independent project is not affiliated with or endorsed by the Drupal Association or Dries Buytaert.
+    </p>
+  </footer>
+</body>
+</html>

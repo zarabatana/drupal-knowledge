@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Views cache strategy could not be read from exported configuration — Drupal Knowledge</title>
+  <meta name="description" content="Exported views configuration exists but the repository&#x27;s safe YAML reader cannot parse it, so no view&#x27;s cache strategy was observed either way.">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/">Drupal Knowledge</a>
+    <nav aria-label="Primary">
+      <ul>
+      <li><a href="/knowledge/">Knowledge</a></li>
+      <li><a href="/security/">Security</a></li>
+      <li><a href="/api/">API Changes</a></li>
+      <li><a href="/change-records/">Change Records</a></li>
+      <li><a href="/rules/" aria-current="page">Rules</a></li>
+      <li><a href="/solved-cases/">Solved Cases</a></li>
+      <li><a href="/sources/">Sources</a></li>
+      <li><a href="/trust-model/">Trust Model</a></li>
+      <li><a href="/cli/">CLI</a></li>
+      <li><a href="/api-docs/">API</a></li>
+      <li><a href="/search/">Search</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/rules/">Implementation Rules</a></li>
+      </ol>
+    </nav>
+    <article>
+    <h1>Views cache strategy could not be read from exported configuration</h1>
+    <p class="trust"><span class="badge badge--reviewed_implementation_rule">Reviewed Implementation Rule</span> <span class="trust-type">reviewed rule evaluated against project evidence</span></p>
+    <p class="trust-note">A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.</p>
+    <p class="lede">Exported views configuration exists but the repository&#x27;s safe YAML reader cannot parse it, so no view&#x27;s cache strategy was observed either way.</p>
+    <p class="record-id">Record <code>performance.views-cache-strategy-unobservable</code></p>
+    <section aria-labelledby="explain-heading">
+      <h2 id="explain-heading">What this is</h2>
+      <dl class="explain">
+        <dt>What is this</dt><dd>reviewed rule evaluated against project evidence: Views cache strategy could not be read from exported configuration</dd>
+        <dt>Why it exists</dt><dd>A reviewer tied an authoritative Drupal statement to a condition that project evidence can settle.</dd>
+        <dt>What makes it authoritative</dt><dd>A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.</dd>
+        <dt>Project scope</dt><dd>This record is scoped to the context it names and is not a Drupal-wide rule.</dd>
+        <dt>Recommended next step</dt><dd>Evaluate it against a project with `dk implementation-findings`.</dd>
+        <dt>Was anything changed</dt><dd>No. Querying Drupal Knowledge changes nothing.</dd>
+      </dl>
+      <h3>What is not known</h3>
+      <ul class="unknowns">
+        <li>Nothing was left unstated by this record.</li>
+      </ul>
+    </section>
+    <section aria-labelledby="detail-heading">
+      <h2 id="detail-heading">What the record states</h2>
+      <div class="table-scroll">
+      <table>
+        <caption>Values as recorded. Blank means the record did not state one.</caption>
+        <tbody>
+        <tr><th scope="row">Category</th><td><code>performance</code></td></tr>
+        <tr><th scope="row">Context requirements</th><td><code>config.exported_value</code></td></tr>
+        <tr><th scope="row">Enforcement intent</th><td><code>guidance</code></td></tr>
+        <tr><th scope="row">Review status</th><td><code>reviewed</code></td></tr>
+        <tr><th scope="row">Scope</th><td>component: views.view.*, drupal_core_minimum_major: 8, notes: Views cache strategies are a Drupal 8-and-later concept.</td></tr>
+        <tr><th scope="row">Severity state</th><td><code>not_established</code></td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+    <section aria-labelledby="prov-heading">
+      <h2 id="prov-heading">Provenance</h2>
+      <p>The snapshot digest identifies the exact bytes this record was derived from, so the claim can be checked rather than believed.</p>
+      <ul class="provenance">
+        <li><strong>authoritative_source</strong> · <a href="/sources/drupal-cache-tags/">drupal-cache-tags</a><br><a class="canonical" href="https://www.drupal.org/docs/develop/drupal-apis/cache-api/cache-tags">https://www.drupal.org/docs/develop/drupal-apis/cache-api/cache-tags</a><br><span class="digest">snapshot <code>sha256:35e950799ef519216d7b7f02340a70dae591c29214e9421543051df38762989b</code></span></li>
+      </ul>
+    </section>
+    <section aria-labelledby="related-heading">
+      <h2 id="related-heading">Related records</h2>
+      <p>Only relationships the canonical records already declare. Nothing here is inferred.</p>
+      <h3>Derived from source</h3>
+      <ul class="related">
+        <li><a href="/sources/drupal-cache-tags/">drupal-cache-tags</a></li>
+      </ul>
+    </section>
+    </article>
+
+  </main>
+  <footer class="site-footer">
+    <p>
+      Generated from Drupal Knowledge 1.0.0,
+      dataset <code>dataset:e290b71c0e26ef1d0067be2f01713b7e</code>,
+      built 2026-09-21T22:02:05Z.
+    </p>
+    <p>
+      Every page on this site is generated from canonical Drupal Knowledge records.
+      Nothing here is edited by hand, and querying changes nothing.
+      <a href="https://github.com/zarabatana/drupal-knowledge">Repository</a> ·
+      <a href="/about/">About</a> ·
+      <a href="/trust-model/">Trust model</a>
+    </p>
+    <p>
+      Drupal Knowledge Community, maintained by Zarabatana. Drupal is a registered trademark of Dries Buytaert; this independent project is not affiliated with or endorsed by the Drupal Association or Dries Buytaert.
+    </p>
+  </footer>
+</body>
+</html>

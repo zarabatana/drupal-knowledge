@@ -1,0 +1,27 @@
+{
+  "build_schema_version": "0.1",
+  "built_at": "2026-09-21T22:02:05Z",
+  "commit": "75fce1b3e3c8ccff0c7f206cd046f8853b6f7080",
+  "dataset_id": "dataset:e290b71c0e26ef1d0067be2f01713b7e",
+  "dataset_schema_version": "0.1",
+  "dk_version": "1.0.0",
+  "page_count": 354,
+  "public_domains": [
+    "trusted_knowledge",
+    "advisory",
+    "api_lifecycle",
+    "change_record",
+    "implementation_rule",
+    "solved_case"
+  ],
+  "query_interface_version": "0.1",
+  "record_counts": {
+    "advisory": 40,
+    "api_lifecycle": 225,
+    "change_record": 20,
+    "implementation_rule": 9,
+    "solved_case": 1,
+    "trusted_knowledge": 11
+  },
+  "search_index_rows": 306
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Search — Drupal Knowledge</title>
+  <meta name="description" content="Search Drupal Knowledge advisories, APIs, rules and reviewed records.">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/">Drupal Knowledge</a>
+    <nav aria-label="Primary">
+      <ul>
+      <li><a href="/knowledge/">Knowledge</a></li>
+      <li><a href="/security/">Security</a></li>
+      <li><a href="/api/">API Changes</a></li>
+      <li><a href="/change-records/">Change Records</a></li>
+      <li><a href="/rules/">Rules</a></li>
+      <li><a href="/solved-cases/">Solved Cases</a></li>
+      <li><a href="/sources/">Sources</a></li>
+      <li><a href="/trust-model/">Trust Model</a></li>
+      <li><a href="/cli/">CLI</a></li>
+      <li><a href="/api-docs/">API</a></li>
+      <li><a href="/search/" aria-current="page">Search</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <h1>Search</h1>
+    <p class="lede">
+      Matching is exact, never fuzzy and never semantic. An exact identifier always
+      outranks a passing mention, and the same query always returns the same order.
+    </p>
+    <form class="search" role="search" action="/search/" method="get">
+      <label for="q">Search Drupal Knowledge</label>
+      <input type="search" id="q" name="q" autocomplete="off"
+             placeholder="SA-CORE-2025-001, CVE-2025-3057, file_create_url, views">
+      <button type="submit">Search</button>
+    </form>
+    <p id="search-status" role="status">
+      Searching 306 published records.
+    </p>
+    <ol id="search-results" class="record-list"></ol>
+    <noscript>
+      <p>
+        Search needs JavaScript because the index is loaded in your browser and
+        nothing is sent anywhere. Every other page on this site works without it —
+        browse <a href="/knowledge/">Knowledge</a>, <a href="/security/">Security</a>
+        or <a href="/api/">API Changes</a> directly.
+      </p>
+    </noscript>
+    <script src="/assets/search.js" defer></script>
+
+  </main>
+  <footer class="site-footer">
+    <p>
+      Generated from Drupal Knowledge 1.0.0,
+      dataset <code>dataset:e290b71c0e26ef1d0067be2f01713b7e</code>,
+      built 2026-09-21T22:02:05Z.
+    </p>
+    <p>
+      Every page on this site is generated from canonical Drupal Knowledge records.
+      Nothing here is edited by hand, and querying changes nothing.
+      <a href="https://github.com/zarabatana/drupal-knowledge">Repository</a> ·
+      <a href="/about/">About</a> ·
+      <a href="/trust-model/">Trust model</a>
+    </p>
+    <p>
+      Drupal Knowledge Community, maintained by Zarabatana. Drupal is a registered trademark of Dries Buytaert; this independent project is not affiliated with or endorsed by the Drupal Association or Dries Buytaert.
+    </p>
+  </footer>
+</body>
+</html>

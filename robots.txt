@@ -1,0 +1,5 @@
+# Reviewed and authoritative pages may be indexed. Search results and the
+# error page carry a noindex meta tag because they are not content.
+User-agent: *
+Allow: /
+Disallow: /search/

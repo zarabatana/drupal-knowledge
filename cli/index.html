@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The command line — Drupal Knowledge</title>
+  <meta name="description" content="Install and use the read-only Drupal Knowledge CLI.">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/">Drupal Knowledge</a>
+    <nav aria-label="Primary">
+      <ul>
+      <li><a href="/knowledge/">Knowledge</a></li>
+      <li><a href="/security/">Security</a></li>
+      <li><a href="/api/">API Changes</a></li>
+      <li><a href="/change-records/">Change Records</a></li>
+      <li><a href="/rules/">Rules</a></li>
+      <li><a href="/solved-cases/">Solved Cases</a></li>
+      <li><a href="/sources/">Sources</a></li>
+      <li><a href="/trust-model/">Trust Model</a></li>
+      <li><a href="/cli/" aria-current="page">CLI</a></li>
+      <li><a href="/api-docs/">API</a></li>
+      <li><a href="/search/">Search</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <article>
+    <h1>The command line</h1>
+    <p class="lede">
+      The same knowledge on this website, plus the ability to ask about your own
+      Drupal project. Everything it does is read-only.
+    </p>
+    <section aria-labelledby="install-heading">
+      <h2 id="install-heading">Install</h2>
+      <p>
+        Drupal Knowledge is a repository, not a package. There is no Composer
+        package, no Homebrew formula and no binary release — clone it and run it.
+        It needs Python 3 and nothing else.
+      </p>
+      <pre><code>git clone https://github.com/zarabatana/drupal-knowledge.git
+cd drupal-knowledge
+./dk status</code></pre>
+      <p>
+        Add the directory to your <code>PATH</code> to run <code>dk</code> from
+        anywhere. Queries are offline: the records ship in the repository and no
+        command below contacts the network.
+      </p>
+    </section>
+    <section aria-labelledby="tasks-heading">
+      <h2 id="tasks-heading">The five things people ask</h2>
+      <pre><code>dk status                        what this release knows, and how current it is
+dk project /path/to/project      inspect a Drupal project, read-only
+dk search file_create_url        advisories, APIs, rules and reviewed knowledge
+dk explain SA-CORE-2025-001      why a record exists and what supports it
+dk provenance &lt;record-id&gt;        trace a record back to its source snapshot</code></pre>
+      <p>
+        Add <code>--target 11.4.6</code> to <code>dk project</code> to get the
+        upgrade assessment and the custom-code migration work for that version.
+        Add <code>--json</code> to any of the five for machine-readable output.
+      </p>
+      <p>
+        The exit code reports whether the query succeeded, not whether your project
+        is healthy. A project with applicable advisories still exits zero. Read the
+        findings, not the exit code.
+      </p>
+    </section>
+    <section aria-labelledby="commands-heading">
+      <h2 id="commands-heading">Community commands in this release</h2>
+      <p>
+        Generated from the released command parser, so this list cannot drift from
+        what the CLI actually accepts. Maintainer operations are not shown here.
+      </p>
+      <div class="table-scroll">
+      <table>
+        <caption>Community commands in Drupal Knowledge 1.0.0.</caption>
+        <tbody>
+        <tr><th scope="row"><code>dk analyze</code></th><td>statically analyze a Drupal project path</td></tr>
+        <tr><th scope="row"><code>dk api-lifecycle</code></th><td>inspect the source-derived Drupal API lifecycle corpus</td></tr>
+        <tr><th scope="row"><code>dk cases</code></th><td>validate and list solved cases</td></tr>
+        <tr><th scope="row"><code>dk coverage</code></th><td>print coverage summary</td></tr>
+        <tr><th scope="row"><code>dk evidence</code></th><td>print canonical project evidence from an analyzer result; read-only, writes nothing to the project</td></tr>
+        <tr><th scope="row"><code>dk evidence-diff</code></th><td>compare two project evidence sets; read-only</td></tr>
+        <tr><th scope="row"><code>dk explain</code></th><td>explain one record: what it is, what supports it, what is unknown</td></tr>
+        <tr><th scope="row"><code>dk findings</code></th><td>execute reviewed finding contracts against analyzer output</td></tr>
+        <tr><th scope="row"><code>dk implementation-findings</code></th><td>evaluate reviewed implementation rules against project evidence; read-only, changes no configuration, code or Drupal state</td></tr>
+        <tr><th scope="row"><code>dk knowledge</code></th><td>validate and list knowledge records</td></tr>
+        <tr><th scope="row"><code>dk lifecycle-evaluate</code></th><td>evaluate analyzer core-version evidence against reviewed release lifecycle context</td></tr>
+        <tr><th scope="row"><code>dk migration-analyze</code></th><td>identify custom-code migration work for a target Drupal version; read-only, rewrites no code and runs no Rector</td></tr>
+        <tr><th scope="row"><code>dk migration-work</code></th><td>list machine-readable migration work items; read-only, changes no code</td></tr>
+        <tr><th scope="row"><code>dk project</code></th><td>inspect a Drupal project across every engine; read-only, changes nothing</td></tr>
+        <tr><th scope="row"><code>dk provenance</code></th><td>trace one record back to the authoritative source behind it</td></tr>
+        <tr><th scope="row"><code>dk resolve</code></th><td>resolve knowledge applicability from analyzer JSON</td></tr>
+        <tr><th scope="row"><code>dk search</code></th><td>search advisories, API lifecycle, rules, knowledge and solved cases</td></tr>
+        <tr><th scope="row"><code>dk security-advisories</code></th><td>inspect and ingest authoritative Drupal Security Team advisories</td></tr>
+        <tr><th scope="row"><code>dk security-evaluate</code></th><td>evaluate advisories against Project Analyzer output; read-only and never remediates</td></tr>
+        <tr><th scope="row"><code>dk security-remediation</code></th><td>explain how a project could remediate applicable advisories; read-only, changes no dependency and runs no Composer command</td></tr>
+        <tr><th scope="row"><code>dk sources</code></th><td>validate and list sources</td></tr>
+        <tr><th scope="row"><code>dk status</code></th><td>what this Drupal Knowledge release knows, and how current it is</td></tr>
+        <tr><th scope="row"><code>dk upgrade-evaluate</code></th><td>evaluate whether a project can reach a proposed Drupal target; read-only, changes no dependency and runs no Composer command</td></tr>
+        <tr><th scope="row"><code>dk upgrade-path</code></th><td>describe the supported targets reachable from a project and what blocks each; read-only, performs no upgrade</td></tr>
+        <tr><th scope="row"><code>dk version</code></th><td>print the release and the community query interface</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </section>
+    </article>
+
+  </main>
+  <footer class="site-footer">
+    <p>
+      Generated from Drupal Knowledge 1.0.0,
+      dataset <code>dataset:e290b71c0e26ef1d0067be2f01713b7e</code>,
+      built 2026-09-21T22:02:05Z.
+    </p>
+    <p>
+      Every page on this site is generated from canonical Drupal Knowledge records.
+      Nothing here is edited by hand, and querying changes nothing.
+      <a href="https://github.com/zarabatana/drupal-knowledge">Repository</a> ·
+      <a href="/about/">About</a> ·
+      <a href="/trust-model/">Trust model</a>
+    </p>
+    <p>
+      Drupal Knowledge Community, maintained by Zarabatana. Drupal is a registered trademark of Dries Buytaert; this independent project is not affiliated with or endorsed by the Drupal Association or Dries Buytaert.
+    </p>
+  </footer>
+</body>
+</html>

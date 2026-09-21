@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Knowledge — Drupal Knowledge</title>
+  <meta name="description" content="11 Knowledge records in Drupal Knowledge.">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/">Drupal Knowledge</a>
+    <nav aria-label="Primary">
+      <ul>
+      <li><a href="/knowledge/" aria-current="page">Knowledge</a></li>
+      <li><a href="/security/">Security</a></li>
+      <li><a href="/api/">API Changes</a></li>
+      <li><a href="/change-records/">Change Records</a></li>
+      <li><a href="/rules/">Rules</a></li>
+      <li><a href="/solved-cases/">Solved Cases</a></li>
+      <li><a href="/sources/">Sources</a></li>
+      <li><a href="/trust-model/">Trust Model</a></li>
+      <li><a href="/cli/">CLI</a></li>
+      <li><a href="/api-docs/">API</a></li>
+      <li><a href="/search/">Search</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+      <li><a href="/">Home</a></li>
+      </ol>
+    </nav>
+    <h1>Knowledge</h1>
+    <p class="trust"><span class="badge badge--reviewed_drupal_knowledge">Reviewed Drupal Knowledge</span></p>
+    <p class="lede">
+      11 record(s) in Drupal Knowledge
+      1.0.0. Every entry below carries the same trust class.
+    </p>
+      <ul class="record-list">
+        <li><a href="/knowledge/drupal.api.reference-drupal-11/">Drupal 11 API reference is branch-scoped</a><span class="row-summary">The Drupal 11 API reference is authoritative for Drupal 11.x API reference material and is generated from comments embedded in Drupal source code.</span></li>
+        <li><a href="/knowledge/drupal.api.version-aware-documentation/">Drupal API documentation is version-aware</a><span class="row-summary">Drupal API guidance must preserve Drupal version context because each Drupal version introduces APIs and keeps only some APIs from previous major versions.</span></li>
+        <li><a href="/knowledge/drupal.change-records.introduced-version/">Drupal core change records preserve introduced branch and version</a><span class="row-summary">Drupal core change records are the official record of the release branch and release version in which a change occurred.</span></li>
+        <li><a href="/knowledge/drupal.coding-standards.current-source/">Current Drupal Coding Standards are on GitLab Pages</a><span class="row-summary">The Drupal Coding Standards project links to the current GitLab Pages standards, while the historical Drupal.org coding standards guide is marked obsolete and deprecated; the current standards state that they are version-independent and always-current.</span></li>
+        <li><a href="/knowledge/drupal.coding-standards.phpcs-coder-tooling/">Approved PHP coding standards map to PHPCS, Coder, or PHP_CodeSniffer work</a><span class="row-summary">The Drupal Coding Standards process describes how approved PHP standards are handled depending on whether a PHPCS rule exists, needs modification in Coder, or needs new support in Coder or PHP_CodeSniffer.</span></li>
+        <li><a href="/knowledge/drupal.security.advisory-streams-separated/">Drupal security advisory streams are scoped</a><span class="row-summary">Drupal core security advisories, contributed-project security advisories, and Security Team public service announcements are distinct source streams with different roles.</span></li>
+        <li><a href="/knowledge/drupal.security.csrf-route-protection/">Action routes should use Drupal routing CSRF protection</a><span class="row-summary">Drupal secure-code documentation says CSRF protection is integrated into the routing access system and should be used for URLs that perform actions or operations and do not use a form callback.</span></li>
+        <li><a href="/knowledge/drupal.security.database-query-parameterization/">Use Drupal database placeholders instead of concatenating SQL</a><span class="row-summary">Drupal secure-code documentation says data must never be concatenated directly into SQL queries and directs developers to use proper argument substitution, select queries, escapeLike() for LIKE values, and fixed operator choices.</span></li>
+        <li><a href="/knowledge/drupal.security.twig-output-escaping/">Twig output escaping should not be bypassed without trusted data</a><span class="row-summary">Drupal secure-code documentation says Twig auto-escapes printed strings by default, warns that the raw filter does not escape output and should only be used for trusted data, and states that rendered Twig attributes should be quoted.</span></li>
+        <li><a href="/knowledge/drupal.update.core-release-insecure-term-condition/">Drupal release metadata can attach the literal &quot;Insecure&quot; Release type term to a core release row</a><span class="row-summary">SOURCE FACT: the Drupal update-status release-history feed can attach a Release type taxonomy term whose literal value is &quot;Insecure&quot; to an individual Drupal core release row. PROJECT JOIN: a future finding evaluator may match this only when the Project Analyzer observed installed Drupal core version matches that exact release row in the canonical reviewed release lifecycle context. DRUPAL SEMANTICS (reviewed): For Drupal Update Manager release metadata, a release carrying Release type &quot;Insecure&quot; is treated as insecure; when that exact release is installed, Drupal assigns NOT_SECURE status, whose documented meaning is that the project is missing security update(s). LIMITS: this reviewed meaning does not establish an exploit path, a specific CVE identifier, a finding severity level, or any compromise claim about a project.</span></li>
+        <li><a href="/knowledge/drupal.update.core-release-state-update-feed/">Drupal core release state comes from the official update feed</a><span class="row-summary">The official Drupal update-status release-history feed exposes project status, supported branches, release versions, release types, and security coverage, so release-aware knowledge should watch that source instead of hard-coding the latest Drupal version.</span></li>
+      </ul>
+
+  </main>
+  <footer class="site-footer">
+    <p>
+      Generated from Drupal Knowledge 1.0.0,
+      dataset <code>dataset:e290b71c0e26ef1d0067be2f01713b7e</code>,
+      built 2026-09-21T22:02:05Z.
+    </p>
+    <p>
+      Every page on this site is generated from canonical Drupal Knowledge records.
+      Nothing here is edited by hand, and querying changes nothing.
+      <a href="https://github.com/zarabatana/drupal-knowledge">Repository</a> ·
+      <a href="/about/">About</a> ·
+      <a href="/trust-model/">Trust model</a>
+    </p>
+    <p>
+      Drupal Knowledge Community, maintained by Zarabatana. Drupal is a registered trademark of Dries Buytaert; this independent project is not affiliated with or endorsed by the Drupal Association or Dries Buytaert.
+    </p>
+  </footer>
+</body>
+</html>
