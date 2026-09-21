@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/release-lifecycle-assessment-v0.1.json",
+  "title": "Drupal core release lifecycle neutral assessment",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "assessment_id",
+    "evaluator",
+    "analysis",
+    "lifecycle_context",
+    "context_freshness",
+    "evaluation_state",
+    "core_version",
+    "release_match",
+    "branch_match",
+    "source_attributes",
+    "limitations",
+    "non_verdict"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "assessment_id": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "evaluator": {
+      "type": "object",
+      "required": ["name", "version", "mode"],
+      "properties": {
+        "name": {"const": "drupal-release-lifecycle-evaluator"},
+        "version": {"const": "0.1"},
+        "mode": {"const": "neutral-release-lifecycle-assessment"}
+      },
+      "additionalProperties": false
+    },
+    "analysis": {
+      "type": "object",
+      "required": ["schema_version", "project_id", "analyzer", "analysis_sha256"],
+      "properties": {
+        "schema_version": {"const": "0.1"},
+        "project_id": {"type": "string"},
+        "analyzer": {"type": "object"},
+        "analysis_sha256": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "lifecycle_context": {
+      "type": "object",
+      "required": [
+        "id",
+        "schema_version",
+        "context_sha256",
+        "source_id",
+        "source_snapshot_sha256",
+        "source_snapshot_bytes",
+        "review_status",
+        "reviewed_on",
+        "context_relation"
+      ],
+      "properties": {
+        "id": {"const": "drupal-core-release-lifecycle"},
+        "schema_version": {"const": "0.1"},
+        "context_sha256": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "source_id": {"const": "drupal-core-releases"},
+        "source_snapshot_sha256": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "source_snapshot_bytes": {"type": "integer", "minimum": 0},
+        "review_status": {"const": "reviewed"},
+        "reviewed_on": {"type": "string"},
+        "context_relation": {"enum": ["current", "stale"]}
+      },
+      "additionalProperties": false
+    },
+    "context_freshness": {
+      "type": "object",
+      "required": [
+        "relation",
+        "source_id",
+        "reviewed_snapshot_sha256",
+        "current_state_sha256",
+        "semantics"
+      ],
+      "properties": {
+        "relation": {"enum": ["current", "stale"]},
+        "source_id": {"const": "drupal-core-releases"},
+        "reviewed_snapshot_sha256": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "current_state_sha256": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "semantics": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "evaluation_state": {
+      "enum": [
+        "evaluated",
+        "core_version_unknown",
+        "release_not_found",
+        "requires_human_review"
+      ]
+    },
+    "core_version": {"type": "object"},
+    "release_match": {"type": "object"},
+    "branch_match": {"type": "object"},
+    "source_attributes": {"type": "object"},
+    "limitations": {"type": "array", "items": {"type": "object"}},
+    "non_verdict": {"type": "object"}
+  },
+  "additionalProperties": false
+}

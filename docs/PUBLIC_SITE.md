@@ -1,0 +1,143 @@
+# The Public Website
+
+A Drupal developer should be able to read what Drupal Knowledge holds without
+cloning it, and reach exactly the conclusion the command line would give them.
+
+That second half is the whole design:
+
+```text
+canonical records/engines
+        ↓
+scripts/dk_query.py          the released query layer — decides
+        ↓
+scripts/dk_public.py         public export — projects, publishes, decides nothing
+        ↓
+public-site/dataset/         committed, deterministic, stale-guarded
+        ↓
+scripts/dk_site_render.py    renders HTML — sees only the dataset
+        ↓
+public-site/dist/            static files
+```
+
+The renderer imports `html`, `json`, `pathlib` and `typing`. It has no path to
+`dk_query`, `dk_core` or the repository root, and a test parses its imports to
+keep it that way. A renderer that could reach canonical records could quietly
+disagree with the CLI, and nothing would notice.
+
+## One Semantic Authority
+
+Search on the website calls `dk_query.score_record` — the same function, not a
+copy. A parity test asserts that for the same term, the ordered result ids from
+`dk_query.search` and from the published index are identical, and that
+`dk explain <id> --json` and the published record agree field for field:
+title, summary, trust block, detail, unknowns and explanation.
+
+The browser-side script mirrors the same six comparisons and reads its band
+values from the generated index rather than hard-coding them, so it cannot
+invent an ordering the CLI would not produce.
+
+## What Is Published
+
+| Domain | Route | Trust class |
+| --- | --- | --- |
+| Reviewed knowledge | `/knowledge/<id>/` | reviewed Drupal Knowledge |
+| Security advisories | `/security/SA-CORE-2025-001/` | source-derived authoritative |
+| API deprecations | `/api/<record-id>/` | source-derived authoritative |
+| Change records | `/change-records/<id>/` | source-derived authoritative |
+| Implementation rules | `/rules/<id>/` | reviewed implementation rule |
+| Solved cases | `/solved-cases/<id>/` | proven in one context only |
+| Sources | `/sources/<id>/` | the registered source directory |
+
+Routes are canonical identifiers. A filesystem path is never a URL.
+
+## What Is Not Published, And Why
+
+The manifest lists every excluded domain with its reason, because a public
+dataset that is quietly missing a section is indistinguishable from one that
+never had it.
+
+- **Project evidence, findings, migration work, upgrade assessments,
+  remediation plans** — each describes one repository at one revision. They are
+  legitimate answers to a local question and never global content. Ask them
+  locally with `dk project`.
+- **Discovery signals** — untrusted community observations awaiting
+  corroboration and review. This release publishes none of them. Putting them
+  beside reviewed knowledge would make untrusted material look like an answer.
+- **Unreviewed knowledge and pending generalization proposals** — not trusted
+  knowledge, so not published as it.
+
+## Determinism And Staleness
+
+The dataset carries a content-addressed `dataset_id` and no timestamp. The same
+release over the same records produces byte-identical files, so a diff means
+something changed.
+
+Anything that moves because a clock moved — how many days old a snapshot is,
+when a build ran — is volatile build metadata. Source freshness is computed at
+render time from the published `last_observed_at` date, and `build-info.json`
+carries the build timestamp and commit. Neither touches dataset identity.
+
+The manifest records which release produced it, so **a release that bumps
+`VERSION` must republish the dataset in the same commit**. That is the guard
+working rather than a workaround: after a bump the committed manifest no longer
+describes the repository, and only `manifest.json` changes.
+
+Changing a canonical record without rebuilding fails validation:
+
+```console
+$ python3 scripts/dk.py validate
+ERROR: the public dataset is stale: public-site/dataset/domains/security.json.
+Run python3 scripts/dk.py public-site build
+```
+
+## Building It
+
+```bash
+python3 scripts/dk.py public-site build          # dataset + site
+python3 scripts/dk.py public-site build --output /tmp/site
+python3 scripts/dk.py public-site serve          # local static server, 127.0.0.1
+```
+
+`public-site build` is an internal command: it is repository maintenance, not
+something a developer asking about their project needs. It appears in
+`dk --help-all`, not on the community front page.
+
+Source and output are kept apart:
+
+```text
+public-site/content/    four authored editorial pages (home, trust model, CLI, about)
+public-site/assets/     one stylesheet, one search script
+public-site/dataset/    generated, committed, stale-guarded
+public-site/dist/       generated, gitignored, produced by CI as an artifact
+```
+
+Following the repository's existing policy, generated *data* is committed and
+byte-compared; the rendered HTML is a build artifact reproduced from it.
+
+## Privacy
+
+The generated bytes are scanned, not trusted. Home directories, temporary
+paths, email addresses and credential assignments are refused before anything is
+written, and the same patterns are asserted against the finished site.
+
+The one solved case published carries its problem, cause, fix, verification,
+applicability and limitations — and no project name, no repository URL, no
+fingerprint and no environment detail.
+
+## Accessibility
+
+Semantic landmarks, one `h1` per page, no skipped heading levels, a skip link, a
+labelled search field, `scope` on every table header, visible keyboard focus and
+a layout that reflows to a phone. Trust labels are words: colour reinforces them
+and never carries the distinction alone.
+
+Every page except search works with JavaScript switched off.
+
+## Not An API
+
+The JSON behind this site is a build artifact. `manifest.json` says so in a
+field, because a well-formed file at a stable path invites exactly the
+assumption a static site has not earned.
+
+The supported, versioned read-only API is a separate surface built on the same
+dataset — see `docs/PUBLIC_API.md` and `/api-docs/` on the site itself.

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/project-evidence-v0.1.json",
+  "title": "Drupal project observed evidence",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "project_id",
+    "kind",
+    "observed_at",
+    "collector",
+    "summary"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "id": {"type": "string", "pattern": "^evidence\\.drupal\\.[a-z0-9.-]+$"},
+    "project_id": {"type": "string"},
+    "kind": {
+      "enum": [
+        "composer_json",
+        "composer_lock",
+        "core_extension_config",
+        "enabled_extensions",
+        "update_status",
+        "security_advisory",
+        "status_report",
+        "config_export",
+        "routing_files",
+        "permissions",
+        "services",
+        "libraries",
+        "phpstan",
+        "php_codesniffer",
+        "drupal_rector",
+        "phpunit",
+        "behat",
+        "database_metrics",
+        "cache_diagnostics",
+        "runtime_status",
+        "ci_result",
+        "custom_extension_info",
+        "web_root"
+      ]
+    },
+    "observed_at": {"type": "string"},
+    "collector": {"type": "string"},
+    "path": {"type": "string"},
+    "content_sha256": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "bytes": {"type": "integer", "minimum": 0},
+    "role": {"type": "string"},
+    "facts_supported": {"type": "array", "items": {"type": "string"}},
+    "summary": {"type": "string"},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

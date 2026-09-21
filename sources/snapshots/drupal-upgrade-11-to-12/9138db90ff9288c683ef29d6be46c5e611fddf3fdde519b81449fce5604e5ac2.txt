@@ -1,0 +1,162 @@
+Target version:
+Drupal 12.x
+Minimum source version:
+Drupal TBA
+Prerequisites
+Before beginning the upgrade, ensure your environment and site meet the following requirements:
+Hosting environment:
+Must meet
+Drupal 12 platform requirements
+.
+Current version:
+Site must be running
+Drupal TBA or later
+. All core updates prior to 11.3.0 have been removed in Drupal 12.
+Learn how to update Drupal
+Check out deprecated and obsolete extensions
+Access:
+Command-line access with
+Composer
+and
+Drush
+installed. Drupal recommends the latest secure release of Composer 2.9.3.
+Permissions:
+Ability to modify file permissions (chmod) on the server.
+PHP:
+8.5.0 or later.
+Ideally, first perform the update locally in DDEV, and then
+deploy to your server
+, or repeat the steps on your server.
+1. Prepare for upgrade
+Manage scaffold files and deprecations
+All Drupal core files (including
+.htaccess
+) will change. If you have
+customized scaffold files
+, document your changes to reapply them later.
+Resolve core modules and themes
+Several modules are
+deprecated in Drupal 11
+and removed in Drupal 12:
+Removed extensions:
+Ban, Contact, Field Layout, History, Migrate Drupal, Migrate Drupal UI
+Obsolete extensions:
+TBA.
+Options for handling removed modules:
+Stop using the module in Drupal 11 before upgrading.
+Replace with the
+contributed version
+of the module
+(except
+Migrate Drupal
+and
+Migrate Drupal UI
+) in Drupal 11.3+ before performing the Drupal 12 code upgrade.
+2. Update contributed & custom code
+Check compatibility with upgrade status
+Use the
+Upgrade Status
+module to identify compatibility gaps.
+To update a module to a specific version (e.g., drupal/webform), run:
+composer require drupal/webform:^6.3 --no-update
+If a compatible version isn't found:
+Check the module's issue queue for Drupal 12 patches. Read
+"Create a Drupal 11 compatibility patch"
+for more tips.
+Use the
+Drupal Lenient Composer endpoint
+for modules requiring patches.
+Multi-version compatibility:
+You can allow multiple versions in composer.json to bridge the gap. For example, change
+"drupal/linkit": "^6.1"
+to
+"drupal/linkit": "^6.1 || ^7.0"
+Update custom code
+Use
+Drupal Rector
+and
+Upgrade Status
+to replace code deprecated in Drupal 10.
+Cleanup (optional)
+Once compatibility is confirmed, you may remove Upgrade Status and Drush (reinstalling Drush after the upgrade):
+drush pm:uninstall upgrade_status -y composer remove drupal/upgrade_status --no-update
+3. Perform the upgrade to Drupal 12
+Execute these steps from the Drupal root directory.
+Step 1: Open file permissions
+chmod u+w web/sites/default chmod u+w web/sites/default/*settings.php chmod u+w web/sites/default/*services.yml
+Step 2: Update core dependencies
+We use
+--no-update
+to prevent dependency conflicts while preparing the requirements.
+composer require 'drupal/core-recommended:^12' \ 'drupal/core-composer-scaffold:^12' \ 'drupal/core-project-message:^12' --no-update
+If drupal/core is listed explicitly in your
+composer.json
+, remove it:
+composer remove drupal/core --no-update
+Update Drush:
+composer require drush/drush --no-update
+Optionally, update development tools, if you need it:
+composer require 'drupal/core-dev:^12' --dev --no-update
+Step 3: Run the update
+First, perform a
+dry run
+to check for errors:
+composer update --dry-run
+If successful, execute the actual update:
+composer update
+Note: To update only core and Drush, use:
+composer update "drupal/core-*" drush/drush --with-all-dependencies
+Step 4: Verify and database update
+Ensure the environment is consistent:
+composer install
+Run pending database updates:
+drush updatedb:status drush updatedb
+Step 5: Restore permissions
+chmod 755 web/sites/default chmod 644 web/sites/default/*settings.php chmod 644 web/sites/default/*services.yml
+4. Post-upgrade tasks
+Deployment
+:
+Deploy the update to your server
+.
+Permissions
+: Go through
+Secure file permissions and ownership
+. Can fix an error like "Forbidden | You don't have permission to access this resource. Server unable to read htaccess file".
+Good practices
+: Go through
+Checklist for launching a site
+.
+Code standards:
+Run
+PHP CodeSniffer
+to align with Drupal 12 coding standards.
+Testing:
+Run automated tests (PHPUnit/Behat).
+Monitor logs while browsing:
+drush watchdog:tail
+Run cron:
+drush cron
+Legacy & appendix
+Common issues
+Dependency resolution failures:
+If composer update fails, try resetting all constraints:
+composer show --no-dev --direct --name-only | xargs composer require --no-update
+Identifying blockers:
+composer why-not drupal/core ^12
+Broken patches:
+If using
+cweagans/composer-patches
+, check if patches were merged into core or need updated versions for Drupal 12.
+Lock file warnings:
+If the lock file is out of sync, delete
+composer.lock
+and the vendor folder, then run
+composer update
+.
+Support resources
+Project update working group (PUWG):
+Join the
+#project-update-working-group
+channel on Drupal Slack or visit the
+PUWG project page
+.

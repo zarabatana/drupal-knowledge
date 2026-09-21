@@ -1,0 +1,25 @@
+{
+  "acquisition": {
+    "acquisition_channel": "external_authoritative_source",
+    "check_cadence_days": 7,
+    "consecutive_failures": 0,
+    "engine_name": "drupal-knowledge-acquisition-engine",
+    "engine_version": "0.1",
+    "last_attempt_at": "2026-09-08T15:22:29Z",
+    "last_attempt_run_id": "discovery.20260908T152229.c02faecb",
+    "last_attempt_status": "unchanged",
+    "last_error": null,
+    "last_success_at": "2026-09-08T15:22:29Z",
+    "last_success_run_id": "discovery.20260908T152229.c02faecb",
+    "previous_snapshot_sha256": null,
+    "review_candidate_id": null
+  },
+  "content_length": 24195,
+  "content_sha256": "sha256:271ad3567d24b6f4398cbbf1201e2dfabba2b93e296b8b52df41628a13230219",
+  "etag": null,
+  "fetch_url": "https://updates.drupal.org/release-history/token/current",
+  "last_changed_at": "2026-09-08T15:20:42Z",
+  "last_modified": "Thu, 09 Jul 2026 20:32:45 GMT",
+  "source_id": "drupal-contrib-token-releases",
+  "url": "https://www.drupal.org/project/token/releases"
+}

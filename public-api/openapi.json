@@ -1,0 +1,1876 @@
+{
+  "components": {
+    "schemas": {
+      "Envelope": {
+        "properties": {
+          "api_contract_version": {
+            "type": "string"
+          },
+          "api_version": {
+            "type": "string"
+          },
+          "count": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "dataset_id": {
+            "type": "string"
+          },
+          "dataset_schema_version": {
+            "type": "string"
+          },
+          "dk_version": {
+            "type": "string"
+          },
+          "pagination": {
+            "properties": {
+              "limit": {
+                "type": "integer"
+              },
+              "next_offset": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "offset": {
+                "type": "integer"
+              },
+              "ordering": {
+                "type": "string"
+              },
+              "returned": {
+                "type": "integer"
+              },
+              "total": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "limit",
+              "offset",
+              "total",
+              "returned",
+              "ordering"
+            ],
+            "type": "object"
+          },
+          "provenance": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "query_interface_version": {
+            "type": "string"
+          },
+          "request": {
+            "type": "object"
+          },
+          "result": {
+            "type": "object"
+          },
+          "results": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "sections": {
+            "type": "object"
+          },
+          "unknowns": {
+            "description": "What this answer does not settle. Never emptied for tidiness.",
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "api_version",
+          "api_contract_version",
+          "dk_version",
+          "dataset_id",
+          "request",
+          "warnings",
+          "unknowns"
+        ],
+        "type": "object"
+      },
+      "Error": {
+        "properties": {
+          "api_contract_version": {
+            "type": "string"
+          },
+          "api_version": {
+            "type": "string"
+          },
+          "dataset_id": {
+            "type": "string"
+          },
+          "dk_version": {
+            "type": "string"
+          },
+          "error": {
+            "properties": {
+              "code": {
+                "enum": [
+                  "DATASET_UNAVAILABLE",
+                  "INTERNAL_ERROR",
+                  "INVALID_FILTER",
+                  "INVALID_PAGINATION",
+                  "INVALID_QUERY",
+                  "METHOD_NOT_ALLOWED",
+                  "NOT_FOUND",
+                  "QUERY_TOO_LONG",
+                  "UNKNOWN_DOMAIN"
+                ],
+                "type": "string"
+              },
+              "details": {
+                "type": "object"
+              },
+              "message": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "code",
+              "message"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "api_version",
+          "error"
+        ],
+        "type": "object"
+      },
+      "Record": {
+        "properties": {
+          "authority": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "object"
+          },
+          "domain": {
+            "enum": [
+              "trusted_knowledge",
+              "advisory",
+              "api_lifecycle",
+              "change_record",
+              "implementation_rule",
+              "solved_case"
+            ],
+            "type": "string"
+          },
+          "explanation": {
+            "type": "object"
+          },
+          "href": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "match": {
+            "type": "object"
+          },
+          "provenance": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "provenance_href": {
+            "type": "string"
+          },
+          "record_type": {
+            "type": "string"
+          },
+          "related": {
+            "items": {
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "review_status": {
+            "type": "string"
+          },
+          "site_url": {
+            "type": "string"
+          },
+          "summary": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "trust_class": {
+            "enum": [
+              "proven_case_context_only",
+              "reviewed_drupal_knowledge",
+              "reviewed_implementation_rule",
+              "source_derived_authoritative"
+            ],
+            "type": "string"
+          },
+          "trust_explanation": {
+            "type": "string"
+          },
+          "trusted_knowledge": {
+            "description": "True for reviewed Drupal Knowledge only.",
+            "type": "boolean"
+          },
+          "universal_drupal_rule": {
+            "type": "boolean"
+          },
+          "unknowns": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "domain",
+          "record_type",
+          "trust_class",
+          "trusted_knowledge",
+          "title",
+          "detail",
+          "unknowns",
+          "provenance"
+        ],
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "description": "Every response states how far its content can be trusted and where it came from. The API has no mutation authority: GET, HEAD and OPTIONS are the only methods it routes, and it reads a published dataset rather than any canonical store. Records are served from a content-addressed dataset whose identity appears in every response.",
+    "license": {
+      "identifier": "Apache-2.0",
+      "name": "Apache-2.0"
+    },
+    "summary": "Read-only access to reviewed Drupal knowledge and source-derived records.",
+    "title": "Drupal Knowledge Public Knowledge API",
+    "version": "1.0"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/api/v1": {
+      "get": {
+        "operationId": "getIndex",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            },
+            "description": "Success.",
+            "headers": {
+              "ETag": {
+                "description": "Strong validator derived from the response content.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Not modified; the supplied ETag still matches."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Malformed request."
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "This API is read-only; the method is not supported."
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "The published dataset is unavailable."
+          }
+        },
+        "summary": "List the available endpoints."
+      }
+    },
+    "/api/v1/api-lifecycle": {
+      "get": {
+        "operationId": "listApiLifecycle",
+        "parameters": [
+          {
+            "description": "Maximum records to return. Default 25, maximum 200.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 25,
+              "maximum": 200,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Records to skip. Ordering is by canonical identifier and is stable.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "maximum": 100000,
+              "minimum": 0,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            },
+            "description": "Success.",
+            "headers": {
+              "ETag": {
+                "description": "Strong validator derived from the response content.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Not modified; the supplied ETag still matches."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Malformed request."
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "This API is read-only; the method is not supported."
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "The published dataset is unavailable."
+          }
+        },
+        "summary": "List Drupal API lifecycle records."
+      }
+    },
+    "/api/v1/api-lifecycle/{id}": {
+      "get": {
+        "operationId": "getApiLifecycle",
+        "parameters": [
+          {
+            "description": "The record's canonical Drupal Knowledge identifier.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            },
+            "description": "Success.",
+            "headers": {
+              "ETag": {
+                "description": "Strong validator derived from the response content.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Not modified; the supplied ETag still matches."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Malformed request."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "No such record or route."
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "This API is read-only; the method is not supported."
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "The published dataset is unavailable."
+          }
+        },
+        "summary": "One Drupal API lifecycle record by its canonical identifier."
+      }
+    },
+    "/api/v1/change-records": {
+      "get": {
+        "operationId": "listChangeRecords",
+        "parameters": [
+          {
+            "description": "Maximum records to return. Default 25, maximum 200.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 25,
+              "maximum": 200,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Records to skip. Ordering is by canonical identifier and is stable.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "maximum": 100000,
+              "minimum": 0,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            },
+            "description": "Success.",
+            "headers": {
+              "ETag": {
+                "description": "Strong validator derived from the response content.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Not modified; the supplied ETag still matches."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Malformed request."
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "This API is read-only; the method is not supported."
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "The published dataset is unavailable."
+          }
+        },
+        "summary": "List Drupal core change records."
+      }
+    },
+    "/api/v1/change-records/{id}": {
+      "get": {
+        "operationId": "getChangeRecords",
+        "parameters": [
+          {
+            "description": "The record's canonical Drupal Knowledge identifier.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            },
+            "description": "Success.",
+            "headers": {
+              "ETag": {
+                "description": "Strong validator derived from the response content.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Not modified; the supplied ETag still matches."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Malformed request."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "No such record or route."
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "This API is read-only; the method is not supported."
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "The published dataset is unavailable."
+          }
+        },
+        "summary": "One Drupal core change record by its canonical identifier."
+      }
+    },
+    "/api/v1/knowledge": {
+      "get": {
+        "operationId": "listKnowledge",
+        "parameters": [
+          {
+            "description": "Maximum records to return. Default 25, maximum 200.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 25,
+              "maximum": 200,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Records to skip. Ordering is by canonical identifier and is stable.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "maximum": 100000,
+              "minimum": 0,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            },
+            "description": "Success.",
+            "headers": {
+              "ETag": {
+                "description": "Strong validator derived from the response content.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Not modified; the supplied ETag still matches."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Malformed request."
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "This API is read-only; the method is not supported."
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "The published dataset is unavailable."
+          }
+        },
+        "summary": "List reviewed Drupal Knowledge records."
+      }
+    },
+    "/api/v1/knowledge/{id}": {
+      "get": {
+        "operationId": "getKnowledge",
+        "parameters": [
+          {
+            "description": "The record's canonical Drupal Knowledge identifier.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            },
+            "description": "Success.",
+            "headers": {
+              "ETag": {
+                "description": "Strong validator derived from the response content.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Not modified; the supplied ETag still matches."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Malformed request."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "No such record or route."
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "This API is read-only; the method is not supported."
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "The published dataset is unavailable."
+          }
+        },
+        "summary": "One reviewed Drupal Knowledge record by its canonical identifier."
+      }
+    },
+    "/api/v1/openapi.json": {
+      "get": {
+        "operationId": "getOpenapi",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Success.",
+            "headers": {
+              "ETag": {
+                "description": "Strong validator derived from the response content.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Not modified; the supplied ETag still matches."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Malformed request."
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "This API is read-only; the method is not supported."
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "The published dataset is unavailable."
+          }
+        },
+        "summary": "This API's OpenAPI 3.1 description."
+      }
+    },
+    "/api/v1/provenance/{id}": {
+      "get": {
+        "operationId": "getProvenance",
+        "parameters": [
+          {
+            "description": "The record's canonical Drupal Knowledge identifier.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            },
+            "description": "Success.",
+            "headers": {
+              "ETag": {
+                "description": "Strong validator derived from the response content.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Not modified; the supplied ETag still matches."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Malformed request."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "No such record or route."
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "This API is read-only; the method is not supported."
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "The published dataset is unavailable."
+          }
+        },
+        "summary": "Lineage from a record to the snapshot and source behind it."
+      }
+    },
+    "/api/v1/rules": {
+      "get": {
+        "operationId": "listRules",
+        "parameters": [
+          {
+            "description": "Maximum records to return. Default 25, maximum 200.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 25,
+              "maximum": 200,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Records to skip. Ordering is by canonical identifier and is stable.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "maximum": 100000,
+              "minimum": 0,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            },
+            "description": "Success.",
+            "headers": {
+              "ETag": {
+                "description": "Strong validator derived from the response content.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Not modified; the supplied ETag still matches."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Malformed request."
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "This API is read-only; the method is not supported."
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "The published dataset is unavailable."
+          }
+        },
+        "summary": "List reviewed implementation rules."
+      }
+    },
+    "/api/v1/rules/{id}": {
+      "get": {
+        "operationId": "getRules",
+        "parameters": [
+          {
+            "description": "The record's canonical Drupal Knowledge identifier.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            },
+            "description": "Success.",
+            "headers": {
+              "ETag": {
+                "description": "Strong validator derived from the response content.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Not modified; the supplied ETag still matches."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Malformed request."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "No such record or route."
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "This API is read-only; the method is not supported."
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "The published dataset is unavailable."
+          }
+        },
+        "summary": "One reviewed implementation rule by its canonical identifier."
+      }
+    },
+    "/api/v1/search": {
+      "get": {
+        "operationId": "search",
+        "parameters": [
+          {
+            "description": "Search term. Matching is exact, never fuzzy or semantic.",
+            "in": "query",
+            "name": "q",
+            "required": true,
+            "schema": {
+              "maxLength": 200,
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          {
+            "description": "Restrict to one or more published domains. Repeatable.",
+            "in": "query",
+            "name": "domain",
+            "required": false,
+            "schema": {
+              "items": {
+                "enum": [
+                  "trusted_knowledge",
+                  "advisory",
+                  "api_lifecycle",
+                  "change_record",
+                  "implementation_rule",
+                  "solved_case"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          {
+            "description": "Restrict to one or more published trust classes. Repeatable.",
+            "in": "query",
+            "name": "trust_class",
+            "required": false,
+            "schema": {
+              "items": {
+                "enum": [
+                  "proven_case_context_only",
+                  "reviewed_drupal_knowledge",
+                  "reviewed_implementation_rule",
+                  "source_derived_authoritative"
+                ],
+                "type": "string"
+              },
+              "type": "array"
+            }
+          },
+          {
+            "description": "Maximum records to return. Default 25, maximum 200.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 25,
+              "maximum": 200,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Records to skip. Ordering is by canonical identifier and is stable.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "maximum": 100000,
+              "minimum": 0,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            },
+            "description": "Success.",
+            "headers": {
+              "ETag": {
+                "description": "Strong validator derived from the response content.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Not modified; the supplied ETag still matches."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Malformed request."
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "This API is read-only; the method is not supported."
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "The published dataset is unavailable."
+          }
+        },
+        "summary": "Search published records. Exact identity outranks prose."
+      }
+    },
+    "/api/v1/security": {
+      "get": {
+        "operationId": "listSecurity",
+        "parameters": [
+          {
+            "description": "Maximum records to return. Default 25, maximum 200.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 25,
+              "maximum": 200,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Records to skip. Ordering is by canonical identifier and is stable.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "maximum": 100000,
+              "minimum": 0,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            },
+            "description": "Success.",
+            "headers": {
+              "ETag": {
+                "description": "Strong validator derived from the response content.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Not modified; the supplied ETag still matches."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Malformed request."
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "This API is read-only; the method is not supported."
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "The published dataset is unavailable."
+          }
+        },
+        "summary": "List Drupal security advisories."
+      }
+    },
+    "/api/v1/security/{id}": {
+      "get": {
+        "operationId": "getSecurity",
+        "parameters": [
+          {
+            "description": "The record's canonical Drupal Knowledge identifier.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            },
+            "description": "Success.",
+            "headers": {
+              "ETag": {
+                "description": "Strong validator derived from the response content.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Not modified; the supplied ETag still matches."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Malformed request."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "No such record or route."
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "This API is read-only; the method is not supported."
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "The published dataset is unavailable."
+          }
+        },
+        "summary": "One Drupal security advisory by its canonical identifier."
+      }
+    },
+    "/api/v1/solved-cases": {
+      "get": {
+        "operationId": "listSolvedCases",
+        "parameters": [
+          {
+            "description": "Maximum records to return. Default 25, maximum 200.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 25,
+              "maximum": 200,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Records to skip. Ordering is by canonical identifier and is stable.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "maximum": 100000,
+              "minimum": 0,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            },
+            "description": "Success.",
+            "headers": {
+              "ETag": {
+                "description": "Strong validator derived from the response content.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Not modified; the supplied ETag still matches."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Malformed request."
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "This API is read-only; the method is not supported."
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "The published dataset is unavailable."
+          }
+        },
+        "summary": "List solved cases."
+      }
+    },
+    "/api/v1/solved-cases/{id}": {
+      "get": {
+        "operationId": "getSolvedCases",
+        "parameters": [
+          {
+            "description": "The record's canonical Drupal Knowledge identifier.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            },
+            "description": "Success.",
+            "headers": {
+              "ETag": {
+                "description": "Strong validator derived from the response content.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Not modified; the supplied ETag still matches."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Malformed request."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "No such record or route."
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "This API is read-only; the method is not supported."
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "The published dataset is unavailable."
+          }
+        },
+        "summary": "One solved case by its canonical identifier."
+      }
+    },
+    "/api/v1/sources": {
+      "get": {
+        "operationId": "listSources",
+        "parameters": [
+          {
+            "description": "Maximum records to return. Default 25, maximum 200.",
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 25,
+              "maximum": 200,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Records to skip. Ordering is by canonical identifier and is stable.",
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "maximum": 100000,
+              "minimum": 0,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            },
+            "description": "Success.",
+            "headers": {
+              "ETag": {
+                "description": "Strong validator derived from the response content.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Not modified; the supplied ETag still matches."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Malformed request."
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "This API is read-only; the method is not supported."
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "The published dataset is unavailable."
+          }
+        },
+        "summary": "The registered source directory."
+      }
+    },
+    "/api/v1/sources/{id}": {
+      "get": {
+        "operationId": "getSource",
+        "parameters": [
+          {
+            "description": "The record's canonical Drupal Knowledge identifier.",
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            },
+            "description": "Success.",
+            "headers": {
+              "ETag": {
+                "description": "Strong validator derived from the response content.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Not modified; the supplied ETag still matches."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Malformed request."
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "No such record or route."
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "This API is read-only; the method is not supported."
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "The published dataset is unavailable."
+          }
+        },
+        "summary": "One registered source."
+      }
+    },
+    "/api/v1/status": {
+      "get": {
+        "operationId": "getStatus",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope"
+                }
+              }
+            },
+            "description": "Success.",
+            "headers": {
+              "ETag": {
+                "description": "Strong validator derived from the response content.",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "304": {
+            "description": "Not modified; the supplied ETag still matches."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "Malformed request."
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "This API is read-only; the method is not supported."
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            },
+            "description": "The published dataset is unavailable."
+          }
+        },
+        "summary": "What this release holds and how current its sources are."
+      }
+    }
+  },
+  "servers": [
+    {
+      "description": "The host serving this API.",
+      "url": "/"
+    }
+  ],
+  "x-drupal-knowledge": {
+    "authentication": "None. Everything served is public-safe and read-only.",
+    "cors": "Access-Control-Allow-Origin: * on every endpoint; no credentials accepted.",
+    "dataset_schema_version": "0.1",
+    "dk_version": "1.0.0",
+    "excluded_domains": [
+      {
+        "domain": "discovery_signal",
+        "reason": "Discovery signals are untrusted community observations awaiting corroboration and review. Publishing them beside reviewed knowledge would make untrusted material look like an answer, so this release publishes none of them."
+      },
+      {
+        "domain": "finding",
+        "reason": "A finding is a rule applied to one project's evidence. Publishing it would turn one project's state into a claim about Drupal."
+      },
+      {
+        "domain": "implementation_finding",
+        "reason": "A finding is a rule applied to one project's evidence. The reviewed rule behind it is published instead."
+      },
+      {
+        "domain": "migration_work",
+        "reason": "Migration work items name files and lines in one project. The authoritative deprecation records behind them are published instead."
+      },
+      {
+        "domain": "project_evidence",
+        "reason": "Evidence describes one repository at one revision. It answers a local question and is never global Drupal content."
+      },
+      {
+        "domain": "remediation_plan",
+        "reason": "A remediation plan is computed for one project's installed versions. The advisories behind it are published instead."
+      },
+      {
+        "domain": "upgrade_assessment",
+        "reason": "An upgrade assessment is bounded by one project's evidence and is not a statement about Drupal."
+      }
+    ],
+    "published_domains": [
+      "trusted_knowledge",
+      "advisory",
+      "api_lifecycle",
+      "change_record",
+      "implementation_rule",
+      "solved_case"
+    ],
+    "query_interface_version": "0.1",
+    "trust_classes": [
+      "proven_case_context_only",
+      "reviewed_drupal_knowledge",
+      "reviewed_implementation_rule",
+      "source_derived_authoritative"
+    ]
+  }
+}
+

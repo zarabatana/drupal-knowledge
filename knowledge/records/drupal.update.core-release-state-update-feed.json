@@ -1,0 +1,48 @@
+{
+  "id": "drupal.update.core-release-state-update-feed",
+  "title": "Drupal core release state comes from the official update feed",
+  "summary": "The official Drupal update-status release-history feed exposes project status, supported branches, release versions, release types, and security coverage, so release-aware knowledge should watch that source instead of hard-coding the latest Drupal version.",
+  "kind": "version-change",
+  "domains": ["core", "update", "security"],
+  "severity": "moderate",
+  "review_status": "reviewed",
+  "sources": [
+    {
+      "source_id": "drupal-core-releases",
+      "locator": "supported_branches / releases / security",
+      "title": "Drupal core releases"
+    }
+  ],
+  "version_applicability": {
+    "drupal_core": [
+      {
+        "constraint": "release-history",
+        "status": "applicable",
+        "notes": "Release applicability must be derived from the current release-history source state."
+      }
+    ]
+  },
+  "project_applicability": {
+    "requires": ["drupal_core_version"],
+    "unknown_result": "release_applicability_unknown"
+  },
+  "actions": [
+    "Use the official Drupal release-history feed as the watched source for Drupal core release state.",
+    "Do not encode today's latest Drupal version as a permanent knowledge fact."
+  ],
+  "checks": [
+    "Compare observed project Drupal core versions against the current release-history source state before making release or support findings."
+  ],
+  "evidence_requirements": [
+    "Project Drupal core version",
+    "Current source state for drupal-core-releases"
+  ],
+  "automation_hints": [
+    "Future project analyzers can join composer.lock Drupal core versions with the watched release-history feed."
+  ],
+  "enforcement": {
+    "intent": "non_blocking",
+    "rationale": "This record governs release-state sourcing; project-specific findings require observed project versions and current feed evaluation."
+  },
+  "related": ["drupal.api.version-aware-documentation"]
+}

@@ -1,0 +1,193 @@
+{
+  "advisory": {
+    "advisory_number": "004",
+    "canonical_url": "https://www.drupal.org/sa-core-2026-004",
+    "description_present": true,
+    "is_psa": false,
+    "kind": "core",
+    "published_at": "2026-05-20T18:08:21Z",
+    "title": "Drupal core - Highly critical - SQL injection - SA-CORE-2026-004",
+    "updated_at": "2026-05-22T04:32:16Z",
+    "vulnerability_type": "SQL injection",
+    "year": "2026"
+  },
+  "advisory_contract_version": "0.1",
+  "affected_versions": {
+    "clauses": [
+      {
+        "constraints": [
+          {
+            "operator": "gte",
+            "source_value": ">=8.9.0",
+            "version": "8.9.0"
+          },
+          {
+            "operator": "lt",
+            "source_value": "<10.4.10",
+            "version": "10.4.10"
+          }
+        ],
+        "source_value": ">= 8.9.0 < 10.4.10"
+      },
+      {
+        "constraints": [
+          {
+            "operator": "gte",
+            "source_value": ">=10.5.0",
+            "version": "10.5.0"
+          },
+          {
+            "operator": "lt",
+            "source_value": "<10.5.10",
+            "version": "10.5.10"
+          }
+        ],
+        "source_value": ">= 10.5.0 < 10.5.10"
+      },
+      {
+        "constraints": [
+          {
+            "operator": "gte",
+            "source_value": ">=10.6.0",
+            "version": "10.6.0"
+          },
+          {
+            "operator": "lt",
+            "source_value": "<10.6.9",
+            "version": "10.6.9"
+          }
+        ],
+        "source_value": ">= 10.6.0 < 10.6.9"
+      },
+      {
+        "constraints": [
+          {
+            "operator": "gte",
+            "source_value": ">=11.0.0",
+            "version": "11.0.0"
+          },
+          {
+            "operator": "lt",
+            "source_value": "<11.1.10",
+            "version": "11.1.10"
+          }
+        ],
+        "source_value": ">= 11.0.0 < 11.1.10"
+      },
+      {
+        "constraints": [
+          {
+            "operator": "gte",
+            "source_value": ">=11.2.0",
+            "version": "11.2.0"
+          },
+          {
+            "operator": "lt",
+            "source_value": "<11.2.12",
+            "version": "11.2.12"
+          }
+        ],
+        "source_value": ">= 11.2.0 < 11.2.12"
+      },
+      {
+        "constraints": [
+          {
+            "operator": "gte",
+            "source_value": ">=11.3.0",
+            "version": "11.3.0"
+          },
+          {
+            "operator": "lt",
+            "source_value": "<11.3.10",
+            "version": "11.3.10"
+          }
+        ],
+        "source_value": ">= 11.3.0 < 11.3.10"
+      }
+    ],
+    "parse_method": "drupal_security_advisory_constraint_grammar",
+    "source_value": ">= 8.9.0 < 10.4.10 || >= 10.5.0 < 10.5.10 || >= 10.6.0 < 10.6.9 || >= 11.0.0 < 11.1.10 || >= 11.2.0 < 11.2.12 || >= 11.3.0 < 11.3.10",
+    "state": "parsed"
+  },
+  "cves": {
+    "identifiers": [
+      "CVE-2026-9082"
+    ],
+    "inferred": false,
+    "state": "sourced"
+  },
+  "enforcement": {
+    "automatically_blocking": false,
+    "intent": "guidance",
+    "policy_controlled": true
+  },
+  "engine": {
+    "deterministic": true,
+    "language_model_used": false,
+    "name": "drupal-knowledge-security-engine",
+    "version": "0.1"
+  },
+  "fixed_in": {
+    "release_nids": [
+      "3591135",
+      "3591136",
+      "3591137",
+      "3591139",
+      "3591140"
+    ],
+    "state": "stated",
+    "versions": [
+      "10.4.10",
+      "10.5.10",
+      "10.6.9",
+      "11.2.12",
+      "11.3.10"
+    ]
+  },
+  "id": "SA-CORE-2026-004",
+  "is_general_knowledge_record": false,
+  "is_trusted_knowledge": false,
+  "project": {
+    "composer_package": "drupal/core",
+    "drupal_project_nid": "3060",
+    "identity_state": "resolved",
+    "machine_name": "drupal",
+    "project_type": "project_core",
+    "resolution": "authoritative_core_project",
+    "resolved_from": "https://www.drupal.org/api-d7/node/3060.json"
+  },
+  "provenance": {
+    "acquisition_channel": "external_authoritative_source",
+    "ingest_run_id": "security.20260908T185627.fcceb306",
+    "ingested_at": "2026-09-08T18:56:27Z",
+    "ingested_by": {
+      "name": "drupal-knowledge-security-engine",
+      "version": "0.1"
+    },
+    "source_id": "drupal-security-advisories-core",
+    "source_node_id": "3591142",
+    "source_snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+    "source_url": "https://www.drupal.org/sa-core-2026-004"
+  },
+  "record_class": "source_derived_authoritative_record",
+  "remediation": {
+    "authored_by_drupal_knowledge": false,
+    "executable": false,
+    "fixed_versions": [
+      "10.4.10",
+      "10.5.10",
+      "10.6.9",
+      "11.2.12",
+      "11.3.10"
+    ],
+    "source_solution_present": true,
+    "state": "sourced"
+  },
+  "severity": {
+    "inferred": false,
+    "risk_vector": "AC:None/A:None/CI:All/II:All/E:Exploit/TD:Uncommon",
+    "scored_by_drupal_knowledge": false,
+    "source_field": "field_sa_criticality",
+    "state": "sourced"
+  }
+}

@@ -1,0 +1,1045 @@
+[
+  {
+    "id": "drupal-api-11",
+    "title": "Drupal 11 API reference",
+    "url": "https://api.drupal.org/api/drupal/11.x",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "core-api",
+    "role": "Drupal 11 API, class, interface, service, topic, and source-comment reference knowledge.",
+    "collection_strategy": "change-detection",
+    "expected_content_type": "html",
+    "normalization": "html_text",
+    "check_cadence_days": 30,
+    "lifecycle": "active",
+    "content_start": "Welcome to the Drupal API Documentation!",
+    "content_end": "Buggy or inaccurate documentation?",
+    "checked_on": "2026-08-30",
+    "provenance": "Verified canonical api.drupal.org Drupal 11.x API reference. The page states it is generated from comments embedded in Drupal source code.",
+    "version_semantics": {
+      "drupal_core": [
+        "11.x"
+      ],
+      "notes": "API records derived from this source must retain the branch/version context."
+    }
+  },
+  {
+    "id": "drupal-apis-guide",
+    "title": "Drupal APIs guide",
+    "url": "https://www.drupal.org/docs/develop/drupal-apis",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "developer-documentation",
+    "role": "Architecture and API-family documentation for Drupal developers.",
+    "collection_strategy": "change-detection",
+    "check_cadence_days": 30,
+    "lifecycle": "active",
+    "content_start": "Each version of Drupal introduces new APIs and keeps only some of the previous major versions’ APIs.",
+    "content_end": "Related Content",
+    "checked_on": "2026-08-30",
+    "provenance": "Verified current Drupal.org developer guide page. Records from this source still need source-specific review because Drupal.org docs can evolve.",
+    "version_semantics": {
+      "drupal_core": [
+        "version-aware"
+      ],
+      "notes": "The guide explicitly frames Drupal APIs as versioned rather than timeless."
+    }
+  },
+  {
+    "id": "drupal-core-releases",
+    "title": "Drupal core releases",
+    "url": "https://www.drupal.org/project/drupal/releases",
+    "fetch_url": "https://updates.drupal.org/release-history/drupal/current",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "core-releases",
+    "role": "Supported/current releases, security releases, release status, and update feed monitoring.",
+    "collection_strategy": "change-detection",
+    "expected_content_type": "xml",
+    "normalization": "raw_text",
+    "check_cadence_days": 1,
+    "lifecycle": "active",
+    "checked_on": "2026-08-30",
+    "provenance": "Verified Drupal.org project release page and official update status XML endpoint for machine-readable release history.",
+    "version_semantics": {
+      "drupal_core": [
+        "release-history",
+        "supported-branches",
+        "insecure",
+        "unsupported"
+      ],
+      "notes": "Do not hard-code the current stable version; release state is watched knowledge."
+    },
+    "discovery": {
+      "role": "evidence_source",
+      "extraction": "project_release_xml",
+      "independence_group": "drupal-org-core-release-process",
+      "derived_from": null,
+      "max_items": 40,
+      "component": {
+        "type": "core",
+        "name": "drupal",
+        "package": "drupal/core"
+      }
+    }
+  },
+  {
+    "id": "drupal-core-change-record-policy",
+    "title": "Drupal core change-record policy",
+    "url": "https://www.drupal.org/about/core/policies/core-change-policies/change-records",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "change-records",
+    "role": "Defines the purpose and governance of Drupal core change records.",
+    "collection_strategy": "change-detection",
+    "check_cadence_days": 30,
+    "lifecycle": "active",
+    "content_start": "This policy explains when to add a change record to an issue.",
+    "content_end": "Related Content",
+    "checked_on": "2026-08-30",
+    "provenance": "Verified Drupal.org core change policy page. It states change records are the official record of release branch and release version.",
+    "version_semantics": {
+      "drupal_core": [
+        "branch",
+        "introduced-version"
+      ],
+      "notes": "Use this as provenance for preserving introduced branch/version in knowledge records."
+    }
+  },
+  {
+    "id": "drupal-core-change-records",
+    "title": "Drupal core change records",
+    "url": "https://www.drupal.org/list-changes/drupal",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "change-records",
+    "role": "New APIs, deprecations, removals, and behavior changes with introduced branches and versions.",
+    "collection_strategy": "change-detection",
+    "check_cadence_days": 7,
+    "lifecycle": "active",
+    "content_start": "Introduced in branch/version",
+    "content_end": "Pages",
+    "checked_on": "2026-08-30",
+    "provenance": "Verified Drupal.org core change-record listing. The table exposes Introduced in branch/version.",
+    "version_semantics": {
+      "drupal_core": [
+        "introduced-branch",
+        "introduced-version",
+        "deprecated",
+        "removed"
+      ],
+      "notes": "Records derived from this source must retain introduced branch/version and publication status."
+    }
+  },
+  {
+    "id": "drupal-security-core",
+    "title": "Security advisories for Drupal core",
+    "url": "https://www.drupal.org/security/core",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "security",
+    "role": "SA-CORE vulnerabilities, affected versions, fixed versions, mitigations, and CVEs.",
+    "collection_strategy": "change-detection",
+    "check_cadence_days": 1,
+    "lifecycle": "active",
+    "content_start": "Security advisories for Drupal core",
+    "content_end": "Pages",
+    "checked_on": "2026-08-30",
+    "provenance": "Verified dedicated Drupal.org core security advisory stream.",
+    "version_semantics": {
+      "drupal_core": [
+        "affected-version-ranges",
+        "fixed-versions"
+      ],
+      "notes": "Security records must preserve affected/fixed constraints and mitigation text."
+    }
+  },
+  {
+    "id": "drupal-security-contrib",
+    "title": "Security advisories for contributed projects",
+    "url": "https://www.drupal.org/security/contrib",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "security",
+    "role": "SA-CONTRIB vulnerabilities for Drupal.org contributed modules, themes, and installation profiles.",
+    "collection_strategy": "change-detection",
+    "check_cadence_days": 1,
+    "lifecycle": "active",
+    "content_start": "Security advisories for contributed projects",
+    "content_end": "Pages",
+    "checked_on": "2026-08-30",
+    "provenance": "Verified dedicated Drupal.org contributed-project security advisory stream.",
+    "version_semantics": {
+      "modules": [
+        "affected-version-ranges",
+        "fixed-versions"
+      ],
+      "themes": [
+        "affected-version-ranges",
+        "fixed-versions"
+      ],
+      "notes": "Contrib advisories do not automatically apply without project evidence that the affected project/version is installed."
+    }
+  },
+  {
+    "id": "drupal-security-psa",
+    "title": "Drupal Security Team public service announcements",
+    "url": "https://www.drupal.org/security/psa",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "security",
+    "role": "Security policy, coverage, operational, and ecosystem security announcements.",
+    "collection_strategy": "change-detection",
+    "expected_content_type": "html",
+    "normalization": "html_text",
+    "check_cadence_days": 1,
+    "lifecycle": "active",
+    "content_start": "Security public service announcements",
+    "content_end": "Pages",
+    "checked_on": "2026-08-30",
+    "provenance": "Verified dedicated Drupal.org PSA stream separate from SA-CORE and SA-CONTRIB.",
+    "version_semantics": {
+      "drupal_core": [
+        "policy-periods",
+        "support-windows"
+      ],
+      "notes": "PSAs may affect policies and operational guidance; they are not automatically vulnerability records."
+    }
+  },
+  {
+    "id": "drupal-secure-code",
+    "title": "Writing secure code for Drupal",
+    "url": "https://www.drupal.org/docs/administering-a-drupal-site/security-in-drupal/writing-secure-code-for-drupal",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "secure-development",
+    "role": "Canonical secure-development practices for Drupal module/theme/site code.",
+    "collection_strategy": "change-detection",
+    "check_cadence_days": 30,
+    "lifecycle": "active",
+    "content_start": "Know about a security issue? Please",
+    "content_end": "Related Content",
+    "checked_on": "2026-08-30",
+    "provenance": "Verified current Drupal.org security documentation page for writing secure code.",
+    "version_semantics": {
+      "drupal_core": [
+        "current-documentation"
+      ],
+      "notes": "Actionable blocking security rules still require record-level review before any consumer may enforce them."
+    }
+  },
+  {
+    "id": "drupal-coding-standards-project",
+    "title": "Drupal Coding Standards project",
+    "url": "https://www.drupal.org/project/coding_standards",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "coding-standards",
+    "role": "Provenance for the standards project, current standards location, and standards change process.",
+    "collection_strategy": "change-detection",
+    "check_cadence_days": 30,
+    "lifecycle": "active",
+    "content_start": "The Drupal Coding Standards",
+    "content_end": "Project information",
+    "checked_on": "2026-08-30",
+    "provenance": "Verified Drupal.org Coding Standards project page. It links to the current GitLab Pages standards and states obsolete Drupal.org guide pages are deprecated.",
+    "version_semantics": {
+      "drupal_core": [
+        "always-current"
+      ],
+      "notes": "Use this for provenance, not as a replacement for the current standards pages."
+    }
+  },
+  {
+    "id": "drupal-coding-standards-current",
+    "title": "Drupal Coding Standards",
+    "url": "https://project.pages.drupalcode.org/coding_standards/",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "coding-standards",
+    "role": "Current canonical Drupal coding standards for PHP, documentation, CSS, JavaScript, SQL, Twig, markup, YAML, Composer, accessibility, and spelling.",
+    "collection_strategy": "change-detection",
+    "check_cadence_days": 30,
+    "lifecycle": "active",
+    "content_start": "The Drupal coding standards apply to code within Drupal and its contributed modules. These standards are version-independent and \"always-current\".",
+    "content_end": "Made with",
+    "checked_on": "2026-08-30",
+    "provenance": "Verified GitLab Pages standards site linked from the Drupal.org Coding Standards project page.",
+    "version_semantics": {
+      "drupal_core": [
+        "always-current",
+        "version-independent"
+      ],
+      "notes": "The standards state that all new code should follow the current standards regardless of core version."
+    }
+  },
+  {
+    "id": "drupal-coding-standards-change-records",
+    "title": "Coding Standards change records",
+    "url": "https://www.drupal.org/list-changes/coding_standards",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "coding-standards",
+    "role": "Published change records for changes to Drupal Coding Standards.",
+    "collection_strategy": "change-detection",
+    "check_cadence_days": 7,
+    "lifecycle": "active",
+    "content_start": "Introduced in branch/version",
+    "content_end": "Subscribe with RSS",
+    "checked_on": "2026-08-30",
+    "provenance": "Verified Drupal.org change-record listing for the Coding Standards project.",
+    "version_semantics": {
+      "drupal_core": [
+        "introduced-branch",
+        "introduced-version",
+        "always-current"
+      ],
+      "notes": "Use alongside the current standards pages when standards changes have rollout or version context."
+    }
+  },
+  {
+    "id": "drupal-update-project-release-semantics",
+    "title": "Drupal 11 ProjectRelease value object",
+    "url": "https://api.drupal.org/api/drupal/core%21modules%21update%21src%21ProjectRelease.php/class/ProjectRelease/11.x",
+    "fetch_url": "https://git.drupalcode.org/project/drupal/-/raw/11.4.5/core/modules/update/src/ProjectRelease.php",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "update-status-semantics",
+    "role": "Defines how Drupal maps the Release type term Insecure to ProjectRelease::isInsecure().",
+    "collection_strategy": "change-detection",
+    "check_cadence_days": 90,
+    "lifecycle": "active",
+    "checked_on": "2026-09-07",
+    "provenance": "Official Drupal core source at immutable release tag 11.4.5 on git.drupalcode.org, documented on api.drupal.org for 11.x.",
+    "version_semantics": {
+      "drupal_core": [
+        "11.4.5",
+        "update-module"
+      ],
+      "notes": "Pinned to release tag 11.4.5, the current covered stable release row in the reviewed lifecycle context."
+    }
+  },
+  {
+    "id": "drupal-update-status-security-semantics",
+    "title": "Drupal 11 update status calculation",
+    "url": "https://api.drupal.org/api/drupal/core%21modules%21update%21update.compare.inc/function/update_calculate_project_update_status/11.x",
+    "fetch_url": "https://git.drupalcode.org/project/drupal/-/raw/11.4.5/core/modules/update/update.compare.inc",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "update-status-semantics",
+    "role": "Defines how an installed release with isInsecure() receives UpdateManagerInterface::NOT_SECURE status.",
+    "collection_strategy": "change-detection",
+    "check_cadence_days": 90,
+    "lifecycle": "active",
+    "checked_on": "2026-09-07",
+    "provenance": "Official Drupal core source at immutable release tag 11.4.5 on git.drupalcode.org, documented on api.drupal.org for 11.x.",
+    "version_semantics": {
+      "drupal_core": [
+        "11.4.5",
+        "update-module"
+      ],
+      "notes": "Pinned to release tag 11.4.5, the current covered stable release row in the reviewed lifecycle context."
+    }
+  },
+  {
+    "id": "drupal-update-manager-interface-semantics",
+    "title": "Drupal 11 UpdateManagerInterface status constants",
+    "url": "https://api.drupal.org/api/drupal/core%21modules%21update%21src%21UpdateManagerInterface.php/interface/UpdateManagerInterface/11.x",
+    "fetch_url": "https://git.drupalcode.org/project/drupal/-/raw/11.4.5/core/modules/update/src/UpdateManagerInterface.php",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "update-status-semantics",
+    "role": "Defines the authoritative documented meaning of UpdateManagerInterface::NOT_SECURE.",
+    "collection_strategy": "change-detection",
+    "check_cadence_days": 90,
+    "lifecycle": "active",
+    "checked_on": "2026-09-07",
+    "provenance": "Official Drupal core source at immutable release tag 11.4.5 on git.drupalcode.org, documented on api.drupal.org for 11.x.",
+    "version_semantics": {
+      "drupal_core": [
+        "11.4.5",
+        "update-module"
+      ],
+      "notes": "Pinned to release tag 11.4.5, the current covered stable release row in the reviewed lifecycle context."
+    }
+  },
+  {
+    "id": "drupal-contrib-token-releases",
+    "title": "Token module release history",
+    "url": "https://www.drupal.org/project/token/releases",
+    "fetch_url": "https://updates.drupal.org/release-history/token/current",
+    "trust": "ecosystem",
+    "enabled": true,
+    "category": "contrib-releases",
+    "role": "Upstream contributed-project release metadata used as ecosystem discovery evidence, not as authoritative Drupal truth.",
+    "collection_strategy": "change-detection",
+    "expected_content_type": "xml",
+    "normalization": "raw_text",
+    "check_cadence_days": 7,
+    "lifecycle": "active",
+    "checked_on": "2026-09-08",
+    "provenance": "Verified public update-status release-history endpoint for the contributed Token project. Maintainer-published project metadata, distinct from Drupal core release authority.",
+    "version_semantics": {
+      "drupal_core": [
+        "core_compatibility"
+      ],
+      "notes": "Release scope is read from the release's own version and core_compatibility fields and must never be widened beyond them."
+    },
+    "discovery": {
+      "role": "signal_source",
+      "extraction": "project_release_xml",
+      "signal_kind": "project-release",
+      "independence_group": "drupal-org-project-token",
+      "derived_from": null,
+      "max_items": 5,
+      "expected_refresh_days": 30,
+      "component": {
+        "type": "module",
+        "name": "token",
+        "package": "drupal/token"
+      }
+    }
+  },
+  {
+    "id": "drupal-contrib-pathauto-releases",
+    "title": "Pathauto module release history",
+    "url": "https://www.drupal.org/project/pathauto/releases",
+    "fetch_url": "https://updates.drupal.org/release-history/pathauto/current",
+    "trust": "ecosystem",
+    "enabled": true,
+    "category": "contrib-releases",
+    "role": "Upstream contributed-project release metadata used as ecosystem discovery evidence, not as authoritative Drupal truth.",
+    "collection_strategy": "change-detection",
+    "expected_content_type": "xml",
+    "normalization": "raw_text",
+    "check_cadence_days": 7,
+    "lifecycle": "active",
+    "checked_on": "2026-09-08",
+    "provenance": "Verified public update-status release-history endpoint for the contributed Pathauto project. Maintained independently of the Token project, so it is a separate evidence origin.",
+    "version_semantics": {
+      "drupal_core": [
+        "core_compatibility"
+      ],
+      "notes": "Release scope is read from the release's own version and core_compatibility fields and must never be widened beyond them."
+    },
+    "discovery": {
+      "role": "signal_source",
+      "extraction": "project_release_xml",
+      "signal_kind": "project-release",
+      "independence_group": "drupal-org-project-pathauto",
+      "derived_from": null,
+      "max_items": 5,
+      "expected_refresh_days": 30,
+      "component": {
+        "type": "module",
+        "name": "pathauto",
+        "package": "drupal/pathauto"
+      }
+    }
+  },
+  {
+    "id": "drupal-security-advisories-core",
+    "title": "Drupal core security advisories (structured)",
+    "url": "https://www.drupal.org/security/core",
+    "fetch_url": "https://www.drupal.org/api-d7/node.json?type=sa&field_project=3060&sort=created&direction=DESC&limit=20",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "security",
+    "role": "Structured SA-CORE advisories from the Drupal.org node API, carrying affected-version expressions, published risk vectors, CVEs and fixed releases.",
+    "collection_strategy": "change-detection",
+    "expected_content_type": "json",
+    "normalization": "raw_text",
+    "check_cadence_days": 1,
+    "lifecycle": "active",
+    "checked_on": "2026-09-08",
+    "provenance": "Verified Drupal.org api-d7 node endpoint filtered to the Drupal core project node (3060). Authored by the Drupal Security Team; the same advisories the human SA-CORE listing presents.",
+    "version_semantics": {
+      "drupal_core": [
+        "affected-versions",
+        "fixed-in"
+      ],
+      "notes": "Affected versions are the advisory's own Composer-style expression and must never be widened or re-derived."
+    },
+    "security": {
+      "role": "advisory_feed",
+      "advisory_kind": "core",
+      "identifier_source": "canonical_advisory_url_path",
+      "severity_field": "field_sa_criticality",
+      "affected_versions_field": "field_affected_versions",
+      "cve_field": "field_sa_cve"
+    }
+  },
+  {
+    "id": "drupal-security-advisories-recent",
+    "title": "Drupal security advisories, most recent (structured)",
+    "url": "https://www.drupal.org/security/contrib",
+    "fetch_url": "https://www.drupal.org/api-d7/node.json?type=sa&sort=created&direction=DESC&limit=20",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "security",
+    "role": "Structured most-recent Drupal Security Team advisories from the Drupal.org node API, predominantly SA-CONTRIB, carrying affected-version expressions, published risk vectors, CVEs and fixed releases.",
+    "collection_strategy": "change-detection",
+    "expected_content_type": "json",
+    "normalization": "raw_text",
+    "check_cadence_days": 1,
+    "lifecycle": "active",
+    "checked_on": "2026-09-08",
+    "provenance": "Verified Drupal.org api-d7 node endpoint for the most recent security advisories across all projects. Each advisory's core/contrib classification comes from its own canonical advisory URL path, and its project identity from the authoritative project node it references.",
+    "version_semantics": {
+      "drupal_core": [
+        "affected-versions",
+        "fixed-in"
+      ],
+      "notes": "Affected versions are the advisory's own Composer-style expression and must never be widened or re-derived."
+    },
+    "security": {
+      "role": "advisory_feed",
+      "advisory_kind": "mixed",
+      "identifier_source": "canonical_advisory_url_path",
+      "severity_field": "field_sa_criticality",
+      "affected_versions_field": "field_affected_versions",
+      "cve_field": "field_sa_cve"
+    }
+  },
+  {
+    "id": "drupal-upgrade-process-overview",
+    "title": "Drupal upgrade process overview",
+    "url": "https://www.drupal.org/docs/upgrading-drupal/upgrading-drupal/upgrade-process-overview",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "upgrade-process",
+    "role": "Official statement of which major-version transitions exist and that a major version cannot be skipped.",
+    "collection_strategy": "change-detection",
+    "check_cadence_days": 30,
+    "lifecycle": "active",
+    "content_start": "There are certain considerations to be aware of, when doing a major version upgrade.",
+    "content_end": "Help improve this page",
+    "checked_on": "2026-09-08",
+    "provenance": "Verified Drupal.org upgrading guide. States explicitly that a major version cannot be skipped and that consecutive-major Update API paths are the reason.",
+    "version_semantics": {
+      "drupal_core": [
+        "major-transition",
+        "consecutive-majors-only"
+      ],
+      "notes": "Transition support is read from this page as source text. Never infer that an unlisted transition is supported."
+    },
+    "upgrade": {
+      "role": "upgrade_authority",
+      "authority_kind": "transition_policy",
+      "declares": [
+        "major_transition_sequence",
+        "skip_major_prohibited"
+      ]
+    }
+  },
+  {
+    "id": "drupal-upgrade-9-to-10",
+    "title": "How to upgrade from Drupal 9 to Drupal 10",
+    "url": "https://www.drupal.org/docs/upgrading-drupal/upgrading-from-drupal-8-or-later/how-to-upgrade-from-drupal-9-to-drupal-10",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "upgrade-transition",
+    "role": "Official requirements for the Drupal 9 to Drupal 10 transition: minimum source minor, contrib compatibility, Composer constraint change and removed core extensions.",
+    "collection_strategy": "change-detection",
+    "check_cadence_days": 30,
+    "lifecycle": "active",
+    "content_start": "Ensure your hosting environment matches the",
+    "content_end": "Help improve this page",
+    "checked_on": "2026-09-08",
+    "provenance": "Verified Drupal.org upgrade guide for 9 to 10. States 'Update to Drupal 9.4.x or 9.5.x (if not already on that version)' and the drupal/core-recommended:^10 constraint change.",
+    "version_semantics": {
+      "drupal_core": [
+        "minimum-source-version",
+        "target-major",
+        "removed-extensions"
+      ],
+      "notes": "Minimum source version is read from this page. It is a requirement of the transition, not a recommendation."
+    },
+    "upgrade": {
+      "role": "upgrade_authority",
+      "authority_kind": "transition_requirements",
+      "from_major": "9",
+      "to_major": "10",
+      "declares": [
+        "minimum_source_version",
+        "composer_constraint_change",
+        "removed_core_extensions",
+        "contrib_compatibility_required"
+      ]
+    }
+  },
+  {
+    "id": "drupal-upgrade-10-to-11",
+    "title": "How to upgrade from Drupal 10 to Drupal 11",
+    "url": "https://www.drupal.org/docs/upgrading-drupal/upgrading-drupal/how-to-upgrade-from-drupal-10-to-drupal-11",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "upgrade-transition",
+    "role": "Official requirements for the Drupal 10 to Drupal 11 transition: minimum source minor, PHP floor, Composer constraint change and removed core extensions.",
+    "collection_strategy": "change-detection",
+    "check_cadence_days": 30,
+    "lifecycle": "active",
+    "content_start": "Target version:",
+    "content_end": "Help improve this page",
+    "checked_on": "2026-09-08",
+    "provenance": "Verified Drupal.org upgrade guide for 10 to 11. States 'Site must be running Drupal 10.3.0 or later' and 'PHP: 8.3.0 or later'.",
+    "version_semantics": {
+      "drupal_core": [
+        "minimum-source-version",
+        "target-major",
+        "removed-extensions"
+      ],
+      "php": [
+        "minimum-platform-version"
+      ],
+      "notes": "Both the minimum source version and the PHP floor are requirements of the transition, read from the page rather than derived."
+    },
+    "upgrade": {
+      "role": "upgrade_authority",
+      "authority_kind": "transition_requirements",
+      "from_major": "10",
+      "to_major": "11",
+      "declares": [
+        "minimum_source_version",
+        "php_minimum",
+        "composer_constraint_change",
+        "removed_core_extensions",
+        "contrib_compatibility_required"
+      ]
+    }
+  },
+  {
+    "id": "drupal-upgrade-11-to-12",
+    "title": "How to upgrade from Drupal 11 to Drupal 12",
+    "url": "https://www.drupal.org/docs/upgrading-drupal/upgrading-drupal/how-to-upgrade-from-drupal-11-to-drupal-12",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "upgrade-transition",
+    "role": "Official requirements for the Drupal 11 to Drupal 12 transition. Published while Drupal 12 is unreleased, so parts of it are explicitly unsettled.",
+    "collection_strategy": "change-detection",
+    "check_cadence_days": 30,
+    "lifecycle": "active",
+    "content_start": "Target version:",
+    "content_end": "Help improve this page",
+    "checked_on": "2026-09-08",
+    "provenance": "Verified Drupal.org upgrade guide for 11 to 12. The page states it is a work in progress prior to the Drupal 12 release and carries TBA fields, which is preserved rather than resolved.",
+    "version_semantics": {
+      "drupal_core": [
+        "minimum-source-version",
+        "target-major"
+      ],
+      "php": [
+        "minimum-platform-version"
+      ],
+      "notes": "A field this page states as TBA is unknown. It must never be filled in from the release feed or from any other transition."
+    },
+    "upgrade": {
+      "role": "upgrade_authority",
+      "authority_kind": "transition_requirements",
+      "from_major": "11",
+      "to_major": "12",
+      "declares": [
+        "minimum_source_version",
+        "php_minimum",
+        "composer_constraint_change"
+      ]
+    }
+  },
+  {
+    "id": "drupal-php-requirements",
+    "title": "Drupal PHP requirements",
+    "url": "https://www.drupal.org/docs/getting-started/system-requirements/php-requirements",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "platform-requirements",
+    "role": "Official supported PHP versions per Drupal core minor, used as the platform dimension of upgrade compatibility.",
+    "collection_strategy": "change-detection",
+    "check_cadence_days": 30,
+    "lifecycle": "active",
+    "content_start": "Some individual modules may have specific requirements for PHP extensions and configurations beyond those listed below, so, always check the documentation for the extension as well.",
+    "content_end": "Help improve this page",
+    "checked_on": "2026-09-08",
+    "provenance": "Verified Drupal.org system requirements page. Publishes a PHP-version by Drupal-minor support matrix.",
+    "version_semantics": {
+      "php": [
+        "supported-version-matrix"
+      ],
+      "notes": "The matrix is per Drupal minor. A PHP floor for one minor is never widened to the whole major."
+    },
+    "upgrade": {
+      "role": "upgrade_authority",
+      "authority_kind": "platform_requirements",
+      "declares": [
+        "php_supported_matrix"
+      ]
+    }
+  },
+  {
+    "id": "drupal-api-deprecated-9-p0",
+    "title": "Drupal 9 deprecated API index, page 0",
+    "url": "https://api.drupal.org/api/drupal/deprecated/9",
+    "fetch_url": "https://api.drupal.org/api/drupal/deprecated/9?page=0",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "api-lifecycle",
+    "role": "Official api.drupal.org index of every Drupal 9 symbol carrying a @deprecated annotation, with the version it was deprecated in, the version it is removed from, and the replacement the annotation states.",
+    "collection_strategy": "change-detection",
+    "expected_content_type": "html",
+    "normalization": "raw_text",
+    "check_cadence_days": 30,
+    "lifecycle": "active",
+    "checked_on": "2026-09-09",
+    "provenance": "Verified api.drupal.org deprecated-symbol index generated from Drupal core source @deprecated annotations. The index paginates at 50 rows; this source is one page of it, and the five registered pages together are the whole Drupal 9 deprecation surface.",
+    "version_semantics": {
+      "drupal_core": [
+        "deprecated-version",
+        "removed-version",
+        "replacement"
+      ],
+      "notes": "The annotation states exact x.y.z versions. A symbol deprecated in 9.3.0 is not deprecated in 9.2.0, and is not removed until the stated removal version. Neither boundary may be widened to its major."
+    },
+    "api_lifecycle": {
+      "role": "api_lifecycle_authority",
+      "authority_kind": "core_deprecation_index",
+      "source_branch": "9",
+      "page": 0,
+      "page_size": 50,
+      "index_complete_for_branch": true,
+      "declares": [
+        "symbol",
+        "deprecated_version",
+        "removed_version",
+        "replacement",
+        "symbol_kind"
+      ]
+    }
+  },
+  {
+    "id": "drupal-api-deprecated-9-p1",
+    "title": "Drupal 9 deprecated API index, page 1",
+    "url": "https://api.drupal.org/api/drupal/deprecated/9",
+    "fetch_url": "https://api.drupal.org/api/drupal/deprecated/9?page=1",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "api-lifecycle",
+    "role": "Official api.drupal.org index of every Drupal 9 symbol carrying a @deprecated annotation, with the version it was deprecated in, the version it is removed from, and the replacement the annotation states.",
+    "collection_strategy": "change-detection",
+    "expected_content_type": "html",
+    "normalization": "raw_text",
+    "check_cadence_days": 30,
+    "lifecycle": "active",
+    "checked_on": "2026-09-09",
+    "provenance": "Verified api.drupal.org deprecated-symbol index generated from Drupal core source @deprecated annotations. The index paginates at 50 rows; this source is one page of it, and the five registered pages together are the whole Drupal 9 deprecation surface.",
+    "version_semantics": {
+      "drupal_core": [
+        "deprecated-version",
+        "removed-version",
+        "replacement"
+      ],
+      "notes": "The annotation states exact x.y.z versions. A symbol deprecated in 9.3.0 is not deprecated in 9.2.0, and is not removed until the stated removal version. Neither boundary may be widened to its major."
+    },
+    "api_lifecycle": {
+      "role": "api_lifecycle_authority",
+      "authority_kind": "core_deprecation_index",
+      "source_branch": "9",
+      "page": 1,
+      "page_size": 50,
+      "index_complete_for_branch": true,
+      "declares": [
+        "symbol",
+        "deprecated_version",
+        "removed_version",
+        "replacement",
+        "symbol_kind"
+      ]
+    }
+  },
+  {
+    "id": "drupal-api-deprecated-9-p2",
+    "title": "Drupal 9 deprecated API index, page 2",
+    "url": "https://api.drupal.org/api/drupal/deprecated/9",
+    "fetch_url": "https://api.drupal.org/api/drupal/deprecated/9?page=2",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "api-lifecycle",
+    "role": "Official api.drupal.org index of every Drupal 9 symbol carrying a @deprecated annotation, with the version it was deprecated in, the version it is removed from, and the replacement the annotation states.",
+    "collection_strategy": "change-detection",
+    "expected_content_type": "html",
+    "normalization": "raw_text",
+    "check_cadence_days": 30,
+    "lifecycle": "active",
+    "checked_on": "2026-09-09",
+    "provenance": "Verified api.drupal.org deprecated-symbol index generated from Drupal core source @deprecated annotations. The index paginates at 50 rows; this source is one page of it, and the five registered pages together are the whole Drupal 9 deprecation surface.",
+    "version_semantics": {
+      "drupal_core": [
+        "deprecated-version",
+        "removed-version",
+        "replacement"
+      ],
+      "notes": "The annotation states exact x.y.z versions. A symbol deprecated in 9.3.0 is not deprecated in 9.2.0, and is not removed until the stated removal version. Neither boundary may be widened to its major."
+    },
+    "api_lifecycle": {
+      "role": "api_lifecycle_authority",
+      "authority_kind": "core_deprecation_index",
+      "source_branch": "9",
+      "page": 2,
+      "page_size": 50,
+      "index_complete_for_branch": true,
+      "declares": [
+        "symbol",
+        "deprecated_version",
+        "removed_version",
+        "replacement",
+        "symbol_kind"
+      ]
+    }
+  },
+  {
+    "id": "drupal-api-deprecated-9-p3",
+    "title": "Drupal 9 deprecated API index, page 3",
+    "url": "https://api.drupal.org/api/drupal/deprecated/9",
+    "fetch_url": "https://api.drupal.org/api/drupal/deprecated/9?page=3",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "api-lifecycle",
+    "role": "Official api.drupal.org index of every Drupal 9 symbol carrying a @deprecated annotation, with the version it was deprecated in, the version it is removed from, and the replacement the annotation states.",
+    "collection_strategy": "change-detection",
+    "expected_content_type": "html",
+    "normalization": "raw_text",
+    "check_cadence_days": 30,
+    "lifecycle": "active",
+    "checked_on": "2026-09-09",
+    "provenance": "Verified api.drupal.org deprecated-symbol index generated from Drupal core source @deprecated annotations. The index paginates at 50 rows; this source is one page of it, and the five registered pages together are the whole Drupal 9 deprecation surface.",
+    "version_semantics": {
+      "drupal_core": [
+        "deprecated-version",
+        "removed-version",
+        "replacement"
+      ],
+      "notes": "The annotation states exact x.y.z versions. A symbol deprecated in 9.3.0 is not deprecated in 9.2.0, and is not removed until the stated removal version. Neither boundary may be widened to its major."
+    },
+    "api_lifecycle": {
+      "role": "api_lifecycle_authority",
+      "authority_kind": "core_deprecation_index",
+      "source_branch": "9",
+      "page": 3,
+      "page_size": 50,
+      "index_complete_for_branch": true,
+      "declares": [
+        "symbol",
+        "deprecated_version",
+        "removed_version",
+        "replacement",
+        "symbol_kind"
+      ]
+    }
+  },
+  {
+    "id": "drupal-api-deprecated-9-p4",
+    "title": "Drupal 9 deprecated API index, page 4",
+    "url": "https://api.drupal.org/api/drupal/deprecated/9",
+    "fetch_url": "https://api.drupal.org/api/drupal/deprecated/9?page=4",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "api-lifecycle",
+    "role": "Official api.drupal.org index of every Drupal 9 symbol carrying a @deprecated annotation, with the version it was deprecated in, the version it is removed from, and the replacement the annotation states.",
+    "collection_strategy": "change-detection",
+    "expected_content_type": "html",
+    "normalization": "raw_text",
+    "check_cadence_days": 30,
+    "lifecycle": "active",
+    "checked_on": "2026-09-09",
+    "provenance": "Verified api.drupal.org deprecated-symbol index generated from Drupal core source @deprecated annotations. The index paginates at 50 rows; this source is one page of it, and the five registered pages together are the whole Drupal 9 deprecation surface.",
+    "version_semantics": {
+      "drupal_core": [
+        "deprecated-version",
+        "removed-version",
+        "replacement"
+      ],
+      "notes": "The annotation states exact x.y.z versions. A symbol deprecated in 9.3.0 is not deprecated in 9.2.0, and is not removed until the stated removal version. Neither boundary may be widened to its major."
+    },
+    "api_lifecycle": {
+      "role": "api_lifecycle_authority",
+      "authority_kind": "core_deprecation_index",
+      "source_branch": "9",
+      "page": 4,
+      "page_size": 50,
+      "index_complete_for_branch": true,
+      "declares": [
+        "symbol",
+        "deprecated_version",
+        "removed_version",
+        "replacement",
+        "symbol_kind"
+      ]
+    }
+  },
+  {
+    "id": "drupal-core-change-notices",
+    "title": "Drupal core change records (structured)",
+    "url": "https://www.drupal.org/list-changes/drupal",
+    "fetch_url": "https://www.drupal.org/api-d7/node.json?type=changenotice&field_project=3060&sort=created&direction=DESC&limit=20",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "change-records",
+    "role": "Structured Drupal core change records from the Drupal.org node API, carrying the branch and version a change was introduced in, its description and its issue links.",
+    "collection_strategy": "change-detection",
+    "expected_content_type": "json",
+    "normalization": "raw_text",
+    "check_cadence_days": 7,
+    "lifecycle": "active",
+    "checked_on": "2026-09-09",
+    "provenance": "Verified Drupal.org api-d7 node endpoint for core change records. Project node 3060 is Drupal core. The endpoint returns the most recent records; the window is bounded by limit and is reported as coverage rather than treated as complete.",
+    "version_semantics": {
+      "drupal_core": [
+        "introduced-branch",
+        "introduced-version"
+      ],
+      "notes": "A change record states the branch and version its change landed in. It is never read as a statement about any other branch."
+    },
+    "api_lifecycle": {
+      "role": "api_lifecycle_authority",
+      "authority_kind": "change_record_feed",
+      "identifier_source": "drupal_org_node_id",
+      "introduced_branch_field": "field_change_to_branch",
+      "introduced_version_field": "field_change_to",
+      "description_field": "field_description",
+      "status_field": "field_change_record_status",
+      "index_complete_for_branch": false,
+      "declares": [
+        "change_record_identity",
+        "introduced_branch",
+        "introduced_version",
+        "category"
+      ]
+    }
+  },
+  {
+    "id": "drupal-trusted-host-settings",
+    "title": "Drupal trusted host settings",
+    "url": "https://www.drupal.org/docs/installing-drupal/trusted-host-settings",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "implementation-guidance",
+    "role": "Official guidance on Drupal's trusted host mechanism and the $settings['trusted_host_patterns'] declaration that enables it.",
+    "collection_strategy": "change-detection",
+    "check_cadence_days": 30,
+    "lifecycle": "active",
+    "content_start": "Drupal 8 and later versions can be configured to use Symfony's trusted host mechanism to prevent HTTP Host header spoofing. To enable the trusted host mechanism, you enable the allowed hosts setting",
+    "content_end": "Help improve this page",
+    "checked_on": "2026-09-09",
+    "provenance": "Verified Drupal.org installation documentation for trusted host settings. It names the exact settings key and states what happens when a request does not match it.",
+    "version_semantics": {
+      "drupal_core": [
+        "8-and-later"
+      ],
+      "notes": "The mechanism is described for Drupal 8 and later. It is never read as guidance for an earlier major."
+    },
+    "implementation_authority": {
+      "role": "implementation_rule_authority",
+      "categories": [
+        "security"
+      ],
+      "declares": [
+        "trusted_host_patterns_setting"
+      ]
+    }
+  },
+  {
+    "id": "drupal-internal-page-cache",
+    "title": "Drupal Internal Page Cache",
+    "url": "https://www.drupal.org/docs/administering-a-drupal-site/internal-page-cache",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "implementation-guidance",
+    "role": "Official description of the Internal Page Cache module, what the page cache maximum age controls, and the deployment contexts in which disabling page caching is deliberate rather than a defect.",
+    "collection_strategy": "change-detection",
+    "check_cadence_days": 30,
+    "lifecycle": "active",
+    "content_start": "Drupal 8 or higher provides an Internal Page Cache module that is recommended for small to medium-sized websites. This core module, which is enabled by default, caches pages for anonymous users. It can be found at",
+    "content_end": "Help improve this page",
+    "checked_on": "2026-09-09",
+    "provenance": "Verified Drupal.org performance documentation. It states that the maximum-age setting governs browser and proxy caching, that it is ignored by the internal page cache itself, and that some sites disable page caching on purpose.",
+    "version_semantics": {
+      "drupal_core": [
+        "8-and-later"
+      ],
+      "notes": "The page describes behaviour for Drupal 8 and later. Whether a value is appropriate depends on deployment context the page names explicitly."
+    },
+    "implementation_authority": {
+      "role": "implementation_rule_authority",
+      "categories": [
+        "performance"
+      ],
+      "declares": [
+        "page_cache_maximum_age",
+        "context_dependent_disabling"
+      ]
+    }
+  },
+  {
+    "id": "drupal-cache-tags",
+    "title": "Drupal cache tags",
+    "url": "https://www.drupal.org/docs/develop/drupal-apis/cache-api/cache-tags",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "implementation-guidance",
+    "role": "Official Cache API documentation for cache tags, the declarative dependency mechanism a cacheable Drupal response is expected to carry.",
+    "collection_strategy": "change-detection",
+    "check_cadence_days": 30,
+    "lifecycle": "active",
+    "content_start": "Cache tags describe dependencies on data managed by Drupal",
+    "content_end": "Help improve this page",
+    "checked_on": "2026-09-09",
+    "provenance": "Verified Drupal.org Cache API documentation for cache tags. Used as authority for what a cache strategy means, not as a claim about any project's runtime performance.",
+    "version_semantics": {
+      "drupal_core": [
+        "8-and-later"
+      ],
+      "notes": "Cache tags are a Drupal 8-and-later API and are read as such."
+    },
+    "implementation_authority": {
+      "role": "implementation_rule_authority",
+      "categories": [
+        "performance"
+      ],
+      "declares": [
+        "cache_tag_semantics"
+      ]
+    }
+  },
+  {
+    "id": "drupal-default-settings-php",
+    "title": "Drupal default.settings.php",
+    "url": "https://api.drupal.org/api/drupal/sites%21default%21default.settings.php/11",
+    "trust": "authoritative",
+    "enabled": true,
+    "category": "implementation-guidance",
+    "role": "Drupal core's own annotated default settings file, which documents the purpose and expected value of settings such as update_free_access and trusted_host_patterns.",
+    "collection_strategy": "change-detection",
+    "check_cadence_days": 30,
+    "lifecycle": "active",
+    "content_start": "<?php",
+    "content_end": "Search drupal 11.x",
+    "checked_on": "2026-09-09",
+    "provenance": "Verified api.drupal.org rendering of Drupal core's sites/default/default.settings.php. Core source with its canonical comments, which is the authority for what a settings key is for.",
+    "version_semantics": {
+      "drupal_core": [
+        "11"
+      ],
+      "notes": "This is the Drupal 11 branch of the file. A settings key's documented meaning is read for that branch and is never widened to another major."
+    },
+    "implementation_authority": {
+      "role": "implementation_rule_authority",
+      "categories": [
+        "security",
+        "configuration_quality"
+      ],
+      "declares": [
+        "update_free_access_setting",
+        "trusted_host_patterns_setting",
+        "config_sync_directory_setting"
+      ]
+    }
+  }
+]

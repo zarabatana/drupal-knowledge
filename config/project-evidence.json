@@ -1,0 +1,127 @@
+{
+  "config_id": "drupal-project-evidence",
+  "schema_version": "0.1",
+  "purpose": "Bounds what the project-evidence layer observes. Everything the evidence engine reads, refuses to read, or redacts is declared here rather than hardcoded, so an evidence set can be audited against the rules that produced it.",
+  "configuration": {
+    "object_identity": {
+      "semantics": "A file directly inside an exported Drupal config root whose name ends in .yml is one config object, named by its filename. A YAML file elsewhere is not a Drupal config object and is never treated as one.",
+      "enumeration": "complete_for_selected_config_root"
+    },
+    "observed_keys": {
+      "semantics": "Key paths whose exported value is recorded as evidence. The list is bounded and declared: a key outside it is not observed, and its absence from an evidence set says nothing about the project.",
+      "entries": [
+        {
+          "object": "automated_cron.settings",
+          "keys": [
+            "interval"
+          ]
+        },
+        {
+          "object": "system.file",
+          "keys": [
+            "allow_insecure_uploads"
+          ]
+        },
+        {
+          "object": "system.logging",
+          "keys": [
+            "error_level"
+          ]
+        },
+        {
+          "object": "system.performance",
+          "keys": [
+            "css.preprocess",
+            "js.preprocess",
+            "cache.page.max_age"
+          ]
+        },
+        {
+          "object": "system.theme",
+          "keys": [
+            "default",
+            "admin"
+          ]
+        },
+        {
+          "object": "update.settings",
+          "keys": [
+            "check.interval_days",
+            "notification.emails"
+          ]
+        },
+        {
+          "object": "user.settings",
+          "keys": [
+            "register",
+            "verify_mail"
+          ]
+        },
+        {
+          "object": "views.settings",
+          "keys": [
+            "ui.show.sql_query.enabled",
+            "ui.show.performance_statistics"
+          ]
+        }
+      ],
+      "notes": "system.site is deliberately absent: its page.403 and page.404 keys are numeric in YAML, which the safe parser refuses, and its name and mail identify the customer."
+    },
+    "excluded_keys": {
+      "semantics": "Keys carrying no project meaning, or carrying values that must never be persisted.",
+      "entries": [
+        "_core.default_config_hash",
+        "uuid"
+      ]
+    }
+  },
+  "settings_php": {
+    "semantics": "Assignments of the form $settings['key'] = <scalar literal>; read from a lexed token stream. PHP is never executed, and a value that is not a scalar literal is recorded as unsupported rather than guessed.",
+    "files": [
+      "sites/default/settings.php",
+      "web/sites/default/settings.php",
+      "docroot/sites/default/settings.php"
+    ],
+    "observed_keys": [
+      "update_free_access",
+      "config_sync_directory",
+      "trusted_host_patterns",
+      "entity_update_backup",
+      "enable_html5_validation",
+      "rebuild_access",
+      "skip_permissions_hardening",
+      "state_cache"
+    ]
+  },
+  "redaction": {
+    "semantics": "A key or value matching any pattern here is never recorded. Redaction happens before an evidence record is built, so a secret cannot reach an evidence set even in a diagnostic.",
+    "key_patterns": [
+      "password",
+      "passwd",
+      "secret",
+      "token",
+      "api_key",
+      "apikey",
+      "private_key",
+      "hash_salt",
+      "salt",
+      "credential",
+      "auth",
+      "cert",
+      "dsn"
+    ],
+    "forbidden_value_patterns": [
+      "^/Users/",
+      "^/home/",
+      "^/root/",
+      "^[A-Za-z]:\\\\",
+      "^mysql://",
+      "^pgsql://",
+      "^postgres://"
+    ]
+  },
+  "notes": [
+    "The declared key sets are deliberately small. Prompt 12 is the evidence layer; the rules that consume these keys belong to later work.",
+    "Only paths relative to the project root are ever recorded."
+  ]
+}

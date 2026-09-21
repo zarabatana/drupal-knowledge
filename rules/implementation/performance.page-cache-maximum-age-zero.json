@@ -1,0 +1,70 @@
+{
+  "authority": {
+    "sources": [
+      {
+        "quotes": [
+          "If you use a reverse caching proxy (such as Vinyl, previously known as Varnish as of 2026) or a CDN, you could safely disable this module.",
+          "headers. This setting is ignored by the Internal Page Cache itself, which caches pages permanently until invalidation unless they carry an"
+        ],
+        "snapshot_sha256": "sha256:46b0c8959410ff7f48b88216fd8ddeb4a0d794b1ced02919c1707b8048663b68",
+        "source_id": "drupal-internal-page-cache"
+      }
+    ],
+    "summary": "Drupal's Internal Page Cache documentation describes what the maximum-age value controls, and names the deployment contexts in which disabling page caching is deliberate rather than a defect."
+  },
+  "category": "performance",
+  "check": {
+    "condition": {
+      "assertion": "config.exported_value",
+      "id": "page-cache-max-age-zero",
+      "operator": "evidence_matches",
+      "subject": "system.performance:cache.page.max_age",
+      "value": 0
+    },
+    "kind": "evidence_condition"
+  },
+  "context_requirements": [
+    {
+      "assertion": "project.reverse_proxy",
+      "subject": "deployment",
+      "why_it_matters": "The documentation states a site behind a reverse caching proxy or CDN can disable page caching safely. Drupal Knowledge observes no deployment topology, so whether this value is deliberate here is unknown."
+    }
+  ],
+  "finding": {
+    "assertion": "Exported configuration sets the browser and proxy cache maximum age to 0.",
+    "conclusion": {
+      "candidate": "Browsers and proxies are told not to cache pages, and the deployment context that would decide whether that is intended was not observed.",
+      "confirmed": "Browsers and proxies are told not to cache pages. Whether that is right depends on deployment context this analysis cannot see.",
+      "default": "No conclusion is drawn.",
+      "not_observed": "The exported configuration does not set this value to 0.",
+      "unknown": "The exported value could not be established."
+    },
+    "enforcement_intent": "guidance",
+    "evidence_explanation": "system.performance:cache.page.max_age was observed as 0 in the exported configuration.",
+    "human_title": "Browser and proxy caching is switched off in exported configuration",
+    "limitations": [
+      "This is exported configuration, not the runtime effective value.",
+      "No runtime performance was measured; this is a configuration observation only."
+    ],
+    "remediation": {
+      "applied": false,
+      "basis": "drupal_documentation",
+      "guidance": "Review whether a non-zero browser and proxy cache maximum age is appropriate for this deployment. If a reverse caching proxy or CDN fronts the site, the documentation notes that disabling page caching there can be deliberate."
+    },
+    "severity_state": "not_established"
+  },
+  "review": {
+    "authority": "reviewed against the pinned Internal Page Cache documentation snapshot",
+    "reviewed_on": "2026-09-09",
+    "status": "reviewed"
+  },
+  "rule_contract_version": "0.1",
+  "rule_id": "performance.page-cache-maximum-age-zero",
+  "scope": {
+    "component": "system.performance",
+    "drupal_core_minimum_major": 8,
+    "notes": "The Internal Page Cache module and this setting exist in Drupal 8 and later."
+  },
+  "summary": "The exported system.performance configuration sets the browser and proxy cache maximum age to 0, so Drupal tells browsers and proxies not to store the page.",
+  "title": "Browser and proxy cache maximum age is zero"
+}

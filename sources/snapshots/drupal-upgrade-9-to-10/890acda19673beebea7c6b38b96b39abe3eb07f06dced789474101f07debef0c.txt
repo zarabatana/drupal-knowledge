@@ -1,0 +1,196 @@
+Ensure your hosting environment matches the
+platform requirements of Drupal 10
+.
+Update to 9.4 or 9.5
+Update
+to Drupal 9.4.x or 9.5.x (if not already on that version). If any
+modules or themes have been removed
+you may use the respective contributed project instead.
+Manage altered scaffold files
+All Drupal core files should be expected to change, when upgrading from Drupal 9 to Drupal 10, including files such as
+.htaccess
+. If you have
+altered scaffold files
+, take note of your changes and make sure they have been reapplied after upgrading. As an example, Drupal 10.1.x introduced
+CSS and JavaScript aggregation performance improvements
+, and important changes to the
+.htaccess
+file.
+Resolve deprecated Drupal core modules and themes
+Several Drupal core modules and themes are deprecated in Drupal 9 and removed from Drupal 10. See
+Deprecated and obsolete extensions.
+This includes the Seven admin theme and CKEditor module (for CKEditor 4).
+One option is to stop using the deprecated modules in Drupal 9. For example, if you are using Bartik as the default theme and CKEditor, then switch to Olivero and CKEditor 5 before upgrading to Drupal 10.
+The other option is to install the contributed versions of the extensions when you upgrade the code to Drupal 10, before running database updates.
+2. Update contributed modules and projects
+Update all contributed modules/projects and ensure they are Drupal 10 compatible. They will also still be compatible with your Drupal 9.4+ site.
+Check compatibility with Upgrade Status and update contributed modules
+Use
+Upgrade Status
+to check the compatibility of contributed modules/projects. Alternate between running the Upgrade Status report and updating modules via Composer until the report finds that all contributed modules/projects are compatible with Drupal 10. The easiest way to update a module to the latest compatible version is to use Composer
+require
+instead of
+update
+. This will ignore the current version constraints set for the module/project in
+composer.json
+. For example:
+composer require drupal/webform:^6.2 --no-update
+If Upgrade Status reports that your site has contributed modules which are not yet compatible with Drupal 10 there are a few possible paths forward:
+The Upgrade Status module is very helpful but not perfect. Manually check modules identified as needing help from the maintainers. In some cases there are Drupal 10 compatible versions that Upgrade Status may not identify. Require the module via Composer to update to the latest compatible version. For example:
+composer require drupal/webform:^6.2 --no-update
+Look in the module/project issue queue for a patch that will make it compatible. You can use that patch to update the project.
+Refer to this documentation
+for more details on how to handle this situation, as Composer will not read version constraints which are only patched locally.
+If there is no Drupal 10 compatible version or patch, cooperate with module/project maintainers and offer help where possible to make sure a compatible version is released. Check the module's project pages for Drupal 10 plans as most key modules provide that information. Read
+Help contributed modules prepare for Drupal 9
+for more tips.
+Resolve modules that are only compatible with Drupal 10
+Some modules may only be compatible with Drupal 10. In this case, it is possible to modify your composer.json file to allow either the version required by D9 or the new version required by D10 by using Composer's
+logical OR operator
+. This will simplify the upgrade process and avoid dependency issues when following the Drupal upgrade steps. For example:
+In composer.json, you would modify
+"drupal/remove_http_headers": "^1.0"
+to
+"drupal/remove_http_headers": "^1.0 || ^2.0"
+Remove Drupal Console project
+Some tools, such as
+Drupal Console
+(
+drupal/console
+) are not
+Drupal 10 compatible
+and should be removed:
+composer remove drupal/console --no-update
+Uninstall Upgrade Status
+Once Upgrade Status reports that all contributed module/projects are compatible with Drupal 10, and if Upgrade Status also reports that all of your custom modules and themes are also compatible, uninstall the Upgrade Status module and then remove it:
+drush pm-uninstall upgrade_status -y composer remove drupal/upgrade_status --no-update
+Remove Drush before update?
+Some users prefer to remove Drush altogether before updating, and re-install after the update. This prevents issues with updating both Drupal core and Drush at the same time, which can happen.
+3. Update custom modules and themes with Upgrade Status and Drupal Rector
+If you are using custom modules and themes, you must replace code that was deprecated in Drupal 9 and removed in Drupal 10. You should
+update them using Upgrade Status and Drupal Rector
+, prior to attempting to upgrade.
+4. Upgrade to Drupal 10
+Perform the following steps from your Drupal site's root (where
+composer.json
+lives).
+The following shows the instructions for updating from Drupal 9.5.x to Drupal 10.x. You may change the version numbers according to your needs, e.g. if you want to upgrade to a specific Drupal version.
+Temporarily add write access to protected files and directories:
+chmod 777 web/sites/default chmod 666 web/sites/default/*settings.php chmod 666 web/sites/default/*services.yml
+Update the required versions of the
+core-recommended
+packages. We use
+--no-update
+to avoid a chicken-and-egg problem with mutual dependencies:
+composer require 'drupal/core-recommended:^10' 'drupal/core-composer-scaffold:^10' 'drupal/core-project-message:^10' --no-update
+If you have a separate requirement for
+drupal/core
+in your composer.json, remove it. This dependency is included in
+drupal/core-recommended
+and may cause installation problems if listed separately.
+composer remove drupal/core --no-update
+If you have
+drupal/core-dev
+installed:
+composer require 'drupal/core-dev:^10' --dev --no-update
+If you have Drush installed (check
+recommended version
+):
+composer require 'drush/drush:^12' --no-update
+Now, test perform the update to the code itself with the
+--dry-run
+option:
+composer update --dry-run
+If you encounter any errors, see
+Common issues
+below. Resume the process when the errors are resolved.
+Alternatively, if you do NOT want to update all your modules, but just core and dependencies, you can run this command:
+composer update "drupal/core-*" drush/drush --with-all-dependencies --dry-run
+Now, actually perform the update to the code itself:
+composer update
+Once you have been able to run
+composer update
+without errors, verify that you can also run
+composer install
+. This will ensure that any other developers on the project, and/or any deploy scripts you may have will not throw errors when installing the new dependencies.
+composer install
+If all is well you will see no errors and you will also see "Nothing to install, update or remove".
+Once you have been able to run
+composer install
+without errors, run any pending database updates, in case a new version of a module needs to update the database, either by visiting /update.php in the browser, or with Drush:
+drush updatedb
+If there are any errors, you will need to resolve them and rerun
+drush updatedb
+until all updates run successfully.
+When complete, restore read-only access to the sites/default directory:
+chmod 755 web/sites/default chmod 644 web/sites/default/*settings.php chmod 644 web/sites/default/*services.yml
+Common issues
+"Your requirements could not be resolved to an installable set of packages"
+If
+composer update
+fails with a "Your requirements could not be resolved to an installable set of packages" error, you may need to update other dependencies of your project in order to update Drupal core.
+You may run this single command to re-require all of your dependencies, resetting the version constraints currently set in composer.json:
+composer show --no-dev --direct --name-only | xargs composer require --no-update
+Alternatively, run
+composer show --no-dev --direct --name-only | xargs
+to print out a list of your dependencies. If any of your dependencies are only compatible with the current release of Drupal core via an RC or alpha version, add the RC or alpha version specification to your list (e.g.
+drupal/native_lazy_loading:@RC
+or
+drupal/menu_breadcrumb:@alpha
+). You can also make any other necessary version specifications at this time (e.g. add the explicit
+:^10
+specification to Drupal core packages if Drupal 11 has already been released but you are trying to update to Drupal 10). Now run
+composer require --update-with-dependencies
+with your whole list of dependencies appended to the command.
+Now attempt to run
+composer update
+again. If requirements still cannot be resolved, and if the dependency is a Drupal module, visit the project page for the module on drupal.org, identify which version is compatible with Drupal 10 and explicitly require that version. For example:
+composer require drupal/MODULE_NAME:^2.0.0-rc1 --no-update
+You may find that a module does not have a Drupal 10 compatible version yet. If so, see "If a module does not have a Drupal 10 compatible version" below.
+You may also find it helpful to see all the dependencies that prevent the upgrade to Drupal 10 by running:
+composer why-not drupal/core ^10
+Continue alternating between running
+composer update
+and explicitly requiring a Drupal 10 compatible module version until you no longer see the "Your requirements could not be resolved to an installable set of packages" error. At this point you should see Composer remove the old versions of your dependencies and download the new versions.
+Composer patches do not reapply
+If you use Composer to apply patches (using
+cweagans/composer-patches
+), you may find that some patches no longer apply. If the patch has been committed to Drupal core or a contrib module, and the issue closed, remove it from
+composer.json
+. If a new patch has been created for the later core version, update
+composer.json
+with the new patch link.
+Lock file is not up to date with the latest changes
+A
+Warning: The lock file is not up to date with the latest changes in composer.json
+message can sometimes be fixed by deleting
+composer.lock
+file and
+vendor
+folder, and running the
+composer update
+command again.
+5. Post upgrade tasks
+Export configuration
+If you are using
+configuration management
+, you will need to export and commit configuration. Upgrading Drupal core can cause configuration to be overridden. This may happen due to database updates or because YML properties are now ordered differently. Before committing, run
+git diff
+and verify that the changes will not break/remove functionality.
+Run PHPCS
+If you use
+PHPCS
+, the ruleset that defines Drupal coding standards may have changed. Run PHPCS, apply any automated fixes and manually make any recommended fixes.
+Run tests
+If you have custom tests (PHPUnit, Behat etc.) for your site, run them to verify that site functionality has not been broken.
+Manually test site functionality
+Start tailing Drupal watchdog error log:
+drush watchdog:tail
+Load your site in a browser and thoroughly test for expected functionality. After every page load, look at the output of watchdog for errors and/or warnings. Fix them as needed.
+Errors may also be revealed by running database updates:
+drush updatedb -y
+Or by running cron:
+drush cron
+Resources
+Major Drupal upgrades with composer
+Upgrading Drupal 9.5 to Drupal 10—Still not easy

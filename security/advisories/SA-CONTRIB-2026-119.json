@@ -1,0 +1,119 @@
+{
+  "advisory": {
+    "advisory_number": "119",
+    "canonical_url": "https://www.drupal.org/sa-contrib-2026-119",
+    "description_present": true,
+    "is_psa": false,
+    "kind": "contrib",
+    "published_at": "2026-09-02T16:26:41Z",
+    "title": "AI (Artificial Intelligence) - Moderately critical - Cross site scripting - SA-CONTRIB-2026-119",
+    "updated_at": "2026-09-02T16:26:41Z",
+    "vulnerability_type": "Cross site scripting",
+    "year": "2026"
+  },
+  "advisory_contract_version": "0.1",
+  "affected_versions": {
+    "clauses": [
+      {
+        "constraints": [
+          {
+            "operator": "lt",
+            "source_value": "<1.3.13",
+            "version": "1.3.13"
+          }
+        ],
+        "source_value": "<1.3.13"
+      },
+      {
+        "constraints": [
+          {
+            "operator": "gte",
+            "source_value": ">=1.4.0",
+            "version": "1.4.0"
+          },
+          {
+            "operator": "lt",
+            "source_value": "<1.4.8",
+            "version": "1.4.8"
+          }
+        ],
+        "source_value": ">=1.4.0 <1.4.8"
+      }
+    ],
+    "parse_method": "drupal_security_advisory_constraint_grammar",
+    "source_value": "<1.3.13 || >=1.4.0 <1.4.8",
+    "state": "parsed"
+  },
+  "cves": {
+    "identifiers": [
+      "CVE-2026-84911"
+    ],
+    "inferred": false,
+    "state": "sourced"
+  },
+  "enforcement": {
+    "automatically_blocking": false,
+    "intent": "guidance",
+    "policy_controlled": true
+  },
+  "engine": {
+    "deterministic": true,
+    "language_model_used": false,
+    "name": "drupal-knowledge-security-engine",
+    "version": "0.1"
+  },
+  "fixed_in": {
+    "release_nids": [
+      "3620433",
+      "3620434"
+    ],
+    "state": "stated",
+    "versions": [
+      "1.3.13",
+      "1.4.8"
+    ]
+  },
+  "id": "SA-CONTRIB-2026-119",
+  "is_general_knowledge_record": false,
+  "is_trusted_knowledge": false,
+  "project": {
+    "composer_package": "drupal/ai",
+    "drupal_project_nid": "3346420",
+    "identity_state": "resolved",
+    "machine_name": "ai",
+    "project_type": "project_module",
+    "resolution": "authoritative_project_node",
+    "resolved_from": "https://www.drupal.org/api-d7/node/3346420.json"
+  },
+  "provenance": {
+    "acquisition_channel": "external_authoritative_source",
+    "ingest_run_id": "security.20260908T185627.fcceb306",
+    "ingested_at": "2026-09-08T18:56:27Z",
+    "ingested_by": {
+      "name": "drupal-knowledge-security-engine",
+      "version": "0.1"
+    },
+    "source_id": "drupal-security-advisories-recent",
+    "source_node_id": "3615882",
+    "source_snapshot_sha256": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+    "source_url": "https://www.drupal.org/sa-contrib-2026-119"
+  },
+  "record_class": "source_derived_authoritative_record",
+  "remediation": {
+    "authored_by_drupal_knowledge": false,
+    "executable": false,
+    "fixed_versions": [
+      "1.3.13",
+      "1.4.8"
+    ],
+    "source_solution_present": true,
+    "state": "sourced"
+  },
+  "severity": {
+    "inferred": false,
+    "risk_vector": "AC:Complex/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Uncommon",
+    "scored_by_drupal_knowledge": false,
+    "source_field": "field_sa_criticality",
+    "state": "sourced"
+  }
+}

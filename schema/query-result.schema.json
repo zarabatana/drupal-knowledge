@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/query-result-v0.1.json",
+  "title": "Drupal Knowledge community query result",
+  "description": "The stable envelope every community query returns. Each result declares the Drupal Knowledge domain it came from and a trust class in plain language, so a consumer that reads only the headline still cannot mistake an untrusted discovery signal for a reviewed rule. Warnings and unknowns are part of the contract rather than an afterthought: a query that could not settle something must say so where a reader will see it.",
+  "type": "object",
+  "required": [
+    "query_contract_version",
+    "query_interface_version",
+    "query",
+    "query_type",
+    "dataset",
+    "result_count",
+    "results",
+    "warnings",
+    "unknowns",
+    "provenance",
+    "generated_at"
+  ],
+  "properties": {
+    "query_contract_version": {"type": "string"},
+    "query_interface_version": {"type": "string"},
+    "query": {"type": "string"},
+    "query_type": {
+      "enum": ["status", "search", "show", "list", "explain", "provenance", "project_inspect"]
+    },
+    "dataset": {
+      "description": "Which release and record set produced this answer, so a result can be reproduced.",
+      "type": "object",
+      "required": ["drupal_knowledge_version", "record_counts", "records_digest"],
+      "properties": {
+        "drupal_knowledge_version": {"type": "string"},
+        "record_counts": {"type": "object"},
+        "records_digest": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "result_count": {"type": "integer", "minimum": 0},
+    "results": {"type": "array", "items": {"$ref": "#/$defs/result"}},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "unknowns": {
+      "description": "What this query could not settle. Never omitted to make an answer look cleaner.",
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "provenance": {"type": "array"},
+    "sections": {"type": "object"},
+    "generated_at": {"type": "string"}
+  },
+  "$defs": {
+    "result": {
+      "type": "object",
+      "required": ["domain", "id", "title", "summary", "trust", "detail", "provenance", "unknowns"],
+      "properties": {
+        "domain": {
+          "description": "The Drupal Knowledge domain this result came from. Domains are never collapsed into one another.",
+          "enum": [
+            "trusted_knowledge",
+            "advisory",
+            "api_lifecycle",
+            "change_record",
+            "implementation_rule",
+            "project_evidence",
+            "finding",
+            "implementation_finding",
+            "migration_work",
+            "upgrade_assessment",
+            "remediation_plan",
+            "solved_case",
+            "discovery_signal"
+          ]
+        },
+        "id": {"type": "string"},
+        "title": {"type": "string"},
+        "summary": {"type": "string"},
+        "trust": {
+          "description": "How far this result may be trusted, in words a Drupal developer can act on rather than an internal enum.",
+          "type": "object",
+          "required": ["class", "authority", "record_type", "trusted_knowledge", "universal_drupal_rule", "explanation"],
+          "properties": {
+            "class": {
+              "enum": [
+                "reviewed_drupal_knowledge",
+                "source_derived_authoritative",
+                "reviewed_implementation_rule",
+                "project_observation",
+                "derived_finding",
+                "proven_case_context_only",
+                "untrusted_discovery_signal"
+              ]
+            },
+            "authority": {"type": "string"},
+            "record_type": {"type": "string"},
+            "trusted_knowledge": {"type": "boolean"},
+            "universal_drupal_rule": {"type": "boolean"},
+            "explanation": {"type": "string"},
+            "review_status": {"type": ["string", "null"]},
+            "enforcement": {"type": ["string", "null"]}
+          }
+        },
+        "detail": {"type": "object"},
+        "provenance": {"type": "array"},
+        "unknowns": {"type": "array", "items": {"type": "string"}},
+        "match": {
+          "description": "Why this result matched, and how strongly. Ranking is deterministic and structured identity always outranks prose.",
+          "type": "object",
+          "required": ["rank", "reason"],
+          "properties": {
+            "rank": {"type": "integer"},
+            "reason": {"type": "string"}
+          },
+          "additionalProperties": false
+        },
+        "explanation": {"type": "object"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

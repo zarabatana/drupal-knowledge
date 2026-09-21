@@ -1,0 +1,25 @@
+{
+  "acquisition": {
+    "acquisition_channel": "external_authoritative_source",
+    "check_cadence_days": 30,
+    "consecutive_failures": 0,
+    "engine_name": "drupal-knowledge-acquisition-engine",
+    "engine_version": "0.1",
+    "last_attempt_at": "2026-09-09T00:33:38Z",
+    "last_attempt_run_id": "run.20260909T003338.7a5f987b",
+    "last_attempt_status": "first_observation",
+    "last_error": null,
+    "last_success_at": "2026-09-09T00:33:38Z",
+    "last_success_run_id": "run.20260909T003338.7a5f987b",
+    "previous_snapshot_sha256": null,
+    "review_candidate_id": null
+  },
+  "content_length": 10027,
+  "content_sha256": "sha256:11e4f4be0c3b46177c5f8fa6ad0fa7d76bba3fd08f61d9b06252b930b0f7f407",
+  "etag": "\"1788913556-1\"",
+  "fetch_url": "https://www.drupal.org/docs/installing-drupal/trusted-host-settings",
+  "last_changed_at": "2026-09-09T00:33:38Z",
+  "last_modified": "Wed, 09 Sep 2026 00:25:56 GMT",
+  "source_id": "drupal-trusted-host-settings",
+  "url": "https://www.drupal.org/docs/installing-drupal/trusted-host-settings"
+}

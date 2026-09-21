@@ -1,0 +1,158 @@
+# Drupal Knowledge Community validation.
+#
+# Every job runs the released validation and test suites over the Community
+# tree, on standard GitHub-hosted Linux runners, with the Python standard
+# library and nothing else. No job acquires sources, publishes anything,
+# needs a credential, or reaches a private service: the pipeline proves the
+# repository, it never changes it.
+#
+# The commands are listed one by one rather than hidden behind a runner so
+# that the tests can read this file and check that the gates they document
+# are the gates that run.
+
+name: community
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  PYTHONDONTWRITEBYTECODE: "1"
+
+jobs:
+  knowledge:
+    name: knowledge, sources, cases and contracts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/dk.py knowledge
+      - run: python3 scripts/test_reviewed_knowledge_sources_baselined.py
+      - run: python3 scripts/test_unreviewed_cannot_block.py
+      - run: python3 scripts/test_no_premature_blocking_authority.py
+      - run: python3 scripts/test_knowledge_truth_independent_of_product_tier.py
+      - run: python3 scripts/test_coverage_reflects_actual_knowledge.py
+      - run: python3 scripts/test_generated_knowledge_current.py
+      - run: python3 scripts/dk.py sources --enabled
+      - run: python3 scripts/test_snapshot_hash_integrity.py
+      - run: python3 scripts/test_normalized_output_helper_non_intrusive.py
+      - run: python3 scripts/test_source_change_does_not_mutate_knowledge.py
+      - run: python3 scripts/dk.py cases
+      - run: python3 scripts/test_solved_case_not_universal_rule.py
+      - run: python3 scripts/test_unknown_is_not_false.py
+      - run: python3 scripts/dk.py validate
+      - run: python3 scripts/dk.py release-lifecycle validate
+      - run: python3 scripts/test_release_lifecycle_context.py
+      - run: python3 scripts/test_release_lifecycle_evaluator.py
+
+  engines:
+    name: analysis engines
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/test_project_analysis_schema.py
+      - run: python3 scripts/test_drupal_yaml_parser_safety.py
+      - run: python3 scripts/test_project_analyzer_foundation.py
+      - run: python3 scripts/test_analyzer_knowledge_guard_future_safe.py
+      - run: python3 scripts/test_applicability_resolution_schema.py
+      - run: python3 scripts/test_applicability_resolver_foundation.py
+      - run: python3 scripts/test_finding_model_boundaries.py
+      - run: python3 scripts/test_lifecycle_finding_eligibility.py
+      - run: python3 scripts/test_lifecycle_finding_contract.py
+      - run: python3 scripts/test_insecure_semantic_authority.py
+      - run: python3 scripts/test_finding_runtime.py
+      - run: python3 scripts/test_solved_case_capture.py
+      - run: python3 scripts/test_acquisition_engine.py
+      - run: python3 scripts/test_acquisition_review_candidates.py
+      - run: python3 scripts/test_acquisition_failure_model.py
+      - run: python3 scripts/dk.py source-status
+      - run: python3 scripts/test_discovery_signals.py
+      - run: python3 scripts/test_corroboration_engine.py
+      - run: python3 scripts/test_discovery_review_boundary.py
+      - run: python3 scripts/dk.py signals list
+      - run: python3 scripts/dk.py corroboration list
+      - run: python3 scripts/test_recurrence_analysis.py
+      - run: python3 scripts/test_generalization_boundaries.py
+      - run: python3 scripts/dk.py recurrence list
+      - run: python3 scripts/dk.py generalizations list
+      - run: python3 scripts/test_security_affected_versions.py
+      - run: python3 scripts/test_security_advisory_contract.py
+      - run: python3 scripts/test_security_applicability.py
+      - run: python3 scripts/dk.py security-advisories list --kind core
+      - run: python3 scripts/dk.py security-advisories list --kind contrib
+      - run: python3 scripts/test_security_remediation.py
+      - run: python3 scripts/test_upgrade_compatibility.py
+      - run: python3 scripts/test_upgrade_authority_boundaries.py
+      - run: python3 scripts/test_api_migration.py
+      - run: python3 scripts/test_php_lexer_boundaries.py
+      - run: python3 scripts/dk.py api-lifecycle coverage
+      - run: python3 scripts/test_project_evidence.py
+      - run: python3 scripts/test_implementation_findings.py
+
+  community-cli:
+    name: community CLI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/test_community_query.py
+      - run: python3 scripts/dk.py --help
+      - run: python3 scripts/dk.py version --json
+      - run: python3 scripts/dk.py status --json
+
+  public-site:
+    name: public website
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/test_public_site.py
+      - run: python3 scripts/dk.py public-site build --commit "$GITHUB_SHA"
+      - run: python3 -c "import sys; sys.path.insert(0, 'scripts'); import dk_core, dk_public; print(*dk_public.validate_public_dataset(dk_core.ROOT), sep='\n')"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: public-site-dist
+          path: public-site/dist
+          retention-days: 14
+
+  public-api:
+    name: public knowledge API
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/test_public_api.py
+      - run: python3 scripts/dk.py api routes
+      - run: python3 scripts/dk.py api build
+      - run: python3 -c "import sys; sys.path.insert(0, 'scripts'); import dk_core, dk_api; print(*dk_api.validate_api_artifacts(dk_core.ROOT), sep='\n')"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: public-api
+          path: public-api/
+          retention-days: 14
+
+  boundary:
+    name: community boundary and supply chain
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 scripts/test_community_boundary.py
+      - run: python3 scripts/test_supply_chain_security.py
+      - run: python3 -m compileall -q scripts collectors dk

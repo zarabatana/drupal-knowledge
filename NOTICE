@@ -1,0 +1,28 @@
+Drupal Knowledge Community
+Maintained by Zarabatana
+https://github.com/zarabatana/drupal-knowledge
+
+The original Drupal Knowledge source code, schemas, tests, fixtures and
+documentation in this repository are licensed under the Apache License,
+Version 2.0. See LICENSE. No copyright owner is asserted for that original
+material at this release; it is published as Drupal Knowledge Community,
+maintained by Zarabatana.
+
+The Apache-2.0 licence covers the original material only. It does not
+relicense anything acquired from a third party. This repository
+redistributes material fetched from registered sources under those sources'
+own terms, with attribution, and keeps it under those terms. The complete
+per-file inventory, with the documentary evidence for each licence, is
+THIRD_PARTY_LICENSES.json (machine-readable) and THIRD_PARTY_NOTICES.md:
+
+  - Content of the Drupal.org website, including its release-history
+    service (updates.drupal.org): Creative Commons Attribution-ShareAlike
+    2.0, attributed to Drupal.org and its original contributors.
+  - Drupal core source code and api.drupal.org documentation generated
+    from it, and content of Drupal.org project Git repositories
+    (drupalcode.org): GNU General Public License version 2 or later,
+    attributed to Drupal — the original authors.
+
+Drupal is a registered trademark of Dries Buytaert. Drupal Knowledge is an
+independent project and is not affiliated with, endorsed by or sponsored by
+the Drupal Association or Dries Buytaert. See TRADEMARK.md.

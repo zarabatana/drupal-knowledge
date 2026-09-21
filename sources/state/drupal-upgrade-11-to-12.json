@@ -1,0 +1,25 @@
+{
+  "acquisition": {
+    "acquisition_channel": "external_authoritative_source",
+    "check_cadence_days": 30,
+    "consecutive_failures": 0,
+    "engine_name": "drupal-knowledge-acquisition-engine",
+    "engine_version": "0.1",
+    "last_attempt_at": "2026-09-08T21:12:45Z",
+    "last_attempt_run_id": "run.20260908T211245.9a8ff103",
+    "last_attempt_status": "first_observation",
+    "last_error": null,
+    "last_success_at": "2026-09-08T21:12:45Z",
+    "last_success_run_id": "run.20260908T211245.9a8ff103",
+    "previous_snapshot_sha256": null,
+    "review_candidate_id": null
+  },
+  "content_length": 4916,
+  "content_sha256": "sha256:9138db90ff9288c683ef29d6be46c5e611fddf3fdde519b81449fce5604e5ac2",
+  "etag": "\"1788901803-1\"",
+  "fetch_url": "https://www.drupal.org/docs/upgrading-drupal/upgrading-drupal/how-to-upgrade-from-drupal-11-to-drupal-12",
+  "last_changed_at": "2026-09-08T21:12:45Z",
+  "last_modified": "Tue, 08 Sep 2026 21:10:03 GMT",
+  "source_id": "drupal-upgrade-11-to-12",
+  "url": "https://www.drupal.org/docs/upgrading-drupal/upgrading-drupal/how-to-upgrade-from-drupal-11-to-drupal-12"
+}

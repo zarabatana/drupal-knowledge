@@ -1,0 +1,121 @@
+Drupal 8 and later versions can be configured to use Symfony's trusted host mechanism to prevent HTTP Host header spoofing. To enable the trusted host mechanism, you enable the allowed hosts setting
+$settings['trusted_host_patterns']
+in the
+settings.php
+file (the
+sites/default/settings.php
+file inside the
+webroot
+directory). This should be an array of regular expression patterns, without delimiters, representing the hosts you would like to allow. If the Host header of the HTTP request does not match the defined patterns, Drupal will respond with HTTP 400 with a message
+The provided host name is not valid for this server.
+In the example below, the site is only allowed to run from
+www.example.com
+.
+$settings['trusted_host_patterns'] = [ '^www\.example\.com$', ];
+About regular expressions used in this example:
+^ matches the start of the string
+$ matches the end of the string
+. matches any character. If you want to match a dot, it must be escaped by a backslash as in the example above.
+In PHP, a comment starts with "
+/*
+" and is terminated with "
+*/
+". Make sure that you place this setting
+after
+the terminating "
+*/
+" of the comment that describes the Trusted host configuration.
+If you are running multisite, or if you are running your site from different domain names (e.g. you run your site from example.com and example.org), you should specify all of the host patterns that are allowed by your site. The example below will allow the site to run from all variants of example.com and example.org, with all subdomains included.
+$settings['trusted_host_patterns'] = [ '^example\.com$', '^.+\.example\.com$', '^example\.org$', '^.+\.example\.org$', ];
+Protecting Drupal 7
+There are at least four potential solutions to this problem, though not all are necessary to stop the problem from happening. You should pick and choose as appropriate for your environment. Solutions 3 and 4 also work for Drupal 8+.
+In Drupal 7, trusted host patterns are stored in the $conf array:
+$conf['trusted_host_patterns'] = [ '^www\.example\.com$', ];
+Configure your webserver so that the default page served when an incoming request is something other than your default Drupal installation, such as an error page.
+Configure your webserver to redirect all requests that reach your server
+that are not for the appropriate domain
+to forward to the right domain name.
+Local development environments
+If you're doing development on your local environment, you need to add your localhost (or localhost IP address, 127.0.01 in this example) to trusted host patterns like in the examples below.
+$settings['trusted_host_patterns'] = [ '^localhost$', '127\.0\.0\.1', // Or use preg_quote() to escape the dots and other characters. preg_quote('127.0.0.1'), ];
+Trusted host setting for MAMP
+If
+'^localhost$'
+does not work your MAMP environment, you can try these:
+In MAMP (3.5.2) and a site called 'drupal', you need to define:
+$settings['trusted_host_patterns'] = [ '^drupal$', ];
+On MAMP PRO 6.2 Version for Name MY.local and Document root Mylocal.ch
+$settings['trusted_host_patterns'] = [ '^MY.local$', ];
+Trusted host settings for Lando
+$settings['trusted_host_patterns'] = [ '^'.getenv('LANDO_APP_NAME').'\.lndo\.site$', # lando proxy access // Or use preg_quote() to escape the dots and other characters. '^'.preg_quote(getenv('LANDO_APP_NAME').'.lndo.site').'$', '^localhost$', # localhost access '^'.getenv('LANDO_APP_NAME').'\.localtunnel\.me$', # lando share access '^192\.168\.1\.100$' # LAN IP access ];
+Note: The Lando container has more environment variables that can be used to set the correct database credentials. For that take a look at
+$lando_info=json_decode(getenv('LANDO_INFO'), TRUE);
+or check out
+phpinfo();
+.
+Advanced instructions
+Defining trusted host patterns using an environment variable
+If you have multiple Drupal environments (e.g. DEV, TEST, PROD), you might want to define the trusted host patterns using environment variable:
+$settings['trusted_host_patterns'] = [ '^'.getenv('DRUPAL_TRUSTED_HOST').'$', ];
+You can then define the environment variable "
+DRUPAL_TRUSTED_HOST
+" with your expected domain name using the method of your choice:
+In the Dockerfile of your PHP image:
+ENV DRUPAL_TRUSTED_HOST="www\.example\.com"
+In your docker-compose.yml:
+php: environment: DRUPAL_TRUSTED_HOST: 'www\.example\.com'
+Drupal in Google Cloud Kubernetes cluster
+If you run Drupal in a Google Cloud Kubernetes cluster and
+expose your service to public internet via Google Cloud Ingress
+, the
+service will be associated with a Google Health Check
+. As mentioned in the Google documentation, this health check is different from a Kubernetes liveness or readiness probe because the health check is implemented outside of the cluster. By default, the health check will point to the root path '/' of your site but you can configure it to a path of your choice in the
+service backend config
+.
+The Ingress Health Checks MUST get a HTTP 200 response to the health check probes, otherwise your Ingress will return HTTP 502 to the clients when they try to access your site from the public IP address of the Ingress.
+Assuming that you haven't blocked traffic from Google Health Check system to your backend services
+, you can inspect the logs of the Drupal pod with
+kubectl logs <pod id>
+to see what is the HTTP response code to the Health Check requests. If you observe that the health check probes are coming through to your Drupal pod but they are getting HTTP 400 responses, the issue is most probably in the Drupal trusted host settings described on this page. If you suspect this, you can debug as follows:
+Create a PHP script (which is not bootstrapping Drupal) which writes the HTTP headers of incoming HTTP requests to a text file.
+Configure your Google Health checks to point to this PHP script
+Check the HTTP Host header of the incoming health check requests. Example script can be found below.
+If you find that your Drupal is returning HTTP 400 because the health check probe HTTP requests don't have the expected Host header, you can either whitelist the Hosts in your
+trusted_host_patterns
+or for a better solution,
+configure the Host header of the health checks
+.
+Example script that will write the HTTP headers to a text file:
+<?php class DumpHTTPRequestToFile { public function execute($targetFile) { $data = sprintf( "%s %s %s\n\nHTTP headers:\n", $_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI'], $_SERVER['SERVER_PROTOCOL'] ); foreach ($this->getHeaderList() as $name => $value) { $data .= $name . ': ' . $value . "\n"; } file_put_contents( $targetFile, $data . "\n", FILE_APPEND ); echo("Done!"); } private function getHeaderList() { $headerList = []; foreach ($_SERVER as $name => $value) { if (preg_match('/^HTTP_/',$name)) { // convert HTTP_HEADER_NAME to Header-Name $name = strtr(substr($name,5),'_',' '); $name = ucwords(strtolower($name)); $name = strtr($name,' ','-'); // add to list $headerList[$name] = $value; } } return $headerList; } } (new DumpHTTPRequestToFile)->execute('./dumprequest.txt');
+Background and example scenarios of HTTP Host Header attacks
+Drupal 7 added a new feature into core that is not user facing directly, but is sometimes called
+poor man's cron
+. The feature triggers the periodic tasks of a Drupal site like emptying log files, sending e-mails, and clearing out caches. This feature, when combined with dynamic detection of the "base url" (added in
+Drupal 4.7
+), can lead to some confusing or risky situations. This section is a description of some of those confusing situations that occur with either module or both of them and what you can do to prevent them. The comments below assume some default configurations - above are explanations and configuration examples to prevent these problems.
+Scenario 1: Getting/sending user emails that appear to be for another domain
+To replicate this behavior:
+Point a new domain at the IP of an existing site - let's call the existing site
+http://www.example.com
+and the new name pointed at that IP is
+http://other-site.example.org
+Visit the url:
+http://other-site.example.org/user/password
+Submit a username that is likely to be used on the site.
+The result is that in step 2 the host detection thinks that your site is
+http://other-site.example.org
+and all the tokens for the e-mail like [user:one-time-login-url]that contain links to your site will be changed to use
+http://other-site.example.org
+as the base url. The user who receives this email will see their username and e-mail for example.com are now somehow in use on
+http://other-site.example.org
+, which is usually just confusing. Two bad scenarios could come from this, though:
+In a worst-case scenario could lead to them click on the password reset link which the evil site could then use to login to the site as that user.
+They might enter their username/password into
+http://other-site.example.org
+- a so-called social engineering attack - which could then be used on the main site.
+Scenario 2: Cache entries containing the wrong domain
+A similar problem can occur when a user uses the wrong domain to make a request and that happens to be the request that primes a cache entry with dynamic, fully qualified domains in it. Subsequent visits that retrieve information from that cache will get the wrong domain name. Drupal core's page cache uses the domain as part of the cache ID, preventing this problem, but other caching mechanisms may not be as robust against this problem.
+Scenario 3: Notification mails containing the wrong domain
+Yet another problem can occur on sites that use modules that send e-mails during cron runs. This scenario requires the poor-man's-cron with the dynamic base_url detection. If a user happens to trigger the poor man's cron when there are notifications in the queue by visiting the wrong domain name then notifications will be sent with that incorrect domain. Users will be very confused about why the mail they expect to receive coming from an e-mail address at example.com includes links to the
+http://other-site.example.org
+domain.

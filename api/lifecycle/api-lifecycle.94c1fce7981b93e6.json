@@ -1,0 +1,45 @@
+{
+  "id": "api-lifecycle.94c1fce7981b93e6",
+  "is_general_knowledge_record": false,
+  "is_trusted_knowledge": false,
+  "lifecycle": {
+    "annotation_parsed": true,
+    "changed_version": null,
+    "deprecated_version": "8.2.0",
+    "reason": "Read from the mandated Drupal core @deprecated annotation form.",
+    "removed_version": "10.0.0",
+    "source_annotation": "in drupal:8.2.0 and is removed from drupal:10.0.0. Use $this->assertSession()->responseContains() instead.",
+    "state": "deprecated"
+  },
+  "observed_branch": "9",
+  "provenance": {
+    "acquisition_channel": "external_authoritative_source",
+    "authority_kind": "core_deprecation_index",
+    "ingest_run_id": "api.20260908T231021.6bf7c3e6",
+    "ingested_at": "2026-09-08T23:10:21Z",
+    "ingested_by": {
+      "name": "drupal-knowledge-api-lifecycle-engine",
+      "version": "0.1"
+    },
+    "source_id": "drupal-api-deprecated-9-p0",
+    "source_snapshot_sha256": "sha256:a907598611296099dcb871b719b4476321e94d21c0defa1f45aa4166c2e99607",
+    "source_url": "https://api.drupal.org/api/drupal/deprecated/9"
+  },
+  "record_class": "source_derived_authoritative_api_lifecycle_record",
+  "record_contract_version": "0.1",
+  "replacement": {
+    "semantics": "A replacement is recorded only when the annotation states one. An equivalent API is never inferred.",
+    "state": "stated",
+    "value": "$this->assertSession()->responseContains()"
+  },
+  "symbol": {
+    "class": "Drupal\\FunctionalTests\\AssertLegacyTrait",
+    "core_file": "core/tests/Drupal/FunctionalTests/AssertLegacyTrait.php",
+    "identity_basis": "core_file_path_psr4",
+    "index_name": "AssertLegacyTrait::assertRaw",
+    "kind": "method",
+    "matchable": true,
+    "member": "assertRaw",
+    "qualified_name": "Drupal\\FunctionalTests\\AssertLegacyTrait::assertRaw"
+  }
+}

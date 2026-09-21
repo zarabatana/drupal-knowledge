@@ -1,0 +1,5 @@
+module:
+  should_not_be_seen: 0
+theme:
+  fake: 0
+profile: fake

@@ -1,0 +1,48 @@
+{
+  "id": "drupal.coding-standards.phpcs-coder-tooling",
+  "title": "Approved PHP coding standards map to PHPCS, Coder, or PHP_CodeSniffer work",
+  "summary": "The Drupal Coding Standards process describes how approved PHP standards are handled depending on whether a PHPCS rule exists, needs modification in Coder, or needs new support in Coder or PHP_CodeSniffer.",
+  "kind": "coding-standard",
+  "domains": ["coding-standards", "core"],
+  "severity": "moderate",
+  "review_status": "reviewed",
+  "sources": [
+    {
+      "source_id": "drupal-coding-standards-project",
+      "locator": "When a PHP standard is approved",
+      "title": "Coding Standards project"
+    }
+  ],
+  "version_applicability": {
+    "drupal_core": [
+      {
+        "constraint": "all-new-code",
+        "status": "applicable",
+        "notes": "This is a process and tooling relationship for current Drupal Coding Standards."
+      }
+    ]
+  },
+  "project_applicability": {
+    "requires": ["custom_modules", "custom_themes"],
+    "unknown_result": "guidance_only"
+  },
+  "actions": [
+    "Prefer automated PHPCS/Coder/PHP_CodeSniffer support where a Drupal PHP coding standard has an available rule.",
+    "Track missing or modified rule support separately from the approved standard itself."
+  ],
+  "checks": [
+    "Confirm whether a PHP coding-standard rule is already represented by project tooling before treating it as manually checked only."
+  ],
+  "evidence_requirements": [
+    "Applicable Drupal PHP coding-standard rule",
+    "Project PHPCS/Coder/PHP_CodeSniffer configuration when evaluating a repository"
+  ],
+  "automation_hints": [
+    "Future analyzer profiles can map reviewed coding-standard records to configured Coder or PHP_CodeSniffer rules."
+  ],
+  "enforcement": {
+    "intent": "non_blocking",
+    "rationale": "This record describes tooling provenance; actual coding-standard findings require rule-specific records and project tooling evidence."
+  },
+  "related": ["drupal.coding-standards.current-source"]
+}

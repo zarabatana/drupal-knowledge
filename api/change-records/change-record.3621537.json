@@ -1,0 +1,47 @@
+{
+  "category": {
+    "additional": [],
+    "basis": "source_text_vocabulary_match",
+    "matched_phrase": null,
+    "value": "other"
+  },
+  "change_record": {
+    "canonical_url": "https://www.drupal.org/node/3621537",
+    "created_at": "2026-09-07T19:11:41Z",
+    "introduced_branch": "12.0.x",
+    "introduced_version": "12.0.0",
+    "node_id": "3621537",
+    "published": false,
+    "title": "CSSLint and ESLint configuration files are no longer scaffolded"
+  },
+  "description": {
+    "excerpt": "Drupal 12 no longer provides the following linting configuration files in the web root through Composer scaffolding: .csslintrc .eslintignore .eslintrc.json Drupal core replaced CSSLint with Stylelint in Drupal 8.4.0. The scaffolded CSSLint configuration is obsolete. The scaffolded ESLint configuration extended core’s configuration, but projects still needed to install ESLint and its dependencies themselves. Projects should manage their own linting configuration and dependencies rather than rely on files scaffolded by Drupal core. If your project relies on the scaffolded ESLint configuration, ",
+    "present": true,
+    "text_length": 1167
+  },
+  "id": "change-record.3621537",
+  "is_general_knowledge_record": false,
+  "is_trusted_knowledge": false,
+  "provenance": {
+    "acquisition_channel": "external_authoritative_source",
+    "authority_kind": "change_record_feed",
+    "ingest_run_id": "api.20260908T231021.6bf7c3e6",
+    "ingested_at": "2026-09-08T23:10:21Z",
+    "ingested_by": {
+      "name": "drupal-knowledge-api-lifecycle-engine",
+      "version": "0.1"
+    },
+    "source_id": "drupal-core-change-notices",
+    "source_node_id": "3621537",
+    "source_snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+    "source_url": "https://www.drupal.org/list-changes/drupal"
+  },
+  "record_class": "source_derived_authoritative_api_lifecycle_record",
+  "record_contract_version": "0.1",
+  "symbols": {
+    "extraction": "title_call_syntax_only",
+    "lifecycle_asserted": false,
+    "named_with_call_syntax": [],
+    "semantics": "A change record names symbols. It does not, in this contract, assert their lifecycle; that comes from the deprecation index."
+  }
+}

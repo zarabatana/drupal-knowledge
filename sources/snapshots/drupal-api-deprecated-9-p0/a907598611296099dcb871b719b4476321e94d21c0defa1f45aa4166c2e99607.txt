@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+ <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2360451-17"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "UA-2360451-17", {"groups":"default","anonymize_ip":true,"page_placeholder":"PLACEHOLDER_page_path","allow_ad_personalization_signals":false});</script>
+<meta name="Generator" content="Drupal 11 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="search" title="Drupal API" type="application/opensearchdescription+xml" href="https://api.drupal.org/api/opensearch" />
+<link rel="icon" href="/core/misc/favicon.ico" type="image/png" />
+<link rel="canonical" href="/api/drupal/deprecated/11.x" />
+
+ <title>Deprecated - 9.5.x - drupal | Drupal API</title>
+ <link rel="stylesheet" media="all" href="/sites/default/files/css/css_2GVyNgWK87ahi-6BBzN4MN-N03oRRp0VjREuuaoZYvg.css?delta=0&amp;language=en&amp;theme=bluecheese&amp;include=eJxtzUEOAjEMA8APdbdPQmnrLREpqZIUxO9ZwQmJiw8eyabJuWrDdqgNiuB7T0UW6hVw5C5aSFJVQ262JslOK7TqmILAD3BgbMIe6Vuo9Us1dfdTzhO9MfyvHaoBS_7ycyIXcqQH4-n5k_vQtgRvH6JCwA" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_N1eeLHtDC1C9wK2Sa6NgA6UuQQIfgyTAhjnYDg2bz44.css?delta=1&amp;language=en&amp;theme=bluecheese&amp;include=eJxtzUEOAjEMA8APdbdPQmnrLREpqZIUxO9ZwQmJiw8eyabJuWrDdqgNiuB7T0UW6hVw5C5aSFJVQ262JslOK7TqmILAD3BgbMIe6Vuo9Us1dfdTzhO9MfyvHaoBS_7ycyIXcqQH4-n5k_vQtgRvH6JCwA" />
+
+ 
+ </head>
+ <body class="drupalorg-site-api new-style path-api one-sidebar">
+ <div id="skip-link" tabindex="-1">
+ <a href="#main-content" class="visually-hidden focusable">
+ Skip to main content
+ </a>
+ <a href="#search-block-form" class="visually-hidden focusable skip-link-search">
+ Skip to search
+ </a>
+ </div>
+ <div id="drupalorg-crosssite-gdpr">Can we use first and third party cookies and web beacons to <a href="https://www.drupal.org/terms">understand our audience, and to tailor promotions you see</a>?<br><button class="button yes">Yes, please</button><button class="button no">No, do not track me</button></div>
+ <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+ <div id="nav-header">
+ <div class="menu-nav">
+ <a class="nav-btn" id="nav-open-btn" href="#block-system-main-menu"><img src="/themes/contrib/bluecheese/images/icon-w-menu.svg" alt="Main menu"></a>
+ </div>
+ <nav id="navigation-inner" class="container-12" role="navigation">
+ <div class="region region-navigation">
+ <nav role="navigation" aria-labelledby="block-system-main-menu-menu" id="block-system-main-menu">
+ 
+ <h2 class="visually-hidden" id="block-system-main-menu-menu">Main navigation</h2>
+ 
+
+ <div class="menu-block"><ul class="menu button">
+ <ul>
+ <li>
+ <a href="https://www.drupal.org/home">Go to Drupal.org</a>
+ </li>
+ <li>
+ <a href="/api/drupal/7.x" data-drupal-link-system-path="api/drupal/7.x">Drupal 7</a>
+ </li>
+ <li>
+ <a href="/api/drupal" title="Drupal core 8 and beyond" data-drupal-link-system-path="project/2">Drupal 8+</a>
+ </li>
+ <li>
+ <a href="/api/projects" data-drupal-link-system-path="api/projects">Other projects</a>
+ </li>
+ <li>
+ <a href="http://drupal.org/documentation/develop">Develop for Drupal</a>
+ </li>
+ </ul>
+ 
+
+</ul></div><a class="close-btn" href="#top">Return to content</a>
+ </nav>
+<div id="block-search-form" class="search-api-form block block-search-api-block" data-drupal-selector="search-api-form">
+ <div class="block-inner">
+ 
+ 
+ <div class="content">
+ <form action="/search/api" method="get" id="search-api-form" accept-charset="UTF-8">
+ <div class="js-form-item form-item form-type-search js-form-type-search form-item-keys js-form-item-keys form-no-label">
+ <label for="edit-keys" class="visually-hidden">Search</label>
+ <input title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128" placeholder="" class="form-search" />
+
+ </div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit" type="submit" id="edit-submit" value="Search" class="button js-form-submit form-submit" />
+</div>
+
+</form>
+
+ </div>
+ </div>
+</div>
+
+ </div>
+
+ </nav>
+ </div> 
+ <header id="header" role="banner" class="clearfix">
+ <div id="header-inner" class="container-12 clearfix">
+ <div id="header-left">
+ <div id="site-name"><a href="/"><img src="/sites/default/files/logo.png" alt="Drupal API" />
+</a></div>
+ </div>
+ <div id="header-right">
+ </div>
+ </div>
+ </header> 
+ 
+ <div id="page" class="clearfix">
+ <div id="page-heading">
+ 
+ <div id="page-title-tools" class="container-12 clearfix" role="navigation">
+
+ <div class="page-title-wrapper">
+ </div>
+
+ </div> 
+ 
+ <div class="breadbox"> <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+ <nav role="navigation" aria-labelledby="system-breadcrumb" class="breadcrumb container-12">
+ <span><a href="/api/drupal/9">drupal 9</a></span> </nav>
+</div>
+
+ 
+ 
+ </div> 
+ 
+ <div class="container-12 page-inner"> 
+ <div id="main" role="main">
+ 
+ <div id="content" class="clearfix">
+ 
+ 
+ <div id="content-inner" class="clearfix"> <div class="region region-content">
+ <div data-drupal-messages-fallback class="hidden"></div><div data-drupal-messages>
+ <div role="contentinfo" aria-label="Error message" class="messages messages--error">
+ <div role="alert">
+ 
+ <h2 class="visually-hidden">Error message</h2>
+ 
+ You are browsing documentation for drupal 9.5.x, which is not supported anymore. <a href="/api/drupal/deprecated/11.x">Read the updated version of this page for drupal 11.x (the latest version).</a>
+ 
+ </div>
+ </div>
+ </div>
+
+<div id="block-bluecheese-page-title" class="block block-core">
+ <div class="block-inner">
+ 
+ 
+ <div class="content">
+ 
+ <h1>Deprecated - 9.5.x - drupal</h1>
+
+ </div>
+ </div>
+</div>
+<div class="tabs">
+ <h2 class="visually-hidden">Primary tabs</h2>
+ <ul class="tabs primary clearfix"><li><a href="/api/drupal/deprecated/main" data-drupal-link-system-path="api/drupal/deprecated/main">main</a></li>
+<li><a href="/api/drupal/deprecated/11.x" data-drupal-link-system-path="api/drupal/deprecated/11.x">11.x</a></li>
+<li><a href="/api/drupal/deprecated/10" data-drupal-link-system-path="api/drupal/deprecated/10">10.3.x</a></li>
+<li><a href="/api/drupal/deprecated/9" data-drupal-link-system-path="api/drupal/deprecated/9">9.5.x</a></li>
+<li><a href="/api/drupal/deprecated/8.9.x" data-drupal-link-system-path="api/drupal/deprecated/8.9.x">8.9.x</a></li>
+<li><a href="/api/drupal/deprecated/7.x" data-drupal-link-system-path="api/drupal/deprecated/7.x">7.x</a></li>
+</ul>
+</div>
+<div class="views-element-container"><div class="js-view-dom-id-aed73b534af1276acd0e3f6a9d2d32acba69b61cd4cd26225b6295885c671f37">
+ 
+ 
+ 
+
+ 
+ <form class="views-exposed-form" data-drupal-selector="views-exposed-form-api-listings-block-deprecated" action="/api/drupal/deprecated/9" method="get" id="views-exposed-form-api-listings-block-deprecated" accept-charset="UTF-8">
+ <div class="js-form-item form-item form-type-textfield js-form-type-textfield form-item-object-type js-form-item-object-type">
+ <label for="edit-object-type">Type</label>
+ <input data-drupal-selector="edit-object-type" type="text" id="edit-object-type" name="object_type" value="" size="30" maxlength="128" class="form-text" />
+
+ </div>
+<div class="js-form-item form-item form-type-textfield js-form-type-textfield form-item-deprecated-1 js-form-item-deprecated-1">
+ <label for="edit-deprecated-1">Deprecation message contains</label>
+ <input data-drupal-selector="edit-deprecated-1" type="text" id="edit-deprecated-1" name="deprecated_1" value="" size="30" maxlength="128" class="form-text" />
+
+ </div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit-api-listings" type="submit" id="edit-submit-api-listings" value="Apply" class="button js-form-submit form-submit" />
+</div>
+
+</form>
+
+ 
+
+ <table class="cols-8">
+ <thead>
+ <tr>
+ <th id="view-title-table-column" class="views-field views-field-title" scope="col">Title</th>
+ <th id="view-file-name-table-column" class="views-field views-field-file-name" scope="col">File name</th>
+ <th id="view-deprecated-table-column" class="views-field views-field-deprecated" scope="col">Deprecation</th>
+ <th id="view-object-type-table-column" class="views-field views-field-object-type" scope="col">Type</th>
+ <th id="view-reference-count-table-column" class="views-field views-field-reference-count" scope="col">Direct uses</th>
+ <th id="view-reference-count-1-table-column" class="views-field views-field-reference-count-1" scope="col">Namespaced uses</th>
+ <th id="view-reference-count-2-table-column" class="views-field views-field-reference-count-2" scope="col">Overrides</th>
+ <th id="view-reference-count-3-table-column" class="views-field views-field-reference-count-3" scope="col">Use statements</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21modules%21action%21src%21Plugin%21migrate%21source%21Action.php/class/Action/9">Action</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />modules/<wbr />action/<wbr />src/<wbr />Plugin/<wbr />migrate/<wbr />source/<wbr /><a href="/api/drupal/core%21modules%21action%21src%21Plugin%21migrate%21source%21Action.php/9">Action.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.4.0 and is removed from drupal:10.0.0. Use
+\Drupal\system\Plugin\migrate\source\Action instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">class </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3">1 </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21modules%21block%21tests%21src%21Functional%21AssertBlockAppearsTrait.php/function/AssertBlockAppearsTrait%3A%3AfindBlockInstance/9">AssertBlockAppearsTrait::findBlockInstance</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />modules/<wbr />block/<wbr />tests/<wbr />src/<wbr />Functional/<wbr /><a href="/api/drupal/core%21modules%21block%21tests%21src%21Functional%21AssertBlockAppearsTrait.php/9">AssertBlockAppearsTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.5.0 and is removed from drupal:11.0.0. There is no
+replacement.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21Tests%21AssertHelperTrait.php/trait/AssertHelperTrait/9">AssertHelperTrait</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />Tests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21Tests%21AssertHelperTrait.php/9">AssertHelperTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.2.0 and is removed from drupal:10.0.0. There is no
+replacement.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">trait </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21Tests%21AssertHelperTrait.php/function/AssertHelperTrait%3A%3AcastSafeStrings/9">AssertHelperTrait::castSafeStrings</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />Tests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21Tests%21AssertHelperTrait.php/9">AssertHelperTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.2.0 and is removed from drupal:10.0.0. There is no
+replacement, just use assertEquals in tests.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21KernelTests%21AssertLegacyTrait.php/trait/AssertLegacyTrait/9">AssertLegacyTrait</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />KernelTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21KernelTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.0.0 and is removed from drupal:10.0.0. Use
+PHPUnit&#039;s native assert methods instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">trait </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3">1 </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/trait/AssertLegacyTrait/9">AssertLegacyTrait</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+the methods from \Drupal\Tests\WebAssert instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">trait </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3">2 </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21KernelTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3Aassert/9">AssertLegacyTrait::assert</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />KernelTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21KernelTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.0.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertTrue() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertCacheTag/9">AssertLegacyTrait::assertCacheTag</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;responseHeaderContains() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertElementNotPresent/9">AssertLegacyTrait::assertElementNotPresent</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;elementNotExists() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertElementPresent/9">AssertLegacyTrait::assertElementPresent</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;elementExists() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21KernelTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertEqual/9">AssertLegacyTrait::assertEqual</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />KernelTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21KernelTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.0.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertEquals() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertEscaped/9">AssertLegacyTrait::assertEscaped</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;assertEscaped() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertField/9">AssertLegacyTrait::assertField</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;fieldExists() or
+$this-&gt;assertSession()-&gt;buttonExists() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertFieldById/9">AssertLegacyTrait::assertFieldById</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;fieldExists() or
+$this-&gt;assertSession()-&gt;buttonExists() or
+$this-&gt;assertSession()-&gt;fieldValueEquals() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertFieldByName/9">AssertLegacyTrait::assertFieldByName</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;fieldExists() or
+$this-&gt;assertSession()-&gt;buttonExists() or
+$this-&gt;assertSession()-&gt;fieldValueEquals() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertFieldByXPath/9">AssertLegacyTrait::assertFieldByXPath</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.3.0 and is removed from drupal:10.0.0. Use
+$this-&gt;xpath() instead and check the values directly in the test.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">4 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertFieldChecked/9">AssertLegacyTrait::assertFieldChecked</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;checkboxChecked() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertFieldsByValue/9">AssertLegacyTrait::assertFieldsByValue</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.3.0 and is removed from drupal:10.0.0. Use
+iteration over the fields yourself instead and directly check the values
+in the test.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">3 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertHeader/9">AssertLegacyTrait::assertHeader</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.3.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;responseHeaderEquals() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21KernelTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertIdentical/9">AssertLegacyTrait::assertIdentical</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />KernelTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21KernelTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.0.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSame() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21KernelTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertIdenticalObject/9">AssertLegacyTrait::assertIdenticalObject</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />KernelTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21KernelTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.0.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertEquals() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertLink/9">AssertLegacyTrait::assertLink</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;linkExists() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertLinkByHref/9">AssertLegacyTrait::assertLinkByHref</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;linkByHrefExists() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertNoCacheTag/9">AssertLegacyTrait::assertNoCacheTag</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.4.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;responseHeaderNotContains() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertNoEscaped/9">AssertLegacyTrait::assertNoEscaped</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;assertNoEscaped() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertNoField/9">AssertLegacyTrait::assertNoField</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;fieldNotExists() or
+$this-&gt;assertSession()-&gt;buttonNotExists() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertNoFieldById/9">AssertLegacyTrait::assertNoFieldById</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;fieldNotExists() or
+$this-&gt;assertSession()-&gt;buttonNotExists() or
+$this-&gt;assertSession()-&gt;fieldValueNotEquals() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertNoFieldByName/9">AssertLegacyTrait::assertNoFieldByName</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;fieldNotExists() or
+$this-&gt;assertSession()-&gt;buttonNotExists() or
+$this-&gt;assertSession()-&gt;fieldValueNotEquals() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertNoFieldByXPath/9">AssertLegacyTrait::assertNoFieldByXPath</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.3.0 and is removed from drupal:10.0.0. Use
+$this-&gt;xpath() instead and assert that the result is empty.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">4 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertNoFieldChecked/9">AssertLegacyTrait::assertNoFieldChecked</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;checkboxNotChecked() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertNoLink/9">AssertLegacyTrait::assertNoLink</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;linkNotExists() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertNoLinkByHref/9">AssertLegacyTrait::assertNoLinkByHref</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;linkByHrefNotExists() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertNoOption/9">AssertLegacyTrait::assertNoOption</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;optionNotExists() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertNoPattern/9">AssertLegacyTrait::assertNoPattern</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.4.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;responseNotMatches() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertNoRaw/9">AssertLegacyTrait::assertNoRaw</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;responseNotContains() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21KernelTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertNotEqual/9">AssertLegacyTrait::assertNotEqual</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />KernelTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21KernelTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.0.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertNotEquals() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertNoText/9">AssertLegacyTrait::assertNoText</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use</p>
+<ul>
+<li>$this-&gt;assertSession()-&gt;responseNotContains() for non-HTML responses,
+like XML or Json.</li>
+<li>$this-&gt;assertSession()-&gt;pageTextNotContains() for HTML responses.
+Unlike the deprecated assertNoText(), the passed text should be HTML
+decoded, exactly as a human sees it in the browser.</li>
+</ul>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21KernelTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertNotIdentical/9">AssertLegacyTrait::assertNotIdentical</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />KernelTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21KernelTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.0.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertNotSame() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertNoUniqueText/9">AssertLegacyTrait::assertNoUniqueText</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Instead,
+use $this-&gt;getSession()-&gt;pageTextMatchesCount() if you know the
+cardinality in advance, or $this-&gt;getSession()-&gt;getPage()-&gt;getText()
+and substr_count().</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">4 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertOption/9">AssertLegacyTrait::assertOption</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;optionExists() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertOptionByText/9">AssertLegacyTrait::assertOptionByText</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.4.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;optionExists() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertOptionSelected/9">AssertLegacyTrait::assertOptionSelected</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;optionExists() instead and check the
+&quot;selected&quot; attribute yourself.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">2 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertPattern/9">AssertLegacyTrait::assertPattern</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;responseMatches() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertRaw/9">AssertLegacyTrait::assertRaw</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;responseContains() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertResponse/9">AssertLegacyTrait::assertResponse</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;statusCodeEquals() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertText/9">AssertLegacyTrait::assertText</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use</p>
+<ul>
+<li>$this-&gt;assertSession()-&gt;responseContains() for non-HTML responses,
+like XML or Json.</li>
+<li>$this-&gt;assertSession()-&gt;pageTextContains() for HTML responses. Unlike
+the deprecated assertText(), the passed text should be HTML decoded,
+exactly as a human sees it in the browser.</li>
+</ul>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertTextHelper/9">AssertLegacyTrait::assertTextHelper</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;pageTextContains() or
+$this-&gt;assertSession()-&gt;pageTextNotContains() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertTitle/9">AssertLegacyTrait::assertTitle</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;titleEquals() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertUniqueText/9">AssertLegacyTrait::assertUniqueText</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;getSession()-&gt;pageTextContainsOnce() or
+$this-&gt;getSession()-&gt;pageTextMatchesCount() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">4 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AassertUrl/9">AssertLegacyTrait::assertUrl</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;addressEquals() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ </tbody>
+</table>
+
+ <nav class="pager" role="navigation" aria-labelledby="pagination-heading">
+ <h4 id="pagination-heading" class="visually-hidden">Pagination</h4>
+ <ul class="pager__items js-pager__items">
+ <li>
+ Page 1 </li>
+ <li>
+ <a href="/api/drupal/deprecated/9?page=1" title="Go to next page" rel="next">
+ <span class="visually-hidden">Next page</span>
+ <span aria-hidden="true">››</span>
+ </a>
+ </li>
+ </ul>
+ </nav>
+
+ 
+ 
+
+ 
+ 
+</div>
+</div>
+<p class="api-switch"><strong><a href="https://api.drupal.org/api/projects">Other projects</a></strong></p><hr class="clear"><div class="note clear"><p><strong>Buggy or inaccurate documentation?</strong> Please <a href="https://drupal.org/node/add/project-issue/drupal?component=documentation&amp;categories=2&amp;version=9-dev&amp;body=API%20page%3A%20https%3A//api.drupal.org/api/drupal/deprecated/9%3Fpage%3D0%0A%0AEnter%20a%20descriptive%20title%20%28above%29%2C%20then%20describe%20the%20problem%20you%20have%20found%3A%0A">file an issue</a>. Need <a href="https://drupal.org/support">support</a>? Need help programming? Connect with the <a href="https://drupal.org/community" rel="nofollow">Drupal community</a>.</p></div>
+ </div>
+</div>
+ </div> 
+ </div> 
+ <div id="aside" role="complementary" >
+ <div id="aside-region">
+ <div class="region region-sidebar-second">
+ <div id="search" class="block block-api">
+ <div class="block-inner">
+ 
+ <h2>Search drupal 9</h2>
+ 
+ <div class="content">
+ <form class="api-search-form" data-drupal-selector="api-search-form" action="/api/drupal/deprecated/9?page=0" method="post" id="api-search-form" accept-charset="UTF-8">
+ <div class="js-form-item form-item form-type-textfield js-form-type-textfield form-item-search js-form-item-search form-no-label">
+ <label for="edit-search" class="visually-hidden js-form-required form-required">Function, class, file, topic, etc.</label>
+ <input class="api-search-keywords form-autocomplete form-text required" autocomplete="off" data-drupal-selector="edit-search" aria-describedby="edit-search--description" data-autocomplete-path="/api/search/autocomplete/21" type="text" id="edit-search" name="search" value="" size="60" maxlength="128" required="required" />
+
+ <div id="edit-search--description" class="description">
+ Partial match search is supported
+ </div>
+ </div>
+<input autocomplete="off" data-drupal-selector="form-c-6rcxcyjxcvbzx6wkfj1rop9sn8ql6o0otcz7kifvg" type="hidden" name="form_build_id" value="form-c_6rCXCYJxcvbzx6WkFJ1rOP9SN8Ql6o0oTCz7kIFVg" />
+<input data-drupal-selector="edit-api-search-form" type="hidden" name="form_id" value="api_search_form" />
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2"><input data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="Search" class="button js-form-submit form-submit" />
+</div>
+
+</form>
+
+ </div>
+ </div>
+</div>
+<div id="block-bluecheese-apinavigationblock" class="block block-api">
+ <div class="block-inner">
+ 
+ <h2>API Navigation</h2>
+ 
+ <div class="content">
+ <ul><li><a href="/api/drupal/9">drupal 9</a></li><li><a href="/api/drupal/groups/9">Topics</a></li><li><a href="/api/drupal/classes/9">Classes</a></li><li><a href="/api/drupal/functions/9">Functions</a></li><li><a href="/api/drupal/constants/9">Constants</a></li><li><a href="/api/drupal/globals/9">Globals</a></li><li><a href="/api/drupal/files/9">Files</a></li><li><a href="/api/drupal/namespaces/9">Namespaces</a></li><li><a href="/api/drupal/deprecated/9">Deprecated</a></li><li><a href="/api/drupal/services/9">Services</a></li><li><a href="/api/drupal/elements/9">Elements</a></li></ul>
+ </div>
+ </div>
+</div>
+
+ </div>
+
+ </div> </div> 
+ </div> </div> 
+ <footer id="footer" role="contentinfo">
+ <div class="region region-footer">
+ <div id="block-drupalorg-crosssite-drupalorg-footer" class="block block-drupalorg-crosssite">
+ <div class="block-inner">
+ 
+ 
+ <div class="content">
+ <h4 class="visually-hidden">News items</h4><ul class="drupal-news"><li><a href="https://www.drupal.org/news">News</a></li><li><a href="https://www.drupal.org/planet" title="News from Drupal community members">Planet Drupal</a></li><li><a href="https://www.drupal.org/about/media-kit/social-media" title="Drupal on social media">Social media</a></li><li><a href="https://www.drupal.org/subscribe">Sign up for Drupal news</a></li><li><a href="https://www.drupal.org/security" title="Announcements from the Drupal Security Team">Security advisories</a></li><li><a href="https://jobs.drupal.org/" title="Drupal Jobs">Jobs</a></li></ul><h4 class="visually-hidden">Our community</h4><ul class="community"><li><a href="https://www.drupal.org/community">Community</a></li><li><a href="https://www.drupal.org/drupal-services" title="People and organizations offering Drupal services">Services</a></li><li><a href="https://www.drupal.org/training" title="People and organizations offering Drupal training">Training</a></li><li><a href="https://www.drupal.org/hosting" title="Organizations offering Drupal hosting">Hosting</a></li><li><a href="https://www.drupal.org/community/contributor-guide">Contributor guide</a></li><li><a href="https://groups.drupal.org/groups" title="groups.drupal.org">Groups & meetups</a></li><li><a href="https://events.drupal.org" title="Upcoming and past DrupalCons">DrupalCon</a></li><li><a href="https://www.drupal.org/dcoc" title="Drupal code of conduct">Code of conduct</a></li></ul><h4 class="visually-hidden">Documentation</h4><ul class="get-started"><li><a href="https://www.drupal.org/documentation" title="Documentation for working with Drupal">Documentation</a></li><li><a href="https://www.drupal.org/docs">Drupal Guide</a></li><li><a href="https://www.drupal.org/docs/user_guide/en/index.html">Drupal User Guide</a></li><li><a href="https://www.drupal.org/documentation/develop">Developer docs</a></li><li><a href="https://api.drupal.org/" title="Drupal API reference">API.Drupal.org</a></li></ul><h4 class="visually-hidden">Drupal code base</h4><ul class="download-extend"><li><a href="https://www.drupal.org/download">Download & Extend</a></li><li><a href="https://www.drupal.org/project/drupal" title="Download the latest version of the Drupal software">Drupal core</a></li><li><a href="https://www.drupal.org/project/project_module" title="Download add-on features and functionality">Modules</a></li><li><a href="https://www.drupal.org/project/project_theme" title="Download pre-designed styles for Drupal">Themes</a></li><li><a href="https://www.drupal.org/project/project_distribution" title="Download a pre-packaged Drupal site">Distributions</a></li></ul><h4 class="visually-hidden">Governance of community</h4><ul class="about"><li><a href="https://www.drupal.org/about">About</a></li><li><a href="https://www.drupal.org/about/features/accessibility" title="Our committment to accessibility">Web accessibility</a></li><li><a href="https://www.drupal.org/association" title="About the Drupal Association">Drupal Association</a></li><li><a href="https://www.drupal.org/drupalorg" title="About Drupal.org">About Drupal.org</a></li><li><a href="https://www.drupal.org/terms" title="Drupal.org terms of service">Terms of service</a></li><li><a href="https://www.drupal.org/privacy" title="Drupal.org privacy policy">Privacy policy</a></li></ul>
+ </div>
+ </div>
+</div>
+<div id="block-bluecheese-apidrupalorgfootermessage" class="block block-apidrupalorg">
+ <div class="block-inner">
+ 
+ 
+ <div class="content">
+ <p>All source code and documentation on this site is released under the terms of the <a href="https://api.drupal.org/api/file/core!LICENSE.txt">GNU General Public License, version 2 and later</a>. <a href="https://www.drupal.org/">Drupal</a> is a <a href="https://drupal.com/trademark">registered trademark</a> of <a href="https://dri.es">Dries Buytaert</a>.</p>
+ </div>
+ </div>
+</div>
+
+ </div>
+
+ </footer> 
+ </div>
+
+ 
+ <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"api\/drupal\/deprecated\/9","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en","currentQuery":{"page":"0"}},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"eJxtjUESgjAQBD8UzJOoJQwxumGo7Ebl91J6wvLSh-5Dy1Zi4oxhYaviXtYcJu1IV8AQs3ISDYkNcW59E71IdybWTeE4heKogxbz8BVseUyNZnaUY8J7gf1tC-loIZNZMcoquntJFn9FsN2OSZzEEB4FT4sfXuQmr5OonLviDYQxVuw","theme":"bluecheese","theme_token":null},"ajaxTrustedUrl":{"\/api\/drupal\/deprecated\/9":true,"\/search\/api":true,"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true},"google_analytics":{"account":"UA-2360451-17","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:aed73b534af1276acd0e3f6a9d2d32acba69b61cd4cd26225b6295885c671f37":{"view_name":"api_listings","view_display_id":"block_deprecated","view_args":"21","view_path":"\/api\/drupal\/deprecated\/9","view_base_path":null,"view_dom_id":"aed73b534af1276acd0e3f6a9d2d32acba69b61cd4cd26225b6295885c671f37","pager_element":0}}},"drupalorg_crosssite":{"ConsentNeeded":true},"user":{"uid":0,"permissionsHash":"b1ec311de1a8cc3ef897d8b1afefc27ccc6b769eba189ed370cd90ccf90c9802"}}</script>
+<script src="/core/assets/vendor/jquery/jquery.min.js?v=4.0.0"></script>
+<script src="/sites/default/files/js/js_fDCPbFA-Hqw9PpIQgzwdaQCcwsesgd3EiPG7ntgtG4Q.js?scope=footer&amp;delta=1&amp;language=en&amp;theme=bluecheese&amp;include=eJxdyEEOgzAMBMAPRfhJyJhVCDUsihNof49UblzmMJN32AIEJDsn9WSskLn2Q33Q3mjcDkdDeo41j1YZEaVBjPwURMpkdoy6q_9asZB3pLPgCvk76KrfG2gkMAQ"></script>
+
+ </body>
+</html>

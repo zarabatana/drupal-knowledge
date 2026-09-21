@@ -1,0 +1,123 @@
+Know about a security issue? Please
+report the issue
+appropriately.
+Whether you are writing a PHP snippet or an entire module, it is important to keep your code secure.
+Sanitizing on output to avoid Cross Site Scripting (XSS) attacks
+Use Twig templates
+The Twig theme engine now auto escapes everything by default. That means, every string printed from a Twig template (anything between
+{{ }}
+) gets automatically sanitized if no filters are used.
+See
+Filters - Modifying Variables In Twig Templates
+for the Twig filters available in Drupal. Notably, watch out for the "raw" filter, which does not escape output. Only use this when you are certain the data is trusted.
+When rendering attributes in Twig, make sure that you wrap them with double or single quotes. For example,
+class="{{ class }}"
+is safe,
+class={{ class }}
+is not safe.
+In order to take advantage of Twig’s automatic escaping (and avoid safe markup being escaped) ideally all HTML should be outputted from Twig templates.
+Output with placeholders
+We can leverage the
+Translation API
+to build sanitized, translatable strings that are suitable for front end output. To understand how to properly prepare data for use in the database, please see
+Use the database abstraction layer to avoid SQL injection attacks
+.
+There are three available placeholders that were introduced in Drupal 8:
+@variable
+: When the placeholder replacement value is a string or a
+MarkupInterface
+object
+%variable
+: When the placeholder replacement value is to be wrapped in em tags.
+:variable
+: When the placeholder replacement value is a URL to be used in the "href" attribute
+You can learn more about these placeholders in the
+FormattableMarkup::placeholderFormat()
+documentation.
+API functions
+Use
+t()
+and
+\Drupal::translation()->formatPlural()
+with
+@
+or
+%
+placeholders to construct safe, translatable strings. See
+Code text translation API in Drupal 8
+for more details.
+Use
+Html::escape()
+for plain text.
+Use
+Xss::filter()
+for text that should allow some HTML tags. Do not use it for HTML elements or attributes inside of a tag.
+Use
+Xss::filterAdmin()
+for text entered by admin users that should allow most HTML.
+Use
+UrlHelper::stripDangerousProtocols()
+or
+UrlHelper::filterBadProtocol()
+for checking URLs - the former can be used in conjunction with
+SafeMarkup::format()
+.
+Use
+Html::cleanCssIdentifier
+to filter and validly format a CSS identifier or other HTML attribute.
+Strings sanitized by
+t()
+,
+Html::escape()
+,
+Xss::filter()
+, or
+Xss::filterAdmin()
+are automatically marked safe when rendered, as they are markup strings created from render arrays via
+Renderer
+.
+While it can also sanitize text, it's almost never correct to use
+check_markup()
+in a theme or module except in the context of something like a text area with an associated text format.
+Email
+The security of your email content is strongly tied with the mail service that you choose to use. The same best practices of outputting text for HTML consumption should be considered here.
+Javascript (jQuery) and Drupal.checkPlain()
+It is best practice to use the server to sanitize text, but there may be situations where text needs to be sanitized on the client (browser) side, for example an HTML element that is updated as the user enters text.
+These examples are for use cases of outputting text to the DOM. If you're sending text to the server, such as when making an API call, you should review back-end practices.
+You can use
+Drupal.checkPlain()
+to escape basic characters and prevent malicious elements being introduced into the DOM, avoiding some basic click-jacking techniques.
+Bad Practice
+var rawInputText = $('#form-input').text();
+Good Practice
+var rawInputText = $('#form-input').text(); var escapedInputText = Drupal.checkPlain(rawInputText);
+Use the database abstraction layer to avoid SQL injection attacks
+Data must
+never
+be concatenated directly into SQL queries, as in the following code.
+Bad Practice
+\Database::getConnection()->query('SELECT foo FROM {table} t WHERE t.name = '. $_GET['user']);
+Instead, the proper argument substitution should be used.
+Good Practice
+\Database::getConnection()->query('SELECT foo FROM {table} t WHERE t.name = :name', [':name' => $_GET['user']]);
+The database layer works on top of PHP PDO and uses an array of named placeholders.
+For a variable number of argument, use an array of arguments or use the
+select()
+method.
+Good Practice
+$users = ['joe', 'poe', $_GET['user']]; \Database::getConnection()->query('SELECT f.bar FROM {foo} f WHERE f.bar IN (:users[])', [':users[]' => $users]);
+Good Practice
+$users = ['joe', 'poe', $_GET['user']]; $result = \Database::getConnection()->select('foo', 'f') ->fields('f', ['bar']) ->condition('f.bar', $users) ->execute();
+When creating a
+LIKE
+query, make sure you escape condition values to avoid some characters are used as wildcard characters where they should not.
+Good Practice
+$conn = \Database::getConnection(); $conn->select('table', 't') ->condition('t.field', '%_' . $conn->escapeLike($user), 'LIKE') ->execute();
+Make sure not to use user input as operators for a query's condition. For example, this code is unsafe.
+Bad Practice
+\Database::getConnection()->select('table', 't') ->condition('t.field', $user, $user_input) ->execute();
+Instead, give to users a list from which they can choose the operator for the query.
+Avoid cross-site request forgeries (CSRF) for routing
+CSRF protection is now integrated into the routing access system and should be used for any URL that performs actions or operations which do not use a form callback. For more information read
+CSRF access checking
+.

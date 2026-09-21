@@ -1,0 +1,564 @@
+{
+  "artifact_type": "finding-eligibility-audit",
+  "audit_status": "architecture-audit",
+  "authority_layers": [
+    "SOURCE",
+    "TRUSTED_KNOWLEDGE",
+    "PROJECT_FACT",
+    "OBSERVED_PROJECT_EVIDENCE",
+    "APPLICABILITY_RESULT",
+    "FINDING",
+    "REMEDIATION",
+    "SOLVED_CASE"
+  ],
+  "baseline": {
+    "canonical_counts": {
+      "blocking": 0,
+      "deferred": 0,
+      "guidance": 11,
+      "knowledge": 11,
+      "machine_finding_contracts": 1,
+      "reviewed": 11,
+      "snapshot": 15,
+      "solved_cases": 0,
+      "source": 15,
+      "source_state": 15
+    },
+    "main_sha": "945f01bd1d302f1450105b515f5866277324871f",
+    "tag": "v0.3.0",
+    "version": "0.3.0"
+  },
+  "authority_correction": {
+    "analyzer_forbidden_outputs": [
+      "supported",
+      "unsupported",
+      "EOL",
+      "current",
+      "obsolete",
+      "security-supported"
+    ],
+    "correct_chain": [
+      "AUTHORITATIVE_SOURCE_SNAPSHOT",
+      "REVIEWED_NORMALIZED_RELEASE_LIFECYCLE_KNOWLEDGE",
+      "PROJECT_FACT_INSTALLED_DRUPAL_CORE_VERSION",
+      "APPLICABILITY_OR_FUTURE_FINDING_EVALUATION"
+    ],
+    "external_release_state_is_project_fact": false,
+    "incorrect_chain": [
+      "AUTHORITATIVE_SOURCE",
+      "PROJECT_EVIDENCE"
+    ],
+    "project_evidence": [
+      "installed_drupal_core_version",
+      "composer_lock_evidence",
+      "evidence_provenance",
+      "completeness"
+    ],
+    "release_lifecycle_authority_layer": "TRUSTED_KNOWLEDGE_CONTEXT"
+  },
+  "candidate_model": {
+    "confirmed_requires_context": true,
+    "description": "Suspicious static patterns are review candidates until a reviewed machine_finding condition and sufficient project evidence prove the condition.",
+    "examples": [
+      "twig_raw_filter",
+      "database_query_string_concatenation",
+      "route_without_visible_csrf_requirement"
+    ]
+  },
+  "definitions": {
+    "applicability": "Resolver result that a knowledge record concerns, does not concern, or cannot be safely resolved for a project.",
+    "candidate": "Deterministic review signal that is not sufficiently authoritative for a confirmed finding.",
+    "confirmed_finding": "Evidence-backed project condition that satisfies or contradicts an explicit machine-defined condition associated with reviewed knowledge.",
+    "human_review": "Semantic judgment remains outside the safe machine contract.",
+    "observation": "Neutral project fact derived from observed static evidence.",
+    "remediation": "Proposed or automated fix outside the finding model.",
+    "unknown": "Required evidence is missing, incomplete, ambiguous, or unobserved."
+  },
+  "current_analyzer_evidence": [
+    {
+      "domain": "drupal_project_classification",
+      "finding_authority_today": "applicability_support_only",
+      "state": "available"
+    },
+    {
+      "domain": "drupal_core_version",
+      "finding_authority_today": "project_fact_for_release_context_join",
+      "state": "available_when_installed_drupal_core_is_observed"
+    },
+    {
+      "domain": "composer_declarations",
+      "finding_authority_today": "observation_only",
+      "state": "available_when_composer_json_is_valid"
+    },
+    {
+      "domain": "installed_composer_packages",
+      "finding_authority_today": "observation_only",
+      "state": "available_when_composer_lock_is_valid"
+    },
+    {
+      "domain": "enabled_extensions",
+      "finding_authority_today": "applicability_support_only",
+      "state": "available_when_core_extension_config_is_unambiguous_and_valid"
+    },
+    {
+      "domain": "web_root",
+      "finding_authority_today": "observation_only",
+      "state": "available_when_scaffold_or_core_marker_evidence_exists"
+    },
+    {
+      "domain": "custom_extensions",
+      "finding_authority_today": "observation_only",
+      "state": "available_from_bounded_custom_info_yml_inventory"
+    },
+    {
+      "domain": "config_inventory",
+      "finding_authority_today": "observation_only",
+      "state": "available_when_exported_config_root_is_observed"
+    },
+    {
+      "domain": "completeness",
+      "finding_authority_today": "unknown_and_authoritative_absence_control",
+      "state": "available"
+    },
+    {
+      "domain": "evidence_provenance",
+      "finding_authority_today": "required_for_future_findings",
+      "state": "available_for_files_used_as_evidence"
+    }
+  ],
+  "eligibility_criteria": [
+    "reviewed_knowledge",
+    "definitive_applicability",
+    "required_observation_domain_available",
+    "machine_defined_expected_or_forbidden_condition",
+    "observed_evidence_definitively_establishes_condition",
+    "evidence_provenance_available",
+    "no_required_semantic_judgment",
+    "no_network_or_runtime_dependency"
+  ],
+  "engine_decision": "CURRENT_FINDING_ENGINE_JUSTIFIED=NO",
+  "enforcement_model": {
+    "confirmed_finding_does_not_escalate_enforcement": true,
+    "current_records_remain_guidance_only": true,
+    "severity_source": "reviewed_knowledge",
+    "unreviewed_cannot_author_confirmed_finding": true
+  },
+  "finding_contract": {
+    "free_text_fields_non_executable": [
+      "actions",
+      "checks",
+      "evidence_requirements",
+      "automation_hints"
+    ],
+    "machine_applicability_purpose": "Decides whether a record concerns a project.",
+    "machine_finding_purpose": "machine_finding decides whether observed project evidence proves a machine-defined condition.",
+    "required_fields": [
+      "condition_id",
+      "finding_type",
+      "evidence_domain",
+      "authoritative_completeness_requirement",
+      "required_applicability_state",
+      "required_or_forbidden_condition",
+      "predicate_type",
+      "unknown_behavior",
+      "candidate_behavior",
+      "reason_codes",
+      "provenance_requirements",
+      "severity_source",
+      "effective_enforcement"
+    ],
+    "separate_from_machine_applicability": true
+  },
+  "finding_identity": {
+    "deduplication_key_fields": [
+      "knowledge_id",
+      "condition_id",
+      "project_entity_identity"
+    ],
+    "deterministic_key_fields": [
+      "knowledge_id",
+      "condition_id",
+      "project_evidence_location",
+      "project_evidence_identity"
+    ],
+    "timestamp_allowed": false
+  },
+  "finding_states": [
+    "confirmed",
+    "not_observed",
+    "unknown",
+    "requires_human_review"
+  ],
+  "not_canonical_drupal_truth": true,
+  "provenance_requirements": [
+    "finding_id",
+    "knowledge_id",
+    "applicability_result_identity",
+    "project_fact_refs",
+    "evidence_ids",
+    "relative_paths",
+    "condition_id",
+    "reason_code",
+    "effective_enforcement",
+    "knowledge_set_identity",
+    "analysis_identity"
+  ],
+  "records": [
+    {
+      "applicability_automation": "MACHINE_RESOLVABLE",
+      "blockers": [
+        "no_machine_finding_contract",
+        "no_defective_project_condition"
+      ],
+      "current_evidence_available": [
+        "project_type",
+        "drupal_core_version"
+      ],
+      "current_evidence_missing": [
+        "machine_finding_condition"
+      ],
+      "finding_classification": "APPLICABILITY_ONLY",
+      "future_candidate": "none",
+      "knowledge_id": "drupal.api.reference-drupal-11",
+      "why": "The project core version can make Drupal 11 API guidance applicable, but that does not establish a defective or conforming project condition."
+    },
+    {
+      "applicability_automation": "PARTIALLY_MACHINE_RESOLVABLE",
+      "blockers": [
+        "knowledge_selection_principle",
+        "no_project_condition"
+      ],
+      "current_evidence_available": [
+        "drupal_core_version"
+      ],
+      "current_evidence_missing": [
+        "machine_finding_condition"
+      ],
+      "finding_classification": "KNOWLEDGE_PROCESS_RULE",
+      "future_candidate": "upgrade_analysis_policy",
+      "knowledge_id": "drupal.api.version-aware-documentation",
+      "why": "The record governs version-aware documentation selection rather than a project compliance condition."
+    },
+    {
+      "applicability_automation": "HUMAN_SEMANTIC_REVIEW_REQUIRED",
+      "blockers": [
+        "change_record_semantics_not_project_condition",
+        "upgrade_impact_not_observed"
+      ],
+      "current_evidence_available": [
+        "drupal_core_version"
+      ],
+      "current_evidence_missing": [
+        "change_record_applicability_evidence",
+        "upgrade_impact_evidence"
+      ],
+      "finding_classification": "KNOWLEDGE_PROCESS_RULE",
+      "future_candidate": "upgrade_change_record_resolver",
+      "knowledge_id": "drupal.change-records.introduced-version",
+      "why": "The record explains introduced-version semantics for change records and supports future upgrade analysis."
+    },
+    {
+      "applicability_automation": "HUMAN_SEMANTIC_REVIEW_REQUIRED",
+      "blockers": [
+        "canonical_source_selection_not_code_violation",
+        "no_rule_specific_code_check"
+      ],
+      "current_evidence_available": [
+        "custom_modules",
+        "custom_themes"
+      ],
+      "current_evidence_missing": [
+        "coding_standard_rule_evidence",
+        "code_check_result_evidence"
+      ],
+      "finding_classification": "KNOWLEDGE_PROCESS_RULE",
+      "future_candidate": "coding_standard_rule_specific_checks",
+      "knowledge_id": "drupal.coding-standards.current-source",
+      "why": "The record identifies the current authoritative coding standards source, not a specific project violation."
+    },
+    {
+      "applicability_automation": "INSUFFICIENT_PROJECT_EVIDENCE",
+      "blockers": [
+        "tool_absence_not_policy_violation",
+        "external_or_ci_tooling_not_observed"
+      ],
+      "current_evidence_available": [
+        "composer_declarations",
+        "installed_composer_packages"
+      ],
+      "current_evidence_missing": [
+        "phpcs_configuration_evidence",
+        "ci_tooling_evidence",
+        "organization_tooling_evidence"
+      ],
+      "finding_classification": "NOT_A_PROJECT_FINDING",
+      "future_candidate": "phpcs_tooling_observation",
+      "knowledge_id": "drupal.coding-standards.phpcs-coder-tooling",
+      "why": "Composer evidence may observe Coder presence or absence, but local absence does not prove coding standards are unenforced."
+    },
+    {
+      "applicability_automation": "PARTIALLY_MACHINE_RESOLVABLE",
+      "blockers": [
+        "advisory_stream_is_source_governance",
+        "no_individual_advisory_match"
+      ],
+      "current_evidence_available": [
+        "drupal_core_version",
+        "installed_composer_packages",
+        "enabled_extensions"
+      ],
+      "current_evidence_missing": [
+        "advisory_affected_version_context",
+        "advisory_package_applicability_context"
+      ],
+      "finding_classification": "KNOWLEDGE_PROCESS_RULE",
+      "future_candidate": "advisory_applicability_model",
+      "knowledge_id": "drupal.security.advisory-streams-separated",
+      "why": "Knowing advisory streams are separate does not prove that the analyzed project is vulnerable."
+    },
+    {
+      "applicability_automation": "HUMAN_SEMANTIC_REVIEW_REQUIRED",
+      "blockers": [
+        "routes_not_observed",
+        "mutation_semantics_not_observed",
+        "csrf_mechanism_not_observed"
+      ],
+      "current_evidence_available": [
+        "custom_extensions"
+      ],
+      "current_evidence_missing": [
+        "route_static_evidence",
+        "route_operation_semantics",
+        "route_csrf_requirement_evidence"
+      ],
+      "finding_classification": "NEEDS_MORE_PROJECT_EVIDENCE",
+      "future_candidate": "route_static_evidence",
+      "knowledge_id": "drupal.security.csrf-route-protection",
+      "why": "A confirmed CSRF finding needs route definitions and operation/protection semantics, which Analyzer v0.3.0 does not observe."
+    },
+    {
+      "applicability_automation": "HUMAN_SEMANTIC_REVIEW_REQUIRED",
+      "blockers": [
+        "php_query_code_not_observed",
+        "dataflow_not_observed",
+        "trust_semantics_not_observed"
+      ],
+      "current_evidence_available": [
+        "custom_extensions"
+      ],
+      "current_evidence_missing": [
+        "php_query_static_evidence",
+        "php_dataflow_or_trust_semantics",
+        "like_escape_or_operator_semantics"
+      ],
+      "finding_classification": "NEEDS_MORE_PROJECT_EVIDENCE",
+      "future_candidate": "php_query_static_evidence",
+      "knowledge_id": "drupal.security.database-query-parameterization",
+      "why": "The analyzer does not inspect PHP query construction, so no parameterization condition can be proven."
+    },
+    {
+      "applicability_automation": "HUMAN_SEMANTIC_REVIEW_REQUIRED",
+      "blockers": [
+        "twig_templates_not_observed",
+        "output_context_not_observed",
+        "trust_context_not_observed"
+      ],
+      "current_evidence_available": [
+        "custom_themes"
+      ],
+      "current_evidence_missing": [
+        "twig_static_evidence",
+        "twig_trust_context_evidence",
+        "dynamic_attribute_context_evidence"
+      ],
+      "finding_classification": "NEEDS_MORE_PROJECT_EVIDENCE",
+      "future_candidate": "twig_static_evidence",
+      "knowledge_id": "drupal.security.twig-output-escaping",
+      "why": "Twig raw or dynamic output patterns would be candidates until trust and context are proven."
+    },
+    {
+      "applicability_automation": "MACHINE_RESOLVABLE",
+      "blockers": [],
+      "current_evidence_available": [
+        "drupal_core_version",
+        "reviewed_release_lifecycle_context",
+        "neutral_release_lifecycle_assessment",
+        "reviewed_machine_finding_contract",
+        "reviewed_drupal_update_status_semantic_authority",
+        "reviewed_finding_runtime"
+      ],
+      "current_evidence_missing": [],
+      "finding_classification": "FINDING_ELIGIBLE_NOW",
+      "future_candidate": "READ_ONLY_CONSUMER_ADAPTER_CONSUMPTION",
+      "knowledge_id": "drupal.update.core-release-insecure-term-condition",
+      "why": "The record carries the first reviewed machine_finding contract with reviewed, version-scoped Drupal update-status semantic authority and an explicit reviewed machine_applicability contract; the reviewed finding runtime executes it into schema-validated finding evaluations with deterministic identity, definitive applicability, and complete provenance."
+    },
+    {
+      "applicability_automation": "PARTIALLY_MACHINE_RESOLVABLE",
+      "blockers": [
+        "release_feed_exists_but_lifecycle_context_not_normalized",
+        "no_support_state_machine_finding_contract"
+      ],
+      "current_evidence_available": [
+        "drupal_core_version",
+        "baselined_drupal_core_releases_source"
+      ],
+      "current_evidence_missing": [
+        "reviewed_release_lifecycle_knowledge",
+        "explicit_support_status_condition",
+        "machine_finding_condition"
+      ],
+      "finding_classification": "KNOWLEDGE_PROCESS_RULE",
+      "future_candidate": "NORMALIZE_AUTHORITATIVE_RELEASE_LIFECYCLE_KNOWLEDGE",
+      "knowledge_id": "drupal.update.core-release-state-update-feed",
+      "why": "The record identifies the release-history feed as source authority but does not itself assert that a project release is supported, outdated, or insecure."
+    }
+  ],
+  "schema_version": "0.1",
+  "single_next_capability": "NORMALIZE_AUTHORITATIVE_RELEASE_LIFECYCLE_KNOWLEDGE",
+  "gap_taxonomy": {
+    "authoritative_knowledge_context_gaps": [
+      {
+        "current_captured_source_status": "The drupal-core-releases snapshot contains supported_branches, release entries, release type terms, and per-release security coverage text/attributes.",
+        "minimum_safe_extension": "Normalize explicit release lifecycle fields from the baselined source into reviewed knowledge/context.",
+        "record_ids": [
+          "drupal.update.core-release-state-update-feed"
+        ],
+        "required_context": "authoritative_release_lifecycle_context"
+      },
+      {
+        "current_captured_source_status": "Security advisory streams are baselined, but individual advisory affected-version semantics are not modeled.",
+        "minimum_safe_extension": "Create a dedicated advisory ingestion/applicability model using canonical advisory source facts.",
+        "record_ids": [
+          "drupal.security.advisory-streams-separated"
+        ],
+        "required_context": "advisory_affected_version_context"
+      }
+    ],
+    "project_evidence_gaps": [
+      {
+        "analyzer_has_it_today": false,
+        "minimum_safe_extension": "Inventory Drupal routing YAML with requirements/options, then add conservative operation semantics separately.",
+        "record_ids": [
+          "drupal.security.csrf-route-protection"
+        ],
+        "required_evidence_domain": "route_static_evidence"
+      },
+      {
+        "analyzer_has_it_today": false,
+        "minimum_safe_extension": "Inventory PHPCS/Coder configuration and CI references as observations only.",
+        "record_ids": [
+          "drupal.coding-standards.phpcs-coder-tooling"
+        ],
+        "required_evidence_domain": "phpcs_configuration_evidence"
+      },
+      {
+        "analyzer_has_it_today": false,
+        "minimum_safe_extension": "Inventory Twig templates and produce candidates only until trust/context evidence exists.",
+        "record_ids": [
+          "drupal.security.twig-output-escaping"
+        ],
+        "required_evidence_domain": "twig_static_evidence"
+      },
+      {
+        "analyzer_has_it_today": false,
+        "minimum_safe_extension": "Add bounded PHP query-construction evidence with explicit candidate/unknown separation.",
+        "record_ids": [
+          "drupal.security.database-query-parameterization"
+        ],
+        "required_evidence_domain": "php_query_static_evidence"
+      }
+    ]
+  },
+  "release_source_semantics": {
+    "cannot_prove_without_additional_authority": [
+      "eol_policy_consequences",
+      "unsupported_status_from_branch_absence",
+      "security_support_policy_beyond_explicit_feed_fields",
+      "vulnerability_or_compliance_status"
+    ],
+    "not_inferred": [
+      "older_release_unsupported_from_newer_release_ordering",
+      "older_release_eol_from_newer_release_ordering",
+      "older_release_insecure_from_newer_release_ordering",
+      "security_supported_without_explicit_authority"
+    ],
+    "present_in_current_snapshot": [
+      "project_status",
+      "maintenance_status",
+      "development_status",
+      "supported_branches",
+      "release_entries",
+      "release_versions",
+      "release_status",
+      "release_dates",
+      "release_type_terms",
+      "per_release_security_coverage_text_or_attribute"
+    ],
+    "source_id": "drupal-core-releases",
+    "snapshot_sha256": "sha256:c7de75d2508c7d134765affdea101e9bc7a4d534d8eaaa97fda3308a14ea0063",
+    "supported_branches": "10.6.,11.3.,11.4."
+  },
+  "next_capability_ranking": [
+    {
+      "capability": "NORMALIZE_AUTHORITATIVE_RELEASE_LIFECYCLE_KNOWLEDGE",
+      "capability_type": "authoritative_knowledge_context",
+      "rank": 1,
+      "reason": "Still the best next capability after the authority correction: deterministic, offline after source baselining, low false-positive risk, and directly joins reviewed release lifecycle context with the existing project core-version fact without moving lifecycle truth into the analyzer."
+    },
+    {
+      "capability": "route_static_evidence",
+      "capability_type": "project_evidence",
+      "rank": 2,
+      "reason": "Structured Drupal data, but confirmed CSRF findings still need mutation semantics."
+    },
+    {
+      "capability": "phpcs_configuration_evidence",
+      "capability_type": "project_evidence",
+      "rank": 3,
+      "reason": "Easy to observe and useful, but absence cannot prove a policy violation."
+    },
+    {
+      "capability": "twig_static_evidence",
+      "capability_type": "project_evidence",
+      "rank": 4,
+      "reason": "Useful for candidates, but confirmed security findings need trust and output context."
+    },
+    {
+      "capability": "php_query_static_evidence",
+      "capability_type": "project_evidence",
+      "rank": 5,
+      "reason": "High value but higher parser/data-flow complexity and false-positive risk."
+    },
+    {
+      "capability": "advisory_affected_version_context",
+      "capability_type": "authoritative_knowledge_context",
+      "rank": 6,
+      "reason": "High value, but should be implemented as a dedicated advisory applicability model."
+    }
+  ],
+  "engine_resolution": {
+    "as_of": "2026-09-07",
+    "repository_version": "0.6.0",
+    "original_engine_decision": "CURRENT_FINDING_ENGINE_JUSTIFIED=NO",
+    "original_engine_decision_retained": true,
+    "historical_audit_rewritten": false,
+    "engine_decision_now": "CURRENT_FINDING_ENGINE_JUSTIFIED=YES_SINGLE_REVIEWED_CONTRACT",
+    "justification": "The audit-time blockers were resolved by later reviewed increments: the normalized reviewed release lifecycle context (v0.4.0), the neutral lifecycle evaluator (v0.5.0), and the reviewed machine_finding contract with reviewed Drupal update-status semantic authority (v0.6.0). Exactly one record satisfies every finding eligibility criterion.",
+    "runtime_module": "scripts/dk_finding_runtime.py",
+    "runtime_command": "dk.py findings",
+    "evaluation_schema": "schema/finding-evaluation.schema.json",
+    "executes_only_reviewed_machine_finding_contracts": true,
+    "eligible_records_now": [
+      "drupal.update.core-release-insecure-term-condition"
+    ],
+    "severity_still_not_established": true,
+    "enforcement_still_guidance_only": true,
+    "remediation_still_absent": true,
+    "note": "The v0.3.0 audit decision is preserved verbatim above; this dated block records the current engine decision without rewriting audit history. The runtime executes reviewed declarative contracts only and adds no new finding semantics of its own.",
+    "settled_on": "2026-09-08",
+    "semantic_authority_version_scope_explicit": true,
+    "cross_major_semantic_authority_leakage_blocked": true,
+    "confirmed_requires_definitive_applicability": true
+  }
+}

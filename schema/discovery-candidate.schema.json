@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/discovery-candidate-v0.1.json",
+  "title": "Drupal Knowledge discovery candidate",
+  "type": "object",
+  "required": ["id", "status", "summary", "evidence", "review_required"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^candidate\\.drupal\\.[a-z0-9.-]+$"},
+    "status": {"enum": ["review_required", "corroborated", "rejected", "promoted_to_knowledge_proposal"]},
+    "summary": {"type": "string"},
+    "evidence": {"type": "array", "items": {"type": "object"}},
+    "review_required": {"const": true},
+    "can_block": {"const": false}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,6 @@
+module:
+  node: 0
+    bad: 1
+theme:
+  claro: 0
+profile: standard

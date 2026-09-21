@@ -1,0 +1,231 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/implementation-finding-v0.1.json",
+  "title": "Drupal Knowledge implementation finding evaluation",
+  "description": "Findings produced by evaluating reviewed implementation rules against one canonical project evidence set. A confirmation requires a reviewed rule whose authority snapshot is unchanged, definitive evidence, and every context requirement the rule declares. Anything less is a candidate or an unknown. Nothing described here is applied: no configuration, code, Composer state or Drupal state is modified.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "evaluation_id",
+    "result_domain",
+    "engine",
+    "generated_at",
+    "evidence_set",
+    "rules",
+    "findings",
+    "summary",
+    "boundaries",
+    "execution",
+    "trusted_knowledge_mutations"
+  ],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "evaluation_id": {"type": "string", "pattern": "^implementation-evaluation\\.[a-f0-9]{16}$"},
+    "result_domain": {
+      "description": "Its own domain. Known-vulnerability applicability belongs to the advisory engine and API migration work to the migration engine.",
+      "const": "implementation_finding"
+    },
+    "engine": {
+      "type": "object",
+      "required": ["name", "version", "deterministic", "language_model_used", "produces_trusted_knowledge"],
+      "properties": {
+        "name": {"const": "drupal-knowledge-implementation-engine"},
+        "version": {"type": "string"},
+        "deterministic": {"const": true},
+        "language_model_used": {"const": false},
+        "produces_trusted_knowledge": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "generated_at": {"type": "string"},
+    "evidence_set": {
+      "type": "object",
+      "required": ["evidence_set_id", "project_fingerprint", "revision_fingerprint", "records"],
+      "properties": {
+        "evidence_set_id": {"type": "string"},
+        "project_fingerprint": {"type": "string"},
+        "revision_fingerprint": {"type": "string"},
+        "records": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "rules": {
+      "type": "object",
+      "required": ["evaluated", "skipped", "reviewed", "draft"],
+      "properties": {
+        "evaluated": {"type": "array", "items": {"type": "string"}},
+        "skipped": {"type": "array"},
+        "reviewed": {"type": "integer", "minimum": 0},
+        "draft": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "findings": {"type": "array", "items": {"$ref": "#/$defs/finding"}},
+    "summary": {
+      "type": "object",
+      "required": ["findings", "by_state", "by_category", "confirmed", "blocking"],
+      "properties": {
+        "findings": {"type": "integer", "minimum": 0},
+        "by_state": {"type": "object"},
+        "by_category": {"type": "object"},
+        "confirmed": {"type": "integer", "minimum": 0},
+        "blocking": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "boundaries": {
+      "type": "object",
+      "required": ["runtime_observed", "database_inspected", "statement", "advisory_relationship", "migration_relationship"],
+      "properties": {
+        "runtime_observed": {"const": false},
+        "database_inspected": {"const": false},
+        "statement": {"type": "string"},
+        "advisory_relationship": {"type": "string"},
+        "migration_relationship": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "execution": {
+      "type": "object",
+      "required": ["configuration_modified", "code_modified", "composer_invoked", "drupal_state_changed"],
+      "properties": {
+        "configuration_modified": {"const": false},
+        "code_modified": {"const": false},
+        "composer_invoked": {"const": false},
+        "drupal_state_changed": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "trusted_knowledge_mutations": {
+      "type": "object",
+      "required": ["knowledge_records", "reviewed_context", "source_derived_records", "advisories", "solved_cases", "discovery", "implementation_rules"],
+      "additionalProperties": {"const": 0}
+    }
+  },
+  "$defs": {
+    "finding": {
+      "type": "object",
+      "required": [
+        "finding_contract_version",
+        "finding_id",
+        "result_domain",
+        "rule_id",
+        "category",
+        "state",
+        "reason_code",
+        "assertion",
+        "human_title",
+        "severity",
+        "effective_enforcement",
+        "project",
+        "evidence",
+        "context",
+        "authority",
+        "explanation",
+        "remediation",
+        "limitations",
+        "execution"
+      ],
+      "properties": {
+        "finding_contract_version": {"type": "string"},
+        "finding_id": {"type": "string", "pattern": "^implementation-finding\\.[a-f0-9]{16}$"},
+        "result_domain": {"const": "implementation_finding"},
+        "rule_id": {"type": "string"},
+        "category": {"enum": ["performance", "security", "configuration_quality"]},
+        "state": {
+          "description": "Absence of an adverse condition is never a conformance verdict, so there is no passing state.",
+          "enum": ["confirmed", "candidate", "not_observed", "unknown", "requires_human_review"]
+        },
+        "reason_code": {"type": "string"},
+        "assertion": {"type": "string"},
+        "human_title": {"type": "string"},
+        "severity": {
+          "type": "object",
+          "required": ["state", "source"],
+          "properties": {
+            "state": {"const": "not_established"},
+            "source": {"type": "null"}
+          },
+          "additionalProperties": false
+        },
+        "effective_enforcement": {"enum": ["guidance", "advisory", "blocking"]},
+        "project": {
+          "type": "object",
+          "required": ["project_fingerprint", "revision_fingerprint", "core_version"],
+          "properties": {
+            "project_fingerprint": {"type": "string"},
+            "revision_fingerprint": {"type": "string"},
+            "core_version": {"type": ["string", "null"]}
+          },
+          "additionalProperties": false
+        },
+        "evidence": {
+          "type": "object",
+          "required": ["evidence_set_id", "evidence_ids", "check_kind", "reason_codes", "occurrences"],
+          "properties": {
+            "evidence_set_id": {"type": "string"},
+            "evidence_ids": {"type": "array", "items": {"type": "string"}},
+            "check_kind": {"enum": ["evidence_condition", "evidence_cross_reference"]},
+            "reason_codes": {"type": "array", "items": {"type": "string"}},
+            "occurrences": {"type": "array"}
+          },
+          "additionalProperties": false
+        },
+        "context": {
+          "type": "object",
+          "required": ["required", "satisfied", "unsatisfied", "complete"],
+          "properties": {
+            "required": {"type": "integer", "minimum": 0},
+            "satisfied": {"type": "array", "items": {"type": "string"}},
+            "unsatisfied": {"type": "array", "items": {"type": "string"}},
+            "complete": {"type": "boolean"}
+          },
+          "additionalProperties": false
+        },
+        "authority": {
+          "type": "object",
+          "required": ["review_status", "reviewed_on", "sources", "stale_sources"],
+          "properties": {
+            "review_status": {"enum": ["draft", "reviewed", "deprecated", "superseded"]},
+            "reviewed_on": {"type": ["string", "null"]},
+            "sources": {"type": "array", "minItems": 1},
+            "stale_sources": {"type": "array"}
+          },
+          "additionalProperties": false
+        },
+        "explanation": {
+          "description": "Every question a reader should be able to ask of a finding.",
+          "type": "object",
+          "required": [
+            "what_rule",
+            "why_it_applies",
+            "what_evidence",
+            "evidence_completeness",
+            "what_remains_unknown",
+            "authority",
+            "conclusion"
+          ],
+          "additionalProperties": {"type": "string"}
+        },
+        "remediation": {
+          "type": "object",
+          "required": ["guidance", "basis", "applied"],
+          "properties": {
+            "guidance": {"type": "string"},
+            "basis": {"type": "string"},
+            "applied": {"const": false}
+          },
+          "additionalProperties": false
+        },
+        "limitations": {"type": "array", "items": {"type": "string"}},
+        "execution": {
+          "type": "object",
+          "required": ["configuration_modified", "code_modified", "composer_invoked", "drupal_state_changed"],
+          "additionalProperties": {"const": false}
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

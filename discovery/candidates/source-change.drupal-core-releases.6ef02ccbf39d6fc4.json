@@ -1,0 +1,67 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 2,
+    "added_sample": [
+      "<supported_branches>10.6.,11.3.,11.4.,12.0.</supported_branches>",
+      "<release><name>drupal 12.0.0-alpha1</name><version>12.0.0-alpha1</version><tag>12.0.0-alpha1</tag><status>published</status><release_link>https://www.drupal.org…"
+    ],
+    "changed_region_count": 2,
+    "current_bytes": 543079,
+    "current_line_count": 14,
+    "deterministic": true,
+    "first_changed_line": 7,
+    "method": "normalized_line_diff",
+    "previous_bytes": 540265,
+    "previous_line_count": 14,
+    "removed_line_count": 2,
+    "removed_sample": [
+      "<supported_branches>10.6.,11.3.,11.4.</supported_branches>",
+      "<release><name>drupal 11.4.5</name><version>11.4.5</version><tag>11.4.5</tag><status>published</status><release_link>https://www.drupal.org/project/drupal/relea…"
+    ]
+  },
+  "current_hash": "sha256:2c6302dcfe0d2dd98afb22db753b6ee0761b9440555b71b1af2272b9ba84c2fb",
+  "discovered_at": "2026-09-08T18:04:06Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-core-releases.6ef02ccbf39d6fc4",
+  "is_knowledge_proposal": false,
+  "kind": "security-source-change",
+  "previous_hash": "sha256:c7de75d2508c7d134765affdea101e9bc7a4d534d8eaaa97fda3308a14ea0063",
+  "provenance": {
+    "acquired_at": "2026-09-08T18:04:06Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/project/drupal/releases",
+    "category": "core-releases",
+    "content_length": 543079,
+    "content_type": "text/xml; charset=utf-8",
+    "content_window": null,
+    "etag": null,
+    "fetch_url": "https://updates.drupal.org/release-history/drupal/current",
+    "http_status": 200,
+    "last_modified": "Tue, 08 Sep 2026 14:56:52 GMT",
+    "normalization": "raw_text",
+    "trust": "authoritative"
+  },
+  "review": {
+    "actor": "Miguel Martins",
+    "authorizes_knowledge_proposal_work": false,
+    "method": "human_source_diff_review",
+    "note": "Structural XML diff of the pinned snapshot against the newly observed feed: supported_branches moved from 10.6.,11.3.,11.4. to 10.6.,11.3.,11.4.,12.0. and three releases were added (10.6.16, 11.4.6, 12.0.0-alpha1). Zero existing releases changed status, security coverage or release terms, and the insecure-term population is identical at 514 releases. Drupal Knowledge classifies branch_listed_in_source_supported_branches and source_supported_branches_presence_or_absence as non-authoritative signals that cannot drive finding conclusions, and the reviewed insecure-term semantic authority is scoped to drupal_core_majors 11, so a Drupal 12 branch resolves to candidate rather than confirmed via the existing cross-major guard. The reviewed release-lifecycle semantics therefore remain valid; only the source baseline was behind, so the context is re-normalized against the new snapshot without any semantic change.",
+    "outcome": "reviewed_no_knowledge_change",
+    "reviewed_at": "2026-09-08T18:04:37Z",
+    "trusted_knowledge_changed": false
+  },
+  "review_required": true,
+  "review_state": "reviewed_no_knowledge_change",
+  "run_id": "run.20260908T180406.707312ce",
+  "source_id": "drupal-core-releases",
+  "source_url": "https://www.drupal.org/project/drupal/releases",
+  "status": "reviewed",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}

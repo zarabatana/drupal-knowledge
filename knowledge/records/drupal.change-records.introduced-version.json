@@ -1,0 +1,52 @@
+{
+  "id": "drupal.change-records.introduced-version",
+  "title": "Drupal core change records preserve introduced branch and version",
+  "summary": "Drupal core change records are the official record of the release branch and release version in which a change occurred.",
+  "kind": "version-change",
+  "domains": ["core", "change-records", "update"],
+  "severity": "moderate",
+  "review_status": "reviewed",
+  "sources": [
+    {
+      "source_id": "drupal-core-change-record-policy",
+      "locator": "official record of the release branch and release version",
+      "title": "Change records"
+    },
+    {
+      "source_id": "drupal-core-change-records",
+      "locator": "Introduced in branch/version table",
+      "title": "Change records for Drupal core"
+    }
+  ],
+  "version_applicability": {
+    "drupal_core": [
+      {
+        "constraint": "change-record-specific",
+        "status": "applicable",
+        "notes": "Each derived change record must carry its own introduced branch/version values."
+      }
+    ]
+  },
+  "project_applicability": {
+    "requires": ["drupal_core_version"],
+    "unknown_result": "cannot_determine_change_applicability"
+  },
+  "actions": [
+    "Represent introduced branch and introduced version when modeling Drupal core changes."
+  ],
+  "checks": [
+    "Fail validation for Drupal change-derived records that omit version applicability."
+  ],
+  "evidence_requirements": [
+    "Drupal.org change record locator",
+    "Introduced branch/version value"
+  ],
+  "automation_hints": [
+    "Upgrade analysis should compare project Drupal core version with introduced/deprecated/removed constraints."
+  ],
+  "enforcement": {
+    "intent": "non_blocking",
+    "rationale": "Version provenance is required for correct matching; individual reviewed records decide enforcement."
+  },
+  "related": ["drupal.api.version-aware-documentation"]
+}

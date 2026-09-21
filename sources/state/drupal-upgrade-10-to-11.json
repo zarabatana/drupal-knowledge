@@ -1,0 +1,25 @@
+{
+  "acquisition": {
+    "acquisition_channel": "external_authoritative_source",
+    "check_cadence_days": 30,
+    "consecutive_failures": 0,
+    "engine_name": "drupal-knowledge-acquisition-engine",
+    "engine_version": "0.1",
+    "last_attempt_at": "2026-09-08T21:12:45Z",
+    "last_attempt_run_id": "run.20260908T211245.97b7af3a",
+    "last_attempt_status": "first_observation",
+    "last_error": null,
+    "last_success_at": "2026-09-08T21:12:45Z",
+    "last_success_run_id": "run.20260908T211245.97b7af3a",
+    "previous_snapshot_sha256": null,
+    "review_candidate_id": null
+  },
+  "content_length": 6736,
+  "content_sha256": "sha256:caed10fd7ac71226b75e303b3641b1f5dbfde95c7705e8f13613827631dc2578",
+  "etag": "\"1788901801-1\"",
+  "fetch_url": "https://www.drupal.org/docs/upgrading-drupal/upgrading-drupal/how-to-upgrade-from-drupal-10-to-drupal-11",
+  "last_changed_at": "2026-09-08T21:12:45Z",
+  "last_modified": "Tue, 08 Sep 2026 21:10:01 GMT",
+  "source_id": "drupal-upgrade-10-to-11",
+  "url": "https://www.drupal.org/docs/upgrading-drupal/upgrading-drupal/how-to-upgrade-from-drupal-10-to-drupal-11"
+}

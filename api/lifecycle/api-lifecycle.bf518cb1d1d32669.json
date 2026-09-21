@@ -1,0 +1,45 @@
+{
+  "id": "api-lifecycle.bf518cb1d1d32669",
+  "is_general_knowledge_record": false,
+  "is_trusted_knowledge": false,
+  "lifecycle": {
+    "annotation_parsed": false,
+    "changed_version": null,
+    "deprecated_version": null,
+    "reason": "The annotation does not follow the mandated 'in drupal:X and is removed from drupal:Y.' form, so no version boundary is read from it.",
+    "removed_version": null,
+    "source_annotation": "in drupal:9.3.0 and is removed from drupal:10.0.0 without replacement.",
+    "state": "unknown"
+  },
+  "observed_branch": "9",
+  "provenance": {
+    "acquisition_channel": "external_authoritative_source",
+    "authority_kind": "core_deprecation_index",
+    "ingest_run_id": "api.20260908T231021.6bf7c3e6",
+    "ingested_at": "2026-09-08T23:10:21Z",
+    "ingested_by": {
+      "name": "drupal-knowledge-api-lifecycle-engine",
+      "version": "0.1"
+    },
+    "source_id": "drupal-api-deprecated-9-p2",
+    "source_snapshot_sha256": "sha256:9b9b29988d9a578f1c1aa42e199468eb01c48ec4d1f47e0d04720e494547288c",
+    "source_url": "https://api.drupal.org/api/drupal/deprecated/9"
+  },
+  "record_class": "source_derived_authoritative_api_lifecycle_record",
+  "record_contract_version": "0.1",
+  "replacement": {
+    "semantics": "A replacement is recorded only when the annotation states one. An equivalent API is never inferred.",
+    "state": "unknown",
+    "value": null
+  },
+  "symbol": {
+    "class": null,
+    "core_file": "core/includes/file.inc",
+    "identity_basis": "global_procedural_function",
+    "index_name": "file_build_uri",
+    "kind": "function",
+    "matchable": true,
+    "member": null,
+    "qualified_name": "file_build_uri"
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/recurrence-analysis-v0.1.json",
+  "title": "Drupal Knowledge solved-case recurrence analysis",
+  "description": "A deterministic account of verified solved cases that align structurally. Recurrence is evidence that the same thing happened more than once in named contexts. It is not generalization and it is not trusted Drupal knowledge.",
+  "type": "object",
+  "required": [
+    "id",
+    "analysis_contract_version",
+    "engine",
+    "built_at",
+    "run_id",
+    "structural_key",
+    "case_ids",
+    "supporting_cases",
+    "contradictory_cases",
+    "excluded_cases",
+    "independent_occurrences",
+    "shared_dimensions",
+    "observed_scope",
+    "applicability_conflicts",
+    "verification_quality",
+    "limitations",
+    "provenance",
+    "is_trusted_knowledge",
+    "is_generalization",
+    "review_required"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^recurrence\\.drupal\\.[a-z0-9.-]+$"},
+    "analysis_contract_version": {"type": "string"},
+    "engine": {
+      "type": "object",
+      "required": ["name", "version", "deterministic", "language_model_used"],
+      "properties": {
+        "name": {"const": "drupal-knowledge-recurrence-engine"},
+        "version": {"type": "string"},
+        "deterministic": {"const": true},
+        "language_model_used": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "built_at": {"type": "string"},
+    "run_id": {"type": "string"},
+    "structural_key": {
+      "description": "Deterministic grouping identity. Built from normalized root cause, fix category, fix summaries and affected components - never from description-text similarity.",
+      "type": "object",
+      "required": ["digest", "root_cause_digest", "fix_category", "fix_digest", "components", "method"],
+      "properties": {
+        "digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "root_cause_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "fix_category": {"type": "string"},
+        "fix_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "components": {"type": "array", "items": {"type": "string"}},
+        "method": {"const": "normalized_structural_identity"}
+      },
+      "additionalProperties": false
+    },
+    "case_ids": {"type": "array", "items": {"type": "string"}},
+    "supporting_cases": {"type": "array", "items": {"$ref": "#/$defs/occurrence"}},
+    "contradictory_cases": {
+      "description": "Verified cases that match structurally but whose own verification records a failure. Never hidden and never dropped.",
+      "type": "array",
+      "items": {"$ref": "#/$defs/occurrence"}
+    },
+    "excluded_cases": {
+      "description": "Cases considered and set aside, with the reason. Unverified cases appear here rather than silently vanishing.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["case_id", "reason", "detail"],
+        "properties": {
+          "case_id": {"type": "string"},
+          "reason": {
+            "enum": [
+              "not_verified",
+              "duplicate_occurrence",
+              "structural_key_mismatch",
+              "no_component_overlap"
+            ]
+          },
+          "detail": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "independent_occurrences": {
+      "description": "Occurrences counted conservatively: one independent occurrence per distinct project fingerprint, regardless of how many revisions or recaptures that project contributed.",
+      "type": "object",
+      "required": ["count", "project_fingerprints", "duplicate_capture_count", "revision_count", "method"],
+      "properties": {
+        "count": {"type": "integer", "minimum": 0},
+        "project_fingerprints": {"type": "array", "items": {"type": "string"}},
+        "duplicate_capture_count": {"type": "integer", "minimum": 0},
+        "revision_count": {"type": "integer", "minimum": 0},
+        "method": {"const": "distinct_project_fingerprint"}
+      },
+      "additionalProperties": false
+    },
+    "shared_dimensions": {
+      "type": "object",
+      "required": ["problem_aligned", "root_cause_aligned", "fix_aligned", "components_aligned", "dimensions"],
+      "properties": {
+        "problem_aligned": {"type": "boolean"},
+        "root_cause_aligned": {"type": "boolean"},
+        "fix_aligned": {"type": "boolean"},
+        "components_aligned": {"type": "boolean"},
+        "dimensions": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "observed_scope": {
+      "description": "Exactly what the participating cases were proven on. Never widened.",
+      "type": "object",
+      "required": ["drupal_core_versions", "drupal_core_majors", "php_versions", "component_versions", "environment_classes", "explicitly_evidenced"],
+      "properties": {
+        "drupal_core_versions": {"type": "array", "items": {"type": "string"}},
+        "drupal_core_majors": {"type": "array", "items": {"type": "string"}},
+        "php_versions": {"type": "array", "items": {"type": "string"}},
+        "component_versions": {"type": "object"},
+        "environment_classes": {"type": "array", "items": {"type": "string"}},
+        "explicitly_evidenced": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "applicability_conflicts": {
+      "description": "Structurally aligned cases whose scopes do not reconcile, for example incompatible Drupal majors or component major lines.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "detail", "case_ids"],
+        "properties": {
+          "kind": {
+            "enum": [
+              "incompatible_drupal_major",
+              "incompatible_component_major",
+              "incompatible_php_major",
+              "unreconciled_environment"
+            ]
+          },
+          "detail": {"type": "string"},
+          "case_ids": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "verification_quality": {
+      "type": "object",
+      "required": ["grade", "causality_states", "root_cause_states", "passed_result_count", "failed_result_count", "inconclusive_result_count", "methods"],
+      "properties": {
+        "grade": {"enum": ["strong", "moderate", "weak"]},
+        "causality_states": {"type": "array", "items": {"type": "string"}},
+        "root_cause_states": {"type": "array", "items": {"type": "string"}},
+        "passed_result_count": {"type": "integer", "minimum": 0},
+        "failed_result_count": {"type": "integer", "minimum": 0},
+        "inconclusive_result_count": {"type": "integer", "minimum": 0},
+        "methods": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "provenance": {
+      "description": "Internal-proven evidence only. Project identity never appears beyond the fingerprints the solved cases already carry.",
+      "type": "object",
+      "required": ["evidence_channel", "case_source", "project_identity_exposed", "discovery_signals_counted"],
+      "properties": {
+        "evidence_channel": {"const": "internal_proven_solved_case"},
+        "case_source": {"const": "cases/solved"},
+        "project_identity_exposed": {"const": false},
+        "discovery_signals_counted": {"const": 0}
+      },
+      "additionalProperties": false
+    },
+    "is_trusted_knowledge": {"const": false},
+    "is_generalization": {"const": false},
+    "review_required": {"const": true}
+  },
+  "$defs": {
+    "occurrence": {
+      "type": "object",
+      "required": ["case_id", "project_fingerprint", "revision_fingerprint", "status", "drupal_core_versions", "verification_summary", "counts_as_independent"],
+      "properties": {
+        "case_id": {"type": "string"},
+        "project_fingerprint": {"type": "string"},
+        "revision_fingerprint": {"type": ["string", "null"]},
+        "status": {"type": "string"},
+        "drupal_core_versions": {"type": "array", "items": {"type": "string"}},
+        "verification_summary": {"type": "string"},
+        "counts_as_independent": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

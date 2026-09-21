@@ -1,0 +1,161 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://drupal-knowledge.zarabatana.info/schema/project-profile-v0.1.json",
+ "title": "Drupal project profile",
+ "type": "object",
+ "required": [
+  "schema_version",
+  "project_id",
+  "facts"
+ ],
+ "properties": {
+  "schema_version": {
+   "const": "0.1"
+  },
+  "project_id": {
+   "type": "string"
+  },
+  "facts": {
+   "type": "object",
+   "required": [
+    "drupal_core_version",
+    "php_version",
+    "installation_profile",
+    "modules",
+    "themes",
+    "custom_modules",
+    "custom_themes",
+    "base_themes",
+    "composer_packages",
+    "database",
+    "config_status",
+    "multilingual",
+    "commerce",
+    "views",
+    "search_api",
+    "authentication",
+    "file_schemes",
+    "caching_layers",
+    "deployment_model",
+    "environment_type",
+    "custom_code_files",
+    "configuration_objects",
+    "settings_declarations"
+   ],
+   "properties": {
+    "project_type": {
+     "$ref": "#/$defs/fact"
+    },
+    "drupal_web_root": {
+     "$ref": "#/$defs/fact"
+    },
+    "drupal_core_version": {
+     "$ref": "#/$defs/fact"
+    },
+    "php_version": {
+     "$ref": "#/$defs/fact"
+    },
+    "installation_profile": {
+     "$ref": "#/$defs/fact"
+    },
+    "modules": {
+     "$ref": "#/$defs/fact"
+    },
+    "themes": {
+     "$ref": "#/$defs/fact"
+    },
+    "custom_modules": {
+     "$ref": "#/$defs/fact"
+    },
+    "custom_themes": {
+     "$ref": "#/$defs/fact"
+    },
+    "base_themes": {
+     "$ref": "#/$defs/fact"
+    },
+    "composer_packages": {
+     "$ref": "#/$defs/fact"
+    },
+    "database": {
+     "$ref": "#/$defs/fact"
+    },
+    "config_status": {
+     "$ref": "#/$defs/fact"
+    },
+    "multilingual": {
+     "$ref": "#/$defs/fact"
+    },
+    "commerce": {
+     "$ref": "#/$defs/fact"
+    },
+    "views": {
+     "$ref": "#/$defs/fact"
+    },
+    "search_api": {
+     "$ref": "#/$defs/fact"
+    },
+    "authentication": {
+     "$ref": "#/$defs/fact"
+    },
+    "file_schemes": {
+     "$ref": "#/$defs/fact"
+    },
+    "caching_layers": {
+     "$ref": "#/$defs/fact"
+    },
+    "deployment_model": {
+     "$ref": "#/$defs/fact"
+    },
+    "environment_type": {
+     "$ref": "#/$defs/fact"
+    },
+    "custom_code_files": {
+     "$ref": "#/$defs/fact"
+    },
+    "configuration_objects": {
+     "$ref": "#/$defs/fact"
+    },
+    "settings_declarations": {
+     "$ref": "#/$defs/fact"
+    }
+   },
+   "additionalProperties": false
+  }
+ },
+ "$defs": {
+  "fact": {
+   "type": "object",
+   "required": [
+    "state"
+   ],
+   "properties": {
+    "state": {
+     "enum": [
+      "known",
+      "unknown",
+      "not_applicable"
+     ]
+    },
+    "value": {},
+    "source_evidence_ids": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "confidence": {
+     "enum": [
+      "low",
+      "medium",
+      "high"
+     ]
+    },
+    "notes": {
+     "type": "string"
+    }
+   },
+   "additionalProperties": false
+  }
+ },
+ "additionalProperties": false
+}

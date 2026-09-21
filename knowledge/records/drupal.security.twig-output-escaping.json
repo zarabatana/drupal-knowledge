@@ -1,0 +1,48 @@
+{
+  "id": "drupal.security.twig-output-escaping",
+  "title": "Twig output escaping should not be bypassed without trusted data",
+  "summary": "Drupal secure-code documentation says Twig auto-escapes printed strings by default, warns that the raw filter does not escape output and should only be used for trusted data, and states that rendered Twig attributes should be quoted.",
+  "kind": "security-guidance",
+  "domains": ["security", "twig", "theme", "frontend"],
+  "severity": "high",
+  "review_status": "reviewed",
+  "sources": [
+    {
+      "source_id": "drupal-secure-code",
+      "locator": "Sanitizing on output to avoid Cross Site Scripting (XSS) attacks",
+      "title": "Writing secure code for Drupal"
+    }
+  ],
+  "version_applicability": {
+    "drupal_core": [
+      {
+        "constraint": "current-documented-secure-code-guidance",
+        "status": "applicable",
+        "notes": "This reviewed rule reflects the current Drupal secure-code documentation for Twig output escaping."
+      }
+    ]
+  },
+  "project_applicability": {
+    "requires": ["custom_themes", "twig_templates"],
+    "unknown_result": "advisory_only"
+  },
+  "actions": [
+    "Review Twig templates for raw-filter usage and unquoted rendered attributes."
+  ],
+  "checks": [
+    "Identify Twig raw-filter usage and determine whether the data is trusted.",
+    "Identify unquoted dynamic attributes in Twig templates."
+  ],
+  "evidence_requirements": [
+    "Twig template content",
+    "Data trust analysis for variables rendered with raw"
+  ],
+  "automation_hints": [
+    "Future static analysis may detect raw filters and unquoted dynamic attributes; blocking findings still require project evidence and trust analysis."
+  ],
+  "enforcement": {
+    "intent": "non_blocking",
+    "rationale": "The source supports the guidance, but applying it requires project template evidence and data trust analysis; no blocking evaluation is implemented for any consumer."
+  },
+  "related": ["drupal.coding-standards.current-source"]
+}

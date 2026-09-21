@@ -1,0 +1,44 @@
+This policy explains when to add a change record to an issue.
+A change record, or change notice, is the official record of the release branch and release version when a change occurred to Drupal core.
+Change records
+inform site builders, administrators, editors, developers, themers and distribution developers are of changes that affect them. The change record is to explain the impact of the change and what action they should take.
+Procedures
+When a change record is needed or not
+Add
+Something worth celebrating / championing.
+An API change
+A Backwards compatibility (BC) break.
+When the change impacts the User Interface (UI), including CSS changes.
+A significant change.
+How a "significant" change is defined is explained
+in the Drupal core governance documentation.
+A change in the user experience.
+For update issues to explain the mitigation steps.
+For Coding standard issues when the rule requires significant code changes.
+Removing an unused dependency.
+Usually not needed
+A
+non-disruptive
+bug fix.
+Changes to
+@internal
+code.
+Not needed
+Constructor parameter additions.
+Constructor parameter removals.
+Write a change record
+There are instructions for how to
+Write a change record for a Drupal core issue
+.
+Update a published change record
+It is OK to update a published change record to add missing information, expand details or make corrections. Just ensure that your changes are correct for the corresponding issue. For example. avoid adding information about future changes.
+If the change includes referring to an issue about later changes made possible by this change add the issue link at the end of the text. The 'issues' field is for the issue the original version of the CR was for, not subsequent changes. The 'issues' field is not to be a history of all related changes. This makes it possible for a reviewer to read the issue where the change was made.
+It is also good practice to comment on the original issue, which may be closed, to say that you have modified the changed record. That will alert followers of the issue of the change and give them an opportunity to review.
+If you have any questions about your proposed changes ask in #contribute for help.
+Indicate that a draft change record is no longer needed
+During the development of an issue a change record may become unnecessary. In this case, do the following to indicate that the change record can be delete.
+Add a brief comment in the issue explaining why the change record is no longer needed.
+Change the title of the change record to "[obsolete]".
+Delete a draft change record
+Draft
+change records for an issue with a status of "Closed (duplicate)", "Closed (won't fix)", "Closed (works as designed)", "Closed (cannot reproduce)", or "Closed (outdated)" may be deleted three months after the issue is closed.

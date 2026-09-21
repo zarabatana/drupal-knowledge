@@ -1,0 +1,73 @@
+{
+  "authority": {
+    "sources": [
+      {
+        "quotes": [
+          "Cache tags describe dependencies on data managed by Drupal"
+        ],
+        "snapshot_sha256": "sha256:35e950799ef519216d7b7f02340a70dae591c29214e9421543051df38762989b",
+        "source_id": "drupal-cache-tags"
+      }
+    ],
+    "summary": "Cache API documentation is registered as performance authority, but it does not state an expected aggregation setting. The rule stays draft until one does."
+  },
+  "category": "performance",
+  "check": {
+    "condition": {
+      "any": [
+        {
+          "assertion": "config.exported_value",
+          "id": "css-aggregation-off",
+          "operator": "evidence_matches",
+          "subject": "system.performance:css.preprocess",
+          "value": false
+        },
+        {
+          "assertion": "config.exported_value",
+          "id": "js-aggregation-off",
+          "operator": "evidence_matches",
+          "subject": "system.performance:js.preprocess",
+          "value": false
+        }
+      ]
+    },
+    "kind": "evidence_condition"
+  },
+  "context_requirements": [],
+  "finding": {
+    "assertion": "Exported configuration disables CSS or JavaScript aggregation.",
+    "conclusion": {
+      "candidate": "Aggregation is disabled in exported configuration. This rule is not reviewed, so nothing is confirmed from it.",
+      "default": "No conclusion is drawn.",
+      "not_observed": "Exported configuration does not disable aggregation.",
+      "unknown": "The exported aggregation values could not be established."
+    },
+    "enforcement_intent": "guidance",
+    "evidence_explanation": "css.preprocess or js.preprocess was observed as false.",
+    "human_title": "Asset aggregation is disabled in exported configuration",
+    "limitations": [
+      "The rule is unreviewed and may not confirm a finding.",
+      "Development environments disable aggregation on purpose."
+    ],
+    "remediation": {
+      "applied": false,
+      "basis": "project_specific_guidance",
+      "guidance": "Treat this as a prompt to review the setting by hand. The rule is a draft and carries no reviewed authority for what the value should be."
+    },
+    "severity_state": "not_established"
+  },
+  "review": {
+    "authority": "No registered authoritative source yet states the expected production value for asset aggregation, so this rule may not confirm anything.",
+    "reviewed_on": null,
+    "status": "draft"
+  },
+  "rule_contract_version": "0.1",
+  "rule_id": "performance.asset-aggregation-disabled",
+  "scope": {
+    "component": "system.performance",
+    "drupal_core_minimum_major": 8,
+    "notes": "Asset aggregation settings exist in Drupal 8 and later."
+  },
+  "summary": "The exported system.performance configuration disables CSS or JavaScript aggregation. Drafted pending an authoritative source that states the expected production value.",
+  "title": "CSS or JavaScript aggregation is disabled in exported configuration"
+}

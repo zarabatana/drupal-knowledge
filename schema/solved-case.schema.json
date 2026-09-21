@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/solved-case-v0.1.json",
+  "title": "Drupal Knowledge solved case",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "problem",
+    "symptoms",
+    "root_cause",
+    "solution",
+    "verification",
+    "environment",
+    "drupal_versions",
+    "php_versions",
+    "modules",
+    "themes",
+    "project_type",
+    "applicability",
+    "limitations",
+    "evidence",
+    "related_knowledge_ids",
+    "occurrence_count",
+    "first_seen",
+    "last_verified",
+    "status"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^case\\.drupal(?:\\.[a-z0-9]+(?:-[a-z0-9]+)*){2,}$"},
+    "title": {"type": "string"},
+    "problem": {"type": "string"},
+    "symptoms": {"type": "array", "items": {"type": "string"}},
+    "root_cause": {"type": "string"},
+    "solution": {"type": "array", "items": {"type": "string"}},
+    "verification": {"type": "array", "items": {"type": "string"}},
+    "environment": {"type": "object"},
+    "drupal_versions": {"type": "array", "items": {"type": "string"}},
+    "php_versions": {"type": "array", "items": {"type": "string"}},
+    "modules": {"type": "array", "items": {"type": "object"}},
+    "themes": {"type": "array", "items": {"type": "object"}},
+    "project_type": {"type": "string"},
+    "applicability": {"type": "object"},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "evidence": {"type": "array", "items": {"type": "object"}},
+    "related_knowledge_ids": {"type": "array", "items": {"type": "string"}},
+    "occurrence_count": {"type": "integer", "minimum": 1},
+    "first_seen": {"type": "string"},
+    "last_verified": {"type": "string"},
+    "status": {
+      "enum": [
+        "captured",
+        "verified",
+        "recurring",
+        "generalization_proposed",
+        "promoted_to_knowledge_proposal",
+        "rejected",
+        "retired"
+      ]
+    },
+    "capture": {
+      "type": "object",
+      "description": "Machine-readable capture provenance. Its presence never implies promotion: automatic_promotion is always false and human_review_required is always true.",
+      "required": ["contract_version", "case_identity", "captured_by", "producer", "root_cause_state", "fix_category", "verification", "promotion"],
+      "properties": {
+        "contract_version": {"const": "0.1"},
+        "case_identity": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "captured_by": {"type": "object", "required": ["name", "version"]},
+        "producer": {"type": "object", "required": ["name", "version"]},
+        "root_cause_state": {"enum": ["confirmed", "evidenced", "unknown"]},
+        "fix_category": {"type": "string"},
+        "verification": {"type": "object"},
+        "origin_finding_id": {"type": ["string", "null"]},
+        "promotion": {
+          "type": "object",
+          "required": ["automatic_promotion", "human_review_required", "trusted_knowledge_created"],
+          "additionalProperties": false,
+          "properties": {
+            "automatic_promotion": {"const": false},
+            "human_review_required": {"const": true},
+            "trusted_knowledge_created": {"const": false}
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "promotion": {
+      "type": "object",
+      "properties": {
+        "candidate_knowledge_id": {"type": "string"},
+        "human_review_required": {"const": true}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

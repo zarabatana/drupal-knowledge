@@ -1,0 +1,15 @@
+{
+  "packages": [
+    {
+      "name": "drupal/core",
+      "version": "11.2.3",
+      "type": "drupal-core"
+    },
+    {
+      "name": "drupal/core-recommended",
+      "version": "11.2.3",
+      "type": "metapackage"
+    }
+  ],
+  "packages-dev": []
+}

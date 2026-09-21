@@ -1,0 +1,25 @@
+{
+  "acquisition": {
+    "acquisition_channel": "external_authoritative_source",
+    "check_cadence_days": 90,
+    "consecutive_failures": 0,
+    "engine_name": "drupal-knowledge-acquisition-engine",
+    "engine_version": "0.1",
+    "last_attempt_at": "2026-09-08T15:02:49Z",
+    "last_attempt_run_id": "run.20260908T150249.31ed3696",
+    "last_attempt_status": "unchanged",
+    "last_error": null,
+    "last_success_at": "2026-09-08T15:02:49Z",
+    "last_success_run_id": "run.20260908T150249.31ed3696",
+    "previous_snapshot_sha256": null,
+    "review_candidate_id": null
+  },
+  "content_length": 6972,
+  "content_sha256": "sha256:5ceb699008f74d539aaabed9e02c560071f1d90508023cb1f11735002357cd45",
+  "etag": "\"9120f56d68a5ec26222e7c80462fd915\"",
+  "fetch_url": "https://git.drupalcode.org/project/drupal/-/raw/11.4.5/core/modules/update/src/ProjectRelease.php",
+  "last_changed_at": "2026-09-07T19:56:48Z",
+  "last_modified": null,
+  "source_id": "drupal-update-project-release-semantics",
+  "url": "https://api.drupal.org/api/drupal/core%21modules%21update%21src%21ProjectRelease.php/class/ProjectRelease/11.x"
+}

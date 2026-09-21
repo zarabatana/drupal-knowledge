@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+.pytest_cache/
+tmp/
+acquisition-report/
+discovery-report/
+
+# Rendered public website. The dataset it is built from is committed and
+# stale-guarded; the HTML is a build artifact reproduced by `dk public-site build`.
+public-site/dist/

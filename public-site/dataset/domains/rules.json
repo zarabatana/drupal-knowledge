@@ -1,0 +1,554 @@
+{
+  "domain": "implementation_rule",
+  "label": "Implementation Rules",
+  "record_count": 9,
+  "records": [
+    {
+      "detail": {
+        "category": "configuration_quality",
+        "context_requirements": [],
+        "enforcement_intent": "guidance",
+        "review_status": "reviewed",
+        "scope": {
+          "component": "config/sync",
+          "drupal_core_minimum_major": 8,
+          "notes": "Configuration dependencies are a Drupal 8-and-later mechanism."
+        },
+        "severity_state": "not_established"
+      },
+      "domain": "implementation_rule",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.",
+        "what_is_project_specific": "This record is scoped to the context it names and is not a Drupal-wide rule.",
+        "what_is_recommended": "Evaluate it against a project with `dk implementation-findings`.",
+        "what_is_this": "reviewed rule evaluated against project evidence: Exported configuration depends on a module the same export does not enable",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-default-settings-php"
+        ],
+        "why_does_it_exist": "A reviewer tied an authoritative Drupal statement to a condition that project evidence can settle."
+      },
+      "id": "configuration_quality.config-depends-on-module-not-enabled",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:1e2df3981d9cc138fa916171a710909b3e6922ebd978252b453b903e540b4a39",
+          "source_id": "drupal-default-settings-php",
+          "source_url": "https://api.drupal.org/api/drupal/sites%21default%21default.settings.php/11"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-default-settings-php",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-default-settings-php/"
+        }
+      ],
+      "route": "/rules/configuration_quality.config-depends-on-module-not-enabled/",
+      "summary": "A config object declares a module dependency, and that module is absent from the complete list of modules the same exported core.extension enables.",
+      "title": "Exported configuration depends on a module the same export does not enable",
+      "trust": {
+        "authority": "reviewed Drupal Knowledge implementation rule",
+        "class": "reviewed_implementation_rule",
+        "explanation": "A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.",
+        "record_type": "reviewed rule evaluated against project evidence",
+        "review_status": "reviewed",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": false
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "category": "configuration_quality",
+        "context_requirements": [],
+        "enforcement_intent": "guidance",
+        "review_status": "reviewed",
+        "scope": {
+          "component": "system.theme",
+          "drupal_core_minimum_major": 8,
+          "notes": "core.extension and system.theme are Drupal 8-and-later configuration."
+        },
+        "severity_state": "not_established"
+      },
+      "domain": "implementation_rule",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.",
+        "what_is_project_specific": "This record is scoped to the context it names and is not a Drupal-wide rule.",
+        "what_is_recommended": "Evaluate it against a project with `dk implementation-findings`.",
+        "what_is_this": "reviewed rule evaluated against project evidence: The exported default theme is not enabled by the same export",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-default-settings-php"
+        ],
+        "why_does_it_exist": "A reviewer tied an authoritative Drupal statement to a condition that project evidence can settle."
+      },
+      "id": "configuration_quality.default-theme-not-enabled",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:1e2df3981d9cc138fa916171a710909b3e6922ebd978252b453b903e540b4a39",
+          "source_id": "drupal-default-settings-php",
+          "source_url": "https://api.drupal.org/api/drupal/sites%21default%21default.settings.php/11"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-default-settings-php",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-default-settings-php/"
+        }
+      ],
+      "route": "/rules/configuration_quality.default-theme-not-enabled/",
+      "summary": "system.theme names a default theme that is absent from the complete list of themes the same exported core.extension enables.",
+      "title": "The exported default theme is not enabled by the same export",
+      "trust": {
+        "authority": "reviewed Drupal Knowledge implementation rule",
+        "class": "reviewed_implementation_rule",
+        "explanation": "A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.",
+        "record_type": "reviewed rule evaluated against project evidence",
+        "review_status": "reviewed",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": false
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "category": "configuration_quality",
+        "context_requirements": [],
+        "enforcement_intent": "guidance",
+        "review_status": "reviewed",
+        "scope": {
+          "component": "config/sync",
+          "drupal_core_minimum_major": 8,
+          "notes": "Exported configuration directories are a Drupal 8-and-later mechanism."
+        },
+        "severity_state": "not_established"
+      },
+      "domain": "implementation_rule",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.",
+        "what_is_project_specific": "This record is scoped to the context it names and is not a Drupal-wide rule.",
+        "what_is_recommended": "Evaluate it against a project with `dk implementation-findings`.",
+        "what_is_this": "reviewed rule evaluated against project evidence: No single exported configuration root could be selected",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-default-settings-php"
+        ],
+        "why_does_it_exist": "A reviewer tied an authoritative Drupal statement to a condition that project evidence can settle."
+      },
+      "id": "configuration_quality.exported-config-root-ambiguous",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:1e2df3981d9cc138fa916171a710909b3e6922ebd978252b453b903e540b4a39",
+          "source_id": "drupal-default-settings-php",
+          "source_url": "https://api.drupal.org/api/drupal/sites%21default%21default.settings.php/11"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-default-settings-php",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-default-settings-php/"
+        }
+      ],
+      "route": "/rules/configuration_quality.exported-config-root-ambiguous/",
+      "summary": "More than one plausible exported configuration root was found, so no exported configuration was enumerated and configuration rules cannot be evaluated.",
+      "title": "No single exported configuration root could be selected",
+      "trust": {
+        "authority": "reviewed Drupal Knowledge implementation rule",
+        "class": "reviewed_implementation_rule",
+        "explanation": "A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.",
+        "record_type": "reviewed rule evaluated against project evidence",
+        "review_status": "reviewed",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": false
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "category": "performance",
+        "context_requirements": [],
+        "enforcement_intent": "guidance",
+        "review_status": "draft",
+        "scope": {
+          "component": "system.performance",
+          "drupal_core_minimum_major": 8,
+          "notes": "Asset aggregation settings exist in Drupal 8 and later."
+        },
+        "severity_state": "not_established"
+      },
+      "domain": "implementation_rule",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.",
+        "what_is_project_specific": "This record is scoped to the context it names and is not a Drupal-wide rule.",
+        "what_is_recommended": "Evaluate it against a project with `dk implementation-findings`.",
+        "what_is_this": "reviewed rule evaluated against project evidence: CSS or JavaScript aggregation is disabled in exported configuration",
+        "what_is_unknown": [
+          "The rule is draft and may not confirm a finding."
+        ],
+        "what_supports_it": [
+          "drupal-cache-tags"
+        ],
+        "why_does_it_exist": "A reviewer tied an authoritative Drupal statement to a condition that project evidence can settle."
+      },
+      "id": "performance.asset-aggregation-disabled",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:35e950799ef519216d7b7f02340a70dae591c29214e9421543051df38762989b",
+          "source_id": "drupal-cache-tags",
+          "source_url": "https://www.drupal.org/docs/develop/drupal-apis/cache-api/cache-tags"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-cache-tags",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-cache-tags/"
+        }
+      ],
+      "route": "/rules/performance.asset-aggregation-disabled/",
+      "summary": "The exported system.performance configuration disables CSS or JavaScript aggregation. Drafted pending an authoritative source that states the expected production value.",
+      "title": "CSS or JavaScript aggregation is disabled in exported configuration",
+      "trust": {
+        "authority": "reviewed Drupal Knowledge implementation rule",
+        "class": "reviewed_implementation_rule",
+        "explanation": "A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.",
+        "record_type": "reviewed rule evaluated against project evidence",
+        "review_status": "draft",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": false
+      },
+      "unknowns": [
+        "The rule is draft and may not confirm a finding."
+      ]
+    },
+    {
+      "detail": {
+        "category": "performance",
+        "context_requirements": [
+          "project.reverse_proxy"
+        ],
+        "enforcement_intent": "guidance",
+        "review_status": "reviewed",
+        "scope": {
+          "component": "system.performance",
+          "drupal_core_minimum_major": 8,
+          "notes": "The Internal Page Cache module and this setting exist in Drupal 8 and later."
+        },
+        "severity_state": "not_established"
+      },
+      "domain": "implementation_rule",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.",
+        "what_is_project_specific": "This record is scoped to the context it names and is not a Drupal-wide rule.",
+        "what_is_recommended": "Evaluate it against a project with `dk implementation-findings`.",
+        "what_is_this": "reviewed rule evaluated against project evidence: Browser and proxy cache maximum age is zero",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-internal-page-cache"
+        ],
+        "why_does_it_exist": "A reviewer tied an authoritative Drupal statement to a condition that project evidence can settle."
+      },
+      "id": "performance.page-cache-maximum-age-zero",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:46b0c8959410ff7f48b88216fd8ddeb4a0d794b1ced02919c1707b8048663b68",
+          "source_id": "drupal-internal-page-cache",
+          "source_url": "https://www.drupal.org/docs/administering-a-drupal-site/internal-page-cache"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-internal-page-cache",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-internal-page-cache/"
+        }
+      ],
+      "route": "/rules/performance.page-cache-maximum-age-zero/",
+      "summary": "The exported system.performance configuration sets the browser and proxy cache maximum age to 0, so Drupal tells browsers and proxies not to store the page.",
+      "title": "Browser and proxy cache maximum age is zero",
+      "trust": {
+        "authority": "reviewed Drupal Knowledge implementation rule",
+        "class": "reviewed_implementation_rule",
+        "explanation": "A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.",
+        "record_type": "reviewed rule evaluated against project evidence",
+        "review_status": "reviewed",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": false
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "category": "performance",
+        "context_requirements": [
+          "config.exported_value"
+        ],
+        "enforcement_intent": "guidance",
+        "review_status": "reviewed",
+        "scope": {
+          "component": "views.view.*",
+          "drupal_core_minimum_major": 8,
+          "notes": "Views cache strategies are a Drupal 8-and-later concept."
+        },
+        "severity_state": "not_established"
+      },
+      "domain": "implementation_rule",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.",
+        "what_is_project_specific": "This record is scoped to the context it names and is not a Drupal-wide rule.",
+        "what_is_recommended": "Evaluate it against a project with `dk implementation-findings`.",
+        "what_is_this": "reviewed rule evaluated against project evidence: Views cache strategy could not be read from exported configuration",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-cache-tags"
+        ],
+        "why_does_it_exist": "A reviewer tied an authoritative Drupal statement to a condition that project evidence can settle."
+      },
+      "id": "performance.views-cache-strategy-unobservable",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:35e950799ef519216d7b7f02340a70dae591c29214e9421543051df38762989b",
+          "source_id": "drupal-cache-tags",
+          "source_url": "https://www.drupal.org/docs/develop/drupal-apis/cache-api/cache-tags"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-cache-tags",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-cache-tags/"
+        }
+      ],
+      "route": "/rules/performance.views-cache-strategy-unobservable/",
+      "summary": "Exported views configuration exists but the repository's safe YAML reader cannot parse it, so no view's cache strategy was observed either way.",
+      "title": "Views cache strategy could not be read from exported configuration",
+      "trust": {
+        "authority": "reviewed Drupal Knowledge implementation rule",
+        "class": "reviewed_implementation_rule",
+        "explanation": "A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.",
+        "record_type": "reviewed rule evaluated against project evidence",
+        "review_status": "reviewed",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": false
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "category": "security",
+        "context_requirements": [
+          "config.settings_declaration"
+        ],
+        "enforcement_intent": "guidance",
+        "review_status": "reviewed",
+        "scope": {
+          "component": "settings.php",
+          "drupal_core_minimum_major": 8,
+          "notes": "The Symfony trusted host mechanism is used from Drupal 8 onwards."
+        },
+        "severity_state": "not_established"
+      },
+      "domain": "implementation_rule",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.",
+        "what_is_project_specific": "This record is scoped to the context it names and is not a Drupal-wide rule.",
+        "what_is_recommended": "Evaluate it against a project with `dk implementation-findings`.",
+        "what_is_this": "reviewed rule evaluated against project evidence: Trusted host patterns are not declared in the observed settings file",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-trusted-host-settings",
+          "drupal-default-settings-php"
+        ],
+        "why_does_it_exist": "A reviewer tied an authoritative Drupal statement to a condition that project evidence can settle."
+      },
+      "id": "security.trusted-host-patterns-not-declared",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:11e4f4be0c3b46177c5f8fa6ad0fa7d76bba3fd08f61d9b06252b930b0f7f407",
+          "source_id": "drupal-trusted-host-settings",
+          "source_url": "https://www.drupal.org/docs/installing-drupal/trusted-host-settings"
+        },
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:1e2df3981d9cc138fa916171a710909b3e6922ebd978252b453b903e540b4a39",
+          "source_id": "drupal-default-settings-php",
+          "source_url": "https://api.drupal.org/api/drupal/sites%21default%21default.settings.php/11"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-default-settings-php",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-default-settings-php/"
+        },
+        {
+          "label": "drupal-trusted-host-settings",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-trusted-host-settings/"
+        }
+      ],
+      "route": "/rules/security.trusted-host-patterns-not-declared/",
+      "summary": "Drupal's trusted host mechanism is enabled by declaring $settings['trusted_host_patterns']. No such declaration was observed in the settings files this analysis read.",
+      "title": "Trusted host patterns are not declared in the observed settings file",
+      "trust": {
+        "authority": "reviewed Drupal Knowledge implementation rule",
+        "class": "reviewed_implementation_rule",
+        "explanation": "A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.",
+        "record_type": "reviewed rule evaluated against project evidence",
+        "review_status": "reviewed",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": false
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "category": "security",
+        "context_requirements": [],
+        "enforcement_intent": "guidance",
+        "review_status": "reviewed",
+        "scope": {
+          "component": "settings.php",
+          "drupal_core_minimum_major": 8,
+          "notes": "The setting exists in Drupal 8 and later."
+        },
+        "severity_state": "not_established"
+      },
+      "domain": "implementation_rule",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.",
+        "what_is_project_specific": "This record is scoped to the context it names and is not a Drupal-wide rule.",
+        "what_is_recommended": "Evaluate it against a project with `dk implementation-findings`.",
+        "what_is_this": "reviewed rule evaluated against project evidence: update.php access control is disabled",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-default-settings-php"
+        ],
+        "why_does_it_exist": "A reviewer tied an authoritative Drupal statement to a condition that project evidence can settle."
+      },
+      "id": "security.update-php-free-access-enabled",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:1e2df3981d9cc138fa916171a710909b3e6922ebd978252b453b903e540b4a39",
+          "source_id": "drupal-default-settings-php",
+          "source_url": "https://api.drupal.org/api/drupal/sites%21default%21default.settings.php/11"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-default-settings-php",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-default-settings-php/"
+        }
+      ],
+      "route": "/rules/security.update-php-free-access-enabled/",
+      "summary": "$settings['update_free_access'] is declared TRUE, which removes the access check in front of the update.php script.",
+      "title": "update.php access control is disabled",
+      "trust": {
+        "authority": "reviewed Drupal Knowledge implementation rule",
+        "class": "reviewed_implementation_rule",
+        "explanation": "A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.",
+        "record_type": "reviewed rule evaluated against project evidence",
+        "review_status": "reviewed",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": false
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "category": "security",
+        "context_requirements": [
+          "project.environment"
+        ],
+        "enforcement_intent": "guidance",
+        "review_status": "reviewed",
+        "scope": {
+          "component": "system.logging",
+          "drupal_core_minimum_major": 8,
+          "notes": "The error_level setting exists in Drupal 8 and later."
+        },
+        "severity_state": "not_established"
+      },
+      "domain": "implementation_rule",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.",
+        "what_is_project_specific": "This record is scoped to the context it names and is not a Drupal-wide rule.",
+        "what_is_recommended": "Evaluate it against a project with `dk implementation-findings`.",
+        "what_is_this": "reviewed rule evaluated against project evidence: Verbose error display is exported without observable environment context",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-default-settings-php"
+        ],
+        "why_does_it_exist": "A reviewer tied an authoritative Drupal statement to a condition that project evidence can settle."
+      },
+      "id": "security.verbose-error-display-without-environment-evidence",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:1e2df3981d9cc138fa916171a710909b3e6922ebd978252b453b903e540b4a39",
+          "source_id": "drupal-default-settings-php",
+          "source_url": "https://api.drupal.org/api/drupal/sites%21default%21default.settings.php/11"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-default-settings-php",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-default-settings-php/"
+        }
+      ],
+      "route": "/rules/security.verbose-error-display-without-environment-evidence/",
+      "summary": "The exported system.logging configuration displays all errors including backtraces. Whether that is wrong depends on the environment, which this analysis cannot observe.",
+      "title": "Verbose error display is exported without observable environment context",
+      "trust": {
+        "authority": "reviewed Drupal Knowledge implementation rule",
+        "class": "reviewed_implementation_rule",
+        "explanation": "A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.",
+        "record_type": "reviewed rule evaluated against project evidence",
+        "review_status": "reviewed",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": false
+      },
+      "unknowns": []
+    }
+  ],
+  "route": "/rules/",
+  "trust_class": "reviewed_implementation_rule"
+}
+

@@ -1,0 +1,47 @@
+{
+  "category": {
+    "additional": [],
+    "basis": "source_text_vocabulary_match",
+    "matched_phrase": "new method",
+    "value": "API_addition"
+  },
+  "change_record": {
+    "canonical_url": "https://www.drupal.org/node/3618676",
+    "created_at": "2026-09-02T19:03:13Z",
+    "introduced_branch": "main",
+    "introduced_version": "11.5.0",
+    "node_id": "3618676",
+    "published": true,
+    "title": "Performance tests can now store expected metrics and queries in separate files and update them"
+  },
+  "description": {
+    "excerpt": "\\Drupal\\Tests\\PerformanceTestTrait has two new methods: assertMetricsByName(string $name, PerformanceData $performance_data, array $metrics = []); assertQueriesByName(string $name, array $queries); These will store the expected metrics (as formatted YAML) and queries (as plain list of queries, one per line) in separate named files in a TestClassAssertions folder next to the test class. If the files do not exist yet or the PERF_TEST_UPDATE environment variable is set to a value that evaluates to true (such as 1), the files will be updated instead of asserted. If metric files do not exist yet an",
+    "present": true,
+    "text_length": 1023
+  },
+  "id": "change-record.3618676",
+  "is_general_knowledge_record": false,
+  "is_trusted_knowledge": false,
+  "provenance": {
+    "acquisition_channel": "external_authoritative_source",
+    "authority_kind": "change_record_feed",
+    "ingest_run_id": "api.20260908T231021.6bf7c3e6",
+    "ingested_at": "2026-09-08T23:10:21Z",
+    "ingested_by": {
+      "name": "drupal-knowledge-api-lifecycle-engine",
+      "version": "0.1"
+    },
+    "source_id": "drupal-core-change-notices",
+    "source_node_id": "3618676",
+    "source_snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+    "source_url": "https://www.drupal.org/list-changes/drupal"
+  },
+  "record_class": "source_derived_authoritative_api_lifecycle_record",
+  "record_contract_version": "0.1",
+  "symbols": {
+    "extraction": "title_call_syntax_only",
+    "lifecycle_asserted": false,
+    "named_with_call_syntax": [],
+    "semantics": "A change record names symbols. It does not, in this contract, assert their lifecycle; that comes from the deprecation index."
+  }
+}

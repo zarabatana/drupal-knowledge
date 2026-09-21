@@ -1,0 +1,100 @@
+Security public service announcements
+Show advisories for
+only Drupal core
+,
+only contributed projects
+, or
+all security advisories
+Security-related announcements, such as information on best practices.
+Security advisory coverage removed - QA Accounts - PSA-2026-07-22
+Date:
+2026-July-22
+QA Accounts
+enables you to login to a Drupal site using a well known username/password combination. When 1.0 was released, it also was marked for security coverage. The module prioritizes ease of use rather than security and is only intended to be used on sites that are not accessible on the internet (e.g. behind firewall or other protection). The maintainers are choosing to remove security coverage.
+Read more
+about Security advisory coverage removed - QA Accounts - PSA-2026-07-22
+Upcoming highly critical release on May 20, 2026 - PSA-2026-05-18
+Date:
+2026-May-18
+Security risk:
+Highly critical
+20 ∕ 25 AC:None/A:None/CI:All/II:All/E:Theoretical/TD:Uncommon
+There will be a
+Drupal core security release for all supported branches on May 20, 2026, between 17:00 and 21:00 UTC
+. (To see this in your local timezone, refer to the
+Drupal Core Calendar
+.) The Drupal Security Team urges you to reserve time for core updates at that time because exploits
+might
+be developed within hours or days.
+Not all configurations are affected. Reserve time on May 20 during the release window to determine whether your sites are affected and in need of an immediate update. Mitigation information will be included in the advisory.
+We recommend updating to the latest supported patch (bugfix) release for your site's version of Drupal before May 20
+, so that you can address any other upgrade issues before the security window. (Recommendations for specific Drupal versions follow.)
+This issue is being protected by Drupal Steward. Sites that use Drupal Steward are already protected from known attack vectors, but should upgrade in the near future in case additional attack vectors are discovered.
+Read more
+about Upcoming highly critical release on May 20, 2026 - PSA-2026-05-18
+Normal Drupal core security window rescheduled for November 12, 2025 due to DrupalCon - PSA-2025-11-03
+Date:
+2025-November-03
+The upcoming Drupal core
+security release window
+has been rescheduled from November 19, 2025 to November 12, 2025. As normal, the window will occur between 1600 UTC and 2200 UTC.
+Read more
+about Normal Drupal core security window rescheduled for November 12, 2025 due to DrupalCon - PSA-2025-11-03
+Third-Party Libraries and Supply Chains - PSA-2025-09-17
+Date:
+2025-September-17
+Supply-chain attack via maintainer account takeover
+Read more
+about Third-Party Libraries and Supply Chains - PSA-2025-09-17
+Drupal 7 End of Life - PSA-2025-01-06
+Date:
+2025-January-06
+Drupal core version 7 has reached end of life, and is no longer community supported on Drupal.org. This means that new releases of Drupal 7 core and contributed projects will no longer happen on Drupal.org and community support is no longer provided.
+What this means for you:
+Read more
+about Drupal 7 End of Life - PSA-2025-01-06
+Third-Party Libraries and Supply Chains - PSA-2024-06-26
+Date:
+2024-June-26
+Following on from previous PSAs on third-party code in the Drupal ecosystem:
+PSA-2011-002 - External libraries and plugins
+Various Third-Party Vulnerabilities - PSA-2019-09-04 | Drupal.org
+It is the policy of the Drupal Security Team that site owners are responsible for monitoring and maintaining the security of third-party libraries.
+Read more
+about Third-Party Libraries and Supply Chains - PSA-2024-06-26
+Drupal 9 is end of life - PSA-2023-11-01
+Date:
+2023-November-01
+Drupal 9 is end of life as of November 1st, 2023
+Drupal 9 relies on several other software projects, including Symfony, CKEditor, and Twig. With Symfony 4's end of life, CKEditor 4's end of life, and Twig 2's end of life all coming up soon, Drupal 9 went end of life on November 1st, 2023. There will be no further releases of Drupal 9.
+Read more
+about Drupal 9 is end of life - PSA-2023-11-01
+Last chance to adopt Drupal 7 contributed projects before they might be marked unsupported - PSA-2023-07-19
+Date:
+2023-July-19
+Reminder: As we get ready for the
+End-of-life (EOL) of Drupal 7 in January 2025
+, changes are coming to the Drupal 7 ecosystem.
+Read more
+about Last chance to adopt Drupal 7 contributed projects before they might be marked unsupported - PSA-2023-07-19
+Announcement: Drupal core issues with some risk levels may be treated as bugs in the public issue queue, not as private security issues - PSA-2023-07-12
+Date:
+2023-July-11
+Updated 2023-07-14 to reference
+PSA-2023-06-07
+.
+Read more
+about Announcement: Drupal core issues with some risk levels may be treated as bugs in the public issue queue, not as private security issues - PSA-2023-07-12
+End of life announcement and changes to Drupal 7 support - PSA-2023-06-07
+Date:
+2023-June-07
+Updated 2023-07-14 to reference
+PSA-2023-07-12
+.
+Drupal 7's end of life is January 5, 2025
+On February 23, 2022, we announced that we would be extending the End-of-Life for Drupal 7 until at least November 1, 2023.
+Today, we are officially announcing that Drupal 7 will reach its end of life on January 5, 2025.
+With this final extension, the Drupal Security Team is also adjusting the level of support provided.
+This will be the final extension.
+Read more
+about End of life announcement and changes to Drupal 7 support - PSA-2023-06-07

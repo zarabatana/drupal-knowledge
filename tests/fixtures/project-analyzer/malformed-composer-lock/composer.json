@@ -1,0 +1,8 @@
+{
+  "name": "example/malformed-composer-lock",
+  "type": "project",
+  "require": {
+    "php": "^8.3",
+    "drupal/core": "^11"
+  }
+}

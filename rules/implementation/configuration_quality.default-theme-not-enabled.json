@@ -1,0 +1,58 @@
+{
+  "authority": {
+    "sources": [
+      {
+        "quotes": [
+          "'config_sync_directory'"
+        ],
+        "snapshot_sha256": "sha256:1e2df3981d9cc138fa916171a710909b3e6922ebd978252b453b903e540b4a39",
+        "source_id": "drupal-default-settings-php"
+      }
+    ],
+    "summary": "core.extension records the themes an export enables, and system.theme records which of them is default. A default theme the export does not enable is an inconsistent export."
+  },
+  "category": "configuration_quality",
+  "check": {
+    "kind": "evidence_cross_reference",
+    "source_assertion": "config.exported_value",
+    "source_subject_prefix": "system.theme:",
+    "target_assertion": "extension.exported_enabled"
+  },
+  "context_requirements": [],
+  "finding": {
+    "assertion": "The exported default or admin theme is not enabled by the same export.",
+    "conclusion": {
+      "candidate": "The export appears to select a theme it does not enable.",
+      "confirmed": "The export selects a theme it does not enable.",
+      "default": "No conclusion is drawn.",
+      "not_observed": "Every exported theme selection names a theme the same export enables.",
+      "unknown": "The theme selection or enablement evidence was not complete enough to compare."
+    },
+    "enforcement_intent": "guidance",
+    "evidence_explanation": "system.theme names a theme absent from the exported core.extension theme list.",
+    "human_title": "An exported theme selection names a theme the export does not enable",
+    "limitations": [
+      "An enabled theme in exported configuration is not proof the theme is enabled at runtime."
+    ],
+    "remediation": {
+      "applied": false,
+      "basis": "drupal_documentation",
+      "guidance": "Enable the named theme in the exported configuration or select one the export enables."
+    },
+    "severity_state": "not_established"
+  },
+  "review": {
+    "authority": "reviewed against the pinned default.settings.php snapshot for exported configuration semantics",
+    "reviewed_on": "2026-09-09",
+    "status": "reviewed"
+  },
+  "rule_contract_version": "0.1",
+  "rule_id": "configuration_quality.default-theme-not-enabled",
+  "scope": {
+    "component": "system.theme",
+    "drupal_core_minimum_major": 8,
+    "notes": "core.extension and system.theme are Drupal 8-and-later configuration."
+  },
+  "summary": "system.theme names a default theme that is absent from the complete list of themes the same exported core.extension enables.",
+  "title": "The exported default theme is not enabled by the same export"
+}

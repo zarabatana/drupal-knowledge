@@ -1,0 +1,47 @@
+{
+  "id": "drupal.api.reference-drupal-11",
+  "title": "Drupal 11 API reference is branch-scoped",
+  "summary": "The Drupal 11 API reference is authoritative for Drupal 11.x API reference material and is generated from comments embedded in Drupal source code.",
+  "kind": "api",
+  "domains": ["core", "api"],
+  "severity": "info",
+  "review_status": "reviewed",
+  "sources": [
+    {
+      "source_id": "drupal-api-11",
+      "locator": "Welcome to the Drupal API Documentation!",
+      "title": "drupal - 11.x"
+    }
+  ],
+  "version_applicability": {
+    "drupal_core": [
+      {
+        "constraint": "11.x",
+        "status": "applicable",
+        "notes": "This source is explicitly scoped to the Drupal 11.x API reference."
+      }
+    ],
+    "notes": "Do not apply Drupal 11.x API entries to Drupal 10.x or future branches without version-specific evidence."
+  },
+  "project_applicability": {
+    "requires": ["drupal_core_version"],
+    "unknown_result": "advisory_only"
+  },
+  "actions": [
+    "Use Drupal 11.x API records only when the project profile establishes Drupal 11.x applicability."
+  ],
+  "checks": [
+    "Confirm the project Drupal core version before selecting Drupal 11 API guidance."
+  ],
+  "evidence_requirements": [
+    "Project profile fact: drupal_core_version"
+  ],
+  "automation_hints": [
+    "A future resolver should filter API records by Drupal core branch before stage selection."
+  ],
+  "enforcement": {
+    "intent": "non_blocking",
+    "rationale": "This record controls applicability selection and is not itself a build blocker."
+  },
+  "related": []
+}

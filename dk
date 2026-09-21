@@ -1,0 +1,18 @@
+#!/usr/bin/env python3
+"""Drupal Knowledge, run from the repository root as ./dk
+
+A convenience wrapper and nothing more: it puts scripts/ on the import path and
+hands argv straight to the same CLI that `python3 scripts/dk.py` runs, so both
+entry points are one program with one behaviour and existing automation keeps
+working unchanged.
+"""
+
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent / "scripts"))
+
+import dk as cli  # noqa: E402
+
+if __name__ == "__main__":
+    raise SystemExit(cli.main())

@@ -1,0 +1,1927 @@
+{
+  "api_status": "This dataset is the build input for the Drupal Knowledge website. It is not a supported API contract and its shape may change between releases.",
+  "dataset_id": "dataset:e290b71c0e26ef1d0067be2f01713b7e",
+  "dataset_schema_version": "0.1",
+  "dk_version": "1.0.0",
+  "domains": [
+    {
+      "domain": "trusted_knowledge",
+      "file": "domains/trusted-knowledge.json",
+      "label": "Knowledge",
+      "record_count": 11,
+      "route": "/knowledge/",
+      "trust_class": "reviewed_drupal_knowledge"
+    },
+    {
+      "domain": "advisory",
+      "file": "domains/security.json",
+      "label": "Security",
+      "record_count": 40,
+      "route": "/security/",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "domain": "api_lifecycle",
+      "file": "domains/api.json",
+      "label": "API Changes",
+      "record_count": 225,
+      "route": "/api/",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "domain": "change_record",
+      "file": "domains/change-records.json",
+      "label": "Change Records",
+      "record_count": 20,
+      "route": "/change-records/",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "domain": "implementation_rule",
+      "file": "domains/rules.json",
+      "label": "Implementation Rules",
+      "record_count": 9,
+      "route": "/rules/",
+      "trust_class": "reviewed_implementation_rule"
+    },
+    {
+      "domain": "solved_case",
+      "file": "domains/solved-cases.json",
+      "label": "Solved Cases",
+      "record_count": 1,
+      "route": "/solved-cases/",
+      "trust_class": "proven_case_context_only"
+    }
+  ],
+  "excluded_domains": [
+    {
+      "domain": "discovery_signal",
+      "reason": "Discovery signals are untrusted community observations awaiting corroboration and review. Publishing them beside reviewed knowledge would make untrusted material look like an answer, so this release publishes none of them."
+    },
+    {
+      "domain": "finding",
+      "reason": "A finding is a rule applied to one project's evidence. Publishing it would turn one project's state into a claim about Drupal."
+    },
+    {
+      "domain": "implementation_finding",
+      "reason": "A finding is a rule applied to one project's evidence. The reviewed rule behind it is published instead."
+    },
+    {
+      "domain": "migration_work",
+      "reason": "Migration work items name files and lines in one project. The authoritative deprecation records behind them are published instead."
+    },
+    {
+      "domain": "project_evidence",
+      "reason": "Evidence describes one repository at one revision. It answers a local question and is never global Drupal content."
+    },
+    {
+      "domain": "remediation_plan",
+      "reason": "A remediation plan is computed for one project's installed versions. The advisories behind it are published instead."
+    },
+    {
+      "domain": "upgrade_assessment",
+      "reason": "An upgrade assessment is bounded by one project's evidence and is not a statement about Drupal."
+    }
+  ],
+  "generated_by": "drupal-knowledge-public-export",
+  "generated_from_release": "1.0.0",
+  "page_count": 354,
+  "query_interface_version": "0.1",
+  "record_counts": {
+    "advisory": 40,
+    "api_lifecycle": 225,
+    "change_record": 20,
+    "implementation_rule": 9,
+    "solved_case": 1,
+    "trusted_knowledge": 11
+  },
+  "records_digest": "59bb7c7785c24df5",
+  "result_contract_version": "0.1",
+  "routes": [
+    {
+      "kind": "home",
+      "route": "/"
+    },
+    {
+      "kind": "error",
+      "route": "/404/"
+    },
+    {
+      "kind": "editorial",
+      "route": "/about/"
+    },
+    {
+      "kind": "editorial",
+      "route": "/api-docs/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "index",
+      "route": "/api/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.001b015d20fadd2a/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.034840ce0302cbab/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.03a170050e2ffc8d/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.03e039f6dc7697af/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.043546f167dfeb30/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.047d21541574de74/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.04893fd7ed352ff8/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.04b2923a984f53a1/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.057137413d6c7348/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.061ca80f48c16174/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.08ed6b8217e6fc1e/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.09981a1b6a618a56/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.0a1d5e8f05666ad9/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.0c388a841dde8bea/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.0c59d17705163feb/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.0ca2468645724fc3/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.0f9bddb5c39ba393/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.149c6b6d1abc11b7/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.178e5d4b915fded3/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.189ca69d776eeadf/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.1b0b2260b20a1d65/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.1b2558cec50239a9/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.1c510a9b92288795/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.1d1243bcb83c80a3/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.1d3176e960802a34/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.1f2b0bf4dd43aafb/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.1f767177a800695f/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.208da3b7c902ed73/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.24408b58cc9840a9/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.248b5fb7e60bf8ad/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.2574f97fa1e684d0/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.272671e5b1f9bcb3/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.274d01f358d3aac9/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.283502ef09b241a2/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.2866d11b21af3ae6/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.288ee3145c268d14/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.2a661a2c12534584/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.2af38419e441e000/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.2c31631b2b6f4ff2/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.2f2e7a37335cf30d/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.301c0dbe8ad90ce6/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.302a182440b4bd89/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.30c21980e80f5c90/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.3457cc85dfb948dc/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.347033c93f939a2e/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.349ce30ed5a5044d/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.34bde7f19ac3418b/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.3547010eb38990f0/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.3981a964ed32ee3c/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.39e4ee7cde60fc1f/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.3a0c3fed1f2be461/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.3b13303135f332af/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.3d1ca3656c1b2062/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.3f79df0f90cc1c83/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.400340599fd3194a/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.42620e603f5b95c2/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.45bce3472491ddf0/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.487c2fdf94c3a241/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.4909b9ee746ab2b8/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.49c2e9f74a14ad8c/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.4ae85144d3eeff85/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.4b31615da4e4bf6d/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.4ba9f2cea2abfb85/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.4cb7b78425493a31/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.4cd025af4ffdbfab/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.4d4260a142669f2c/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.4e16e8966b527688/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.508a799b84b347bf/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.522756ad9b5b23dd/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.545d0b79afa65664/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.55bfc5529d12ab45/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.5689aa850d5524b0/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.5753a1268fd3733a/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.58a358d3667ad657/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.591e91278c7c7b2a/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.59775865abdf27d1/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.59cf671cf4acac81/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.5c4d7c3f5ad00bad/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.5c82e04ababe5601/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.5e2666beac8ab502/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.5e7463497fab4fa0/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.602a4ec2c8f6beb4/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.60d9d3d0f311a64d/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.62966c0c8057b587/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.640ed18e1ec7d836/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.6560acaac6aaf83b/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.65b745eb8a3c5716/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.65bca3f7f4e41ede/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.6779cbf2d4b4323a/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.6782fa3b4595e9a0/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.6920290ca55904c9/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.6a4e80d93adf9d75/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.6a4fcf521775c025/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.6e97129c992d1e30/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.704f0ca0df2b4a62/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.70dbedea8f415130/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.70e40eb39dbc4dcf/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.75d83c34668d07ab/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.764726cfb515fc5b/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.77dc21d70cced4ad/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.79b500f79ab5a4fd/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.79c713da3ce94b69/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.7adcf362b691be64/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.7d9a231f5d1cf980/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.7dbd25eb9267e99b/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.7ed1fd669e62756a/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.8019a6435228effc/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.81ec91b1ef051056/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.82e5db94107febfb/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.835751a388cebd0f/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.83aeadf97f6c9ebb/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.83da44d70c1bdeea/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.84b8d5c6b1bbbdca/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.84e3a120c1079b1d/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.84e7291a23b39e71/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.85e38cef917cb2da/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.865fff0f6be21b69/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.877c9c1ff7d85767/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.87967e21f4aabf79/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.8cd9c8eae7da7f0a/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.8d2a9a6497a71540/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.8d76fc9e2645ed62/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.8db3bf10726cc3d6/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.8e29c7347f0dbaae/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.8e6b65ab0a39e22b/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.8fcb0e07de6df5ff/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.8fe3741567920403/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.91924804b2b01a48/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.9353394a333f741d/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.94c1fce7981b93e6/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.95f28dd20ca85d90/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.97609e141029d443/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.9858cfda4a2602ae/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.98ce942eaf9a3b02/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.9b11a602c0e1d16a/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.9bdeb1b47ed2776e/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.9ccebd762fd9182c/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.9e251d885f2d24de/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.a0cb75a5a6d3ec10/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.a1de3ee00fc62157/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.a2f5f2dc7b045571/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.a35629e0e57d59f7/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.a9fc6ba3b4fc94ce/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.aac2db332cd86356/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.ab022ef9ba63441c/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.ab75a00954f9f9ce/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.ac757b9821e25696/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.ac8fbc0f5a39299f/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.aed54c5ea8d01ccc/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.b099525bb77d3864/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.b2871ae4f7b9b74f/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.b2cfe941ba22ded2/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.b3a1ffff15dc9bba/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.b4b2ee59599b28ce/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.b4edd79a617a3fd8/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.b83a620b4150b7a6/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.b855b636e4bffc6b/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.b8de0a5f2f05928a/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.b8f316c74ee450e1/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.b9e3815bf34f6dff/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.bb9f121256d4fc2a/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.bc17de974231273a/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.bc3f764f42c68b18/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.bcde07aacdf245e3/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.bd9002f42ddecc25/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.be1fdc15edf48128/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.bee1196180682fd5/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.bf518cb1d1d32669/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.c4aab24ce7937920/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.c4bade042f58537c/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.c5a487611c113d69/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.c632b412b031b7dc/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.c7846a99ef695db2/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.c7b86a3f27431e9a/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.c8487d0a1e428295/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.ca2f84515d3a818d/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.ca853bbdedd61b5b/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.cb15d9b697928b58/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.cb478eef4a59d109/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.cd1fffb6dd0da57d/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.ce1f458333792718/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.cf6038329a955129/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.cffbf18fdb18d6ea/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.d245403ba163bbd6/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.d366f20f4e8c179b/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.d5912ed02040383c/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.d67d75c9757c0e35/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.d9be8f4c145e7a69/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.d9ff8e90b2c7c83d/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.db3057a1923f39ad/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.ddc07e2ec60cd930/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.de3d95cbbad25fd7/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.de5e9e96afc16133/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.e1502bd34b92075d/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.e307dde27836cf8b/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.e3df3e52f65fe368/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.e46be2f2e03e85ed/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.e64cdf299d94bd07/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.e670f7f95336dba5/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.e685fb8c340a556e/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.e7b20a5b32cde0f0/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.e8405e6397353ab1/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.e905214a39eb2939/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.e9b4005d22d4d8a5/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.ea8556b6e248f04f/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.eb314daf8a32cc6b/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.ec1c404132667be5/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.ed33203b9fc4a8cf/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.ee831be473ba6eb6/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.eee1dc783a014840/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.f0286d42ec4fc923/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.f10e28530c86af26/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.f16930738aea7716/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.f1f4f56fed836ce7/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.f268d8538e9d0030/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.f2cb72f0dc0ab1fb/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.f386d67e27b18387/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.f641b3ff1af9f52f/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.f643754d1726c972/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.f6bd5cdec83ee4cb/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.f74773c7c285c706/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.f899ebbb3b54a975/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.f95d2c65c9e5a98a/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.fef317dbd27ef75d/"
+    },
+    {
+      "domain": "api_lifecycle",
+      "kind": "detail",
+      "route": "/api/api-lifecycle.ff888c835b7c4a49/"
+    },
+    {
+      "domain": "change_record",
+      "kind": "index",
+      "route": "/change-records/"
+    },
+    {
+      "domain": "change_record",
+      "kind": "detail",
+      "route": "/change-records/change-record.3348027/"
+    },
+    {
+      "domain": "change_record",
+      "kind": "detail",
+      "route": "/change-records/change-record.3389683/"
+    },
+    {
+      "domain": "change_record",
+      "kind": "detail",
+      "route": "/change-records/change-record.3572245/"
+    },
+    {
+      "domain": "change_record",
+      "kind": "detail",
+      "route": "/change-records/change-record.3583674/"
+    },
+    {
+      "domain": "change_record",
+      "kind": "detail",
+      "route": "/change-records/change-record.3587768/"
+    },
+    {
+      "domain": "change_record",
+      "kind": "detail",
+      "route": "/change-records/change-record.3608081/"
+    },
+    {
+      "domain": "change_record",
+      "kind": "detail",
+      "route": "/change-records/change-record.3615213/"
+    },
+    {
+      "domain": "change_record",
+      "kind": "detail",
+      "route": "/change-records/change-record.3615418/"
+    },
+    {
+      "domain": "change_record",
+      "kind": "detail",
+      "route": "/change-records/change-record.3618676/"
+    },
+    {
+      "domain": "change_record",
+      "kind": "detail",
+      "route": "/change-records/change-record.3620269/"
+    },
+    {
+      "domain": "change_record",
+      "kind": "detail",
+      "route": "/change-records/change-record.3620346/"
+    },
+    {
+      "domain": "change_record",
+      "kind": "detail",
+      "route": "/change-records/change-record.3620430/"
+    },
+    {
+      "domain": "change_record",
+      "kind": "detail",
+      "route": "/change-records/change-record.3620447/"
+    },
+    {
+      "domain": "change_record",
+      "kind": "detail",
+      "route": "/change-records/change-record.3620769/"
+    },
+    {
+      "domain": "change_record",
+      "kind": "detail",
+      "route": "/change-records/change-record.3620771/"
+    },
+    {
+      "domain": "change_record",
+      "kind": "detail",
+      "route": "/change-records/change-record.3620806/"
+    },
+    {
+      "domain": "change_record",
+      "kind": "detail",
+      "route": "/change-records/change-record.3620934/"
+    },
+    {
+      "domain": "change_record",
+      "kind": "detail",
+      "route": "/change-records/change-record.3621034/"
+    },
+    {
+      "domain": "change_record",
+      "kind": "detail",
+      "route": "/change-records/change-record.3621241/"
+    },
+    {
+      "domain": "change_record",
+      "kind": "detail",
+      "route": "/change-records/change-record.3621537/"
+    },
+    {
+      "kind": "editorial",
+      "route": "/cli/"
+    },
+    {
+      "domain": "trusted_knowledge",
+      "kind": "index",
+      "route": "/knowledge/"
+    },
+    {
+      "domain": "trusted_knowledge",
+      "kind": "detail",
+      "route": "/knowledge/drupal.api.reference-drupal-11/"
+    },
+    {
+      "domain": "trusted_knowledge",
+      "kind": "detail",
+      "route": "/knowledge/drupal.api.version-aware-documentation/"
+    },
+    {
+      "domain": "trusted_knowledge",
+      "kind": "detail",
+      "route": "/knowledge/drupal.change-records.introduced-version/"
+    },
+    {
+      "domain": "trusted_knowledge",
+      "kind": "detail",
+      "route": "/knowledge/drupal.coding-standards.current-source/"
+    },
+    {
+      "domain": "trusted_knowledge",
+      "kind": "detail",
+      "route": "/knowledge/drupal.coding-standards.phpcs-coder-tooling/"
+    },
+    {
+      "domain": "trusted_knowledge",
+      "kind": "detail",
+      "route": "/knowledge/drupal.security.advisory-streams-separated/"
+    },
+    {
+      "domain": "trusted_knowledge",
+      "kind": "detail",
+      "route": "/knowledge/drupal.security.csrf-route-protection/"
+    },
+    {
+      "domain": "trusted_knowledge",
+      "kind": "detail",
+      "route": "/knowledge/drupal.security.database-query-parameterization/"
+    },
+    {
+      "domain": "trusted_knowledge",
+      "kind": "detail",
+      "route": "/knowledge/drupal.security.twig-output-escaping/"
+    },
+    {
+      "domain": "trusted_knowledge",
+      "kind": "detail",
+      "route": "/knowledge/drupal.update.core-release-insecure-term-condition/"
+    },
+    {
+      "domain": "trusted_knowledge",
+      "kind": "detail",
+      "route": "/knowledge/drupal.update.core-release-state-update-feed/"
+    },
+    {
+      "domain": "implementation_rule",
+      "kind": "index",
+      "route": "/rules/"
+    },
+    {
+      "domain": "implementation_rule",
+      "kind": "detail",
+      "route": "/rules/configuration_quality.config-depends-on-module-not-enabled/"
+    },
+    {
+      "domain": "implementation_rule",
+      "kind": "detail",
+      "route": "/rules/configuration_quality.default-theme-not-enabled/"
+    },
+    {
+      "domain": "implementation_rule",
+      "kind": "detail",
+      "route": "/rules/configuration_quality.exported-config-root-ambiguous/"
+    },
+    {
+      "domain": "implementation_rule",
+      "kind": "detail",
+      "route": "/rules/performance.asset-aggregation-disabled/"
+    },
+    {
+      "domain": "implementation_rule",
+      "kind": "detail",
+      "route": "/rules/performance.page-cache-maximum-age-zero/"
+    },
+    {
+      "domain": "implementation_rule",
+      "kind": "detail",
+      "route": "/rules/performance.views-cache-strategy-unobservable/"
+    },
+    {
+      "domain": "implementation_rule",
+      "kind": "detail",
+      "route": "/rules/security.trusted-host-patterns-not-declared/"
+    },
+    {
+      "domain": "implementation_rule",
+      "kind": "detail",
+      "route": "/rules/security.update-php-free-access-enabled/"
+    },
+    {
+      "domain": "implementation_rule",
+      "kind": "detail",
+      "route": "/rules/security.verbose-error-display-without-environment-evidence/"
+    },
+    {
+      "kind": "search",
+      "route": "/search/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "index",
+      "route": "/security/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-114/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-115/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-116/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-117/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-118/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-119/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-120/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-121/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-122/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-123/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-124/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-125/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-126/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-127/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-128/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-129/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-130/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-131/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-132/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-133/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CORE-2025-001/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CORE-2025-002/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CORE-2025-003/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CORE-2025-004/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CORE-2025-005/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CORE-2025-006/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CORE-2025-007/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CORE-2025-008/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CORE-2026-001/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CORE-2026-002/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CORE-2026-003/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CORE-2026-004/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CORE-2026-005/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CORE-2026-006/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CORE-2026-007/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CORE-2026-008/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CORE-2026-009/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CORE-2026-010/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CORE-2026-011/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CORE-2026-012/"
+    },
+    {
+      "domain": "solved_case",
+      "kind": "index",
+      "route": "/solved-cases/"
+    },
+    {
+      "domain": "solved_case",
+      "kind": "detail",
+      "route": "/solved-cases/case.drupal.solved.code-change.5bffad1b0b45288d/"
+    },
+    {
+      "domain": "sources",
+      "kind": "index",
+      "route": "/sources/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-api-11/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-api-deprecated-9-p0/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-api-deprecated-9-p1/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-api-deprecated-9-p2/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-api-deprecated-9-p3/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-api-deprecated-9-p4/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-apis-guide/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-cache-tags/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-coding-standards-change-records/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-coding-standards-current/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-coding-standards-project/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-contrib-pathauto-releases/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-contrib-token-releases/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-core-change-notices/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-core-change-record-policy/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-core-change-records/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-core-releases/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-default-settings-php/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-internal-page-cache/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-php-requirements/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-secure-code/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-security-advisories-core/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-security-advisories-recent/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-security-contrib/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-security-core/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-security-psa/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-trusted-host-settings/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-update-manager-interface-semantics/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-update-project-release-semantics/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-update-status-security-semantics/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-upgrade-10-to-11/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-upgrade-11-to-12/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-upgrade-9-to-10/"
+    },
+    {
+      "domain": "sources",
+      "kind": "detail",
+      "route": "/sources/drupal-upgrade-process-overview/"
+    },
+    {
+      "kind": "editorial",
+      "route": "/trust-model/"
+    }
+  ],
+  "search_index": {
+    "file": "search-index.json",
+    "row_count": 306
+  },
+  "source_freshness_summary": {
+    "baselined": 34,
+    "never_acquired": 0,
+    "note": "Freshness is measured against each source's declared check cadence when the site is built. A stale source is one nobody has looked at recently; it is not a source known to be wrong.",
+    "registered": 34
+  },
+  "trust_classes": {
+    "derived_finding": {
+      "authority": "derived from a rule and this project's evidence",
+      "explanation": "Produced by applying a reviewed rule or authoritative record to this project's evidence. Its strength is whatever its state and evidence say.",
+      "record_type": "finding",
+      "trusted_knowledge": false,
+      "universal_drupal_rule": false
+    },
+    "project_observation": {
+      "authority": "observed in this project",
+      "explanation": "Observed in this repository at this revision. It is a fact about this project and never a rule about Drupal.",
+      "record_type": "project-derived evidence",
+      "trusted_knowledge": false,
+      "universal_drupal_rule": false
+    },
+    "proven_case_context_only": {
+      "authority": "verified in one observed project context",
+      "explanation": "Proven in the project context it was captured from. It is not universal Drupal truth and widening it requires review.",
+      "record_type": "solved case",
+      "trusted_knowledge": false,
+      "universal_drupal_rule": false
+    },
+    "reviewed_drupal_knowledge": {
+      "authority": "reviewed Drupal Knowledge record",
+      "explanation": "A human reviewed this against registered authoritative sources. It states something about Drupal, not about any one project.",
+      "record_type": "trusted knowledge, reviewed by a human against authoritative sources",
+      "trusted_knowledge": true,
+      "universal_drupal_rule": true
+    },
+    "reviewed_implementation_rule": {
+      "authority": "reviewed Drupal Knowledge implementation rule",
+      "explanation": "A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.",
+      "record_type": "reviewed rule evaluated against project evidence",
+      "trusted_knowledge": false,
+      "universal_drupal_rule": false
+    },
+    "source_derived_authoritative": {
+      "authority": "authoritative Drupal source",
+      "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+      "record_type": "source-derived authoritative record",
+      "trusted_knowledge": false,
+      "universal_drupal_rule": true
+    },
+    "untrusted_discovery_signal": {
+      "authority": "community observation, not authority",
+      "explanation": "An untrusted ecosystem observation awaiting corroboration and review. It may not be acted on as Drupal Knowledge.",
+      "record_type": "discovery signal",
+      "trusted_knowledge": false,
+      "universal_drupal_rule": false
+    }
+  }
+}
+

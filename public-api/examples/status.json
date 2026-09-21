@@ -1,0 +1,166 @@
+{
+  "api_contract_version": "1.0",
+  "api_version": "1",
+  "dataset_id": "dataset:e290b71c0e26ef1d0067be2f01713b7e",
+  "dataset_schema_version": "0.1",
+  "dk_version": "1.0.0",
+  "query_interface_version": "0.1",
+  "request": {
+    "operation_id": "getStatus",
+    "path": "/api/v1/status"
+  },
+  "sections": {
+    "domains": [
+      {
+        "domain": "trusted_knowledge",
+        "href": "/api/v1/knowledge",
+        "label": "Knowledge",
+        "record_count": 11,
+        "trust_class": "reviewed_drupal_knowledge"
+      },
+      {
+        "domain": "advisory",
+        "href": "/api/v1/security",
+        "label": "Security",
+        "record_count": 40,
+        "trust_class": "source_derived_authoritative"
+      },
+      {
+        "domain": "api_lifecycle",
+        "href": "/api/v1/api-lifecycle",
+        "label": "API Changes",
+        "record_count": 225,
+        "trust_class": "source_derived_authoritative"
+      },
+      {
+        "domain": "change_record",
+        "href": "/api/v1/change-records",
+        "label": "Change Records",
+        "record_count": 20,
+        "trust_class": "source_derived_authoritative"
+      },
+      {
+        "domain": "implementation_rule",
+        "href": "/api/v1/rules",
+        "label": "Implementation Rules",
+        "record_count": 9,
+        "trust_class": "reviewed_implementation_rule"
+      },
+      {
+        "domain": "solved_case",
+        "href": "/api/v1/solved-cases",
+        "label": "Solved Cases",
+        "record_count": 1,
+        "trust_class": "proven_case_context_only"
+      }
+    ],
+    "excluded_domains": [
+      {
+        "domain": "discovery_signal",
+        "reason": "Discovery signals are untrusted community observations awaiting corroboration and review. Publishing them beside reviewed knowledge would make untrusted material look like an answer, so this release publishes none of them."
+      },
+      {
+        "domain": "finding",
+        "reason": "A finding is a rule applied to one project's evidence. Publishing it would turn one project's state into a claim about Drupal."
+      },
+      {
+        "domain": "implementation_finding",
+        "reason": "A finding is a rule applied to one project's evidence. The reviewed rule behind it is published instead."
+      },
+      {
+        "domain": "migration_work",
+        "reason": "Migration work items name files and lines in one project. The authoritative deprecation records behind them are published instead."
+      },
+      {
+        "domain": "project_evidence",
+        "reason": "Evidence describes one repository at one revision. It answers a local question and is never global Drupal content."
+      },
+      {
+        "domain": "remediation_plan",
+        "reason": "A remediation plan is computed for one project's installed versions. The advisories behind it are published instead."
+      },
+      {
+        "domain": "upgrade_assessment",
+        "reason": "An upgrade assessment is bounded by one project's evidence and is not a statement about Drupal."
+      }
+    ],
+    "record_counts": {
+      "advisory": 40,
+      "api_lifecycle": 225,
+      "change_record": 20,
+      "implementation_rule": 9,
+      "solved_case": 1,
+      "trusted_knowledge": 11
+    },
+    "release": {
+      "dataset_id": "dataset:e290b71c0e26ef1d0067be2f01713b7e",
+      "dataset_schema_version": "0.1",
+      "dk_version": "1.0.0",
+      "query_interface_version": "0.1",
+      "records_digest": "59bb7c7785c24df5"
+    },
+    "source_freshness_summary": {
+      "baselined": 34,
+      "never_acquired": 0,
+      "note": "Freshness is measured against each source's declared check cadence when the site is built. A stale source is one nobody has looked at recently; it is not a source known to be wrong.",
+      "registered": 34
+    },
+    "trust_classes": {
+      "derived_finding": {
+        "authority": "derived from a rule and this project's evidence",
+        "explanation": "Produced by applying a reviewed rule or authoritative record to this project's evidence. Its strength is whatever its state and evidence say.",
+        "record_type": "finding",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": false
+      },
+      "project_observation": {
+        "authority": "observed in this project",
+        "explanation": "Observed in this repository at this revision. It is a fact about this project and never a rule about Drupal.",
+        "record_type": "project-derived evidence",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": false
+      },
+      "proven_case_context_only": {
+        "authority": "verified in one observed project context",
+        "explanation": "Proven in the project context it was captured from. It is not universal Drupal truth and widening it requires review.",
+        "record_type": "solved case",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": false
+      },
+      "reviewed_drupal_knowledge": {
+        "authority": "reviewed Drupal Knowledge record",
+        "explanation": "A human reviewed this against registered authoritative sources. It states something about Drupal, not about any one project.",
+        "record_type": "trusted knowledge, reviewed by a human against authoritative sources",
+        "trusted_knowledge": true,
+        "universal_drupal_rule": true
+      },
+      "reviewed_implementation_rule": {
+        "authority": "reviewed Drupal Knowledge implementation rule",
+        "explanation": "A reviewed rule whose authority is a pinned authoritative source. It says what to look for; it says nothing until evidence settles it.",
+        "record_type": "reviewed rule evaluated against project evidence",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": false
+      },
+      "source_derived_authoritative": {
+        "authority": "authoritative Drupal source",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "untrusted_discovery_signal": {
+        "authority": "community observation, not authority",
+        "explanation": "An untrusted ecosystem observation awaiting corroboration and review. It may not be acted on as Drupal Knowledge.",
+        "record_type": "discovery signal",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": false
+      }
+    }
+  },
+  "unknowns": [
+    "Record counts describe what Drupal Knowledge holds, not what exists in Drupal.",
+    "Freshness describes when a source was last acquired. This API never acquires anything."
+  ],
+  "warnings": []
+}
+

@@ -1,0 +1,160 @@
+{
+  "advisory": {
+    "advisory_number": "004",
+    "canonical_url": "https://www.drupal.org/sa-core-2025-004",
+    "description_present": true,
+    "is_psa": false,
+    "kind": "core",
+    "published_at": "2025-03-19T18:54:35Z",
+    "title": "Drupal core - Moderately critical - Cross Site Scripting - SA-CORE-2025-004",
+    "updated_at": "2025-06-14T13:06:04Z",
+    "vulnerability_type": "Cross Site Scripting",
+    "year": "2025"
+  },
+  "advisory_contract_version": "0.1",
+  "affected_versions": {
+    "clauses": [
+      {
+        "constraints": [
+          {
+            "operator": "gte",
+            "source_value": ">=8.0.0",
+            "version": "8.0.0"
+          },
+          {
+            "operator": "lt",
+            "source_value": "<10.3.14",
+            "version": "10.3.14"
+          }
+        ],
+        "source_value": ">= 8.0.0 < 10.3.14"
+      },
+      {
+        "constraints": [
+          {
+            "operator": "gte",
+            "source_value": ">=10.4.0",
+            "version": "10.4.0"
+          },
+          {
+            "operator": "lt",
+            "source_value": "<10.4.5",
+            "version": "10.4.5"
+          }
+        ],
+        "source_value": ">= 10.4.0 < 10.4.5"
+      },
+      {
+        "constraints": [
+          {
+            "operator": "gte",
+            "source_value": ">=11.0.0",
+            "version": "11.0.0"
+          },
+          {
+            "operator": "lt",
+            "source_value": "<11.0.13",
+            "version": "11.0.13"
+          }
+        ],
+        "source_value": ">= 11.0.0 < 11.0.13"
+      },
+      {
+        "constraints": [
+          {
+            "operator": "gte",
+            "source_value": ">=11.1.0",
+            "version": "11.1.0"
+          },
+          {
+            "operator": "lt",
+            "source_value": "<11.1.5",
+            "version": "11.1.5"
+          }
+        ],
+        "source_value": ">= 11.1.0 < 11.1.5"
+      }
+    ],
+    "parse_method": "drupal_security_advisory_constraint_grammar",
+    "source_value": ">= 8.0.0 < 10.3.14 || >= 10.4.0 < 10.4.5 || >= 11.0.0 < 11.0.13 || >= 11.1.0 < 11.1.5",
+    "state": "parsed"
+  },
+  "cves": {
+    "identifiers": [
+      "CVE-2025-31675"
+    ],
+    "inferred": false,
+    "state": "sourced"
+  },
+  "enforcement": {
+    "automatically_blocking": false,
+    "intent": "guidance",
+    "policy_controlled": true
+  },
+  "engine": {
+    "deterministic": true,
+    "language_model_used": false,
+    "name": "drupal-knowledge-security-engine",
+    "version": "0.1"
+  },
+  "fixed_in": {
+    "release_nids": [
+      "3514108",
+      "3514110",
+      "3514113",
+      "3514115"
+    ],
+    "state": "stated",
+    "versions": [
+      "10.3.14",
+      "10.4.5",
+      "11.0.13",
+      "11.1.5"
+    ]
+  },
+  "id": "SA-CORE-2025-004",
+  "is_general_knowledge_record": false,
+  "is_trusted_knowledge": false,
+  "project": {
+    "composer_package": "drupal/core",
+    "drupal_project_nid": "3060",
+    "identity_state": "resolved",
+    "machine_name": "drupal",
+    "project_type": "project_core",
+    "resolution": "authoritative_core_project",
+    "resolved_from": "https://www.drupal.org/api-d7/node/3060.json"
+  },
+  "provenance": {
+    "acquisition_channel": "external_authoritative_source",
+    "ingest_run_id": "security.20260908T185627.fcceb306",
+    "ingested_at": "2026-09-08T18:56:27Z",
+    "ingested_by": {
+      "name": "drupal-knowledge-security-engine",
+      "version": "0.1"
+    },
+    "source_id": "drupal-security-advisories-core",
+    "source_node_id": "3514078",
+    "source_snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+    "source_url": "https://www.drupal.org/sa-core-2025-004"
+  },
+  "record_class": "source_derived_authoritative_record",
+  "remediation": {
+    "authored_by_drupal_knowledge": false,
+    "executable": false,
+    "fixed_versions": [
+      "10.3.14",
+      "10.4.5",
+      "11.0.13",
+      "11.1.5"
+    ],
+    "source_solution_present": true,
+    "state": "sourced"
+  },
+  "severity": {
+    "inferred": false,
+    "risk_vector": "AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default",
+    "scored_by_drupal_knowledge": false,
+    "source_field": "field_sa_criticality",
+    "state": "sourced"
+  }
+}

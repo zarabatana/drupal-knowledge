@@ -1,0 +1,76 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 107,
+    "added_sample": [
+      "Webform Submissions Delete - Moderately critical - Access bypass - SA-CONTRIB-2026-133",
+      "2026-September-02",
+      "Security risk:",
+      "Moderately critical",
+      "13 ∕ 25 AC:Basic/A:None/CI:None/II:Some/E:Theoretical/TD:All"
+    ],
+    "changed_region_count": 16,
+    "current_bytes": 6541,
+    "current_line_count": 135,
+    "deterministic": true,
+    "first_changed_line": 10,
+    "method": "normalized_line_diff",
+    "previous_bytes": 7409,
+    "previous_line_count": 141,
+    "removed_line_count": 113,
+    "removed_sample": [
+      "Slick Carousel - Moderately critical - Cross Site Scripting - SA-CONTRIB-2026-117",
+      "2026-August-26",
+      "CVE-2026-81160",
+      "Slick UI, a sub-module of Slick, enables you to add Slick option sets that may contain HTML for carousel buttons.",
+      "Previous releases of the module did not sufficiently validate user input, leading to a Cross Site Scripting (XSS) vulnerability."
+    ]
+  },
+  "current_hash": "sha256:f389ae0c83baf3301c9f9a1673800cd36ba7d5c687f96a4783ee14263f494d11",
+  "discovered_at": "2026-09-08T15:02:49Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-security-contrib.0fd07971438eb651",
+  "is_knowledge_proposal": false,
+  "kind": "security-source-change",
+  "previous_hash": "sha256:eb46379ccc9af6cdebafdca523d0e6a8158754aed8c8d1b15275c52c095e534e",
+  "provenance": {
+    "acquired_at": "2026-09-08T15:02:49Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/security/contrib",
+    "category": "security",
+    "content_length": 6541,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": {
+      "end": "Pages",
+      "start": "Security advisories for contributed projects"
+    },
+    "etag": "\"1788879659-1\"",
+    "fetch_url": "https://www.drupal.org/security/contrib",
+    "http_status": 200,
+    "last_modified": "Tue, 08 Sep 2026 15:00:59 GMT",
+    "normalization": "auto",
+    "trust": "authoritative"
+  },
+  "review": {
+    "actor": "Miguel Martins",
+    "authorizes_knowledge_proposal_work": false,
+    "method": "human_security_review",
+    "note": "Rolling SA-CONTRIB advisory feed rotation: SA-CONTRIB-2026-133 (Webform Submissions Delete, moderately critical access bypass, 2026-September-02) entered the window and SA-CONTRIB-2026-117 (Slick Carousel XSS) left it. The referencing reviewed record (drupal.security.advisory-streams-separated) claims core, contrib and PSA advisories are distinct streams with different roles; every observed entry remains SA-CONTRIB-prefixed, so that claim is unaffected. Drupal Knowledge holds no per-advisory records to revise: systematic advisory modelling is scoped to a later roadmap epic, not a revision of existing knowledge.",
+    "outcome": "reviewed_no_knowledge_change",
+    "reviewed_at": "2026-09-08T18:03:54Z",
+    "trusted_knowledge_changed": false
+  },
+  "review_required": true,
+  "review_state": "reviewed_no_knowledge_change",
+  "run_id": "run.20260908T150249.31ed3696",
+  "source_id": "drupal-security-contrib",
+  "source_url": "https://www.drupal.org/security/contrib",
+  "status": "reviewed",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "drupal.security.database-query-parameterization",
+  "title": "Use Drupal database placeholders instead of concatenating SQL",
+  "summary": "Drupal secure-code documentation says data must never be concatenated directly into SQL queries and directs developers to use proper argument substitution, select queries, escapeLike() for LIKE values, and fixed operator choices.",
+  "kind": "security-guidance",
+  "domains": ["security", "database", "api"],
+  "severity": "high",
+  "review_status": "reviewed",
+  "sources": [
+    {
+      "source_id": "drupal-secure-code",
+      "locator": "Use the database abstraction layer to avoid SQL injection attacks",
+      "title": "Writing secure code for Drupal"
+    }
+  ],
+  "version_applicability": {
+    "drupal_core": [
+      {
+        "constraint": "current-documented-secure-code-guidance",
+        "status": "applicable",
+        "notes": "This record reflects current Drupal secure-code guidance for database query construction."
+      }
+    ]
+  },
+  "project_applicability": {
+    "requires": ["custom_modules", "database_query_code"],
+    "unknown_result": "guidance_only"
+  },
+  "actions": [
+    "Use Drupal database placeholders or select() conditions for variable query values.",
+    "Escape LIKE wildcard input with the database connection escapeLike() helper.",
+    "Do not pass user input as a query condition operator."
+  ],
+  "checks": [
+    "Review custom database queries for string concatenation of variable data.",
+    "Review LIKE conditions for escaped wildcard input.",
+    "Review dynamic query operators to confirm they come from fixed allowed choices."
+  ],
+  "evidence_requirements": [
+    "Custom Drupal PHP code",
+    "Database query construction path",
+    "Origin and trust level of query values and operators"
+  ],
+  "automation_hints": [
+    "Future static analysis can flag query() calls built from concatenated variables and condition operators derived from request input."
+  ],
+  "enforcement": {
+    "intent": "non_blocking",
+    "rationale": "The general rule is reviewed, but findings require project code evidence and data-flow context before enforcement."
+  },
+  "related": []
+}

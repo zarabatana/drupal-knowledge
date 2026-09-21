@@ -1,0 +1,8 @@
+{
+  "name": "example/non-drupal-fixture",
+  "type": "library",
+  "require": {
+    "php": "^8.3",
+    "symfony/console": "^7.0"
+  }
+}

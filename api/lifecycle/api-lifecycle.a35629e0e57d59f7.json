@@ -1,0 +1,45 @@
+{
+  "id": "api-lifecycle.a35629e0e57d59f7",
+  "is_general_knowledge_record": false,
+  "is_trusted_knowledge": false,
+  "lifecycle": {
+    "annotation_parsed": true,
+    "changed_version": null,
+    "deprecated_version": "9.4.0",
+    "reason": "Read from the mandated Drupal core @deprecated annotation form.",
+    "removed_version": "11.0.0",
+    "source_annotation": "in drupal:9.4.0 and is removed from drupal:11.0.0. The PostgreSQL database driver has been moved to the pgsql module.",
+    "state": "deprecated"
+  },
+  "observed_branch": "9",
+  "provenance": {
+    "acquisition_channel": "external_authoritative_source",
+    "authority_kind": "core_deprecation_index",
+    "ingest_run_id": "api.20260908T231021.6bf7c3e6",
+    "ingested_at": "2026-09-08T23:10:21Z",
+    "ingested_by": {
+      "name": "drupal-knowledge-api-lifecycle-engine",
+      "version": "0.1"
+    },
+    "source_id": "drupal-api-deprecated-9-p4",
+    "source_snapshot_sha256": "sha256:5a0d6b64ef0272324ee322b307b2c253a4b5a5ea16805c937bd9c56b12d3c75d",
+    "source_url": "https://api.drupal.org/api/drupal/deprecated/9"
+  },
+  "record_class": "source_derived_authoritative_api_lifecycle_record",
+  "record_contract_version": "0.1",
+  "replacement": {
+    "semantics": "A replacement is recorded only when the annotation states one. An equivalent API is never inferred.",
+    "state": "unknown",
+    "value": null
+  },
+  "symbol": {
+    "class": "Drupal\\Core\\Database\\Driver\\pgsql\\Update",
+    "core_file": "core/lib/Drupal/Core/Database/Driver/pgsql/Update.php",
+    "identity_basis": "core_file_path_psr4",
+    "index_name": "Update",
+    "kind": "class",
+    "matchable": true,
+    "member": null,
+    "qualified_name": "Drupal\\Core\\Database\\Driver\\pgsql\\Update"
+  }
+}

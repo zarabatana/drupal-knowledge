@@ -1,0 +1,271 @@
+{
+  "$defs": {
+    "Envelope": {
+      "properties": {
+        "api_contract_version": {
+          "type": "string"
+        },
+        "api_version": {
+          "type": "string"
+        },
+        "count": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "dataset_id": {
+          "type": "string"
+        },
+        "dataset_schema_version": {
+          "type": "string"
+        },
+        "dk_version": {
+          "type": "string"
+        },
+        "pagination": {
+          "properties": {
+            "limit": {
+              "type": "integer"
+            },
+            "next_offset": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "offset": {
+              "type": "integer"
+            },
+            "ordering": {
+              "type": "string"
+            },
+            "returned": {
+              "type": "integer"
+            },
+            "total": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "limit",
+            "offset",
+            "total",
+            "returned",
+            "ordering"
+          ],
+          "type": "object"
+        },
+        "provenance": {
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "query_interface_version": {
+          "type": "string"
+        },
+        "request": {
+          "type": "object"
+        },
+        "result": {
+          "type": "object"
+        },
+        "results": {
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "sections": {
+          "type": "object"
+        },
+        "unknowns": {
+          "description": "What this answer does not settle. Never emptied for tidiness.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "api_version",
+        "api_contract_version",
+        "dk_version",
+        "dataset_id",
+        "request",
+        "warnings",
+        "unknowns"
+      ],
+      "type": "object"
+    },
+    "Error": {
+      "properties": {
+        "api_contract_version": {
+          "type": "string"
+        },
+        "api_version": {
+          "type": "string"
+        },
+        "dataset_id": {
+          "type": "string"
+        },
+        "dk_version": {
+          "type": "string"
+        },
+        "error": {
+          "properties": {
+            "code": {
+              "enum": [
+                "DATASET_UNAVAILABLE",
+                "INTERNAL_ERROR",
+                "INVALID_FILTER",
+                "INVALID_PAGINATION",
+                "INVALID_QUERY",
+                "METHOD_NOT_ALLOWED",
+                "NOT_FOUND",
+                "QUERY_TOO_LONG",
+                "UNKNOWN_DOMAIN"
+              ],
+              "type": "string"
+            },
+            "details": {
+              "type": "object"
+            },
+            "message": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "code",
+            "message"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "api_version",
+        "error"
+      ],
+      "type": "object"
+    },
+    "Record": {
+      "properties": {
+        "authority": {
+          "type": "string"
+        },
+        "detail": {
+          "type": "object"
+        },
+        "domain": {
+          "enum": [
+            "trusted_knowledge",
+            "advisory",
+            "api_lifecycle",
+            "change_record",
+            "implementation_rule",
+            "solved_case"
+          ],
+          "type": "string"
+        },
+        "explanation": {
+          "type": "object"
+        },
+        "href": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "match": {
+          "type": "object"
+        },
+        "provenance": {
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "provenance_href": {
+          "type": "string"
+        },
+        "record_type": {
+          "type": "string"
+        },
+        "related": {
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "review_status": {
+          "type": "string"
+        },
+        "site_url": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "trust_class": {
+          "enum": [
+            "proven_case_context_only",
+            "reviewed_drupal_knowledge",
+            "reviewed_implementation_rule",
+            "source_derived_authoritative"
+          ],
+          "type": "string"
+        },
+        "trust_explanation": {
+          "type": "string"
+        },
+        "trusted_knowledge": {
+          "description": "True for reviewed Drupal Knowledge only.",
+          "type": "boolean"
+        },
+        "universal_drupal_rule": {
+          "type": "boolean"
+        },
+        "unknowns": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "domain",
+        "record_type",
+        "trust_class",
+        "trusted_knowledge",
+        "title",
+        "detail",
+        "unknowns",
+        "provenance"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/api-response.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "api_contract_version": "1.0",
+  "description": "Envelope and record wrapper only. A record's `detail` is the domain contract it already carries in schema/: security-advisory.schema.json, api-lifecycle-record.schema.json, change-record.schema.json, knowledge-record.schema.json, implementation-rule.schema.json and solved-case.schema.json. Those are not restated here.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/Envelope"
+    },
+    {
+      "$ref": "#/$defs/Error"
+    }
+  ],
+  "title": "Drupal Knowledge Public Knowledge API response"
+}
+

@@ -1,0 +1,13 @@
+{
+  "name": "example/insecure-term-absent-fixture",
+  "type": "project",
+  "require": {
+    "php": "^8.3",
+    "drupal/core": "11.4.5"
+  },
+  "config": {
+    "platform": {
+      "php": "8.3.0"
+    }
+  }
+}

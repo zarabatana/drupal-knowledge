@@ -1,0 +1,141 @@
+Security advisories for contributed projects
+Show advisories for
+only Drupal core
+,
+only
+PSAs
+, or
+all security advisories
+Security advisories for third-party projects that are not part of Drupal core - this includes all modules, themes, and installation profiles that have been contributed by community members.
+Slick Carousel - Moderately critical - Cross Site Scripting - SA-CONTRIB-2026-117
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-81160
+Slick UI, a sub-module of Slick, enables you to add Slick option sets that may contain HTML for carousel buttons.
+Previous releases of the module did not sufficiently validate user input, leading to a Cross Site Scripting (XSS) vulnerability.
+Note: This vulnerability was fixed in 8.x-2.1 but that was not marked as a security release at the time.
+Read more
+about Slick Carousel - Moderately critical - Cross Site Scripting - SA-CONTRIB-2026-117
+Monster Menus - Moderately critical - Cross-site Scripting - SA-CONTRIB-2026-116
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-81201
+This module enables you to create one or more multisites with highly granular page permissions.
+The module doesn't sufficiently sanitize HTML code contained in the page name when displayed in the built-in tree browser. This results in a cross-site scripting vulnerability that may allow attackers to execute arbitrary JavaScript in the context of the user’s session.
+This vulnerability is mitigated by the fact that an attacker must have the ability to create pages whose page title supports HTML.
+Read more
+about Monster Menus - Moderately critical - Cross-site Scripting - SA-CONTRIB-2026-116
+LDAP / Active Directory Integration - Moderately critical - Information Disclosure - SA-CONTRIB-2026-115
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Proof/TD:All
+CVE IDs:
+CVE-2026-81205
+This module enables users to authenticate using LDAP or Active Directory credentials.
+The module does not sufficiently sanitize user-supplied input before incorporating it into an LDAP search filter. This allows an attacker to discover additional information they should not normally be able to.
+Read more
+about LDAP / Active Directory Integration - Moderately critical - Information Disclosure - SA-CONTRIB-2026-115
+Entity PDF - Moderately critical - Access bypass - SA-CONTRIB-2026-114
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+13 ∕ 25 AC:None/A:User/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-81164
+The Entity PDF module can create a PDF from any entity based on any View mode.
+This module does not check entity view access when fetching a PDF route. This could result in a user accessing a PDF of an entity that they should not be able to view.
+Read more
+about Entity PDF - Moderately critical - Access bypass - SA-CONTRIB-2026-114
+Entity API - Moderately critical - Information disclosure - SA-CONTRIB-2026-113
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-81158
+The Entity API module extends the Drupal core entity API to provide a unified way to deal with entities and their properties.
+The module doesn't correctly apply access controls for JSON:API entity collection endpoints. This exposes an information disclosure vulnerability.
+This vulnerability is mitigated by the fact that the JSON:API module must be enabled in combination with the Entity API module.
+Read more
+about Entity API - Moderately critical - Information disclosure - SA-CONTRIB-2026-113
+DXPR Builder: The AI Visual Page Builder for Drupal - Moderately critical - Information Disclosure - SA-CONTRIB-2026-112
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+14 ∕ 25 AC:None/A:None/CI:Some/II:None/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-81162
+The
+DXPR Builder
+module provides a visual / AI page builder for Drupal. The module uses a JSON Web Token for licensing, user license management, AI services, and subscription metadata.
+The 2.x version of the module does not sufficiently restrict access to API credentials in JavaScript settings. When AI agent features are enabled, the token is exposed to all page visitors (including anonymous users) via
+drupalSettings
+.
+Read more
+about DXPR Builder: The AI Visual Page Builder for Drupal - Moderately critical - Information Disclosure - SA-CONTRIB-2026-112
+Disable Login Page - Moderately critical - Access bypass - SA-CONTRIB-2026-111
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+13 ∕ 25 AC:None/A:None/CI:None/II:None/E:Proof/TD:All
+CVE IDs:
+CVE-2026-81269
+This module enables you to disable access to the
+/user/login
+form unless a secret key is provided.
+The module does not invalidate the relevant caches when login page access restrictions are enabled. As a result, previously cached login page responses may remain accessible until caches are cleared. An attacker may continue to access the login page despite the restriction having been enabled.
+Read more
+about Disable Login Page - Moderately critical - Access bypass - SA-CONTRIB-2026-111
+Disable Login Page - Moderately critical - Access bypass - SA-CONTRIB-2026-110
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-18260
+This module enables you to disable access to the
+/user/login
+form unless a secret key is provided.
+The module does not sufficiently restrict repeated attempts to guess that key, allowing brute-force attacks against the access-control mechanism.
+Read more
+about Disable Login Page - Moderately critical - Access bypass - SA-CONTRIB-2026-110
+Digital Signage Framework - Moderately critical - Access bypass - SA-CONTRIB-2026-109
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-81166
+The Digital Signage Framework module provides a route that signage devices can call to refresh dynamic blocks on a display.
+The route did not check whether the requester was a signage device, nor whether the requested block was one that the module delivers to displays. As a result, an anonymous visitor could read the rendered content of blocks they were not meant to see.
+This vulnerability is mitigated by the fact that many block plugins perform their own access checks on the content they display, which limits what can be disclosed through this route.
+Read more
+about Digital Signage Framework - Moderately critical - Access bypass - SA-CONTRIB-2026-109
+Data field - Moderately critical - Information disclosure - SA-CONTRIB-2026-108
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-81269
+This module enables you to store structured data in configurable fields and expose Data Field values through JSON endpoints.
+The module doesn't sufficiently check access when returning Data Field values through its JSON endpoint. This may allow anonymous users to access field values belonging to entities they cannot otherwise view, including unpublished content.
+Read more
+about Data field - Moderately critical - Information disclosure - SA-CONTRIB-2026-108

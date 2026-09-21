@@ -1,0 +1,153 @@
+Introduced in branch/version
+Notice created
+Change
+11.5.x / 11.5.0
+28-Aug-2026
+user_logout() and user_login_finalize() are deprecated
+11.5.x / 11.5.0
+27-Aug-2026
+A "cancel" method has been added to Drupal.debounce
+11.5.x / 11.5.0
+27-Aug-2026
+Instant queue runner and QueueProcessTrait
+11.5.x / 11.5.0
+27-Aug-2026
+theme-settings.php for hook_form_system_theme_settings_alter() has been deprecated
+11.5.x / 11.5.0
+26-Aug-2026
+Several underscore locale functions have been deprecated
+main / 12.0.0
+26-Aug-2026
+Assigning typed data objects to entity or target_id no longer supported
+11.5.x / 11.5.0
+25-Aug-2026
+Several locale functions have been deprecated
+12.0.x / 12.0.0
+25-Aug-2026
+FunctionalTestSetupTrait::installModulesFromClassProperty() is deprecated
+12.0.x / 12.0.0
+25-Aug-2026
+Install profiles can opt out of being installed
+12.0.x / 12.0.0
+25-Aug-2026
+The 'testing' profile no longer includes configuration for locale modules or 'body_field'
+11.5.x / 11.5.0
+25-Aug-2026
+UpdateRegistry now caches discovered extensions and the constructor has changed
+12.0.x / 12.0.0
+25-Aug-2026
+Drupal no longer collects legacy hooks outside of the main extension file
+11.5.x / 11.5.0
+25-Aug-2026
+Filters now store the allowed_html setting as a sorted string for better diffs
+11.5.x / 11.5.0
+24-Aug-2026
+Link field validation constraints are more specific and provides enough detail to editors
+11.5.x / 11.5.0
+24-Aug-2026
+RouteSubscriberBase can define routes as well as alter them
+11.5.x / 11.5.0
+21-Aug-2026
+The Shortcut module is deprecated
+11.5.x / 11.5.0
+18-Aug-2026
+Roles can now have descriptions
+10.6.x / 10.6.16
+18-Aug-2026
+Case-insensitive array conditions on PostgreSQL now require IN or NOT IN operator
+11.5.x / 11.5.0
+17-Aug-2026
+System actions for adding/removing roles are no longer created via hook_ENTITY_TYPE_insert()
+11.5.x / 11.5.0
+17-Aug-2026
+Installer-specific extension list implementations are deprecated
+11.5.x / 11.5.0
+16-Aug-2026
+NavigationShortcutsBlock is deprecated
+11.5.x / 11.5.0
+16-Aug-2026
+Settings Tray is deprecated
+11.5.x / 11.5.0
+14-Aug-2026
+PostgreSQL truncate queries now emit TRUNCATE inside transactions
+11.5.x / 11.5.0
+11-Aug-2026
+.theme file extensions have been deprecated
+11.5.x / 11.5.0
+11-Aug-2026
+Status messages now use ARIA live region roles instead of the contentinfo landmark
+11.5.x / 11.5.0
+11-Aug-2026
+jQuery().resetForm() function removed
+11.5.x / 11.5.0
+10-Aug-2026
+The options_allowed_values() and _options_values_in_use() functions have been deprecated
+11.5.x / 11.5.0
+09-Aug-2026
+PHPUnit test methods can be set to be skipped by applying Skip attribute
+12.0.x / 12.0.0
+07-Aug-2026
+Testing profile no longer installs page cache and dynamic page cache
+11.5.x / 11.5.0
+05-Aug-2026
+Core library definitions support before/after ordering
+11.5.x / 11.5.0
+04-Aug-2026
+Drupal's .htaccess now blocks HTTP access to package-lock.json
+11.5.x / 11.5.0
+04-Aug-2026
+Upsert can specify custom expressions for the update case
+11.5.x / 11.5.0
+04-Aug-2026
+Library definitions support specifying aggregate targets
+12.0.x / 12.0.0
+04-Aug-2026
+Archive, glossary and recent content block views were removed
+10.6.x / 11.4.0, 11.3.17, 10.6.15
+03-Aug-2026
+drupal/core-recommended allows minor updates for Guzzle and Twig
+11.5.x / 11.5.0
+02-Aug-2026
+Database Schema Definitions added to replace array-based structure
+11.5.x / 11.5.0
+01-Aug-2026
+Route attributes support a top level "title" property
+11.5.x / 11.5.0
+30-Jul-2026
+All transactions in core are converted to use explicit ::commitOrRelease(), implicit commit-on-destruct is deprecated
+11.5.x / 11.5.0
+30-Jul-2026
+MenuSettingsConstraint is Deprecated
+11.5.x / 11.5.0
+29-Jul-2026
+EntityDefinitionTestTrait now declares $entityDefinitionUpdateManager and $state properties
+11.5.x / 11.5.0
+28-Jul-2026
+update_fetch_with_http_fallback setting is deprecated
+11.5.x / 11.5.0
+27-Jul-2026
+Support for enums and PHP constants constants in YAML files
+11.5.x / 11.5.0
+27-Jul-2026
+\Drupal\Core\Config\FileStorageFactory is deprecated
+11.5.x / 11.5.0
+26-Jul-2026
+User search plugin user_search has been moved to sub-module Search User in Search
+11.5.x / 11.5.0
+25-Jul-2026
+StubPDO is deprecated
+11.5.x / 11.5.0
+24-Jul-2026
+Manual user creation now emails users by default
+12.0.x / 12.0.0
+22-Jul-2026
+The default homepage in the Standard profile is now /user
+11.5.x / 11.5.0
+22-Jul-2026
+The base class implementation of Insert::execute() is deprecated
+11.5.x / 11.5.0
+22-Jul-2026
+pdoToFetchAs, clientFetchColumn, clientFetchObject, clientQueryString, $fetchModeLiterals from PdoTrait are deprecated
+12.0.x / 12.0.0
+22-Jul-2026
+The frontpage view is renames and disabled by default

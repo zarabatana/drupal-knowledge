@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/migration-work-item-v0.1.json",
+  "title": "Drupal Knowledge migration work item",
+  "description": "One concrete piece of custom-code migration work for one target Drupal version: the symbol used, every place it is used, what the authoritative annotation says about its lifecycle, what that means for the target, and the replacement the annotation states. Occurrences are never collapsed, because a migration plan needs to know where the work is. Nothing described here is applied: execution_performed is structurally false.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "work_item_id",
+    "result_domain",
+    "target_drupal_version",
+    "project_fingerprint",
+    "usage",
+    "occurrences",
+    "lifecycle",
+    "target_effect",
+    "suggested_migration",
+    "provenance",
+    "limitations",
+    "execution_performed"
+  ],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "work_item_id": {"type": "string", "pattern": "^migration-work\\.[a-f0-9]{16}$"},
+    "result_domain": {
+      "description": "Its own domain. An API migration item is not a security finding.",
+      "const": "api_migration"
+    },
+    "target_drupal_version": {"type": "string"},
+    "project_fingerprint": {
+      "description": "Identity of the analysed code. The same revision, target and evidence always produce the same work item id.",
+      "type": "string"
+    },
+    "usage": {
+      "type": "object",
+      "required": ["usage_kind", "symbol", "occurrence_count", "components", "evidence_quality"],
+      "properties": {
+        "usage_kind": {
+          "enum": ["function_call", "class_reference", "static_call", "constant_reference", "service_reference", "hook_implementation"]
+        },
+        "symbol": {"type": "string"},
+        "occurrence_count": {"type": "integer", "minimum": 1},
+        "components": {"type": "array", "items": {"type": "string"}},
+        "evidence_quality": {
+          "type": "array",
+          "items": {"enum": ["syntax_aware_token_stream", "structured_yaml_value", "non_code_text_only"]}
+        }
+      },
+      "additionalProperties": false
+    },
+    "occurrences": {
+      "description": "Every location, preserved. Twelve uses of one removed API are twelve pieces of work.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["path", "line", "component", "usage_kind", "evidence_quality"],
+        "properties": {
+          "path": {
+            "description": "Relative to the project root. An absolute local path is never recorded.",
+            "type": "string",
+            "pattern": "^(?!/)(?!\\w:)"
+          },
+          "line": {"type": "integer", "minimum": 1},
+          "component": {"type": ["string", "null"]},
+          "usage_kind": {"type": "string"},
+          "evidence_quality": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "lifecycle": {
+      "type": "object",
+      "required": ["state", "deprecated_version", "removed_version", "changed_version", "source_annotation", "symbol_kind", "core_file"],
+      "properties": {
+        "state": {"type": "string"},
+        "deprecated_version": {"type": ["string", "null"]},
+        "removed_version": {"type": ["string", "null"]},
+        "changed_version": {"type": ["string", "null"]},
+        "source_annotation": {"type": "string"},
+        "symbol_kind": {"type": "string"},
+        "core_file": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "target_effect": {
+      "description": "Target-aware. The same symbol is compatible for one target, recommended for another and blocking for a third.",
+      "type": "object",
+      "required": ["effect", "reason", "blocking"],
+      "properties": {
+        "effect": {"enum": ["compatible", "migration_recommended", "migration_required", "blocking", "unknown"]},
+        "reason": {"type": "string"},
+        "blocking": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "suggested_migration": {
+      "type": "object",
+      "required": ["replacement_state", "replacement", "action_category", "action_detail", "semantics"],
+      "properties": {
+        "replacement_state": {"enum": ["stated", "stated_none", "unknown"]},
+        "replacement": {"type": ["string", "null"]},
+        "action_category": {
+          "type": ["string", "null"],
+          "enum": ["replace_symbol", "review_signature", "review_without_stated_replacement", null]
+        },
+        "action_detail": {"type": ["string", "null"]},
+        "semantics": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "description": "Every authoritative record behind the item. Several records describing one lifecycle event add provenance rather than duplicate the task.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["record_id", "source_id", "source_url", "source_snapshot_sha256", "authority_kind"],
+        "properties": {
+          "record_id": {"type": "string"},
+          "source_id": {"type": "string"},
+          "source_url": {"type": "string"},
+          "source_snapshot_sha256": {"type": "string"},
+          "authority_kind": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "execution_performed": {"const": false}
+  },
+  "additionalProperties": false
+}

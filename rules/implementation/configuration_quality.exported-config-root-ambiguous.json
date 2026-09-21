@@ -1,0 +1,62 @@
+{
+  "authority": {
+    "sources": [
+      {
+        "quotes": [
+          "'config_sync_directory'"
+        ],
+        "snapshot_sha256": "sha256:1e2df3981d9cc138fa916171a710909b3e6922ebd978252b453b903e540b4a39",
+        "source_id": "drupal-default-settings-php"
+      }
+    ],
+    "summary": "Drupal core's default.settings.php documents config_sync_directory as the setting that names a site's configuration directory, which is what makes a second candidate root ambiguous rather than harmless."
+  },
+  "category": "configuration_quality",
+  "check": {
+    "condition": {
+      "assertion": "config.root_selection",
+      "id": "config-root-ambiguous",
+      "operator": "evidence_matches",
+      "subject": "exported_configuration",
+      "value": "ambiguous"
+    },
+    "kind": "evidence_condition"
+  },
+  "context_requirements": [],
+  "finding": {
+    "assertion": "More than one candidate exported configuration root is present.",
+    "conclusion": {
+      "candidate": "No configuration root could be selected.",
+      "confirmed": "No configuration root could be selected, so every configuration rule is unevaluable for this project.",
+      "default": "No conclusion is drawn.",
+      "not_observed": "A single exported configuration root was selected.",
+      "unknown": "Configuration root selection could not be established."
+    },
+    "enforcement_intent": "guidance",
+    "evidence_explanation": "Exported configuration root selection was observed as ambiguous, meaning more than one candidate root was found and none was chosen.",
+    "human_title": "The exported configuration root is ambiguous",
+    "limitations": [
+      "While the root is ambiguous, no configuration evidence exists at all, and the absence of other configuration findings means nothing."
+    ],
+    "remediation": {
+      "applied": false,
+      "basis": "drupal_core_source",
+      "guidance": "Identify which directory config_sync_directory points at and remove or exclude the other candidate export, so configuration analysis has one authoritative root."
+    },
+    "severity_state": "not_established"
+  },
+  "review": {
+    "authority": "reviewed against the pinned default.settings.php snapshot, which names the settings key that decides the root",
+    "reviewed_on": "2026-09-09",
+    "status": "reviewed"
+  },
+  "rule_contract_version": "0.1",
+  "rule_id": "configuration_quality.exported-config-root-ambiguous",
+  "scope": {
+    "component": "config/sync",
+    "drupal_core_minimum_major": 8,
+    "notes": "Exported configuration directories are a Drupal 8-and-later mechanism."
+  },
+  "summary": "More than one plausible exported configuration root was found, so no exported configuration was enumerated and configuration rules cannot be evaluated.",
+  "title": "No single exported configuration root could be selected"
+}

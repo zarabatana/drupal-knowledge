@@ -1,0 +1,57 @@
+{
+  "api_contract_version": "1.0",
+  "api_version": "1",
+  "count": 1,
+  "dataset_id": "dataset:e290b71c0e26ef1d0067be2f01713b7e",
+  "dataset_schema_version": "0.1",
+  "dk_version": "1.0.0",
+  "provenance": [
+    {
+      "canonical_url": "https://www.drupal.org/sa-core-2025-001",
+      "channel": "authoritative_source",
+      "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+      "source_href": "/api/v1/sources/drupal-security-advisories-core",
+      "source_id": "drupal-security-advisories-core",
+      "source_title": "Drupal core security advisories (structured)",
+      "source_trust": "authoritative",
+      "source_url": "https://www.drupal.org/sa-core-2025-001"
+    }
+  ],
+  "query_interface_version": "0.1",
+  "request": {
+    "id": "SA-CORE-2025-001",
+    "operation_id": "getProvenance",
+    "path": "/api/v1/provenance/SA-CORE-2025-001"
+  },
+  "result": {
+    "domain": "advisory",
+    "edges": [
+      {
+        "from": "SA-CORE-2025-001",
+        "from_domain": "advisory",
+        "relation": "supported_by",
+        "to": "drupal-security-advisories-core",
+        "to_kind": "authoritative_source"
+      }
+    ],
+    "id": "SA-CORE-2025-001",
+    "record_href": "/api/v1/security/SA-CORE-2025-001",
+    "steps": [
+      {
+        "canonical_url": "https://www.drupal.org/sa-core-2025-001",
+        "channel": "authoritative_source",
+        "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+        "source_href": "/api/v1/sources/drupal-security-advisories-core",
+        "source_id": "drupal-security-advisories-core",
+        "source_title": "Drupal core security advisories (structured)",
+        "source_trust": "authoritative",
+        "source_url": "https://www.drupal.org/sa-core-2025-001"
+      }
+    ],
+    "trust_class": "source_derived_authoritative",
+    "trusted_knowledge": false
+  },
+  "unknowns": [],
+  "warnings": []
+}
+

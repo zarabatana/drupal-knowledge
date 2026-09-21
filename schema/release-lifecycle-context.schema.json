@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/release-lifecycle-context-v0.1.json",
+  "title": "Drupal core release lifecycle context",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "artifact_type",
+    "id",
+    "authority_layer",
+    "context_subject",
+    "review",
+    "source",
+    "normalizer",
+    "feed_structure_audit",
+    "source_project",
+    "supported_branches",
+    "release_count",
+    "releases",
+    "non_inference"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "artifact_type": {"const": "release-lifecycle-context"},
+    "id": {"const": "drupal-core-release-lifecycle"},
+    "authority_layer": {"const": "TRUSTED_KNOWLEDGE_CONTEXT"},
+    "context_subject": {"type": "string"},
+    "review": {
+      "type": "object",
+      "required": ["status", "reviewed_on", "authority", "source_state_at_review"],
+      "properties": {
+        "status": {"enum": ["candidate", "reviewed"]},
+        "reviewed_on": {"type": ["string", "null"]},
+        "authority": {"type": "string"},
+        "source_state_at_review": {"enum": ["current", "stale"]}
+      },
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "source_id",
+        "url",
+        "fetch_url",
+        "state_path",
+        "snapshot_path",
+        "snapshot_sha256",
+        "snapshot_bytes",
+        "current_state_sha256",
+        "current_state_content_length",
+        "state_snapshot_relation"
+      ],
+      "properties": {
+        "source_id": {"const": "drupal-core-releases"},
+        "url": {"type": "string"},
+        "fetch_url": {"type": "string"},
+        "state_path": {"type": "string"},
+        "snapshot_path": {"type": "string"},
+        "snapshot_sha256": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "snapshot_bytes": {"type": "integer", "minimum": 0},
+        "current_state_sha256": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "current_state_content_length": {"type": "integer", "minimum": 0},
+        "state_snapshot_relation": {"enum": ["current", "stale"]}
+      },
+      "additionalProperties": false
+    },
+    "normalizer": {
+      "type": "object",
+      "required": ["name", "version", "method", "release_ordering"],
+      "properties": {
+        "name": {"const": "drupal-core-release-lifecycle-normalizer"},
+        "version": {"const": "0.1"},
+        "method": {"const": "parse-drupal-release-history-xml-explicit-fields-only"},
+        "release_ordering": {"type": "object"}
+      },
+      "additionalProperties": false
+    },
+    "feed_structure_audit": {"type": "array", "items": {"type": "object"}},
+    "source_project": {"type": "object"},
+    "supported_branches": {"type": "object"},
+    "release_count": {"type": "integer", "minimum": 0},
+    "releases": {"type": "array", "items": {"type": "object"}},
+    "non_inference": {"type": "object"}
+  },
+  "additionalProperties": false
+}

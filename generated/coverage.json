@@ -1,0 +1,285 @@
+{
+  "domains": [
+    {
+      "id": "access",
+      "label": "Access",
+      "parent": "security",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "accessibility",
+      "label": "Accessibility",
+      "parent": "frontend",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "api",
+      "label": "API",
+      "parent": "core",
+      "record_count": 4,
+      "status": "FOUNDATION"
+    },
+    {
+      "id": "asset-library",
+      "label": "Asset Library",
+      "parent": "frontend",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "authentication",
+      "label": "Authentication",
+      "parent": "security",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "batch",
+      "label": "Batch",
+      "parent": "core",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "cache",
+      "label": "Cache",
+      "parent": "performance",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "change-records",
+      "label": "Change Records",
+      "parent": "update",
+      "record_count": 1,
+      "status": "FOUNDATION"
+    },
+    {
+      "id": "coding-standards",
+      "label": "Coding Standards",
+      "parent": "core",
+      "record_count": 2,
+      "status": "FOUNDATION"
+    },
+    {
+      "id": "commerce",
+      "label": "Commerce",
+      "parent": "contrib",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "composer",
+      "label": "Composer",
+      "parent": "deployment",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "configuration",
+      "label": "Configuration",
+      "parent": "core",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "contrib",
+      "label": "Contrib",
+      "parent": null,
+      "record_count": 1,
+      "status": "FOUNDATION"
+    },
+    {
+      "id": "core",
+      "label": "Core",
+      "parent": null,
+      "record_count": 8,
+      "status": "FOUNDATION"
+    },
+    {
+      "id": "cron",
+      "label": "Cron",
+      "parent": "core",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "database",
+      "label": "Database",
+      "parent": "core",
+      "record_count": 1,
+      "status": "FOUNDATION"
+    },
+    {
+      "id": "dependency-injection",
+      "label": "Dependency Injection",
+      "parent": "service",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "deployment",
+      "label": "Deployment",
+      "parent": null,
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "entity",
+      "label": "Entity",
+      "parent": "core",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "events",
+      "label": "Events",
+      "parent": "core",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "field",
+      "label": "Field",
+      "parent": "entity",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "files",
+      "label": "Files",
+      "parent": "core",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "forms",
+      "label": "Forms",
+      "parent": "core",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "frontend",
+      "label": "Frontend",
+      "parent": null,
+      "record_count": 1,
+      "status": "PARTIAL"
+    },
+    {
+      "id": "infrastructure",
+      "label": "Infrastructure",
+      "parent": "deployment",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "migration",
+      "label": "Migration",
+      "parent": null,
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "multilingual",
+      "label": "Multilingual",
+      "parent": "core",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "performance",
+      "label": "Performance",
+      "parent": null,
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "plugin",
+      "label": "Plugin",
+      "parent": "core",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "queue",
+      "label": "Queue",
+      "parent": "core",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "render",
+      "label": "Render",
+      "parent": "core",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "routing",
+      "label": "Routing",
+      "parent": "core",
+      "record_count": 1,
+      "status": "FOUNDATION"
+    },
+    {
+      "id": "search",
+      "label": "Search",
+      "parent": "core",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "security",
+      "label": "Security",
+      "parent": null,
+      "record_count": 5,
+      "status": "FOUNDATION"
+    },
+    {
+      "id": "service",
+      "label": "Service",
+      "parent": "core",
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "testing",
+      "label": "Testing",
+      "parent": null,
+      "record_count": 0,
+      "status": "EMPTY"
+    },
+    {
+      "id": "theme",
+      "label": "Theme",
+      "parent": "frontend",
+      "record_count": 1,
+      "status": "FOUNDATION"
+    },
+    {
+      "id": "twig",
+      "label": "Twig",
+      "parent": "theme",
+      "record_count": 1,
+      "status": "FOUNDATION"
+    },
+    {
+      "id": "update",
+      "label": "Update",
+      "parent": "deployment",
+      "record_count": 5,
+      "status": "FOUNDATION"
+    },
+    {
+      "id": "views",
+      "label": "Views",
+      "parent": "core",
+      "record_count": 0,
+      "status": "EMPTY"
+    }
+  ],
+  "schema_version": "0.1"
+}

@@ -1,0 +1,77 @@
+The Drupal Coding Standards
+Read the Drupal Coding Standards
+The move to GitLab pages is not complete. There are admin processes to change and well setting up redirects. The standards at
+Coding standards guide
+are now marked Obsolete and deprecated.
+Announcements
+Changes to the Drupal Coding Standards are announced via
+Coding Standards change notices
+.
+Request for final feedback are
+posted on Drupal.org Core blog
+.
+The Process for Changing Coding Standards
+Create an issue in the
+Coding Standards project queue
+using the provided Coding Standards issue template.
+At least two additional active community members (contrib module maintainers, active patch contributors, etc) need to agree to support the change in the form of a comment on the issue.
+The issue should have a change record.
+Once the issue is
+"RTBC"
+, the Coding Standards committee will review it.
+If the committee agrees to the change it is tagged "
+Needs announcement for final discussion
+". If the change is
+disruptive
+or controversial it should be announced the following week on
+https://www.drupal.org/about/core
+with a consideration period of at least 14 days. If there are concerns or conversation is ongoing, the issue consultation time may be extended. If the committee does not agree to the change the status may be set to
+"Won't fix"
+or to
+"Needs work".
+If Core
+is
+affected it is tagged '
+Needs committer feedback
+' and should be discussed at the next core committer meeting:
+Core committers review the proposed new/modified standard.
+If approved, the issue is tagged with
+“Core Committer Approved”
+.
+If not approved, feedback will be posted on why.
+The committee confirms the public feedback and core committers agree to the proposal. Change are made to the issue summary and tags as required.
+Commit the changes in MR. Issues are marked
+"fixed"
+and the change record published etc.
+When a PHP standard is approved use the following to determine the next steps.
+A phpcs rule exists
+If the rule prevents implementing the rule for core then create an issue in the
+Drupal project
+to replace that rule in core with a different phpcs rule, or to disable the rule in core if it is simply being loosened.
+If the rule is not enabled for core, then a create an issue in the
+Drupal project
+to enable the rule.
+If the rule needs modification then create an issue in the
+Coder project
+. That issue should link to the Coding Standards issue that approved the standard.
+A phpcs rule does not exist
+Create an issue in the
+Coder project
+or
+PHP_CodeSniffer
+to add support for the rule.
+The Coding Standards Committee
+The Coding Standards committee manages proposed changes to the Drupal Coding Standards.
+Place of business
+Join #coding-standards in
+Drupal Slack
+to meet and work with others on improving the Drupal coding standards.
+Meetings
+Meetings are held monthly in #coding-standards on Drupal Slack. The minutes of those meetings are transcribed to issues in this project. Ask in #coding-standards when the next meeting will be held.
+Coding Standards committee members
+bbrala
+borisson_
+catch
+dww
+longwave
+quietone

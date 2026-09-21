@@ -1,0 +1,191 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/source-change-candidate-v0.1.json",
+  "title": "Drupal Knowledge source-change review candidate",
+  "description": "A registered source changed and a human must decide whether trusted knowledge is affected. A candidate is an observation, never a proposal about what Drupal Knowledge should say.",
+  "type": "object",
+  "required": [
+    "id",
+    "kind",
+    "status",
+    "review_state",
+    "review_required",
+    "can_promote_to_knowledge",
+    "is_knowledge_proposal",
+    "discovered_at",
+    "run_id",
+    "engine_version",
+    "source_id",
+    "source_url",
+    "trust",
+    "previous_hash",
+    "current_hash",
+    "summary",
+    "change_summary",
+    "provenance",
+    "affected_knowledge_ids",
+    "review"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^source-change\\.[a-z0-9-]+\\.[a-f0-9]{16}$"},
+    "kind": {
+      "enum": [
+        "source-change",
+        "security-source-change",
+        "release-source-change",
+        "version-change-source-change"
+      ]
+    },
+    "status": {
+      "description": "Coarse legacy status derived from review_state.",
+      "enum": ["review_required", "reviewed", "rejected"]
+    },
+    "review_state": {
+      "description": "Conservative review lifecycle. No state here mutates trusted knowledge; reviewed_requires_knowledge_proposal only authorizes later explicit proposal work.",
+      "enum": [
+        "pending_review",
+        "reviewed_no_knowledge_change",
+        "reviewed_requires_knowledge_proposal",
+        "dismissed_as_non_semantic"
+      ]
+    },
+    "review_required": {"const": true},
+    "can_promote_to_knowledge": {"const": false},
+    "is_knowledge_proposal": {"const": false},
+    "discovered_at": {"type": "string"},
+    "run_id": {"type": "string"},
+    "engine_version": {"type": "string"},
+    "source_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "source_url": {"type": "string", "format": "uri"},
+    "trust": {
+      "enum": ["authoritative", "industry-standard", "ecosystem", "discovery", "internal-proven"]
+    },
+    "previous_hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "current_hash": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "summary": {"type": "string", "minLength": 10},
+    "change_summary": {
+      "description": "Deterministic diff of normalized snapshot text. No language model participates in detecting or describing the change.",
+      "type": "object",
+      "required": [
+        "method",
+        "deterministic",
+        "previous_line_count",
+        "current_line_count",
+        "previous_bytes",
+        "current_bytes",
+        "added_line_count",
+        "removed_line_count",
+        "changed_region_count",
+        "first_changed_line",
+        "added_sample",
+        "removed_sample"
+      ],
+      "properties": {
+        "method": {"const": "normalized_line_diff"},
+        "deterministic": {"const": true},
+        "previous_line_count": {"type": "integer", "minimum": 0},
+        "current_line_count": {"type": "integer", "minimum": 0},
+        "previous_bytes": {"type": "integer", "minimum": 0},
+        "current_bytes": {"type": "integer", "minimum": 0},
+        "added_line_count": {"type": "integer", "minimum": 0},
+        "removed_line_count": {"type": "integer", "minimum": 0},
+        "changed_region_count": {"type": "integer", "minimum": 0},
+        "first_changed_line": {"type": ["integer", "null"], "minimum": 1},
+        "added_sample": {"type": "array", "items": {"type": "string"}},
+        "removed_sample": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "description": "Source identity and safe response metadata only. Request headers, cookies, tokens and local machine paths are never stored.",
+      "type": "object",
+      "required": [
+        "acquisition_channel",
+        "canonical_url",
+        "fetch_url",
+        "trust",
+        "category",
+        "http_status",
+        "content_type",
+        "etag",
+        "last_modified",
+        "normalization",
+        "content_window",
+        "content_length",
+        "acquired_at",
+        "acquired_by"
+      ],
+      "properties": {
+        "acquisition_channel": {"const": "external_authoritative_source"},
+        "canonical_url": {"type": "string", "format": "uri"},
+        "fetch_url": {"type": "string", "format": "uri"},
+        "trust": {"type": "string"},
+        "category": {"type": "string"},
+        "http_status": {"type": ["integer", "null"]},
+        "content_type": {"type": ["string", "null"]},
+        "etag": {"type": ["string", "null"]},
+        "last_modified": {"type": ["string", "null"]},
+        "normalization": {"enum": ["auto", "html_text", "raw_text"]},
+        "content_window": {
+          "type": ["object", "null"],
+          "properties": {
+            "start": {"type": ["string", "null"]},
+            "end": {"type": ["string", "null"]}
+          },
+          "additionalProperties": false
+        },
+        "content_length": {"type": "integer", "minimum": 1},
+        "acquired_at": {"type": "string"},
+        "acquired_by": {
+          "type": "object",
+          "required": ["name", "version"],
+          "properties": {
+            "name": {"const": "drupal-knowledge-acquisition-engine"},
+            "version": {"type": "string"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "affected_knowledge_ids": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "review": {
+      "type": ["object", "null"],
+      "required": [
+        "reviewed_at",
+        "actor",
+        "method",
+        "note",
+        "outcome",
+        "authorizes_knowledge_proposal_work",
+        "trusted_knowledge_changed"
+      ],
+      "properties": {
+        "reviewed_at": {"type": "string"},
+        "actor": {"type": "string", "minLength": 1},
+        "method": {
+          "enum": [
+            "human_source_diff_review",
+            "human_editorial_review",
+            "human_security_review"
+          ]
+        },
+        "note": {"type": ["string", "null"]},
+        "outcome": {
+          "enum": [
+            "reviewed_no_knowledge_change",
+            "reviewed_requires_knowledge_proposal",
+            "dismissed_as_non_semantic"
+          ]
+        },
+        "authorizes_knowledge_proposal_work": {"type": "boolean"},
+        "trusted_knowledge_changed": {"const": false}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

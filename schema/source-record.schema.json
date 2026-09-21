@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/source-record-v0.1.json",
+  "title": "Drupal Knowledge source registry record",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "url",
+    "trust",
+    "enabled",
+    "category",
+    "role",
+    "collection_strategy",
+    "checked_on",
+    "provenance",
+    "version_semantics"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "fetch_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "trust": {
+      "enum": [
+        "authoritative",
+        "industry-standard",
+        "ecosystem",
+        "discovery",
+        "internal-proven"
+      ]
+    },
+    "enabled": {
+      "type": "boolean"
+    },
+    "category": {
+      "type": "string",
+      "minLength": 2
+    },
+    "role": {
+      "type": "string",
+      "minLength": 10
+    },
+    "collection_strategy": {
+      "enum": [
+        "change-detection",
+        "manual",
+        "disabled"
+      ]
+    },
+    "checked_on": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "content_start": {
+      "type": "string",
+      "minLength": 1
+    },
+    "content_end": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provenance": {
+      "type": "string",
+      "minLength": 10
+    },
+    "version_semantics": {
+      "type": "object"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "expected_content_type": {
+      "description": "Declared response family. A conflicting response is a source contract failure, never a silent change.",
+      "enum": [
+        "html",
+        "xml",
+        "json",
+        "text",
+        "auto"
+      ]
+    },
+    "normalization": {
+      "description": "Deterministic normalization strategy. auto keeps the historical content-type sniffing behaviour.",
+      "enum": [
+        "auto",
+        "html_text",
+        "raw_text"
+      ]
+    },
+    "check_cadence_days": {
+      "description": "Expected refresh cadence. A source not successfully refreshed within it becomes visibly stale.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "lifecycle": {
+      "description": "Registry lifecycle. Only active sources are acquired.",
+      "enum": [
+        "active",
+        "retired",
+        "superseded"
+      ]
+    },
+    "superseded_by": {
+      "description": "Registered source id that replaced this one. Only valid when lifecycle is superseded.",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    }
+  },
+  "additionalProperties": false
+}

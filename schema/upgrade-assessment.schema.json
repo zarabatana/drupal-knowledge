@@ -1,0 +1,478 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/upgrade-assessment-v0.1.json",
+  "title": "Drupal Knowledge upgrade compatibility assessment",
+  "description": "A read-only, deterministic evaluation of whether one proposed Drupal core target is reachable from one analyzed project. Compatibility is aggregated across core transition, contributed projects, Composer constraints, platform requirements, API lifecycle and project code; each dimension reports its own blockers and unknowns with provenance. This is not a security finding and not a promise: an unevaluated dimension is never a passing one, and nothing described here is executed.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "assessment_id",
+    "result_domain",
+    "engine",
+    "generated_at",
+    "project",
+    "target",
+    "evidence_sources",
+    "dimensions",
+    "blockers",
+    "unknowns",
+    "required_changes",
+    "assessment",
+    "assessment_basis",
+    "bounds",
+    "execution",
+    "trusted_knowledge_mutations"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "assessment_id": {
+      "type": "string",
+      "pattern": "^upgrade-assessment\\.[a-f0-9]{16}$"
+    },
+    "result_domain": {
+      "description": "Compatibility output lives in its own domain so an upgrade blocker is never presented as a vulnerability.",
+      "const": "upgrade_compatibility"
+    },
+    "engine": {
+      "type": "object",
+      "required": [
+        "name",
+        "version",
+        "deterministic",
+        "language_model_used"
+      ],
+      "properties": {
+        "name": {
+          "const": "drupal-knowledge-upgrade-engine"
+        },
+        "version": {
+          "type": "string"
+        },
+        "deterministic": {
+          "const": true
+        },
+        "language_model_used": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "project": {
+      "description": "Read from an existing project analyzer profile. The upgrade engine has no scanner of its own.",
+      "type": "object",
+      "required": [
+        "project_id",
+        "facts_source",
+        "analyzer_version",
+        "current_core_version",
+        "installed_drupal_package_count"
+      ],
+      "properties": {
+        "project_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "facts_source": {
+          "const": "drupal_project_analyzer_profile_facts"
+        },
+        "analyzer_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "current_core_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "installed_drupal_package_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "requested_version",
+        "branch",
+        "origin"
+      ],
+      "properties": {
+        "requested_version": {
+          "type": "string"
+        },
+        "branch": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "origin": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence_sources": {
+      "description": "Everything this assessment rests on, so any conclusion can be traced back to a reviewed context or an immutable snapshot.",
+      "type": "object",
+      "required": [
+        "analyzer_fact_paths",
+        "upgrade_context",
+        "release_context"
+      ],
+      "properties": {
+        "analyzer_fact_paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "upgrade_context": {
+          "type": "object",
+          "required": [
+            "context_id",
+            "review_status",
+            "reviewed_on",
+            "transition_ids",
+            "source_ids"
+          ],
+          "properties": {
+            "context_id": {
+              "type": "string"
+            },
+            "review_status": {
+              "const": "reviewed"
+            },
+            "reviewed_on": {
+              "type": "string"
+            },
+            "transition_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "source_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "release_context": {
+          "type": "object",
+          "required": [
+            "source_id",
+            "snapshot_sha256",
+            "review_status",
+            "reviewed_on"
+          ],
+          "properties": {
+            "source_id": {
+              "type": "string"
+            },
+            "snapshot_sha256": {
+              "type": "string"
+            },
+            "review_status": {
+              "type": "string"
+            },
+            "reviewed_on": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "dimensions": {
+      "description": "Project-wide compatibility is the aggregate of these. Core supporting a target says nothing on its own about the project reaching it.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "dimension",
+          "status",
+          "blockers",
+          "unknowns",
+          "required_changes"
+        ],
+        "properties": {
+          "dimension": {
+            "enum": [
+              "core_transition",
+              "contrib_compatibility",
+              "composer_constraints",
+              "platform_requirements",
+              "api_lifecycle",
+              "project_code"
+            ]
+          },
+          "status": {
+            "enum": [
+              "satisfied",
+              "requires_changes",
+              "blocked",
+              "unknown"
+            ]
+          },
+          "blockers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/blocker"
+            }
+          },
+          "unknowns": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/unknown"
+            }
+          },
+          "required_changes": {
+            "type": "array"
+          }
+        }
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/blocker"
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/unknown"
+      }
+    },
+    "required_changes": {
+      "description": "Changes the evidence says are needed. They are reported; Drupal Knowledge never applies them.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "dimension",
+          "subject",
+          "change",
+          "provenance",
+          "applied"
+        ],
+        "properties": {
+          "dimension": {
+            "type": "string"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "change": {
+            "type": "object"
+          },
+          "provenance": {
+            "type": "object",
+            "minProperties": 1
+          },
+          "applied": {
+            "const": false
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "assessment": {
+      "description": "Never a bare boolean. Incomplete evidence produces requires_review or insufficient_evidence rather than a pass or a fail.",
+      "enum": [
+        "compatible_with_observed_evidence",
+        "requires_changes",
+        "blocked",
+        "requires_review",
+        "insufficient_evidence"
+      ]
+    },
+    "assessment_basis": {
+      "type": "string"
+    },
+    "bounds": {
+      "type": "object",
+      "required": [
+        "evaluated_dimensions",
+        "statement",
+        "security_relationship"
+      ],
+      "properties": {
+        "evaluated_dimensions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "statement": {
+          "type": "string"
+        },
+        "security_relationship": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "execution": {
+      "description": "Structural, not aspirational. There is no code path in the engine that can set any of these true.",
+      "type": "object",
+      "required": [
+        "execution_performed",
+        "composer_invoked",
+        "project_files_written",
+        "database_updates_run",
+        "modules_changed"
+      ],
+      "properties": {
+        "execution_performed": {
+          "const": false
+        },
+        "composer_invoked": {
+          "const": false
+        },
+        "project_files_written": {
+          "const": false
+        },
+        "database_updates_run": {
+          "const": false
+        },
+        "modules_changed": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "trusted_knowledge_mutations": {
+      "type": "object",
+      "required": [
+        "knowledge_records",
+        "reviewed_context",
+        "advisories",
+        "solved_cases",
+        "source_snapshots"
+      ],
+      "properties": {
+        "knowledge_records": {
+          "const": 0
+        },
+        "reviewed_context": {
+          "const": 0
+        },
+        "advisories": {
+          "const": 0
+        },
+        "solved_cases": {
+          "const": 0
+        },
+        "source_snapshots": {
+          "const": 0
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "blocker": {
+      "description": "A machine-readable reason a target is not reachable, with the evidence behind it and how it could stop being one.",
+      "type": "object",
+      "required": [
+        "kind",
+        "dimension",
+        "subject",
+        "detail",
+        "resolvability",
+        "provenance",
+        "applied"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "major_version_skip_not_supported",
+            "transition_not_documented",
+            "minimum_source_version_not_met",
+            "target_branch_not_supported",
+            "contrib_no_compatible_release",
+            "declared_constraint_excludes_target",
+            "platform_php_incompatible",
+            "removed_core_extension_in_use",
+            "custom_extension_core_requirement_excludes_target",
+            "target_is_below_installed_version",
+            "removed_api_in_use_by_project_code"
+          ]
+        },
+        "dimension": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "detail": {
+          "type": "string"
+        },
+        "resolvability": {
+          "enum": [
+            "resolvable_by_declared_change",
+            "requires_upstream_release",
+            "requires_intermediate_upgrade",
+            "not_resolvable_by_this_target"
+          ]
+        },
+        "required_change": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "provenance": {
+          "description": "Every blocker names its evidence. A blocker without provenance is a defect, not a finding.",
+          "type": "object",
+          "minProperties": 1
+        },
+        "applied": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "unknown": {
+      "description": "A compatibility dimension the evidence does not settle. Unknown is a result, never silently rendered as compatible.",
+      "type": "object",
+      "required": [
+        "dimension",
+        "subject",
+        "detail"
+      ],
+      "properties": {
+        "dimension": {
+          "type": "string"
+        },
+        "subject": {
+          "type": "string"
+        },
+        "detail": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

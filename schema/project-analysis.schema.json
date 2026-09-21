@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/project-analysis-v0.1.json",
+  "title": "Drupal project static analysis output",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "project_id",
+    "analyzer",
+    "profile",
+    "evidence",
+    "completeness",
+    "unknowns",
+    "diagnostics"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "project_id": {"type": "string"},
+    "analyzer": {
+      "type": "object",
+      "required": ["name", "version", "mode"],
+      "properties": {
+        "name": {"const": "drupal-project-analyzer"},
+        "version": {"const": "0.1"},
+        "mode": {"const": "static-file-inspection"}
+      },
+      "additionalProperties": false
+    },
+    "profile": {"$ref": "project-profile.schema.json"},
+    "evidence": {
+      "type": "array",
+      "items": {"$ref": "project-evidence.schema.json"}
+    },
+    "completeness": {"type": "object"},
+    "unknowns": {"type": "array", "items": {"type": "object"}},
+    "diagnostics": {"type": "array", "items": {"type": "object"}}
+  },
+  "additionalProperties": false
+}

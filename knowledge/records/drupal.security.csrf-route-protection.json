@@ -1,0 +1,49 @@
+{
+  "id": "drupal.security.csrf-route-protection",
+  "title": "Action routes should use Drupal routing CSRF protection",
+  "summary": "Drupal secure-code documentation says CSRF protection is integrated into the routing access system and should be used for URLs that perform actions or operations and do not use a form callback.",
+  "kind": "security-guidance",
+  "domains": ["security", "routing"],
+  "severity": "high",
+  "review_status": "reviewed",
+  "sources": [
+    {
+      "source_id": "drupal-secure-code",
+      "locator": "Avoid cross-site request forgeries (CSRF) for routing",
+      "title": "Writing secure code for Drupal"
+    }
+  ],
+  "version_applicability": {
+    "drupal_core": [
+      {
+        "constraint": "current-documented-secure-code-guidance",
+        "status": "applicable",
+        "notes": "This record reflects current Drupal secure-code guidance for non-form action URLs."
+      }
+    ]
+  },
+  "project_applicability": {
+    "requires": ["custom_routes", "route_operation_semantics"],
+    "unknown_result": "guidance_only"
+  },
+  "actions": [
+    "Use Drupal routing CSRF access protection for non-form URLs that perform actions or operations."
+  ],
+  "checks": [
+    "Review custom routes that mutate state or perform operations outside form callbacks.",
+    "Confirm applicable action routes include routing-level CSRF protection."
+  ],
+  "evidence_requirements": [
+    "Custom route definitions",
+    "Controller operation behavior",
+    "Whether the route uses a form callback or another CSRF-protected flow"
+  ],
+  "automation_hints": [
+    "Future analysis can join route definitions with controller behavior to identify action routes that need CSRF access checks."
+  ],
+  "enforcement": {
+    "intent": "non_blocking",
+    "rationale": "The source supports the guidance, but enforcement requires project-specific route and behavior evidence."
+  },
+  "related": []
+}

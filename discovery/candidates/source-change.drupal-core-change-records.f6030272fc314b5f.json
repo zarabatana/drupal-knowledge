@@ -1,0 +1,76 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 67,
+    "added_sample": [
+      "11.5.x / 11.5.0",
+      "08-Sep-2026",
+      "\\Drupal\\Core\\Recipe\\RecipeRunner::isApplying()",
+      "11.5.x / 11.5.0",
+      "07-Sep-2026"
+    ],
+    "changed_region_count": 5,
+    "current_bytes": 4703,
+    "current_line_count": 153,
+    "deterministic": true,
+    "first_changed_line": 4,
+    "method": "normalized_line_diff",
+    "previous_bytes": 4649,
+    "previous_line_count": 153,
+    "removed_line_count": 67,
+    "removed_sample": [
+      "main / 12.0.0",
+      "12.0.x / 12.0.0",
+      "07-Aug-2026",
+      "Testing profile no longer installs page cache and dynamic page cache",
+      "11.5.x / 11.5.0"
+    ]
+  },
+  "current_hash": "sha256:5603068ca984c70c41111c670a82d1dda53d07d1a1dc11bb30280d80b901e514",
+  "discovered_at": "2026-09-08T15:02:49Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-core-change-records.f6030272fc314b5f",
+  "is_knowledge_proposal": false,
+  "kind": "release-source-change",
+  "previous_hash": "sha256:e554ba391a792676cc84cc4a7c58da270b2320d5007b2cfa453420575526fefb",
+  "provenance": {
+    "acquired_at": "2026-09-08T15:02:49Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/list-changes/drupal",
+    "category": "change-records",
+    "content_length": 4703,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": {
+      "end": "Pages",
+      "start": "Introduced in branch/version"
+    },
+    "etag": "\"1788879647-1\"",
+    "fetch_url": "https://www.drupal.org/list-changes/drupal",
+    "http_status": 200,
+    "last_modified": "Tue, 08 Sep 2026 15:00:47 GMT",
+    "normalization": "auto",
+    "trust": "authoritative"
+  },
+  "review": {
+    "actor": "Miguel Martins",
+    "authorizes_knowledge_proposal_work": false,
+    "method": "human_source_diff_review",
+    "note": "Rolling-feed rotation only: line count unchanged at 153, newer 11.5.x change records entered and an older 12.0.0 entry left the window. The referencing reviewed record (drupal.change-records.introduced-version) claims that change records are the official record of introduced branch and version; that structural claim is unaffected by which entries currently occupy the feed. New entries preserve the same branch/version and date shape.",
+    "outcome": "reviewed_no_knowledge_change",
+    "reviewed_at": "2026-09-08T18:03:40Z",
+    "trusted_knowledge_changed": false
+  },
+  "review_required": true,
+  "review_state": "reviewed_no_knowledge_change",
+  "run_id": "run.20260908T150249.31ed3696",
+  "source_id": "drupal-core-change-records",
+  "source_url": "https://www.drupal.org/list-changes/drupal",
+  "status": "reviewed",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}

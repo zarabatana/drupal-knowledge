@@ -1,0 +1,246 @@
+Each version of Drupal introduces new APIs and keeps only some of the previous major versions’ APIs.
+Before diving into the documentation below you might want to read the
+background and prerequisites
+, and the
+Creating custom modules
+guides, both of which explain some concepts and terminology that will be assumed knowledge in the API documentation here.
+Finally, review the
+Drupal backwards compatibility policy
+for an explanation of what may change between minor versions of Drupal and what will remain stable.
+Access policy API
+How to use the access policy API to provide flexible access controls
+AJAX API
+Using the AJAX API to dynamically update forms/displays.
+Basic Concepts
+Core AJAX Callback Commands
+Ajax Dialog Boxes
+Authentication API
+Documentation for Authentication API.
+Authentication API
+Create a custom authentication provider
+Batch API
+Documentation for Batch API in Drupal 8.
+Batch API overview
+Block API
+Documentation for Block API in Drupal 8.
+Block API overview
+Cache API
+Documentation for Cache API in Drupal 8.
+Cache API
+Cache tags
+Cache contexts
+Cache max-age
+Cache tags + Varnish
+CacheableDependencyInterface & friends
+CacheableResponseInterface
+Access checkers + cacheability
+(deprecated) CKEditor 4 API (Drupal 8 and 9)
+Documentation for the deprecated CKEditor 4 API in Drupal 8 and 9.
+CKEditor 5 API
+Documentation for CKEditor 5 API in Drupal 9.
+CKEditor 5 API overview
+Configuration API
+Configuration API in Drupal 8.
+Configuration API overview
+Overview of Configuration (vs. other types of information)
+Configuration Storage
+Configuration override system
+Configuration schema/metadata
+Configuration entity dependencies
+Creating a configuration entity type
+Simple Configuration API
+Working with Configuration Forms
+Database API
+Documentation for the Database API in Drupal 8.
+Database API Overview
+General concepts
+Database Configuration
+Instantiating a Connection Object
+Static Queries
+Dynamic Queries
+Result Sets
+Fetching Into a Custom Class
+Insert Queries
+Update Queries
+Merge Queries
+Upsert Queries
+Delete Queries
+Transactions
+Error Handling
+Functions and Operators
+Entity API
+Drupal 8 Entity API documentation.
+Introduction to Entity API in Drupal 8
+Entity types
+Working with the Entity API
+Bundles
+Configuration Entity
+Content Entity
+Creating a custom content entity
+Creating a custom content type in Drupal 8
+Programming custom fields into your content type
+Using the UI to export the code for your custom fields
+Entity API implements Typed Data API
+Entity Validation API
+Access on entities (TBD)
+Defining and using Content Entity Field definitions
+Entity Translation API
+Display Modes, View Modes, and Form Modes
+FieldTypes, FieldWidgets and FieldFormatters
+Upgrading Code Snippets Module to Drupal 8: Creating a Custom Field
+Dynamic/Virtual field values using computed field property classes
+Handlers
+Making an entity revisionable
+Structure of an Entity annotation
+Creating a content entity type in Drupal 8
+Making the content entity searchable
+Converting a content entity type to be revisionable and publishable
+Link Templates
+Filter API
+Documentation for Filter API in Drupal 8.
+Filter API overview
+Form API
+Drupal's Form API provides a unified way for authoring HTML input forms and handling form validation and submission.
+Introduction to Form API
+ConfigFormBase with Simple Configuration API
+ConfirmFormBase To Confirm an Action
+Form Render Elements
+Conditional Form Fields (#states)
+Form API Workflow
+JavaScript API
+Drupal JavaScript API.
+JavaScript API overview
+Accessibility tools for JavaScript in Drupal 8
+Add JavaScript to Your Theme or Module
+Ajax Forms
+Messages API
+Theming in JavaScript
+Layout API
+Documentation for Layout API in Drupal 8.
+How to register layouts
+How to render layouts
+How to upgrade from Layout Plugin
+Logging API
+Documentation for Logging API in Drupal 8.
+Logging API
+Menu API
+Menu API in Drupal 8.
+Comparison of Menu API in Drupal 7 and 8
+Providing module-defined menu links
+Providing module-defined local tasks
+Providing module-defined actions
+Providing module-defined contextual links
+User stories for Drupal's menu API
+Middleware API
+Documentation for Middleware API in Drupal 8.
+Middleware API
+Migrate API
+The Migrate API provides services for migrating data from different sources to Drupal 9 (or later)
+Migrate API overview
+Migrate source plugins
+Migrate process plugins
+Migrate destination plugins & examples
+Executing migrations
+Writing migrations for contributed and custom modules
+Migration Tests
+Generating database fixtures for migration tests
+Debugging migrations
+Migrate field plugins
+Process Pipelines
+Plugin API
+The Plugins API is used to extend Drupal and add new functionality, and allow modules to define new plugin types.
+Plugin API overview
+Why Plugins?
+Attribute-based plugins
+Create a custom attribute class
+Annotations-based plugins
+Annotation-Based Plugins in Views
+Creating your own Plugin Manager
+Plugin discovery
+Discovery Decorators
+Plugin Definitions
+Plugin Contexts
+Plugin Derivatives
+Create your own custom annotation class
+Creating a plugin that can be defined in themes
+RESTful Web Services API
+RESTful Web Services API in Drupal.
+RESTful Web Services API overview
+Render API
+Render API in Drupal 8.
+Cacheability of render arrays
+Bubbleable metadata
+Auto-placeholdering
+Render arrays
+Render elements
+The Drupal 8 render pipeline
+Responses
+Drupal represents the responses it sends as Symfony Response objects.
+Responses overview
+CacheableResponseInterface
+Routing system
+Routing system in Drupal 8.
+Routing system overview
+Introductory Drupal 8 routes and controllers example
+Structure of routes
+Altering existing routes and adding new routes based on dynamic ones
+Providing dynamic routes
+Routing-related objects: Route, CurrentRouteMatch, RouteMatch, Url
+Underlying functionality of the routing system in Drupal
+Access checking on routes
+Parameters in routes
+Runtime Assertions
+A runtime assertion is a statement that is expected to always be true at the point in the code it appears at.
+Serialization API
+Serialization API in Drupal 8.
+Serialization API overview
+How the Serializer works
+Adding new formats
+Changing the way Serializer handles entities
+Services and dependency injection
+Services and dependency injection in Drupal 8.
+Services and dependency injection in Drupal
+Altering existing services, providing dynamic services
+Dependency Injection in a form
+Service Tags
+Structure of a service file
+State API
+Documentation for State API in Drupal.
+State API overview
+Text Editor API
+Documentation for Text Editor API in Drupal 8.
+Text Editor API overview
+Tour API
+Documentation for Tour API in Drupal 8.
+Translation API (Code text)
+Documentation for Translation API (Code text) in Drupal 8.
+Translation API overview
+Typed Data API
+The Typed Data API is a low level API that describes data based on a set of available types.
+Typed Data API overview
+Data type plugins
+Data definitions
+Computed properties (TBD)
+Update API
+Update API for Drupal 8 (hook_update_N() etc.)
+Introduction to update API for Drupal 8
+Updating Configuration
+Updating Database Schema and/or Data in Drupal 8
+Updating Entities and Fields in Drupal 8
+Writing Automated Update Tests
+Command-Line Interface (CLI) API
+Documentation for the command-line interface (CLI) API in Drupal
+CLI API Overview
+Drush command porting guide to the new dr Drupal core CLI
+HTMX
+Adding interactivity to HTML elements and forms.
+Ajax API to HTMX
+Icon API
+Documentation for Icon API introduced in Drupal 11.1
+Token API
+Documentation for Token API.
+Overview of Token API
+How to use Token API
+Token API hooks
+Tokens available in Drupal core
+Token upgrade guides

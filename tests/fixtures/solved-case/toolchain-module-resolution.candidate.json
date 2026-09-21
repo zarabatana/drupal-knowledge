@@ -1,0 +1,100 @@
+{
+  "contract_version": "0.1",
+  "producer": {
+    "name": "drupal-knowledge-fixture",
+    "version": "0.1"
+  },
+  "state": "captured",
+  "title": "Managed-site update script fails to load when an optional toolchain module is absent",
+  "project_context": {
+    "drupal_core_version": "11.4.5",
+    "php_version": "8.3",
+    "packages": [
+      {
+        "name": "drupal/core",
+        "version": "11.4.5"
+      }
+    ],
+    "environment_class": "local-development",
+    "project_fingerprint": "sha256:57b9d63ecba5731298f47b9583525209a6ab1ab1c5ef6b32acddd4dd12329dbc",
+    "revision_fingerprint": "sha256:dfad83687a40979c97aafd3e674ebdafb4f99f6003740538ac7a4477b69e4d58"
+  },
+  "problem": {
+    "statement": "The managed-site update entry point aborted before performing any work when it was executed from a reconstructed toolchain that did not ship one of its imported modules.",
+    "symptoms": [
+      "Node exited with ERR_MODULE_NOT_FOUND before any update logic ran",
+      "No machine-readable result document was produced",
+      "The failure occurred identically on every invocation, including dry-run"
+    ],
+    "evidence_refs": [
+      "validate-pack log: release pipeline phase 3 test failure"
+    ]
+  },
+  "root_cause": {
+    "state": "confirmed",
+    "statement": "A static top-level ESM import created a hard load-time dependency on a module that the reconstructed toolchain deliberately does not copy, so module resolution failed before the entry point executed.",
+    "evidence_refs": [
+      "ERR_MODULE_NOT_FOUND naming the unresolved specifier and the importing file"
+    ]
+  },
+  "fix": {
+    "category": "code_change",
+    "description": "Load the optional module through a dynamic import at call time and declare it as part of the reconstructed toolchain, so resolution failure surfaces as a handled runtime error rather than preventing the script from loading.",
+    "rationale": "Load-time coupling made an optional capability fatal for every caller; call-time resolution keeps the failure diagnosable and scoped.",
+    "changes": [
+      {
+        "scope": "managed-site update entry point",
+        "summary": "Replace the static import with a call-time dynamic import so the entry point stays loadable.",
+        "evidence_ref": "commit diff"
+      },
+      {
+        "scope": "reconstructed toolchain declaration",
+        "summary": "Declare the module directory as part of the toolchain the reconstruction copies.",
+        "evidence_ref": "commit diff"
+      }
+    ]
+  },
+  "verification": {
+    "performed": true,
+    "results": [
+      {
+        "method": "automated_test",
+        "outcome": "passed",
+        "evidence_ref": "release pipeline phase 3 suite",
+        "detail": "The previously failing rehydration test passed after the change."
+      },
+      {
+        "method": "reproduction_before_and_after",
+        "outcome": "passed",
+        "evidence_ref": "validate-pack exit code",
+        "detail": "Reproduced before the change and not reproduced after it."
+      }
+    ],
+    "causality": {
+      "state": "demonstrated",
+      "statement": "The same suite failed before the change and passed after it, with no other change in the tree between the two runs."
+    }
+  },
+  "applicability": {
+    "proven_on": {
+      "drupal_core_versions": [
+        "11.4.5"
+      ],
+      "php_versions": [
+        "8.3"
+      ]
+    },
+    "claimed_scope": "proven_context_only",
+    "conditions": [
+      "Applies to Node ESM entry points executed from a reconstructed partial toolchain"
+    ],
+    "expansion_requires_review": true
+  },
+  "limitations": [
+    "Proven on a single project and a single Drupal core version",
+    "Verified through the repository test suite only, not under production load",
+    "Describes a tooling defect, not a Drupal core or contrib defect",
+    "Carries no security severity evidence"
+  ],
+  "notes": "Captured as a deterministic fixture demonstrating the full solved-case contract."
+}

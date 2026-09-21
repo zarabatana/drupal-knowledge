@@ -1,0 +1,9 @@
+{
+  "name": "example/composer-only-fixture",
+  "type": "project",
+  "require": {
+    "php": "^8.2",
+    "drupal/core": "^11",
+    "drupal/core-recommended": "^11"
+  }
+}

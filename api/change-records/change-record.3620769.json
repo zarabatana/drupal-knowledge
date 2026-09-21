@@ -1,0 +1,47 @@
+{
+  "category": {
+    "additional": [],
+    "basis": "source_text_vocabulary_match",
+    "matched_phrase": null,
+    "value": "other"
+  },
+  "change_record": {
+    "canonical_url": "https://www.drupal.org/node/3620769",
+    "created_at": "2026-09-04T01:18:44Z",
+    "introduced_branch": "11.5.x",
+    "introduced_version": "11.5.0",
+    "node_id": "3620769",
+    "published": false,
+    "title": "There is a new hook data cache service."
+  },
+  "description": {
+    "excerpt": "The constructors for the following services have been updated to add HookData and remove the services that are no longer needed. ModuleHandler ThemeHandler Registry There is now a HookData service to manage caching for hooks. Hooks are needed in several different locations. In order to unify how the hooks are retrieved there is a new HookData service. HookData is internal but has two methods: getModuleHookData getThemeHookData",
+    "present": true,
+    "text_length": 430
+  },
+  "id": "change-record.3620769",
+  "is_general_knowledge_record": false,
+  "is_trusted_knowledge": false,
+  "provenance": {
+    "acquisition_channel": "external_authoritative_source",
+    "authority_kind": "change_record_feed",
+    "ingest_run_id": "api.20260908T231021.6bf7c3e6",
+    "ingested_at": "2026-09-08T23:10:21Z",
+    "ingested_by": {
+      "name": "drupal-knowledge-api-lifecycle-engine",
+      "version": "0.1"
+    },
+    "source_id": "drupal-core-change-notices",
+    "source_node_id": "3620769",
+    "source_snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+    "source_url": "https://www.drupal.org/list-changes/drupal"
+  },
+  "record_class": "source_derived_authoritative_api_lifecycle_record",
+  "record_contract_version": "0.1",
+  "symbols": {
+    "extraction": "title_call_syntax_only",
+    "lifecycle_asserted": false,
+    "named_with_call_syntax": [],
+    "semantics": "A change record names symbols. It does not, in this contract, assert their lifecycle; that comes from the deprecation index."
+  }
+}

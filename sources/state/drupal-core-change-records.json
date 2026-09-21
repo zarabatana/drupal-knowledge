@@ -1,0 +1,25 @@
+{
+  "acquisition": {
+    "acquisition_channel": "external_authoritative_source",
+    "check_cadence_days": 7,
+    "consecutive_failures": 0,
+    "engine_name": "drupal-knowledge-acquisition-engine",
+    "engine_version": "0.1",
+    "last_attempt_at": "2026-09-08T15:02:49Z",
+    "last_attempt_run_id": "run.20260908T150249.31ed3696",
+    "last_attempt_status": "changed",
+    "last_error": null,
+    "last_success_at": "2026-09-08T15:02:49Z",
+    "last_success_run_id": "run.20260908T150249.31ed3696",
+    "previous_snapshot_sha256": "sha256:e554ba391a792676cc84cc4a7c58da270b2320d5007b2cfa453420575526fefb",
+    "review_candidate_id": "source-change.drupal-core-change-records.f6030272fc314b5f"
+  },
+  "content_length": 4703,
+  "content_sha256": "sha256:5603068ca984c70c41111c670a82d1dda53d07d1a1dc11bb30280d80b901e514",
+  "etag": "\"1788879647-1\"",
+  "fetch_url": "https://www.drupal.org/list-changes/drupal",
+  "last_changed_at": "2026-09-08T15:02:49Z",
+  "last_modified": "Tue, 08 Sep 2026 15:00:47 GMT",
+  "source_id": "drupal-core-change-records",
+  "url": "https://www.drupal.org/list-changes/drupal"
+}

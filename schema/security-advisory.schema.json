@@ -1,0 +1,206 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/security-advisory-v0.1.json",
+  "title": "Drupal Knowledge security advisory record",
+  "description": "A faithful projection of one Drupal Security Team advisory as published in an authoritative structured source, pinned to the immutable snapshot it was read from. It is source-derived authoritative security evidence: not a general trusted-knowledge rule, and never a severity, exploitability or remediation claim of Drupal Knowledge's own.",
+  "type": "object",
+  "required": [
+    "id",
+    "advisory_contract_version",
+    "record_class",
+    "is_trusted_knowledge",
+    "is_general_knowledge_record",
+    "engine",
+    "advisory",
+    "project",
+    "affected_versions",
+    "fixed_in",
+    "severity",
+    "cves",
+    "remediation",
+    "provenance",
+    "enforcement"
+  ],
+  "properties": {
+    "id": {
+      "description": "The advisory's own published identifier, uppercased.",
+      "type": "string",
+      "pattern": "^(SA-CORE|SA-CONTRIB|PSA)-[0-9]{4}-[0-9]{3,4}$"
+    },
+    "advisory_contract_version": {"type": "string"},
+    "record_class": {
+      "description": "Source-derived authoritative record. This is the category that lets advisory data be materialized from a reviewed source snapshot without becoming trusted knowledge.",
+      "const": "source_derived_authoritative_record"
+    },
+    "is_trusted_knowledge": {"const": false},
+    "is_general_knowledge_record": {"const": false},
+    "engine": {
+      "type": "object",
+      "required": ["name", "version", "deterministic", "language_model_used"],
+      "properties": {
+        "name": {"const": "drupal-knowledge-security-engine"},
+        "version": {"type": "string"},
+        "deterministic": {"const": true},
+        "language_model_used": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "advisory": {
+      "type": "object",
+      "required": ["title", "kind", "advisory_number", "year", "vulnerability_type", "is_psa", "canonical_url", "published_at", "updated_at", "description_present"],
+      "properties": {
+        "title": {"type": "string", "minLength": 3},
+        "kind": {"enum": ["core", "contrib", "psa"]},
+        "advisory_number": {"type": "string"},
+        "year": {"type": "string", "pattern": "^[0-9]{4}$"},
+        "vulnerability_type": {"type": ["string", "null"]},
+        "is_psa": {"type": "boolean"},
+        "canonical_url": {"type": "string", "format": "uri"},
+        "published_at": {"type": ["string", "null"]},
+        "updated_at": {"type": ["string", "null"]},
+        "description_present": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "project": {
+      "description": "Explicit project identity. Resolved from the authoritative project node the advisory references, never inferred from advisory title text.",
+      "type": "object",
+      "required": ["identity_state", "machine_name", "project_type", "composer_package", "drupal_project_nid", "resolution", "resolved_from"],
+      "properties": {
+        "identity_state": {"enum": ["resolved", "unresolved"]},
+        "machine_name": {"type": ["string", "null"]},
+        "project_type": {
+          "enum": ["project_core", "project_module", "project_theme", "project_distribution", "unknown", null]
+        },
+        "composer_package": {"type": ["string", "null"]},
+        "drupal_project_nid": {"type": ["string", "null"]},
+        "resolution": {
+          "enum": ["authoritative_project_node", "authoritative_core_project", "unresolved"]
+        },
+        "resolved_from": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "affected_versions": {
+      "description": "The advisory's own affected-version expression, preserved verbatim alongside the deterministic parse of it. An absent or unparseable expression yields state unknown, never 'not affected'.",
+      "type": "object",
+      "required": ["state", "source_value", "clauses", "parse_method"],
+      "properties": {
+        "state": {"enum": ["parsed", "absent", "unparseable"]},
+        "source_value": {"type": ["string", "null"]},
+        "clauses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["source_value", "constraints"],
+            "properties": {
+              "source_value": {"type": "string"},
+              "constraints": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["operator", "version", "source_value"],
+                  "properties": {
+                    "operator": {"enum": ["lt", "lte", "gt", "gte", "eq", "branch_wildcard", "any"]},
+                    "version": {"type": ["string", "null"]},
+                    "source_value": {"type": "string"}
+                  },
+                  "additionalProperties": false
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "parse_method": {"const": "drupal_security_advisory_constraint_grammar"}
+      },
+      "additionalProperties": false
+    },
+    "fixed_in": {
+      "description": "Release versions the advisory names as fixed, resolved from authoritative release nodes. Absent where the source names none, including unsupported projects with no fix.",
+      "type": "object",
+      "required": ["state", "versions", "release_nids"],
+      "properties": {
+        "state": {"enum": ["stated", "absent"]},
+        "versions": {"type": "array", "items": {"type": "string"}},
+        "release_nids": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "severity": {
+      "description": "Preserved exactly as published. Drupal publishes a risk vector, not a CVSS score; Drupal Knowledge neither scores it nor labels it. Absent metadata is not_established.",
+      "type": "object",
+      "required": ["state", "risk_vector", "source_field", "scored_by_drupal_knowledge", "inferred"],
+      "properties": {
+        "state": {"enum": ["sourced", "not_established"]},
+        "risk_vector": {"type": ["string", "null"]},
+        "source_field": {"type": ["string", "null"]},
+        "scored_by_drupal_knowledge": {"const": false},
+        "inferred": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "cves": {
+      "type": "object",
+      "required": ["state", "identifiers", "inferred"],
+      "properties": {
+        "state": {"enum": ["sourced", "none_published"]},
+        "identifiers": {
+          "type": "array",
+          "items": {"type": "string", "pattern": "^CVE-[0-9]{4}-[0-9]{4,}$"}
+        },
+        "inferred": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "remediation": {
+      "description": "Authoritative guidance only. Drupal Knowledge writes no remediation of its own and executes none.",
+      "type": "object",
+      "required": ["state", "source_solution_present", "fixed_versions", "authored_by_drupal_knowledge", "executable"],
+      "properties": {
+        "state": {"enum": ["sourced", "not_provided"]},
+        "source_solution_present": {"type": "boolean"},
+        "fixed_versions": {"type": "array", "items": {"type": "string"}},
+        "authored_by_drupal_knowledge": {"const": false},
+        "executable": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "description": "Safe public-source metadata only. No request headers, cookies, tokens or local paths.",
+      "type": "object",
+      "required": ["source_id", "source_snapshot_sha256", "source_url", "source_node_id", "acquisition_channel", "ingested_at", "ingest_run_id", "ingested_by"],
+      "properties": {
+        "source_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "source_snapshot_sha256": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "source_url": {"type": "string", "format": "uri"},
+        "source_node_id": {"type": ["string", "null"]},
+        "acquisition_channel": {"const": "external_authoritative_source"},
+        "ingested_at": {"type": "string"},
+        "ingest_run_id": {"type": "string"},
+        "ingested_by": {
+          "type": "object",
+          "required": ["name", "version"],
+          "properties": {
+            "name": {"type": "string"},
+            "version": {"type": "string"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "enforcement": {
+      "description": "Severity and enforcement are independent. An advisory carrying authoritative risk metadata still does not make Drupal Knowledge block anything.",
+      "type": "object",
+      "required": ["intent", "policy_controlled", "automatically_blocking"],
+      "properties": {
+        "intent": {"const": "guidance"},
+        "policy_controlled": {"const": true},
+        "automatically_blocking": {"const": false}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

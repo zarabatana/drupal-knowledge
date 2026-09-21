@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/corroboration-dossier-v0.1.json",
+  "title": "Drupal Knowledge corroboration dossier",
+  "description": "A deterministic assessment of the evidence for one discovery signal. A corroborated dossier is corroborated discovery evidence, never trusted knowledge, and never a knowledge proposal. Only explicit human review may authorise later proposal work.",
+  "type": "object",
+  "required": [
+    "id",
+    "dossier_contract_version",
+    "signal_id",
+    "signal_trust",
+    "corroboration_state",
+    "review_required",
+    "review_state",
+    "can_promote_to_knowledge",
+    "is_trusted_knowledge",
+    "is_knowledge_proposal",
+    "engine",
+    "evidence_fingerprint",
+    "built_at",
+    "run_id",
+    "supporting_evidence",
+    "contradictory_evidence",
+    "disqualified_evidence",
+    "independence_assessment",
+    "scope_alignment",
+    "version_alignment",
+    "popularity_assessment",
+    "limitations",
+    "review"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^corroboration\\.drupal\\.[a-z0-9.-]+$"},
+    "dossier_contract_version": {"type": "string"},
+    "signal_id": {"type": "string", "pattern": "^signal\\.drupal\\.[a-z0-9.-]+$"},
+    "signal_trust": {
+      "description": "The originating signal's trust tier, preserved verbatim. Authoritative supporting evidence never rewrites this.",
+      "enum": ["authoritative", "industry-standard", "ecosystem", "discovery", "internal-proven"]
+    },
+    "corroboration_state": {
+      "enum": [
+        "corroborated",
+        "partially_corroborated",
+        "contradicted",
+        "insufficient_evidence",
+        "not_applicable"
+      ]
+    },
+    "review_required": {"const": true},
+    "review_state": {
+      "enum": [
+        "pending_review",
+        "no_action",
+        "watch",
+        "needs_more_evidence",
+        "candidate_for_future_knowledge_proposal",
+        "dismissed"
+      ]
+    },
+    "can_promote_to_knowledge": {"const": false},
+    "is_trusted_knowledge": {"const": false},
+    "is_knowledge_proposal": {"const": false},
+    "engine": {
+      "type": "object",
+      "required": ["name", "version", "deterministic", "language_model_used"],
+      "properties": {
+        "name": {"const": "drupal-knowledge-corroboration-engine"},
+        "version": {"type": "string"},
+        "deterministic": {"const": true},
+        "language_model_used": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "evidence_fingerprint": {
+      "description": "Deterministic digest of the considered evidence set. Identical evidence rebuilds the same dossier instead of creating a duplicate.",
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "built_at": {"type": "string"},
+    "run_id": {"type": "string"},
+    "supporting_evidence": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/evidence"}
+    },
+    "contradictory_evidence": {
+      "description": "Never discarded. Contradiction is first-class evidence.",
+      "type": "array",
+      "items": {"$ref": "#/$defs/evidence"}
+    },
+    "disqualified_evidence": {
+      "description": "Evidence that matched the assertion key but cannot support the signal: duplicate lineage, reposts, or incompatible version scope.",
+      "type": "array",
+      "items": {"$ref": "#/$defs/evidence"}
+    },
+    "independence_assessment": {
+      "type": "object",
+      "required": [
+        "independent_origin_count",
+        "independent_origins",
+        "duplicate_origin_count",
+        "authoritative_origin_count",
+        "solved_case_origin_count",
+        "method"
+      ],
+      "properties": {
+        "independent_origin_count": {"type": "integer", "minimum": 0},
+        "independent_origins": {"type": "array", "items": {"type": "string"}},
+        "duplicate_origin_count": {"type": "integer", "minimum": 0},
+        "authoritative_origin_count": {"type": "integer", "minimum": 0},
+        "solved_case_origin_count": {"type": "integer", "minimum": 0},
+        "method": {"const": "independence_group_and_content_lineage"}
+      },
+      "additionalProperties": false
+    },
+    "scope_alignment": {
+      "type": "object",
+      "required": ["state", "component", "notes"],
+      "properties": {
+        "state": {"enum": ["aligned", "partially_aligned", "mismatched", "unknown"]},
+        "component": {"type": ["string", "null"]},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "version_alignment": {
+      "type": "object",
+      "required": ["state", "signal_version_scope", "notes"],
+      "properties": {
+        "state": {"enum": ["aligned", "partially_aligned", "mismatched", "unknown"]},
+        "signal_version_scope": {"type": "object"},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "popularity_assessment": {
+      "type": "object",
+      "required": ["considered", "influenced_corroboration", "rationale"],
+      "properties": {
+        "considered": {"type": "boolean"},
+        "influenced_corroboration": {"const": false},
+        "rationale": {"type": "string", "minLength": 10}
+      },
+      "additionalProperties": false
+    },
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "generalizes_automatically": {"const": false},
+    "review": {
+      "type": ["object", "null"],
+      "required": [
+        "reviewed_at",
+        "actor",
+        "method",
+        "note",
+        "outcome",
+        "authorizes_knowledge_proposal_work",
+        "trusted_knowledge_changed"
+      ],
+      "properties": {
+        "reviewed_at": {"type": "string"},
+        "actor": {"type": "string", "minLength": 1},
+        "method": {"enum": ["human_signal_review", "human_security_review", "human_editorial_review"]},
+        "note": {"type": ["string", "null"]},
+        "outcome": {
+          "enum": [
+            "no_action",
+            "watch",
+            "needs_more_evidence",
+            "candidate_for_future_knowledge_proposal",
+            "dismissed"
+          ]
+        },
+        "authorizes_knowledge_proposal_work": {"type": "boolean"},
+        "trusted_knowledge_changed": {"const": false}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "required": [
+        "channel",
+        "reference",
+        "trust",
+        "independence_group",
+        "content_fingerprint",
+        "relation",
+        "scope_state",
+        "generalizes",
+        "detail"
+      ],
+      "properties": {
+        "channel": {
+          "enum": [
+            "authoritative_source",
+            "industry_standard_source",
+            "ecosystem_source",
+            "discovery_source",
+            "internal_proven_solved_case",
+            "trusted_knowledge"
+          ]
+        },
+        "reference": {"type": "string", "minLength": 1},
+        "trust": {
+          "enum": ["authoritative", "industry-standard", "ecosystem", "discovery", "internal-proven"]
+        },
+        "independence_group": {"type": "string", "minLength": 1},
+        "content_fingerprint": {"type": "string"},
+        "relation": {"enum": ["supports", "contradicts", "duplicate", "scope_mismatch"]},
+        "scope_state": {"enum": ["aligned", "partially_aligned", "mismatched", "unknown"]},
+        "generalizes": {"type": "boolean"},
+        "detail": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

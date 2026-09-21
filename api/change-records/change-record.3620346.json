@@ -1,0 +1,49 @@
+{
+  "category": {
+    "additional": [],
+    "basis": "source_text_vocabulary_match",
+    "matched_phrase": "hook_",
+    "value": "hook_change"
+  },
+  "change_record": {
+    "canonical_url": "https://www.drupal.org/node/3620346",
+    "created_at": "2026-09-08T11:45:56Z",
+    "introduced_branch": "11.5.x",
+    "introduced_version": "11.5.0",
+    "node_id": "3620346",
+    "published": true,
+    "title": "\\Drupal\\Core\\Recipe\\RecipeRunner::isApplying()"
+  },
+  "description": {
+    "excerpt": "A new static method, \\Drupal\\Core\\Recipe\\RecipeRunner::isApplying() has been added so that code can determine if it is being run when a recipe is being applied. For example: use \\Drupal\\Core\\Recipe\\RecipeRunner; function hook_install($is_syncing): void { // Set general module variables. $variable = RecipeRunner::isApplying() ? 'barbar', 'bar'; \\Drupal::state()->set('my_module.foo', $variable); }",
+    "present": true,
+    "text_length": 398
+  },
+  "id": "change-record.3620346",
+  "is_general_knowledge_record": false,
+  "is_trusted_knowledge": false,
+  "provenance": {
+    "acquisition_channel": "external_authoritative_source",
+    "authority_kind": "change_record_feed",
+    "ingest_run_id": "api.20260908T231021.6bf7c3e6",
+    "ingested_at": "2026-09-08T23:10:21Z",
+    "ingested_by": {
+      "name": "drupal-knowledge-api-lifecycle-engine",
+      "version": "0.1"
+    },
+    "source_id": "drupal-core-change-notices",
+    "source_node_id": "3620346",
+    "source_snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+    "source_url": "https://www.drupal.org/list-changes/drupal"
+  },
+  "record_class": "source_derived_authoritative_api_lifecycle_record",
+  "record_contract_version": "0.1",
+  "symbols": {
+    "extraction": "title_call_syntax_only",
+    "lifecycle_asserted": false,
+    "named_with_call_syntax": [
+      "RecipeRunner::isApplying"
+    ],
+    "semantics": "A change record names symbols. It does not, in this contract, assert their lifecycle; that comes from the deprecation index."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "acquisition": {
+    "acquisition_channel": "external_authoritative_source",
+    "check_cadence_days": 30,
+    "consecutive_failures": 0,
+    "engine_name": "drupal-knowledge-acquisition-engine",
+    "engine_version": "0.1",
+    "last_attempt_at": "2026-09-09T00:33:40Z",
+    "last_attempt_run_id": "run.20260909T003340.c54e47a7",
+    "last_attempt_status": "first_observation",
+    "last_error": null,
+    "last_success_at": "2026-09-09T00:33:40Z",
+    "last_success_run_id": "run.20260909T003340.c54e47a7",
+    "previous_snapshot_sha256": null,
+    "review_candidate_id": null
+  },
+  "content_length": 3903,
+  "content_sha256": "sha256:46b0c8959410ff7f48b88216fd8ddeb4a0d794b1ced02919c1707b8048663b68",
+  "etag": "\"1788913749-1\"",
+  "fetch_url": "https://www.drupal.org/docs/administering-a-drupal-site/internal-page-cache",
+  "last_changed_at": "2026-09-09T00:33:40Z",
+  "last_modified": "Wed, 09 Sep 2026 00:29:09 GMT",
+  "source_id": "drupal-internal-page-cache",
+  "url": "https://www.drupal.org/docs/administering-a-drupal-site/internal-page-cache"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "example/enabled-core-module-fixture",
+  "type": "project",
+  "require": {
+    "php": "^8.3",
+    "drupal/core": "11.2.3",
+    "drupal/core-recommended": "11.2.3"
+  }
+}

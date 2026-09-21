@@ -1,0 +1,67 @@
+{
+  "authority": {
+    "sources": [
+      {
+        "quotes": [
+          "Cache tags provide a declarative way to track which cache items depend on some data managed by Drupal."
+        ],
+        "snapshot_sha256": "sha256:35e950799ef519216d7b7f02340a70dae591c29214e9421543051df38762989b",
+        "source_id": "drupal-cache-tags"
+      }
+    ],
+    "summary": "Drupal's Cache API documentation defines cache tags as the declarative dependency mechanism a cacheable response carries, which is what a view's cache strategy selects."
+  },
+  "category": "performance",
+  "check": {
+    "condition": {
+      "assertion": "config.object.exported",
+      "id": "views-settings-unreadable",
+      "operator": "evidence_matches",
+      "subject": "views.settings"
+    },
+    "kind": "evidence_condition"
+  },
+  "context_requirements": [
+    {
+      "assertion": "config.exported_value",
+      "subject": "views.settings:ui.show.performance_statistics",
+      "why_it_matters": "Views configuration is not parseable by the repository's deliberately bounded YAML reader, so no view's cache strategy is observable and their absence from findings is not evidence that they are cached."
+    }
+  ],
+  "finding": {
+    "assertion": "Exported views configuration is present but its cache strategy is unobservable.",
+    "conclusion": {
+      "candidate": "Views configuration exists and its cache strategy was not read.",
+      "confirmed": "Views configuration exists and its cache strategy was not read, so nothing is claimed about view caching.",
+      "default": "No conclusion is drawn.",
+      "not_observed": "No exported views configuration was observed.",
+      "unknown": "Whether exported views configuration exists could not be established."
+    },
+    "enforcement_intent": "guidance",
+    "evidence_explanation": "The views.settings config object was observed; per-view cache strategies were not.",
+    "human_title": "View cache strategies were not observed",
+    "limitations": [
+      "Finding no view with caching disabled would not mean every view is cached; the configuration was never read."
+    ],
+    "remediation": {
+      "applied": false,
+      "basis": "drupal_documentation",
+      "guidance": "Review each view's cache strategy directly in the exported configuration. Drupal Knowledge deliberately does not parse the constructs views configuration uses."
+    },
+    "severity_state": "not_established"
+  },
+  "review": {
+    "authority": "reviewed against the pinned Cache API documentation snapshot",
+    "reviewed_on": "2026-09-09",
+    "status": "reviewed"
+  },
+  "rule_contract_version": "0.1",
+  "rule_id": "performance.views-cache-strategy-unobservable",
+  "scope": {
+    "component": "views.view.*",
+    "drupal_core_minimum_major": 8,
+    "notes": "Views cache strategies are a Drupal 8-and-later concept."
+  },
+  "summary": "Exported views configuration exists but the repository's safe YAML reader cannot parse it, so no view's cache strategy was observed either way.",
+  "title": "Views cache strategy could not be read from exported configuration"
+}

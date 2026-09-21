@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/api-lifecycle-record-v0.1.json",
+  "title": "Drupal Knowledge API lifecycle record",
+  "description": "One Drupal symbol's lifecycle, projected from an official api.drupal.org deprecation index. Versions come from the mandated '@deprecated in drupal:X and is removed from drupal:Y' annotation form and are exact: a symbol deprecated in 9.3.0 is not deprecated in 9.2.0. A replacement is recorded only when the annotation states one. This is a source-derived authoritative record, never a Drupal Knowledge rule.",
+  "type": "object",
+  "required": [
+    "record_contract_version",
+    "id",
+    "record_class",
+    "is_trusted_knowledge",
+    "is_general_knowledge_record",
+    "symbol",
+    "lifecycle",
+    "replacement",
+    "observed_branch",
+    "provenance"
+  ],
+  "properties": {
+    "record_contract_version": {"type": "string"},
+    "id": {"type": "string", "pattern": "^api-lifecycle\\.[a-f0-9]{16}$"},
+    "record_class": {"const": "source_derived_authoritative_api_lifecycle_record"},
+    "is_trusted_knowledge": {"const": false},
+    "is_general_knowledge_record": {"const": false},
+    "symbol": {
+      "description": "Identity is fully qualified or the record is not matchable. A short class name such as Action or Image would otherwise match any word in a project.",
+      "type": "object",
+      "required": ["index_name", "kind", "qualified_name", "class", "member", "identity_basis", "matchable", "core_file"],
+      "properties": {
+        "index_name": {"type": "string"},
+        "kind": {
+          "enum": ["function", "method", "class", "interface", "trait", "constant", "property", "service", "hook", "unknown"]
+        },
+        "qualified_name": {"type": ["string", "null"]},
+        "class": {"type": ["string", "null"]},
+        "member": {"type": ["string", "null"]},
+        "identity_basis": {"type": "string"},
+        "matchable": {"type": "boolean"},
+        "core_file": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "lifecycle": {
+      "type": "object",
+      "required": ["state", "deprecated_version", "removed_version", "changed_version", "annotation_parsed", "reason", "source_annotation"],
+      "properties": {
+        "state": {
+          "enum": ["current", "deprecated", "removed", "changed_signature", "replacement_available", "behavior_changed", "unknown"]
+        },
+        "deprecated_version": {"type": ["string", "null"], "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+        "removed_version": {"type": ["string", "null"], "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+        "changed_version": {"type": ["string", "null"]},
+        "annotation_parsed": {"type": "boolean"},
+        "reason": {"type": "string"},
+        "source_annotation": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "replacement": {
+      "description": "stated carries a value; stated_none means the annotation says there is none; unknown means it said nothing this engine can read. An equivalent API is never invented.",
+      "type": "object",
+      "required": ["state", "value", "semantics"],
+      "properties": {
+        "state": {"enum": ["stated", "stated_none", "unknown"]},
+        "value": {"type": ["string", "null"]},
+        "semantics": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "observed_branch": {"type": "string"},
+    "provenance": {
+      "type": "object",
+      "required": ["source_id", "source_url", "source_snapshot_sha256", "authority_kind", "acquisition_channel", "ingested_at", "ingest_run_id", "ingested_by"],
+      "properties": {
+        "source_id": {"type": "string"},
+        "source_url": {"type": "string"},
+        "source_snapshot_sha256": {"type": "string"},
+        "authority_kind": {"type": "string"},
+        "acquisition_channel": {"type": "string"},
+        "ingested_at": {"type": "string"},
+        "ingest_run_id": {"type": "string"},
+        "ingested_by": {
+          "type": "object",
+          "required": ["name", "version"],
+          "properties": {"name": {"type": "string"}, "version": {"type": "string"}},
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

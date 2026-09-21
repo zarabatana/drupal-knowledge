@@ -1,0 +1,38 @@
+    <p class="lede">
+      The same knowledge on this website, plus the ability to ask about your own
+      Drupal project. Everything it does is read-only.
+    </p>
+    <section aria-labelledby="install-heading">
+      <h2 id="install-heading">Install</h2>
+      <p>
+        Drupal Knowledge is a repository, not a package. There is no Composer
+        package, no Homebrew formula and no binary release — clone it and run it.
+        It needs Python 3 and nothing else.
+      </p>
+      <pre><code>git clone https://github.com/zarabatana/drupal-knowledge.git
+cd drupal-knowledge
+./dk status</code></pre>
+      <p>
+        Add the directory to your <code>PATH</code> to run <code>dk</code> from
+        anywhere. Queries are offline: the records ship in the repository and no
+        command below contacts the network.
+      </p>
+    </section>
+    <section aria-labelledby="tasks-heading">
+      <h2 id="tasks-heading">The five things people ask</h2>
+      <pre><code>dk status                        what this release knows, and how current it is
+dk project /path/to/project      inspect a Drupal project, read-only
+dk search file_create_url        advisories, APIs, rules and reviewed knowledge
+dk explain SA-CORE-2025-001      why a record exists and what supports it
+dk provenance &lt;record-id&gt;        trace a record back to its source snapshot</code></pre>
+      <p>
+        Add <code>--target 11.4.6</code> to <code>dk project</code> to get the
+        upgrade assessment and the custom-code migration work for that version.
+        Add <code>--json</code> to any of the five for machine-readable output.
+      </p>
+      <p>
+        The exit code reports whether the query succeeded, not whether your project
+        is healthy. A project with applicable advisories still exits zero. Read the
+        findings, not the exit code.
+      </p>
+    </section>

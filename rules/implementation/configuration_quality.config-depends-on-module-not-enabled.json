@@ -1,0 +1,59 @@
+{
+  "authority": {
+    "sources": [
+      {
+        "quotes": [
+          "'config_sync_directory'"
+        ],
+        "snapshot_sha256": "sha256:1e2df3981d9cc138fa916171a710909b3e6922ebd978252b453b903e540b4a39",
+        "source_id": "drupal-default-settings-php"
+      }
+    ],
+    "summary": "Drupal's configuration system records each object's module dependencies, and core.extension records which modules an export enables. An object depending on a module the same export does not enable cannot be imported as exported."
+  },
+  "category": "configuration_quality",
+  "check": {
+    "kind": "evidence_cross_reference",
+    "source_assertion": "config.dependency_module",
+    "source_value_path": "modules",
+    "target_assertion": "extension.exported_enabled"
+  },
+  "context_requirements": [],
+  "finding": {
+    "assertion": "A config object depends on a module the same exported configuration does not enable.",
+    "conclusion": {
+      "candidate": "The export appears inconsistent, though the deciding context was not fully observed.",
+      "confirmed": "The export is internally inconsistent: it carries configuration that depends on a module it does not enable.",
+      "default": "No conclusion is drawn.",
+      "not_observed": "Every module named by a readable config object's dependencies is enabled by the same export.",
+      "unknown": "The dependency or enablement evidence was not complete enough to compare."
+    },
+    "enforcement_intent": "guidance",
+    "evidence_explanation": "A config object's dependencies block names a module absent from core.extension.",
+    "human_title": "Exported configuration depends on a module it does not enable",
+    "limitations": [
+      "Config objects the safe YAML reader cannot parse were not inspected, so this is not a claim that every dependency is satisfied.",
+      "An enabled module in exported configuration is not proof the module is enabled at runtime."
+    ],
+    "remediation": {
+      "applied": false,
+      "basis": "drupal_documentation",
+      "guidance": "Either enable the named module in the exported configuration or remove the configuration that depends on it, then re-export."
+    },
+    "severity_state": "not_established"
+  },
+  "review": {
+    "authority": "reviewed against the pinned default.settings.php snapshot for exported configuration semantics",
+    "reviewed_on": "2026-09-09",
+    "status": "reviewed"
+  },
+  "rule_contract_version": "0.1",
+  "rule_id": "configuration_quality.config-depends-on-module-not-enabled",
+  "scope": {
+    "component": "config/sync",
+    "drupal_core_minimum_major": 8,
+    "notes": "Configuration dependencies are a Drupal 8-and-later mechanism."
+  },
+  "summary": "A config object declares a module dependency, and that module is absent from the complete list of modules the same exported core.extension enables.",
+  "title": "Exported configuration depends on a module the same export does not enable"
+}

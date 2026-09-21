@@ -1,0 +1,25 @@
+{
+  "acquisition": {
+    "acquisition_channel": "external_authoritative_source",
+    "check_cadence_days": 30,
+    "consecutive_failures": 0,
+    "engine_name": "drupal-knowledge-acquisition-engine",
+    "engine_version": "0.1",
+    "last_attempt_at": "2026-09-08T15:02:49Z",
+    "last_attempt_run_id": "run.20260908T150249.31ed3696",
+    "last_attempt_status": "unchanged",
+    "last_error": null,
+    "last_success_at": "2026-09-08T15:02:49Z",
+    "last_success_run_id": "run.20260908T150249.31ed3696",
+    "previous_snapshot_sha256": null,
+    "review_candidate_id": null
+  },
+  "content_length": 653,
+  "content_sha256": "sha256:2e58cdd9d0b1642b5a461970d2386bacb187b1621aeadf1db62309b5ca85045b",
+  "etag": "\"84b9366228f8b993a80bc4871d53285d5cd1af3bcc4df61777491eea6f97884b\"",
+  "fetch_url": "https://project.pages.drupalcode.org/coding_standards/",
+  "last_changed_at": "2026-08-30T04:11:40Z",
+  "last_modified": "Tue, 26 May 2026 14:45:43 GMT",
+  "source_id": "drupal-coding-standards-current",
+  "url": "https://project.pages.drupalcode.org/coding_standards/"
+}

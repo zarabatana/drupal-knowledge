@@ -1,0 +1,1232 @@
+{
+  "advisory_seed_records": [],
+  "authority_boundaries": [
+    "SOURCE",
+    "TRUSTED_KNOWLEDGE",
+    "PROJECT_FACT",
+    "OBSERVED_PROJECT_EVIDENCE",
+    "SOLVED_CASE",
+    "DISCOVERY_SIGNAL"
+  ],
+  "coverage": {
+    "domains": [
+      {
+        "id": "access",
+        "label": "Access",
+        "parent": "security",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "accessibility",
+        "label": "Accessibility",
+        "parent": "frontend",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "api",
+        "label": "API",
+        "parent": "core",
+        "record_count": 4,
+        "status": "FOUNDATION"
+      },
+      {
+        "id": "asset-library",
+        "label": "Asset Library",
+        "parent": "frontend",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "authentication",
+        "label": "Authentication",
+        "parent": "security",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "batch",
+        "label": "Batch",
+        "parent": "core",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "cache",
+        "label": "Cache",
+        "parent": "performance",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "change-records",
+        "label": "Change Records",
+        "parent": "update",
+        "record_count": 1,
+        "status": "FOUNDATION"
+      },
+      {
+        "id": "coding-standards",
+        "label": "Coding Standards",
+        "parent": "core",
+        "record_count": 2,
+        "status": "FOUNDATION"
+      },
+      {
+        "id": "commerce",
+        "label": "Commerce",
+        "parent": "contrib",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "composer",
+        "label": "Composer",
+        "parent": "deployment",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "configuration",
+        "label": "Configuration",
+        "parent": "core",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "contrib",
+        "label": "Contrib",
+        "parent": null,
+        "record_count": 1,
+        "status": "FOUNDATION"
+      },
+      {
+        "id": "core",
+        "label": "Core",
+        "parent": null,
+        "record_count": 8,
+        "status": "FOUNDATION"
+      },
+      {
+        "id": "cron",
+        "label": "Cron",
+        "parent": "core",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "database",
+        "label": "Database",
+        "parent": "core",
+        "record_count": 1,
+        "status": "FOUNDATION"
+      },
+      {
+        "id": "dependency-injection",
+        "label": "Dependency Injection",
+        "parent": "service",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "deployment",
+        "label": "Deployment",
+        "parent": null,
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "entity",
+        "label": "Entity",
+        "parent": "core",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "events",
+        "label": "Events",
+        "parent": "core",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "field",
+        "label": "Field",
+        "parent": "entity",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "files",
+        "label": "Files",
+        "parent": "core",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "forms",
+        "label": "Forms",
+        "parent": "core",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "frontend",
+        "label": "Frontend",
+        "parent": null,
+        "record_count": 1,
+        "status": "PARTIAL"
+      },
+      {
+        "id": "infrastructure",
+        "label": "Infrastructure",
+        "parent": "deployment",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "migration",
+        "label": "Migration",
+        "parent": null,
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "multilingual",
+        "label": "Multilingual",
+        "parent": "core",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "performance",
+        "label": "Performance",
+        "parent": null,
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "plugin",
+        "label": "Plugin",
+        "parent": "core",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "queue",
+        "label": "Queue",
+        "parent": "core",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "render",
+        "label": "Render",
+        "parent": "core",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "routing",
+        "label": "Routing",
+        "parent": "core",
+        "record_count": 1,
+        "status": "FOUNDATION"
+      },
+      {
+        "id": "search",
+        "label": "Search",
+        "parent": "core",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "security",
+        "label": "Security",
+        "parent": null,
+        "record_count": 5,
+        "status": "FOUNDATION"
+      },
+      {
+        "id": "service",
+        "label": "Service",
+        "parent": "core",
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "testing",
+        "label": "Testing",
+        "parent": null,
+        "record_count": 0,
+        "status": "EMPTY"
+      },
+      {
+        "id": "theme",
+        "label": "Theme",
+        "parent": "frontend",
+        "record_count": 1,
+        "status": "FOUNDATION"
+      },
+      {
+        "id": "twig",
+        "label": "Twig",
+        "parent": "theme",
+        "record_count": 1,
+        "status": "FOUNDATION"
+      },
+      {
+        "id": "update",
+        "label": "Update",
+        "parent": "deployment",
+        "record_count": 5,
+        "status": "FOUNDATION"
+      },
+      {
+        "id": "views",
+        "label": "Views",
+        "parent": "core",
+        "record_count": 0,
+        "status": "EMPTY"
+      }
+    ],
+    "schema_version": "0.1"
+  },
+  "metadata": {
+    "coverage_summary": {
+      "EMPTY": 28,
+      "FOUNDATION": 11,
+      "PARTIAL": 1
+    },
+    "deferred_record_count": 0,
+    "knowledge_record_count": 11,
+    "last_source_verification": "2026-09-09",
+    "machine_finding_contract_count": 1,
+    "reviewed_record_count": 11,
+    "solved_case_count": 1,
+    "source_count": 34
+  },
+  "product": "Drupal Knowledge",
+  "schema_version": "0.1",
+  "solved_cases": [
+    {
+      "applicability": {
+        "claimed_scope": "proven_context_only",
+        "conditions": [
+          "Applies to Node ESM entry points executed from a reconstructed partial toolchain"
+        ],
+        "expansion_requires_review": true,
+        "proven_on": {
+          "drupal_core_versions": [
+            "11.4.5"
+          ],
+          "php_versions": [
+            "8.3"
+          ]
+        }
+      },
+      "capture": {
+        "captured_by": {
+          "name": "drupal-knowledge-solved-case-capture",
+          "version": "0.1"
+        },
+        "case_identity": "sha256:5bffad1b0b45288d90615443ebc72249a020aabc6689d7c4ff49c79506d50123",
+        "contract_version": "0.1",
+        "fix_category": "code_change",
+        "origin_finding_id": null,
+        "producer": {
+          "name": "drupal-knowledge-fixture",
+          "version": "0.1"
+        },
+        "promotion": {
+          "automatic_promotion": false,
+          "human_review_required": true,
+          "trusted_knowledge_created": false
+        },
+        "root_cause_state": "confirmed",
+        "verification": {
+          "causality": {
+            "state": "demonstrated",
+            "statement": "The suite failed before the change and passed after it with no other tree change."
+          },
+          "performed": true,
+          "results": [
+            {
+              "detail": "Previously failing rehydration test passes.",
+              "evidence_ref": "release pipeline phase 3 suite",
+              "method": "automated_test",
+              "outcome": "passed"
+            },
+            {
+              "evidence_ref": "validate-pack exit code transition 1 -> 0",
+              "method": "reproduction_before_and_after",
+              "outcome": "passed"
+            }
+          ]
+        }
+      },
+      "drupal_versions": [
+        "11.4.5"
+      ],
+      "environment": {
+        "environment_class": "local-development",
+        "project_fingerprint": "sha256:57b9d63ecba5731298f47b9583525209a6ab1ab1c5ef6b32acddd4dd12329dbc",
+        "revision_fingerprint": "sha256:dfad83687a40979c97aafd3e674ebdafb4f99f6003740538ac7a4477b69e4d58"
+      },
+      "evidence": [],
+      "first_seen": "sha256:57b9d63ecba5731298f47b9583525209a6ab1ab1c5ef6b32acddd4dd12329dbc",
+      "id": "case.drupal.solved.code-change.5bffad1b0b45288d",
+      "last_verified": "sha256:5bffad1b0b45288d90615443ebc72249a020aabc6689d7c4ff49c79506d50123",
+      "limitations": [
+        "Proven on a single project and a single Drupal core version",
+        "Verified through the repository test suite only, not under production load",
+        "Describes a tooling defect, not a Drupal core or contrib defect",
+        "Carries no security severity evidence"
+      ],
+      "modules": [
+        {
+          "name": "drupal/core",
+          "version": "11.4.5"
+        }
+      ],
+      "occurrence_count": 1,
+      "php_versions": [
+        "8.3"
+      ],
+      "problem": "The managed-site update entry point aborted before performing any work when it was executed from a reconstructed toolchain that did not ship one of its imported modules.",
+      "project_type": "drupal",
+      "related_knowledge_ids": [],
+      "root_cause": "A static top-level ESM import created a hard load-time dependency on a module that the reconstructed toolchain deliberately does not copy, so module resolution failed before the entry point executed.",
+      "solution": [
+        "Replace the static import with a call-time dynamic import so the entry point stays loadable.",
+        "Declare the module directory as part of the toolchain the reconstruction copies."
+      ],
+      "status": "verified",
+      "symptoms": [
+        "Node exited with ERR_MODULE_NOT_FOUND before any update logic ran",
+        "No machine-readable result document was produced",
+        "The failure occurred identically on every invocation, including dry-run"
+      ],
+      "themes": [],
+      "title": "Managed-site update script fails to load when an optional toolchain module is absent",
+      "verification": [
+        "automated_test: passed (release pipeline phase 3 suite)",
+        "reproduction_before_and_after: passed (validate-pack exit code transition 1 -> 0)"
+      ]
+    }
+  ],
+  "trusted_records": [
+    {
+      "actions": [
+        "Use Drupal 11.x API records only when the project profile establishes Drupal 11.x applicability."
+      ],
+      "automation_hints": [
+        "A future resolver should filter API records by Drupal core branch before stage selection."
+      ],
+      "checks": [
+        "Confirm the project Drupal core version before selecting Drupal 11 API guidance."
+      ],
+      "domains": [
+        "core",
+        "api"
+      ],
+      "effective_enforcement": "guidance",
+      "enforcement": {
+        "intent": "non_blocking",
+        "rationale": "This record controls applicability selection and is not itself a build blocker."
+      },
+      "evidence_requirements": [
+        "Project profile fact: drupal_core_version"
+      ],
+      "id": "drupal.api.reference-drupal-11",
+      "kind": "api",
+      "project_applicability": {
+        "requires": [
+          "drupal_core_version"
+        ],
+        "unknown_result": "advisory_only"
+      },
+      "related": [],
+      "review_status": "reviewed",
+      "severity": "info",
+      "sources": [
+        {
+          "locator": "Welcome to the Drupal API Documentation!",
+          "source_id": "drupal-api-11",
+          "title": "drupal - 11.x"
+        }
+      ],
+      "summary": "The Drupal 11 API reference is authoritative for Drupal 11.x API reference material and is generated from comments embedded in Drupal source code.",
+      "title": "Drupal 11 API reference is branch-scoped",
+      "version_applicability": {
+        "drupal_core": [
+          {
+            "constraint": "11.x",
+            "notes": "This source is explicitly scoped to the Drupal 11.x API reference.",
+            "status": "applicable"
+          }
+        ],
+        "notes": "Do not apply Drupal 11.x API entries to Drupal 10.x or future branches without version-specific evidence."
+      }
+    },
+    {
+      "actions": [
+        "Attach explicit Drupal core version applicability to each knowledge record."
+      ],
+      "automation_hints": [
+        "Resolvers should return unknown applicability rather than false when the project Drupal version is missing."
+      ],
+      "checks": [
+        "Reject records that model Drupal API behavior as timeless when version evidence is required."
+      ],
+      "domains": [
+        "core",
+        "api",
+        "update"
+      ],
+      "effective_enforcement": "guidance",
+      "enforcement": {
+        "intent": "non_blocking",
+        "rationale": "The rule guides selection behavior; blocking requires a reviewed downstream requirement."
+      },
+      "evidence_requirements": [
+        "Source locator with branch or version context",
+        "Project profile Drupal core version when applying to a project"
+      ],
+      "id": "drupal.api.version-aware-documentation",
+      "kind": "principle",
+      "project_applicability": {
+        "requires": [
+          "drupal_core_version"
+        ],
+        "unknown_result": "do_not_assume_current"
+      },
+      "related": [
+        "drupal.api.reference-drupal-11"
+      ],
+      "review_status": "reviewed",
+      "severity": "moderate",
+      "sources": [
+        {
+          "locator": "Drupal APIs introduction",
+          "source_id": "drupal-apis-guide",
+          "title": "Drupal APIs"
+        }
+      ],
+      "summary": "Drupal API guidance must preserve Drupal version context because each Drupal version introduces APIs and keeps only some APIs from previous major versions.",
+      "title": "Drupal API documentation is version-aware",
+      "version_applicability": {
+        "drupal_core": [
+          {
+            "constraint": "all-supported",
+            "notes": "This is a versioning principle, not a timeless API fact.",
+            "status": "applicable"
+          }
+        ]
+      }
+    },
+    {
+      "actions": [
+        "Represent introduced branch and introduced version when modeling Drupal core changes."
+      ],
+      "automation_hints": [
+        "Upgrade analysis should compare project Drupal core version with introduced/deprecated/removed constraints."
+      ],
+      "checks": [
+        "Fail validation for Drupal change-derived records that omit version applicability."
+      ],
+      "domains": [
+        "core",
+        "change-records",
+        "update"
+      ],
+      "effective_enforcement": "guidance",
+      "enforcement": {
+        "intent": "non_blocking",
+        "rationale": "Version provenance is required for correct matching; individual reviewed records decide enforcement."
+      },
+      "evidence_requirements": [
+        "Drupal.org change record locator",
+        "Introduced branch/version value"
+      ],
+      "id": "drupal.change-records.introduced-version",
+      "kind": "version-change",
+      "project_applicability": {
+        "requires": [
+          "drupal_core_version"
+        ],
+        "unknown_result": "cannot_determine_change_applicability"
+      },
+      "related": [
+        "drupal.api.version-aware-documentation"
+      ],
+      "review_status": "reviewed",
+      "severity": "moderate",
+      "sources": [
+        {
+          "locator": "official record of the release branch and release version",
+          "source_id": "drupal-core-change-record-policy",
+          "title": "Change records"
+        },
+        {
+          "locator": "Introduced in branch/version table",
+          "source_id": "drupal-core-change-records",
+          "title": "Change records for Drupal core"
+        }
+      ],
+      "summary": "Drupal core change records are the official record of the release branch and release version in which a change occurred.",
+      "title": "Drupal core change records preserve introduced branch and version",
+      "version_applicability": {
+        "drupal_core": [
+          {
+            "constraint": "change-record-specific",
+            "notes": "Each derived change record must carry its own introduced branch/version values.",
+            "status": "applicable"
+          }
+        ]
+      }
+    },
+    {
+      "actions": [
+        "Use the GitLab Pages standards as the primary coding standards source.",
+        "Treat obsolete Drupal.org coding standards pages as provenance or redirect evidence only."
+      ],
+      "automation_hints": [
+        "Future coding-standard checks may map records to PHPCS, ESLint, Stylelint, or Twig tooling."
+      ],
+      "checks": [
+        "Do not cite obsolete Drupal.org wiki standards as primary authority when the GitLab Pages standards cover the same rule."
+      ],
+      "domains": [
+        "coding-standards",
+        "core",
+        "api"
+      ],
+      "effective_enforcement": "guidance",
+      "enforcement": {
+        "intent": "non_blocking",
+        "rationale": "The source provenance is reviewed; specific coding-standard failures need individual records and evidence."
+      },
+      "evidence_requirements": [
+        "Code artifact under review",
+        "Applicable standards section"
+      ],
+      "id": "drupal.coding-standards.current-source",
+      "kind": "coding-standard",
+      "project_applicability": {
+        "requires": [
+          "custom_modules",
+          "custom_themes"
+        ],
+        "unknown_result": "guidance_only"
+      },
+      "related": [],
+      "review_status": "reviewed",
+      "severity": "moderate",
+      "sources": [
+        {
+          "locator": "Read the Drupal Coding Standards / Obsolete and deprecated",
+          "source_id": "drupal-coding-standards-project",
+          "title": "Coding Standards project"
+        },
+        {
+          "locator": "version-independent and \"always-current\"",
+          "source_id": "drupal-coding-standards-current",
+          "title": "Drupal Coding Standards"
+        }
+      ],
+      "summary": "The Drupal Coding Standards project links to the current GitLab Pages standards, while the historical Drupal.org coding standards guide is marked obsolete and deprecated; the current standards state that they are version-independent and always-current.",
+      "title": "Current Drupal Coding Standards are on GitLab Pages",
+      "version_applicability": {
+        "drupal_core": [
+          {
+            "constraint": "all-new-code",
+            "notes": "The current standards describe themselves as version-independent and always-current.",
+            "status": "applicable"
+          }
+        ]
+      }
+    },
+    {
+      "actions": [
+        "Prefer automated PHPCS/Coder/PHP_CodeSniffer support where a Drupal PHP coding standard has an available rule.",
+        "Track missing or modified rule support separately from the approved standard itself."
+      ],
+      "automation_hints": [
+        "Future analyzer profiles can map reviewed coding-standard records to configured Coder or PHP_CodeSniffer rules."
+      ],
+      "checks": [
+        "Confirm whether a PHP coding-standard rule is already represented by project tooling before treating it as manually checked only."
+      ],
+      "domains": [
+        "coding-standards",
+        "core"
+      ],
+      "effective_enforcement": "guidance",
+      "enforcement": {
+        "intent": "non_blocking",
+        "rationale": "This record describes tooling provenance; actual coding-standard findings require rule-specific records and project tooling evidence."
+      },
+      "evidence_requirements": [
+        "Applicable Drupal PHP coding-standard rule",
+        "Project PHPCS/Coder/PHP_CodeSniffer configuration when evaluating a repository"
+      ],
+      "id": "drupal.coding-standards.phpcs-coder-tooling",
+      "kind": "coding-standard",
+      "project_applicability": {
+        "requires": [
+          "custom_modules",
+          "custom_themes"
+        ],
+        "unknown_result": "guidance_only"
+      },
+      "related": [
+        "drupal.coding-standards.current-source"
+      ],
+      "review_status": "reviewed",
+      "severity": "moderate",
+      "sources": [
+        {
+          "locator": "When a PHP standard is approved",
+          "source_id": "drupal-coding-standards-project",
+          "title": "Coding Standards project"
+        }
+      ],
+      "summary": "The Drupal Coding Standards process describes how approved PHP standards are handled depending on whether a PHPCS rule exists, needs modification in Coder, or needs new support in Coder or PHP_CodeSniffer.",
+      "title": "Approved PHP coding standards map to PHPCS, Coder, or PHP_CodeSniffer work",
+      "version_applicability": {
+        "drupal_core": [
+          {
+            "constraint": "all-new-code",
+            "notes": "This is a process and tooling relationship for current Drupal Coding Standards.",
+            "status": "applicable"
+          }
+        ]
+      }
+    },
+    {
+      "actions": [
+        "Keep SA-CORE, SA-CONTRIB, and PSA records distinct during ingestion and review."
+      ],
+      "automation_hints": [
+        "Security review should join advisory version ranges with observed installed package versions."
+      ],
+      "checks": [
+        "Do not apply a contributed-project advisory without evidence of the installed project and version."
+      ],
+      "domains": [
+        "security",
+        "core",
+        "contrib",
+        "update"
+      ],
+      "effective_enforcement": "guidance",
+      "enforcement": {
+        "intent": "non_blocking",
+        "rationale": "This record defines stream separation; individual reviewed advisories decide blocking behavior."
+      },
+      "evidence_requirements": [
+        "Project installed Drupal core version",
+        "Installed module/theme/profile names and versions when evaluating SA-CONTRIB"
+      ],
+      "id": "drupal.security.advisory-streams-separated",
+      "kind": "principle",
+      "project_applicability": {
+        "requires": [
+          "drupal_core_version",
+          "modules",
+          "themes"
+        ],
+        "unknown_result": "security_applicability_unknown"
+      },
+      "related": [],
+      "review_status": "reviewed",
+      "severity": "high",
+      "sources": [
+        {
+          "locator": "Security advisories for Drupal core",
+          "source_id": "drupal-security-core",
+          "title": "Security advisories for Drupal core"
+        },
+        {
+          "locator": "Security advisories for contributed projects",
+          "source_id": "drupal-security-contrib",
+          "title": "Security advisories for contributed projects"
+        },
+        {
+          "locator": "Security public service announcements",
+          "source_id": "drupal-security-psa",
+          "title": "Security public service announcements"
+        }
+      ],
+      "summary": "Drupal core security advisories, contributed-project security advisories, and Security Team public service announcements are distinct source streams with different roles.",
+      "title": "Drupal security advisory streams are scoped",
+      "version_applicability": {
+        "drupal_core": [
+          {
+            "constraint": "advisory-specific",
+            "notes": "SA-CORE records must carry affected and fixed Drupal core ranges.",
+            "status": "applicable"
+          }
+        ],
+        "modules": [
+          {
+            "constraint": "advisory-specific",
+            "name": "drupal.org contributed projects",
+            "notes": "SA-CONTRIB records require installed project evidence before applying.",
+            "status": "applicable"
+          }
+        ]
+      }
+    },
+    {
+      "actions": [
+        "Use Drupal routing CSRF access protection for non-form URLs that perform actions or operations."
+      ],
+      "automation_hints": [
+        "Future analysis can join route definitions with controller behavior to identify action routes that need CSRF access checks."
+      ],
+      "checks": [
+        "Review custom routes that mutate state or perform operations outside form callbacks.",
+        "Confirm applicable action routes include routing-level CSRF protection."
+      ],
+      "domains": [
+        "security",
+        "routing"
+      ],
+      "effective_enforcement": "guidance",
+      "enforcement": {
+        "intent": "non_blocking",
+        "rationale": "The source supports the guidance, but enforcement requires project-specific route and behavior evidence."
+      },
+      "evidence_requirements": [
+        "Custom route definitions",
+        "Controller operation behavior",
+        "Whether the route uses a form callback or another CSRF-protected flow"
+      ],
+      "id": "drupal.security.csrf-route-protection",
+      "kind": "security-guidance",
+      "project_applicability": {
+        "requires": [
+          "custom_routes",
+          "route_operation_semantics"
+        ],
+        "unknown_result": "guidance_only"
+      },
+      "related": [],
+      "review_status": "reviewed",
+      "severity": "high",
+      "sources": [
+        {
+          "locator": "Avoid cross-site request forgeries (CSRF) for routing",
+          "source_id": "drupal-secure-code",
+          "title": "Writing secure code for Drupal"
+        }
+      ],
+      "summary": "Drupal secure-code documentation says CSRF protection is integrated into the routing access system and should be used for URLs that perform actions or operations and do not use a form callback.",
+      "title": "Action routes should use Drupal routing CSRF protection",
+      "version_applicability": {
+        "drupal_core": [
+          {
+            "constraint": "current-documented-secure-code-guidance",
+            "notes": "This record reflects current Drupal secure-code guidance for non-form action URLs.",
+            "status": "applicable"
+          }
+        ]
+      }
+    },
+    {
+      "actions": [
+        "Use Drupal database placeholders or select() conditions for variable query values.",
+        "Escape LIKE wildcard input with the database connection escapeLike() helper.",
+        "Do not pass user input as a query condition operator."
+      ],
+      "automation_hints": [
+        "Future static analysis can flag query() calls built from concatenated variables and condition operators derived from request input."
+      ],
+      "checks": [
+        "Review custom database queries for string concatenation of variable data.",
+        "Review LIKE conditions for escaped wildcard input.",
+        "Review dynamic query operators to confirm they come from fixed allowed choices."
+      ],
+      "domains": [
+        "security",
+        "database",
+        "api"
+      ],
+      "effective_enforcement": "guidance",
+      "enforcement": {
+        "intent": "non_blocking",
+        "rationale": "The general rule is reviewed, but findings require project code evidence and data-flow context before enforcement."
+      },
+      "evidence_requirements": [
+        "Custom Drupal PHP code",
+        "Database query construction path",
+        "Origin and trust level of query values and operators"
+      ],
+      "id": "drupal.security.database-query-parameterization",
+      "kind": "security-guidance",
+      "project_applicability": {
+        "requires": [
+          "custom_modules",
+          "database_query_code"
+        ],
+        "unknown_result": "guidance_only"
+      },
+      "related": [],
+      "review_status": "reviewed",
+      "severity": "high",
+      "sources": [
+        {
+          "locator": "Use the database abstraction layer to avoid SQL injection attacks",
+          "source_id": "drupal-secure-code",
+          "title": "Writing secure code for Drupal"
+        }
+      ],
+      "summary": "Drupal secure-code documentation says data must never be concatenated directly into SQL queries and directs developers to use proper argument substitution, select queries, escapeLike() for LIKE values, and fixed operator choices.",
+      "title": "Use Drupal database placeholders instead of concatenating SQL",
+      "version_applicability": {
+        "drupal_core": [
+          {
+            "constraint": "current-documented-secure-code-guidance",
+            "notes": "This record reflects current Drupal secure-code guidance for database query construction.",
+            "status": "applicable"
+          }
+        ]
+      }
+    },
+    {
+      "actions": [
+        "Review Twig templates for raw-filter usage and unquoted rendered attributes."
+      ],
+      "automation_hints": [
+        "Future static analysis may detect raw filters and unquoted dynamic attributes; blocking findings still require project evidence and trust analysis."
+      ],
+      "checks": [
+        "Identify Twig raw-filter usage and determine whether the data is trusted.",
+        "Identify unquoted dynamic attributes in Twig templates."
+      ],
+      "domains": [
+        "security",
+        "twig",
+        "theme",
+        "frontend"
+      ],
+      "effective_enforcement": "guidance",
+      "enforcement": {
+        "intent": "non_blocking",
+        "rationale": "The source supports the guidance, but applying it requires project template evidence and data trust analysis; no blocking evaluation is implemented for any consumer."
+      },
+      "evidence_requirements": [
+        "Twig template content",
+        "Data trust analysis for variables rendered with raw"
+      ],
+      "id": "drupal.security.twig-output-escaping",
+      "kind": "security-guidance",
+      "project_applicability": {
+        "requires": [
+          "custom_themes",
+          "twig_templates"
+        ],
+        "unknown_result": "advisory_only"
+      },
+      "related": [
+        "drupal.coding-standards.current-source"
+      ],
+      "review_status": "reviewed",
+      "severity": "high",
+      "sources": [
+        {
+          "locator": "Sanitizing on output to avoid Cross Site Scripting (XSS) attacks",
+          "source_id": "drupal-secure-code",
+          "title": "Writing secure code for Drupal"
+        }
+      ],
+      "summary": "Drupal secure-code documentation says Twig auto-escapes printed strings by default, warns that the raw filter does not escape output and should only be used for trusted data, and states that rendered Twig attributes should be quoted.",
+      "title": "Twig output escaping should not be bypassed without trusted data",
+      "version_applicability": {
+        "drupal_core": [
+          {
+            "constraint": "current-documented-secure-code-guidance",
+            "notes": "This reviewed rule reflects the current Drupal secure-code documentation for Twig output escaping.",
+            "status": "applicable"
+          }
+        ]
+      }
+    },
+    {
+      "actions": [
+        "Treat the Release type term value \"Insecure\" as the literal Drupal release-metadata trigger for one exact release row.",
+        "Report the reviewed Drupal Update Manager meaning only alongside the exact installed release it was observed on.",
+        "State the reviewed meaning exactly: Drupal assigns NOT_SECURE status, documented as the project missing security update(s), and nothing beyond it."
+      ],
+      "automation_hints": [
+        "Automation authority for this record lives exclusively in the structured machine_finding contract; the prose fields are not executable."
+      ],
+      "checks": [
+        "Human-readable only: confirm the reviewed lifecycle context row for the exact installed Drupal core version before repeating the term."
+      ],
+      "domains": [
+        "update",
+        "core"
+      ],
+      "effective_enforcement": "guidance",
+      "enforcement": {
+        "intent": "non_blocking",
+        "rationale": "The record authorizes a literal release-metadata observation only. It establishes no severity, no risk claim, and no blocking authority."
+      },
+      "evidence_requirements": [
+        "Project Drupal core version observed by the Drupal Project Analyzer",
+        "Exact matching release row in the canonical reviewed Drupal core release lifecycle context",
+        "Current canonical reviewed lifecycle context pinned to the baselined drupal-core-releases snapshot",
+        "Baselined Drupal 11 update-module semantic sources proving the Insecure to NOT_SECURE chain"
+      ],
+      "id": "drupal.update.core-release-insecure-term-condition",
+      "kind": "version-change",
+      "machine_applicability": {
+        "condition": {
+          "fact": "drupal_core_version",
+          "id": "installed-drupal-core-version-observed",
+          "operator": "fact_known"
+        },
+        "notes": "The record concerns the exact installed Drupal core release. It definitively applies when the Drupal Project Analyzer observed an installed Drupal core version, stays unknown when that fact is unknown, and is not applicable when the fact is definitively absent.",
+        "schema_version": "0.1"
+      },
+      "machine_finding": {
+        "assertion": "installed_core_release_is_not_secure_per_drupal_update_status",
+        "assertion_scope": "drupal_update_manager_status_semantics_for_the_exact_installed_release_only",
+        "condition_id": "installed_core_release_carries_source_release_type_term_insecure",
+        "confirmation_authority": {
+          "rationale": "Reviewed against pinned Drupal 11.4.5 update-module sources: ProjectRelease::isInsecure() is literally isReleaseType('Insecure') over terms['Release type']; update_calculate_project_update_status() assigns UpdateManagerInterface::NOT_SECURE when the exact installed version matches an insecure release and returns before any later status branch; NOT_SECURE is documented as the project missing security update(s). Confirmation stays bound to these references, never a status flip.",
+          "required_semantic_authority_category": "official_drupal_release_status_and_update_status_vocabulary_documentation",
+          "semantic_authority_refs": [
+            "drupal-update-project-release-semantics",
+            "drupal-update-status-security-semantics",
+            "drupal-update-manager-interface-semantics"
+          ],
+          "semantic_authority_version_scope": {
+            "basis": "All three semantic authority references are the current Drupal 11 update-module sources pinned at release tag 11.4.5 on the 11.x branch. No other Drupal major has reviewed update-status semantics, so confirmation is authorized for installed Drupal core major 11 only.",
+            "drupal_core_majors": [
+              "11"
+            ]
+          },
+          "status": "semantic_authority_reviewed"
+        },
+        "deduplication": {
+          "collapsed_read_paths": [
+            "releases[].terms[].value.source_value",
+            "releases[].release_type_source_values[]",
+            "assessment source_attributes.source_release_type_terms",
+            "immutable source snapshot XML occurrences"
+          ],
+          "key_fields": [
+            "knowledge_id",
+            "condition_id",
+            "installed_core_package",
+            "matched_release_source_version"
+          ],
+          "max_instances": 1
+        },
+        "evidence_domain": "release_lifecycle_assessment",
+        "finding_type": "release_lifecycle",
+        "human_title": "Installed Drupal core release is classified as not secure by Drupal Update Manager",
+        "identity": {
+          "algorithm": "sha256_stable_json",
+          "excluded_fields": [
+            "evaluated_at",
+            "wall_clock_time",
+            "run_id",
+            "hostname",
+            "absolute_paths"
+          ],
+          "key_fields": [
+            "knowledge_id",
+            "condition_id",
+            "assertion",
+            "analysis_project_id",
+            "analysis_sha256",
+            "core_version_fact_ref",
+            "core_version_evidence_ids",
+            "matched_release_source_version",
+            "lifecycle_context_id",
+            "lifecycle_context_sha256"
+          ],
+          "timestamp_allowed": false
+        },
+        "non_authoritative_signals_ignored": [
+          "branch_listed_in_source_supported_branches",
+          "source_supported_branches_presence_or_absence",
+          "source_security_coverage_text_or_covered_attribute",
+          "release_type_term_security_update",
+          "release_ordering_or_source_order_index",
+          "newer_release_existence"
+        ],
+        "notes": "Reviewed semantic authority established from pinned Drupal 11.4.5 update-module sources and explicitly scoped to installed Drupal core major 11; other majors cap at candidate because their update-status semantics are not reviewed. The reviewed finding runtime (scripts/dk_finding_runtime.py, dk.py findings) is the single component that executes this contract; it consumes the neutral release lifecycle assessment and the canonical Applicability Resolver result, requires definitive machine-resolved applicability before any confirmation, never rescans the project, never fetches sources during evaluation, and never emits remediation. Confirmation stays bound to the reviewed semantic authority references, never a status flip.",
+        "provenance_requirements": [
+          "knowledge_id",
+          "condition_id",
+          "analysis_identity",
+          "core_version_fact_ref",
+          "core_version_evidence_ids",
+          "lifecycle_assessment_id",
+          "lifecycle_context_id",
+          "lifecycle_context_source_snapshot_sha256",
+          "exact_matched_release",
+          "literal_source_term",
+          "context_relation",
+          "applicability_result_identity",
+          "semantic_authority_version_scope",
+          "effective_enforcement",
+          "finding_severity_state"
+        ],
+        "requires": {
+          "canonical_context_id": "drupal-core-release-lifecycle",
+          "context_relation": "current",
+          "evaluation_state": "evaluated",
+          "exact_release_match": true,
+          "match_mode": "literal_exact_string",
+          "source_field_path": "/project/releases/release/terms/term/value",
+          "source_term_name": "Release type",
+          "source_term_value": "Insecure"
+        },
+        "runtime_status": "executed_by_reviewed_finding_runtime",
+        "schema_version": "0.1",
+        "severity": {
+          "rationale": "No reviewed knowledge record and no reviewed lifecycle policy establishes severity for this condition. The severity field of this knowledge record rates the record itself and must never be reused as finding severity.",
+          "source": null,
+          "state": "not_established"
+        },
+        "states": {
+          "applicability_not_definitive": "unknown",
+          "assessment_invalid": "unknown",
+          "context_not_canonical": "unknown",
+          "core_version_unknown": "unknown",
+          "release_not_found": "unknown",
+          "term_absent_in_matched_row": "not_observed",
+          "term_present_and_context_current": "confirmed",
+          "term_present_and_context_stale": "historical_candidate",
+          "term_present_and_semantic_authority_version_out_of_scope": "candidate"
+        },
+        "term_semantics": {
+          "authorized_meaning": "For Drupal Update Manager release metadata, a release carrying Release type \"Insecure\" is treated as insecure; when that exact release is installed, Drupal assigns NOT_SECURE status, whose documented meaning is that the project is missing security update(s).",
+          "forbidden_claims": [
+            "release_is_exploitable",
+            "release_has_specific_cve",
+            "release_is_compromised",
+            "severity_is_derivable",
+            "release_is_unsupported",
+            "release_is_obsolete",
+            "release_is_end_of_life",
+            "upgrade_is_mandatory",
+            "attack_feasibility_established"
+          ],
+          "meaning_bearing_claims_authorized": true,
+          "state": "DRUPAL_UPDATE_STATUS_SEMANTICS_REVIEWED"
+        }
+      },
+      "project_applicability": {
+        "requires": [
+          "drupal_core_version"
+        ],
+        "unknown_result": "lifecycle_finding_unknown"
+      },
+      "related": [
+        "drupal.update.core-release-state-update-feed"
+      ],
+      "review_status": "reviewed",
+      "severity": "info",
+      "sources": [
+        {
+          "locator": "/project/releases/release/terms/term where name is 'Release type' and value is 'Insecure'",
+          "source_id": "drupal-core-releases",
+          "title": "Drupal core releases"
+        },
+        {
+          "locator": "ProjectRelease::isInsecure() returns isReleaseType('Insecure'); createFromArray reads terms['Release type']",
+          "source_id": "drupal-update-project-release-semantics",
+          "title": "Drupal 11 ProjectRelease value object"
+        },
+        {
+          "locator": "update_calculate_project_update_status(): existing_version === version and isInsecure() sets UpdateManagerInterface::NOT_SECURE; later branches return early once status is set",
+          "source_id": "drupal-update-status-security-semantics",
+          "title": "Drupal 11 update status calculation"
+        },
+        {
+          "locator": "UpdateManagerInterface::NOT_SECURE docblock: Project is missing security update(s).",
+          "source_id": "drupal-update-manager-interface-semantics",
+          "title": "Drupal 11 UpdateManagerInterface status constants"
+        }
+      ],
+      "summary": "SOURCE FACT: the Drupal update-status release-history feed can attach a Release type taxonomy term whose literal value is \"Insecure\" to an individual Drupal core release row. PROJECT JOIN: a future finding evaluator may match this only when the Project Analyzer observed installed Drupal core version matches that exact release row in the canonical reviewed release lifecycle context. DRUPAL SEMANTICS (reviewed): For Drupal Update Manager release metadata, a release carrying Release type \"Insecure\" is treated as insecure; when that exact release is installed, Drupal assigns NOT_SECURE status, whose documented meaning is that the project is missing security update(s). LIMITS: this reviewed meaning does not establish an exploit path, a specific CVE identifier, a finding severity level, or any compromise claim about a project.",
+      "title": "Drupal release metadata can attach the literal \"Insecure\" Release type term to a core release row",
+      "version_applicability": {
+        "drupal_core": [
+          {
+            "constraint": "release-history",
+            "notes": "Applies only to an exact release row present in the canonical reviewed release lifecycle context.",
+            "status": "applicable"
+          }
+        ],
+        "notes": "Release rows are matched literally and exactly; no branch, range, or ordering inference is authorized."
+      }
+    },
+    {
+      "actions": [
+        "Use the official Drupal release-history feed as the watched source for Drupal core release state.",
+        "Do not encode today's latest Drupal version as a permanent knowledge fact."
+      ],
+      "automation_hints": [
+        "Future project analyzers can join composer.lock Drupal core versions with the watched release-history feed."
+      ],
+      "checks": [
+        "Compare observed project Drupal core versions against the current release-history source state before making release or support findings."
+      ],
+      "domains": [
+        "core",
+        "update",
+        "security"
+      ],
+      "effective_enforcement": "guidance",
+      "enforcement": {
+        "intent": "non_blocking",
+        "rationale": "This record governs release-state sourcing; project-specific findings require observed project versions and current feed evaluation."
+      },
+      "evidence_requirements": [
+        "Project Drupal core version",
+        "Current source state for drupal-core-releases"
+      ],
+      "id": "drupal.update.core-release-state-update-feed",
+      "kind": "version-change",
+      "project_applicability": {
+        "requires": [
+          "drupal_core_version"
+        ],
+        "unknown_result": "release_applicability_unknown"
+      },
+      "related": [
+        "drupal.api.version-aware-documentation"
+      ],
+      "review_status": "reviewed",
+      "severity": "moderate",
+      "sources": [
+        {
+          "locator": "supported_branches / releases / security",
+          "source_id": "drupal-core-releases",
+          "title": "Drupal core releases"
+        }
+      ],
+      "summary": "The official Drupal update-status release-history feed exposes project status, supported branches, release versions, release types, and security coverage, so release-aware knowledge should watch that source instead of hard-coding the latest Drupal version.",
+      "title": "Drupal core release state comes from the official update feed",
+      "version_applicability": {
+        "drupal_core": [
+          {
+            "constraint": "release-history",
+            "notes": "Release applicability must be derived from the current release-history source state.",
+            "status": "applicable"
+          }
+        ]
+      }
+    }
+  ]
+}

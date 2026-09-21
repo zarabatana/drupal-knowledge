@@ -1,0 +1,47 @@
+{
+  "id": "drupal.api.version-aware-documentation",
+  "title": "Drupal API documentation is version-aware",
+  "summary": "Drupal API guidance must preserve Drupal version context because each Drupal version introduces APIs and keeps only some APIs from previous major versions.",
+  "kind": "principle",
+  "domains": ["core", "api", "update"],
+  "severity": "moderate",
+  "review_status": "reviewed",
+  "sources": [
+    {
+      "source_id": "drupal-apis-guide",
+      "locator": "Drupal APIs introduction",
+      "title": "Drupal APIs"
+    }
+  ],
+  "version_applicability": {
+    "drupal_core": [
+      {
+        "constraint": "all-supported",
+        "status": "applicable",
+        "notes": "This is a versioning principle, not a timeless API fact."
+      }
+    ]
+  },
+  "project_applicability": {
+    "requires": ["drupal_core_version"],
+    "unknown_result": "do_not_assume_current"
+  },
+  "actions": [
+    "Attach explicit Drupal core version applicability to each knowledge record."
+  ],
+  "checks": [
+    "Reject records that model Drupal API behavior as timeless when version evidence is required."
+  ],
+  "evidence_requirements": [
+    "Source locator with branch or version context",
+    "Project profile Drupal core version when applying to a project"
+  ],
+  "automation_hints": [
+    "Resolvers should return unknown applicability rather than false when the project Drupal version is missing."
+  ],
+  "enforcement": {
+    "intent": "non_blocking",
+    "rationale": "The rule guides selection behavior; blocking requires a reviewed downstream requirement."
+  },
+  "related": ["drupal.api.reference-drupal-11"]
+}

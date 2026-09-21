@@ -1,0 +1,49 @@
+{
+  "category": {
+    "additional": [
+      "deprecation"
+    ],
+    "basis": "source_text_vocabulary_match",
+    "matched_phrase": "is removed",
+    "value": "removal"
+  },
+  "change_record": {
+    "canonical_url": "https://www.drupal.org/node/3620806",
+    "created_at": "2026-09-04T08:19:19Z",
+    "introduced_branch": "12.x",
+    "introduced_version": null,
+    "node_id": "3620806",
+    "published": false,
+    "title": "drupalSettings.path.currentQuery is deprecated"
+  },
+  "description": {
+    "excerpt": "drupalSettings.path.currentQuery , set by system_js_settings_alter() , is deprecated in drupal:12.0.0 and is removed from drupal:13.0.0. It has no cache context, so query string values could leak into cached pages. Custom or contributed JavaScript that reads drupalSettings.path.currentQuery must read the current query from window.location instead. Before: const query = drupalSettings.path.currentQuery; After: const query = new URLSearchParams(window.location.search);",
+    "present": true,
+    "text_length": 471
+  },
+  "id": "change-record.3620806",
+  "is_general_knowledge_record": false,
+  "is_trusted_knowledge": false,
+  "provenance": {
+    "acquisition_channel": "external_authoritative_source",
+    "authority_kind": "change_record_feed",
+    "ingest_run_id": "api.20260908T231021.6bf7c3e6",
+    "ingested_at": "2026-09-08T23:10:21Z",
+    "ingested_by": {
+      "name": "drupal-knowledge-api-lifecycle-engine",
+      "version": "0.1"
+    },
+    "source_id": "drupal-core-change-notices",
+    "source_node_id": "3620806",
+    "source_snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+    "source_url": "https://www.drupal.org/list-changes/drupal"
+  },
+  "record_class": "source_derived_authoritative_api_lifecycle_record",
+  "record_contract_version": "0.1",
+  "symbols": {
+    "extraction": "title_call_syntax_only",
+    "lifecycle_asserted": false,
+    "named_with_call_syntax": [],
+    "semantics": "A change record names symbols. It does not, in this contract, assert their lifecycle; that comes from the deprecation index."
+  }
+}

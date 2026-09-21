@@ -1,0 +1,331 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/security-remediation-plan-v0.1.json",
+  "title": "Drupal Knowledge security remediation plan",
+  "description": "A read-only, deterministic explanation of how a project could remediate the advisories that apply to it. Every target is re-evaluated against the security engine, every recommendation traces to authoritative evidence, and nothing here is executed. A plan is not a promise of security: it reports which evaluated advisories a target resolves, and which remain or cannot be predicted.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "plan_id",
+    "engine",
+    "generated_at",
+    "project",
+    "evidence_sources",
+    "release_state",
+    "components",
+    "residual",
+    "completeness",
+    "limitations",
+    "enforcement",
+    "execution",
+    "trusted_knowledge_mutations"
+  ],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "plan_id": {"type": "string", "pattern": "^security-remediation\\.[a-f0-9]{16}$"},
+    "engine": {
+      "type": "object",
+      "required": ["name", "version", "deterministic", "language_model_used"],
+      "properties": {
+        "name": {"const": "drupal-knowledge-remediation-engine"},
+        "version": {"type": "string"},
+        "deterministic": {"const": true},
+        "language_model_used": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "generated_at": {"type": "string"},
+    "project": {
+      "type": "object",
+      "required": ["project_id", "facts_source", "core_version", "installed_package_count", "applicable_finding_count"],
+      "properties": {
+        "project_id": {"type": "string"},
+        "facts_source": {"const": "drupal_project_analyzer_profile_facts"},
+        "core_version": {"type": ["string", "null"]},
+        "installed_package_count": {"type": "integer", "minimum": 0},
+        "applicable_finding_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "evidence_sources": {
+      "description": "Every input this plan rests on, so a recommendation can be traced back.",
+      "type": "object",
+      "required": ["security_evaluation_id", "advisory_ids", "release_context", "analyzer_fact_paths"],
+      "properties": {
+        "security_evaluation_id": {"type": "string"},
+        "advisory_ids": {"type": "array", "items": {"type": "string"}},
+        "release_context": {
+          "type": "object",
+          "required": ["source_id", "snapshot_sha256", "review_status", "reviewed_on", "release_count"],
+          "properties": {
+            "source_id": {"type": "string"},
+            "snapshot_sha256": {"type": "string"},
+            "review_status": {"type": "string"},
+            "reviewed_on": {"type": "string"},
+            "release_count": {"type": "integer", "minimum": 0}
+          },
+          "additionalProperties": false
+        },
+        "analyzer_fact_paths": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "release_state": {
+      "description": "Authoritative Drupal core release/support state, read from the reviewed release-lifecycle context. Supported branches are never hardcoded.",
+      "type": "object",
+      "required": ["supported_branches", "newest_supported_stable", "source"],
+      "properties": {
+        "supported_branches": {"type": "array", "items": {"type": "string"}},
+        "newest_supported_stable": {"type": "object"},
+        "source": {"const": "reviewed_release_lifecycle_context"}
+      },
+      "additionalProperties": false
+    },
+    "components": {
+      "description": "One entry per affected component, not per advisory. Eighteen core advisories produce one core action.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "component",
+          "scope",
+          "package",
+          "project_identity",
+          "current",
+          "applicable_advisories",
+          "authoritative_remediation",
+          "project_remediation_plan",
+          "limitations"
+        ],
+        "properties": {
+          "component": {"type": "string"},
+          "scope": {"enum": ["drupal_core", "contrib_package"]},
+          "package": {"type": "string"},
+          "project_identity": {
+            "type": "object",
+            "required": ["machine_name", "resolution"],
+            "properties": {
+              "machine_name": {"type": ["string", "null"]},
+              "resolution": {"type": "string"}
+            },
+            "additionalProperties": false
+          },
+          "current": {
+            "type": "object",
+            "required": ["installed_version", "installed_version_state", "branch", "branch_support", "declared_constraint", "declared_constraint_state", "lock_resolution_state"],
+            "properties": {
+              "installed_version": {"type": ["string", "null"]},
+              "installed_version_state": {"enum": ["known", "unknown"]},
+              "branch": {"type": ["string", "null"]},
+              "branch_support": {
+                "enum": ["supported", "unsupported", "unknown", "not_applicable"]
+              },
+              "declared_constraint": {"type": ["string", "null"]},
+              "declared_constraint_state": {"enum": ["observed", "not_observed", "unparseable"]},
+              "lock_resolution_state": {
+                "description": "Whether lock resolution is distinguishable from the installed version in the analyzer evidence available.",
+                "enum": ["distinct", "not_separately_observable"]
+              }
+            },
+            "additionalProperties": false
+          },
+          "applicable_advisories": {"type": "array", "items": {"type": "string"}},
+          "authoritative_remediation": {
+            "description": "The Security Team's own remediation evidence, preserved verbatim and kept separate from Drupal Knowledge's project-specific planning.",
+            "type": "object",
+            "required": ["fixed_versions_by_advisory", "all_fixed_versions", "authored_by_drupal_knowledge"],
+            "properties": {
+              "fixed_versions_by_advisory": {"type": "object"},
+              "all_fixed_versions": {"type": "array", "items": {"type": "string"}},
+              "authored_by_drupal_knowledge": {"const": false}
+            },
+            "additionalProperties": false
+          },
+          "project_remediation_plan": {
+            "description": "Drupal Knowledge's project-specific analysis. Separate from the authoritative remediation above.",
+            "type": "object",
+            "required": [
+              "minimum_non_affected_target",
+              "recommended_supported_target",
+              "candidates",
+              "transition",
+              "constraint_change_required",
+              "steps",
+              "authored_by_drupal_knowledge"
+            ],
+            "properties": {
+              "minimum_non_affected_target": {
+                "type": "object",
+                "required": ["state", "version", "resolves_advisories", "branch_support"],
+                "properties": {
+                  "state": {"enum": ["identified", "none_available", "unknown"]},
+                  "version": {"type": ["string", "null"]},
+                  "resolves_advisories": {"type": "array", "items": {"type": "string"}},
+                  "branch_support": {"enum": ["supported", "unsupported", "unknown", "not_applicable"]}
+                },
+                "additionalProperties": false
+              },
+              "recommended_supported_target": {
+                "type": "object",
+                "required": ["state", "version", "reason", "resolves_advisories", "residual_advisories"],
+                "properties": {
+                  "state": {
+                    "enum": [
+                      "identified",
+                      "none_on_supported_branch",
+                      "requires_compatibility_review",
+                      "unknown"
+                    ]
+                  },
+                  "version": {"type": ["string", "null"]},
+                  "reason": {"type": "string", "minLength": 5},
+                  "resolves_advisories": {"type": "array", "items": {"type": "string"}},
+                  "residual_advisories": {"type": "array", "items": {"type": "string"}}
+                },
+                "additionalProperties": false
+              },
+              "candidates": {
+                "description": "Every candidate considered, each re-evaluated against the full applicable advisory set by the security engine.",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "version",
+                    "origin",
+                    "branch",
+                    "branch_support",
+                    "stable_release",
+                    "flagged_insecure_in_release_feed",
+                    "resolves_advisories",
+                    "residual_advisories",
+                    "unknown_advisories",
+                    "satisfies_declared_constraint",
+                    "reevaluated_by_security_engine"
+                  ],
+                  "properties": {
+                    "version": {"type": "string"},
+                    "origin": {
+                      "enum": [
+                        "advisory_fixed_version",
+                        "newest_supported_stable_release",
+                        "operator_supplied_target"
+                      ]
+                    },
+                    "branch": {"type": ["string", "null"]},
+                    "branch_support": {"enum": ["supported", "unsupported", "unknown", "not_applicable"]},
+                    "stable_release": {"enum": ["stable", "prerelease", "unknown"]},
+                    "flagged_insecure_in_release_feed": {"type": ["boolean", "null"]},
+                    "resolves_advisories": {"type": "array", "items": {"type": "string"}},
+                    "residual_advisories": {"type": "array", "items": {"type": "string"}},
+                    "unknown_advisories": {"type": "array", "items": {"type": "string"}},
+                    "satisfies_declared_constraint": {
+                      "enum": ["satisfied", "not_satisfied", "constraint_not_observed", "unknown"]
+                    },
+                    "reevaluated_by_security_engine": {"const": true}
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "transition": {
+                "description": "Upgrade compatibility is never inferred. Without authoritative transition evidence the state is unknown and review is required.",
+                "type": "object",
+                "required": ["kind", "from_major", "to_major", "supported", "evidence", "requires_compatibility_review"],
+                "properties": {
+                  "kind": {
+                    "enum": ["none_required", "same_branch", "minor_within_major", "major_transition", "unknown"]
+                  },
+                  "from_major": {"type": ["string", "null"]},
+                  "to_major": {"type": ["string", "null"]},
+                  "supported": {"enum": ["supported", "unsupported", "unknown"]},
+                  "evidence": {"type": "string"},
+                  "requires_compatibility_review": {"type": "boolean"}
+                },
+                "additionalProperties": false
+              },
+              "constraint_change_required": {
+                "enum": ["required", "not_required", "constraint_not_observed", "unknown"]
+              },
+              "steps": {
+                "description": "Recommendations only. Nothing here is executed.",
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["order", "action", "detail", "executed"],
+                  "properties": {
+                    "order": {"type": "integer", "minimum": 1},
+                    "action": {"type": "string"},
+                    "detail": {"type": "string"},
+                    "executed": {"const": false}
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "authored_by_drupal_knowledge": {"const": true}
+            },
+            "additionalProperties": false
+          },
+          "limitations": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "residual": {
+      "description": "Projected security state under the recommended targets. Absence of applicable advisories is never reported as security.",
+      "type": "object",
+      "required": ["evaluated_advisory_count", "resolved_by_recommended_targets", "still_applicable", "unpredictable", "statement"],
+      "properties": {
+        "evaluated_advisory_count": {"type": "integer", "minimum": 0},
+        "resolved_by_recommended_targets": {"type": "array", "items": {"type": "string"}},
+        "still_applicable": {"type": "array", "items": {"type": "string"}},
+        "unpredictable": {"type": "array", "items": {"type": "string"}},
+        "statement": {"type": "string", "minLength": 10}
+      },
+      "additionalProperties": false
+    },
+    "completeness": {
+      "description": "Deterministic completeness, never a confidence score.",
+      "type": "object",
+      "required": ["state", "reasons"],
+      "properties": {
+        "state": {
+          "enum": [
+            "no_applicable_advisories_in_evaluated_set",
+            "complete_for_evaluated_security_set",
+            "partial_due_to_dependency_unknowns",
+            "blocked_by_unsupported_branch",
+            "requires_compatibility_review",
+            "insufficient_project_evidence"
+          ]
+        },
+        "reasons": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "enforcement": {
+      "description": "A plan changes no policy. Findings remain guidance.",
+      "type": "object",
+      "required": ["intent", "policy_controlled", "automatically_blocking", "changed_by_plan"],
+      "properties": {
+        "intent": {"const": "guidance"},
+        "policy_controlled": {"const": true},
+        "automatically_blocking": {"const": false},
+        "changed_by_plan": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "execution": {
+      "type": "object",
+      "required": ["execution_performed", "project_files_written", "composer_invoked", "engine_read_only"],
+      "properties": {
+        "execution_performed": {"const": false},
+        "project_files_written": {"const": false},
+        "composer_invoked": {"const": false},
+        "engine_read_only": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "trusted_knowledge_mutations": {"type": "array", "maxItems": 0}
+  },
+  "additionalProperties": false
+}

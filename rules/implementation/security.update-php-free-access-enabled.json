@@ -1,0 +1,62 @@
+{
+  "authority": {
+    "sources": [
+      {
+        "quotes": [
+          "'update_free_access'"
+        ],
+        "snapshot_sha256": "sha256:1e2df3981d9cc138fa916171a710909b3e6922ebd978252b453b903e540b4a39",
+        "source_id": "drupal-default-settings-php"
+      }
+    ],
+    "summary": "Drupal core's own default.settings.php documents this setting, ships it as FALSE, and describes changing it as a temporary measure."
+  },
+  "category": "security",
+  "check": {
+    "condition": {
+      "assertion": "config.settings_declaration",
+      "id": "update-free-access-true",
+      "operator": "evidence_matches",
+      "subject": "update_free_access",
+      "value": true
+    },
+    "kind": "evidence_condition"
+  },
+  "context_requirements": [],
+  "finding": {
+    "assertion": "The observed settings declare update_free_access as TRUE.",
+    "conclusion": {
+      "candidate": "The access check appears disabled, though the deciding context was not fully observed.",
+      "confirmed": "The access check in front of update.php is disabled by the observed settings declaration.",
+      "default": "No conclusion is drawn.",
+      "not_observed": "The observed settings do not declare update_free_access as true.",
+      "unknown": "The declared value could not be established."
+    },
+    "enforcement_intent": "guidance",
+    "evidence_explanation": "A settings declaration of update_free_access with value true was observed.",
+    "human_title": "update.php access control is switched off",
+    "limitations": [
+      "Included settings files are not followed, so a later assignment could override this."
+    ],
+    "remediation": {
+      "applied": false,
+      "basis": "drupal_core_source",
+      "guidance": "Drupal core ships this setting as FALSE. Restore it unless an update is actively in progress and the access check is being bypassed deliberately."
+    },
+    "severity_state": "not_established"
+  },
+  "review": {
+    "authority": "reviewed against the pinned default.settings.php snapshot",
+    "reviewed_on": "2026-09-09",
+    "status": "reviewed"
+  },
+  "rule_contract_version": "0.1",
+  "rule_id": "security.update-php-free-access-enabled",
+  "scope": {
+    "component": "settings.php",
+    "drupal_core_minimum_major": 8,
+    "notes": "The setting exists in Drupal 8 and later."
+  },
+  "summary": "$settings['update_free_access'] is declared TRUE, which removes the access check in front of the update.php script.",
+  "title": "update.php access control is disabled"
+}

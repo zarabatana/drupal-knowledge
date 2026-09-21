@@ -1,0 +1,101 @@
+{
+  "advisory": {
+    "advisory_number": "122",
+    "canonical_url": "https://www.drupal.org/sa-contrib-2026-122",
+    "description_present": true,
+    "is_psa": false,
+    "kind": "contrib",
+    "published_at": "2026-09-02T16:29:03Z",
+    "title": "Calculate Working Days - Critical - Access bypass - SA-CONTRIB-2026-122",
+    "updated_at": "2026-09-02T16:29:03Z",
+    "vulnerability_type": "Access bypass",
+    "year": "2026"
+  },
+  "advisory_contract_version": "0.1",
+  "affected_versions": {
+    "clauses": [
+      {
+        "constraints": [
+          {
+            "operator": "lt",
+            "source_value": "<2.0.3",
+            "version": "2.0.3"
+          }
+        ],
+        "source_value": "<2.0.3"
+      }
+    ],
+    "parse_method": "drupal_security_advisory_constraint_grammar",
+    "source_value": "<2.0.3",
+    "state": "parsed"
+  },
+  "cves": {
+    "identifiers": [
+      "CVE-2026-84914"
+    ],
+    "inferred": false,
+    "state": "sourced"
+  },
+  "enforcement": {
+    "automatically_blocking": false,
+    "intent": "guidance",
+    "policy_controlled": true
+  },
+  "engine": {
+    "deterministic": true,
+    "language_model_used": false,
+    "name": "drupal-knowledge-security-engine",
+    "version": "0.1"
+  },
+  "fixed_in": {
+    "release_nids": [
+      "3620128"
+    ],
+    "state": "stated",
+    "versions": [
+      "2.0.3"
+    ]
+  },
+  "id": "SA-CONTRIB-2026-122",
+  "is_general_knowledge_record": false,
+  "is_trusted_knowledge": false,
+  "project": {
+    "composer_package": "drupal/calculate_working_days",
+    "drupal_project_nid": "3402054",
+    "identity_state": "resolved",
+    "machine_name": "calculate_working_days",
+    "project_type": "project_module",
+    "resolution": "authoritative_project_node",
+    "resolved_from": "https://www.drupal.org/api-d7/node/3402054.json"
+  },
+  "provenance": {
+    "acquisition_channel": "external_authoritative_source",
+    "ingest_run_id": "security.20260908T185627.fcceb306",
+    "ingested_at": "2026-09-08T18:56:27Z",
+    "ingested_by": {
+      "name": "drupal-knowledge-security-engine",
+      "version": "0.1"
+    },
+    "source_id": "drupal-security-advisories-recent",
+    "source_node_id": "3620024",
+    "source_snapshot_sha256": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+    "source_url": "https://www.drupal.org/sa-contrib-2026-122"
+  },
+  "record_class": "source_derived_authoritative_record",
+  "remediation": {
+    "authored_by_drupal_knowledge": false,
+    "executable": false,
+    "fixed_versions": [
+      "2.0.3"
+    ],
+    "source_solution_present": true,
+    "state": "sourced"
+  },
+  "severity": {
+    "inferred": false,
+    "risk_vector": "AC:None/A:None/CI:None/II:Some/E:Theoretical/TD:All",
+    "scored_by_drupal_knowledge": false,
+    "source_field": "field_sa_criticality",
+    "state": "sourced"
+  }
+}

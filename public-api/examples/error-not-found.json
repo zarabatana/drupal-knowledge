@@ -1,0 +1,16 @@
+{
+  "api_contract_version": "1.0",
+  "api_version": "1",
+  "dataset_id": "dataset:e290b71c0e26ef1d0067be2f01713b7e",
+  "dk_version": "1.0.0",
+  "error": {
+    "code": "NOT_FOUND",
+    "details": {
+      "domain": "advisory",
+      "identifier": "SA-CORE-9999-999",
+      "search": "/api/v1/search?q=SA-CORE-9999-999"
+    },
+    "message": "No advisory record has the identifier 'SA-CORE-9999-999'."
+  }
+}
+

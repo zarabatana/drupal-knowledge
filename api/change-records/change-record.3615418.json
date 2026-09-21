@@ -1,0 +1,50 @@
+{
+  "category": {
+    "additional": [
+      "API_addition",
+      "deprecation"
+    ],
+    "basis": "source_text_vocabulary_match",
+    "matched_phrase": "is removed",
+    "value": "removal"
+  },
+  "change_record": {
+    "canonical_url": "https://www.drupal.org/node/3615418",
+    "created_at": "2026-09-03T18:10:04Z",
+    "introduced_branch": "11.5.x",
+    "introduced_version": "11.5.0",
+    "node_id": "3615418",
+    "published": true,
+    "title": "PostgreSQL type-casting of fields in raw SQL with LIKE and regex operators is deprecated"
+  },
+  "description": {
+    "excerpt": "PostgreSQL has no LIKE or regular expression operators for non-text types such as integers. The pgsql driver rewrote all SQL in Connection::prepareStatement() to add a ::text type-cast to fields used with these operators. Relying on this rewrite for SQL passed as a string is deprecated in Drupal 11.5.0. The rewrite is removed in Drupal 13.0.0. Query builder queries are not affected. Their conditions get the type-cast when they are compiled. Before (deprecated): $result = $connection->query('SELECT [name] FROM {test} WHERE [age] LIKE :pattern', [':pattern' => '2%']); After, either add the cast ",
+    "present": true,
+    "text_length": 1767
+  },
+  "id": "change-record.3615418",
+  "is_general_knowledge_record": false,
+  "is_trusted_knowledge": false,
+  "provenance": {
+    "acquisition_channel": "external_authoritative_source",
+    "authority_kind": "change_record_feed",
+    "ingest_run_id": "api.20260908T231021.6bf7c3e6",
+    "ingested_at": "2026-09-08T23:10:21Z",
+    "ingested_by": {
+      "name": "drupal-knowledge-api-lifecycle-engine",
+      "version": "0.1"
+    },
+    "source_id": "drupal-core-change-notices",
+    "source_node_id": "3615418",
+    "source_snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+    "source_url": "https://www.drupal.org/list-changes/drupal"
+  },
+  "record_class": "source_derived_authoritative_api_lifecycle_record",
+  "record_contract_version": "0.1",
+  "symbols": {
+    "extraction": "title_call_syntax_only",
+    "lifecycle_asserted": false,
+    "named_with_call_syntax": [],
+    "semantics": "A change record names symbols. It does not, in this contract, assert their lifecycle; that comes from the deprecation index."
+  }
+}

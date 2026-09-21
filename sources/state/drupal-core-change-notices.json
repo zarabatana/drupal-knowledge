@@ -1,0 +1,25 @@
+{
+  "acquisition": {
+    "acquisition_channel": "external_authoritative_source",
+    "check_cadence_days": 7,
+    "consecutive_failures": 0,
+    "engine_name": "drupal-knowledge-acquisition-engine",
+    "engine_version": "0.1",
+    "last_attempt_at": "2026-09-08T23:05:49Z",
+    "last_attempt_run_id": "run.20260908T230549.43f2796b",
+    "last_attempt_status": "first_observation",
+    "last_error": null,
+    "last_success_at": "2026-09-08T23:05:49Z",
+    "last_success_run_id": "run.20260908T230549.43f2796b",
+    "previous_snapshot_sha256": null,
+    "review_candidate_id": null
+  },
+  "content_length": 73477,
+  "content_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+  "etag": null,
+  "fetch_url": "https://www.drupal.org/api-d7/node.json?type=changenotice&field_project=3060&sort=created&direction=DESC&limit=20",
+  "last_changed_at": "2026-09-08T23:05:49Z",
+  "last_modified": null,
+  "source_id": "drupal-core-change-notices",
+  "url": "https://www.drupal.org/list-changes/drupal"
+}

@@ -1,0 +1,202 @@
+{
+  "api_contract_version": "1.0",
+  "api_version": "1",
+  "count": 1,
+  "dataset_id": "dataset:e290b71c0e26ef1d0067be2f01713b7e",
+  "dataset_schema_version": "0.1",
+  "dk_version": "1.0.0",
+  "pagination": {
+    "limit": 25,
+    "next_offset": null,
+    "offset": 0,
+    "ordering": "canonical identifier, ascending",
+    "returned": 1,
+    "total": 1
+  },
+  "query_interface_version": "0.1",
+  "request": {
+    "limit": 25,
+    "offset": 0,
+    "operation_id": "search",
+    "path": "/api/v1/search",
+    "q": "CVE-2025-3057"
+  },
+  "results": [
+    {
+      "authority": "Drupal Security Team",
+      "detail": {
+        "affected_versions": ">= 8.0.0 < 10.3.13 || >= 10.4.0 < 10.4.3 || >= 11.0.0 < 11.0.12 || >= 11.1.0 < 11.1.3",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/core",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2025-3057"
+        ],
+        "fixed_in": [
+          "10.3.13",
+          "10.4.3",
+          "11.0.12",
+          "11.1.3"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "core",
+        "project": "drupal",
+        "published_at": "2025-02-19T16:49:28Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:None/CI:Some/II:Some/E:Proof/TD:All",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Cross site scripting"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Drupal core - Critical - Cross site scripting - SA-CORE-2025-001",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-core"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "href": "/api/v1/security/SA-CORE-2025-001",
+      "id": "SA-CORE-2025-001",
+      "match": {
+        "rank": 900,
+        "reason": "exact structured field match"
+      },
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+          "source_id": "drupal-security-advisories-core",
+          "source_url": "https://www.drupal.org/sa-core-2025-001"
+        }
+      ],
+      "provenance_href": "/api/v1/provenance/SA-CORE-2025-001",
+      "record_type": "source-derived authoritative record",
+      "related": [
+        {
+          "label": "drupal-security-advisories-core",
+          "relation": "derived_from_source",
+          "site_url": "/sources/drupal-security-advisories-core/"
+        },
+        {
+          "label": "SA-CORE-2025-002",
+          "relation": "same_drupal_project",
+          "site_url": "/security/SA-CORE-2025-002/"
+        },
+        {
+          "label": "SA-CORE-2025-003",
+          "relation": "same_drupal_project",
+          "site_url": "/security/SA-CORE-2025-003/"
+        },
+        {
+          "label": "SA-CORE-2025-004",
+          "relation": "same_drupal_project",
+          "site_url": "/security/SA-CORE-2025-004/"
+        },
+        {
+          "label": "SA-CORE-2025-005",
+          "relation": "same_drupal_project",
+          "site_url": "/security/SA-CORE-2025-005/"
+        },
+        {
+          "label": "SA-CORE-2025-006",
+          "relation": "same_drupal_project",
+          "site_url": "/security/SA-CORE-2025-006/"
+        },
+        {
+          "label": "SA-CORE-2025-007",
+          "relation": "same_drupal_project",
+          "site_url": "/security/SA-CORE-2025-007/"
+        },
+        {
+          "label": "SA-CORE-2025-008",
+          "relation": "same_drupal_project",
+          "site_url": "/security/SA-CORE-2025-008/"
+        },
+        {
+          "label": "SA-CORE-2026-001",
+          "relation": "same_drupal_project",
+          "site_url": "/security/SA-CORE-2026-001/"
+        },
+        {
+          "label": "SA-CORE-2026-002",
+          "relation": "same_drupal_project",
+          "site_url": "/security/SA-CORE-2026-002/"
+        },
+        {
+          "label": "SA-CORE-2026-003",
+          "relation": "same_drupal_project",
+          "site_url": "/security/SA-CORE-2026-003/"
+        },
+        {
+          "label": "SA-CORE-2026-004",
+          "relation": "same_drupal_project",
+          "site_url": "/security/SA-CORE-2026-004/"
+        },
+        {
+          "label": "SA-CORE-2026-005",
+          "relation": "same_drupal_project",
+          "site_url": "/security/SA-CORE-2026-005/"
+        },
+        {
+          "label": "SA-CORE-2026-006",
+          "relation": "same_drupal_project",
+          "site_url": "/security/SA-CORE-2026-006/"
+        },
+        {
+          "label": "SA-CORE-2026-007",
+          "relation": "same_drupal_project",
+          "site_url": "/security/SA-CORE-2026-007/"
+        },
+        {
+          "label": "SA-CORE-2026-008",
+          "relation": "same_drupal_project",
+          "site_url": "/security/SA-CORE-2026-008/"
+        },
+        {
+          "label": "SA-CORE-2026-009",
+          "relation": "same_drupal_project",
+          "site_url": "/security/SA-CORE-2026-009/"
+        },
+        {
+          "label": "SA-CORE-2026-010",
+          "relation": "same_drupal_project",
+          "site_url": "/security/SA-CORE-2026-010/"
+        },
+        {
+          "label": "SA-CORE-2026-011",
+          "relation": "same_drupal_project",
+          "site_url": "/security/SA-CORE-2026-011/"
+        },
+        {
+          "label": "SA-CORE-2026-012",
+          "relation": "same_drupal_project",
+          "site_url": "/security/SA-CORE-2026-012/"
+        }
+      ],
+      "site_url": "/security/SA-CORE-2025-001/",
+      "summary": "core advisory for drupal",
+      "title": "Drupal core - Critical - Cross site scripting - SA-CORE-2025-001",
+      "trust_class": "source_derived_authoritative",
+      "trust_explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+      "trusted_knowledge": false,
+      "universal_drupal_rule": true,
+      "unknowns": []
+    }
+  ],
+  "unknowns": [
+    "Drupal Knowledge holds a bounded record set. No match is not evidence that the subject is unproblematic."
+  ],
+  "warnings": [
+    "Discovery signals are untrusted community observations and are not published by this API. Search covers published domains only."
+  ]
+}
+

@@ -1,0 +1,25 @@
+{
+  "acquisition": {
+    "acquisition_channel": "external_authoritative_source",
+    "check_cadence_days": 30,
+    "consecutive_failures": 0,
+    "engine_name": "drupal-knowledge-acquisition-engine",
+    "engine_version": "0.1",
+    "last_attempt_at": "2026-09-09T00:33:12Z",
+    "last_attempt_run_id": "run.20260909T003312.3fcb7653",
+    "last_attempt_status": "first_observation",
+    "last_error": null,
+    "last_success_at": "2026-09-09T00:33:12Z",
+    "last_success_run_id": "run.20260909T003312.3fcb7653",
+    "previous_snapshot_sha256": null,
+    "review_candidate_id": null
+  },
+  "content_length": 9711,
+  "content_sha256": "sha256:35e950799ef519216d7b7f02340a70dae591c29214e9421543051df38762989b",
+  "etag": "\"1788913755-1\"",
+  "fetch_url": "https://www.drupal.org/docs/develop/drupal-apis/cache-api/cache-tags",
+  "last_changed_at": "2026-09-09T00:33:12Z",
+  "last_modified": "Wed, 09 Sep 2026 00:29:15 GMT",
+  "source_id": "drupal-cache-tags",
+  "url": "https://www.drupal.org/docs/develop/drupal-apis/cache-api/cache-tags"
+}

@@ -1,0 +1,201 @@
+Some individual modules may have specific requirements for PHP extensions and configurations beyond those listed below, so, always check the documentation for the extension as well.
+The recommended tool for Drupal development
+DDEV
+always offers the
+latest PHP version
+.
+PHP versions supported
+PHP version
+Drupal version
+10.4
+10.5
+10.6
+11.1
+11.2
+11.3
+11.4
+12.0
+8.1 (
+note 1
+)
+✅ Yes
+✅ Yes
+✅ Yes
+❌ No
+❌ No
+❌ No
+❌ No
+❌ No
+8.2
+✅ Yes
+✅ Yes
+✅ Yes
+❌ No
+❌ No
+❌ No
+❌ No
+❌ No
+8.3
+✅ Yes
+✅ Yes
+✅ Yes
+✅ Yes
+✅ Yes
+✅ Yes
+✅ Yes
+❌ No
+8.4
+✅ Yes
+✅ Yes
+✅ Yes
+✅ Yes
+✅ Yes
+✅ Yes
+✅ Yes
+❌ No
+8.5
+❌ No
+❌ No
+❌ No
+❌ No
+❌ No
+✅ Yes
+✅ Yes
+✅ Yes
+8.6
+❌ No
+❌ No
+❌ No
+❌ No
+❌ No
+❌ No
+Follow
+issue #3608511
+Drupal 10 requires at least PHP 8.1
+.
+PHP 8.1.6 is recommended.
+What does it mean for a PHP version to be supported? What does it mean for the PHP installation to be "too old"?
+Drupal minor versions receive a predefined window of security coverage (typically 12 months) as long as a supported PHP version is used
+.
+Please note that PHP has its own definition of what is a
+supported PHP version
+.
+We prefer to allow sites to receive security updates even if they are using a version of PHP that is no longer supported. However, Drupal's upstream dependencies may drop support for older PHP versions before the Drupal major version reaches its end of life. If this happens, the Drupal site will no longer be able to install security updates for that dependency, so we can no longer guarantee its security coverage.
+Site owners will receive warnings on their site status report that their PHP installation is "too old" if the site's PHP version is old enough that a dependency is likely to drop support for it.
+If a dependency does drop support for a PHP version that was initially supported by the Drupal major version, an unscheduled minor release may be created to require the new PHP and dependency versions. For example, Drupal 10.5 supported PHP 8.1, so if a Drupal 10 dependency drops support for PHP 8.1 (security support ends at the end of 2025) before Drupal 10's end-of-life date in December 2026, we may create a new minor version outside the normal schedule that increases the PHP version requirement to 8.2 and the dependency's version requirement to the supported version.
+No supported version of Drupal supports any version of PHP 7 (including PHP 7.4, unsupported by PHP since November 2022).
+What does it mean for a version of PHP to be "recommended"?
+Drupal will work on all supported PHP versions.
+Recommended
+PHP versions are the best choice for building a Drupal site because they will remain supported longer.
+PHP extensions needed
+Extensions used by Drupal core are defined in
+core/composer.json
+. Look at the "require" section and the keys starting with "ext-".
+Adding a PHP extension to your system, at least on Linux (and Mac), means finding and installing the relevant PHP package using your package manager. Typically the package name for the Foo extension is named "php-foo" or "php8.3-foo", but this isn't always the case. Some extensions are part of the core PHP package and hence are enabled by default.
+Database extensions
+The
+PHP Data Objects (PDO)
+extension must be activated for Drupal 9 and higher to install and run correctly. The PECL version of PDO is not compatible with Drupal 9 and cannot be used. In addition, a PHP extension for connecting to your chosen database must be installed and enabled.
+The supported database connectors are
+SQLite
+,
+mysql
+(the original MySQL extension),
+mysqli
+(an improved connector for newer MySQL installations), and
+pgsql
+(for PostgreSQL).
+XML extension
+PHP
+XML extension
+. This extension is
+enabled by default
+in a standard PHP installation; the Windows version of PHP has built-in support for this extension. Enabling the XML extension also enables PHP DOM. DOM is now a system requirement.
+Image library
+An image library for PHP such as the
+GD library
+is a
+required
+extension in Drupal 9 and higher, and is needed for image manipulation (resizing user pictures, image and image cache modules).
+ImageMagick
+is also supported for image manipulations in Drupal core.
+OpenSSL
+The
+PHP OpenSSL
+extension is recommended to allow Drupal to make outgoing requests using HTTPS and is required when using the Update Manager. Read
+PHP OpenSSL requirements
+for more information.
+JSON
+Drupal 9 and higher require PHP compiled with JSON. JSON support is normally compiled as part of PHP core, but in case you're getting errors like
+PHP Fatal error: Call to undefined function Drupal\\Component\\Serialization\\json_encode() in ... core/lib/Drupal/Component/Serialization/Json.php
+try
+adding the JSON extension
+.
+cURL
+The
+PHP cURL
+extension is required for automated testing in Drupal 9 and higher, as well as Aggregator and some contributed modules. Many Linux distributions and development stacks will have it enabled by default, but if your system doesn't either enable it in php.ini (typically on Windows) or install it using your package manager (typically on Linux).
+Mbstring
+The
+PHP mbstring
+extension provides multibyte specific string functions used for Drupal installation in other languages except for English and also multilingual sites in Drupal. It helps deal with multibyte encodings in PHP and also handles Unicode based encoding like UTF-8 or UCS-2.
+Password hashing
+From Drupal 12.0, PHP should be compiled with the argon2 support for password hashing. This should be the case on most or all PHP 8.5 installations without intervention. For more information, see the change record
+https://www.drupal.org/node/3530196
+.
+PHP configuration settings
+Memory requirements
+The minimum required memory size is
+64MB
+. Warning messages will be shown if the PHP configuration does not meet this requirement.
+PHP memory requirements can vary significantly depending on the modules in use on your site. A production site with a number of commonly used modules installed could require more memory. Typically, 128 MB or 256 MB is used on production systems.
+Some installations may require much more, especially with media-rich implementations. If you are using a hosting service it is important to verify that your host can provide sufficient memory for the set of modules you are deploying or may deploy in the future.
+.htaccess settings
+Some of the memory settings are contained in the default .htaccess file that ships with Drupal, so you shouldn't need to set them explicitly. Note, however, that setting PHP configuration options from .htaccess only works under the following conditions:
+With Apache (or a compatible webserver)
+If the .htaccess file is actually read, i.e.
+AllowOverride All
+in the main Apache configuration (usually httpd.conf) is enabled
+If PHP is installed as an Apache module
+In some shared hosting environments, access to these settings is restricted. If you cannot make these changes yourself, please ask your hosting provider to adjust them for you.
+Other interfaces
+See the
+PHP manual
+for how to change configuration settings for other interfaces to PHP.
+Xdebug
+If using
+Xdebug
+:
+Setting:
+xdebug.show_exception_trace = 0
+Reason: Could cause Drupal's installer to crash.
+Using Xdebug with Drupal 9:
+Setting:
+xdebug.collect_params = ?
+Reason: Setting
+xdebug.collect_params
+too high will prevent Drupal 9 from installing and working properly.
+Setting:
+xdebug.max_nesting_level = 256
+Reason: Using the default
+max_nesting_level
+of 100 (in xdebug versions < 2.3) causes some pages to crash.
+Note:
+From version 3.0 an onwards,
+xdebug.collect_params
+Has been removed
+. Arguments are now always visible with variable contents and argument name
+PHP from different sources
+Drupal is designed to work with PHP as distributed on
+PHP.net
+. Every effort is made to make it work with PHP versions from other sources but this is only done on a best effort basis.
+Site PHP information
+You can
+see how PHP is configured on your site
+. For example, Phpinfo will tell you if you have a database already installed and what versions of PHP, MySQL, etc. your system is running. Phpinfo will also tell you what PHP variables are set as well as many other helpful things.
+It is often possible to update to a newer version of PHP that ships with your Linux distribution. Please read the documentation for your Linux distribution.
+Notable points
+If the native opcache is enabled, settings
+opcache.save_comments
+must be enabled (set to 1 which is the default), otherwise Annotations will not be saved/loaded.

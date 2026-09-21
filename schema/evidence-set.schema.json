@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/evidence-set-v0.1.json",
+  "title": "Drupal Knowledge project evidence set",
+  "description": "Canonical evidence for one analysed project revision, across code, configuration, dependency, extension and project-metadata domains. Identity is by project and revision fingerprint so the same repository content always produces the same set and changed content produces a distinguishable one. Nothing here observes a running site, executes PHP or inspects a database; every record is a repository observation.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "evidence_set_id",
+    "result_domain",
+    "engine",
+    "generated_at",
+    "project",
+    "records",
+    "summary",
+    "domain_completeness",
+    "boundaries",
+    "execution",
+    "trusted_knowledge_mutations"
+  ],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "evidence_set_id": {"type": "string", "pattern": "^evidence-set\\.[a-f0-9]{16}$"},
+    "result_domain": {"const": "project_evidence"},
+    "engine": {
+      "type": "object",
+      "required": ["name", "version", "deterministic", "language_model_used", "produces_trusted_knowledge", "project_writes"],
+      "properties": {
+        "name": {"const": "drupal-knowledge-evidence-engine"},
+        "version": {"type": "string"},
+        "deterministic": {"const": true},
+        "language_model_used": {"const": false},
+        "produces_trusted_knowledge": {"const": false},
+        "project_writes": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "generated_at": {"type": "string"},
+    "project": {
+      "description": "A persisted set carries fingerprints only; project_id is dropped so a shared tree holds no customer name.",
+      "type": "object",
+      "required": ["project_fingerprint", "revision_fingerprint", "facts_source"],
+      "properties": {
+        "project_id": {"type": ["string", "null"]},
+        "project_fingerprint": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "revision_fingerprint": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "facts_source": {"const": "drupal_project_analyzer_profile_facts"},
+        "analyzer_version": {"type": ["string", "null"]},
+        "identity_basis": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "records": {"type": "array", "items": {"$ref": "evidence-record.schema.json"}},
+    "summary": {
+      "type": "object",
+      "required": ["records", "by_domain", "by_state", "definitive", "negative_capable"],
+      "properties": {
+        "records": {"type": "integer", "minimum": 0},
+        "by_domain": {"type": "object"},
+        "by_state": {"type": "object"},
+        "definitive": {"type": "integer", "minimum": 0},
+        "negative_capable": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "domain_completeness": {
+      "description": "Per-domain search completeness, stated so that absence of evidence is never silently read as evidence of absence.",
+      "type": "object",
+      "required": ["code", "configuration", "dependency", "extension", "project_metadata"],
+      "additionalProperties": {
+        "type": "object",
+        "required": ["search_domain", "basis"],
+        "properties": {
+          "search_domain": {"enum": ["complete", "bounded", "partial", "unknown"]},
+          "basis": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "boundaries": {
+      "type": "object",
+      "required": ["runtime_observed", "database_inspected", "php_executed", "statement", "security_relationship"],
+      "properties": {
+        "runtime_observed": {"const": false},
+        "database_inspected": {"const": false},
+        "php_executed": {"const": false},
+        "statement": {"type": "string"},
+        "security_relationship": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "execution": {
+      "type": "object",
+      "required": ["project_writes", "code_modified", "runtime_probed"],
+      "properties": {
+        "project_writes": {"const": false},
+        "code_modified": {"const": false},
+        "runtime_probed": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "trusted_knowledge_mutations": {
+      "type": "object",
+      "required": ["knowledge_records", "reviewed_context", "source_derived_records", "advisories", "solved_cases", "discovery"],
+      "properties": {
+        "knowledge_records": {"const": 0},
+        "reviewed_context": {"const": 0},
+        "source_derived_records": {"const": 0},
+        "advisories": {"const": 0},
+        "solved_cases": {"const": 0},
+        "discovery": {"const": 0}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

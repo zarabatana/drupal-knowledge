@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/generalization-proposal-v0.1.json",
+  "title": "Drupal Knowledge generalization proposal",
+  "description": "Evidence from recurring verified solved cases suggests a reusable rule may exist. A proposal is a question put to a reviewer, never trusted Drupal knowledge and never a knowledge record. accepted_for_knowledge_proposal authorises later, separate proposal work and creates nothing.",
+  "type": "object",
+  "required": [
+    "id",
+    "proposal_contract_version",
+    "engine",
+    "built_at",
+    "run_id",
+    "recurrence_analysis_id",
+    "structural_key_digest",
+    "supporting_case_ids",
+    "contradictory_case_ids",
+    "proposed_statement",
+    "proposed_applicability",
+    "proposed_limitations",
+    "evidence_confidence",
+    "eligibility",
+    "provenance",
+    "review_required",
+    "review_state",
+    "review",
+    "is_trusted_knowledge",
+    "is_knowledge_record",
+    "generalizes_automatically",
+    "can_promote_to_knowledge"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^generalization\\.drupal\\.[a-z0-9.-]+$"},
+    "proposal_contract_version": {"type": "string"},
+    "engine": {
+      "type": "object",
+      "required": ["name", "version", "deterministic", "language_model_used"],
+      "properties": {
+        "name": {"const": "drupal-knowledge-generalization-engine"},
+        "version": {"type": "string"},
+        "deterministic": {"const": true},
+        "language_model_used": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "built_at": {"type": "string"},
+    "run_id": {"type": "string"},
+    "recurrence_analysis_id": {"type": "string", "pattern": "^recurrence\\.drupal\\.[a-z0-9.-]+$"},
+    "structural_key_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "supporting_case_ids": {"type": "array", "items": {"type": "string"}},
+    "contradictory_case_ids": {"type": "array", "items": {"type": "string"}},
+    "proposed_statement": {
+      "description": "Assembled deterministically from the participating cases' own fields. No language model writes it and it asserts nothing beyond the observed evidence.",
+      "type": "object",
+      "required": ["summary", "root_cause", "fix_summaries", "assembled_from", "asserts_universal_truth"],
+      "properties": {
+        "summary": {"type": "string", "minLength": 10},
+        "root_cause": {"type": "string", "minLength": 10},
+        "fix_summaries": {"type": "array", "items": {"type": "string"}},
+        "assembled_from": {"const": "participating_solved_case_fields"},
+        "asserts_universal_truth": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "proposed_applicability": {
+      "description": "Bounded by what the participating cases were actually proven on. Expansion always requires review.",
+      "type": "object",
+      "required": ["claimed_scope", "drupal_core_versions", "drupal_core_majors", "component_versions", "php_versions", "environment_classes", "expansion_requires_review", "bounded_by_observed_cases"],
+      "properties": {
+        "claimed_scope": {"const": "observed_cases_only"},
+        "drupal_core_versions": {"type": "array", "items": {"type": "string"}},
+        "drupal_core_majors": {"type": "array", "items": {"type": "string"}},
+        "component_versions": {"type": "object"},
+        "php_versions": {"type": "array", "items": {"type": "string"}},
+        "environment_classes": {"type": "array", "items": {"type": "string"}},
+        "expansion_requires_review": {"const": true},
+        "bounded_by_observed_cases": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "proposed_limitations": {"type": "array", "items": {"type": "string"}},
+    "evidence_confidence": {
+      "description": "Categorical, derived from independence, verification quality, agreement and contradiction together. Occurrence count alone never produces confidence.",
+      "type": "object",
+      "required": ["grade", "independent_occurrence_count", "verification_grade", "contradiction_present", "scope_conflict_present", "factors", "count_alone_is_sufficient"],
+      "properties": {
+        "grade": {"enum": ["insufficient", "weak", "moderate", "strong"]},
+        "independent_occurrence_count": {"type": "integer", "minimum": 0},
+        "verification_grade": {"enum": ["strong", "moderate", "weak"]},
+        "contradiction_present": {"type": "boolean"},
+        "scope_conflict_present": {"type": "boolean"},
+        "factors": {"type": "array", "items": {"type": "string"}},
+        "count_alone_is_sufficient": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "eligibility": {
+      "type": "object",
+      "required": ["all_conditions", "unmet_conditions", "recommended_review_state"],
+      "properties": {
+        "all_conditions": {"type": "object"},
+        "unmet_conditions": {"type": "array", "items": {"type": "string"}},
+        "recommended_review_state": {
+          "description": "A deterministic suggestion for the reviewer. It is not a decision and does not change review_state.",
+          "enum": ["pending_review", "needs_more_evidence", "narrow_scope_required"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["evidence_channel", "case_source", "project_identity_exposed", "discovery_signals_counted", "authoritative_support"],
+      "properties": {
+        "evidence_channel": {"const": "internal_proven_solved_case"},
+        "case_source": {"const": "cases/solved"},
+        "project_identity_exposed": {"const": false},
+        "discovery_signals_counted": {"const": 0},
+        "authoritative_support": {
+          "description": "Authoritative evidence may support or contradict a proposal without rewriting the solved-case history it rests on.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["source_id", "relation", "detail", "rewrites_case_provenance"],
+            "properties": {
+              "source_id": {"type": "string"},
+              "relation": {"enum": ["supports", "contradicts"]},
+              "detail": {"type": "string"},
+              "rewrites_case_provenance": {"const": false}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "review_required": {"const": true},
+    "review_state": {
+      "enum": [
+        "pending_review",
+        "needs_more_evidence",
+        "accepted_for_knowledge_proposal",
+        "rejected",
+        "narrow_scope_required"
+      ]
+    },
+    "review": {
+      "type": ["object", "null"],
+      "required": ["reviewed_at", "actor", "method", "note", "outcome", "authorizes_knowledge_proposal_work", "trusted_knowledge_changed", "knowledge_record_created"],
+      "properties": {
+        "reviewed_at": {"type": "string"},
+        "actor": {"type": "string", "minLength": 1},
+        "method": {"enum": ["human_generalization_review", "human_editorial_review", "human_security_review"]},
+        "note": {"type": ["string", "null"]},
+        "outcome": {
+          "enum": [
+            "needs_more_evidence",
+            "accepted_for_knowledge_proposal",
+            "rejected",
+            "narrow_scope_required"
+          ]
+        },
+        "authorizes_knowledge_proposal_work": {"type": "boolean"},
+        "trusted_knowledge_changed": {"const": false},
+        "knowledge_record_created": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "is_trusted_knowledge": {"const": false},
+    "is_knowledge_record": {"const": false},
+    "generalizes_automatically": {"const": false},
+    "can_promote_to_knowledge": {"const": false}
+  },
+  "additionalProperties": false
+}

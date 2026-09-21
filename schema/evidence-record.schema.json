@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/evidence-record-v0.1.json",
+  "title": "Drupal Knowledge canonical project evidence record",
+  "description": "One thing concretely observed in one project revision. It says 'this was observed here', never 'this is universally true'. Every record declares how completely its search domain was examined, because only a complete domain can support the conclusion that something is absent. Quality is a deterministic class following from the extraction method, not a probability, and a heuristic candidate is structurally never definitive.",
+  "type": "object",
+  "required": [
+    "record_contract_version",
+    "evidence_id",
+    "domain",
+    "assertion",
+    "subject",
+    "observation",
+    "scope",
+    "completeness",
+    "provenance"
+  ],
+  "properties": {
+    "record_contract_version": {
+      "type": "string"
+    },
+    "evidence_id": {
+      "type": "string",
+      "pattern": "^evidence\\.[a-f0-9]{16}$"
+    },
+    "domain": {
+      "enum": [
+        "code",
+        "configuration",
+        "dependency",
+        "extension",
+        "project_metadata"
+      ]
+    },
+    "assertion": {
+      "description": "The vocabulary a knowledge rule may require. An assertion outside it fails conservatively rather than being guessed at.",
+      "enum": [
+        "composer.package.installed",
+        "composer.package.locked_version",
+        "composer.package.type",
+        "composer.root_requirement",
+        "composer.dependency_relation",
+        "config.object.exported",
+        "config.exported_value",
+        "config.settings_declaration",
+        "config.dependency_module",
+        "config.root_selection",
+        "extension.package_present",
+        "extension.code_present",
+        "extension.exported_enabled",
+        "extension.runtime_enabled",
+        "extension.core_version_requirement",
+        "code.api_usage",
+        "code.service_reference",
+        "code.hook_implementation",
+        "code.class_reference",
+        "project.core_version",
+        "project.php_platform",
+        "project.web_root",
+        "project.type"
+      ]
+    },
+    "subject": {
+      "type": "string"
+    },
+    "observation": {
+      "type": "object",
+      "required": [
+        "state",
+        "value",
+        "quality",
+        "extraction",
+        "definitive"
+      ],
+      "properties": {
+        "state": {
+          "description": "not_observed is not false. It is only reachable where the search domain is complete.",
+          "enum": [
+            "observed",
+            "not_observed",
+            "unknown",
+            "insufficient_evidence",
+            "ambiguous",
+            "unsupported_evidence_type"
+          ]
+        },
+        "value": {},
+        "quality": {
+          "description": "How the observation was made. Deterministic classes, no scoring.",
+          "enum": [
+            "canonical_structured",
+            "syntax_observed",
+            "exact_file_fact",
+            "bounded_static_observation",
+            "heuristic_candidate"
+          ]
+        },
+        "extraction": {
+          "type": "string"
+        },
+        "definitive": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false,
+      "not": {
+        "description": "A heuristic candidate can point somewhere worth looking. It can never author a project fact.",
+        "properties": {
+          "quality": {
+            "const": "heuristic_candidate"
+          },
+          "definitive": {
+            "const": true
+          }
+        },
+        "required": [
+          "quality",
+          "definitive"
+        ]
+      }
+    },
+    "scope": {
+      "description": "Where the observation was made. Only project-relative paths are ever recorded.",
+      "type": "object"
+    },
+    "completeness": {
+      "type": "object",
+      "required": [
+        "search_domain",
+        "supports_negative_conclusion"
+      ],
+      "properties": {
+        "search_domain": {
+          "enum": [
+            "complete",
+            "bounded",
+            "partial",
+            "unknown"
+          ]
+        },
+        "supports_negative_conclusion": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "description": "Project-derived evidence is its own channel, distinct from external source-derived records, solved cases, discovery signals and trusted knowledge.",
+      "type": "object",
+      "required": [
+        "channel",
+        "produced_by"
+      ],
+      "properties": {
+        "channel": {
+          "const": "project_derived_evidence"
+        },
+        "produced_by": {
+          "type": "object",
+          "required": [
+            "name",
+            "version"
+          ],
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

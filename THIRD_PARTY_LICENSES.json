@@ -1,0 +1,1068 @@
+{
+  "manifest_version": "1.0",
+  "repository": "https://github.com/zarabatana/drupal-knowledge",
+  "dk_version": "1.0.0",
+  "generated_on": "2026-09-21",
+  "scope": "Every file under sources/snapshots/. Derived records (security/advisories, api/lifecycle, api/change-records) and reviewed records that quote these snapshots carry the same source terms for the quoted material and cite the snapshot by sha256.",
+  "root_license": {
+    "spdx": "Apache-2.0",
+    "applies_to": "original Drupal Knowledge material only (code, schemas, tests, fixtures, site templates, reviewed records' own structure and text, documentation)",
+    "relicenses_third_party_material": false,
+    "copyright_owner_asserted": false,
+    "maintainer": "Zarabatana"
+  },
+  "licenses": {
+    "CC-BY-SA-2.0": {
+      "name": "Creative Commons Attribution-ShareAlike 2.0 Generic",
+      "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "attribution_required": true,
+      "share_alike": true,
+      "notes": "Adaptations must be distributed under the same or a compatible licence. The snapshot subtree is kept separable from the Apache-2.0 original work by directory."
+    },
+    "GPL-2.0-or-later": {
+      "name": "GNU General Public License v2.0 or later",
+      "url": "https://www.gnu.org/licenses/old-licenses/gpl-2.0.html",
+      "attribution_required": true,
+      "share_alike": true,
+      "notes": "Copyleft: redistribution must preserve the licence and the copyright notice (E4). Stored here as provenance text only — never compiled, imported, executed or modified."
+    }
+  },
+  "evidence": [
+    {
+      "id": "E1",
+      "title": "Drupal.org Terms of Service, section B (Content)",
+      "url": "https://www.drupal.org/terms",
+      "read_on": "2026-09-21",
+      "quotes": [
+        "Content, including user-generated content like comments and discussions (except for the code) on the Website is licensed under Creative Commons License, Attribution-ShareAlike 2.0",
+        "All code on Drupal.org is licensed under the GNU General Public License version 2 or later.",
+        "Drupal is a registered trademark of Dries Buytaert."
+      ]
+    },
+    {
+      "id": "E2",
+      "title": "Drupal.org Licensing page",
+      "url": "https://www.drupal.org/about/licensing",
+      "read_on": "2026-09-21",
+      "quotes": [
+        "Drupal, and all contributed files that are derivative works of Drupal hosted on Drupal.org, are licensed under the GNU General Public License, version 2 or later.",
+        "All Drupal contributors retain copyright on their code, but agree to release it under the same license as Drupal.",
+        "If you commit that module or theme to a Drupal Git repository, however, then all parts of it must be under the GPL version 2 or later.",
+        "All content on the Drupal.org itself is copyrighted by its original contributors, and is licensed under the Creative Commons Attribution-ShareAlike license 2.0."
+      ]
+    },
+    {
+      "id": "E3",
+      "title": "api.drupal.org site footer, as captured inside this repository's own snapshots",
+      "url": "https://api.drupal.org/api/drupal/deprecated/9",
+      "read_on": "2026-09-21",
+      "in_repository": "sources/snapshots/drupal-api-deprecated-9-p0/ … -p4 (raw HTML, footer text)",
+      "quotes": [
+        "All source code and documentation on this site is released under the terms of the GNU General Public License, version 2 and later.",
+        "Drupal is a registered trademark of Dries Buytaert."
+      ]
+    },
+    {
+      "id": "E4",
+      "title": "Drupal core core/COPYRIGHT.txt (11.x)",
+      "url": "https://git.drupalcode.org/project/drupal/-/raw/11.x/core/COPYRIGHT.txt",
+      "read_on": "2026-09-21",
+      "quotes": [
+        "All Drupal code is Copyright 2001 - present by the original authors.",
+        "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version."
+      ]
+    },
+    {
+      "id": "E5",
+      "title": "coding_standards project repository on git.drupalcode.org — no licence file of its own",
+      "url": "https://git.drupalcode.org/project/coding_standards",
+      "read_on": "2026-09-21",
+      "observations": [
+        "Repository root contains docs/, README.md, mkdocs.yml, logo.png, .gitlab-ci.yml, .gitignore, .cspell-project-words.txt — no LICENSE file.",
+        "GitLab project API reports license: null, license_url: null.",
+        "README.md and mkdocs.yml contain no licence or copyright statement.",
+        "The rendered pages site (project.pages.drupalcode.org/coding_standards/) carries no licence statement; it is generated from this repository (Material for MkDocs)."
+      ],
+      "resolution": "The repository is a Drupal Git repository hosted by Drupal.org; per E2 all parts of a project committed to a Drupal Git repository must be under GPL-2.0-or-later. No project-level statement overrides that."
+    }
+  ],
+  "totals": {
+    "families": 34,
+    "files": 37,
+    "bytes": 2018654,
+    "by_license": {
+      "CC-BY-SA-2.0": 26,
+      "GPL-2.0-or-later": 11
+    }
+  },
+  "unresolved": [],
+  "families": [
+    {
+      "source_id": "drupal-api-11",
+      "title": "Drupal 11 API reference",
+      "trust": "authoritative",
+      "canonical_url": "https://api.drupal.org/api/drupal/11.x",
+      "fetch_url": "https://api.drupal.org/api/drupal/11.x",
+      "origin_domain": "api.drupal.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "api.drupal.org documentation generated from Drupal core source and its doc comments",
+      "license": "GPL-2.0-or-later",
+      "license_evidence": [
+        "E3",
+        "E4"
+      ],
+      "attribution": "Drupal — the original authors (Drupal core contributors); published by api.drupal.org (Drupal Association)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "api.drupal.org declares all of its source code and documentation GPL-2.0-or-later (E3). Attribution granularity: Drupal core attributes itself to 'the original authors' as a whole (E4); no per-author attribution exists to preserve, so the whole-work notice is the required and sufficient form.",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-api-11/ec8e40e7befc5c53f78a56c92db98e9baff0f726032d845bd881e29802c2e818.txt",
+          "sha256": "ec8e40e7befc5c53f78a56c92db98e9baff0f726032d845bd881e29802c2e818",
+          "bytes": 1124
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-apis-guide",
+      "title": "Drupal APIs guide",
+      "trust": "authoritative",
+      "canonical_url": "https://www.drupal.org/docs/develop/drupal-apis",
+      "fetch_url": "https://www.drupal.org/docs/develop/drupal-apis",
+      "origin_domain": "www.drupal.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "Drupal.org site content: documentation pages, project pages, listings, or api-d7 JSON node feeds",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org and its original contributors (the Drupal community)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-apis-guide/644a9dd934245480ebd33f0c67ad4af0ecfa16db0dab5a90dffb0915fd5e3dfb.txt",
+          "sha256": "644a9dd934245480ebd33f0c67ad4af0ecfa16db0dab5a90dffb0915fd5e3dfb",
+          "bytes": 7624
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-core-releases",
+      "title": "Drupal core releases",
+      "trust": "authoritative",
+      "canonical_url": "https://www.drupal.org/project/drupal/releases",
+      "fetch_url": "https://updates.drupal.org/release-history/drupal/current",
+      "origin_domain": "updates.drupal.org",
+      "content_type": "xml",
+      "normalization": "raw_text",
+      "content_class": "Release-history XML feed (project and release metadata)",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org (release-history service) and the projects' maintainers",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "updates.drupal.org is a drupal.org subdomain service of the same Website; its output is Drupal.org content under E1. The material is predominantly factual release metadata (versions, dates, download URLs, hashes).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-core-releases/2c6302dcfe0d2dd98afb22db753b6ee0761b9440555b71b1af2272b9ba84c2fb.txt",
+          "sha256": "2c6302dcfe0d2dd98afb22db753b6ee0761b9440555b71b1af2272b9ba84c2fb",
+          "bytes": 543079
+        },
+        {
+          "path": "sources/snapshots/drupal-core-releases/c7de75d2508c7d134765affdea101e9bc7a4d534d8eaaa97fda3308a14ea0063.txt",
+          "sha256": "c7de75d2508c7d134765affdea101e9bc7a4d534d8eaaa97fda3308a14ea0063",
+          "bytes": 540265
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-core-change-record-policy",
+      "title": "Drupal core change-record policy",
+      "trust": "authoritative",
+      "canonical_url": "https://www.drupal.org/about/core/policies/core-change-policies/change-records",
+      "fetch_url": "https://www.drupal.org/about/core/policies/core-change-policies/change-records",
+      "origin_domain": "www.drupal.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "Drupal.org site content: documentation pages, project pages, listings, or api-d7 JSON node feeds",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org and its original contributors (the Drupal community)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-core-change-record-policy/c205ef0431be72f5d5564b6383fbd6fc46793aebdc8268741bd666d99bf79152.txt",
+          "sha256": "c205ef0431be72f5d5564b6383fbd6fc46793aebdc8268741bd666d99bf79152",
+          "bytes": 2795
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-core-change-records",
+      "title": "Drupal core change records",
+      "trust": "authoritative",
+      "canonical_url": "https://www.drupal.org/list-changes/drupal",
+      "fetch_url": "https://www.drupal.org/list-changes/drupal",
+      "origin_domain": "www.drupal.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "Drupal.org site content: documentation pages, project pages, listings, or api-d7 JSON node feeds",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org and its original contributors (the Drupal community)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-core-change-records/5603068ca984c70c41111c670a82d1dda53d07d1a1dc11bb30280d80b901e514.txt",
+          "sha256": "5603068ca984c70c41111c670a82d1dda53d07d1a1dc11bb30280d80b901e514",
+          "bytes": 4703
+        },
+        {
+          "path": "sources/snapshots/drupal-core-change-records/e554ba391a792676cc84cc4a7c58da270b2320d5007b2cfa453420575526fefb.txt",
+          "sha256": "e554ba391a792676cc84cc4a7c58da270b2320d5007b2cfa453420575526fefb",
+          "bytes": 4649
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-security-core",
+      "title": "Security advisories for Drupal core",
+      "trust": "authoritative",
+      "canonical_url": "https://www.drupal.org/security/core",
+      "fetch_url": "https://www.drupal.org/security/core",
+      "origin_domain": "www.drupal.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "Drupal.org site content: documentation pages, project pages, listings, or api-d7 JSON node feeds",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org and its original contributors (the Drupal community)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-security-core/bac9a6c286e56a5c6e66cbeba200e3400fe73fcb5c2d9d5b98e60dd431891c8e.txt",
+          "sha256": "bac9a6c286e56a5c6e66cbeba200e3400fe73fcb5c2d9d5b98e60dd431891c8e",
+          "bytes": 6760
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-security-contrib",
+      "title": "Security advisories for contributed projects",
+      "trust": "authoritative",
+      "canonical_url": "https://www.drupal.org/security/contrib",
+      "fetch_url": "https://www.drupal.org/security/contrib",
+      "origin_domain": "www.drupal.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "Drupal.org site content: documentation pages, project pages, listings, or api-d7 JSON node feeds",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org and its original contributors (the Drupal community)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-security-contrib/eb46379ccc9af6cdebafdca523d0e6a8158754aed8c8d1b15275c52c095e534e.txt",
+          "sha256": "eb46379ccc9af6cdebafdca523d0e6a8158754aed8c8d1b15275c52c095e534e",
+          "bytes": 7409
+        },
+        {
+          "path": "sources/snapshots/drupal-security-contrib/f389ae0c83baf3301c9f9a1673800cd36ba7d5c687f96a4783ee14263f494d11.txt",
+          "sha256": "f389ae0c83baf3301c9f9a1673800cd36ba7d5c687f96a4783ee14263f494d11",
+          "bytes": 6541
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-security-psa",
+      "title": "Drupal Security Team public service announcements",
+      "trust": "authoritative",
+      "canonical_url": "https://www.drupal.org/security/psa",
+      "fetch_url": "https://www.drupal.org/security/psa",
+      "origin_domain": "www.drupal.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "Drupal.org site content: documentation pages, project pages, listings, or api-d7 JSON node feeds",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org and its original contributors (the Drupal community)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-security-psa/325d64eb555d4c3bd2d724c22b4b954b45c4328c7e34807d1054d40a7f18ecff.txt",
+          "sha256": "325d64eb555d4c3bd2d724c22b4b954b45c4328c7e34807d1054d40a7f18ecff",
+          "bytes": 5421
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-secure-code",
+      "title": "Writing secure code for Drupal",
+      "trust": "authoritative",
+      "canonical_url": "https://www.drupal.org/docs/administering-a-drupal-site/security-in-drupal/writing-secure-code-for-drupal",
+      "fetch_url": "https://www.drupal.org/docs/administering-a-drupal-site/security-in-drupal/writing-secure-code-for-drupal",
+      "origin_domain": "www.drupal.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "Drupal.org site content: documentation pages, project pages, listings, or api-d7 JSON node feeds",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org and its original contributors (the Drupal community)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-secure-code/f57c9014ebb02fdef09c649f4d56e7645a727d5075034cd13e19d1f92d7c31a8.txt",
+          "sha256": "f57c9014ebb02fdef09c649f4d56e7645a727d5075034cd13e19d1f92d7c31a8",
+          "bytes": 5603
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-coding-standards-project",
+      "title": "Drupal Coding Standards project",
+      "trust": "authoritative",
+      "canonical_url": "https://www.drupal.org/project/coding_standards",
+      "fetch_url": "https://www.drupal.org/project/coding_standards",
+      "origin_domain": "www.drupal.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "Drupal.org site content: documentation pages, project pages, listings, or api-d7 JSON node feeds",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org and its original contributors (the Drupal community)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-coding-standards-project/9ec69ae06e588174fe2367f679ca1f12e2321c6411dd02c0b9968f058feb4862.txt",
+          "sha256": "9ec69ae06e588174fe2367f679ca1f12e2321c6411dd02c0b9968f058feb4862",
+          "bytes": 3085
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-coding-standards-current",
+      "title": "Drupal Coding Standards",
+      "trust": "authoritative",
+      "canonical_url": "https://project.pages.drupalcode.org/coding_standards/",
+      "fetch_url": "https://project.pages.drupalcode.org/coding_standards/",
+      "origin_domain": "project.pages.drupalcode.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "Rendered documentation of a Drupal.org project's Git repository (Material for MkDocs)",
+      "license": "GPL-2.0-or-later",
+      "license_evidence": [
+        "E2",
+        "E5"
+      ],
+      "attribution": "Drupal Coding Standards project contributors (a Drupal.org project); published by Drupal.org",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "The project declares no licence of its own (E5). It is a Drupal Git repository, and Drupal.org's policy is that all parts of such a repository are GPL-2.0-or-later (E2). Resolved as GPL-2.0-or-later on that basis; not CC BY-SA, because the content is repository content rather than Drupal.org site content.",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-coding-standards-current/2e58cdd9d0b1642b5a461970d2386bacb187b1621aeadf1db62309b5ca85045b.txt",
+          "sha256": "2e58cdd9d0b1642b5a461970d2386bacb187b1621aeadf1db62309b5ca85045b",
+          "bytes": 653
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-coding-standards-change-records",
+      "title": "Coding Standards change records",
+      "trust": "authoritative",
+      "canonical_url": "https://www.drupal.org/list-changes/coding_standards",
+      "fetch_url": "https://www.drupal.org/list-changes/coding_standards",
+      "origin_domain": "www.drupal.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "Drupal.org site content: documentation pages, project pages, listings, or api-d7 JSON node feeds",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org and its original contributors (the Drupal community)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-coding-standards-change-records/b7bf0a88582c743acdfe3d10335a0a08211a923715144bce3d5f9bc0fc16b607.txt",
+          "sha256": "b7bf0a88582c743acdfe3d10335a0a08211a923715144bce3d5f9bc0fc16b607",
+          "bytes": 972
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-update-project-release-semantics",
+      "title": "Drupal 11 ProjectRelease value object",
+      "trust": "authoritative",
+      "canonical_url": "https://api.drupal.org/api/drupal/core%21modules%21update%21src%21ProjectRelease.php/class/ProjectRelease/11.x",
+      "fetch_url": "https://git.drupalcode.org/project/drupal/-/raw/11.4.5/core/modules/update/src/ProjectRelease.php",
+      "origin_domain": "git.drupalcode.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "Drupal core source file fetched verbatim from the core Git repository at a pinned tag",
+      "license": "GPL-2.0-or-later",
+      "license_evidence": [
+        "E2",
+        "E4"
+      ],
+      "attribution": "Drupal — the original authors (Drupal core contributors)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Verbatim core source, stored so a reviewed rule can quote the lines it rests on. GPL notice E4 applies to the whole work.",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-update-project-release-semantics/5ceb699008f74d539aaabed9e02c560071f1d90508023cb1f11735002357cd45.txt",
+          "sha256": "5ceb699008f74d539aaabed9e02c560071f1d90508023cb1f11735002357cd45",
+          "bytes": 6972
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-update-status-security-semantics",
+      "title": "Drupal 11 update status calculation",
+      "trust": "authoritative",
+      "canonical_url": "https://api.drupal.org/api/drupal/core%21modules%21update%21update.compare.inc/function/update_calculate_project_update_status/11.x",
+      "fetch_url": "https://git.drupalcode.org/project/drupal/-/raw/11.4.5/core/modules/update/update.compare.inc",
+      "origin_domain": "git.drupalcode.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "Drupal core source file fetched verbatim from the core Git repository at a pinned tag",
+      "license": "GPL-2.0-or-later",
+      "license_evidence": [
+        "E2",
+        "E4"
+      ],
+      "attribution": "Drupal — the original authors (Drupal core contributors)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Verbatim core source, stored so a reviewed rule can quote the lines it rests on. GPL notice E4 applies to the whole work.",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-update-status-security-semantics/8d7431ff04ac7d80d830e60f0dbc8fbfd24ac36c0e16d9966c2ed74782726546.txt",
+          "sha256": "8d7431ff04ac7d80d830e60f0dbc8fbfd24ac36c0e16d9966c2ed74782726546",
+          "bytes": 23273
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-update-manager-interface-semantics",
+      "title": "Drupal 11 UpdateManagerInterface status constants",
+      "trust": "authoritative",
+      "canonical_url": "https://api.drupal.org/api/drupal/core%21modules%21update%21src%21UpdateManagerInterface.php/interface/UpdateManagerInterface/11.x",
+      "fetch_url": "https://git.drupalcode.org/project/drupal/-/raw/11.4.5/core/modules/update/src/UpdateManagerInterface.php",
+      "origin_domain": "git.drupalcode.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "Drupal core source file fetched verbatim from the core Git repository at a pinned tag",
+      "license": "GPL-2.0-or-later",
+      "license_evidence": [
+        "E2",
+        "E4"
+      ],
+      "attribution": "Drupal — the original authors (Drupal core contributors)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Verbatim core source, stored so a reviewed rule can quote the lines it rests on. GPL notice E4 applies to the whole work.",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-update-manager-interface-semantics/5076c3ad1871e97b198e7dda5caf20084cf4514403025ea751153ab212b879eb.txt",
+          "sha256": "5076c3ad1871e97b198e7dda5caf20084cf4514403025ea751153ab212b879eb",
+          "bytes": 4814
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-contrib-token-releases",
+      "title": "Token module release history",
+      "trust": "ecosystem",
+      "canonical_url": "https://www.drupal.org/project/token/releases",
+      "fetch_url": "https://updates.drupal.org/release-history/token/current",
+      "origin_domain": "updates.drupal.org",
+      "content_type": "xml",
+      "normalization": "raw_text",
+      "content_class": "Release-history XML feed (project and release metadata)",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org (release-history service) and the projects' maintainers",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "updates.drupal.org is a drupal.org subdomain service of the same Website; its output is Drupal.org content under E1. The material is predominantly factual release metadata (versions, dates, download URLs, hashes).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-contrib-token-releases/271ad3567d24b6f4398cbbf1201e2dfabba2b93e296b8b52df41628a13230219.txt",
+          "sha256": "271ad3567d24b6f4398cbbf1201e2dfabba2b93e296b8b52df41628a13230219",
+          "bytes": 24195
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-contrib-pathauto-releases",
+      "title": "Pathauto module release history",
+      "trust": "ecosystem",
+      "canonical_url": "https://www.drupal.org/project/pathauto/releases",
+      "fetch_url": "https://updates.drupal.org/release-history/pathauto/current",
+      "origin_domain": "updates.drupal.org",
+      "content_type": "xml",
+      "normalization": "raw_text",
+      "content_class": "Release-history XML feed (project and release metadata)",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org (release-history service) and the projects' maintainers",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "updates.drupal.org is a drupal.org subdomain service of the same Website; its output is Drupal.org content under E1. The material is predominantly factual release metadata (versions, dates, download URLs, hashes).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-contrib-pathauto-releases/f887eea8671621502c2fb9f590f2866df2a41facff686ca016d60fa2d7984985.txt",
+          "sha256": "f887eea8671621502c2fb9f590f2866df2a41facff686ca016d60fa2d7984985",
+          "bytes": 25638
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-security-advisories-core",
+      "title": "Drupal core security advisories (structured)",
+      "trust": "authoritative",
+      "canonical_url": "https://www.drupal.org/security/core",
+      "fetch_url": "https://www.drupal.org/api-d7/node.json?type=sa&field_project=3060&sort=created&direction=DESC&limit=20",
+      "origin_domain": "www.drupal.org",
+      "content_type": "json",
+      "normalization": "raw_text",
+      "content_class": "Drupal.org site content: documentation pages, project pages, listings, or api-d7 JSON node feeds",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org and its original contributors (the Drupal community)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-security-advisories-core/2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4.txt",
+          "sha256": "2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+          "bytes": 154005
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-security-advisories-recent",
+      "title": "Drupal security advisories, most recent (structured)",
+      "trust": "authoritative",
+      "canonical_url": "https://www.drupal.org/security/contrib",
+      "fetch_url": "https://www.drupal.org/api-d7/node.json?type=sa&sort=created&direction=DESC&limit=20",
+      "origin_domain": "www.drupal.org",
+      "content_type": "json",
+      "normalization": "raw_text",
+      "content_class": "Drupal.org site content: documentation pages, project pages, listings, or api-d7 JSON node feeds",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org and its original contributors (the Drupal community)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-security-advisories-recent/ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c.txt",
+          "sha256": "ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+          "bytes": 82719
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-upgrade-process-overview",
+      "title": "Drupal upgrade process overview",
+      "trust": "authoritative",
+      "canonical_url": "https://www.drupal.org/docs/upgrading-drupal/upgrading-drupal/upgrade-process-overview",
+      "fetch_url": "https://www.drupal.org/docs/upgrading-drupal/upgrading-drupal/upgrade-process-overview",
+      "origin_domain": "www.drupal.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "Drupal.org site content: documentation pages, project pages, listings, or api-d7 JSON node feeds",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org and its original contributors (the Drupal community)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-upgrade-process-overview/82c4fc596dbd7339b25a5c21f7d8c50a6288a7d1adff8017784055790d8a5410.txt",
+          "sha256": "82c4fc596dbd7339b25a5c21f7d8c50a6288a7d1adff8017784055790d8a5410",
+          "bytes": 2439
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-upgrade-9-to-10",
+      "title": "How to upgrade from Drupal 9 to Drupal 10",
+      "trust": "authoritative",
+      "canonical_url": "https://www.drupal.org/docs/upgrading-drupal/upgrading-from-drupal-8-or-later/how-to-upgrade-from-drupal-9-to-drupal-10",
+      "fetch_url": "https://www.drupal.org/docs/upgrading-drupal/upgrading-from-drupal-8-or-later/how-to-upgrade-from-drupal-9-to-drupal-10",
+      "origin_domain": "www.drupal.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "Drupal.org site content: documentation pages, project pages, listings, or api-d7 JSON node feeds",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org and its original contributors (the Drupal community)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-upgrade-9-to-10/890acda19673beebea7c6b38b96b39abe3eb07f06dced789474101f07debef0c.txt",
+          "sha256": "890acda19673beebea7c6b38b96b39abe3eb07f06dced789474101f07debef0c",
+          "bytes": 11408
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-upgrade-10-to-11",
+      "title": "How to upgrade from Drupal 10 to Drupal 11",
+      "trust": "authoritative",
+      "canonical_url": "https://www.drupal.org/docs/upgrading-drupal/upgrading-drupal/how-to-upgrade-from-drupal-10-to-drupal-11",
+      "fetch_url": "https://www.drupal.org/docs/upgrading-drupal/upgrading-drupal/how-to-upgrade-from-drupal-10-to-drupal-11",
+      "origin_domain": "www.drupal.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "Drupal.org site content: documentation pages, project pages, listings, or api-d7 JSON node feeds",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org and its original contributors (the Drupal community)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-upgrade-10-to-11/caed10fd7ac71226b75e303b3641b1f5dbfde95c7705e8f13613827631dc2578.txt",
+          "sha256": "caed10fd7ac71226b75e303b3641b1f5dbfde95c7705e8f13613827631dc2578",
+          "bytes": 6736
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-upgrade-11-to-12",
+      "title": "How to upgrade from Drupal 11 to Drupal 12",
+      "trust": "authoritative",
+      "canonical_url": "https://www.drupal.org/docs/upgrading-drupal/upgrading-drupal/how-to-upgrade-from-drupal-11-to-drupal-12",
+      "fetch_url": "https://www.drupal.org/docs/upgrading-drupal/upgrading-drupal/how-to-upgrade-from-drupal-11-to-drupal-12",
+      "origin_domain": "www.drupal.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "Drupal.org site content: documentation pages, project pages, listings, or api-d7 JSON node feeds",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org and its original contributors (the Drupal community)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-upgrade-11-to-12/9138db90ff9288c683ef29d6be46c5e611fddf3fdde519b81449fce5604e5ac2.txt",
+          "sha256": "9138db90ff9288c683ef29d6be46c5e611fddf3fdde519b81449fce5604e5ac2",
+          "bytes": 4916
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-php-requirements",
+      "title": "Drupal PHP requirements",
+      "trust": "authoritative",
+      "canonical_url": "https://www.drupal.org/docs/getting-started/system-requirements/php-requirements",
+      "fetch_url": "https://www.drupal.org/docs/getting-started/system-requirements/php-requirements",
+      "origin_domain": "www.drupal.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "Drupal.org site content: documentation pages, project pages, listings, or api-d7 JSON node feeds",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org and its original contributors (the Drupal community)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-php-requirements/2b19eb6eb8d32ef430bd6227142cfaf54e631ab5d707ac2cdb98403ecdd58e21.txt",
+          "sha256": "2b19eb6eb8d32ef430bd6227142cfaf54e631ab5d707ac2cdb98403ecdd58e21",
+          "bytes": 8533
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-api-deprecated-9-p0",
+      "title": "Drupal 9 deprecated API index, page 0",
+      "trust": "authoritative",
+      "canonical_url": "https://api.drupal.org/api/drupal/deprecated/9",
+      "fetch_url": "https://api.drupal.org/api/drupal/deprecated/9?page=0",
+      "origin_domain": "api.drupal.org",
+      "content_type": "html",
+      "normalization": "raw_text",
+      "content_class": "api.drupal.org documentation generated from Drupal core source and its doc comments",
+      "license": "GPL-2.0-or-later",
+      "license_evidence": [
+        "E3",
+        "E4"
+      ],
+      "attribution": "Drupal — the original authors (Drupal core contributors); published by api.drupal.org (Drupal Association)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "api.drupal.org declares all of its source code and documentation GPL-2.0-or-later (E3). Attribution granularity: Drupal core attributes itself to 'the original authors' as a whole (E4); no per-author attribution exists to preserve, so the whole-work notice is the required and sufficient form.",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-api-deprecated-9-p0/a907598611296099dcb871b719b4476321e94d21c0defa1f45aa4166c2e99607.txt",
+          "sha256": "a907598611296099dcb871b719b4476321e94d21c0defa1f45aa4166c2e99607",
+          "bytes": 84950
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-api-deprecated-9-p1",
+      "title": "Drupal 9 deprecated API index, page 1",
+      "trust": "authoritative",
+      "canonical_url": "https://api.drupal.org/api/drupal/deprecated/9",
+      "fetch_url": "https://api.drupal.org/api/drupal/deprecated/9?page=1",
+      "origin_domain": "api.drupal.org",
+      "content_type": "html",
+      "normalization": "raw_text",
+      "content_class": "api.drupal.org documentation generated from Drupal core source and its doc comments",
+      "license": "GPL-2.0-or-later",
+      "license_evidence": [
+        "E3",
+        "E4"
+      ],
+      "attribution": "Drupal — the original authors (Drupal core contributors); published by api.drupal.org (Drupal Association)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "api.drupal.org declares all of its source code and documentation GPL-2.0-or-later (E3). Attribution granularity: Drupal core attributes itself to 'the original authors' as a whole (E4); no per-author attribution exists to preserve, so the whole-work notice is the required and sufficient form.",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-api-deprecated-9-p1/b4732697f35f5875305eb01427b753d902c47e297f9f741e905d52e8f83decb8.txt",
+          "sha256": "b4732697f35f5875305eb01427b753d902c47e297f9f741e905d52e8f83decb8",
+          "bytes": 83376
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-api-deprecated-9-p2",
+      "title": "Drupal 9 deprecated API index, page 2",
+      "trust": "authoritative",
+      "canonical_url": "https://api.drupal.org/api/drupal/deprecated/9",
+      "fetch_url": "https://api.drupal.org/api/drupal/deprecated/9?page=2",
+      "origin_domain": "api.drupal.org",
+      "content_type": "html",
+      "normalization": "raw_text",
+      "content_class": "api.drupal.org documentation generated from Drupal core source and its doc comments",
+      "license": "GPL-2.0-or-later",
+      "license_evidence": [
+        "E3",
+        "E4"
+      ],
+      "attribution": "Drupal — the original authors (Drupal core contributors); published by api.drupal.org (Drupal Association)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "api.drupal.org declares all of its source code and documentation GPL-2.0-or-later (E3). Attribution granularity: Drupal core attributes itself to 'the original authors' as a whole (E4); no per-author attribution exists to preserve, so the whole-work notice is the required and sufficient form.",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-api-deprecated-9-p2/9b9b29988d9a578f1c1aa42e199468eb01c48ec4d1f47e0d04720e494547288c.txt",
+          "sha256": "9b9b29988d9a578f1c1aa42e199468eb01c48ec4d1f47e0d04720e494547288c",
+          "bytes": 80452
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-api-deprecated-9-p3",
+      "title": "Drupal 9 deprecated API index, page 3",
+      "trust": "authoritative",
+      "canonical_url": "https://api.drupal.org/api/drupal/deprecated/9",
+      "fetch_url": "https://api.drupal.org/api/drupal/deprecated/9?page=3",
+      "origin_domain": "api.drupal.org",
+      "content_type": "html",
+      "normalization": "raw_text",
+      "content_class": "api.drupal.org documentation generated from Drupal core source and its doc comments",
+      "license": "GPL-2.0-or-later",
+      "license_evidence": [
+        "E3",
+        "E4"
+      ],
+      "attribution": "Drupal — the original authors (Drupal core contributors); published by api.drupal.org (Drupal Association)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "api.drupal.org declares all of its source code and documentation GPL-2.0-or-later (E3). Attribution granularity: Drupal core attributes itself to 'the original authors' as a whole (E4); no per-author attribution exists to preserve, so the whole-work notice is the required and sufficient form.",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-api-deprecated-9-p3/322ca48f208aaa048e06628a58371515c74386c9079123679eecd1687e8a477f.txt",
+          "sha256": "322ca48f208aaa048e06628a58371515c74386c9079123679eecd1687e8a477f",
+          "bytes": 82298
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-api-deprecated-9-p4",
+      "title": "Drupal 9 deprecated API index, page 4",
+      "trust": "authoritative",
+      "canonical_url": "https://api.drupal.org/api/drupal/deprecated/9",
+      "fetch_url": "https://api.drupal.org/api/drupal/deprecated/9?page=4",
+      "origin_domain": "api.drupal.org",
+      "content_type": "html",
+      "normalization": "raw_text",
+      "content_class": "api.drupal.org documentation generated from Drupal core source and its doc comments",
+      "license": "GPL-2.0-or-later",
+      "license_evidence": [
+        "E3",
+        "E4"
+      ],
+      "attribution": "Drupal — the original authors (Drupal core contributors); published by api.drupal.org (Drupal Association)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "api.drupal.org declares all of its source code and documentation GPL-2.0-or-later (E3). Attribution granularity: Drupal core attributes itself to 'the original authors' as a whole (E4); no per-author attribution exists to preserve, so the whole-work notice is the required and sufficient form.",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-api-deprecated-9-p4/5a0d6b64ef0272324ee322b307b2c253a4b5a5ea16805c937bd9c56b12d3c75d.txt",
+          "sha256": "5a0d6b64ef0272324ee322b307b2c253a4b5a5ea16805c937bd9c56b12d3c75d",
+          "bytes": 58250
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-core-change-notices",
+      "title": "Drupal core change records (structured)",
+      "trust": "authoritative",
+      "canonical_url": "https://www.drupal.org/list-changes/drupal",
+      "fetch_url": "https://www.drupal.org/api-d7/node.json?type=changenotice&field_project=3060&sort=created&direction=DESC&limit=20",
+      "origin_domain": "www.drupal.org",
+      "content_type": "json",
+      "normalization": "raw_text",
+      "content_class": "Drupal.org site content: documentation pages, project pages, listings, or api-d7 JSON node feeds",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org and its original contributors (the Drupal community)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-core-change-notices/2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb.txt",
+          "sha256": "2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+          "bytes": 73477
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-trusted-host-settings",
+      "title": "Drupal trusted host settings",
+      "trust": "authoritative",
+      "canonical_url": "https://www.drupal.org/docs/installing-drupal/trusted-host-settings",
+      "fetch_url": "https://www.drupal.org/docs/installing-drupal/trusted-host-settings",
+      "origin_domain": "www.drupal.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "Drupal.org site content: documentation pages, project pages, listings, or api-d7 JSON node feeds",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org and its original contributors (the Drupal community)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-trusted-host-settings/11e4f4be0c3b46177c5f8fa6ad0fa7d76bba3fd08f61d9b06252b930b0f7f407.txt",
+          "sha256": "11e4f4be0c3b46177c5f8fa6ad0fa7d76bba3fd08f61d9b06252b930b0f7f407",
+          "bytes": 10027
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-internal-page-cache",
+      "title": "Drupal Internal Page Cache",
+      "trust": "authoritative",
+      "canonical_url": "https://www.drupal.org/docs/administering-a-drupal-site/internal-page-cache",
+      "fetch_url": "https://www.drupal.org/docs/administering-a-drupal-site/internal-page-cache",
+      "origin_domain": "www.drupal.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "Drupal.org site content: documentation pages, project pages, listings, or api-d7 JSON node feeds",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org and its original contributors (the Drupal community)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-internal-page-cache/46b0c8959410ff7f48b88216fd8ddeb4a0d794b1ced02919c1707b8048663b68.txt",
+          "sha256": "46b0c8959410ff7f48b88216fd8ddeb4a0d794b1ced02919c1707b8048663b68",
+          "bytes": 3903
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-cache-tags",
+      "title": "Drupal cache tags",
+      "trust": "authoritative",
+      "canonical_url": "https://www.drupal.org/docs/develop/drupal-apis/cache-api/cache-tags",
+      "fetch_url": "https://www.drupal.org/docs/develop/drupal-apis/cache-api/cache-tags",
+      "origin_domain": "www.drupal.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "Drupal.org site content: documentation pages, project pages, listings, or api-d7 JSON node feeds",
+      "license": "CC-BY-SA-2.0",
+      "license_evidence": [
+        "E1",
+        "E2"
+      ],
+      "attribution": "Drupal.org and its original contributors (the Drupal community)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-cache-tags/35e950799ef519216d7b7f02340a70dae591c29214e9421543051df38762989b.txt",
+          "sha256": "35e950799ef519216d7b7f02340a70dae591c29214e9421543051df38762989b",
+          "bytes": 9711
+        }
+      ]
+    },
+    {
+      "source_id": "drupal-default-settings-php",
+      "title": "Drupal default.settings.php",
+      "trust": "authoritative",
+      "canonical_url": "https://api.drupal.org/api/drupal/sites%21default%21default.settings.php/11",
+      "fetch_url": "https://api.drupal.org/api/drupal/sites%21default%21default.settings.php/11",
+      "origin_domain": "api.drupal.org",
+      "content_type": "html",
+      "normalization": "html_text",
+      "content_class": "api.drupal.org documentation generated from Drupal core source and its doc comments",
+      "license": "GPL-2.0-or-later",
+      "license_evidence": [
+        "E3",
+        "E4"
+      ],
+      "attribution": "Drupal — the original authors (Drupal core contributors); published by api.drupal.org (Drupal Association)",
+      "attribution_required": true,
+      "share_alike": true,
+      "redistribution_status": "permitted_with_attribution",
+      "notes": "api.drupal.org declares all of its source code and documentation GPL-2.0-or-later (E3). Attribution granularity: Drupal core attributes itself to 'the original authors' as a whole (E4); no per-author attribution exists to preserve, so the whole-work notice is the required and sufficient form.",
+      "files": [
+        {
+          "path": "sources/snapshots/drupal-default-settings-php/1e2df3981d9cc138fa916171a710909b3e6922ebd978252b453b903e540b4a39.txt",
+          "sha256": "1e2df3981d9cc138fa916171a710909b3e6922ebd978252b453b903e540b4a39",
+          "bytes": 35879
+        }
+      ]
+    }
+  ]
+}

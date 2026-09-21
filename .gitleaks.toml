@@ -1,0 +1,17 @@
+# gitleaks configuration for Drupal Knowledge Community.
+#
+# The default ruleset applies. Two known false positives are allowlisted:
+# SHA-256 digests in the release checksums (high-entropy hex, not a key), and
+# the deliberately fake token a test uses to prove secret material is refused.
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "known non-secrets"
+paths = [
+  '''release/checksums\.json''',
+]
+regexes = [
+  '''glpat-AbCdEfGhIjKlMnOpQrSt''',
+]

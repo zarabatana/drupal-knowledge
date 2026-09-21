@@ -1,0 +1,409 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/knowledge-record-v0.1.json",
+  "title": "Drupal Knowledge record",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "summary",
+    "kind",
+    "domains",
+    "severity",
+    "review_status",
+    "sources",
+    "version_applicability",
+    "actions",
+    "checks",
+    "evidence_requirements",
+    "automation_hints",
+    "enforcement",
+    "related"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^drupal(?:\\.[a-z0-9]+(?:-[a-z0-9]+)*){2,}$"
+    },
+    "title": {"type": "string", "minLength": 3},
+    "summary": {"type": "string", "minLength": 10},
+    "kind": {
+      "enum": [
+        "principle",
+        "requirement",
+        "guidance",
+        "api",
+        "security-guidance",
+        "version-change",
+        "coding-standard",
+        "architecture-policy"
+      ]
+    },
+    "domains": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string"}
+    },
+    "severity": {"enum": ["info", "low", "moderate", "high", "critical"]},
+    "review_status": {
+      "enum": ["reviewed", "seed_needs_human_review", "internal_review_only"]
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["source_id", "locator"],
+        "properties": {
+          "source_id": {"type": "string"},
+          "locator": {"type": "string"},
+          "title": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "version_applicability": {
+      "type": "object",
+      "properties": {
+        "drupal_core": {"$ref": "#/$defs/applicability_list"},
+        "php": {"$ref": "#/$defs/applicability_list"},
+        "modules": {"$ref": "#/$defs/package_applicability_list"},
+        "themes": {"$ref": "#/$defs/package_applicability_list"},
+        "notes": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "machine_applicability": {
+      "type": "object",
+      "required": ["schema_version", "condition"],
+      "properties": {
+        "schema_version": {"const": "0.1"},
+        "condition": {"$ref": "#/$defs/machine_condition"},
+        "notes": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "machine_finding": {
+      "type": "object",
+      "required": [
+        "schema_version",
+        "condition_id",
+        "evidence_domain",
+        "finding_type",
+        "assertion",
+        "human_title",
+        "requires",
+        "severity",
+        "confirmation_authority",
+        "states",
+        "non_authoritative_signals_ignored",
+        "provenance_requirements",
+        "identity",
+        "deduplication",
+        "term_semantics",
+        "runtime_status"
+      ],
+      "properties": {
+        "schema_version": {"const": "0.1"},
+        "condition_id": {"$ref": "#/$defs/machine_symbol"},
+        "evidence_domain": {"enum": ["release_lifecycle_assessment"]},
+        "finding_type": {"enum": ["release_lifecycle"]},
+        "assertion": {"$ref": "#/$defs/machine_symbol"},
+        "human_title": {"type": "string", "minLength": 10},
+        "assertion_scope": {"type": "string"},
+        "requires": {"$ref": "#/$defs/machine_finding_requires"},
+        "severity": {
+          "type": "object",
+          "required": ["state", "source"],
+          "properties": {
+            "state": {"const": "not_established"},
+            "source": {"type": "null"},
+            "rationale": {"type": "string"}
+          },
+          "additionalProperties": false
+        },
+        "confirmation_authority": {
+          "type": "object",
+          "required": [
+            "status",
+            "semantic_authority_refs",
+            "required_semantic_authority_category"
+          ],
+          "properties": {
+            "status": {"enum": ["not_established", "semantic_authority_reviewed"]},
+            "semantic_authority_refs": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9.-]*$"
+              }
+            },
+            "required_semantic_authority_category": {"$ref": "#/$defs/machine_symbol"},
+            "semantic_authority_version_scope": {
+              "type": "object",
+              "required": ["drupal_core_majors", "basis"],
+              "properties": {
+                "drupal_core_majors": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {"type": "string", "pattern": "^[0-9]+$"}
+                },
+                "basis": {"type": "string", "minLength": 20}
+              },
+              "additionalProperties": false
+            },
+            "rationale": {"type": "string"}
+          },
+          "additionalProperties": false
+        },
+        "states": {
+          "type": "object",
+          "required": [
+            "term_present_and_context_current",
+            "term_present_and_semantic_authority_version_out_of_scope",
+            "term_present_and_context_stale",
+            "term_absent_in_matched_row",
+            "applicability_not_definitive",
+            "release_not_found",
+            "core_version_unknown",
+            "context_not_canonical",
+            "assessment_invalid"
+          ],
+          "properties": {
+            "term_present_and_context_current": {"enum": ["candidate", "confirmed"]},
+            "term_present_and_semantic_authority_version_out_of_scope": {"const": "candidate"},
+            "applicability_not_definitive": {"const": "unknown"},
+            "term_present_and_context_stale": {"const": "historical_candidate"},
+            "term_absent_in_matched_row": {"const": "not_observed"},
+            "release_not_found": {"const": "unknown"},
+            "core_version_unknown": {"const": "unknown"},
+            "context_not_canonical": {"const": "unknown"},
+            "assessment_invalid": {"const": "unknown"}
+          },
+          "additionalProperties": false
+        },
+        "non_authoritative_signals_ignored": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "branch_listed_in_source_supported_branches",
+              "source_supported_branches_presence_or_absence",
+              "source_security_coverage_text_or_covered_attribute",
+              "release_type_term_security_update",
+              "release_ordering_or_source_order_index",
+              "newer_release_existence"
+            ]
+          }
+        },
+        "provenance_requirements": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/machine_symbol"}
+        },
+        "identity": {
+          "type": "object",
+          "required": ["algorithm", "timestamp_allowed", "key_fields"],
+          "properties": {
+            "algorithm": {"const": "sha256_stable_json"},
+            "timestamp_allowed": {"const": false},
+            "key_fields": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"$ref": "#/$defs/machine_symbol"}
+            },
+            "excluded_fields": {
+              "type": "array",
+              "items": {"$ref": "#/$defs/machine_symbol"}
+            }
+          },
+          "additionalProperties": false
+        },
+        "deduplication": {
+          "type": "object",
+          "required": ["max_instances", "key_fields"],
+          "properties": {
+            "max_instances": {"const": 1},
+            "key_fields": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"$ref": "#/$defs/machine_symbol"}
+            },
+            "collapsed_read_paths": {
+              "type": "array",
+              "items": {"type": "string"}
+            }
+          },
+          "additionalProperties": false
+        },
+        "term_semantics": {
+          "type": "object",
+          "required": ["state", "meaning_bearing_claims_authorized"],
+          "properties": {
+            "state": {
+              "enum": [
+                "TERM_MEANING_REQUIRES_ADDITIONAL_AUTHORITY",
+                "DRUPAL_UPDATE_STATUS_SEMANTICS_REVIEWED"
+              ]
+            },
+            "meaning_bearing_claims_authorized": {"type": "boolean"},
+            "authorized_meaning": {"type": "string", "minLength": 40},
+            "forbidden_claims": {
+              "type": "array",
+              "items": {"$ref": "#/$defs/machine_symbol"}
+            },
+            "required_future_source_category": {"type": "string"}
+          },
+          "additionalProperties": false
+        },
+        "runtime_status": {"const": "executed_by_reviewed_finding_runtime"},
+        "notes": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "project_applicability": {"type": "object"},
+    "actions": {"type": "array", "items": {"type": "string"}},
+    "checks": {"type": "array", "items": {"type": "string"}},
+    "evidence_requirements": {"type": "array", "items": {"type": "string"}},
+    "automation_hints": {"type": "array", "items": {"type": "string"}},
+    "enforcement": {
+      "type": "object",
+      "required": ["intent", "rationale"],
+      "properties": {
+        "intent": {"enum": ["blocking", "non_blocking", "advisory"]},
+        "rationale": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "related": {"type": "array", "items": {"type": "string"}},
+    "supersedes": {"type": "array", "items": {"type": "string"}},
+    "superseded_by": {"type": "array", "items": {"type": "string"}},
+    "coverage": {"type": "string"}
+  },
+  "$defs": {
+    "applicability": {
+      "type": "object",
+      "required": ["constraint", "status"],
+      "properties": {
+        "constraint": {"type": "string"},
+        "status": {"enum": ["applicable", "introduced", "deprecated", "removed", "unknown"]},
+        "introduced": {"type": ["string", "null"]},
+        "deprecated": {"type": ["string", "null"]},
+        "removed": {"type": ["string", "null"]},
+        "notes": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "package_applicability": {
+      "allOf": [
+        {"$ref": "#/$defs/applicability"},
+        {
+          "type": "object",
+          "properties": {
+            "name": {"type": "string"}
+          }
+        }
+      ]
+    },
+    "applicability_list": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/applicability"}
+    },
+    "package_applicability_list": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/package_applicability"}
+    },
+    "machine_symbol": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+    },
+    "machine_finding_requires": {
+      "type": "object",
+      "required": [
+        "evaluation_state",
+        "exact_release_match",
+        "context_relation",
+        "canonical_context_id",
+        "source_field_path",
+        "source_term_name",
+        "source_term_value",
+        "match_mode"
+      ],
+      "properties": {
+        "evaluation_state": {"const": "evaluated"},
+        "exact_release_match": {"const": true},
+        "context_relation": {"const": "current"},
+        "canonical_context_id": {"const": "drupal-core-release-lifecycle"},
+        "source_field_path": {"const": "/project/releases/release/terms/term/value"},
+        "source_term_name": {"const": "Release type"},
+        "source_term_value": {"const": "Insecure"},
+        "match_mode": {"const": "literal_exact_string"}
+      },
+      "additionalProperties": false
+    },
+    "fact_path": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*(?:\\.[a-z][a-z0-9]*(?:_[a-z0-9]+)*)*$"
+    },
+    "machine_condition": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["all"],
+          "properties": {
+            "all": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"$ref": "#/$defs/machine_condition"}
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["any"],
+          "properties": {
+            "any": {
+              "type": "array",
+              "minItems": 1,
+              "items": {"$ref": "#/$defs/machine_condition"}
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["not"],
+          "properties": {
+            "not": {"$ref": "#/$defs/machine_condition"}
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["operator", "fact"],
+          "properties": {
+            "id": {"type": "string"},
+            "operator": {
+              "enum": [
+                "fact_known",
+                "equals",
+                "list_contains",
+                "list_not_contains",
+                "list_non_empty",
+                "version_matches"
+              ]
+            },
+            "fact": {"$ref": "#/$defs/fact_path"},
+            "path": {"$ref": "#/$defs/fact_path"},
+            "value": {},
+            "item_key": {"type": "string"},
+            "constraint": {"type": "string"}
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "additionalProperties": false
+}

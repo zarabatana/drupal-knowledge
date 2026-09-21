@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/applicability-resolution-v0.1.json",
+  "title": "Drupal Knowledge applicability resolution output",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "resolver",
+    "analysis",
+    "knowledge_set",
+    "summary",
+    "results"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "resolver": {
+      "type": "object",
+      "required": ["name", "version", "mode"],
+      "properties": {
+        "name": {"const": "drupal-knowledge-applicability-resolver"},
+        "version": {"const": "0.1"},
+        "mode": {"const": "applicability-only"}
+      },
+      "additionalProperties": false
+    },
+    "analysis": {
+      "type": "object",
+      "required": ["schema_version", "project_id", "analysis_sha256"],
+      "properties": {
+        "schema_version": {"const": "0.1"},
+        "project_id": {"type": "string"},
+        "analysis_sha256": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "knowledge_set": {
+      "type": "object",
+      "required": ["version", "record_count", "records_sha256"],
+      "properties": {
+        "version": {"type": "string"},
+        "record_count": {"type": "integer", "minimum": 0},
+        "records_sha256": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "applicability_counts",
+        "applicable_effective_enforcement_counts"
+      ],
+      "properties": {
+        "applicability_counts": {
+          "type": "object",
+          "required": [
+            "applicable",
+            "not_applicable",
+            "requires_human_review",
+            "unknown"
+          ],
+          "properties": {
+            "applicable": {"type": "integer", "minimum": 0},
+            "not_applicable": {"type": "integer", "minimum": 0},
+            "requires_human_review": {"type": "integer", "minimum": 0},
+            "unknown": {"type": "integer", "minimum": 0}
+          },
+          "additionalProperties": false
+        },
+        "applicable_effective_enforcement_counts": {
+          "type": "object",
+          "required": ["advisory", "blocking", "guidance"],
+          "properties": {
+            "advisory": {"type": "integer", "minimum": 0},
+            "blocking": {"type": "integer", "minimum": 0},
+            "guidance": {"type": "integer", "minimum": 0}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "knowledge_id",
+          "title",
+          "review_status",
+          "applicability",
+          "effective_enforcement",
+          "automation",
+          "reason_codes",
+          "fact_refs",
+          "evidence_ids",
+          "missing_facts",
+          "predicate_evaluations"
+        ],
+        "properties": {
+          "knowledge_id": {"type": "string"},
+          "title": {"type": "string"},
+          "review_status": {"type": "string"},
+          "applicability": {
+            "enum": [
+              "applicable",
+              "not_applicable",
+              "unknown",
+              "requires_human_review"
+            ]
+          },
+          "effective_enforcement": {
+            "enum": ["advisory", "blocking", "guidance"]
+          },
+          "automation": {
+            "type": "object",
+            "required": ["status", "contract"],
+            "properties": {
+              "status": {"type": "string"},
+              "contract": {"type": "string"}
+            },
+            "additionalProperties": false
+          },
+          "reason_codes": {"type": "array", "items": {"type": "string"}},
+          "fact_refs": {"type": "array", "items": {"type": "string"}},
+          "evidence_ids": {"type": "array", "items": {"type": "string"}},
+          "missing_facts": {"type": "array", "items": {"type": "string"}},
+          "predicate_evaluations": {"type": "array", "items": {"type": "object"}}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

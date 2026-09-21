@@ -1,0 +1,231 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/discovery-signal-v0.2.json",
+  "title": "Drupal Knowledge discovery signal",
+  "description": "Something potentially useful was observed in a registered ecosystem or discovery source. A signal is never Drupal truth, never a source snapshot, never a solved case and never a finding. Popularity is recorded as metadata and carries no authority.",
+  "type": "object",
+  "required": [
+    "id",
+    "signal_contract_version",
+    "kind",
+    "status",
+    "review_status",
+    "review_required",
+    "can_promote_to_knowledge",
+    "is_trusted_knowledge",
+    "is_knowledge_proposal",
+    "engine",
+    "source",
+    "observed_at",
+    "acquired_at",
+    "summary",
+    "claim",
+    "scope",
+    "popularity",
+    "provenance",
+    "review"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^signal\\.drupal\\.[a-z0-9.-]+$"},
+    "signal_contract_version": {"type": "string"},
+    "kind": {
+      "enum": [
+        "issue",
+        "discussion",
+        "blog",
+        "forum",
+        "reddit",
+        "source-change",
+        "project-release",
+        "project-metadata"
+      ]
+    },
+    "status": {
+      "description": "Conservative signal lifecycle. No status here makes the signal trusted knowledge.",
+      "enum": [
+        "observed",
+        "corroboration_pending",
+        "corroborated",
+        "contradicted",
+        "insufficient_evidence",
+        "dismissed",
+        "stale"
+      ]
+    },
+    "review_status": {"enum": ["unreviewed", "reviewed"]},
+    "review_required": {"const": true},
+    "can_promote_to_knowledge": {"const": false},
+    "is_trusted_knowledge": {"const": false},
+    "is_knowledge_proposal": {"const": false},
+    "engine": {
+      "type": "object",
+      "required": ["name", "version", "deterministic", "language_model_used"],
+      "properties": {
+        "name": {"const": "drupal-knowledge-discovery-engine"},
+        "version": {"type": "string"},
+        "deterministic": {"const": true},
+        "language_model_used": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "source": {
+      "description": "Where the signal was observed. The originating trust tier is preserved verbatim and is never rewritten by later corroboration.",
+      "type": "object",
+      "required": [
+        "source_id",
+        "trust",
+        "category",
+        "snapshot_sha256",
+        "canonical_url",
+        "fetch_url",
+        "item_ref",
+        "independence_group",
+        "derived_from",
+        "discovery_channel"
+      ],
+      "properties": {
+        "source_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "trust": {
+          "enum": ["authoritative", "industry-standard", "ecosystem", "discovery", "internal-proven"]
+        },
+        "category": {"type": "string"},
+        "snapshot_sha256": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "canonical_url": {"type": "string", "format": "uri"},
+        "fetch_url": {"type": "string", "format": "uri"},
+        "item_ref": {"type": ["string", "null"]},
+        "independence_group": {"type": "string", "minLength": 1},
+        "derived_from": {"type": ["string", "null"]},
+        "discovery_channel": {"const": "external_discovery_source"}
+      },
+      "additionalProperties": false
+    },
+    "observed_at": {"type": "string"},
+    "acquired_at": {"type": "string"},
+    "published_at": {"type": ["string", "null"]},
+    "item_updated_at": {"type": ["string", "null"]},
+    "summary": {"type": "string", "minLength": 10},
+    "claim": {
+      "description": "The conservative normalized observation. assertion_key is the deterministic join key used by corroboration; no language model produces it.",
+      "type": "object",
+      "required": ["topic", "assertion_key", "assertion_value", "evidence", "extraction"],
+      "properties": {
+        "topic": {"type": "string", "minLength": 3},
+        "assertion_key": {"type": "string", "minLength": 3},
+        "assertion_value": {"type": ["string", "null"]},
+        "evidence": {"type": "array", "items": {"type": "string"}},
+        "extraction": {
+          "type": "object",
+          "required": ["strategy", "deterministic", "field_path"],
+          "properties": {
+            "strategy": {"type": "string"},
+            "deterministic": {"const": true},
+            "field_path": {"type": ["string", "null"]}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "scope": {
+      "description": "Explicitly evidenced scope only. Absent scope stays unknown and never widens to 'applies everywhere'.",
+      "type": "object",
+      "required": ["component", "version_scope", "environment"],
+      "properties": {
+        "component": {
+          "type": "object",
+          "required": ["type", "name", "package"],
+          "properties": {
+            "type": {"enum": ["core", "module", "theme", "package", "unknown"]},
+            "name": {"type": ["string", "null"]},
+            "package": {"type": ["string", "null"]}
+          },
+          "additionalProperties": false
+        },
+        "version_scope": {
+          "type": "object",
+          "required": ["project_version", "drupal_core", "explicitly_evidenced"],
+          "properties": {
+            "project_version": {"type": ["string", "null"]},
+            "drupal_core": {"type": "array", "items": {"type": "string"}},
+            "explicitly_evidenced": {"type": "boolean"}
+          },
+          "additionalProperties": false
+        },
+        "environment": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "popularity": {
+      "description": "Recorded because it is observable, ignored because it is not authority.",
+      "type": "object",
+      "required": ["metrics", "counts_toward_corroboration", "authority_weight"],
+      "properties": {
+        "metrics": {"type": "object"},
+        "counts_toward_corroboration": {"const": false},
+        "authority_weight": {"const": 0}
+      },
+      "additionalProperties": false
+    },
+    "staleness": {
+      "type": "object",
+      "required": ["stale", "age_days", "expected_refresh_days"],
+      "properties": {
+        "stale": {"type": "boolean"},
+        "age_days": {"type": ["integer", "null"], "minimum": 0},
+        "expected_refresh_days": {"type": ["integer", "null"], "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "description": "Safe source identity only. Request headers, cookies, tokens and local machine paths are never stored.",
+      "type": "object",
+      "required": ["discovery_channel", "acquisition_run_id", "discovery_run_id", "acquired_by"],
+      "properties": {
+        "discovery_channel": {"const": "external_discovery_source"},
+        "acquisition_run_id": {"type": ["string", "null"]},
+        "discovery_run_id": {"type": "string"},
+        "acquired_by": {
+          "type": "object",
+          "required": ["name", "version"],
+          "properties": {
+            "name": {"type": "string"},
+            "version": {"type": "string"}
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "review": {
+      "type": ["object", "null"],
+      "required": [
+        "reviewed_at",
+        "actor",
+        "method",
+        "note",
+        "outcome",
+        "authorizes_knowledge_proposal_work",
+        "trusted_knowledge_changed"
+      ],
+      "properties": {
+        "reviewed_at": {"type": "string"},
+        "actor": {"type": "string", "minLength": 1},
+        "method": {"enum": ["human_signal_review", "human_security_review", "human_editorial_review"]},
+        "note": {"type": ["string", "null"]},
+        "outcome": {
+          "enum": [
+            "no_action",
+            "watch",
+            "needs_more_evidence",
+            "candidate_for_future_knowledge_proposal",
+            "dismissed"
+          ]
+        },
+        "authorizes_knowledge_proposal_work": {"type": "boolean"},
+        "trusted_knowledge_changed": {"const": false}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

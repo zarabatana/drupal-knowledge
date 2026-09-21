@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/change-record-v0.1.json",
+  "title": "Drupal Knowledge change record",
+  "description": "One official Drupal core change record, projected from the Drupal.org node API. It carries the branch and version the change landed in, a category derived from the record's own vocabulary, and the symbols the record itself wrote with call syntax. It deliberately asserts no symbol lifecycle: that comes from the deprecation index, so a record that merely mentions an API can never give it a lifecycle.",
+  "type": "object",
+  "required": [
+    "record_contract_version",
+    "id",
+    "record_class",
+    "is_trusted_knowledge",
+    "is_general_knowledge_record",
+    "change_record",
+    "category",
+    "symbols",
+    "description",
+    "provenance"
+  ],
+  "properties": {
+    "record_contract_version": {"type": "string"},
+    "id": {"type": "string", "pattern": "^change-record\\.[0-9]+$"},
+    "record_class": {"const": "source_derived_authoritative_api_lifecycle_record"},
+    "is_trusted_knowledge": {"const": false},
+    "is_general_knowledge_record": {"const": false},
+    "change_record": {
+      "type": "object",
+      "required": ["node_id", "title", "canonical_url", "published", "introduced_branch", "introduced_version", "created_at"],
+      "properties": {
+        "node_id": {"type": "string"},
+        "title": {"type": "string"},
+        "canonical_url": {"type": "string"},
+        "published": {"type": "boolean"},
+        "introduced_branch": {"type": ["string", "null"]},
+        "introduced_version": {"type": ["string", "null"]},
+        "created_at": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "category": {
+      "description": "Everything is not collapsed into 'deprecated'. The phrase that produced the category is recorded so a reviewer can disagree with it.",
+      "type": "object",
+      "required": ["value", "additional", "basis", "matched_phrase"],
+      "properties": {
+        "value": {
+          "enum": ["deprecation", "removal", "signature_change", "service_change", "hook_change", "event_change", "configuration_change", "behavior_change", "dependency_change", "API_addition", "other"]
+        },
+        "additional": {"type": "array", "items": {"type": "string"}},
+        "basis": {"type": "string"},
+        "matched_phrase": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "symbols": {
+      "type": "object",
+      "required": ["named_with_call_syntax", "extraction", "lifecycle_asserted", "semantics"],
+      "properties": {
+        "named_with_call_syntax": {"type": "array", "items": {"type": "string"}},
+        "extraction": {"const": "title_call_syntax_only"},
+        "lifecycle_asserted": {"const": false},
+        "semantics": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "description": {
+      "type": "object",
+      "required": ["present", "text_length", "excerpt"],
+      "properties": {
+        "present": {"type": "boolean"},
+        "text_length": {"type": "integer", "minimum": 0},
+        "excerpt": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_id", "source_url", "source_node_id", "source_snapshot_sha256", "authority_kind", "acquisition_channel", "ingested_at", "ingest_run_id", "ingested_by"],
+      "properties": {
+        "source_id": {"type": "string"},
+        "source_url": {"type": "string"},
+        "source_node_id": {"type": "string"},
+        "source_snapshot_sha256": {"type": "string"},
+        "authority_kind": {"type": "string"},
+        "acquisition_channel": {"type": "string"},
+        "ingested_at": {"type": "string"},
+        "ingest_run_id": {"type": "string"},
+        "ingested_by": {
+          "type": "object",
+          "required": ["name", "version"],
+          "properties": {"name": {"type": "string"}, "version": {"type": "string"}},
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

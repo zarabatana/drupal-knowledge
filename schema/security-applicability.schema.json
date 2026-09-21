@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/security-applicability-v0.1.json",
+  "title": "Drupal Knowledge security applicability evaluation",
+  "description": "Deterministic evaluation of authoritative advisories against one project's analyzer facts. A confirmed finding requires definitive project identity, a definitive installed version and an affected-version match. Unknown never decays into not applicable, and nothing here blocks anything.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "evaluation_id",
+    "engine",
+    "evaluated_at",
+    "project",
+    "advisories_considered",
+    "results",
+    "findings",
+    "summary",
+    "enforcement",
+    "trusted_knowledge_mutations"
+  ],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "evaluation_id": {"type": "string", "pattern": "^security-eval\\.[a-f0-9]{16}$"},
+    "engine": {
+      "type": "object",
+      "required": ["name", "version", "deterministic", "language_model_used"],
+      "properties": {
+        "name": {"const": "drupal-knowledge-security-engine"},
+        "version": {"type": "string"},
+        "deterministic": {"const": true},
+        "language_model_used": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "evaluated_at": {"type": "string"},
+    "project": {
+      "description": "Analyzer facts consumed, not re-derived. Drupal Knowledge runs no second scanner.",
+      "type": "object",
+      "required": ["project_id", "facts_source", "core_version", "installed_packages", "evidence_completeness"],
+      "properties": {
+        "project_id": {"type": "string"},
+        "facts_source": {"const": "drupal_project_analyzer_profile_facts"},
+        "core_version": {
+          "type": "object",
+          "required": ["state", "value", "package"],
+          "properties": {
+            "state": {"enum": ["known", "unknown"]},
+            "value": {"type": ["string", "null"]},
+            "package": {"type": ["string", "null"]}
+          },
+          "additionalProperties": false
+        },
+        "installed_packages": {
+          "type": "object",
+          "required": ["state", "count", "packages"],
+          "properties": {
+            "state": {"enum": ["known", "unknown"]},
+            "count": {"type": "integer", "minimum": 0},
+            "packages": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["name", "version", "version_state"],
+                "properties": {
+                  "name": {"type": "string"},
+                  "version": {"type": ["string", "null"]},
+                  "version_state": {"enum": ["known", "unknown"]}
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "evidence_completeness": {"type": "object"}
+      },
+      "additionalProperties": false
+    },
+    "advisories_considered": {"type": "array", "items": {"type": "string"}},
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "advisory_id",
+          "advisory_kind",
+          "scope",
+          "applicability",
+          "reason",
+          "matched_clause",
+          "installed_version",
+          "installed_version_state",
+          "project_identity_state",
+          "severity_state",
+          "severity_risk_vector",
+          "cves",
+          "fixed_versions",
+          "version_normalization",
+          "limitations"
+        ],
+        "properties": {
+          "advisory_id": {"type": "string"},
+          "advisory_kind": {"enum": ["core", "contrib", "psa"]},
+          "scope": {
+            "description": "Which project dimension the advisory was matched against. Core advisories match installed core; contrib advisories match an explicitly identified package.",
+            "enum": ["drupal_core", "contrib_package", "not_matchable"]
+          },
+          "applicability": {
+            "enum": [
+              "applicable",
+              "not_applicable",
+              "unknown",
+              "insufficient_project_evidence",
+              "version_out_of_scope"
+            ]
+          },
+          "reason": {"type": "string", "minLength": 5},
+          "matched_clause": {"type": ["string", "null"]},
+          "installed_version": {"type": ["string", "null"]},
+          "installed_version_state": {"enum": ["known", "unknown"]},
+          "project_identity_state": {"enum": ["resolved", "unresolved"]},
+          "severity_state": {"enum": ["sourced", "not_established"]},
+          "severity_risk_vector": {"type": ["string", "null"]},
+          "cves": {"type": "array", "items": {"type": "string"}},
+          "fixed_versions": {"type": "array", "items": {"type": "string"}},
+          "version_normalization": {
+            "description": "Records any documented Drupal legacy-to-semver normalization applied before comparison, so a reviewer can see it happened.",
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "limitations": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "advisory_id",
+          "state",
+          "scope",
+          "installed_version",
+          "affected_expression",
+          "severity_state",
+          "severity_risk_vector",
+          "cves",
+          "remediation",
+          "enforcement",
+          "evidence",
+          "is_trusted_knowledge"
+        ],
+        "properties": {
+          "id": {"type": "string", "pattern": "^security-finding\\.[a-z0-9-]+\\.[a-f0-9]{16}$"},
+          "advisory_id": {"type": "string"},
+          "state": {
+            "description": "confirmed requires definitive identity, definitive version and an affected match. Anything less is candidate or unknown.",
+            "enum": ["confirmed", "candidate", "unknown"]
+          },
+          "scope": {"enum": ["drupal_core", "contrib_package"]},
+          "installed_version": {"type": ["string", "null"]},
+          "affected_expression": {"type": ["string", "null"]},
+          "severity_state": {"enum": ["sourced", "not_established"]},
+          "severity_risk_vector": {"type": ["string", "null"]},
+          "cves": {"type": "array", "items": {"type": "string"}},
+          "remediation": {
+            "type": "object",
+            "required": ["state", "fixed_versions", "authored_by_drupal_knowledge", "executed"],
+            "properties": {
+              "state": {"enum": ["sourced", "not_provided"]},
+              "fixed_versions": {"type": "array", "items": {"type": "string"}},
+              "authored_by_drupal_knowledge": {"const": false},
+              "executed": {"const": false}
+            },
+            "additionalProperties": false
+          },
+          "enforcement": {
+            "type": "object",
+            "required": ["intent", "policy_controlled", "automatically_blocking"],
+            "properties": {
+              "intent": {"const": "guidance"},
+              "policy_controlled": {"const": true},
+              "automatically_blocking": {"const": false}
+            },
+            "additionalProperties": false
+          },
+          "evidence": {
+            "type": "object",
+            "required": ["advisory_source_id", "advisory_snapshot_sha256", "project_identity_resolution", "analyzer_fact_paths"],
+            "properties": {
+              "advisory_source_id": {"type": "string"},
+              "advisory_snapshot_sha256": {"type": "string"},
+              "project_identity_resolution": {"type": "string"},
+              "analyzer_fact_paths": {"type": "array", "items": {"type": "string"}}
+            },
+            "additionalProperties": false
+          },
+          "is_trusted_knowledge": {"const": false}
+        },
+        "additionalProperties": false
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": ["applicable", "not_applicable", "unknown", "insufficient_project_evidence", "version_out_of_scope", "confirmed_findings", "candidate_findings"],
+      "properties": {
+        "applicable": {"type": "integer", "minimum": 0},
+        "not_applicable": {"type": "integer", "minimum": 0},
+        "unknown": {"type": "integer", "minimum": 0},
+        "insufficient_project_evidence": {"type": "integer", "minimum": 0},
+        "version_out_of_scope": {"type": "integer", "minimum": 0},
+        "confirmed_findings": {"type": "integer", "minimum": 0},
+        "candidate_findings": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "enforcement": {
+      "type": "object",
+      "required": ["intent", "policy_controlled", "automatically_blocking", "blocking_requires_reviewed_policy"],
+      "properties": {
+        "intent": {"const": "guidance"},
+        "policy_controlled": {"const": true},
+        "automatically_blocking": {"const": false},
+        "blocking_requires_reviewed_policy": {"const": true}
+      },
+      "additionalProperties": false
+    },
+    "trusted_knowledge_mutations": {"type": "array", "maxItems": 0}
+  },
+  "additionalProperties": false
+}

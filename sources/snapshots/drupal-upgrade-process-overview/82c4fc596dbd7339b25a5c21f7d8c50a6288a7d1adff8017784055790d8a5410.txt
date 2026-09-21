@@ -1,0 +1,26 @@
+There are certain considerations to be aware of, when doing a major version upgrade.
+Keeping your Drupal core installation and contrib modules and themes up to date via frequent updates is the ideal method, to stay prepared for a new major version upgrade.
+Skipping a major version during upgrade is not possible
+A major version
+cannot
+be skipped during an upgrade. For example, to upgrade from Drupal 9 to Drupal 11, a site must upgrade from Drupal 9 to Drupal 10, and then to Drupal 11.
+This is necessary, because only updates via
+Update API
+between consecutive major versions are included, prior updates are removed.
+For example, all the configuration, database schema, entity/field, etc. upgrades up to Drupal 11.2.0 are removed in Drupal 12. That means that Drupal 10 sites must upgrade to 11.3.0 or higher to get those updates, before upgrading to Drupal 12.
+This gives Drupal a simple upgrade path, Drupal 10 -> Drupal 11 -> Drupal 12. Otherwise, Drupal would have to support every possibly upgrade path, such as, 10.5 -> 11.0 -> 12.0, and 10.5 -> 11.1 -> 12.0, and 10.5 -> 11.2 -> 12.0, and 10.5 -> 12.1. And contributed and custom extensions would have to support the multiple upgrade paths as well. That would increase the maintenance for those extensions. And it would likely contribute to delays in major version compatibility for those extensions. Having multiple upgrade paths increases the likelihood of errors and data loss which none of us want.
+This way of upgrading improves Drupal stability. It ensures that the
+smallest
+number of changes are made during each upgrade. The smaller set of changes results in a more reliable and predictable upgrade path and one that is easier to debug.
+This is a design choice that improves Drupal stability and simplifies maintenance of upgrade paths. It minimizes the number of core and contributed extension database upgrades that sites run at the same time.
+Discussions in issues:
+#2942096: [policy, no patch] Remove old update hooks prior to each major version (Drupal 10 and later)
+#3238652: [policy] Decide how long major Drupal versions should be supported
+The change record for the Drupal 10 to 11 upgrade was
+Sites must update to Drupal 10.3.0 or higher before updating to Drupal 11.x
+.
+Related Content
+Release process overview
+High-level policy overview for the Drupal core release process.
+Drupal core release schedule
+Schedule for major, minor, and patch releases of Drupal.

@@ -1,0 +1,25 @@
+{
+  "acquisition": {
+    "acquisition_channel": "external_authoritative_source",
+    "check_cadence_days": 30,
+    "consecutive_failures": 0,
+    "engine_name": "drupal-knowledge-acquisition-engine",
+    "engine_version": "0.1",
+    "last_attempt_at": "2026-09-08T21:12:45Z",
+    "last_attempt_run_id": "run.20260908T211245.92c70b21",
+    "last_attempt_status": "first_observation",
+    "last_error": null,
+    "last_success_at": "2026-09-08T21:12:45Z",
+    "last_success_run_id": "run.20260908T211245.92c70b21",
+    "previous_snapshot_sha256": null,
+    "review_candidate_id": null
+  },
+  "content_length": 11408,
+  "content_sha256": "sha256:890acda19673beebea7c6b38b96b39abe3eb07f06dced789474101f07debef0c",
+  "etag": "\"1788901799-1\"",
+  "fetch_url": "https://www.drupal.org/docs/upgrading-drupal/upgrading-from-drupal-8-or-later/how-to-upgrade-from-drupal-9-to-drupal-10",
+  "last_changed_at": "2026-09-08T21:12:45Z",
+  "last_modified": "Tue, 08 Sep 2026 21:09:59 GMT",
+  "source_id": "drupal-upgrade-9-to-10",
+  "url": "https://www.drupal.org/docs/upgrading-drupal/upgrading-from-drupal-8-or-later/how-to-upgrade-from-drupal-9-to-drupal-10"
+}

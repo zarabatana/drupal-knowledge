@@ -1,0 +1,75 @@
+{
+  "authority": {
+    "sources": [
+      {
+        "quotes": [
+          "Drupal 8 and later versions can be configured to use Symfony's trusted host mechanism to prevent HTTP Host header spoofing. To enable the trusted host mechanism, you enable the allowed hosts setting"
+        ],
+        "snapshot_sha256": "sha256:11e4f4be0c3b46177c5f8fa6ad0fa7d76bba3fd08f61d9b06252b930b0f7f407",
+        "source_id": "drupal-trusted-host-settings"
+      },
+      {
+        "quotes": [
+          "# $settings['trusted_host_patterns'] = [];"
+        ],
+        "snapshot_sha256": "sha256:1e2df3981d9cc138fa916171a710909b3e6922ebd978252b453b903e540b4a39",
+        "source_id": "drupal-default-settings-php"
+      }
+    ],
+    "summary": "Drupal's installation documentation states that the trusted host mechanism is enabled through this settings key and describes the response when a request's Host header does not match."
+  },
+  "category": "security",
+  "check": {
+    "condition": {
+      "assertion": "config.settings_declaration",
+      "id": "trusted-host-absent",
+      "operator": "evidence_absent",
+      "subject": "trusted_host_patterns"
+    },
+    "kind": "evidence_condition"
+  },
+  "context_requirements": [
+    {
+      "assertion": "config.settings_declaration",
+      "subject": "config_sync_directory",
+      "why_it_matters": "Settings files can include further settings files that this analysis does not follow, so a declaration made in an included file would not have been seen."
+    }
+  ],
+  "finding": {
+    "assertion": "No trusted_host_patterns declaration was observed in the settings files read.",
+    "conclusion": {
+      "candidate": "No trusted host declaration was observed in the files read; an included settings file could still declare one.",
+      "confirmed": "No trusted host declaration was observed, and the documentation states this mechanism is what prevents Host header spoofing.",
+      "default": "No conclusion is drawn.",
+      "not_observed": "A trusted_host_patterns declaration was observed.",
+      "unknown": "Whether the setting is declared could not be established."
+    },
+    "enforcement_intent": "guidance",
+    "evidence_explanation": "The settings-declaration evidence contains no trusted_host_patterns entry.",
+    "human_title": "Trusted host patterns were not observed",
+    "limitations": [
+      "Included settings files are not followed, so this is not a claim about effective runtime settings.",
+      "No hostname is recorded by this analysis."
+    ],
+    "remediation": {
+      "applied": false,
+      "basis": "drupal_documentation",
+      "guidance": "Confirm whether $settings['trusted_host_patterns'] is declared, including in any included settings file, and declare it if it is not."
+    },
+    "severity_state": "not_established"
+  },
+  "review": {
+    "authority": "reviewed against the pinned trusted host settings snapshot",
+    "reviewed_on": "2026-09-09",
+    "status": "reviewed"
+  },
+  "rule_contract_version": "0.1",
+  "rule_id": "security.trusted-host-patterns-not-declared",
+  "scope": {
+    "component": "settings.php",
+    "drupal_core_minimum_major": 8,
+    "notes": "The Symfony trusted host mechanism is used from Drupal 8 onwards."
+  },
+  "summary": "Drupal's trusted host mechanism is enabled by declaring $settings['trusted_host_patterns']. No such declaration was observed in the settings files this analysis read.",
+  "title": "Trusted host patterns are not declared in the observed settings file"
+}

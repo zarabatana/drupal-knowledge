@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+ <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2360451-17"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "UA-2360451-17", {"groups":"default","anonymize_ip":true,"page_placeholder":"PLACEHOLDER_page_path","allow_ad_personalization_signals":false});</script>
+<meta name="Generator" content="Drupal 11 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="search" title="Drupal API" type="application/opensearchdescription+xml" href="https://api.drupal.org/api/opensearch" />
+<link rel="icon" href="/core/misc/favicon.ico" type="image/png" />
+<link rel="canonical" href="/api/drupal/deprecated/11.x" />
+
+ <title>Deprecated - 9.5.x - drupal | Drupal API</title>
+ <link rel="stylesheet" media="all" href="/sites/default/files/css/css_2GVyNgWK87ahi-6BBzN4MN-N03oRRp0VjREuuaoZYvg.css?delta=0&amp;language=en&amp;theme=bluecheese&amp;include=eJxtzUEOAjEMA8APdbdPQmnrLREpqZIUxO9ZwQmJiw8eyabJuWrDdqgNiuB7T0UW6hVw5C5aSFJVQ262JslOK7TqmILAD3BgbMIe6Vuo9Us1dfdTzhO9MfyvHaoBS_7ycyIXcqQH4-n5k_vQtgRvH6JCwA" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_N1eeLHtDC1C9wK2Sa6NgA6UuQQIfgyTAhjnYDg2bz44.css?delta=1&amp;language=en&amp;theme=bluecheese&amp;include=eJxtzUEOAjEMA8APdbdPQmnrLREpqZIUxO9ZwQmJiw8eyabJuWrDdqgNiuB7T0UW6hVw5C5aSFJVQ262JslOK7TqmILAD3BgbMIe6Vuo9Us1dfdTzhO9MfyvHaoBS_7ycyIXcqQH4-n5k_vQtgRvH6JCwA" />
+
+ 
+ </head>
+ <body class="drupalorg-site-api new-style path-api one-sidebar">
+ <div id="skip-link" tabindex="-1">
+ <a href="#main-content" class="visually-hidden focusable">
+ Skip to main content
+ </a>
+ <a href="#search-block-form" class="visually-hidden focusable skip-link-search">
+ Skip to search
+ </a>
+ </div>
+ <div id="drupalorg-crosssite-gdpr">Can we use first and third party cookies and web beacons to <a href="https://www.drupal.org/terms">understand our audience, and to tailor promotions you see</a>?<br><button class="button yes">Yes, please</button><button class="button no">No, do not track me</button></div>
+ <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+ <div id="nav-header">
+ <div class="menu-nav">
+ <a class="nav-btn" id="nav-open-btn" href="#block-system-main-menu"><img src="/themes/contrib/bluecheese/images/icon-w-menu.svg" alt="Main menu"></a>
+ </div>
+ <nav id="navigation-inner" class="container-12" role="navigation">
+ <div class="region region-navigation">
+ <nav role="navigation" aria-labelledby="block-system-main-menu-menu" id="block-system-main-menu">
+ 
+ <h2 class="visually-hidden" id="block-system-main-menu-menu">Main navigation</h2>
+ 
+
+ <div class="menu-block"><ul class="menu button">
+ <ul>
+ <li>
+ <a href="https://www.drupal.org/home">Go to Drupal.org</a>
+ </li>
+ <li>
+ <a href="/api/drupal/7.x" data-drupal-link-system-path="api/drupal/7.x">Drupal 7</a>
+ </li>
+ <li>
+ <a href="/api/drupal" title="Drupal core 8 and beyond" data-drupal-link-system-path="project/2">Drupal 8+</a>
+ </li>
+ <li>
+ <a href="/api/projects" data-drupal-link-system-path="api/projects">Other projects</a>
+ </li>
+ <li>
+ <a href="http://drupal.org/documentation/develop">Develop for Drupal</a>
+ </li>
+ </ul>
+ 
+
+</ul></div><a class="close-btn" href="#top">Return to content</a>
+ </nav>
+<div id="block-search-form" class="search-api-form block block-search-api-block" data-drupal-selector="search-api-form">
+ <div class="block-inner">
+ 
+ 
+ <div class="content">
+ <form action="/search/api" method="get" id="search-api-form" accept-charset="UTF-8">
+ <div class="js-form-item form-item form-type-search js-form-type-search form-item-keys js-form-item-keys form-no-label">
+ <label for="edit-keys" class="visually-hidden">Search</label>
+ <input title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" value="" size="15" maxlength="128" placeholder="" class="form-search" />
+
+ </div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit" type="submit" id="edit-submit" value="Search" class="button js-form-submit form-submit" />
+</div>
+
+</form>
+
+ </div>
+ </div>
+</div>
+
+ </div>
+
+ </nav>
+ </div> 
+ <header id="header" role="banner" class="clearfix">
+ <div id="header-inner" class="container-12 clearfix">
+ <div id="header-left">
+ <div id="site-name"><a href="/"><img src="/sites/default/files/logo.png" alt="Drupal API" />
+</a></div>
+ </div>
+ <div id="header-right">
+ </div>
+ </div>
+ </header> 
+ 
+ <div id="page" class="clearfix">
+ <div id="page-heading">
+ 
+ <div id="page-title-tools" class="container-12 clearfix" role="navigation">
+
+ <div class="page-title-wrapper">
+ </div>
+
+ </div> 
+ 
+ <div class="breadbox"> <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+ <nav role="navigation" aria-labelledby="system-breadcrumb" class="breadcrumb container-12">
+ <span><a href="/api/drupal/9">drupal 9</a></span> </nav>
+</div>
+
+ 
+ 
+ </div> 
+ 
+ <div class="container-12 page-inner"> 
+ <div id="main" role="main">
+ 
+ <div id="content" class="clearfix">
+ 
+ 
+ <div id="content-inner" class="clearfix"> <div class="region region-content">
+ <div data-drupal-messages-fallback class="hidden"></div><div data-drupal-messages>
+ <div role="contentinfo" aria-label="Error message" class="messages messages--error">
+ <div role="alert">
+ 
+ <h2 class="visually-hidden">Error message</h2>
+ 
+ You are browsing documentation for drupal 9.5.x, which is not supported anymore. <a href="/api/drupal/deprecated/11.x">Read the updated version of this page for drupal 11.x (the latest version).</a>
+ 
+ </div>
+ </div>
+ </div>
+
+<div id="block-bluecheese-page-title" class="block block-core">
+ <div class="block-inner">
+ 
+ 
+ <div class="content">
+ 
+ <h1>Deprecated - 9.5.x - drupal</h1>
+
+ </div>
+ </div>
+</div>
+<div class="tabs">
+ <h2 class="visually-hidden">Primary tabs</h2>
+ <ul class="tabs primary clearfix"><li><a href="/api/drupal/deprecated/main" data-drupal-link-system-path="api/drupal/deprecated/main">main</a></li>
+<li><a href="/api/drupal/deprecated/11.x" data-drupal-link-system-path="api/drupal/deprecated/11.x">11.x</a></li>
+<li><a href="/api/drupal/deprecated/10" data-drupal-link-system-path="api/drupal/deprecated/10">10.3.x</a></li>
+<li><a href="/api/drupal/deprecated/9" data-drupal-link-system-path="api/drupal/deprecated/9">9.5.x</a></li>
+<li><a href="/api/drupal/deprecated/8.9.x" data-drupal-link-system-path="api/drupal/deprecated/8.9.x">8.9.x</a></li>
+<li><a href="/api/drupal/deprecated/7.x" data-drupal-link-system-path="api/drupal/deprecated/7.x">7.x</a></li>
+</ul>
+</div>
+<div class="views-element-container"><div class="js-view-dom-id-062eac948bc0995aa0763b502d96315b6f49208468f1e41b73e107cb8a57cd2e">
+ 
+ 
+ 
+
+ 
+ <form class="views-exposed-form" data-drupal-selector="views-exposed-form-api-listings-block-deprecated" action="/api/drupal/deprecated/9" method="get" id="views-exposed-form-api-listings-block-deprecated" accept-charset="UTF-8">
+ <div class="js-form-item form-item form-type-textfield js-form-type-textfield form-item-object-type js-form-item-object-type">
+ <label for="edit-object-type">Type</label>
+ <input data-drupal-selector="edit-object-type" type="text" id="edit-object-type" name="object_type" value="" size="30" maxlength="128" class="form-text" />
+
+ </div>
+<div class="js-form-item form-item form-type-textfield js-form-type-textfield form-item-deprecated-1 js-form-item-deprecated-1">
+ <label for="edit-deprecated-1">Deprecation message contains</label>
+ <input data-drupal-selector="edit-deprecated-1" type="text" id="edit-deprecated-1" name="deprecated_1" value="" size="30" maxlength="128" class="form-text" />
+
+ </div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit-api-listings" type="submit" id="edit-submit-api-listings" value="Apply" class="button js-form-submit form-submit" />
+</div>
+
+</form>
+
+ 
+
+ <table class="cols-8">
+ <thead>
+ <tr>
+ <th id="view-title-table-column" class="views-field views-field-title" scope="col">Title</th>
+ <th id="view-file-name-table-column" class="views-field views-field-file-name" scope="col">File name</th>
+ <th id="view-deprecated-table-column" class="views-field views-field-deprecated" scope="col">Deprecation</th>
+ <th id="view-object-type-table-column" class="views-field views-field-object-type" scope="col">Type</th>
+ <th id="view-reference-count-table-column" class="views-field views-field-reference-count" scope="col">Direct uses</th>
+ <th id="view-reference-count-1-table-column" class="views-field views-field-reference-count-1" scope="col">Namespaced uses</th>
+ <th id="view-reference-count-2-table-column" class="views-field views-field-reference-count-2" scope="col">Overrides</th>
+ <th id="view-reference-count-3-table-column" class="views-field views-field-reference-count-3" scope="col">Use statements</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AbuildXPathQuery/9">AssertLegacyTrait::buildXPathQuery</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;assertSession()-&gt;buildXPathQuery() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AconstructFieldXpath/9">AssertLegacyTrait::constructFieldXpath</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.5.0 and is removed from drupal:10.0.0. Use
+$this-&gt;getSession()-&gt;getPage()-&gt;findField() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AgetAllOptions/9">AssertLegacyTrait::getAllOptions</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.5.0 and is removed from drupal:10.0.0. Use
+$element-&gt;findAll(&#039;xpath&#039;, &#039;option&#039;) instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3AgetRawContent/9">AssertLegacyTrait::getRawContent</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />FunctionalTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21FunctionalTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;getSession()-&gt;getPage()-&gt;getContent() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21KernelTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3Apass/9">AssertLegacyTrait::pass</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />KernelTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21KernelTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.0.0 and is removed from drupal:10.0.0. PHPUnit
+interrupts a test as soon as a test assertion fails, so there is usually
+no need to call this method. If a test&#039;s logic relies on this method,
+refactor the test.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21KernelTests%21AssertLegacyTrait.php/function/AssertLegacyTrait%3A%3Averbose/9">AssertLegacyTrait::verbose</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />KernelTests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21KernelTests%21AssertLegacyTrait.php/9">AssertLegacyTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.2.0 and is removed from drupal:10.0.0. Use
+dump() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Test%21AssertMailTrait.php/function/AssertMailTrait%3A%3AverboseEmail/9">AssertMailTrait::verboseEmail</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Test/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Test%21AssertMailTrait.php/9">AssertMailTrait.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.2.0 and is removed from drupal:10.0.0. Use
+dump() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21tests%21Drupal%21Tests%21BrowserTestBase.php/function/BrowserTestBase%3A%3AdrupalGetHeader/9">BrowserTestBase::drupalGetHeader</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />tests/<wbr />Drupal/<wbr />Tests/<wbr /><a href="/api/drupal/core%21tests%21Drupal%21Tests%21BrowserTestBase.php/9">BrowserTestBase.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.2.0 and is removed from drupal:10.0.0. Use
+$this-&gt;getSession()-&gt;getResponseHeader() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Component%21Utility%21Bytes.php/function/Bytes%3A%3AtoInt/9">Bytes::toInt</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Component/<wbr />Utility/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Component%21Utility%21Bytes.php/9">Bytes.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.1.0 and is removed from drupal:10.0.0. Use \Drupal\Component\Utility\Bytes::toNumber() instead</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21modules%21comment%21src%21Plugin%21migrate%21source%21d6%21Comment.php/function/Comment%3A%3AprepareComment/9">Comment::prepareComment</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />modules/<wbr />comment/<wbr />src/<wbr />Plugin/<wbr />migrate/<wbr />source/<wbr />d6/<wbr /><a href="/api/drupal/core%21modules%21comment%21src%21Plugin%21migrate%21source%21d6%21Comment.php/9">Comment.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.3.0 and is removed from drupal:10.0.0. No direct
+replacement is provided.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2">1 </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Routing%21CompiledRoute.php/function/CompiledRoute%3A%3AgetDefaults/9">CompiledRoute::getDefaults</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Routing/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Routing%21CompiledRoute.php/9">CompiledRoute.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.1.0 and is removed from drupal:10.0.0. No direct
+replacement is provided.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Routing%21CompiledRoute.php/function/CompiledRoute%3A%3AgetOptions/9">CompiledRoute::getOptions</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Routing/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Routing%21CompiledRoute.php/9">CompiledRoute.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.1.0 and is removed from drupal:10.0.0. No direct
+replacement is provided.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Routing%21CompiledRoute.php/function/CompiledRoute%3A%3AgetRequirements/9">CompiledRoute::getRequirements</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Routing/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Routing%21CompiledRoute.php/9">CompiledRoute.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.1.0 and is removed from drupal:10.0.0. No direct
+replacement is provided.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Composer%21Composer.php/function/Composer%3A%3AensureHtaccess/9">Composer::ensureHtaccess</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Composer/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Composer%21Composer.php/9">Composer.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.5.0 and is removed from drupal:10.0.0. Any
+&quot;scripts&quot; section mentioning this in composer.json can be removed and
+replaced with the drupal/core-vendor-hardening Composer plugin, as needed.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Composer%21Composer.php/function/Composer%3A%3AremoveTimeout/9">Composer::removeTimeout</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Composer/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Composer%21Composer.php/9">Composer.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.5.0 and is removed from drupal:10.0.0. There is no
+replacement.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Composer%21Composer.php/function/Composer%3A%3AvendorTestCodeCleanup/9">Composer::vendorTestCodeCleanup</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Composer/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Composer%21Composer.php/9">Composer.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.5.0 and is removed from drupal:10.0.0. Any
+&quot;scripts&quot; section mentioning this in composer.json can be removed and
+replaced with the drupal/core-vendor-hardening Composer plugin, as needed.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Query%21Condition.php/function/Condition%3A%3A__construct/9">Condition::__construct</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Database/<wbr />Query/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Query%21Condition.php/9">Condition.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.1.0 and is removed from drupal:10.0.0. Creating an
+instance of this class is deprecated.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Config%21ConfigInstaller.php/function/ConfigInstaller%3A%3AdrupalGetPath/9">ConfigInstaller::drupalGetPath</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Config/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Config%21ConfigInstaller.php/9">ConfigInstaller.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.3.0 and is removed from drupal:10.0.0. Use
+\Drupal\Core\Extension\ExtensionList::getPath() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Config%21ConfigManagerInterface.php/function/ConfigManagerInterface%3A%3AfindConfigEntityDependents/9">ConfigManagerInterface::findConfigEntityDependents</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Config/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Config%21ConfigManagerInterface.php/9">ConfigManagerInterface.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.3.0 and is removed from drupal:10.0.0.
+Instead you should use
+ConfigManagerInterface::findConfigEntityDependencies().</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2">1 </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Config%21ConfigManagerInterface.php/function/ConfigManagerInterface%3A%3AfindConfigEntityDependentsAsEntities/9">ConfigManagerInterface::findConfigEntityDependentsAsEntities</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Config/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Config%21ConfigManagerInterface.php/9">ConfigManagerInterface.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.3.0 and is removed from drupal:10.0.0.
+Instead you should use
+ConfigManagerInterface::findConfigEntityDependenciesAsEntities().</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2">1 </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Driver%21sqlite%21Connection.php/class/Connection/9">Connection</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Database/<wbr />Driver/<wbr />sqlite/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Driver%21sqlite%21Connection.php/9">Connection.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.4.0 and is removed from drupal:11.0.0. The SQLite
+database driver has been moved to the sqlite module.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">class </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3">1 </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Driver%21mysql%21Connection.php/class/Connection/9">Connection</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Database/<wbr />Driver/<wbr />mysql/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Driver%21mysql%21Connection.php/9">Connection.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.4.0 and is removed from drupal:11.0.0. The MySQL
+database driver has been moved to the mysql module.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">class </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3">1 </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Driver%21pgsql%21Connection.php/class/Connection/9">Connection</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Database/<wbr />Driver/<wbr />pgsql/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Driver%21pgsql%21Connection.php/9">Connection.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.4.0 and is removed from drupal:11.0.0. The PostgreSQL
+database driver has been moved to the pgsql module.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">class </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3">1 </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Connection.php/function/Connection%3A%3Adestroy/9">Connection::destroy</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Database/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Connection.php/9">Connection.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.1.0 and is removed from drupal:10.0.0. Move custom
+database destruction logic to __destruct().</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Connection.php/property/Connection%3A%3AescapedNames/9">Connection::$escapedNames</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Database/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Connection.php/9">Connection.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.0.0 and is removed from drupal:10.0.0. This is no
+longer used. Use \Drupal\Core\Database\Connection::$escapedTables or
+\Drupal\Core\Database\Connection::$escapedFields instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">property </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Connection.php/function/Connection%3A%3AgenerateTemporaryTableName/9">Connection::generateTemporaryTableName</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Database/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Connection.php/9">Connection.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.3.0 and is removed from drupal:10.0.0. There is no
+replacement.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">3 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Connection.php/function/Connection%3A%3AhandleQueryException/9">Connection::handleQueryException</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Database/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Connection.php/9">Connection.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.2.0 and is removed from drupal:10.0.0. Get a
+handler through $this-&gt;exceptionHandler() instead, and use one of its
+methods.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">3 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2">2 </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Connection.php/function/Connection%3A%3Aprepare/9">Connection::prepare</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Database/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Connection.php/9">Connection.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.1.0 and is removed from drupal:10.0.0. Database
+drivers should instantiate \PDOStatement objects by calling
+\PDO::prepare in their Connection::prepareStatement method instead.
+\PDO::prepare should not be called outside of driver code.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2">1 </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Connection.php/function/Connection%3A%3AprepareQuery/9">Connection::prepareQuery</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Database/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Connection.php/9">Connection.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.1.0 and is removed from drupal:10.0.0. Use
+::prepareStatement instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Connection.php/property/Connection%3A%3AstatementClass/9">Connection::$statementClass</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Database/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Connection.php/9">Connection.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.1.0 and is removed from drupal:10.0.0. Database
+drivers should use or extend StatementWrapper instead, and encapsulate
+client-level statement objects.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">property </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2">4 </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Connection.php/function/Connection%3A%3AsupportsTransactions/9">Connection::supportsTransactions</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Database/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Connection.php/9">Connection.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.1.0 and is removed from drupal:10.0.0. All database
+drivers must support transactions.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Connection.php/property/Connection%3A%3AtemporaryNameIndex/9">Connection::$temporaryNameIndex</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Database/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Connection.php/9">Connection.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.3.0 and is removed from drupal:10.0.0. There is no
+replacement.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">property </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Component%21DependencyInjection%21ContainerInterface.php/function/ContainerInterface%3A%3AgenerateServiceIdHash/9">ContainerInterface::generateServiceIdHash</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Component/<wbr />DependencyInjection/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Component%21DependencyInjection%21ContainerInterface.php/9">ContainerInterface.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.5.1 and is removed from drupal:11.0.0. Use the
+&#039;Drupal\Component\DependencyInjection\ReverseContainer&#039; service instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Component%21DependencyInjection%21ContainerInterface.php/function/ContainerInterface%3A%3AgetServiceIdMappings/9">ContainerInterface::getServiceIdMappings</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Component/<wbr />DependencyInjection/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Component%21DependencyInjection%21ContainerInterface.php/9">ContainerInterface.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.5.1 and is removed from drupal:11.0.0. Use the
+&#039;Drupal\Component\DependencyInjection\ReverseContainer&#039; service instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Plugin%21ContextAwarePluginBase.php/class/ContextAwarePluginBase/9">ContextAwarePluginBase</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Plugin/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Plugin%21ContextAwarePluginBase.php/9">ContextAwarePluginBase.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.1.0 and is removed from drupal:10.0.0. Use
+\Drupal\Core\Plugin\ContextAwarePluginTrait instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">class </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3">1 </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Component%21Plugin%21ContextAwarePluginBase.php/class/ContextAwarePluginBase/9">ContextAwarePluginBase</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Component/<wbr />Plugin/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Component%21Plugin%21ContextAwarePluginBase.php/9">ContextAwarePluginBase.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.1.0 and is removed from drupal:10.0.0 without
+replacement.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">class </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3">1 </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Database.php/function/Database%3A%3AgetDatabaseDriverNamespace/9">Database::getDatabaseDriverNamespace</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Database/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Database.php/9">Database.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.1.0 and is removed from drupal:10.0.0. There is no
+replacement as $connection_info[&#039;namespace&#039;] is always set.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Database.php/constant/Database%3A%3ARETURN_AFFECTED/9">Database::RETURN_AFFECTED</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Database/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Database.php/9">Database.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.4.0 and is removed from drupal:11.0.0. There is no
+replacement.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">constant </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count">10 </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Database.php/constant/Database%3A%3ARETURN_INSERT_ID/9">Database::RETURN_INSERT_ID</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Database/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Database.php/9">Database.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.4.0 and is removed from drupal:11.0.0. There is no
+replacement.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">constant </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count">4 </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Database.php/constant/Database%3A%3ARETURN_NULL/9">Database::RETURN_NULL</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Database/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Database.php/9">Database.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.4.0 and is removed from drupal:11.0.0. There is no
+replacement.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">constant </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count">1 </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Database.php/constant/Database%3A%3ARETURN_STATEMENT/9">Database::RETURN_STATEMENT</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Database/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Database.php/9">Database.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.4.0 and is removed from drupal:11.0.0. There is no
+replacement.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">constant </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count">2 </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Cache%21DatabaseCacheTagsChecksum.php/function/DatabaseCacheTagsChecksum%3A%3AcatchException/9">DatabaseCacheTagsChecksum::catchException</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Cache/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Cache%21DatabaseCacheTagsChecksum.php/9">DatabaseCacheTagsChecksum.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.3.0 and is removed from drupal:10.0.0. There is no
+replacement.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Render%21Element%21Date.php/function/Date%3A%3AprocessDate/9">Date::processDate</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Render/<wbr />Element/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Render%21Element%21Date.php/9">Date.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.4.0 and is removed from drupal:10.0.0. There is
+no replacement.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21includes%21common.inc/function/debug/9">debug</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />includes/<wbr /><a href="/api/drupal/core%21includes%21common.inc/9">common.inc</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.2.0 and is removed from drupal:10.0.0. Use dump()
+instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count">1 </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Driver%21pgsql%21Delete.php/class/Delete/9">Delete</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />Database/<wbr />Driver/<wbr />pgsql/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21Database%21Driver%21pgsql%21Delete.php/9">Delete.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.4.0 and is removed from drupal:11.0.0. The PostgreSQL
+database driver has been moved to the pgsql module.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">class </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3">1 </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21DependencyInjection%21Compiler%21DependencySerializationTraitPass.php/class/DependencySerializationTraitPass/9">DependencySerializationTraitPass</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr />DependencyInjection/<wbr />Compiler/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21DependencyInjection%21Compiler%21DependencySerializationTraitPass.php/9">DependencySerializationTraitPass.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.5.0 and is removed from drupal:11.0.0. The _serviceId
+property is no longer part of the container. Use
+\Drupal\Core\DrupalKernelInterface::getServiceIdMapping() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">class </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21modules%21system%21tests%21modules%21deprecation_test%21deprecation_test.module/function/deprecation_test_function/9">deprecation_test_function</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />modules/<wbr />system/<wbr />tests/<wbr />modules/<wbr />deprecation_test/<wbr /><a href="/api/drupal/core%21modules%21system%21tests%21modules%21deprecation_test%21deprecation_test.module/9">deprecation_test.module</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:8.4.0 and is removed from drupal:9.0.0. This is
+the deprecation message for deprecated_test_function().</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count">4 </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal.php/constant/Drupal%3A%3AMINIMUM_SUPPORTED_PHP/9">Drupal::MINIMUM_SUPPORTED_PHP</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr /><a href="/api/drupal/core%21lib%21Drupal.php/9">Drupal.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.4.0 and is removed from drupal:10.0.0. Use
+\Drupal\Core\Utility\PhpRequirements::getMinimumSupportedPhp() instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">constant </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="odd">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21DrupalKernel.php/function/DrupalKernel%3A%3AcollectServiceIdMapping/9">DrupalKernel::collectServiceIdMapping</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21DrupalKernel.php/9">DrupalKernel.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.5.1 and is removed from drupal:11.0.0. Use the
+&#039;Drupal\Component\DependencyInjection\ReverseContainer&#039; service instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1">1 </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ <tr class="even">
+ <td headers="view-title-table-column" class="views-field views-field-title"><a href="/api/drupal/core%21lib%21Drupal%21Core%21DrupalKernel.php/function/DrupalKernel%3A%3AgenerateServiceIdHash/9">DrupalKernel::generateServiceIdHash</a> </td>
+ <td headers="view-file-name-table-column" class="views-field views-field-file-name">core/<wbr />lib/<wbr />Drupal/<wbr />Core/<wbr /><a href="/api/drupal/core%21lib%21Drupal%21Core%21DrupalKernel.php/9">DrupalKernel.php</a> </td>
+ <td headers="view-deprecated-table-column" class="views-field views-field-deprecated"><p>
+in drupal:9.5.1 and is removed from drupal:11.0.0. Use the
+&#039;Drupal\Component\DependencyInjection\ReverseContainer&#039; service instead.</p>
+ </td>
+ <td headers="view-object-type-table-column" class="views-field views-field-object-type">function </td>
+ <td headers="view-reference-count-table-column" class="views-field views-field-reference-count"> </td>
+ <td headers="view-reference-count-1-table-column" class="views-field views-field-reference-count-1"> </td>
+ <td headers="view-reference-count-2-table-column" class="views-field views-field-reference-count-2"> </td>
+ <td headers="view-reference-count-3-table-column" class="views-field views-field-reference-count-3"> </td>
+ </tr>
+ </tbody>
+</table>
+
+ <nav class="pager" role="navigation" aria-labelledby="pagination-heading">
+ <h4 id="pagination-heading" class="visually-hidden">Pagination</h4>
+ <ul class="pager__items js-pager__items">
+ <li>
+ <a href="/api/drupal/deprecated/9?page=0" title="Go to previous page" rel="prev">
+ <span class="visually-hidden">Previous page</span>
+ <span aria-hidden="true">‹‹</span>
+ </a>
+ </li>
+ <li>
+ Page 2 </li>
+ <li>
+ <a href="/api/drupal/deprecated/9?page=2" title="Go to next page" rel="next">
+ <span class="visually-hidden">Next page</span>
+ <span aria-hidden="true">››</span>
+ </a>
+ </li>
+ </ul>
+ </nav>
+
+ 
+ 
+
+ 
+ 
+</div>
+</div>
+<p class="api-switch"><strong><a href="https://api.drupal.org/api/projects">Other projects</a></strong></p><hr class="clear"><div class="note clear"><p><strong>Buggy or inaccurate documentation?</strong> Please <a href="https://drupal.org/node/add/project-issue/drupal?component=documentation&amp;categories=2&amp;version=9-dev&amp;body=API%20page%3A%20https%3A//api.drupal.org/api/drupal/deprecated/9%3Fpage%3D1%0A%0AEnter%20a%20descriptive%20title%20%28above%29%2C%20then%20describe%20the%20problem%20you%20have%20found%3A%0A">file an issue</a>. Need <a href="https://drupal.org/support">support</a>? Need help programming? Connect with the <a href="https://drupal.org/community" rel="nofollow">Drupal community</a>.</p></div>
+ </div>
+</div>
+ </div> 
+ </div> 
+ <div id="aside" role="complementary" >
+ <div id="aside-region">
+ <div class="region region-sidebar-second">
+ <div id="search" class="block block-api">
+ <div class="block-inner">
+ 
+ <h2>Search drupal 9</h2>
+ 
+ <div class="content">
+ <form class="api-search-form" data-drupal-selector="api-search-form" action="/api/drupal/deprecated/9?page=1" method="post" id="api-search-form" accept-charset="UTF-8">
+ <div class="js-form-item form-item form-type-textfield js-form-type-textfield form-item-search js-form-item-search form-no-label">
+ <label for="edit-search" class="visually-hidden js-form-required form-required">Function, class, file, topic, etc.</label>
+ <input class="api-search-keywords form-autocomplete form-text required" autocomplete="off" data-drupal-selector="edit-search" aria-describedby="edit-search--description" data-autocomplete-path="/api/search/autocomplete/21" type="text" id="edit-search" name="search" value="" size="60" maxlength="128" required="required" />
+
+ <div id="edit-search--description" class="description">
+ Partial match search is supported
+ </div>
+ </div>
+<input autocomplete="off" data-drupal-selector="form-uoviff-l1pty88fjjegcbhmfrthg4trpqsyopzqhk0k" type="hidden" name="form_build_id" value="form-UOvIFf-l1Pty88FjJEGCBHmFrTHg4TrpQSYopZQhK0k" />
+<input data-drupal-selector="edit-api-search-form" type="hidden" name="form_id" value="api_search_form" />
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2"><input data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="Search" class="button js-form-submit form-submit" />
+</div>
+
+</form>
+
+ </div>
+ </div>
+</div>
+<div id="block-bluecheese-apinavigationblock" class="block block-api">
+ <div class="block-inner">
+ 
+ <h2>API Navigation</h2>
+ 
+ <div class="content">
+ <ul><li><a href="/api/drupal/9">drupal 9</a></li><li><a href="/api/drupal/groups/9">Topics</a></li><li><a href="/api/drupal/classes/9">Classes</a></li><li><a href="/api/drupal/functions/9">Functions</a></li><li><a href="/api/drupal/constants/9">Constants</a></li><li><a href="/api/drupal/globals/9">Globals</a></li><li><a href="/api/drupal/files/9">Files</a></li><li><a href="/api/drupal/namespaces/9">Namespaces</a></li><li><a href="/api/drupal/deprecated/9">Deprecated</a></li><li><a href="/api/drupal/services/9">Services</a></li><li><a href="/api/drupal/elements/9">Elements</a></li></ul>
+ </div>
+ </div>
+</div>
+
+ </div>
+
+ </div> </div> 
+ </div> </div> 
+ <footer id="footer" role="contentinfo">
+ <div class="region region-footer">
+ <div id="block-drupalorg-crosssite-drupalorg-footer" class="block block-drupalorg-crosssite">
+ <div class="block-inner">
+ 
+ 
+ <div class="content">
+ <h4 class="visually-hidden">News items</h4><ul class="drupal-news"><li><a href="https://www.drupal.org/news">News</a></li><li><a href="https://www.drupal.org/planet" title="News from Drupal community members">Planet Drupal</a></li><li><a href="https://www.drupal.org/about/media-kit/social-media" title="Drupal on social media">Social media</a></li><li><a href="https://www.drupal.org/subscribe">Sign up for Drupal news</a></li><li><a href="https://www.drupal.org/security" title="Announcements from the Drupal Security Team">Security advisories</a></li><li><a href="https://jobs.drupal.org/" title="Drupal Jobs">Jobs</a></li></ul><h4 class="visually-hidden">Our community</h4><ul class="community"><li><a href="https://www.drupal.org/community">Community</a></li><li><a href="https://www.drupal.org/drupal-services" title="People and organizations offering Drupal services">Services</a></li><li><a href="https://www.drupal.org/training" title="People and organizations offering Drupal training">Training</a></li><li><a href="https://www.drupal.org/hosting" title="Organizations offering Drupal hosting">Hosting</a></li><li><a href="https://www.drupal.org/community/contributor-guide">Contributor guide</a></li><li><a href="https://groups.drupal.org/groups" title="groups.drupal.org">Groups & meetups</a></li><li><a href="https://events.drupal.org" title="Upcoming and past DrupalCons">DrupalCon</a></li><li><a href="https://www.drupal.org/dcoc" title="Drupal code of conduct">Code of conduct</a></li></ul><h4 class="visually-hidden">Documentation</h4><ul class="get-started"><li><a href="https://www.drupal.org/documentation" title="Documentation for working with Drupal">Documentation</a></li><li><a href="https://www.drupal.org/docs">Drupal Guide</a></li><li><a href="https://www.drupal.org/docs/user_guide/en/index.html">Drupal User Guide</a></li><li><a href="https://www.drupal.org/documentation/develop">Developer docs</a></li><li><a href="https://api.drupal.org/" title="Drupal API reference">API.Drupal.org</a></li></ul><h4 class="visually-hidden">Drupal code base</h4><ul class="download-extend"><li><a href="https://www.drupal.org/download">Download & Extend</a></li><li><a href="https://www.drupal.org/project/drupal" title="Download the latest version of the Drupal software">Drupal core</a></li><li><a href="https://www.drupal.org/project/project_module" title="Download add-on features and functionality">Modules</a></li><li><a href="https://www.drupal.org/project/project_theme" title="Download pre-designed styles for Drupal">Themes</a></li><li><a href="https://www.drupal.org/project/project_distribution" title="Download a pre-packaged Drupal site">Distributions</a></li></ul><h4 class="visually-hidden">Governance of community</h4><ul class="about"><li><a href="https://www.drupal.org/about">About</a></li><li><a href="https://www.drupal.org/about/features/accessibility" title="Our committment to accessibility">Web accessibility</a></li><li><a href="https://www.drupal.org/association" title="About the Drupal Association">Drupal Association</a></li><li><a href="https://www.drupal.org/drupalorg" title="About Drupal.org">About Drupal.org</a></li><li><a href="https://www.drupal.org/terms" title="Drupal.org terms of service">Terms of service</a></li><li><a href="https://www.drupal.org/privacy" title="Drupal.org privacy policy">Privacy policy</a></li></ul>
+ </div>
+ </div>
+</div>
+<div id="block-bluecheese-apidrupalorgfootermessage" class="block block-apidrupalorg">
+ <div class="block-inner">
+ 
+ 
+ <div class="content">
+ <p>All source code and documentation on this site is released under the terms of the <a href="https://api.drupal.org/api/file/core!LICENSE.txt">GNU General Public License, version 2 and later</a>. <a href="https://www.drupal.org/">Drupal</a> is a <a href="https://drupal.com/trademark">registered trademark</a> of <a href="https://dri.es">Dries Buytaert</a>.</p>
+ </div>
+ </div>
+</div>
+
+ </div>
+
+ </footer> 
+ </div>
+
+ 
+ <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"api\/drupal\/deprecated\/9","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en","currentQuery":{"page":"1"}},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"eJxtjUESgjAQBD8UzJOoJQwxumGo7Ebl91J6wvLSh-5Dy1Zi4oxhYaviXtYcJu1IV8AQs3ISDYkNcW59E71IdybWTeE4heKogxbz8BVseUyNZnaUY8J7gf1tC-loIZNZMcoquntJFn9FsN2OSZzEEB4FT4sfXuQmr5OonLviDYQxVuw","theme":"bluecheese","theme_token":null},"ajaxTrustedUrl":{"\/api\/drupal\/deprecated\/9":true,"\/search\/api":true,"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true},"google_analytics":{"account":"UA-2360451-17","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:062eac948bc0995aa0763b502d96315b6f49208468f1e41b73e107cb8a57cd2e":{"view_name":"api_listings","view_display_id":"block_deprecated","view_args":"21","view_path":"\/api\/drupal\/deprecated\/9","view_base_path":null,"view_dom_id":"062eac948bc0995aa0763b502d96315b6f49208468f1e41b73e107cb8a57cd2e","pager_element":0}}},"drupalorg_crosssite":{"ConsentNeeded":true},"user":{"uid":0,"permissionsHash":"b1ec311de1a8cc3ef897d8b1afefc27ccc6b769eba189ed370cd90ccf90c9802"}}</script>
+<script src="/core/assets/vendor/jquery/jquery.min.js?v=4.0.0"></script>
+<script src="/sites/default/files/js/js_fDCPbFA-Hqw9PpIQgzwdaQCcwsesgd3EiPG7ntgtG4Q.js?scope=footer&amp;delta=1&amp;language=en&amp;theme=bluecheese&amp;include=eJxdyEEOgzAMBMAPRfhJyJhVCDUsihNof49UblzmMJN32AIEJDsn9WSskLn2Q33Q3mjcDkdDeo41j1YZEaVBjPwURMpkdoy6q_9asZB3pLPgCvk76KrfG2gkMAQ"></script>
+
+ </body>
+</html>

@@ -1,0 +1,1116 @@
+{
+  "domain": "change_record",
+  "label": "Change Records",
+  "record_count": 20,
+  "records": [
+    {
+      "detail": {
+        "category": "deprecation",
+        "introduced_branch": "11.5.x",
+        "introduced_version": "11.5.0",
+        "node_id": "3348027",
+        "symbols": [
+          "user_role_change_permissions",
+          "user_role_grant_permissions",
+          "user_role_revoke_permissions"
+        ],
+        "url": "https://www.drupal.org/node/3348027"
+      },
+      "domain": "change_record",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Read the record's own actions and checks.",
+        "what_is_this": "source-derived authoritative record: user_role_grant_permissions(), user_role_revoke_permissions() and user_role_change_permissions() are deprecated",
+        "what_is_unknown": [
+          "A change record names symbols but asserts no lifecycle for them."
+        ],
+        "what_supports_it": [
+          "drupal-core-change-notices"
+        ],
+        "why_does_it_exist": "Drupal core published this change record for a change that landed in a branch."
+      },
+      "id": "change-record.3348027",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+          "source_id": "drupal-core-change-notices",
+          "source_url": "https://www.drupal.org/list-changes/drupal"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-core-change-notices",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-core-change-notices/"
+        }
+      ],
+      "route": "/change-records/change-record.3348027/",
+      "summary": "deprecation introduced in 11.5.0",
+      "title": "user_role_grant_permissions(), user_role_revoke_permissions() and user_role_change_permissions() are deprecated",
+      "trust": {
+        "authority": "authoritative Drupal source",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": [
+        "A change record names symbols but asserts no lifecycle for them."
+      ]
+    },
+    {
+      "detail": {
+        "category": "API_addition",
+        "introduced_branch": "11.5.x",
+        "introduced_version": "11.5.0",
+        "node_id": "3389683",
+        "symbols": [],
+        "url": "https://www.drupal.org/node/3389683"
+      },
+      "domain": "change_record",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Read the record's own actions and checks.",
+        "what_is_this": "source-derived authoritative record: Database Schema Definition API now supports creation of generated columns",
+        "what_is_unknown": [
+          "A change record names symbols but asserts no lifecycle for them."
+        ],
+        "what_supports_it": [
+          "drupal-core-change-notices"
+        ],
+        "why_does_it_exist": "Drupal core published this change record for a change that landed in a branch."
+      },
+      "id": "change-record.3389683",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+          "source_id": "drupal-core-change-notices",
+          "source_url": "https://www.drupal.org/list-changes/drupal"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-core-change-notices",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-core-change-notices/"
+        }
+      ],
+      "route": "/change-records/change-record.3389683/",
+      "summary": "API_addition introduced in 11.5.0",
+      "title": "Database Schema Definition API now supports creation of generated columns",
+      "trust": {
+        "authority": "authoritative Drupal source",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": [
+        "A change record names symbols but asserts no lifecycle for them."
+      ]
+    },
+    {
+      "detail": {
+        "category": "signature_change",
+        "introduced_branch": "11.5.x",
+        "introduced_version": "11.5.0",
+        "node_id": "3572245",
+        "symbols": [],
+        "url": "https://www.drupal.org/node/3572245"
+      },
+      "domain": "change_record",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Read the record's own actions and checks.",
+        "what_is_this": "source-derived authoritative record: MarkFutureUpdateEquivalent attribute added to register equivalent updates on site install",
+        "what_is_unknown": [
+          "A change record names symbols but asserts no lifecycle for them."
+        ],
+        "what_supports_it": [
+          "drupal-core-change-notices"
+        ],
+        "why_does_it_exist": "Drupal core published this change record for a change that landed in a branch."
+      },
+      "id": "change-record.3572245",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+          "source_id": "drupal-core-change-notices",
+          "source_url": "https://www.drupal.org/list-changes/drupal"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-core-change-notices",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-core-change-notices/"
+        }
+      ],
+      "route": "/change-records/change-record.3572245/",
+      "summary": "signature_change introduced in 11.5.0",
+      "title": "MarkFutureUpdateEquivalent attribute added to register equivalent updates on site install",
+      "trust": {
+        "authority": "authoritative Drupal source",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": [
+        "A change record names symbols but asserts no lifecycle for them."
+      ]
+    },
+    {
+      "detail": {
+        "category": "removal",
+        "introduced_branch": "12.0.x",
+        "introduced_version": "12.0.0-beta1",
+        "node_id": "3583674",
+        "symbols": [],
+        "url": "https://www.drupal.org/node/3583674"
+      },
+      "domain": "change_record",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Read the record's own actions and checks.",
+        "what_is_this": "source-derived authoritative record: htmx now uses version 4",
+        "what_is_unknown": [
+          "A change record names symbols but asserts no lifecycle for them."
+        ],
+        "what_supports_it": [
+          "drupal-core-change-notices"
+        ],
+        "why_does_it_exist": "Drupal core published this change record for a change that landed in a branch."
+      },
+      "id": "change-record.3583674",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+          "source_id": "drupal-core-change-notices",
+          "source_url": "https://www.drupal.org/list-changes/drupal"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-core-change-notices",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-core-change-notices/"
+        }
+      ],
+      "route": "/change-records/change-record.3583674/",
+      "summary": "removal introduced in 12.0.0-beta1",
+      "title": "htmx now uses version 4",
+      "trust": {
+        "authority": "authoritative Drupal source",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": [
+        "A change record names symbols but asserts no lifecycle for them."
+      ]
+    },
+    {
+      "detail": {
+        "category": "deprecation",
+        "introduced_branch": "11.5.x",
+        "introduced_version": "11.5.0",
+        "node_id": "3587768",
+        "symbols": [],
+        "url": "https://www.drupal.org/node/3587768"
+      },
+      "domain": "change_record",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Read the record's own actions and checks.",
+        "what_is_this": "source-derived authoritative record: Functions in update.compare.inc are deprecated",
+        "what_is_unknown": [
+          "A change record names symbols but asserts no lifecycle for them."
+        ],
+        "what_supports_it": [
+          "drupal-core-change-notices"
+        ],
+        "why_does_it_exist": "Drupal core published this change record for a change that landed in a branch."
+      },
+      "id": "change-record.3587768",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+          "source_id": "drupal-core-change-notices",
+          "source_url": "https://www.drupal.org/list-changes/drupal"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-core-change-notices",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-core-change-notices/"
+        }
+      ],
+      "route": "/change-records/change-record.3587768/",
+      "summary": "deprecation introduced in 11.5.0",
+      "title": "Functions in update.compare.inc are deprecated",
+      "trust": {
+        "authority": "authoritative Drupal source",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": [
+        "A change record names symbols but asserts no lifecycle for them."
+      ]
+    },
+    {
+      "detail": {
+        "category": "other",
+        "introduced_branch": "11.5.x",
+        "introduced_version": "11.5.0",
+        "node_id": "3608081",
+        "symbols": [],
+        "url": "https://www.drupal.org/node/3608081"
+      },
+      "domain": "change_record",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Read the record's own actions and checks.",
+        "what_is_this": "source-derived authoritative record: View mode dependencies are recalculated",
+        "what_is_unknown": [
+          "A change record names symbols but asserts no lifecycle for them."
+        ],
+        "what_supports_it": [
+          "drupal-core-change-notices"
+        ],
+        "why_does_it_exist": "Drupal core published this change record for a change that landed in a branch."
+      },
+      "id": "change-record.3608081",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+          "source_id": "drupal-core-change-notices",
+          "source_url": "https://www.drupal.org/list-changes/drupal"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-core-change-notices",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-core-change-notices/"
+        }
+      ],
+      "route": "/change-records/change-record.3608081/",
+      "summary": "other introduced in 11.5.0",
+      "title": "View mode dependencies are recalculated",
+      "trust": {
+        "authority": "authoritative Drupal source",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": [
+        "A change record names symbols but asserts no lifecycle for them."
+      ]
+    },
+    {
+      "detail": {
+        "category": "other",
+        "introduced_branch": "12.0.x",
+        "introduced_version": "12.0.0",
+        "node_id": "3615213",
+        "symbols": [],
+        "url": "https://www.drupal.org/node/3615213"
+      },
+      "domain": "change_record",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Read the record's own actions and checks.",
+        "what_is_this": "source-derived authoritative record: PostgreSQL merge query executes as a single native merge query",
+        "what_is_unknown": [
+          "A change record names symbols but asserts no lifecycle for them."
+        ],
+        "what_supports_it": [
+          "drupal-core-change-notices"
+        ],
+        "why_does_it_exist": "Drupal core published this change record for a change that landed in a branch."
+      },
+      "id": "change-record.3615213",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+          "source_id": "drupal-core-change-notices",
+          "source_url": "https://www.drupal.org/list-changes/drupal"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-core-change-notices",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-core-change-notices/"
+        }
+      ],
+      "route": "/change-records/change-record.3615213/",
+      "summary": "other introduced in 12.0.0",
+      "title": "PostgreSQL merge query executes as a single native merge query",
+      "trust": {
+        "authority": "authoritative Drupal source",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": [
+        "A change record names symbols but asserts no lifecycle for them."
+      ]
+    },
+    {
+      "detail": {
+        "category": "removal",
+        "introduced_branch": "11.5.x",
+        "introduced_version": "11.5.0",
+        "node_id": "3615418",
+        "symbols": [],
+        "url": "https://www.drupal.org/node/3615418"
+      },
+      "domain": "change_record",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Read the record's own actions and checks.",
+        "what_is_this": "source-derived authoritative record: PostgreSQL type-casting of fields in raw SQL with LIKE and regex operators is deprecated",
+        "what_is_unknown": [
+          "A change record names symbols but asserts no lifecycle for them."
+        ],
+        "what_supports_it": [
+          "drupal-core-change-notices"
+        ],
+        "why_does_it_exist": "Drupal core published this change record for a change that landed in a branch."
+      },
+      "id": "change-record.3615418",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+          "source_id": "drupal-core-change-notices",
+          "source_url": "https://www.drupal.org/list-changes/drupal"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-core-change-notices",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-core-change-notices/"
+        }
+      ],
+      "route": "/change-records/change-record.3615418/",
+      "summary": "removal introduced in 11.5.0",
+      "title": "PostgreSQL type-casting of fields in raw SQL with LIKE and regex operators is deprecated",
+      "trust": {
+        "authority": "authoritative Drupal source",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": [
+        "A change record names symbols but asserts no lifecycle for them."
+      ]
+    },
+    {
+      "detail": {
+        "category": "API_addition",
+        "introduced_branch": "main",
+        "introduced_version": "11.5.0",
+        "node_id": "3618676",
+        "symbols": [],
+        "url": "https://www.drupal.org/node/3618676"
+      },
+      "domain": "change_record",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Read the record's own actions and checks.",
+        "what_is_this": "source-derived authoritative record: Performance tests can now store expected metrics and queries in separate files and update them",
+        "what_is_unknown": [
+          "A change record names symbols but asserts no lifecycle for them."
+        ],
+        "what_supports_it": [
+          "drupal-core-change-notices"
+        ],
+        "why_does_it_exist": "Drupal core published this change record for a change that landed in a branch."
+      },
+      "id": "change-record.3618676",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+          "source_id": "drupal-core-change-notices",
+          "source_url": "https://www.drupal.org/list-changes/drupal"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-core-change-notices",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-core-change-notices/"
+        }
+      ],
+      "route": "/change-records/change-record.3618676/",
+      "summary": "API_addition introduced in 11.5.0",
+      "title": "Performance tests can now store expected metrics and queries in separate files and update them",
+      "trust": {
+        "authority": "authoritative Drupal source",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": [
+        "A change record names symbols but asserts no lifecycle for them."
+      ]
+    },
+    {
+      "detail": {
+        "category": "API_addition",
+        "introduced_branch": "11.5.x",
+        "introduced_version": "11.5.0",
+        "node_id": "3620269",
+        "symbols": [],
+        "url": "https://www.drupal.org/node/3620269"
+      },
+      "domain": "change_record",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Read the record's own actions and checks.",
+        "what_is_this": "source-derived authoritative record: ConfigEntityBase now has static helpers for loadOverrideFree and loadMultipleOverrideFree",
+        "what_is_unknown": [
+          "A change record names symbols but asserts no lifecycle for them."
+        ],
+        "what_supports_it": [
+          "drupal-core-change-notices"
+        ],
+        "why_does_it_exist": "Drupal core published this change record for a change that landed in a branch."
+      },
+      "id": "change-record.3620269",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+          "source_id": "drupal-core-change-notices",
+          "source_url": "https://www.drupal.org/list-changes/drupal"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-core-change-notices",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-core-change-notices/"
+        }
+      ],
+      "route": "/change-records/change-record.3620269/",
+      "summary": "API_addition introduced in 11.5.0",
+      "title": "ConfigEntityBase now has static helpers for loadOverrideFree and loadMultipleOverrideFree",
+      "trust": {
+        "authority": "authoritative Drupal source",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": [
+        "A change record names symbols but asserts no lifecycle for them."
+      ]
+    },
+    {
+      "detail": {
+        "category": "hook_change",
+        "introduced_branch": "11.5.x",
+        "introduced_version": "11.5.0",
+        "node_id": "3620346",
+        "symbols": [
+          "RecipeRunner::isApplying"
+        ],
+        "url": "https://www.drupal.org/node/3620346"
+      },
+      "domain": "change_record",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Read the record's own actions and checks.",
+        "what_is_this": "source-derived authoritative record: \\Drupal\\Core\\Recipe\\RecipeRunner::isApplying()",
+        "what_is_unknown": [
+          "A change record names symbols but asserts no lifecycle for them."
+        ],
+        "what_supports_it": [
+          "drupal-core-change-notices"
+        ],
+        "why_does_it_exist": "Drupal core published this change record for a change that landed in a branch."
+      },
+      "id": "change-record.3620346",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+          "source_id": "drupal-core-change-notices",
+          "source_url": "https://www.drupal.org/list-changes/drupal"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-core-change-notices",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-core-change-notices/"
+        }
+      ],
+      "route": "/change-records/change-record.3620346/",
+      "summary": "hook_change introduced in 11.5.0",
+      "title": "\\Drupal\\Core\\Recipe\\RecipeRunner::isApplying()",
+      "trust": {
+        "authority": "authoritative Drupal source",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": [
+        "A change record names symbols but asserts no lifecycle for them."
+      ]
+    },
+    {
+      "detail": {
+        "category": "other",
+        "introduced_branch": "12.0.x",
+        "introduced_version": "12.0.0",
+        "node_id": "3620430",
+        "symbols": [],
+        "url": "https://www.drupal.org/node/3620430"
+      },
+      "domain": "change_record",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Read the record's own actions and checks.",
+        "what_is_this": "source-derived authoritative record: Node reference fields can include unpublished nodes the user may view",
+        "what_is_unknown": [
+          "A change record names symbols but asserts no lifecycle for them."
+        ],
+        "what_supports_it": [
+          "drupal-core-change-notices"
+        ],
+        "why_does_it_exist": "Drupal core published this change record for a change that landed in a branch."
+      },
+      "id": "change-record.3620430",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+          "source_id": "drupal-core-change-notices",
+          "source_url": "https://www.drupal.org/list-changes/drupal"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-core-change-notices",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-core-change-notices/"
+        }
+      ],
+      "route": "/change-records/change-record.3620430/",
+      "summary": "other introduced in 12.0.0",
+      "title": "Node reference fields can include unpublished nodes the user may view",
+      "trust": {
+        "authority": "authoritative Drupal source",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": [
+        "A change record names symbols but asserts no lifecycle for them."
+      ]
+    },
+    {
+      "detail": {
+        "category": "API_addition",
+        "introduced_branch": "main",
+        "introduced_version": "12.0.0",
+        "node_id": "3620447",
+        "symbols": [],
+        "url": "https://www.drupal.org/node/3620447"
+      },
+      "domain": "change_record",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Read the record's own actions and checks.",
+        "what_is_this": "source-derived authoritative record: User module provides new cancel handlers",
+        "what_is_unknown": [
+          "A change record names symbols but asserts no lifecycle for them."
+        ],
+        "what_supports_it": [
+          "drupal-core-change-notices"
+        ],
+        "why_does_it_exist": "Drupal core published this change record for a change that landed in a branch."
+      },
+      "id": "change-record.3620447",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+          "source_id": "drupal-core-change-notices",
+          "source_url": "https://www.drupal.org/list-changes/drupal"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-core-change-notices",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-core-change-notices/"
+        }
+      ],
+      "route": "/change-records/change-record.3620447/",
+      "summary": "API_addition introduced in 12.0.0",
+      "title": "User module provides new cancel handlers",
+      "trust": {
+        "authority": "authoritative Drupal source",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": [
+        "A change record names symbols but asserts no lifecycle for them."
+      ]
+    },
+    {
+      "detail": {
+        "category": "other",
+        "introduced_branch": "11.5.x",
+        "introduced_version": "11.5.0",
+        "node_id": "3620769",
+        "symbols": [],
+        "url": "https://www.drupal.org/node/3620769"
+      },
+      "domain": "change_record",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Read the record's own actions and checks.",
+        "what_is_this": "source-derived authoritative record: There is a new hook data cache service.",
+        "what_is_unknown": [
+          "A change record names symbols but asserts no lifecycle for them."
+        ],
+        "what_supports_it": [
+          "drupal-core-change-notices"
+        ],
+        "why_does_it_exist": "Drupal core published this change record for a change that landed in a branch."
+      },
+      "id": "change-record.3620769",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+          "source_id": "drupal-core-change-notices",
+          "source_url": "https://www.drupal.org/list-changes/drupal"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-core-change-notices",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-core-change-notices/"
+        }
+      ],
+      "route": "/change-records/change-record.3620769/",
+      "summary": "other introduced in 11.5.0",
+      "title": "There is a new hook data cache service.",
+      "trust": {
+        "authority": "authoritative Drupal source",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": [
+        "A change record names symbols but asserts no lifecycle for them."
+      ]
+    },
+    {
+      "detail": {
+        "category": "other",
+        "introduced_branch": "main",
+        "introduced_version": null,
+        "node_id": "3620771",
+        "symbols": [],
+        "url": "https://www.drupal.org/node/3620771"
+      },
+      "domain": "change_record",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Read the record's own actions and checks.",
+        "what_is_this": "source-derived authoritative record: #file_value_callbacks now enforce TrustedCallbackInterface protections",
+        "what_is_unknown": [
+          "A change record names symbols but asserts no lifecycle for them."
+        ],
+        "what_supports_it": [
+          "drupal-core-change-notices"
+        ],
+        "why_does_it_exist": "Drupal core published this change record for a change that landed in a branch."
+      },
+      "id": "change-record.3620771",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+          "source_id": "drupal-core-change-notices",
+          "source_url": "https://www.drupal.org/list-changes/drupal"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-core-change-notices",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-core-change-notices/"
+        }
+      ],
+      "route": "/change-records/change-record.3620771/",
+      "summary": "other introduced in an unstated version",
+      "title": "#file_value_callbacks now enforce TrustedCallbackInterface protections",
+      "trust": {
+        "authority": "authoritative Drupal source",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": [
+        "A change record names symbols but asserts no lifecycle for them."
+      ]
+    },
+    {
+      "detail": {
+        "category": "removal",
+        "introduced_branch": "12.x",
+        "introduced_version": null,
+        "node_id": "3620806",
+        "symbols": [],
+        "url": "https://www.drupal.org/node/3620806"
+      },
+      "domain": "change_record",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Read the record's own actions and checks.",
+        "what_is_this": "source-derived authoritative record: drupalSettings.path.currentQuery is deprecated",
+        "what_is_unknown": [
+          "A change record names symbols but asserts no lifecycle for them."
+        ],
+        "what_supports_it": [
+          "drupal-core-change-notices"
+        ],
+        "why_does_it_exist": "Drupal core published this change record for a change that landed in a branch."
+      },
+      "id": "change-record.3620806",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+          "source_id": "drupal-core-change-notices",
+          "source_url": "https://www.drupal.org/list-changes/drupal"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-core-change-notices",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-core-change-notices/"
+        }
+      ],
+      "route": "/change-records/change-record.3620806/",
+      "summary": "removal introduced in an unstated version",
+      "title": "drupalSettings.path.currentQuery is deprecated",
+      "trust": {
+        "authority": "authoritative Drupal source",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": [
+        "A change record names symbols but asserts no lifecycle for them."
+      ]
+    },
+    {
+      "detail": {
+        "category": "deprecation",
+        "introduced_branch": "11.5.x",
+        "introduced_version": "11.5.0",
+        "node_id": "3620934",
+        "symbols": [],
+        "url": "https://www.drupal.org/node/3620934"
+      },
+      "domain": "change_record",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Read the record's own actions and checks.",
+        "what_is_this": "source-derived authoritative record: Several user functions have been deprecated.",
+        "what_is_unknown": [
+          "A change record names symbols but asserts no lifecycle for them."
+        ],
+        "what_supports_it": [
+          "drupal-core-change-notices"
+        ],
+        "why_does_it_exist": "Drupal core published this change record for a change that landed in a branch."
+      },
+      "id": "change-record.3620934",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+          "source_id": "drupal-core-change-notices",
+          "source_url": "https://www.drupal.org/list-changes/drupal"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-core-change-notices",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-core-change-notices/"
+        }
+      ],
+      "route": "/change-records/change-record.3620934/",
+      "summary": "deprecation introduced in 11.5.0",
+      "title": "Several user functions have been deprecated.",
+      "trust": {
+        "authority": "authoritative Drupal source",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": [
+        "A change record names symbols but asserts no lifecycle for them."
+      ]
+    },
+    {
+      "detail": {
+        "category": "behavior_change",
+        "introduced_branch": "12.1.x",
+        "introduced_version": "12.1.0",
+        "node_id": "3621034",
+        "symbols": [],
+        "url": "https://www.drupal.org/node/3621034"
+      },
+      "domain": "change_record",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Read the record's own actions and checks.",
+        "what_is_this": "source-derived authoritative record: The renderer no longer needs the theme manager",
+        "what_is_unknown": [
+          "A change record names symbols but asserts no lifecycle for them."
+        ],
+        "what_supports_it": [
+          "drupal-core-change-notices"
+        ],
+        "why_does_it_exist": "Drupal core published this change record for a change that landed in a branch."
+      },
+      "id": "change-record.3621034",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+          "source_id": "drupal-core-change-notices",
+          "source_url": "https://www.drupal.org/list-changes/drupal"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-core-change-notices",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-core-change-notices/"
+        }
+      ],
+      "route": "/change-records/change-record.3621034/",
+      "summary": "behavior_change introduced in 12.1.0",
+      "title": "The renderer no longer needs the theme manager",
+      "trust": {
+        "authority": "authoritative Drupal source",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": [
+        "A change record names symbols but asserts no lifecycle for them."
+      ]
+    },
+    {
+      "detail": {
+        "category": "other",
+        "introduced_branch": "12.0.x",
+        "introduced_version": "12.0.0",
+        "node_id": "3621241",
+        "symbols": [],
+        "url": "https://www.drupal.org/node/3621241"
+      },
+      "domain": "change_record",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Read the record's own actions and checks.",
+        "what_is_this": "source-derived authoritative record: New strnatcasecmp and natcasesort functions in Drupal\\Core\\Utility\\NaturalSort",
+        "what_is_unknown": [
+          "A change record names symbols but asserts no lifecycle for them."
+        ],
+        "what_supports_it": [
+          "drupal-core-change-notices"
+        ],
+        "why_does_it_exist": "Drupal core published this change record for a change that landed in a branch."
+      },
+      "id": "change-record.3621241",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+          "source_id": "drupal-core-change-notices",
+          "source_url": "https://www.drupal.org/list-changes/drupal"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-core-change-notices",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-core-change-notices/"
+        }
+      ],
+      "route": "/change-records/change-record.3621241/",
+      "summary": "other introduced in 12.0.0",
+      "title": "New strnatcasecmp and natcasesort functions in Drupal\\Core\\Utility\\NaturalSort",
+      "trust": {
+        "authority": "authoritative Drupal source",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": [
+        "A change record names symbols but asserts no lifecycle for them."
+      ]
+    },
+    {
+      "detail": {
+        "category": "other",
+        "introduced_branch": "12.0.x",
+        "introduced_version": "12.0.0",
+        "node_id": "3621537",
+        "symbols": [],
+        "url": "https://www.drupal.org/node/3621537"
+      },
+      "domain": "change_record",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Read the record's own actions and checks.",
+        "what_is_this": "source-derived authoritative record: CSSLint and ESLint configuration files are no longer scaffolded",
+        "what_is_unknown": [
+          "A change record names symbols but asserts no lifecycle for them."
+        ],
+        "what_supports_it": [
+          "drupal-core-change-notices"
+        ],
+        "why_does_it_exist": "Drupal core published this change record for a change that landed in a branch."
+      },
+      "id": "change-record.3621537",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
+          "source_id": "drupal-core-change-notices",
+          "source_url": "https://www.drupal.org/list-changes/drupal"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-core-change-notices",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-core-change-notices/"
+        }
+      ],
+      "route": "/change-records/change-record.3621537/",
+      "summary": "other introduced in 12.0.0",
+      "title": "CSSLint and ESLint configuration files are no longer scaffolded",
+      "trust": {
+        "authority": "authoritative Drupal source",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": [
+        "A change record names symbols but asserts no lifecycle for them."
+      ]
+    }
+  ],
+  "route": "/change-records/",
+  "trust_class": "source_derived_authoritative"
+}
+

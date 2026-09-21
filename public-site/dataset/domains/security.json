@@ -1,0 +1,4671 @@
+{
+  "domain": "advisory",
+  "label": "Security",
+  "record_count": 40,
+  "records": [
+    {
+      "detail": {
+        "affected_versions": "<2.1.5",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/entity_pdf",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-81164"
+        ],
+        "fixed_in": [
+          "2.1.5"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "contrib",
+        "project": "entity_pdf",
+        "published_at": "2026-08-26T17:42:20Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:None/A:User/CI:Some/II:None/E:Theoretical/TD:All",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Access bypass"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Entity PDF - Moderately critical - Access bypass - SA-CONTRIB-2026-114",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-recent"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CONTRIB-2026-114",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+          "source_id": "drupal-security-advisories-recent",
+          "source_url": "https://www.drupal.org/sa-contrib-2026-114"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-recent",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-recent/"
+        }
+      ],
+      "route": "/security/SA-CONTRIB-2026-114/",
+      "summary": "contrib advisory for entity_pdf",
+      "title": "Entity PDF - Moderately critical - Access bypass - SA-CONTRIB-2026-114",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<2.2.1",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/ldap_auth",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-81205"
+        ],
+        "fixed_in": [
+          "2.2.1"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "contrib",
+        "project": "ldap_auth",
+        "published_at": "2026-08-26T17:43:05Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:None/CI:Some/II:None/E:Proof/TD:All",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Information Disclosure"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: LDAP / Active Directory Integration - Moderately critical - Information Disclosure - SA-CONTRIB-2026-115",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-recent"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CONTRIB-2026-115",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+          "source_id": "drupal-security-advisories-recent",
+          "source_url": "https://www.drupal.org/sa-contrib-2026-115"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-recent",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-recent/"
+        }
+      ],
+      "route": "/security/SA-CONTRIB-2026-115/",
+      "summary": "contrib advisory for ldap_auth",
+      "title": "LDAP / Active Directory Integration - Moderately critical - Information Disclosure - SA-CONTRIB-2026-115",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<9.5.3",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/monster_menus",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-81201"
+        ],
+        "fixed_in": [
+          "9.5.3"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "contrib",
+        "project": "monster_menus",
+        "published_at": "2026-08-26T17:44:38Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Cross-site Scripting"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Monster Menus - Moderately critical - Cross-site Scripting - SA-CONTRIB-2026-116",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-recent"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CONTRIB-2026-116",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+          "source_id": "drupal-security-advisories-recent",
+          "source_url": "https://www.drupal.org/sa-contrib-2026-116"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-recent",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-recent/"
+        }
+      ],
+      "route": "/security/SA-CONTRIB-2026-116/",
+      "summary": "contrib advisory for monster_menus",
+      "title": "Monster Menus - Moderately critical - Cross-site Scripting - SA-CONTRIB-2026-116",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<2.1.0",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/slick",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-81160"
+        ],
+        "fixed_in": [],
+        "fixed_in_state": "absent",
+        "kind": "contrib",
+        "project": "slick",
+        "published_at": "2026-08-26T17:45:39Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Default",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Cross Site Scripting"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Slick Carousel - Moderately critical - Cross Site Scripting - SA-CONTRIB-2026-117",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-recent"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CONTRIB-2026-117",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+          "source_id": "drupal-security-advisories-recent",
+          "source_url": "https://www.drupal.org/sa-contrib-2026-117"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-recent",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-recent/"
+        }
+      ],
+      "route": "/security/SA-CONTRIB-2026-117/",
+      "summary": "contrib advisory for slick",
+      "title": "Slick Carousel - Moderately critical - Cross Site Scripting - SA-CONTRIB-2026-117",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<2.4.5",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/advanced_search",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-84910"
+        ],
+        "fixed_in": [
+          "2.4.5"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "contrib",
+        "project": "advanced_search",
+        "published_at": "2026-09-02T16:25:51Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Complex/A:None/CI:Some/II:None/E:Theoretical/TD:All",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Access bypass"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Advanced Search - Moderately critical - Access bypass - SA-CONTRIB-2026-118",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-recent"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CONTRIB-2026-118",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+          "source_id": "drupal-security-advisories-recent",
+          "source_url": "https://www.drupal.org/sa-contrib-2026-118"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-recent",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-recent/"
+        }
+      ],
+      "route": "/security/SA-CONTRIB-2026-118/",
+      "summary": "contrib advisory for advanced_search",
+      "title": "Advanced Search - Moderately critical - Access bypass - SA-CONTRIB-2026-118",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<1.3.13 || >=1.4.0 <1.4.8",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/ai",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-84911"
+        ],
+        "fixed_in": [
+          "1.3.13",
+          "1.4.8"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "contrib",
+        "project": "ai",
+        "published_at": "2026-09-02T16:26:41Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Complex/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Uncommon",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Cross site scripting"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: AI (Artificial Intelligence) - Moderately critical - Cross site scripting - SA-CONTRIB-2026-119",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-recent"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CONTRIB-2026-119",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+          "source_id": "drupal-security-advisories-recent",
+          "source_url": "https://www.drupal.org/sa-contrib-2026-119"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-recent",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-recent/"
+        },
+        {
+          "label": "SA-CONTRIB-2026-120",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CONTRIB-2026-120/"
+        }
+      ],
+      "route": "/security/SA-CONTRIB-2026-119/",
+      "summary": "contrib advisory for ai",
+      "title": "AI (Artificial Intelligence) - Moderately critical - Cross site scripting - SA-CONTRIB-2026-119",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<1.3.13 || >=1.4.0 <1.4.8",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/ai",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-84912"
+        ],
+        "fixed_in": [
+          "1.3.13",
+          "1.4.8"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "contrib",
+        "project": "ai",
+        "published_at": "2026-09-02T16:27:29Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Access Bypass"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: AI (Artificial Intelligence) - Moderately critical - Access Bypass - SA-CONTRIB-2026-120",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-recent"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CONTRIB-2026-120",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+          "source_id": "drupal-security-advisories-recent",
+          "source_url": "https://www.drupal.org/sa-contrib-2026-120"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-recent",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-recent/"
+        },
+        {
+          "label": "SA-CONTRIB-2026-119",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CONTRIB-2026-119/"
+        }
+      ],
+      "route": "/security/SA-CONTRIB-2026-120/",
+      "summary": "contrib advisory for ai",
+      "title": "AI (Artificial Intelligence) - Moderately critical - Access Bypass - SA-CONTRIB-2026-120",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<1.3.2 || >=1.4.0 <1.4.1",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/ai_translate",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-84913"
+        ],
+        "fixed_in": [
+          "1.3.2",
+          "1.4.1"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "contrib",
+        "project": "ai_translate",
+        "published_at": "2026-09-02T16:28:20Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Access Bypass"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: AI translate - Moderately critical - Access Bypass - SA-CONTRIB-2026-121",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-recent"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CONTRIB-2026-121",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+          "source_id": "drupal-security-advisories-recent",
+          "source_url": "https://www.drupal.org/sa-contrib-2026-121"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-recent",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-recent/"
+        }
+      ],
+      "route": "/security/SA-CONTRIB-2026-121/",
+      "summary": "contrib advisory for ai_translate",
+      "title": "AI translate - Moderately critical - Access Bypass - SA-CONTRIB-2026-121",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<2.0.3",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/calculate_working_days",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-84914"
+        ],
+        "fixed_in": [
+          "2.0.3"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "contrib",
+        "project": "calculate_working_days",
+        "published_at": "2026-09-02T16:29:03Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:None/A:None/CI:None/II:Some/E:Theoretical/TD:All",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Access bypass"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Calculate Working Days - Critical - Access bypass - SA-CONTRIB-2026-122",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-recent"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CONTRIB-2026-122",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+          "source_id": "drupal-security-advisories-recent",
+          "source_url": "https://www.drupal.org/sa-contrib-2026-122"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-recent",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-recent/"
+        }
+      ],
+      "route": "/security/SA-CONTRIB-2026-122/",
+      "summary": "contrib advisory for calculate_working_days",
+      "title": "Calculate Working Days - Critical - Access bypass - SA-CONTRIB-2026-122",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<1.2.7",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/component_blocks",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-84915"
+        ],
+        "fixed_in": [
+          "1.2.7"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "contrib",
+        "project": "component_blocks",
+        "published_at": "2026-09-02T16:29:52Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:All",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Cross site scripting"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Component blocks - Moderately critical - Cross site scripting - SA-CONTRIB-2026-123",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-recent"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CONTRIB-2026-123",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+          "source_id": "drupal-security-advisories-recent",
+          "source_url": "https://www.drupal.org/sa-contrib-2026-123"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-recent",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-recent/"
+        }
+      ],
+      "route": "/security/SA-CONTRIB-2026-123/",
+      "summary": "contrib advisory for component_blocks",
+      "title": "Component blocks - Moderately critical - Cross site scripting - SA-CONTRIB-2026-123",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<2.4.0",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/otp_verification",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-84923"
+        ],
+        "fixed_in": [
+          "8.x-2.4"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "contrib",
+        "project": "otp_verification",
+        "published_at": "2026-09-02T16:30:37Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:None/CI:Some/II:Some/E:Theoretical/TD:All",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Access Bypass"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Email Verification / SMS Verification / OTP Verification - Critical - Access Bypass - SA-CONTRIB-2026-124",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-recent"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CONTRIB-2026-124",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+          "source_id": "drupal-security-advisories-recent",
+          "source_url": "https://www.drupal.org/sa-contrib-2026-124"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-recent",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-recent/"
+        },
+        {
+          "label": "SA-CONTRIB-2026-125",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CONTRIB-2026-125/"
+        }
+      ],
+      "route": "/security/SA-CONTRIB-2026-124/",
+      "summary": "contrib advisory for otp_verification",
+      "title": "Email Verification / SMS Verification / OTP Verification - Critical - Access Bypass - SA-CONTRIB-2026-124",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<2.4.0",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/otp_verification",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-84924"
+        ],
+        "fixed_in": [
+          "8.x-2.4"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "contrib",
+        "project": "otp_verification",
+        "published_at": "2026-09-02T16:31:35Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:None/CI:Some/II:Some/E:Theoretical/TD:All",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Cross Site Scripting"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Email Verification / SMS Verification / OTP Verification - Critical - Cross Site Scripting - SA-CONTRIB-2026-125",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-recent"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CONTRIB-2026-125",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+          "source_id": "drupal-security-advisories-recent",
+          "source_url": "https://www.drupal.org/sa-contrib-2026-125"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-recent",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-recent/"
+        },
+        {
+          "label": "SA-CONTRIB-2026-124",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CONTRIB-2026-124/"
+        }
+      ],
+      "route": "/security/SA-CONTRIB-2026-125/",
+      "summary": "contrib advisory for otp_verification",
+      "title": "Email Verification / SMS Verification / OTP Verification - Critical - Cross Site Scripting - SA-CONTRIB-2026-125",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<2.19.0",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/islandora",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-84916"
+        ],
+        "fixed_in": [
+          "2.19.0"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "contrib",
+        "project": "islandora",
+        "published_at": "2026-09-02T16:32:46Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Complex/A:None/CI:Some/II:None/E:Theoretical/TD:All",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Access bypass"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Islandora - Moderately critical - Access bypass - SA-CONTRIB-2026-126",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-recent"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CONTRIB-2026-126",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+          "source_id": "drupal-security-advisories-recent",
+          "source_url": "https://www.drupal.org/sa-contrib-2026-126"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-recent",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-recent/"
+        }
+      ],
+      "route": "/security/SA-CONTRIB-2026-126/",
+      "summary": "contrib advisory for islandora",
+      "title": "Islandora - Moderately critical - Access bypass - SA-CONTRIB-2026-126",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<2.0.2",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/jsonapi_role_access",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-84917"
+        ],
+        "fixed_in": [
+          "2.0.2"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "contrib",
+        "project": "jsonapi_role_access",
+        "published_at": "2026-09-02T16:33:32Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:None/CI:Some/II:Some/E:Theoretical/TD:All",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Access bypass"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Jsonapi Role Access - Critical - Access bypass - SA-CONTRIB-2026-127",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-recent"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CONTRIB-2026-127",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+          "source_id": "drupal-security-advisories-recent",
+          "source_url": "https://www.drupal.org/sa-contrib-2026-127"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-recent",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-recent/"
+        }
+      ],
+      "route": "/security/SA-CONTRIB-2026-127/",
+      "summary": "contrib advisory for jsonapi_role_access",
+      "title": "Jsonapi Role Access - Critical - Access bypass - SA-CONTRIB-2026-127",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<1.2.7",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/symfony_mailer_log",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-16648"
+        ],
+        "fixed_in": [
+          "1.2.7"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "contrib",
+        "project": "symfony_mailer_log",
+        "published_at": "2026-09-02T16:34:17Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Default",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Access bypass"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Mailer Plus Log - Moderately critical - Access bypass - SA-CONTRIB-2026-128",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-recent"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CONTRIB-2026-128",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+          "source_id": "drupal-security-advisories-recent",
+          "source_url": "https://www.drupal.org/sa-contrib-2026-128"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-recent",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-recent/"
+        }
+      ],
+      "route": "/security/SA-CONTRIB-2026-128/",
+      "summary": "contrib advisory for symfony_mailer_log",
+      "title": "Mailer Plus Log - Moderately critical - Access bypass - SA-CONTRIB-2026-128",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<2.1.6",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/media_library_importer",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-81163"
+        ],
+        "fixed_in": [
+          "2.1.6"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "contrib",
+        "project": "media_library_importer",
+        "published_at": "2026-09-02T16:35:30Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:User/CI:Some/II:None/E:Theoretical/TD:All",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Access bypass"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Media Library Importer - Moderately critical - Access bypass - SA-CONTRIB-2026-129",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-recent"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CONTRIB-2026-129",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+          "source_id": "drupal-security-advisories-recent",
+          "source_url": "https://www.drupal.org/sa-contrib-2026-129"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-recent",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-recent/"
+        }
+      ],
+      "route": "/security/SA-CONTRIB-2026-129/",
+      "summary": "contrib advisory for media_library_importer",
+      "title": "Media Library Importer - Moderately critical - Access bypass - SA-CONTRIB-2026-129",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<1.0.3",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/monobank",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-84918"
+        ],
+        "fixed_in": [
+          "1.0.3"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "contrib",
+        "project": "monobank",
+        "published_at": "2026-09-02T16:36:28Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Complex/A:None/CI:None/II:Some/E:Theoretical/TD:All",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Access bypass"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Monobank payment API - Moderately critical - Access bypass - SA-CONTRIB-2026-130",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-recent"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CONTRIB-2026-130",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+          "source_id": "drupal-security-advisories-recent",
+          "source_url": "https://www.drupal.org/sa-contrib-2026-130"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-recent",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-recent/"
+        }
+      ],
+      "route": "/security/SA-CONTRIB-2026-130/",
+      "summary": "contrib advisory for monobank",
+      "title": "Monobank payment API - Moderately critical - Access bypass - SA-CONTRIB-2026-130",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<5.0.9",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/photoswipe",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-84919"
+        ],
+        "fixed_in": [
+          "5.0.9"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "contrib",
+        "project": "photoswipe",
+        "published_at": "2026-09-02T16:37:37Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:All",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Cross-site scripting"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: PhotoSwipe - Responsive JavaScript Modal Image Gallery - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-131",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-recent"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CONTRIB-2026-131",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+          "source_id": "drupal-security-advisories-recent",
+          "source_url": "https://www.drupal.org/sa-contrib-2026-131"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-recent",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-recent/"
+        }
+      ],
+      "route": "/security/SA-CONTRIB-2026-131/",
+      "summary": "contrib advisory for photoswipe",
+      "title": "PhotoSwipe - Responsive JavaScript Modal Image Gallery - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-131",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<1.8.0",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/unpublished_node_permissions",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-84920"
+        ],
+        "fixed_in": [
+          "8.x-1.8"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "contrib",
+        "project": "unpublished_node_permissions",
+        "published_at": "2026-09-02T16:38:32Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:None/A:None/CI:Some/II:None/E:Theoretical/TD:All",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Access bypass"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Unpublished Node Permissions - Critical - Access bypass - SA-CONTRIB-2026-132",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-recent"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CONTRIB-2026-132",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+          "source_id": "drupal-security-advisories-recent",
+          "source_url": "https://www.drupal.org/sa-contrib-2026-132"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-recent",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-recent/"
+        }
+      ],
+      "route": "/security/SA-CONTRIB-2026-132/",
+      "summary": "contrib advisory for unpublished_node_permissions",
+      "title": "Unpublished Node Permissions - Critical - Access bypass - SA-CONTRIB-2026-132",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<1.2.0",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/webform_submissions_delete",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-84921"
+        ],
+        "fixed_in": [
+          "8.x-1.2"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "contrib",
+        "project": "webform_submissions_delete",
+        "published_at": "2026-09-02T16:39:21Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:None/CI:None/II:Some/E:Theoretical/TD:All",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Access bypass"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Webform Submissions Delete - Moderately critical - Access bypass - SA-CONTRIB-2026-133",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-recent"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CONTRIB-2026-133",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+          "source_id": "drupal-security-advisories-recent",
+          "source_url": "https://www.drupal.org/sa-contrib-2026-133"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-recent",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-recent/"
+        }
+      ],
+      "route": "/security/SA-CONTRIB-2026-133/",
+      "summary": "contrib advisory for webform_submissions_delete",
+      "title": "Webform Submissions Delete - Moderately critical - Access bypass - SA-CONTRIB-2026-133",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": ">= 8.0.0 < 10.3.13 || >= 10.4.0 < 10.4.3 || >= 11.0.0 < 11.0.12 || >= 11.1.0 < 11.1.3",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/core",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2025-3057"
+        ],
+        "fixed_in": [
+          "10.3.13",
+          "10.4.3",
+          "11.0.12",
+          "11.1.3"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "core",
+        "project": "drupal",
+        "published_at": "2025-02-19T16:49:28Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:None/CI:Some/II:Some/E:Proof/TD:All",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Cross site scripting"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Drupal core - Critical - Cross site scripting - SA-CORE-2025-001",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-core"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CORE-2025-001",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+          "source_id": "drupal-security-advisories-core",
+          "source_url": "https://www.drupal.org/sa-core-2025-001"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-core",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-core/"
+        },
+        {
+          "label": "SA-CORE-2025-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-002/"
+        },
+        {
+          "label": "SA-CORE-2025-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-003/"
+        },
+        {
+          "label": "SA-CORE-2025-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-004/"
+        },
+        {
+          "label": "SA-CORE-2025-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-005/"
+        },
+        {
+          "label": "SA-CORE-2025-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-006/"
+        },
+        {
+          "label": "SA-CORE-2025-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-007/"
+        },
+        {
+          "label": "SA-CORE-2025-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-008/"
+        },
+        {
+          "label": "SA-CORE-2026-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-001/"
+        },
+        {
+          "label": "SA-CORE-2026-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-002/"
+        },
+        {
+          "label": "SA-CORE-2026-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-003/"
+        },
+        {
+          "label": "SA-CORE-2026-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-004/"
+        },
+        {
+          "label": "SA-CORE-2026-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-005/"
+        },
+        {
+          "label": "SA-CORE-2026-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-006/"
+        },
+        {
+          "label": "SA-CORE-2026-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-007/"
+        },
+        {
+          "label": "SA-CORE-2026-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-008/"
+        },
+        {
+          "label": "SA-CORE-2026-009",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-009/"
+        },
+        {
+          "label": "SA-CORE-2026-010",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-010/"
+        },
+        {
+          "label": "SA-CORE-2026-011",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-011/"
+        },
+        {
+          "label": "SA-CORE-2026-012",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-012/"
+        }
+      ],
+      "route": "/security/SA-CORE-2025-001/",
+      "summary": "core advisory for drupal",
+      "title": "Drupal core - Critical - Cross site scripting - SA-CORE-2025-001",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": ">= 8.0.0 < 10.3.13 || >= 10.4.0 < 10.4.3 || >= 11.0.0 < 11.0.12 || >= 11.1.0 < 11.1.3",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/core",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2025-31673"
+        ],
+        "fixed_in": [
+          "10.3.13",
+          "10.4.3",
+          "11.0.12",
+          "11.1.3"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "core",
+        "project": "drupal",
+        "published_at": "2025-02-19T16:58:10Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Access bypass"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Drupal core - Moderately critical - Access bypass - SA-CORE-2025-002",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-core"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CORE-2025-002",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+          "source_id": "drupal-security-advisories-core",
+          "source_url": "https://www.drupal.org/sa-core-2025-002"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-core",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-core/"
+        },
+        {
+          "label": "SA-CORE-2025-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-001/"
+        },
+        {
+          "label": "SA-CORE-2025-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-003/"
+        },
+        {
+          "label": "SA-CORE-2025-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-004/"
+        },
+        {
+          "label": "SA-CORE-2025-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-005/"
+        },
+        {
+          "label": "SA-CORE-2025-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-006/"
+        },
+        {
+          "label": "SA-CORE-2025-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-007/"
+        },
+        {
+          "label": "SA-CORE-2025-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-008/"
+        },
+        {
+          "label": "SA-CORE-2026-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-001/"
+        },
+        {
+          "label": "SA-CORE-2026-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-002/"
+        },
+        {
+          "label": "SA-CORE-2026-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-003/"
+        },
+        {
+          "label": "SA-CORE-2026-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-004/"
+        },
+        {
+          "label": "SA-CORE-2026-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-005/"
+        },
+        {
+          "label": "SA-CORE-2026-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-006/"
+        },
+        {
+          "label": "SA-CORE-2026-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-007/"
+        },
+        {
+          "label": "SA-CORE-2026-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-008/"
+        },
+        {
+          "label": "SA-CORE-2026-009",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-009/"
+        },
+        {
+          "label": "SA-CORE-2026-010",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-010/"
+        },
+        {
+          "label": "SA-CORE-2026-011",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-011/"
+        },
+        {
+          "label": "SA-CORE-2026-012",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-012/"
+        }
+      ],
+      "route": "/security/SA-CORE-2025-002/",
+      "summary": "core advisory for drupal",
+      "title": "Drupal core - Moderately critical - Access bypass - SA-CORE-2025-002",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": ">= 8.0.0 < 10.3.13 || >= 10.4.0 < 10.4.3 || >= 11.0.0 < 11.0.12 || >= 11.1.0 < 11.1.3",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/core",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2025-31674"
+        ],
+        "fixed_in": [
+          "10.3.13",
+          "10.4.3",
+          "11.0.12",
+          "11.1.3"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "core",
+        "project": "drupal",
+        "published_at": "2025-02-19T17:03:28Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Complex/A:Admin/CI:All/II:All/E:Theoretical/TD:Uncommon",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Gadget Chain"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Drupal core - Moderately critical - Gadget Chain - SA-CORE-2025-003",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-core"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CORE-2025-003",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+          "source_id": "drupal-security-advisories-core",
+          "source_url": "https://www.drupal.org/sa-core-2025-003"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-core",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-core/"
+        },
+        {
+          "label": "SA-CORE-2025-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-001/"
+        },
+        {
+          "label": "SA-CORE-2025-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-002/"
+        },
+        {
+          "label": "SA-CORE-2025-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-004/"
+        },
+        {
+          "label": "SA-CORE-2025-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-005/"
+        },
+        {
+          "label": "SA-CORE-2025-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-006/"
+        },
+        {
+          "label": "SA-CORE-2025-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-007/"
+        },
+        {
+          "label": "SA-CORE-2025-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-008/"
+        },
+        {
+          "label": "SA-CORE-2026-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-001/"
+        },
+        {
+          "label": "SA-CORE-2026-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-002/"
+        },
+        {
+          "label": "SA-CORE-2026-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-003/"
+        },
+        {
+          "label": "SA-CORE-2026-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-004/"
+        },
+        {
+          "label": "SA-CORE-2026-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-005/"
+        },
+        {
+          "label": "SA-CORE-2026-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-006/"
+        },
+        {
+          "label": "SA-CORE-2026-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-007/"
+        },
+        {
+          "label": "SA-CORE-2026-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-008/"
+        },
+        {
+          "label": "SA-CORE-2026-009",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-009/"
+        },
+        {
+          "label": "SA-CORE-2026-010",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-010/"
+        },
+        {
+          "label": "SA-CORE-2026-011",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-011/"
+        },
+        {
+          "label": "SA-CORE-2026-012",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-012/"
+        }
+      ],
+      "route": "/security/SA-CORE-2025-003/",
+      "summary": "core advisory for drupal",
+      "title": "Drupal core - Moderately critical - Gadget Chain - SA-CORE-2025-003",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": ">= 8.0.0 < 10.3.14 || >= 10.4.0 < 10.4.5 || >= 11.0.0 < 11.0.13 || >= 11.1.0 < 11.1.5",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/core",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2025-31675"
+        ],
+        "fixed_in": [
+          "10.3.14",
+          "10.4.5",
+          "11.0.13",
+          "11.1.5"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "core",
+        "project": "drupal",
+        "published_at": "2025-03-19T18:54:35Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Cross Site Scripting"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Drupal core - Moderately critical - Cross Site Scripting - SA-CORE-2025-004",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-core"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CORE-2025-004",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+          "source_id": "drupal-security-advisories-core",
+          "source_url": "https://www.drupal.org/sa-core-2025-004"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-core",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-core/"
+        },
+        {
+          "label": "SA-CORE-2025-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-001/"
+        },
+        {
+          "label": "SA-CORE-2025-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-002/"
+        },
+        {
+          "label": "SA-CORE-2025-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-003/"
+        },
+        {
+          "label": "SA-CORE-2025-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-005/"
+        },
+        {
+          "label": "SA-CORE-2025-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-006/"
+        },
+        {
+          "label": "SA-CORE-2025-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-007/"
+        },
+        {
+          "label": "SA-CORE-2025-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-008/"
+        },
+        {
+          "label": "SA-CORE-2026-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-001/"
+        },
+        {
+          "label": "SA-CORE-2026-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-002/"
+        },
+        {
+          "label": "SA-CORE-2026-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-003/"
+        },
+        {
+          "label": "SA-CORE-2026-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-004/"
+        },
+        {
+          "label": "SA-CORE-2026-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-005/"
+        },
+        {
+          "label": "SA-CORE-2026-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-006/"
+        },
+        {
+          "label": "SA-CORE-2026-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-007/"
+        },
+        {
+          "label": "SA-CORE-2026-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-008/"
+        },
+        {
+          "label": "SA-CORE-2026-009",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-009/"
+        },
+        {
+          "label": "SA-CORE-2026-010",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-010/"
+        },
+        {
+          "label": "SA-CORE-2026-011",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-011/"
+        },
+        {
+          "label": "SA-CORE-2026-012",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-012/"
+        }
+      ],
+      "route": "/security/SA-CORE-2025-004/",
+      "summary": "core advisory for drupal",
+      "title": "Drupal core - Moderately critical - Cross Site Scripting - SA-CORE-2025-004",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": ">= 8.0.0 < 10.4.9 || >= 10.5.0 < 10.5.6 || >= 11.0.0 < 11.1.9 || >= 11.2.0 < 11.2.8",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/core",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2025-13080"
+        ],
+        "fixed_in": [
+          "10.4.9",
+          "10.5.6",
+          "11.1.9",
+          "11.2.8"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "core",
+        "project": "drupal",
+        "published_at": "2025-11-12T18:33:05Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:None/CI:None/II:Some/E:Theoretical/TD:All",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Denial of Service"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Drupal core - Moderately critical - Denial of Service - SA-CORE-2025-005",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-core"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CORE-2025-005",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+          "source_id": "drupal-security-advisories-core",
+          "source_url": "https://www.drupal.org/sa-core-2025-005"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-core",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-core/"
+        },
+        {
+          "label": "SA-CORE-2025-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-001/"
+        },
+        {
+          "label": "SA-CORE-2025-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-002/"
+        },
+        {
+          "label": "SA-CORE-2025-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-003/"
+        },
+        {
+          "label": "SA-CORE-2025-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-004/"
+        },
+        {
+          "label": "SA-CORE-2025-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-006/"
+        },
+        {
+          "label": "SA-CORE-2025-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-007/"
+        },
+        {
+          "label": "SA-CORE-2025-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-008/"
+        },
+        {
+          "label": "SA-CORE-2026-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-001/"
+        },
+        {
+          "label": "SA-CORE-2026-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-002/"
+        },
+        {
+          "label": "SA-CORE-2026-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-003/"
+        },
+        {
+          "label": "SA-CORE-2026-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-004/"
+        },
+        {
+          "label": "SA-CORE-2026-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-005/"
+        },
+        {
+          "label": "SA-CORE-2026-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-006/"
+        },
+        {
+          "label": "SA-CORE-2026-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-007/"
+        },
+        {
+          "label": "SA-CORE-2026-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-008/"
+        },
+        {
+          "label": "SA-CORE-2026-009",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-009/"
+        },
+        {
+          "label": "SA-CORE-2026-010",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-010/"
+        },
+        {
+          "label": "SA-CORE-2026-011",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-011/"
+        },
+        {
+          "label": "SA-CORE-2026-012",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-012/"
+        }
+      ],
+      "route": "/security/SA-CORE-2025-005/",
+      "summary": "core advisory for drupal",
+      "title": "Drupal core - Moderately critical - Denial of Service - SA-CORE-2025-005",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": ">= 8.0.0 < 10.4.9 || >= 10.5.0 < 10.5.6 || >= 11.0.0 < 11.1.9 || >= 11.2.0 < 11.2.8",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/core",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2025-13081"
+        ],
+        "fixed_in": [
+          "10.4.9",
+          "10.5.6",
+          "11.1.9",
+          "11.2.8"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "core",
+        "project": "drupal",
+        "published_at": "2025-11-12T18:34:02Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Complex/A:Admin/CI:All/II:All/E:Theoretical/TD:Uncommon",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Gadget chain"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Drupal core - Moderately critical - Gadget chain - SA-CORE-2025-006",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-core"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CORE-2025-006",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+          "source_id": "drupal-security-advisories-core",
+          "source_url": "https://www.drupal.org/sa-core-2025-006"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-core",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-core/"
+        },
+        {
+          "label": "SA-CORE-2025-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-001/"
+        },
+        {
+          "label": "SA-CORE-2025-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-002/"
+        },
+        {
+          "label": "SA-CORE-2025-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-003/"
+        },
+        {
+          "label": "SA-CORE-2025-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-004/"
+        },
+        {
+          "label": "SA-CORE-2025-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-005/"
+        },
+        {
+          "label": "SA-CORE-2025-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-007/"
+        },
+        {
+          "label": "SA-CORE-2025-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-008/"
+        },
+        {
+          "label": "SA-CORE-2026-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-001/"
+        },
+        {
+          "label": "SA-CORE-2026-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-002/"
+        },
+        {
+          "label": "SA-CORE-2026-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-003/"
+        },
+        {
+          "label": "SA-CORE-2026-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-004/"
+        },
+        {
+          "label": "SA-CORE-2026-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-005/"
+        },
+        {
+          "label": "SA-CORE-2026-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-006/"
+        },
+        {
+          "label": "SA-CORE-2026-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-007/"
+        },
+        {
+          "label": "SA-CORE-2026-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-008/"
+        },
+        {
+          "label": "SA-CORE-2026-009",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-009/"
+        },
+        {
+          "label": "SA-CORE-2026-010",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-010/"
+        },
+        {
+          "label": "SA-CORE-2026-011",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-011/"
+        },
+        {
+          "label": "SA-CORE-2026-012",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-012/"
+        }
+      ],
+      "route": "/security/SA-CORE-2025-006/",
+      "summary": "core advisory for drupal",
+      "title": "Drupal core - Moderately critical - Gadget chain - SA-CORE-2025-006",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": ">= 8.0.0 < 10.4.9 || >= 10.5.0 < 10.5.6 || >= 11.0.0 < 11.1.9 || >= 11.2.0 < 11.2.8",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/core",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2025-13082"
+        ],
+        "fixed_in": [
+          "10.4.9",
+          "10.5.6",
+          "11.1.9",
+          "11.2.8"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "core",
+        "project": "drupal",
+        "published_at": "2025-11-12T20:16:21Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:None/CI:None/II:None/E:Theoretical/TD:All",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Defacement"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Drupal core - Moderately critical - Defacement - SA-CORE-2025-007",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-core"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CORE-2025-007",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+          "source_id": "drupal-security-advisories-core",
+          "source_url": "https://www.drupal.org/sa-core-2025-007"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-core",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-core/"
+        },
+        {
+          "label": "SA-CORE-2025-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-001/"
+        },
+        {
+          "label": "SA-CORE-2025-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-002/"
+        },
+        {
+          "label": "SA-CORE-2025-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-003/"
+        },
+        {
+          "label": "SA-CORE-2025-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-004/"
+        },
+        {
+          "label": "SA-CORE-2025-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-005/"
+        },
+        {
+          "label": "SA-CORE-2025-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-006/"
+        },
+        {
+          "label": "SA-CORE-2025-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-008/"
+        },
+        {
+          "label": "SA-CORE-2026-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-001/"
+        },
+        {
+          "label": "SA-CORE-2026-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-002/"
+        },
+        {
+          "label": "SA-CORE-2026-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-003/"
+        },
+        {
+          "label": "SA-CORE-2026-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-004/"
+        },
+        {
+          "label": "SA-CORE-2026-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-005/"
+        },
+        {
+          "label": "SA-CORE-2026-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-006/"
+        },
+        {
+          "label": "SA-CORE-2026-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-007/"
+        },
+        {
+          "label": "SA-CORE-2026-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-008/"
+        },
+        {
+          "label": "SA-CORE-2026-009",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-009/"
+        },
+        {
+          "label": "SA-CORE-2026-010",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-010/"
+        },
+        {
+          "label": "SA-CORE-2026-011",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-011/"
+        },
+        {
+          "label": "SA-CORE-2026-012",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-012/"
+        }
+      ],
+      "route": "/security/SA-CORE-2025-007/",
+      "summary": "core advisory for drupal",
+      "title": "Drupal core - Moderately critical - Defacement - SA-CORE-2025-007",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": ">= 8.0.0 < 10.4.9 || >= 10.5.0 < 10.5.6 || >= 11.0.0 < 11.1.9 || >= 11.2.0 < 11.2.8",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/core",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2025-13083"
+        ],
+        "fixed_in": [
+          "10.4.9",
+          "10.5.6",
+          "11.1.9",
+          "11.2.8"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "core",
+        "project": "drupal",
+        "published_at": "2025-11-12T20:16:22Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Complex/A:None/CI:Some/II:None/E:Theoretical/TD:Uncommon",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Information disclosure"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Drupal core - Moderately critical - Information disclosure - SA-CORE-2025-008",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-core"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CORE-2025-008",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+          "source_id": "drupal-security-advisories-core",
+          "source_url": "https://www.drupal.org/sa-core-2025-008"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-core",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-core/"
+        },
+        {
+          "label": "SA-CORE-2025-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-001/"
+        },
+        {
+          "label": "SA-CORE-2025-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-002/"
+        },
+        {
+          "label": "SA-CORE-2025-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-003/"
+        },
+        {
+          "label": "SA-CORE-2025-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-004/"
+        },
+        {
+          "label": "SA-CORE-2025-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-005/"
+        },
+        {
+          "label": "SA-CORE-2025-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-006/"
+        },
+        {
+          "label": "SA-CORE-2025-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-007/"
+        },
+        {
+          "label": "SA-CORE-2026-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-001/"
+        },
+        {
+          "label": "SA-CORE-2026-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-002/"
+        },
+        {
+          "label": "SA-CORE-2026-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-003/"
+        },
+        {
+          "label": "SA-CORE-2026-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-004/"
+        },
+        {
+          "label": "SA-CORE-2026-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-005/"
+        },
+        {
+          "label": "SA-CORE-2026-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-006/"
+        },
+        {
+          "label": "SA-CORE-2026-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-007/"
+        },
+        {
+          "label": "SA-CORE-2026-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-008/"
+        },
+        {
+          "label": "SA-CORE-2026-009",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-009/"
+        },
+        {
+          "label": "SA-CORE-2026-010",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-010/"
+        },
+        {
+          "label": "SA-CORE-2026-011",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-011/"
+        },
+        {
+          "label": "SA-CORE-2026-012",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-012/"
+        }
+      ],
+      "route": "/security/SA-CORE-2025-008/",
+      "summary": "core advisory for drupal",
+      "title": "Drupal core - Moderately critical - Information disclosure - SA-CORE-2025-008",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": ">= 8.0.0 < 10.5.9 || >= 10.6.0 < 10.6.7 || >= 11.0.0 < 11.2.11 || >= 11.3.0 < 11.3.7",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/core",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-6365"
+        ],
+        "fixed_in": [
+          "10.5.9",
+          "10.6.7",
+          "11.2.11",
+          "11.3.7"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "core",
+        "project": "drupal",
+        "published_at": "2026-04-15T19:24:30Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Complex/A:None/CI:Some/II:Some/E:Theoretical/TD:All",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Cross-site scripting"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Drupal core - Critical - Cross-site scripting - SA-CORE-2026-001",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-core"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CORE-2026-001",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+          "source_id": "drupal-security-advisories-core",
+          "source_url": "https://www.drupal.org/sa-core-2026-001"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-core",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-core/"
+        },
+        {
+          "label": "SA-CORE-2025-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-001/"
+        },
+        {
+          "label": "SA-CORE-2025-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-002/"
+        },
+        {
+          "label": "SA-CORE-2025-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-003/"
+        },
+        {
+          "label": "SA-CORE-2025-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-004/"
+        },
+        {
+          "label": "SA-CORE-2025-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-005/"
+        },
+        {
+          "label": "SA-CORE-2025-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-006/"
+        },
+        {
+          "label": "SA-CORE-2025-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-007/"
+        },
+        {
+          "label": "SA-CORE-2025-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-008/"
+        },
+        {
+          "label": "SA-CORE-2026-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-002/"
+        },
+        {
+          "label": "SA-CORE-2026-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-003/"
+        },
+        {
+          "label": "SA-CORE-2026-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-004/"
+        },
+        {
+          "label": "SA-CORE-2026-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-005/"
+        },
+        {
+          "label": "SA-CORE-2026-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-006/"
+        },
+        {
+          "label": "SA-CORE-2026-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-007/"
+        },
+        {
+          "label": "SA-CORE-2026-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-008/"
+        },
+        {
+          "label": "SA-CORE-2026-009",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-009/"
+        },
+        {
+          "label": "SA-CORE-2026-010",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-010/"
+        },
+        {
+          "label": "SA-CORE-2026-011",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-011/"
+        },
+        {
+          "label": "SA-CORE-2026-012",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-012/"
+        }
+      ],
+      "route": "/security/SA-CORE-2026-001/",
+      "summary": "core advisory for drupal",
+      "title": "Drupal core - Critical - Cross-site scripting - SA-CORE-2026-001",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": ">= 8.0.0 < 10.5.9 || >= 10.6.0 < 10.6.7 || >= 11.0.0 < 11.2.11 || >= 11.3.0 < 11.3.7",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/core",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-6366"
+        ],
+        "fixed_in": [
+          "10.5.9",
+          "10.6.7",
+          "11.2.11",
+          "11.3.7"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "core",
+        "project": "drupal",
+        "published_at": "2026-04-15T19:25:23Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Complex/A:Admin/CI:All/II:All/E:Theoretical/TD:Uncommon",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Gadget Chain"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Drupal core - Moderately critical - Gadget Chain - SA-CORE-2026-002",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-core"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CORE-2026-002",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+          "source_id": "drupal-security-advisories-core",
+          "source_url": "https://www.drupal.org/sa-core-2026-002"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-core",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-core/"
+        },
+        {
+          "label": "SA-CORE-2025-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-001/"
+        },
+        {
+          "label": "SA-CORE-2025-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-002/"
+        },
+        {
+          "label": "SA-CORE-2025-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-003/"
+        },
+        {
+          "label": "SA-CORE-2025-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-004/"
+        },
+        {
+          "label": "SA-CORE-2025-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-005/"
+        },
+        {
+          "label": "SA-CORE-2025-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-006/"
+        },
+        {
+          "label": "SA-CORE-2025-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-007/"
+        },
+        {
+          "label": "SA-CORE-2025-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-008/"
+        },
+        {
+          "label": "SA-CORE-2026-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-001/"
+        },
+        {
+          "label": "SA-CORE-2026-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-003/"
+        },
+        {
+          "label": "SA-CORE-2026-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-004/"
+        },
+        {
+          "label": "SA-CORE-2026-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-005/"
+        },
+        {
+          "label": "SA-CORE-2026-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-006/"
+        },
+        {
+          "label": "SA-CORE-2026-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-007/"
+        },
+        {
+          "label": "SA-CORE-2026-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-008/"
+        },
+        {
+          "label": "SA-CORE-2026-009",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-009/"
+        },
+        {
+          "label": "SA-CORE-2026-010",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-010/"
+        },
+        {
+          "label": "SA-CORE-2026-011",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-011/"
+        },
+        {
+          "label": "SA-CORE-2026-012",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-012/"
+        }
+      ],
+      "route": "/security/SA-CORE-2026-002/",
+      "summary": "core advisory for drupal",
+      "title": "Drupal core - Moderately critical - Gadget Chain - SA-CORE-2026-002",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": ">= 11.3.0 < 11.3.7",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/core",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-6367"
+        ],
+        "fixed_in": [
+          "11.3.7"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "core",
+        "project": "drupal",
+        "published_at": "2026-04-15T19:27:21Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Cross-site scripting"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Drupal core - Moderately critical - Cross-site scripting - SA-CORE-2026-003",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-core"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CORE-2026-003",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+          "source_id": "drupal-security-advisories-core",
+          "source_url": "https://www.drupal.org/sa-core-2026-003"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-core",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-core/"
+        },
+        {
+          "label": "SA-CORE-2025-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-001/"
+        },
+        {
+          "label": "SA-CORE-2025-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-002/"
+        },
+        {
+          "label": "SA-CORE-2025-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-003/"
+        },
+        {
+          "label": "SA-CORE-2025-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-004/"
+        },
+        {
+          "label": "SA-CORE-2025-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-005/"
+        },
+        {
+          "label": "SA-CORE-2025-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-006/"
+        },
+        {
+          "label": "SA-CORE-2025-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-007/"
+        },
+        {
+          "label": "SA-CORE-2025-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-008/"
+        },
+        {
+          "label": "SA-CORE-2026-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-001/"
+        },
+        {
+          "label": "SA-CORE-2026-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-002/"
+        },
+        {
+          "label": "SA-CORE-2026-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-004/"
+        },
+        {
+          "label": "SA-CORE-2026-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-005/"
+        },
+        {
+          "label": "SA-CORE-2026-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-006/"
+        },
+        {
+          "label": "SA-CORE-2026-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-007/"
+        },
+        {
+          "label": "SA-CORE-2026-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-008/"
+        },
+        {
+          "label": "SA-CORE-2026-009",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-009/"
+        },
+        {
+          "label": "SA-CORE-2026-010",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-010/"
+        },
+        {
+          "label": "SA-CORE-2026-011",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-011/"
+        },
+        {
+          "label": "SA-CORE-2026-012",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-012/"
+        }
+      ],
+      "route": "/security/SA-CORE-2026-003/",
+      "summary": "core advisory for drupal",
+      "title": "Drupal core - Moderately critical - Cross-site scripting - SA-CORE-2026-003",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": ">= 8.9.0 < 10.4.10 || >= 10.5.0 < 10.5.10 || >= 10.6.0 < 10.6.9 || >= 11.0.0 < 11.1.10 || >= 11.2.0 < 11.2.12 || >= 11.3.0 < 11.3.10",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/core",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-9082"
+        ],
+        "fixed_in": [
+          "10.4.10",
+          "10.5.10",
+          "10.6.9",
+          "11.2.12",
+          "11.3.10"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "core",
+        "project": "drupal",
+        "published_at": "2026-05-20T18:08:21Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:None/A:None/CI:All/II:All/E:Exploit/TD:Uncommon",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "SQL injection"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Drupal core - Highly critical - SQL injection - SA-CORE-2026-004",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-core"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CORE-2026-004",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+          "source_id": "drupal-security-advisories-core",
+          "source_url": "https://www.drupal.org/sa-core-2026-004"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-core",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-core/"
+        },
+        {
+          "label": "SA-CORE-2025-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-001/"
+        },
+        {
+          "label": "SA-CORE-2025-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-002/"
+        },
+        {
+          "label": "SA-CORE-2025-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-003/"
+        },
+        {
+          "label": "SA-CORE-2025-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-004/"
+        },
+        {
+          "label": "SA-CORE-2025-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-005/"
+        },
+        {
+          "label": "SA-CORE-2025-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-006/"
+        },
+        {
+          "label": "SA-CORE-2025-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-007/"
+        },
+        {
+          "label": "SA-CORE-2025-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-008/"
+        },
+        {
+          "label": "SA-CORE-2026-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-001/"
+        },
+        {
+          "label": "SA-CORE-2026-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-002/"
+        },
+        {
+          "label": "SA-CORE-2026-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-003/"
+        },
+        {
+          "label": "SA-CORE-2026-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-005/"
+        },
+        {
+          "label": "SA-CORE-2026-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-006/"
+        },
+        {
+          "label": "SA-CORE-2026-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-007/"
+        },
+        {
+          "label": "SA-CORE-2026-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-008/"
+        },
+        {
+          "label": "SA-CORE-2026-009",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-009/"
+        },
+        {
+          "label": "SA-CORE-2026-010",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-010/"
+        },
+        {
+          "label": "SA-CORE-2026-011",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-011/"
+        },
+        {
+          "label": "SA-CORE-2026-012",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-012/"
+        }
+      ],
+      "route": "/security/SA-CORE-2026-004/",
+      "summary": "core advisory for drupal",
+      "title": "Drupal core - Highly critical - SQL injection - SA-CORE-2026-004",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<10.5.12 || >=10.6.0 <10.6.11 || >=11.2.0 <11.2.14 || >=11.3.0 <11.3.12 || 11.0.* || 11.1.*",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/core",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-55803"
+        ],
+        "fixed_in": [
+          "10.5.12",
+          "10.6.11",
+          "11.2.14",
+          "11.3.12",
+          "11.4.0-rc2"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "core",
+        "project": "drupal",
+        "published_at": "2026-06-17T18:56:50Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:None/A:User/CI:All/II:All/E:Theoretical/TD:Uncommon",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "PHP object injection"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Drupal core - Critical - PHP object injection - SA-CORE-2026-005",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-core"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CORE-2026-005",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+          "source_id": "drupal-security-advisories-core",
+          "source_url": "https://www.drupal.org/sa-core-2026-005"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-core",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-core/"
+        },
+        {
+          "label": "SA-CORE-2025-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-001/"
+        },
+        {
+          "label": "SA-CORE-2025-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-002/"
+        },
+        {
+          "label": "SA-CORE-2025-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-003/"
+        },
+        {
+          "label": "SA-CORE-2025-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-004/"
+        },
+        {
+          "label": "SA-CORE-2025-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-005/"
+        },
+        {
+          "label": "SA-CORE-2025-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-006/"
+        },
+        {
+          "label": "SA-CORE-2025-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-007/"
+        },
+        {
+          "label": "SA-CORE-2025-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-008/"
+        },
+        {
+          "label": "SA-CORE-2026-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-001/"
+        },
+        {
+          "label": "SA-CORE-2026-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-002/"
+        },
+        {
+          "label": "SA-CORE-2026-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-003/"
+        },
+        {
+          "label": "SA-CORE-2026-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-004/"
+        },
+        {
+          "label": "SA-CORE-2026-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-006/"
+        },
+        {
+          "label": "SA-CORE-2026-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-007/"
+        },
+        {
+          "label": "SA-CORE-2026-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-008/"
+        },
+        {
+          "label": "SA-CORE-2026-009",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-009/"
+        },
+        {
+          "label": "SA-CORE-2026-010",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-010/"
+        },
+        {
+          "label": "SA-CORE-2026-011",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-011/"
+        },
+        {
+          "label": "SA-CORE-2026-012",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-012/"
+        }
+      ],
+      "route": "/security/SA-CORE-2026-005/",
+      "summary": "core advisory for drupal",
+      "title": "Drupal core - Critical - PHP object injection - SA-CORE-2026-005",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<10.5.12 || >=10.6.0 <10.6.11 || >=11.2.0 <11.2.14 || >=11.3.0 <11.3.12 || 11.0.* || 11.1.*",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/core",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-55804"
+        ],
+        "fixed_in": [
+          "10.5.12",
+          "10.6.11",
+          "11.2.14",
+          "11.3.12",
+          "11.4.0-rc2"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "core",
+        "project": "drupal",
+        "published_at": "2026-06-17T18:57:02Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Complex/A:Admin/CI:All/II:All/E:Theoretical/TD:Uncommon",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Gadget chain"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Drupal core - Moderately critical - Gadget chain - SA-CORE-2026-006",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-core"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CORE-2026-006",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+          "source_id": "drupal-security-advisories-core",
+          "source_url": "https://www.drupal.org/sa-core-2026-006"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-core",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-core/"
+        },
+        {
+          "label": "SA-CORE-2025-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-001/"
+        },
+        {
+          "label": "SA-CORE-2025-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-002/"
+        },
+        {
+          "label": "SA-CORE-2025-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-003/"
+        },
+        {
+          "label": "SA-CORE-2025-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-004/"
+        },
+        {
+          "label": "SA-CORE-2025-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-005/"
+        },
+        {
+          "label": "SA-CORE-2025-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-006/"
+        },
+        {
+          "label": "SA-CORE-2025-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-007/"
+        },
+        {
+          "label": "SA-CORE-2025-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-008/"
+        },
+        {
+          "label": "SA-CORE-2026-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-001/"
+        },
+        {
+          "label": "SA-CORE-2026-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-002/"
+        },
+        {
+          "label": "SA-CORE-2026-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-003/"
+        },
+        {
+          "label": "SA-CORE-2026-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-004/"
+        },
+        {
+          "label": "SA-CORE-2026-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-005/"
+        },
+        {
+          "label": "SA-CORE-2026-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-007/"
+        },
+        {
+          "label": "SA-CORE-2026-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-008/"
+        },
+        {
+          "label": "SA-CORE-2026-009",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-009/"
+        },
+        {
+          "label": "SA-CORE-2026-010",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-010/"
+        },
+        {
+          "label": "SA-CORE-2026-011",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-011/"
+        },
+        {
+          "label": "SA-CORE-2026-012",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-012/"
+        }
+      ],
+      "route": "/security/SA-CORE-2026-006/",
+      "summary": "core advisory for drupal",
+      "title": "Drupal core - Moderately critical - Gadget chain - SA-CORE-2026-006",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<10.5.12 || >=10.6.0 <10.6.11 || >=11.2.0 <11.2.14 || >=11.3.0 <11.3.12 || 11.0.* || 11.1.*",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/core",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-55806"
+        ],
+        "fixed_in": [
+          "10.5.12",
+          "10.6.11",
+          "11.2.14",
+          "11.3.12",
+          "11.4.0-rc2"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "core",
+        "project": "drupal",
+        "published_at": "2026-06-17T18:57:37Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:None/CI:None/II:None/E:Theoretical/TD:Default",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Cache poisoning and open redirect"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Drupal core - Less critical - Cache poisoning and open redirect - SA-CORE-2026-007",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-core"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CORE-2026-007",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+          "source_id": "drupal-security-advisories-core",
+          "source_url": "https://www.drupal.org/sa-core-2026-007"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-core",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-core/"
+        },
+        {
+          "label": "SA-CORE-2025-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-001/"
+        },
+        {
+          "label": "SA-CORE-2025-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-002/"
+        },
+        {
+          "label": "SA-CORE-2025-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-003/"
+        },
+        {
+          "label": "SA-CORE-2025-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-004/"
+        },
+        {
+          "label": "SA-CORE-2025-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-005/"
+        },
+        {
+          "label": "SA-CORE-2025-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-006/"
+        },
+        {
+          "label": "SA-CORE-2025-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-007/"
+        },
+        {
+          "label": "SA-CORE-2025-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-008/"
+        },
+        {
+          "label": "SA-CORE-2026-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-001/"
+        },
+        {
+          "label": "SA-CORE-2026-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-002/"
+        },
+        {
+          "label": "SA-CORE-2026-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-003/"
+        },
+        {
+          "label": "SA-CORE-2026-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-004/"
+        },
+        {
+          "label": "SA-CORE-2026-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-005/"
+        },
+        {
+          "label": "SA-CORE-2026-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-006/"
+        },
+        {
+          "label": "SA-CORE-2026-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-008/"
+        },
+        {
+          "label": "SA-CORE-2026-009",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-009/"
+        },
+        {
+          "label": "SA-CORE-2026-010",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-010/"
+        },
+        {
+          "label": "SA-CORE-2026-011",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-011/"
+        },
+        {
+          "label": "SA-CORE-2026-012",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-012/"
+        }
+      ],
+      "route": "/security/SA-CORE-2026-007/",
+      "summary": "core advisory for drupal",
+      "title": "Drupal core - Less critical - Cache poisoning and open redirect - SA-CORE-2026-007",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<10.5.12 || >=10.6.0 <10.6.11 || >=11.2.0 <11.2.14 || >=11.3.0 <11.3.12 || 11.0.* || 11.1.*",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/core",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-55807"
+        ],
+        "fixed_in": [
+          "10.5.12",
+          "10.6.11",
+          "11.2.14",
+          "11.3.12",
+          "11.4.0-rc2"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "core",
+        "project": "drupal",
+        "published_at": "2026-06-17T18:57:49Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:User/CI:Some/II:None/E:Theoretical/TD:Default",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Server-side request forgery"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Drupal core - Moderately critical - Server-side request forgery - SA-CORE-2026-008",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-core"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CORE-2026-008",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+          "source_id": "drupal-security-advisories-core",
+          "source_url": "https://www.drupal.org/sa-core-2026-008"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-core",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-core/"
+        },
+        {
+          "label": "SA-CORE-2025-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-001/"
+        },
+        {
+          "label": "SA-CORE-2025-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-002/"
+        },
+        {
+          "label": "SA-CORE-2025-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-003/"
+        },
+        {
+          "label": "SA-CORE-2025-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-004/"
+        },
+        {
+          "label": "SA-CORE-2025-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-005/"
+        },
+        {
+          "label": "SA-CORE-2025-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-006/"
+        },
+        {
+          "label": "SA-CORE-2025-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-007/"
+        },
+        {
+          "label": "SA-CORE-2025-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-008/"
+        },
+        {
+          "label": "SA-CORE-2026-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-001/"
+        },
+        {
+          "label": "SA-CORE-2026-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-002/"
+        },
+        {
+          "label": "SA-CORE-2026-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-003/"
+        },
+        {
+          "label": "SA-CORE-2026-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-004/"
+        },
+        {
+          "label": "SA-CORE-2026-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-005/"
+        },
+        {
+          "label": "SA-CORE-2026-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-006/"
+        },
+        {
+          "label": "SA-CORE-2026-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-007/"
+        },
+        {
+          "label": "SA-CORE-2026-009",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-009/"
+        },
+        {
+          "label": "SA-CORE-2026-010",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-010/"
+        },
+        {
+          "label": "SA-CORE-2026-011",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-011/"
+        },
+        {
+          "label": "SA-CORE-2026-012",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-012/"
+        }
+      ],
+      "route": "/security/SA-CORE-2026-008/",
+      "summary": "core advisory for drupal",
+      "title": "Drupal core - Moderately critical - Server-side request forgery - SA-CORE-2026-008",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<10.5.12 || >=10.6.0 <10.6.11 || >=11.2.0 <11.2.14 || >=11.3.0 <11.3.12 || 11.0.* || 11.1.*",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/core",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-55808"
+        ],
+        "fixed_in": [
+          "10.5.12",
+          "10.6.11",
+          "11.2.14",
+          "11.3.12",
+          "11.4.0-rc2"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "core",
+        "project": "drupal",
+        "published_at": "2026-06-17T18:58:02Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Complex/A:User/CI:Some/II:Some/E:Theoretical/TD:Uncommon",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Improper validation"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Drupal core - Moderately critical - Improper validation - SA-CORE-2026-009",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-core"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CORE-2026-009",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+          "source_id": "drupal-security-advisories-core",
+          "source_url": "https://www.drupal.org/sa-core-2026-009"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-core",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-core/"
+        },
+        {
+          "label": "SA-CORE-2025-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-001/"
+        },
+        {
+          "label": "SA-CORE-2025-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-002/"
+        },
+        {
+          "label": "SA-CORE-2025-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-003/"
+        },
+        {
+          "label": "SA-CORE-2025-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-004/"
+        },
+        {
+          "label": "SA-CORE-2025-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-005/"
+        },
+        {
+          "label": "SA-CORE-2025-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-006/"
+        },
+        {
+          "label": "SA-CORE-2025-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-007/"
+        },
+        {
+          "label": "SA-CORE-2025-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-008/"
+        },
+        {
+          "label": "SA-CORE-2026-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-001/"
+        },
+        {
+          "label": "SA-CORE-2026-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-002/"
+        },
+        {
+          "label": "SA-CORE-2026-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-003/"
+        },
+        {
+          "label": "SA-CORE-2026-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-004/"
+        },
+        {
+          "label": "SA-CORE-2026-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-005/"
+        },
+        {
+          "label": "SA-CORE-2026-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-006/"
+        },
+        {
+          "label": "SA-CORE-2026-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-007/"
+        },
+        {
+          "label": "SA-CORE-2026-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-008/"
+        },
+        {
+          "label": "SA-CORE-2026-010",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-010/"
+        },
+        {
+          "label": "SA-CORE-2026-011",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-011/"
+        },
+        {
+          "label": "SA-CORE-2026-012",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-012/"
+        }
+      ],
+      "route": "/security/SA-CORE-2026-009/",
+      "summary": "core advisory for drupal",
+      "title": "Drupal core - Moderately critical - Improper validation - SA-CORE-2026-009",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<10.6.13 || >=11.3.0 <11.3.14 || >=11.4.0 <11.4.4 || 11.0.* || 11.1.* || 11.2.*",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/core",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-15916"
+        ],
+        "fixed_in": [
+          "10.6.13",
+          "11.3.14",
+          "11.4.4"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "core",
+        "project": "drupal",
+        "published_at": "2026-07-15T19:50:24Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Complex/A:None/CI:Some/II:None/E:Theoretical/TD:Uncommon",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Information disclosure"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Drupal core - Moderately critical - Information disclosure - SA-CORE-2026-010",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-core"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CORE-2026-010",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+          "source_id": "drupal-security-advisories-core",
+          "source_url": "https://www.drupal.org/sa-core-2026-010"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-core",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-core/"
+        },
+        {
+          "label": "SA-CORE-2025-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-001/"
+        },
+        {
+          "label": "SA-CORE-2025-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-002/"
+        },
+        {
+          "label": "SA-CORE-2025-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-003/"
+        },
+        {
+          "label": "SA-CORE-2025-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-004/"
+        },
+        {
+          "label": "SA-CORE-2025-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-005/"
+        },
+        {
+          "label": "SA-CORE-2025-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-006/"
+        },
+        {
+          "label": "SA-CORE-2025-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-007/"
+        },
+        {
+          "label": "SA-CORE-2025-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-008/"
+        },
+        {
+          "label": "SA-CORE-2026-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-001/"
+        },
+        {
+          "label": "SA-CORE-2026-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-002/"
+        },
+        {
+          "label": "SA-CORE-2026-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-003/"
+        },
+        {
+          "label": "SA-CORE-2026-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-004/"
+        },
+        {
+          "label": "SA-CORE-2026-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-005/"
+        },
+        {
+          "label": "SA-CORE-2026-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-006/"
+        },
+        {
+          "label": "SA-CORE-2026-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-007/"
+        },
+        {
+          "label": "SA-CORE-2026-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-008/"
+        },
+        {
+          "label": "SA-CORE-2026-009",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-009/"
+        },
+        {
+          "label": "SA-CORE-2026-011",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-011/"
+        },
+        {
+          "label": "SA-CORE-2026-012",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-012/"
+        }
+      ],
+      "route": "/security/SA-CORE-2026-010/",
+      "summary": "core advisory for drupal",
+      "title": "Drupal core - Moderately critical - Information disclosure - SA-CORE-2026-010",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": ">=11.3.0 <11.3.14 || >=11.4.0 <11.4.4 || 11.2.*",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/core",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-15917"
+        ],
+        "fixed_in": [
+          "10.6.13",
+          "11.3.14",
+          "11.4.4"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "core",
+        "project": "drupal",
+        "published_at": "2026-07-15T19:51:57Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:All",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Cross-site scripting"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Drupal core - Moderately critical - Cross-site scripting - SA-CORE-2026-011",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-core"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CORE-2026-011",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+          "source_id": "drupal-security-advisories-core",
+          "source_url": "https://www.drupal.org/sa-core-2026-011"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-core",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-core/"
+        },
+        {
+          "label": "SA-CORE-2025-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-001/"
+        },
+        {
+          "label": "SA-CORE-2025-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-002/"
+        },
+        {
+          "label": "SA-CORE-2025-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-003/"
+        },
+        {
+          "label": "SA-CORE-2025-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-004/"
+        },
+        {
+          "label": "SA-CORE-2025-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-005/"
+        },
+        {
+          "label": "SA-CORE-2025-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-006/"
+        },
+        {
+          "label": "SA-CORE-2025-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-007/"
+        },
+        {
+          "label": "SA-CORE-2025-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-008/"
+        },
+        {
+          "label": "SA-CORE-2026-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-001/"
+        },
+        {
+          "label": "SA-CORE-2026-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-002/"
+        },
+        {
+          "label": "SA-CORE-2026-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-003/"
+        },
+        {
+          "label": "SA-CORE-2026-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-004/"
+        },
+        {
+          "label": "SA-CORE-2026-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-005/"
+        },
+        {
+          "label": "SA-CORE-2026-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-006/"
+        },
+        {
+          "label": "SA-CORE-2026-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-007/"
+        },
+        {
+          "label": "SA-CORE-2026-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-008/"
+        },
+        {
+          "label": "SA-CORE-2026-009",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-009/"
+        },
+        {
+          "label": "SA-CORE-2026-010",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-010/"
+        },
+        {
+          "label": "SA-CORE-2026-012",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-012/"
+        }
+      ],
+      "route": "/security/SA-CORE-2026-011/",
+      "summary": "core advisory for drupal",
+      "title": "Drupal core - Moderately critical - Cross-site scripting - SA-CORE-2026-011",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    },
+    {
+      "detail": {
+        "affected_versions": "<10.6.13 || >=11.3.0 <11.3.14 || >=11.4.0 <11.4.4 || 11.0.* || 11.1.* || 11.2.*",
+        "affected_versions_state": "parsed",
+        "composer_package": "drupal/core",
+        "cve_state": "sourced",
+        "cves": [
+          "CVE-2026-55805"
+        ],
+        "fixed_in": [
+          "10.6.13",
+          "11.3.14",
+          "11.4.4"
+        ],
+        "fixed_in_state": "stated",
+        "kind": "core",
+        "project": "drupal",
+        "published_at": "2026-07-15T19:52:26Z",
+        "remediation_authored_by_drupal_knowledge": false,
+        "remediation_state": "sourced",
+        "risk_vector": "AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default",
+        "risk_vector_state": "sourced",
+        "scored_by_drupal_knowledge": false,
+        "vulnerability_type": "Cross-site scripting"
+      },
+      "domain": "advisory",
+      "explanation": {
+        "was_anything_changed": "No. Querying Drupal Knowledge changes nothing.",
+        "what_is_authoritative": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "what_is_project_specific": "Nothing: this record is about Drupal, not about any one project.",
+        "what_is_recommended": "Evaluate it against a project with `dk security-evaluate`; an advisory alone says nothing about whether your project is affected.",
+        "what_is_this": "source-derived authoritative record: Drupal core - Moderately critical - Cross-site scripting - SA-CORE-2026-012",
+        "what_is_unknown": [
+          "Nothing was left unstated by this record."
+        ],
+        "what_supports_it": [
+          "drupal-security-advisories-core"
+        ],
+        "why_does_it_exist": "The Drupal Security Team published this advisory and Drupal Knowledge projected it verbatim."
+      },
+      "id": "SA-CORE-2026-012",
+      "provenance": [
+        {
+          "channel": "authoritative_source",
+          "snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+          "source_id": "drupal-security-advisories-core",
+          "source_url": "https://www.drupal.org/sa-core-2026-012"
+        }
+      ],
+      "related": [
+        {
+          "label": "drupal-security-advisories-core",
+          "relation": "derived_from_source",
+          "route": "/sources/drupal-security-advisories-core/"
+        },
+        {
+          "label": "SA-CORE-2025-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-001/"
+        },
+        {
+          "label": "SA-CORE-2025-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-002/"
+        },
+        {
+          "label": "SA-CORE-2025-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-003/"
+        },
+        {
+          "label": "SA-CORE-2025-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-004/"
+        },
+        {
+          "label": "SA-CORE-2025-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-005/"
+        },
+        {
+          "label": "SA-CORE-2025-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-006/"
+        },
+        {
+          "label": "SA-CORE-2025-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-007/"
+        },
+        {
+          "label": "SA-CORE-2025-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2025-008/"
+        },
+        {
+          "label": "SA-CORE-2026-001",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-001/"
+        },
+        {
+          "label": "SA-CORE-2026-002",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-002/"
+        },
+        {
+          "label": "SA-CORE-2026-003",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-003/"
+        },
+        {
+          "label": "SA-CORE-2026-004",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-004/"
+        },
+        {
+          "label": "SA-CORE-2026-005",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-005/"
+        },
+        {
+          "label": "SA-CORE-2026-006",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-006/"
+        },
+        {
+          "label": "SA-CORE-2026-007",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-007/"
+        },
+        {
+          "label": "SA-CORE-2026-008",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-008/"
+        },
+        {
+          "label": "SA-CORE-2026-009",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-009/"
+        },
+        {
+          "label": "SA-CORE-2026-010",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-010/"
+        },
+        {
+          "label": "SA-CORE-2026-011",
+          "relation": "same_drupal_project",
+          "route": "/security/SA-CORE-2026-011/"
+        }
+      ],
+      "route": "/security/SA-CORE-2026-012/",
+      "summary": "core advisory for drupal",
+      "title": "Drupal core - Moderately critical - Cross-site scripting - SA-CORE-2026-012",
+      "trust": {
+        "authority": "Drupal Security Team",
+        "class": "source_derived_authoritative",
+        "explanation": "Projected verbatim from an official Drupal source snapshot. It is authoritative evidence about Drupal, but it is not a Drupal Knowledge rule.",
+        "record_type": "source-derived authoritative record",
+        "trusted_knowledge": false,
+        "universal_drupal_rule": true
+      },
+      "unknowns": []
+    }
+  ],
+  "route": "/security/",
+  "trust_class": "source_derived_authoritative"
+}
+

@@ -1,0 +1,53 @@
+{
+  "id": "drupal.coding-standards.current-source",
+  "title": "Current Drupal Coding Standards are on GitLab Pages",
+  "summary": "The Drupal Coding Standards project links to the current GitLab Pages standards, while the historical Drupal.org coding standards guide is marked obsolete and deprecated; the current standards state that they are version-independent and always-current.",
+  "kind": "coding-standard",
+  "domains": ["coding-standards", "core", "api"],
+  "severity": "moderate",
+  "review_status": "reviewed",
+  "sources": [
+    {
+      "source_id": "drupal-coding-standards-project",
+      "locator": "Read the Drupal Coding Standards / Obsolete and deprecated",
+      "title": "Coding Standards project"
+    },
+    {
+      "source_id": "drupal-coding-standards-current",
+      "locator": "version-independent and \"always-current\"",
+      "title": "Drupal Coding Standards"
+    }
+  ],
+  "version_applicability": {
+    "drupal_core": [
+      {
+        "constraint": "all-new-code",
+        "status": "applicable",
+        "notes": "The current standards describe themselves as version-independent and always-current."
+      }
+    ]
+  },
+  "project_applicability": {
+    "requires": ["custom_modules", "custom_themes"],
+    "unknown_result": "guidance_only"
+  },
+  "actions": [
+    "Use the GitLab Pages standards as the primary coding standards source.",
+    "Treat obsolete Drupal.org coding standards pages as provenance or redirect evidence only."
+  ],
+  "checks": [
+    "Do not cite obsolete Drupal.org wiki standards as primary authority when the GitLab Pages standards cover the same rule."
+  ],
+  "evidence_requirements": [
+    "Code artifact under review",
+    "Applicable standards section"
+  ],
+  "automation_hints": [
+    "Future coding-standard checks may map records to PHPCS, ESLint, Stylelint, or Twig tooling."
+  ],
+  "enforcement": {
+    "intent": "non_blocking",
+    "rationale": "The source provenance is reviewed; specific coding-standard failures need individual records and evidence."
+  },
+  "related": []
+}

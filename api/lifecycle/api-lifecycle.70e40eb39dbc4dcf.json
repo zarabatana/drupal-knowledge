@@ -1,0 +1,45 @@
+{
+  "id": "api-lifecycle.70e40eb39dbc4dcf",
+  "is_general_knowledge_record": false,
+  "is_trusted_knowledge": false,
+  "lifecycle": {
+    "annotation_parsed": true,
+    "changed_version": null,
+    "deprecated_version": "9.3.0",
+    "reason": "Read from the mandated Drupal core @deprecated annotation form.",
+    "removed_version": "10.0.0",
+    "source_annotation": "in drupal:9.3.0 and is removed from drupal:10.0.0. Use \\Drupal\\Core\\Render\\RendererInterface::render() instead.",
+    "state": "deprecated"
+  },
+  "observed_branch": "9",
+  "provenance": {
+    "acquisition_channel": "external_authoritative_source",
+    "authority_kind": "core_deprecation_index",
+    "ingest_run_id": "api.20260908T231021.6bf7c3e6",
+    "ingested_at": "2026-09-08T23:10:21Z",
+    "ingested_by": {
+      "name": "drupal-knowledge-api-lifecycle-engine",
+      "version": "0.1"
+    },
+    "source_id": "drupal-api-deprecated-9-p3",
+    "source_snapshot_sha256": "sha256:322ca48f208aaa048e06628a58371515c74386c9079123679eecd1687e8a477f",
+    "source_url": "https://api.drupal.org/api/drupal/deprecated/9"
+  },
+  "record_class": "source_derived_authoritative_api_lifecycle_record",
+  "record_contract_version": "0.1",
+  "replacement": {
+    "semantics": "A replacement is recorded only when the annotation states one. An equivalent API is never inferred.",
+    "state": "stated",
+    "value": "\\Drupal\\Core\\Render\\RendererInterface::render()"
+  },
+  "symbol": {
+    "class": null,
+    "core_file": "core/includes/common.inc",
+    "identity_basis": "global_procedural_function",
+    "index_name": "render",
+    "kind": "function",
+    "matchable": true,
+    "member": null,
+    "qualified_name": "render"
+  }
+}

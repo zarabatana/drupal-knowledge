@@ -1,0 +1,65 @@
+{
+  "id": "drupal.security.advisory-streams-separated",
+  "title": "Drupal security advisory streams are scoped",
+  "summary": "Drupal core security advisories, contributed-project security advisories, and Security Team public service announcements are distinct source streams with different roles.",
+  "kind": "principle",
+  "domains": ["security", "core", "contrib", "update"],
+  "severity": "high",
+  "review_status": "reviewed",
+  "sources": [
+    {
+      "source_id": "drupal-security-core",
+      "locator": "Security advisories for Drupal core",
+      "title": "Security advisories for Drupal core"
+    },
+    {
+      "source_id": "drupal-security-contrib",
+      "locator": "Security advisories for contributed projects",
+      "title": "Security advisories for contributed projects"
+    },
+    {
+      "source_id": "drupal-security-psa",
+      "locator": "Security public service announcements",
+      "title": "Security public service announcements"
+    }
+  ],
+  "version_applicability": {
+    "drupal_core": [
+      {
+        "constraint": "advisory-specific",
+        "status": "applicable",
+        "notes": "SA-CORE records must carry affected and fixed Drupal core ranges."
+      }
+    ],
+    "modules": [
+      {
+        "name": "drupal.org contributed projects",
+        "constraint": "advisory-specific",
+        "status": "applicable",
+        "notes": "SA-CONTRIB records require installed project evidence before applying."
+      }
+    ]
+  },
+  "project_applicability": {
+    "requires": ["drupal_core_version", "modules", "themes"],
+    "unknown_result": "security_applicability_unknown"
+  },
+  "actions": [
+    "Keep SA-CORE, SA-CONTRIB, and PSA records distinct during ingestion and review."
+  ],
+  "checks": [
+    "Do not apply a contributed-project advisory without evidence of the installed project and version."
+  ],
+  "evidence_requirements": [
+    "Project installed Drupal core version",
+    "Installed module/theme/profile names and versions when evaluating SA-CONTRIB"
+  ],
+  "automation_hints": [
+    "Security review should join advisory version ranges with observed installed package versions."
+  ],
+  "enforcement": {
+    "intent": "non_blocking",
+    "rationale": "This record defines stream separation; individual reviewed advisories decide blocking behavior."
+  },
+  "related": []
+}

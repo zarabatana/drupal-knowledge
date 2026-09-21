@@ -1,0 +1,203 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/upgrade-path-v0.1.json",
+  "title": "Drupal Knowledge upgrade path",
+  "description": "A machine-readable description of the supported targets reachable from one analyzed project, the intermediate major transitions each would require, and what blocks or remains unknown about each. Newest is not treated as best: the candidates carry measured facts and the trade-off between disruption and compatibility is left to the operator. Execution is structurally false.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "path_id",
+    "result_domain",
+    "engine",
+    "generated_at",
+    "current_state",
+    "target_origin",
+    "candidates",
+    "tradeoffs",
+    "provenance",
+    "execution_performed",
+    "execution",
+    "trusted_knowledge_mutations"
+  ],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "path_id": {"type": "string", "pattern": "^upgrade-path\\.[a-f0-9]{16}$"},
+    "result_domain": {"const": "upgrade_compatibility"},
+    "engine": {
+      "type": "object",
+      "required": ["name", "version", "deterministic", "language_model_used"],
+      "properties": {
+        "name": {"const": "drupal-knowledge-upgrade-engine"},
+        "version": {"type": "string"},
+        "deterministic": {"const": true},
+        "language_model_used": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "generated_at": {"type": "string"},
+    "current_state": {
+      "type": "object",
+      "required": [
+        "project_id",
+        "core_version",
+        "core_version_state",
+        "branch",
+        "branch_support",
+        "installed_drupal_package_count"
+      ],
+      "properties": {
+        "project_id": {"type": ["string", "null"]},
+        "core_version": {"type": ["string", "null"]},
+        "core_version_state": {"type": "string"},
+        "branch": {"type": ["string", "null"]},
+        "branch_support": {"type": "string"},
+        "installed_drupal_package_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "target_origin": {"type": "string"},
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "target_version",
+          "target_branch",
+          "target_branch_support",
+          "assessment",
+          "assessment_id",
+          "transition_kind",
+          "intermediate_transitions",
+          "major_steps",
+          "blocker_count",
+          "blocker_kinds",
+          "unknown_count",
+          "required_change_count",
+          "requires_upstream_release"
+        ],
+        "properties": {
+          "target_version": {"type": "string"},
+          "target_branch": {"type": ["string", "null"]},
+          "target_branch_support": {"type": "string"},
+          "assessment": {
+            "enum": [
+              "compatible_with_observed_evidence",
+              "requires_changes",
+              "blocked",
+              "requires_review",
+              "insufficient_evidence"
+            ]
+          },
+          "assessment_id": {"type": "string"},
+          "transition_kind": {"type": "string"},
+          "intermediate_transitions": {
+            "description": "The majors that must be crossed in order. A step with a null transition_id has no official evidence and is unknown, not supported.",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["from_major", "to_major", "transition_id", "state"],
+              "properties": {
+                "from_major": {"type": "integer"},
+                "to_major": {"type": "integer"},
+                "transition_id": {"type": ["string", "null"]},
+                "state": {"type": "string"}
+              },
+              "additionalProperties": false
+            }
+          },
+          "major_steps": {"type": "integer", "minimum": 0},
+          "blocker_count": {"type": "integer", "minimum": 0},
+          "blocker_kinds": {"type": "array", "items": {"type": "string"}},
+          "unknown_count": {"type": "integer", "minimum": 0},
+          "required_change_count": {"type": "integer", "minimum": 0},
+          "requires_upstream_release": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "tradeoffs": {
+      "description": "Deterministic measurements across the candidate set. Drupal Knowledge reports them and does not rank them.",
+      "type": "object",
+      "required": [
+        "state",
+        "detail",
+        "fewest_blockers",
+        "fewest_major_steps",
+        "no_upstream_dependency"
+      ],
+      "properties": {
+        "state": {"type": "string"},
+        "detail": {"type": "string"},
+        "fewest_blockers": {"type": "array", "items": {"type": "string"}},
+        "fewest_major_steps": {"type": "array", "items": {"type": "string"}},
+        "no_upstream_dependency": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "analyzer_fact_paths",
+        "upgrade_context_id",
+        "upgrade_context_review_status",
+        "release_context",
+        "assessment_ids"
+      ],
+      "properties": {
+        "analyzer_fact_paths": {"type": "array", "items": {"type": "string"}},
+        "upgrade_context_id": {"type": "string"},
+        "upgrade_context_review_status": {"const": "reviewed"},
+        "release_context": {
+          "type": "object",
+          "required": ["source_id", "snapshot_sha256", "review_status"],
+          "properties": {
+            "source_id": {"type": "string"},
+            "snapshot_sha256": {"type": "string"},
+            "review_status": {"type": "string"}
+          },
+          "additionalProperties": false
+        },
+        "assessment_ids": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "execution_performed": {"const": false},
+    "execution": {
+      "type": "object",
+      "required": [
+        "composer_invoked",
+        "project_files_written",
+        "database_updates_run",
+        "modules_changed",
+        "deployment_performed"
+      ],
+      "properties": {
+        "composer_invoked": {"const": false},
+        "project_files_written": {"const": false},
+        "database_updates_run": {"const": false},
+        "modules_changed": {"const": false},
+        "deployment_performed": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "trusted_knowledge_mutations": {
+      "type": "object",
+      "required": [
+        "knowledge_records",
+        "reviewed_context",
+        "advisories",
+        "solved_cases",
+        "source_snapshots"
+      ],
+      "properties": {
+        "knowledge_records": {"const": 0},
+        "reviewed_context": {"const": 0},
+        "advisories": {"const": 0},
+        "solved_cases": {"const": 0},
+        "source_snapshots": {"const": 0}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

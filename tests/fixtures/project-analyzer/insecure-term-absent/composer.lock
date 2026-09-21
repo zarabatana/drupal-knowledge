@@ -1,0 +1,10 @@
+{
+  "packages": [
+    {
+      "name": "drupal/core",
+      "version": "11.4.5",
+      "type": "drupal-core"
+    }
+  ],
+  "packages-dev": []
+}

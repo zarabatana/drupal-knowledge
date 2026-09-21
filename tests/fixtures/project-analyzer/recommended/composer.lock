@@ -1,0 +1,31 @@
+{
+  "packages": [
+    {
+      "name": "drupal/commerce",
+      "version": "3.1.0",
+      "type": "drupal-module"
+    },
+    {
+      "name": "drupal/core",
+      "version": "11.2.3",
+      "type": "drupal-core"
+    },
+    {
+      "name": "drupal/core-recommended",
+      "version": "11.2.3",
+      "type": "metapackage"
+    },
+    {
+      "name": "symfony/http-foundation",
+      "version": "v7.3.0",
+      "type": "library"
+    }
+  ],
+  "packages-dev": [
+    {
+      "name": "drupal/coder",
+      "version": "8.3.26",
+      "type": "drupal-module"
+    }
+  ]
+}

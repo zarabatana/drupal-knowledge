@@ -1,0 +1,48 @@
+{
+  "config_id": "drupal-custom-code-scan",
+  "schema_version": "0.1",
+  "purpose": "Bounds the deterministic custom-code inventory the project analyzer builds and the migration engine reads. Everything the scan does or refuses to do is declared here rather than hardcoded, so a project can be audited against the rules that produced its inventory.",
+  "scope": {
+    "roots": [
+      "modules/custom",
+      "web/modules/custom",
+      "docroot/modules/custom",
+      "themes/custom",
+      "web/themes/custom",
+      "docroot/themes/custom",
+      "profiles/custom",
+      "web/profiles/custom",
+      "docroot/profiles/custom"
+    ],
+    "semantics": "Project-owned custom code only. Contributed and vendored code is out of scope by default: its compatibility is package and release metadata, not source inspection."
+  },
+  "excluded_directories": [
+    ".git",
+    ".github",
+    ".gitlab",
+    ".idea",
+    ".svn",
+    "bower_components",
+    "build",
+    "dist",
+    "node_modules",
+    "sites",
+    "vendor"
+  ],
+  "excluded_file_names": [
+    ".DS_Store"
+  ],
+  "included_extensions": {
+    "php": [".php", ".module", ".theme", ".install", ".inc", ".profile", ".engine"],
+    "yaml": [".yml", ".yaml"]
+  },
+  "limits": {
+    "max_file_bytes": 1048576,
+    "max_files": 5000,
+    "max_depth": 12
+  },
+  "notes": [
+    "A file skipped for any reason is recorded with that reason, because a file that was never read cannot support a compatibility conclusion.",
+    "Only paths relative to the project root are ever recorded."
+  ]
+}

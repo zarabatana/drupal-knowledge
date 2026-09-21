@@ -1,0 +1,380 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/solved-case-candidate-v0.1.json",
+  "title": "Drupal Knowledge solved-case candidate",
+  "description": "What an external producer may submit. Drupal Knowledge validates it and owns canonical storage; a producer never writes a stored case and can never request promotion. A candidate records that a solution was proven in one concrete context, which is not universal Drupal truth.",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "producer",
+    "state",
+    "title",
+    "project_context",
+    "problem",
+    "root_cause",
+    "fix",
+    "verification",
+    "applicability",
+    "limitations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "contract_version": {
+      "const": "0.1"
+    },
+    "producer": {
+      "type": "object",
+      "required": [
+        "name",
+        "version"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "version": {
+          "type": "string"
+        }
+      }
+    },
+    "state": {
+      "enum": [
+        "captured",
+        "verified"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 10
+    },
+    "project_context": {
+      "type": "object",
+      "required": [
+        "drupal_core_version",
+        "project_fingerprint"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "drupal_core_version": {
+          "type": "string"
+        },
+        "php_version": {
+          "type": "string"
+        },
+        "packages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "version"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "themes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "version"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "environment_class": {
+          "type": "string"
+        },
+        "project_fingerprint": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "revision_fingerprint": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        }
+      }
+    },
+    "problem": {
+      "type": "object",
+      "required": [
+        "statement",
+        "symptoms"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "statement": {
+          "type": "string",
+          "minLength": 10
+        },
+        "symptoms": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "origin_finding_id": {
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "related_knowledge_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "root_cause": {
+      "type": "object",
+      "required": [
+        "state",
+        "statement"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "state": {
+          "enum": [
+            "confirmed",
+            "evidenced",
+            "unknown"
+          ]
+        },
+        "statement": {
+          "type": "string",
+          "minLength": 10
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "fix": {
+      "type": "object",
+      "required": [
+        "category",
+        "description",
+        "changes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "enum": [
+            "package_version",
+            "drupal_configuration",
+            "code_change",
+            "theme_change",
+            "infrastructure_or_runtime",
+            "process_or_procedure"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 10
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "changes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "scope",
+              "summary"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "scope": {
+                "type": "string"
+              },
+              "summary": {
+                "type": "string",
+                "maxLength": 400
+              },
+              "evidence_ref": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "required": [
+        "performed",
+        "results"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "performed": {
+          "type": "boolean"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "method",
+              "outcome",
+              "evidence_ref"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "method": {
+                "enum": [
+                  "automated_test",
+                  "reproduction_before_and_after",
+                  "static_analysis",
+                  "deployment_acceptance",
+                  "finding_state_transition",
+                  "command_output",
+                  "manual_qa_with_method"
+                ]
+              },
+              "outcome": {
+                "enum": [
+                  "passed",
+                  "failed",
+                  "inconclusive"
+                ]
+              },
+              "evidence_ref": {
+                "type": "string",
+                "minLength": 3
+              },
+              "detail": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "causality": {
+          "type": "object",
+          "required": [
+            "state",
+            "statement"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "state": {
+              "enum": [
+                "demonstrated",
+                "consistent_with_evidence",
+                "not_established"
+              ]
+            },
+            "statement": {
+              "type": "string",
+              "minLength": 10
+            }
+          }
+        }
+      }
+    },
+    "applicability": {
+      "type": "object",
+      "required": [
+        "proven_on",
+        "claimed_scope"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "proven_on": {
+          "type": "object",
+          "required": [
+            "drupal_core_versions"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "drupal_core_versions": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "string"
+              }
+            },
+            "packages": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "themes": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "php_versions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "claimed_scope": {
+          "const": "proven_context_only"
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "expansion_requires_review": {
+          "const": true
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 5
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

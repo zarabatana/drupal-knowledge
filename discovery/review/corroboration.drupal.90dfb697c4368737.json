@@ -1,0 +1,68 @@
+{
+  "built_at": "2026-09-08T15:21:52Z",
+  "can_promote_to_knowledge": false,
+  "contradictory_evidence": [],
+  "corroboration_state": "insufficient_evidence",
+  "disqualified_evidence": [],
+  "dossier_contract_version": "0.1",
+  "engine": {
+    "deterministic": true,
+    "language_model_used": false,
+    "name": "drupal-knowledge-corroboration-engine",
+    "version": "0.1"
+  },
+  "evidence_fingerprint": "sha256:43321258b48c88665b31f8afac47c539b7e7a7d2d0a37ce506c335fa0ec19d2d",
+  "generalizes_automatically": false,
+  "id": "corroboration.drupal.90dfb697c4368737",
+  "independence_assessment": {
+    "authoritative_origin_count": 0,
+    "duplicate_origin_count": 0,
+    "independent_origin_count": 0,
+    "independent_origins": [],
+    "method": "independence_group_and_content_lineage",
+    "solved_case_origin_count": 0
+  },
+  "is_knowledge_proposal": false,
+  "is_trusted_knowledge": false,
+  "limitations": [
+    "Trusted knowledge records are not machine-keyed for assertion matching, so the trusted_knowledge evidence channel contributes no automatic evidence.",
+    "Corroborated discovery evidence is not trusted knowledge and authorises no knowledge change without explicit human review."
+  ],
+  "popularity_assessment": {
+    "considered": false,
+    "influenced_corroboration": false,
+    "rationale": "Popularity metrics are recorded as observable metadata and are excluded from corroboration strength. Corroboration counts independent evidence origins only."
+  },
+  "review": {
+    "actor": "Miguel Martins",
+    "authorizes_knowledge_proposal_work": false,
+    "method": "human_signal_review",
+    "note": "Contrib release-type observation with no independent corroborating origin and no bearing on any current Drupal Knowledge record. Recorded as observed; no action required.",
+    "outcome": "no_action",
+    "reviewed_at": "2026-09-08T18:03:26Z",
+    "trusted_knowledge_changed": false
+  },
+  "review_required": true,
+  "review_state": "no_action",
+  "run_id": "discovery.20260908T152152.6ac870bc",
+  "scope_alignment": {
+    "component": "pathauto",
+    "notes": [],
+    "state": "unknown"
+  },
+  "signal_id": "signal.drupal.drupal-contrib-pathauto-releases.0f387b13d545009e",
+  "signal_trust": "ecosystem",
+  "supporting_evidence": [],
+  "version_alignment": {
+    "notes": [],
+    "signal_version_scope": {
+      "drupal_core": [
+        "^10.2",
+        "^11"
+      ],
+      "explicitly_evidenced": true,
+      "project_version": "8.x-1.15"
+    },
+    "state": "unknown"
+  }
+}

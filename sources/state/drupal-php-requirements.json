@@ -1,0 +1,25 @@
+{
+  "acquisition": {
+    "acquisition_channel": "external_authoritative_source",
+    "check_cadence_days": 30,
+    "consecutive_failures": 0,
+    "engine_name": "drupal-knowledge-acquisition-engine",
+    "engine_version": "0.1",
+    "last_attempt_at": "2026-09-08T21:12:46Z",
+    "last_attempt_run_id": "run.20260908T211246.ddc21172",
+    "last_attempt_status": "first_observation",
+    "last_error": null,
+    "last_success_at": "2026-09-08T21:12:46Z",
+    "last_success_run_id": "run.20260908T211246.ddc21172",
+    "previous_snapshot_sha256": null,
+    "review_candidate_id": null
+  },
+  "content_length": 8533,
+  "content_sha256": "sha256:2b19eb6eb8d32ef430bd6227142cfaf54e631ab5d707ac2cdb98403ecdd58e21",
+  "etag": "\"1788901805-1\"",
+  "fetch_url": "https://www.drupal.org/docs/getting-started/system-requirements/php-requirements",
+  "last_changed_at": "2026-09-08T21:12:46Z",
+  "last_modified": "Tue, 08 Sep 2026 21:10:05 GMT",
+  "source_id": "drupal-php-requirements",
+  "url": "https://www.drupal.org/docs/getting-started/system-requirements/php-requirements"
+}

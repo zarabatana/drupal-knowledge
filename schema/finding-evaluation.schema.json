@@ -1,0 +1,385 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/finding-evaluation-v0.1.json",
+  "title": "Drupal Knowledge finding evaluation",
+  "description": "Deterministic, provenance-rich result of executing reviewed machine finding contracts against one trusted project analysis. Suitable for CLI, API, CI and external consumer use. Carries no timestamps, no absolute paths, no remediation, and no invented severity.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "evaluation_id",
+    "runtime",
+    "analysis",
+    "evidence",
+    "knowledge_set",
+    "contracts",
+    "findings",
+    "summary",
+    "boundaries",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "evaluation_id": {"$ref": "#/$defs/sha256"},
+    "runtime": {
+      "type": "object",
+      "required": ["name", "version", "mode"],
+      "properties": {
+        "name": {"const": "drupal-finding-runtime"},
+        "version": {"const": "0.1"},
+        "mode": {"const": "reviewed-machine-finding-contract-execution"}
+      },
+      "additionalProperties": false
+    },
+    "analysis": {
+      "type": "object",
+      "required": ["schema_version", "project_id", "analyzer", "analysis_sha256"],
+      "properties": {
+        "schema_version": {"type": "string"},
+        "project_id": {"type": "string"},
+        "analyzer": {
+          "type": "object",
+          "required": ["name", "version", "mode"],
+          "properties": {
+            "name": {"const": "drupal-project-analyzer"},
+            "version": {"type": "string"},
+            "mode": {"type": "string"}
+          },
+          "additionalProperties": false
+        },
+        "analysis_sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["domain", "lifecycle_assessment", "assessment_error"],
+      "properties": {
+        "domain": {"const": "release_lifecycle_assessment"},
+        "lifecycle_assessment": {
+          "oneOf": [
+            {"type": "null"},
+            {
+              "type": "object",
+              "required": ["assessment_id", "evaluation_state", "lifecycle_context"],
+              "properties": {
+                "assessment_id": {"$ref": "#/$defs/sha256"},
+                "evaluation_state": {
+                  "enum": [
+                    "evaluated",
+                    "core_version_unknown",
+                    "release_not_found",
+                    "requires_human_review"
+                  ]
+                },
+                "lifecycle_context": {"type": "object"}
+              },
+              "additionalProperties": false
+            }
+          ]
+        },
+        "assessment_error": {
+          "oneOf": [
+            {"type": "null"},
+            {
+              "type": "object",
+              "required": ["reason_code", "detail"],
+              "properties": {
+                "reason_code": {"type": "string"},
+                "detail": {"type": "string"}
+              },
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "knowledge_set": {
+      "type": "object",
+      "required": ["version", "record_count", "records_sha256"],
+      "properties": {
+        "version": {"type": "string"},
+        "record_count": {"type": "integer", "minimum": 0},
+        "records_sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    },
+    "contracts": {
+      "type": "object",
+      "required": ["executed", "not_executed"],
+      "properties": {
+        "executed": {"type": "integer", "minimum": 0},
+        "not_executed": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["knowledge_id", "condition_id", "reason_code", "detail"],
+            "additionalProperties": false,
+            "properties": {
+              "knowledge_id": {"type": ["string", "null"]},
+              "condition_id": {"type": ["string", "null"]},
+              "reason_code": {"type": "string"},
+              "detail": {"type": "string"}
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "findings": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/finding"}
+    },
+    "summary": {
+      "type": "object",
+      "required": ["states", "effective_enforcement"],
+      "properties": {
+        "states": {
+          "type": "object",
+          "required": [
+            "confirmed",
+            "candidate",
+            "historical_candidate",
+            "not_observed",
+            "unknown",
+            "requires_human_review"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "confirmed": {"type": "integer", "minimum": 0},
+            "candidate": {"type": "integer", "minimum": 0},
+            "historical_candidate": {"type": "integer", "minimum": 0},
+            "not_observed": {"type": "integer", "minimum": 0},
+            "unknown": {"type": "integer", "minimum": 0},
+            "requires_human_review": {"type": "integer", "minimum": 0}
+          }
+        },
+        "effective_enforcement": {
+          "type": "object",
+          "required": ["guidance", "advisory"],
+          "additionalProperties": false,
+          "properties": {
+            "guidance": {"type": "integer", "minimum": 0},
+            "advisory": {"type": "integer", "minimum": 0}
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "boundaries": {
+      "type": "object",
+      "required": ["statements"],
+      "properties": {
+        "statements": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "finding": {
+      "type": "object",
+      "required": [
+        "finding_id",
+        "knowledge_id",
+        "condition_id",
+        "finding_type",
+        "assertion",
+        "assertion_scope",
+        "human_title",
+        "state",
+        "observation_key",
+        "reason_code",
+        "detail",
+        "claim",
+        "not_claimed",
+        "severity",
+        "effective_enforcement",
+        "provenance",
+        "deduplication",
+        "limitations",
+        "explanation"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "finding_id": {"$ref": "#/$defs/sha256"},
+        "knowledge_id": {"type": "string"},
+        "condition_id": {"type": "string"},
+        "finding_type": {"enum": ["release_lifecycle"]},
+        "assertion": {"type": "string"},
+        "assertion_scope": {"type": ["string", "null"]},
+        "human_title": {"type": "string"},
+        "state": {
+          "enum": [
+            "confirmed",
+            "candidate",
+            "historical_candidate",
+            "not_observed",
+            "unknown",
+            "requires_human_review"
+          ]
+        },
+        "observation_key": {"type": "string"},
+        "reason_code": {"type": "string"},
+        "detail": {"type": "string"},
+        "claim": {
+          "type": "object",
+          "required": ["meaning_authorized", "authorized_meaning", "temporality"],
+          "additionalProperties": false,
+          "properties": {
+            "meaning_authorized": {"type": "boolean"},
+            "authorized_meaning": {"type": ["string", "null"]},
+            "temporality": {
+              "enum": ["current", "historical_at_pinned_snapshot", null]
+            }
+          }
+        },
+        "not_claimed": {"type": "array", "items": {"type": "string"}},
+        "severity": {
+          "type": "object",
+          "required": ["state", "source"],
+          "additionalProperties": false,
+          "properties": {
+            "state": {"const": "not_established"},
+            "source": {"type": "null"}
+          }
+        },
+        "effective_enforcement": {"enum": ["guidance", "advisory"]},
+        "provenance": {
+          "type": "object",
+          "required": [
+            "knowledge_id",
+            "condition_id",
+            "analysis_identity",
+            "core_version_fact_ref",
+            "core_version_evidence_ids",
+            "lifecycle_assessment_id",
+            "lifecycle_context_id",
+            "lifecycle_context_source_snapshot_sha256",
+            "exact_matched_release",
+            "literal_source_term",
+            "context_relation",
+            "applicability_result_identity",
+            "semantic_authority_version_scope",
+            "effective_enforcement",
+            "finding_severity_state"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "knowledge_id": {"type": "string"},
+            "condition_id": {"type": "string"},
+            "analysis_identity": {"type": "object"},
+            "core_version_fact_ref": {"type": ["string", "null"]},
+            "core_version_evidence_ids": {"type": "array", "items": {"type": "string"}},
+            "lifecycle_assessment_id": {
+              "oneOf": [{"type": "null"}, {"$ref": "#/$defs/sha256"}]
+            },
+            "lifecycle_context_id": {"type": ["string", "null"]},
+            "lifecycle_context_source_snapshot_sha256": {
+              "oneOf": [{"type": "null"}, {"$ref": "#/$defs/sha256"}]
+            },
+            "exact_matched_release": {"type": ["string", "null"]},
+            "literal_source_term": {
+              "type": "object",
+              "required": [
+                "name",
+                "value",
+                "source_field_path",
+                "match_mode",
+                "present_on_matched_release"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "name": {"type": "string"},
+                "value": {"type": "string"},
+                "source_field_path": {"type": "string"},
+                "match_mode": {"const": "literal_exact_string"},
+                "present_on_matched_release": {"type": ["boolean", "null"]}
+              }
+            },
+            "context_relation": {"enum": ["current", "stale", null]},
+            "applicability_result_identity": {
+              "oneOf": [
+                {"type": "null"},
+                {
+                  "type": "object",
+                  "required": [
+                    "resolver",
+                    "knowledge_set_records_sha256",
+                    "applicability",
+                    "automation_status",
+                    "fact_refs",
+                    "evidence_ids",
+                    "reason_codes"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "resolver": {"type": "object"},
+                    "knowledge_set_records_sha256": {"$ref": "#/$defs/sha256"},
+                    "applicability": {
+                      "enum": ["applicable", "not_applicable", "unknown", "requires_human_review"]
+                    },
+                    "automation_status": {"type": "string"},
+                    "fact_refs": {"type": "array", "items": {"type": "string"}},
+                    "evidence_ids": {"type": "array", "items": {"type": "string"}},
+                    "reason_codes": {"type": "array", "items": {"type": "string"}}
+                  }
+                }
+              ]
+            },
+            "semantic_authority_version_scope": {
+              "oneOf": [
+                {"type": "null"},
+                {
+                  "type": "object",
+                  "required": ["drupal_core_majors", "installed_core_major", "in_scope"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "drupal_core_majors": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": {"type": "string", "pattern": "^[0-9]+$"}
+                    },
+                    "installed_core_major": {"type": ["string", "null"]},
+                    "in_scope": {"type": ["boolean", "null"]}
+                  }
+                }
+              ]
+            },
+            "effective_enforcement": {"enum": ["guidance", "advisory"]},
+            "finding_severity_state": {"const": "not_established"}
+          }
+        },
+        "deduplication": {
+          "type": "object",
+          "required": ["max_instances", "key", "collapsed_read_paths"],
+          "additionalProperties": false,
+          "properties": {
+            "max_instances": {"const": 1},
+            "key": {"type": "object"},
+            "collapsed_read_paths": {"type": "array", "items": {"type": "string"}}
+          }
+        },
+        "limitations": {"type": "array", "items": {"type": "string"}},
+        "explanation": {
+          "type": "object",
+          "required": [
+            "observed",
+            "authoritative_drupal_knowledge",
+            "drupal_definition",
+            "conclusion"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "observed": {"type": "string"},
+            "authoritative_drupal_knowledge": {"type": "string"},
+            "drupal_definition": {"type": "string"},
+            "conclusion": {"type": "string"}
+          }
+        }
+      }
+    }
+  }
+}

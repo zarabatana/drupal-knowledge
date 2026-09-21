@@ -1,0 +1,71 @@
+Drupal 8 or higher provides an Internal Page Cache module that is recommended for small to medium-sized websites. This core module, which is enabled by default, caches pages for anonymous users. It can be found at
+core/modules/page_cache
+.
+This feature improves performance because it speeds up the site. Pages requested by anonymous users are stored the first time they are requested and then reused; depending on your site configuration, the performance improvement may be significant.
+To speed up your site for authenticated users, see the
+Dynamic Page Cache module
+.
+Websites that serve personalized content to anonymous users (dynamic, per-session, e.g. a shopping cart) will want to disable the Internal Page Cache module. This module assumes pages are identical for all anonymous users. Those websites can still take advantage of the Dynamic Page Cache module though, or can alternatively do their personalization using JavaScript + AJAX.
+If you use a reverse caching proxy (such as Vinyl, previously known as Varnish as of 2026) or a CDN, you could safely disable this module.
+Configuring the Internal Page Cache module
+On the Performance (
+admin/config/development/performance
+) page, you can configure how long browsers and proxies may cache pages (Browser and proxy cache maximum age). There is no other configuration. The value set for the maximum time a page can be cached by browsers and proxies will be used by
+Cache-Control
+headers. This setting is ignored by the Internal Page Cache itself, which caches pages permanently until invalidation unless they carry an
+Expires
+header.
+If set to <page-cache-maximum-age> (in second), the HTTP headers will be:
+cache-control: max-age=<page-cache-maximum-age>, public etag: W/"<HASH>" last-modified: Fri, 17 Oct 2025 13:31:47 GMT expires: Sun, 19 Nov 1978 05:00:00 GMT # Dries' Birthday
+If set to 0, the HTTP headers will be:
+cache-control: must-revalidate, no-cache, private expires: Sun, 19 Nov 1978 05:00:00 GMT # Dries' Birthday
+You can check your headers using your browser network dev tools or get recommendation with Dries' online tool:
+https://dri.es/headers
+Cache IDs
+The Internal Page Cache module
+incorporates the following values from the request
+into its unique identifier (
+cid
+) for each cached page:
+scheme (e.g.,
+http
+or
+https
+)
+hostname
+path
+query string
+format (e.g.,
+html
+or
+json
+or
+xml
+)
+A separate cache entry is stored when any of the above values differ.
+(Other attributes of the request — such as HTTP method (
+GET
+/
+POST
+/etc), cookies, locale/language, and other headers — are not considered when generating cache identifiers.)
+Debugging
+The caching status is sent in the
+x-drupal-cache
+HTTP header: HIT or MISS. It should be MISS on the first access, then turn to HIT on the following ones.
+Notice that's ok that the
+x-drupal-dynamic-cache
+HTTP header is always MISS since it's cached by
+Internal Page Cache.
+Comparison to Drupal 7
+Drupal 7 has no instantaneous updates; the page cache in Drupal 8 or higher is instantly updated when something has changed.
+Drupal 7 required the entire page cache to be cleared whenever any content was modified; Drupal 8 or higher uses
+cache tags
+to only clear the cached pages that depend on the modified content.
+Drupal 7 kept serving outdated pages in many cases; any module (and even parts of Drupal 7 core) failed to clear the page cache.
+Drupal 7's internal page cache is not enabled by default. Many users don’t know they should enable this. Drupal 8 or higher enables page cache for anonymous users by default. It can do this, thanks to the cache tags mentioned in the previous point. In Drupal 7, having the internal page cache enabled by default would have caused broken behavior (precisely because we did not have cache tags in Drupal 7).
+See also
+Drupal 8 now has page caching enabled by default
+Cache tags developer documentation
+Tags
+Edit cache
+Internal page cache

@@ -1,0 +1,787 @@
+{
+  "artifact_type": "lifecycle-finding-eligibility-audit",
+  "audit_date": "2026-09-07",
+  "audit_status": "authority-design-audit",
+  "authority_chain": {
+    "assessment_is_not_finding": true,
+    "audited_claim": "exact release match plus literal source term is sufficient to author a confirmed narrow finding",
+    "audited_result": "INSUFFICIENT_WITHOUT_REVIEWED_MACHINE_FINDING_CONTRACT",
+    "evidence_sufficient_for_presence_assertion": true,
+    "knowledge_contract_present": false,
+    "source_attribute_is_not_finding": true,
+    "steps": [
+      "PROJECT_ANALYZER_EXACT_INSTALLED_CORE_VERSION",
+      "REVIEWED_LIFECYCLE_CONTEXT_EXACT_RELEASE_ROW",
+      "NEUTRAL_LIFECYCLE_EVALUATOR_EXACT_RELEASE_MATCH",
+      "LITERAL_AUTHORITATIVE_SOURCE_TERM_OBSERVATION",
+      "REVIEWED_MACHINE_FINDING_CONTRACT",
+      "CONFIRMED_NARROW_FINDING"
+    ]
+  },
+  "authority_layers": [
+    "SOURCE",
+    "REVIEWED_LIFECYCLE_CONTEXT",
+    "PROJECT_EVIDENCE",
+    "LIFECYCLE_ASSESSMENT",
+    "FINDING",
+    "VULNERABILITY",
+    "REMEDIATION"
+  ],
+  "authority_requirements": [
+    {
+      "evidence": "profile.facts.drupal_core_version with source_evidence_ids",
+      "id": "exact_installed_core_version_project_evidence",
+      "layer": "PROJECT_EVIDENCE",
+      "requirement": "analyzer drupal_core_version fact state known with evidence ids",
+      "scope": "per_project_conditional",
+      "status": "satisfied"
+    },
+    {
+      "evidence": "releases[].version.source.source_value exact lookup over 553 rows",
+      "id": "exact_reviewed_release_row",
+      "layer": "REVIEWED_LIFECYCLE_CONTEXT",
+      "requirement": "exact release version row exists in the reviewed lifecycle context",
+      "scope": "per_project_conditional",
+      "status": "satisfied"
+    },
+    {
+      "evidence": "dk_release_lifecycle_evaluator.exact_release_match",
+      "id": "exact_release_match_state",
+      "layer": "LIFECYCLE_ASSESSMENT",
+      "requirement": "evaluator release_match.state == matched",
+      "scope": "per_project_conditional",
+      "status": "satisfied"
+    },
+    {
+      "evidence": "releases[].terms[].value.source_value and releases[].release_type_source_values[]",
+      "id": "literal_source_term_present_in_matched_row",
+      "layer": "REVIEWED_LIFECYCLE_CONTEXT",
+      "requirement": "literal term value present with state present in the matched row",
+      "scope": "per_project_conditional",
+      "status": "satisfied"
+    },
+    {
+      "evidence": "knowledge/context/drupal-core-release-lifecycle.json loaded through evaluator canonical path",
+      "id": "canonical_reviewed_context",
+      "layer": "REVIEWED_LIFECYCLE_CONTEXT",
+      "requirement": "context is the canonical repository-reviewed artifact with verified snapshot integrity",
+      "status": "satisfied"
+    },
+    {
+      "evidence": "reviewed snapshot digest equals current source state digest",
+      "id": "context_relation_current",
+      "layer": "REVIEWED_LIFECYCLE_CONTEXT",
+      "requirement": "context_freshness.relation == current",
+      "status": "satisfied"
+    },
+    {
+      "evidence": "analysis_sha256, context_sha256, snapshot_sha256, evidence ids, assessment_id",
+      "id": "provenance_completeness",
+      "layer": "FINDING",
+      "requirement": "every provenance field required by the design is derivable today",
+      "status": "satisfied"
+    },
+    {
+      "evidence": "literal_exact_string match against normalized source values",
+      "id": "deterministic_evaluation_without_semantic_judgment",
+      "layer": "FINDING",
+      "requirement": "condition is decided by literal equality, not interpretation",
+      "status": "satisfied"
+    },
+    {
+      "evidence": "reviewed context and analyzer output only",
+      "id": "offline_evaluation",
+      "layer": "FINDING",
+      "requirement": "no network or runtime evidence required",
+      "status": "satisfied"
+    },
+    {
+      "blocker": true,
+      "evidence": "no canonical record declares machine_finding",
+      "id": "reviewed_machine_finding_contract",
+      "layer": "REVIEWED_KNOWLEDGE",
+      "requirement": "a reviewed knowledge record declares a machine_finding condition for this evidence domain",
+      "status": "missing"
+    },
+    {
+      "blocker": true,
+      "evidence": "no reviewed record defines the assertion string",
+      "id": "reviewed_assertion_wording_authority",
+      "layer": "REVIEWED_KNOWLEDGE",
+      "requirement": "the exact machine assertion and human title are fixed by reviewed knowledge",
+      "status": "missing"
+    },
+    {
+      "blocker": true,
+      "evidence": "no reviewed record defines a release_lifecycle finding type",
+      "id": "reviewed_finding_type_authority",
+      "layer": "REVIEWED_KNOWLEDGE",
+      "requirement": "the finding type is fixed by reviewed knowledge and is not vulnerability",
+      "status": "missing"
+    },
+    {
+      "blocker": true,
+      "evidence": "no reviewed severity exists for this condition; the host record severity describes the sourcing rule",
+      "id": "reviewed_severity_authority_or_explicit_absence",
+      "layer": "REVIEWED_KNOWLEDGE",
+      "requirement": "severity is supplied by reviewed knowledge or explicitly declared unestablished",
+      "status": "missing"
+    },
+    {
+      "blocker": true,
+      "evidence": "condition has no owning reviewed record; safe default remains guidance",
+      "id": "finding_condition_bound_to_reviewed_record",
+      "layer": "REVIEWED_KNOWLEDGE",
+      "requirement": "the condition is owned by a reviewed knowledge record so enforcement resolves through effective_enforcement",
+      "status": "missing"
+    },
+    {
+      "blocker": false,
+      "evidence": "pinned release-history snapshot carries the term with no definition",
+      "id": "source_term_semantic_authority",
+      "layer": "SOURCE",
+      "not_required_for": [
+        "literal_presence_assertion"
+      ],
+      "required_for": [
+        "meaning_bearing_assertions",
+        "severity_derivation",
+        "remediation_layer"
+      ],
+      "requirement": "an authoritative Drupal source defines what the release type term asserts",
+      "status": "conditional"
+    }
+  ],
+  "baseline": {
+    "canonical_counts": {
+      "blocking": 0,
+      "guidance": 10,
+      "knowledge": 10,
+      "lifecycle_context": 1,
+      "lifecycle_context_releases": 553,
+      "machine_finding_contracts": 0,
+      "reviewed": 10,
+      "source": 12
+    },
+    "lifecycle_context": {
+      "authority_layer": "TRUSTED_KNOWLEDGE_CONTEXT",
+      "context_relation": "current",
+      "context_sha256": "sha256:c6caf22c6d1e776ecabc8713988c919e1505217cd00bb308f8c066e523201928",
+      "id": "drupal-core-release-lifecycle",
+      "review_status": "reviewed",
+      "reviewed_on": "2026-08-31",
+      "schema_version": "0.1",
+      "source_id": "drupal-core-releases",
+      "source_snapshot_bytes": 540265,
+      "source_snapshot_sha256": "sha256:c7de75d2508c7d134765affdea101e9bc7a4d534d8eaaa97fda3308a14ea0063"
+    },
+    "main_sha": "90d6238e04adb22e1db5eed77606608c1e27e4f0",
+    "tag": "v0.5.0",
+    "version": "0.5.0"
+  },
+  "candidate_condition": {
+    "alternate_finding_type": "authoritative_release_state",
+    "audited_statement": "The installed Drupal core release is explicitly marked \"Insecure\" in the reviewed Drupal release metadata.",
+    "classification_basis": "authority_gap_not_evidence_gap",
+    "eligibility_classification": "CANDIDATE_ONLY",
+    "forbidden_finding_type": "vulnerability",
+    "narrower_than": [
+      "project_is_insecure",
+      "site_is_vulnerable",
+      "exploitable_vulnerability_exists",
+      "project_is_compromised",
+      "upgrade_is_mandatory"
+    ],
+    "proposed_assertion": "installed_core_release_explicitly_marked_insecure_by_source",
+    "proposed_condition_id": "installed_core_release_carries_source_release_type_term_insecure",
+    "proposed_finding_type": "release_lifecycle",
+    "proposed_human_title": "Installed Drupal core release is explicitly marked Insecure by Drupal release metadata",
+    "wording_finalized": false
+  },
+  "canonical_context_rule": {
+    "canonical_context_id": "drupal-core-release-lifecycle",
+    "canonical_context_path": "knowledge/context/drupal-core-release-lifecycle.json",
+    "required_checks": [
+      "context loaded from the canonical repository path",
+      "artifact_type release-lifecycle-context",
+      "authority_layer TRUSTED_KNOWLEDGE_CONTEXT",
+      "review.status reviewed",
+      "pinned snapshot digest and byte length verified against the immutable snapshot"
+    ],
+    "requires_canonical_reviewed_context": true,
+    "self_declared_external_context_can_author_finding": false,
+    "why": "review authority comes from repository review and promotion, not from JSON that declares review status or plausible provenance"
+  },
+  "canonical_integrity": {
+    "analyzer_changed": false,
+    "evaluator_runtime_changed": false,
+    "generated_outputs_changed": false,
+    "knowledge_records_changed": 0,
+    "lifecycle_context_changed": false,
+    "lifecycle_evaluator_authority_defect_found": false,
+    "resolver_changed": false,
+    "snapshots_changed": false,
+    "sources_changed": false,
+    "version_bumped": false
+  },
+  "conditional_requirements": [
+    "source_term_semantic_authority"
+  ],
+  "context_change_semantics": {
+    "historical_evidence_mutated": false,
+    "identity_effect": "lifecycle_context_sha256 changes, so a new deterministic finding identity is produced",
+    "reevaluation_required_on_context_change": true,
+    "source_collection_alone_promotes_context": false,
+    "stale_context_downgrade": "historical_candidate or requires_refresh, never a current confirmed finding",
+    "trigger": "new authoritative snapshot promoted into a newly reviewed lifecycle context"
+  },
+  "context_freshness_rule": {
+    "alternative_formulation_considered": "allow confirmed findings from stale context with a staleness qualifier",
+    "alternative_rejected_because": "the finding layer asserts a current project condition and no reviewed knowledge authorizes a staleness-qualified current assertion",
+    "current_confirmed_finding_requires": "current",
+    "stale_can_author_current_confirmed_finding": false,
+    "stale_context_result": "historical_candidate",
+    "stale_context_secondary_result": "requires_refresh",
+    "stale_does_not_prove": "the current authoritative source state still carries the term for that release",
+    "stale_proves": "at the pinned reviewed snapshot state, the exact release row carried the term"
+  },
+  "contract_resolution": {
+    "as_of": "2026-09-07",
+    "canonical_counts_now": {
+      "blocking": 0,
+      "guidance": 11,
+      "knowledge": 11,
+      "lifecycle_context": 1,
+      "lifecycle_context_releases": 553,
+      "machine_finding_contracts": 1,
+      "reviewed": 11,
+      "source": 15
+    },
+    "conditional_requirements_now_satisfied": [
+      "source_term_semantic_authority"
+    ],
+    "conditional_requirements_still_open": [],
+    "confirmation_authority_status": "semantic_authority_reviewed",
+    "confirmation_semantics_pending": false,
+    "confirmed_finding_authority_established": true,
+    "historical_audit_rewritten": false,
+    "historical_draft_confirmed_state_superseded": "the audit-time draft mapped term_present_and_context_current to confirmed; the reviewed contract maps it to candidate because the semantic authority that would make the condition a reportable adverse state is not established",
+    "knowledge_contract_supplied": true,
+    "meaning_bearing_claims_authorized": true,
+    "missing_requirements_now_satisfied": [
+      "finding_condition_bound_to_reviewed_record",
+      "reviewed_assertion_wording_authority",
+      "reviewed_finding_type_authority",
+      "reviewed_machine_finding_contract",
+      "reviewed_severity_authority_or_explicit_absence"
+    ],
+    "missing_requirements_still_open": [],
+    "note": "The original audit conclusion is preserved verbatim. It recorded that no reviewed knowledge contract existed on 2026-09-07 at main 90d6238e. A narrow reviewed contract now exists. The evidence findings, the source-semantics gap, and the decision string are unchanged; only this additive status block was appended.",
+    "original_decision": "FIRST_LIFECYCLE_FINDING_AUTHORIZED_NOW=NO_KNOWLEDGE_CONTRACT",
+    "original_decision_retained": true,
+    "runtime_consumers_of_machine_finding": 0,
+    "runtime_finding_engine_present": false,
+    "semantic_authority_note": "Established on 2026-09-07 from pinned current Drupal 11.4.5 update-module sources: Release type Insecure -> ProjectRelease::isInsecure() -> installed release assigned UpdateManagerInterface::NOT_SECURE -> documented as the project missing security update(s). No exploitability, CVE, severity, or compromise claim is authorized.",
+    "semantic_authority_refs": [
+      "drupal-update-project-release-semantics",
+      "drupal-update-status-security-semantics",
+      "drupal-update-manager-interface-semantics"
+    ],
+    "settlement_note": "Settled on 2026-09-07 before merge: the reviewed contract exists but cannot bootstrap confirmed finding semantics from a neutral source observation. Confirmation requires explicit reviewed semantic_authority_refs together with a reviewed revision of the pinned term_semantics contract.",
+    "strongest_machine_finding_state": "confirmed",
+    "supplied_assertion": "installed_core_release_is_not_secure_per_drupal_update_status",
+    "supplied_by_condition_id": "installed_core_release_carries_source_release_type_term_insecure",
+    "supplied_by_record_id": "drupal.update.core-release-insecure-term-condition",
+    "term_semantics_state": "TERM_MEANING_REQUIRES_ADDITIONAL_AUTHORITY"
+  },
+  "decision": "FIRST_LIFECYCLE_FINDING_AUTHORIZED_NOW=NO_KNOWLEDGE_CONTRACT",
+  "decision_rationale": [
+    "project evidence and reviewed source evidence prove literal term presence on an exactly matched release row",
+    "the pinned snapshot does not define the term, so only presence assertions are available",
+    "no reviewed canonical knowledge record declares a machine_finding contract, assertion, finding type, or severity authority",
+    "the audited statement is therefore CANDIDATE_ONLY today, blocked by knowledge authority rather than by evidence"
+  ],
+  "deduplication": {
+    "collapsed_into": "one logical finding carrying multiple supporting evidence refs",
+    "dedup_key_fields": [
+      "knowledge_id",
+      "finding_condition_id",
+      "project_entity",
+      "matched_release_source_version"
+    ],
+    "duplicate_sources_collapsed": [
+      "releases[].terms[] occurrences of the same term value",
+      "releases[].release_type_source_values[] representation of the same term",
+      "assessment source_attributes.source_release_type_terms read path",
+      "raw snapshot xml occurrences"
+    ],
+    "max_instances_per_installed_release_per_condition": 1,
+    "observed_duplicate_term_occurrences_within_a_row": 0,
+    "project_entity": "drupal/core"
+  },
+  "enforcement_model": {
+    "blocking_records": 0,
+    "canonical_records_effective_enforcement": [
+      "guidance"
+    ],
+    "confirmed_finding_escalates_enforcement": false,
+    "enforcement_source": "effective_enforcement of the owning reviewed knowledge record",
+    "future_finding_effective_enforcement": "guidance",
+    "guidance_only_until": "reviewed knowledge explicitly authorizes stronger enforcement"
+  },
+  "exact_match_rule": {
+    "approximate_matching_allowed": false,
+    "branch_only_inference_allowed": false,
+    "missing_release_row_is_not": [
+      "unsupported_release_conclusion",
+      "outdated_release_conclusion",
+      "invalid_release_conclusion",
+      "insecure_release_conclusion",
+      "end_of_life_release_conclusion"
+    ],
+    "missing_release_row_result": "no_finding",
+    "missing_release_row_state": "release_not_found",
+    "nearest_release_allowed": false,
+    "older_than_comparison_allowed": false,
+    "requires_exact_release_match": true,
+    "unknown_core_version_result": "no_finding",
+    "unknown_core_version_state": "core_version_unknown"
+  },
+  "existing_knowledge_authority": {
+    "audited_record_id": "drupal.update.core-release-state-update-feed",
+    "conclusion": "NO_EXISTING_REVIEWED_RECORD_AUTHORIZES_THE_CANDIDATE_CONDITION",
+    "condition_bearing_fields": [
+      "actions",
+      "checks",
+      "evidence_requirements",
+      "automation_hints"
+    ],
+    "condition_bearing_fields_executable": false,
+    "declares_machine_applicability_contract": false,
+    "declares_machine_finding_contract": false,
+    "defines_condition_severity": false,
+    "defines_finding_assertion_wording": false,
+    "defines_finding_type": false,
+    "defines_term_semantics": false,
+    "effective_enforcement": "guidance",
+    "enforcement_intent": "non_blocking",
+    "mentions_the_source_term": false,
+    "other_records_audited": [
+      {
+        "authorizes_candidate_condition": false,
+        "id": "drupal.security.advisory-streams-separated",
+        "why": "governs where Drupal security communications live; carries no release row condition and no affected-version model"
+      },
+      {
+        "authorizes_candidate_condition": false,
+        "id": "drupal.api.version-aware-documentation",
+        "why": "governs documentation and version-aware knowledge selection, not project release state conditions"
+      }
+    ],
+    "record_mutated_by_this_audit": false,
+    "records_with_machine_finding_contract": 0,
+    "review_status": "reviewed",
+    "severity_field": "moderate",
+    "what_it_does_authorize": [
+      "treating the release-history feed as the watched source for Drupal core release state",
+      "refusing to hard-code a latest Drupal version as permanent knowledge",
+      "requiring observed project core version before release applicability is resolved"
+    ],
+    "what_it_does_not_authorize": [
+      "asserting a project condition from a release row source term",
+      "defining the machine semantics of any release type term",
+      "attaching severity to a release lifecycle condition",
+      "emitting a finding from a lifecycle assessment"
+    ]
+  },
+  "finding_identity": {
+    "algorithm": "sha256 over stable json of the deterministic key fields",
+    "deterministic_key_fields": [
+      "knowledge_id",
+      "finding_condition_id",
+      "assertion",
+      "analysis_project_id",
+      "analysis_sha256",
+      "core_version_fact_ref",
+      "core_version_evidence_ids",
+      "matched_release_source_version",
+      "lifecycle_context_id",
+      "lifecycle_context_sha256"
+    ],
+    "excluded_fields": [
+      "evaluated_at",
+      "wall_clock_time",
+      "run_id",
+      "hostname",
+      "absolute_paths"
+    ],
+    "stability": "identical inputs reproduce an identical finding id offline",
+    "timestamp_allowed": false,
+    "volatile_inputs_allowed": false
+  },
+  "machine_contract_design": {
+    "declarative_only": true,
+    "draft": {
+      "assertion": "installed_core_release_explicitly_marked_insecure_by_source",
+      "assertion_scope": "reviewed_release_metadata_state_of_the_exact_installed_release",
+      "condition_id": "installed_core_release_carries_source_release_type_term_insecure",
+      "effective_enforcement": "guidance",
+      "evidence_domain": "release_lifecycle_assessment",
+      "finding_type": "release_lifecycle",
+      "forbidden_output_claims": [
+        "project_is_insecure",
+        "site_is_vulnerable",
+        "exploitable_vulnerability_exists",
+        "project_is_compromised",
+        "upgrade_is_mandatory",
+        "release_is_unsupported",
+        "release_is_end_of_life"
+      ],
+      "id": "drupal.lifecycle.core-release-marked-insecure-by-source",
+      "reason_codes": [
+        "LIFECYCLE_SOURCE_TERM_PRESENT_IN_EXACT_RELEASE_ROW",
+        "LIFECYCLE_SOURCE_TERM_ABSENT_IN_EXACT_RELEASE_ROW",
+        "LIFECYCLE_CONTEXT_STALE",
+        "EXACT_RELEASE_ROW_NOT_FOUND",
+        "CORE_VERSION_UNKNOWN",
+        "LIFECYCLE_CONTEXT_NOT_CANONICAL"
+      ],
+      "remediation_emitted": false,
+      "requires": {
+        "assessment_evaluation_state": "evaluated",
+        "canonical_context_id": "drupal-core-release-lifecycle",
+        "context_relation": "current",
+        "exact_release_match": true,
+        "match_mode": "literal_exact_string",
+        "source_field_path": "/project/releases/release/terms/term/value",
+        "source_term": "Insecure",
+        "source_term_name": "Release type"
+      },
+      "severity": {
+        "source": null,
+        "state": "not_established"
+      },
+      "states": {
+        "context_not_canonical": "unknown",
+        "core_version_unknown": "unknown",
+        "release_not_found": "unknown",
+        "term_absent_in_matched_row": "not_observed",
+        "term_present_and_context_current": "confirmed",
+        "term_present_and_context_stale": "historical_candidate"
+      }
+    },
+    "free_text_execution_allowed": false,
+    "implemented": false,
+    "separate_from_machine_applicability": true
+  },
+  "missing_requirements": [
+    "finding_condition_bound_to_reviewed_record",
+    "reviewed_assertion_wording_authority",
+    "reviewed_finding_type_authority",
+    "reviewed_machine_finding_contract",
+    "reviewed_severity_authority_or_explicit_absence"
+  ],
+  "next_authority_step": {
+    "artifact": "reviewed canonical knowledge record carrying a machine_finding contract for the release_lifecycle evidence domain",
+    "engine_implementation_allowed_now": false,
+    "must_define": [
+      "condition_id and evidence domain",
+      "exact required assessment inputs including exact_release_match and context_relation current",
+      "the literal source term and match mode",
+      "the exact machine assertion and human title",
+      "finding type release_lifecycle and an explicit prohibition on vulnerability typing",
+      "severity state not_established with no invented value",
+      "guidance-only effective enforcement",
+      "provenance, identity, and deduplication requirements"
+    ],
+    "must_not_do": [
+      "implement a runtime finding engine",
+      "define what the source term means",
+      "emit remediation or upgrade targets"
+    ],
+    "step": "create and review the minimum canonical knowledge contract that authorizes the narrow lifecycle condition"
+  },
+  "next_required_authority_source": {
+    "acceptable_categories": [
+      "official Drupal release-status documentation",
+      "Drupal security advisory policy documentation defining release security state",
+      "update-status or release-history vocabulary documentation defining Release type term values"
+    ],
+    "collected_during_this_task": false,
+    "required_for": "any meaning-bearing lifecycle assertion beyond literal term presence",
+    "required_now_for_candidate_condition": false,
+    "source_category": "official_drupal_release_status_and_update_status_vocabulary_documentation",
+    "would_unlock": [
+      "meaning-bearing lifecycle assertions",
+      "reviewed severity derivation",
+      "a defensible path toward vulnerability typing"
+    ]
+  },
+  "non_authoritative_signals": [
+    {
+      "can_author_candidate_condition": false,
+      "counter_evidence": {
+        "supported_branch_rows_with_term": 40,
+        "unsupported_branch_rows_without_term": 32
+      },
+      "signal": "branch_listed_in_source_supported_branches",
+      "why": "branch membership and the release type term are independent dimensions in the reviewed context"
+    },
+    {
+      "can_author_candidate_condition": false,
+      "counter_evidence": {
+        "example_coverage_text": "Covered by Drupal's security advisory policy",
+        "rows_with_term_and_covered_attribute": 376,
+        "rows_without_term_and_covered_attribute": 9
+      },
+      "signal": "source_security_coverage_text_or_covered_attribute",
+      "why": "security coverage and the release type term coexist and vary independently"
+    },
+    {
+      "can_author_candidate_condition": false,
+      "counter_evidence": {
+        "rows_with_security_update_and_without_insecure": [
+          "10.6.13",
+          "11.3.14",
+          "11.4.4",
+          "8.9.20",
+          "9.5.11"
+        ]
+      },
+      "forbidden_inferences": [
+        "release_carrying_security_update_is_itself_marked_insecure",
+        "releases_prior_to_a_security_update_are_marked_insecure",
+        "other_releases_inherit_the_term"
+      ],
+      "signal": "release_type_term_security_update",
+      "why": "Security update describes the release itself and is a distinct taxonomy value"
+    },
+    {
+      "can_author_candidate_condition": false,
+      "signal": "release_ordering_or_newer_release_existence",
+      "why": "source order is feed order and is explicitly not support priority"
+    },
+    {
+      "can_author_candidate_condition": false,
+      "signal": "absence_of_the_term_in_a_matched_row",
+      "why": "absence is not_observed, never a proof that the release is safe"
+    }
+  ],
+  "not_canonical_drupal_truth": true,
+  "project_version_scope": {
+    "finding_is_scoped_to_exact_installed_release": true,
+    "historical_retention": "external and out of scope for current evaluation",
+    "mechanism": "identity binds the matched release version and the analysis identity, so a new analysis cannot reproduce the previous release finding",
+    "on_move_to_release_with_the_term": "new confirmed finding with a new deterministic identity",
+    "on_move_to_release_without_the_term": "not_observed",
+    "remains_current_after_project_moves_to_another_release": false
+  },
+  "provenance_detail": {
+    "analysis_identity": "analysis.project_id, analyzer name/version/mode, analysis_sha256",
+    "context_freshness": "context_freshness.relation and both compared digests",
+    "core_version_evidence_ids": "sorted analyzer evidence ids supporting the fact",
+    "core_version_fact_ref": "profile.facts.drupal_core_version",
+    "effective_enforcement": "guidance, resolved from the owning reviewed record",
+    "exact_matched_release": "release_match.source_version and source_order_index",
+    "exact_source_term_evidence": "xml field path, taxonomy term name, literal term value, normalized context paths",
+    "finding_condition_id": "condition_id declared by the machine_finding contract",
+    "knowledge_id": "id of the owning reviewed knowledge record",
+    "lifecycle_assessment_identity": "assessment_id emitted by the neutral evaluator",
+    "lifecycle_context_id": "drupal-core-release-lifecycle",
+    "lifecycle_context_source_snapshot_sha256": "pinned immutable snapshot digest of drupal-core-releases",
+    "severity_source": "not_established until reviewed severity authority exists"
+  },
+  "provenance_requirements": [
+    "knowledge_id",
+    "finding_condition_id",
+    "analysis_identity",
+    "core_version_fact_ref",
+    "core_version_evidence_ids",
+    "lifecycle_assessment_identity",
+    "lifecycle_context_id",
+    "lifecycle_context_source_snapshot_sha256",
+    "exact_matched_release",
+    "exact_source_term_evidence",
+    "context_freshness",
+    "effective_enforcement",
+    "severity_source"
+  ],
+  "remediation_boundary": {
+    "composer_command_generated": false,
+    "layer": "separate future authority layer",
+    "upgrade_target_decided": false,
+    "version_recommended": false
+  },
+  "runtime_artifacts_absent": [
+    "scripts/dk_findings.py",
+    "scripts/dk_lifecycle_findings.py",
+    "schema/finding.schema.json",
+    "schema/lifecycle-finding.schema.json"
+  ],
+  "runtime_engine_implemented": false,
+  "runtime_resolution": {
+    "analyzer_resolver_lifecycle_evaluator_still_free_of_machine_finding": true,
+    "applicability_logic_duplicated_in_runtime": false,
+    "applicability_resolved_by": "drupal-knowledge-applicability-resolver",
+    "as_of": "2026-09-07",
+    "confirmed_requires_definitive_applicability": true,
+    "confirmed_state_reachable_through_runtime": true,
+    "contract_resolution_live_runtime_fields_superseded": true,
+    "cross_major_semantic_authority_leakage_blocked": true,
+    "enforcement_still_guidance_only": true,
+    "evaluation_schema": "schema/finding-evaluation.schema.json",
+    "executed_contract_ids": [
+      "drupal.update.core-release-insecure-term-condition"
+    ],
+    "executes_only_reviewed_machine_finding_contracts": true,
+    "historical_audit_rewritten": false,
+    "historical_runtime_artifacts_still_absent": true,
+    "network_and_source_collection_still_absent_from_evaluation": true,
+    "note": "The settled contract_resolution block recorded, truthfully for its date, that no runtime finding engine existed and that machine_finding had zero runtime consumers. This dated block supersedes only those live-runtime statements: a reviewed finding runtime now executes the single reviewed contract and emits schema-validated finding evaluations. Every other settled statement is preserved verbatim.",
+    "out_of_scope_major_term_presence_state": "candidate",
+    "remediation_still_absent": true,
+    "repository_version": "0.6.0",
+    "runtime_command": "dk.py findings",
+    "runtime_consumer_module": "scripts/dk_finding_runtime.py",
+    "runtime_consumers_of_machine_finding": 1,
+    "runtime_finding_engine_present": true,
+    "semantic_authority_version_scope": {
+      "basis": "pinned Drupal 11.4.5 update-module sources on the 11.x branch",
+      "drupal_core_majors": [
+        "11"
+      ]
+    },
+    "settled_on": "2026-09-08",
+    "settlement_note": "Settled before merge: the first runtime draft confirmed a Drupal 9.5.9 project from Drupal 11 semantic authority and bypassed canonical applicability resolution. The reviewed contract now declares an explicit semantic authority version scope (major 11, evidence-derived from the pinned source version pins) and an explicit reviewed machine_applicability contract; the runtime caps out-of-scope term presence at candidate and fails closed as unknown without definitive machine-resolved applicability.",
+    "severity_still_not_established": true
+  },
+  "satisfied_requirements": [
+    "canonical_reviewed_context",
+    "context_relation_current",
+    "deterministic_evaluation_without_semantic_judgment",
+    "exact_installed_core_version_project_evidence",
+    "exact_release_match_state",
+    "exact_reviewed_release_row",
+    "literal_source_term_present_in_matched_row",
+    "offline_evaluation",
+    "provenance_completeness"
+  ],
+  "schema_version": "0.1",
+  "severity_model": {
+    "derivable_from_explicit_lifecycle_policy": false,
+    "derivable_from_reviewed_knowledge_record": false,
+    "derivable_source": "neither",
+    "forbidden_invented_severities": [
+      "critical",
+      "high",
+      "moderate",
+      "low",
+      "info"
+    ],
+    "future_finding_severity_state": "not_established",
+    "host_record_severity_transfer_rejected_because": "the reviewed severity of drupal.update.core-release-state-update-feed rates the source-selection rule, not an installed release condition",
+    "host_record_severity_transferable": false,
+    "lifecycle_context_contains_severity_field": false,
+    "severity_from_term_wording_allowed": false
+  },
+  "source_term_semantics": {
+    "classification": "TERM_MEANING_REQUIRES_ADDITIONAL_AUTHORITY",
+    "definitional_text_occurrences_in_snapshot": 0,
+    "distribution_counter_evidence": {
+      "contradicts_not_covered_by_security_policy_reading": true,
+      "contradicts_reading_reason": "376 rows carry the term together with security covered=1 text asserting advisory coverage",
+      "note": "the observed distribution rules out naive readings but does not establish the real meaning",
+      "share_of_release_rows_carrying_term": 0.9295
+    },
+    "established_by_snapshot": [
+      "the literal string is attached to specific release rows as a Release type taxonomy value",
+      "which exact release versions carry it at the pinned snapshot state",
+      "that it is a different taxonomy value from Bug fixes, New features, and Security update",
+      "that it can coexist with a security element carrying covered=1"
+    ],
+    "forbidden_lexical_readings": [
+      "release_is_exploitable",
+      "release_is_vulnerable",
+      "release_is_compromised",
+      "release_is_unsupported",
+      "release_is_unsafe",
+      "condition_is_critical"
+    ],
+    "lexical_inference_forbidden": true,
+    "meaning_provable_from_current_snapshot": false,
+    "not_established_by_snapshot": [
+      "what Drupal intends the term to assert about a release",
+      "whether the term implies a known exploitable defect in that release",
+      "whether the term implies the release was superseded by a later security release",
+      "whether the term implies the release lacks security advisory coverage",
+      "whether the term implies any obligation for projects running the release",
+      "any severity, urgency, or risk ranking"
+    ],
+    "presence_provable": true,
+    "schema_or_dtd_in_snapshot": false,
+    "snapshot_defines_term": false,
+    "vocabulary_documentation_in_snapshot": false
+  },
+  "source_term_structure": {
+    "attached_directly_to_release": true,
+    "attached_to_project_level": false,
+    "branch_membership_cross_tabulation": {
+      "supported_branch_with_term": 40,
+      "supported_branch_without_term": 7,
+      "unsupported_branch_with_term": 474,
+      "unsupported_branch_without_term": 32
+    },
+    "coexists_with_security_coverage_metadata": true,
+    "distinct_from_security_update_term": true,
+    "duplicate_term_occurrences_within_a_row": 0,
+    "explicit_source_identifier_beyond_display_text": false,
+    "identifier_forms_absent": [
+      "term_id",
+      "vocabulary_id",
+      "machine_name",
+      "uri",
+      "enum_code"
+    ],
+    "literal_occurrences_in_snapshot": 514,
+    "match_mode": "literal_exact_string",
+    "normalized_context_paths": [
+      "releases[].terms[].value.source_value",
+      "releases[].release_type_source_values[]"
+    ],
+    "normalized_state_marker": "present",
+    "release_rows_total": 553,
+    "release_rows_with_term": 514,
+    "release_rows_without_term": 39,
+    "release_rows_without_terms_container": 9,
+    "representative_versions_with_term": [
+      "11.4.3",
+      "11.3.13",
+      "11.3.12",
+      "10.6.12",
+      "8.0-alpha2"
+    ],
+    "representative_versions_without_term": [
+      "11.4.5",
+      "11.4.4",
+      "11.3.16",
+      "11.3.14",
+      "10.6.15"
+    ],
+    "rows_with_security_update_term_and_without_insecure_term": [
+      "10.6.13",
+      "11.3.14",
+      "11.4.4",
+      "8.9.20",
+      "9.5.11"
+    ],
+    "rows_with_term_and_security_covered_attribute": 376,
+    "rows_without_term_and_security_covered_attribute": 9,
+    "snapshot_sha256": "sha256:c7de75d2508c7d134765affdea101e9bc7a4d534d8eaaa97fda3308a14ea0063",
+    "source_id": "drupal-core-releases",
+    "taxonomy_term_name": "Release type",
+    "taxonomy_term_value": "Insecure",
+    "term_element_attributes": [],
+    "term_value_element_attributes": [],
+    "xml_field_path": "/project/releases/release/terms/term/value"
+  }
+}

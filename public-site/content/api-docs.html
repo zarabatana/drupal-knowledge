@@ -1,0 +1,57 @@
+    <h1>The Public Knowledge API</h1>
+    <p class="lede">
+      Everything on this website is also available as read-only JSON, with the
+      same trust labels, the same provenance and the same stated unknowns.
+    </p>
+    <section aria-labelledby="why-heading">
+      <h2 id="why-heading">Why it exists</h2>
+      <p>
+        The command line answers questions for a person; the website answers them
+        for a reader; the API answers them for a tool. All three read the same
+        published dataset, so a linter, a CI check or a dashboard reaches the
+        conclusion a developer would reach by hand.
+      </p>
+      <p>
+        It is read-only in the strongest sense available: <code>GET</code>,
+        <code>HEAD</code> and <code>OPTIONS</code> are the only methods it routes,
+        and it serves a published dataset rather than any canonical store.
+        There is nothing to authenticate, because there is nothing private in it
+        and nothing to change.
+      </p>
+    </section>
+    <section aria-labelledby="start-heading">
+      <h2 id="start-heading">Getting started</h2>
+      <pre><code>GET /api/v1/status
+GET /api/v1/search?q=CVE-2025-3057
+GET /api/v1/security/SA-CORE-2025-001
+GET /api/v1/provenance/SA-CORE-2025-001
+GET /api/v1/openapi.json</code></pre>
+      <p>
+        Every response carries <code>api_version</code>, <code>dk_version</code>
+        and <code>dataset_id</code>, so a consumer always knows which state of
+        Drupal Knowledge produced an answer. Every result carries
+        <code>trust_class</code> and a <code>trusted_knowledge</code> boolean, so
+        an integration cannot accidentally treat a security advisory as a reviewed
+        Drupal Knowledge rule.
+      </p>
+      <p>
+        Run it locally from the repository — it binds to loopback by default:
+      </p>
+      <pre><code>python3 scripts/dk.py api serve</code></pre>
+    </section>
+    <section aria-labelledby="contract-heading">
+      <h2 id="contract-heading">The contract</h2>
+      <p>
+        The API contract is versioned separately from Drupal Knowledge itself, so
+        a release that adds advisories does not break a consumer. The full
+        description is an
+        <a href="/api/v1/openapi.json">OpenAPI 3.1 document</a>, generated from
+        the same route table the server dispatches, and the complete developer
+        guide is <code>docs/PUBLIC_API.md</code> in the repository.
+      </p>
+      <p>
+        Project evidence, findings, upgrade assessments and discovery signals are
+        not served, for the same reasons they are not published here. See the
+        <a href="/trust-model/">trust model</a>.
+      </p>
+    </section>

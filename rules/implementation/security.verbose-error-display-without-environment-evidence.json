@@ -1,0 +1,67 @@
+{
+  "authority": {
+    "sources": [
+      {
+        "quotes": [
+          "$settings"
+        ],
+        "snapshot_sha256": "sha256:1e2df3981d9cc138fa916171a710909b3e6922ebd978252b453b903e540b4a39",
+        "source_id": "drupal-default-settings-php"
+      }
+    ],
+    "summary": "Drupal core's default.settings.php documents the environment-specific nature of settings overrides, which is why this rule refuses to assert a production defect."
+  },
+  "category": "security",
+  "check": {
+    "condition": {
+      "assertion": "config.exported_value",
+      "id": "error-level-verbose",
+      "operator": "evidence_matches",
+      "subject": "system.logging:error_level",
+      "value": "verbose"
+    },
+    "kind": "evidence_condition"
+  },
+  "context_requirements": [
+    {
+      "assertion": "project.environment",
+      "subject": "deployment",
+      "why_it_matters": "Verbose error display is normal in development and inappropriate in production. No environment evidence is observable from a repository, so this cannot be called a production defect."
+    }
+  ],
+  "finding": {
+    "assertion": "Exported configuration sets system.logging error_level to verbose.",
+    "conclusion": {
+      "candidate": "Errors including backtraces are exported as displayed. Whether that reaches production depends on environment overrides this analysis cannot see.",
+      "default": "No conclusion is drawn.",
+      "not_observed": "The exported configuration does not set verbose error display.",
+      "unknown": "The exported error level could not be established."
+    },
+    "enforcement_intent": "guidance",
+    "evidence_explanation": "system.logging:error_level was observed as 'verbose' in exported configuration.",
+    "human_title": "Verbose error display is exported",
+    "limitations": [
+      "No environment evidence is observable from a repository, so this is never a production claim."
+    ],
+    "remediation": {
+      "applied": false,
+      "basis": "drupal_core_source",
+      "guidance": "Confirm which environments receive this exported value, and whether a production settings override changes it."
+    },
+    "severity_state": "not_established"
+  },
+  "review": {
+    "authority": "reviewed against the pinned default.settings.php snapshot",
+    "reviewed_on": "2026-09-09",
+    "status": "reviewed"
+  },
+  "rule_contract_version": "0.1",
+  "rule_id": "security.verbose-error-display-without-environment-evidence",
+  "scope": {
+    "component": "system.logging",
+    "drupal_core_minimum_major": 8,
+    "notes": "The error_level setting exists in Drupal 8 and later."
+  },
+  "summary": "The exported system.logging configuration displays all errors including backtraces. Whether that is wrong depends on the environment, which this analysis cannot observe.",
+  "title": "Verbose error display is exported without observable environment context"
+}

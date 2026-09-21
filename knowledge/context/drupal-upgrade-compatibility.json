@@ -1,0 +1,383 @@
+{
+  "artifact_type": "upgrade-compatibility-context",
+  "authority_layer": "TRUSTED_KNOWLEDGE_CONTEXT",
+  "context_subject": "Drupal core upgrade transition requirements and platform support",
+  "id": "drupal-upgrade-compatibility",
+  "major_transition_policy": {
+    "consecutive_majors_only": true,
+    "provenance": {
+      "snapshot_sha256": "sha256:82c4fc596dbd7339b25a5c21f7d8c50a6288a7d1adff8017784055790d8a5410",
+      "source_id": "drupal-upgrade-process-overview",
+      "source_text": [
+        "A major version",
+        "be skipped during an upgrade. For example, to upgrade from Drupal 9 to Drupal 11, a site must upgrade from Drupal 9 to Drupal 10, and then to Drupal 11.",
+        "This is necessary, because only updates via"
+      ],
+      "source_url": "https://www.drupal.org/docs/upgrading-drupal/upgrading-drupal/upgrade-process-overview"
+    },
+    "reason_source_text": "This is necessary, because only updates via",
+    "semantics": "The absence of a registered transition is never evidence that the transition is supported. Only a transition listed below has authority.",
+    "skip_major_supported": false
+  },
+  "non_inference": {
+    "not_inferred_conclusions": [
+      "a transition that is not listed here is not thereby supported",
+      "a TBA or absent requirement is unknown and is never filled in from another transition",
+      "a removed-extension list that the source does not close is never treated as closed",
+      "PHP support for a Drupal minor outside the published matrix is unknown, not inherited from its major",
+      "no project upgrade recommendation is inferred from this context alone"
+    ]
+  },
+  "php_support_matrix": {
+    "covered_minors": [
+      "10.4",
+      "10.5",
+      "10.6",
+      "11.1",
+      "11.2",
+      "11.3",
+      "11.4",
+      "12.0"
+    ],
+    "entries": [
+      {
+        "php": "8.1",
+        "supported_minors": [
+          "10.4",
+          "10.5",
+          "10.6"
+        ]
+      },
+      {
+        "php": "8.2",
+        "supported_minors": [
+          "10.4",
+          "10.5",
+          "10.6"
+        ]
+      },
+      {
+        "php": "8.3",
+        "supported_minors": [
+          "10.4",
+          "10.5",
+          "10.6",
+          "11.1",
+          "11.2",
+          "11.3",
+          "11.4"
+        ]
+      },
+      {
+        "php": "8.4",
+        "supported_minors": [
+          "10.4",
+          "10.5",
+          "10.6",
+          "11.1",
+          "11.2",
+          "11.3",
+          "11.4"
+        ]
+      },
+      {
+        "php": "8.5",
+        "supported_minors": [
+          "11.3",
+          "11.4",
+          "12.0"
+        ]
+      },
+      {
+        "php": "8.6",
+        "supported_minors": []
+      }
+    ],
+    "granularity": "drupal_core_minor",
+    "provenance": {
+      "snapshot_sha256": "sha256:2b19eb6eb8d32ef430bd6227142cfaf54e631ab5d707ac2cdb98403ecdd58e21",
+      "source_id": "drupal-php-requirements",
+      "source_text": [
+        "PHP versions supported",
+        "Drupal 10 requires at least PHP 8.1"
+      ],
+      "source_url": "https://www.drupal.org/docs/getting-started/system-requirements/php-requirements"
+    },
+    "uncovered_majors": [
+      "8",
+      "9"
+    ],
+    "uncovered_semantics": "The published matrix has no column for these majors. PHP support for them is unknown here, never assumed from a neighbouring major."
+  },
+  "review": {
+    "authority": "reviewed normalized context is authoritative only for the pinned source snapshots quoted in its provenance blocks",
+    "reviewed_on": "2026-09-08",
+    "status": "reviewed",
+    "verification": "every source_text in this context is asserted to occur verbatim in its pinned snapshot"
+  },
+  "schema_version": "0.1",
+  "transitions": [
+    {
+      "composer_constraint_changes": [
+        {
+          "package": "drupal/core-recommended",
+          "required_constraint": "^10",
+          "source_text": "composer require 'drupal/core-recommended:^10' 'drupal/core-composer-scaffold:^10' 'drupal/core-project-message:^10' --no-update"
+        },
+        {
+          "package": "drupal/core-composer-scaffold",
+          "required_constraint": "^10",
+          "source_text": "composer require 'drupal/core-recommended:^10' 'drupal/core-composer-scaffold:^10' 'drupal/core-project-message:^10' --no-update"
+        },
+        {
+          "package": "drupal/core-project-message",
+          "required_constraint": "^10",
+          "source_text": "composer require 'drupal/core-recommended:^10' 'drupal/core-composer-scaffold:^10' 'drupal/core-project-message:^10' --no-update"
+        }
+      ],
+      "contrib_compatibility_required": {
+        "source_text": "Update all contributed modules/projects and ensure they are Drupal 10 compatible. They will also still be compatible with your Drupal 9.4+ site.",
+        "value": true
+      },
+      "from_major": 9,
+      "id": "9-to-10",
+      "minimum_source_version": {
+        "semantics": "The transition page requires the site to be on 9.4.x or 9.5.x first.",
+        "source_text": "to Drupal 9.4.x or 9.5.x (if not already on that version). If any",
+        "state": "present",
+        "value": "9.4.0"
+      },
+      "php_minimum": {
+        "semantics": "This page defers to the Drupal 10 platform requirements rather than naming a PHP version.",
+        "source_text": "platform requirements of Drupal 10",
+        "state": "not_stated_on_transition_page",
+        "value": null
+      },
+      "provenance": {
+        "snapshot_sha256": "sha256:890acda19673beebea7c6b38b96b39abe3eb07f06dced789474101f07debef0c",
+        "source_id": "drupal-upgrade-9-to-10",
+        "source_text": [
+          "to Drupal 9.4.x or 9.5.x (if not already on that version). If any",
+          "platform requirements of Drupal 10",
+          "composer require 'drupal/core-recommended:^10' 'drupal/core-composer-scaffold:^10' 'drupal/core-project-message:^10' --no-update",
+          "Update all contributed modules/projects and ensure they are Drupal 10 compatible. They will also still be compatible with your Drupal 9.4+ site.",
+          "Several Drupal core modules and themes are deprecated in Drupal 9 and removed from Drupal 10. See",
+          "This includes the Seven admin theme and CKEditor module (for CKEditor 4)."
+        ],
+        "source_url": "https://www.drupal.org/docs/upgrading-drupal/upgrading-from-drupal-8-or-later/how-to-upgrade-from-drupal-9-to-drupal-10"
+      },
+      "removed_core_extensions": {
+        "entries": [
+          {
+            "extension_type": "theme",
+            "machine_name": "seven",
+            "machine_name_basis": "reviewed_core_extension_name_mapping",
+            "source_label": "Seven admin theme"
+          },
+          {
+            "extension_type": "module",
+            "machine_name": "ckeditor",
+            "machine_name_basis": "reviewed_core_extension_name_mapping",
+            "source_label": "CKEditor module (for CKEditor 4)"
+          }
+        ],
+        "exhaustiveness_source_text": "This includes the Seven admin theme and CKEditor module (for CKEditor 4).",
+        "list_exhaustive": false,
+        "semantics": "The page says the named extensions are included in a larger set, so an observed project matching none of them is not evidence that no removed extension is in use."
+      },
+      "state": "documented",
+      "to_major": 10
+    },
+    {
+      "composer_constraint_changes": [
+        {
+          "package": "drupal/core-recommended",
+          "required_constraint": "^11",
+          "source_text": "composer require 'drupal/core-recommended:^11' \\ 'drupal/core-composer-scaffold:^11' \\ 'drupal/core-project-message:^11' --no-update"
+        },
+        {
+          "package": "drupal/core-composer-scaffold",
+          "required_constraint": "^11",
+          "source_text": "composer require 'drupal/core-recommended:^11' \\ 'drupal/core-composer-scaffold:^11' \\ 'drupal/core-project-message:^11' --no-update"
+        },
+        {
+          "package": "drupal/core-project-message",
+          "required_constraint": "^11",
+          "source_text": "composer require 'drupal/core-recommended:^11' \\ 'drupal/core-composer-scaffold:^11' \\ 'drupal/core-project-message:^11' --no-update"
+        }
+      ],
+      "contrib_compatibility_required": {
+        "source_text": "Check compatibility with upgrade status",
+        "value": true
+      },
+      "from_major": 10,
+      "id": "10-to-11",
+      "minimum_source_version": {
+        "semantics": "Core updates before 10.3.0 were removed from Drupal 11, so a lower source version cannot run them.",
+        "source_text": "Drupal 10.3.0 or later",
+        "state": "present",
+        "value": "10.3.0"
+      },
+      "php_minimum": {
+        "semantics": "Stated by the transition page as a prerequisite of the upgrade.",
+        "source_text": "8.3.0 or later.",
+        "state": "present",
+        "value": "8.3.0"
+      },
+      "provenance": {
+        "snapshot_sha256": "sha256:caed10fd7ac71226b75e303b3641b1f5dbfde95c7705e8f13613827631dc2578",
+        "source_id": "drupal-upgrade-10-to-11",
+        "source_text": [
+          "Drupal 10.3.0 or later",
+          "8.3.0 or later.",
+          "composer require 'drupal/core-recommended:^11' \\ 'drupal/core-composer-scaffold:^11' \\ 'drupal/core-project-message:^11' --no-update",
+          "Check compatibility with upgrade status",
+          "and removed in Drupal 11:",
+          "Actions UI, Activity Tracker, Book, Forum, Statistics, and Tour."
+        ],
+        "source_url": "https://www.drupal.org/docs/upgrading-drupal/upgrading-drupal/how-to-upgrade-from-drupal-10-to-drupal-11"
+      },
+      "removed_core_extensions": {
+        "entries": [
+          {
+            "extension_type": "module",
+            "machine_name": "action",
+            "machine_name_basis": "reviewed_core_extension_name_mapping",
+            "source_label": "Actions UI"
+          },
+          {
+            "extension_type": "module",
+            "machine_name": "tracker",
+            "machine_name_basis": "reviewed_core_extension_name_mapping",
+            "source_label": "Activity Tracker"
+          },
+          {
+            "extension_type": "module",
+            "machine_name": "book",
+            "machine_name_basis": "reviewed_core_extension_name_mapping",
+            "source_label": "Book"
+          },
+          {
+            "extension_type": "module",
+            "machine_name": "forum",
+            "machine_name_basis": "reviewed_core_extension_name_mapping",
+            "source_label": "Forum"
+          },
+          {
+            "extension_type": "module",
+            "machine_name": "statistics",
+            "machine_name_basis": "reviewed_core_extension_name_mapping",
+            "source_label": "Statistics"
+          },
+          {
+            "extension_type": "module",
+            "machine_name": "tour",
+            "machine_name_basis": "reviewed_core_extension_name_mapping",
+            "source_label": "Tour"
+          }
+        ],
+        "exhaustiveness_source_text": "Actions UI, Activity Tracker, Book, Forum, Statistics, and Tour.",
+        "list_exhaustive": true,
+        "semantics": "The page names a closed list of removed extensions for this transition."
+      },
+      "state": "documented",
+      "to_major": 11
+    },
+    {
+      "composer_constraint_changes": [
+        {
+          "package": "drupal/core-recommended",
+          "required_constraint": "^12",
+          "source_text": "composer require 'drupal/core-recommended:^12' \\ 'drupal/core-composer-scaffold:^12' \\ 'drupal/core-project-message:^12' --no-update"
+        },
+        {
+          "package": "drupal/core-composer-scaffold",
+          "required_constraint": "^12",
+          "source_text": "composer require 'drupal/core-recommended:^12' \\ 'drupal/core-composer-scaffold:^12' \\ 'drupal/core-project-message:^12' --no-update"
+        },
+        {
+          "package": "drupal/core-project-message",
+          "required_constraint": "^12",
+          "source_text": "composer require 'drupal/core-recommended:^12' \\ 'drupal/core-composer-scaffold:^12' \\ 'drupal/core-project-message:^12' --no-update"
+        }
+      ],
+      "contrib_compatibility_required": {
+        "source_text": "Check compatibility with upgrade status",
+        "value": true
+      },
+      "from_major": 11,
+      "id": "11-to-12",
+      "minimum_source_version": {
+        "semantics": "The transition page states the minimum source version as TBA. It is unknown, and must not be filled in from the release feed or from the removed-updates sentence on the same page.",
+        "source_text": "Drupal TBA or later",
+        "state": "unknown",
+        "value": null
+      },
+      "php_minimum": {
+        "semantics": "Stated by the transition page as a prerequisite of the upgrade.",
+        "source_text": "8.5.0 or later.",
+        "state": "present",
+        "value": "8.5.0"
+      },
+      "provenance": {
+        "snapshot_sha256": "sha256:9138db90ff9288c683ef29d6be46c5e611fddf3fdde519b81449fce5604e5ac2",
+        "source_id": "drupal-upgrade-11-to-12",
+        "source_text": [
+          "Drupal TBA or later",
+          "8.5.0 or later.",
+          "composer require 'drupal/core-recommended:^12' \\ 'drupal/core-composer-scaffold:^12' \\ 'drupal/core-project-message:^12' --no-update",
+          "Check compatibility with upgrade status",
+          "and removed in Drupal 12:",
+          "Ban, Contact, Field Layout, History, Migrate Drupal, Migrate Drupal UI",
+          "TBA."
+        ],
+        "source_url": "https://www.drupal.org/docs/upgrading-drupal/upgrading-drupal/how-to-upgrade-from-drupal-11-to-drupal-12"
+      },
+      "removed_core_extensions": {
+        "entries": [
+          {
+            "extension_type": "module",
+            "machine_name": "ban",
+            "machine_name_basis": "reviewed_core_extension_name_mapping",
+            "source_label": "Ban"
+          },
+          {
+            "extension_type": "module",
+            "machine_name": "contact",
+            "machine_name_basis": "reviewed_core_extension_name_mapping",
+            "source_label": "Contact"
+          },
+          {
+            "extension_type": "module",
+            "machine_name": "field_layout",
+            "machine_name_basis": "reviewed_core_extension_name_mapping",
+            "source_label": "Field Layout"
+          },
+          {
+            "extension_type": "module",
+            "machine_name": "history",
+            "machine_name_basis": "reviewed_core_extension_name_mapping",
+            "source_label": "History"
+          },
+          {
+            "extension_type": "module",
+            "machine_name": "migrate_drupal",
+            "machine_name_basis": "reviewed_core_extension_name_mapping",
+            "source_label": "Migrate Drupal"
+          },
+          {
+            "extension_type": "module",
+            "machine_name": "migrate_drupal_ui",
+            "machine_name_basis": "reviewed_core_extension_name_mapping",
+            "source_label": "Migrate Drupal UI"
+          }
+        ],
+        "exhaustiveness_source_text": "TBA.",
+        "list_exhaustive": false,
+        "semantics": "The obsolete-extension list on this page is TBA, so the removal set for this transition is not closed."
+      },
+      "state": "documented_incomplete",
+      "to_major": 12
+    }
+  ]
+}

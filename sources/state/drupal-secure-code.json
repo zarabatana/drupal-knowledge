@@ -1,0 +1,25 @@
+{
+  "acquisition": {
+    "acquisition_channel": "external_authoritative_source",
+    "check_cadence_days": 30,
+    "consecutive_failures": 0,
+    "engine_name": "drupal-knowledge-acquisition-engine",
+    "engine_version": "0.1",
+    "last_attempt_at": "2026-09-08T15:02:49Z",
+    "last_attempt_run_id": "run.20260908T150249.31ed3696",
+    "last_attempt_status": "unchanged",
+    "last_error": null,
+    "last_success_at": "2026-09-08T15:02:49Z",
+    "last_success_run_id": "run.20260908T150249.31ed3696",
+    "previous_snapshot_sha256": null,
+    "review_candidate_id": null
+  },
+  "content_length": 5603,
+  "content_sha256": "sha256:f57c9014ebb02fdef09c649f4d56e7645a727d5075034cd13e19d1f92d7c31a8",
+  "etag": "\"1788879657-1\"",
+  "fetch_url": "https://www.drupal.org/docs/administering-a-drupal-site/security-in-drupal/writing-secure-code-for-drupal",
+  "last_changed_at": "2026-08-30T04:11:18Z",
+  "last_modified": "Tue, 08 Sep 2026 15:00:57 GMT",
+  "source_id": "drupal-secure-code",
+  "url": "https://www.drupal.org/docs/administering-a-drupal-site/security-in-drupal/writing-secure-code-for-drupal"
+}

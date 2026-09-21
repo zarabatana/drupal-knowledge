@@ -1,0 +1,96 @@
+{
+  "acquired_at": "2026-09-08T15:20:42Z",
+  "can_promote_to_knowledge": false,
+  "claim": {
+    "assertion_key": "project.token.release.8.x-1.15.release_type",
+    "assertion_value": "Bug fixes",
+    "evidence": [
+      "version=8.x-1.15",
+      "release_type=Bug fixes",
+      "status=published",
+      "security=Covered by Drupal's security advisory policy",
+      "core_compatibility=^9.2 || ^10 || ^11"
+    ],
+    "extraction": {
+      "deterministic": true,
+      "field_path": "project/releases/release",
+      "strategy": "project_release_xml"
+    },
+    "topic": "project_release_type"
+  },
+  "engine": {
+    "deterministic": true,
+    "language_model_used": false,
+    "name": "drupal-knowledge-discovery-engine",
+    "version": "0.1"
+  },
+  "id": "signal.drupal.drupal-contrib-token-releases.133bd368ef85a05a",
+  "is_knowledge_proposal": false,
+  "is_trusted_knowledge": false,
+  "item_updated_at": "2024-07-28T22:36:51Z",
+  "kind": "project-release",
+  "observed_at": "2026-09-08T15:20:42Z",
+  "popularity": {
+    "authority_weight": 0,
+    "counts_toward_corroboration": false,
+    "metrics": {}
+  },
+  "provenance": {
+    "acquired_by": {
+      "name": "drupal-knowledge-discovery-engine",
+      "version": "0.1"
+    },
+    "acquisition_run_id": "discovery.20260908T152042.2691c898",
+    "discovery_channel": "external_discovery_source",
+    "discovery_run_id": "discovery.20260908T152042.2691c898"
+  },
+  "published_at": "2024-07-28T22:36:51Z",
+  "review": {
+    "actor": "Miguel Martins",
+    "authorizes_knowledge_proposal_work": false,
+    "method": "human_signal_review",
+    "note": "Contrib release-type observation with no independent corroborating origin and no bearing on any current Drupal Knowledge record. Recorded as observed; no action required.",
+    "outcome": "no_action",
+    "reviewed_at": "2026-09-08T18:03:26Z",
+    "trusted_knowledge_changed": false
+  },
+  "review_required": true,
+  "review_status": "reviewed",
+  "scope": {
+    "component": {
+      "name": "token",
+      "package": "drupal/token",
+      "type": "module"
+    },
+    "environment": null,
+    "version_scope": {
+      "drupal_core": [
+        "^10",
+        "^11",
+        "^9.2"
+      ],
+      "explicitly_evidenced": true,
+      "project_version": "8.x-1.15"
+    }
+  },
+  "signal_contract_version": "0.2",
+  "source": {
+    "canonical_url": "https://www.drupal.org/project/token/releases/8.x-1.15",
+    "category": "contrib-releases",
+    "derived_from": null,
+    "discovery_channel": "external_discovery_source",
+    "fetch_url": "https://updates.drupal.org/release-history/token/current",
+    "independence_group": "drupal-org-project-token",
+    "item_ref": "release:8.x-1.15",
+    "snapshot_sha256": "sha256:271ad3567d24b6f4398cbbf1201e2dfabba2b93e296b8b52df41628a13230219",
+    "source_id": "drupal-contrib-token-releases",
+    "trust": "ecosystem"
+  },
+  "staleness": {
+    "age_days": 0,
+    "expected_refresh_days": 30,
+    "stale": false
+  },
+  "status": "insufficient_evidence",
+  "summary": "token release 8.x-1.15 is published as release type 'Bug fixes'."
+}

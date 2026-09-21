@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://drupal-knowledge.zarabatana.info/schema/source-state-v0.1.json",
+  "title": "Drupal Knowledge source state",
+  "type": "object",
+  "required": [
+    "source_id",
+    "url"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "fetch_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "content_sha256": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$"
+    },
+    "last_changed_at": {
+      "type": "string"
+    },
+    "etag": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "last_modified": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "content_length": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "acquisition": {
+      "description": "Acquisition engine state. Advancing it never rewrites historical snapshots.",
+      "type": "object",
+      "required": [
+        "engine_name",
+        "engine_version",
+        "acquisition_channel",
+        "last_attempt_at",
+        "last_attempt_run_id",
+        "last_attempt_status",
+        "last_success_at",
+        "last_success_run_id",
+        "previous_snapshot_sha256",
+        "consecutive_failures",
+        "last_error",
+        "review_candidate_id",
+        "check_cadence_days"
+      ],
+      "properties": {
+        "engine_name": {
+          "const": "drupal-knowledge-acquisition-engine"
+        },
+        "engine_version": {
+          "type": "string"
+        },
+        "acquisition_channel": {
+          "const": "external_authoritative_source"
+        },
+        "last_attempt_at": {
+          "type": "string"
+        },
+        "last_attempt_run_id": {
+          "type": "string"
+        },
+        "last_attempt_status": {
+          "enum": [
+            "first_observation",
+            "unchanged",
+            "changed",
+            "unavailable",
+            "invalid_or_malformed"
+          ]
+        },
+        "last_success_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "last_success_run_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "previous_snapshot_sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "consecutive_failures": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "last_error": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "required": [
+            "class",
+            "code",
+            "detail",
+            "engine_defect"
+          ],
+          "properties": {
+            "class": {
+              "enum": [
+                "external_source_unavailable",
+                "source_contract_failure"
+              ]
+            },
+            "code": {
+              "type": "string"
+            },
+            "detail": {
+              "type": "string"
+            },
+            "engine_defect": {
+              "const": false
+            }
+          },
+          "additionalProperties": false
+        },
+        "review_candidate_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "check_cadence_days": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "description": "Per-source state. content_sha256, content_length and last_changed_at are present once a source has been successfully acquired at least once; a source whose only attempts failed carries acquisition state and no snapshot pointer."
+}

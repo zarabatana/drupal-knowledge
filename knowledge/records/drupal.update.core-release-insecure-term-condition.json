@@ -1,0 +1,215 @@
+{
+  "id": "drupal.update.core-release-insecure-term-condition",
+  "title": "Drupal release metadata can attach the literal \"Insecure\" Release type term to a core release row",
+  "summary": "SOURCE FACT: the Drupal update-status release-history feed can attach a Release type taxonomy term whose literal value is \"Insecure\" to an individual Drupal core release row. PROJECT JOIN: a future finding evaluator may match this only when the Project Analyzer observed installed Drupal core version matches that exact release row in the canonical reviewed release lifecycle context. DRUPAL SEMANTICS (reviewed): For Drupal Update Manager release metadata, a release carrying Release type \"Insecure\" is treated as insecure; when that exact release is installed, Drupal assigns NOT_SECURE status, whose documented meaning is that the project is missing security update(s). LIMITS: this reviewed meaning does not establish an exploit path, a specific CVE identifier, a finding severity level, or any compromise claim about a project.",
+  "kind": "version-change",
+  "domains": [
+    "update",
+    "core"
+  ],
+  "severity": "info",
+  "review_status": "reviewed",
+  "sources": [
+    {
+      "source_id": "drupal-core-releases",
+      "locator": "/project/releases/release/terms/term where name is 'Release type' and value is 'Insecure'",
+      "title": "Drupal core releases"
+    },
+    {
+      "source_id": "drupal-update-project-release-semantics",
+      "locator": "ProjectRelease::isInsecure() returns isReleaseType('Insecure'); createFromArray reads terms['Release type']",
+      "title": "Drupal 11 ProjectRelease value object"
+    },
+    {
+      "source_id": "drupal-update-status-security-semantics",
+      "locator": "update_calculate_project_update_status(): existing_version === version and isInsecure() sets UpdateManagerInterface::NOT_SECURE; later branches return early once status is set",
+      "title": "Drupal 11 update status calculation"
+    },
+    {
+      "source_id": "drupal-update-manager-interface-semantics",
+      "locator": "UpdateManagerInterface::NOT_SECURE docblock: Project is missing security update(s).",
+      "title": "Drupal 11 UpdateManagerInterface status constants"
+    }
+  ],
+  "version_applicability": {
+    "drupal_core": [
+      {
+        "constraint": "release-history",
+        "status": "applicable",
+        "notes": "Applies only to an exact release row present in the canonical reviewed release lifecycle context."
+      }
+    ],
+    "notes": "Release rows are matched literally and exactly; no branch, range, or ordering inference is authorized."
+  },
+  "project_applicability": {
+    "requires": [
+      "drupal_core_version"
+    ],
+    "unknown_result": "lifecycle_finding_unknown"
+  },
+  "machine_applicability": {
+    "schema_version": "0.1",
+    "condition": {
+      "id": "installed-drupal-core-version-observed",
+      "operator": "fact_known",
+      "fact": "drupal_core_version"
+    },
+    "notes": "The record concerns the exact installed Drupal core release. It definitively applies when the Drupal Project Analyzer observed an installed Drupal core version, stays unknown when that fact is unknown, and is not applicable when the fact is definitively absent."
+  },
+  "actions": [
+    "Treat the Release type term value \"Insecure\" as the literal Drupal release-metadata trigger for one exact release row.",
+    "Report the reviewed Drupal Update Manager meaning only alongside the exact installed release it was observed on.",
+    "State the reviewed meaning exactly: Drupal assigns NOT_SECURE status, documented as the project missing security update(s), and nothing beyond it."
+  ],
+  "checks": [
+    "Human-readable only: confirm the reviewed lifecycle context row for the exact installed Drupal core version before repeating the term."
+  ],
+  "evidence_requirements": [
+    "Project Drupal core version observed by the Drupal Project Analyzer",
+    "Exact matching release row in the canonical reviewed Drupal core release lifecycle context",
+    "Current canonical reviewed lifecycle context pinned to the baselined drupal-core-releases snapshot",
+    "Baselined Drupal 11 update-module semantic sources proving the Insecure to NOT_SECURE chain"
+  ],
+  "automation_hints": [
+    "Automation authority for this record lives exclusively in the structured machine_finding contract; the prose fields are not executable."
+  ],
+  "machine_finding": {
+    "schema_version": "0.1",
+    "condition_id": "installed_core_release_carries_source_release_type_term_insecure",
+    "evidence_domain": "release_lifecycle_assessment",
+    "finding_type": "release_lifecycle",
+    "assertion": "installed_core_release_is_not_secure_per_drupal_update_status",
+    "human_title": "Installed Drupal core release is classified as not secure by Drupal Update Manager",
+    "assertion_scope": "drupal_update_manager_status_semantics_for_the_exact_installed_release_only",
+    "requires": {
+      "evaluation_state": "evaluated",
+      "exact_release_match": true,
+      "context_relation": "current",
+      "canonical_context_id": "drupal-core-release-lifecycle",
+      "source_field_path": "/project/releases/release/terms/term/value",
+      "source_term_name": "Release type",
+      "source_term_value": "Insecure",
+      "match_mode": "literal_exact_string"
+    },
+    "severity": {
+      "state": "not_established",
+      "source": null,
+      "rationale": "No reviewed knowledge record and no reviewed lifecycle policy establishes severity for this condition. The severity field of this knowledge record rates the record itself and must never be reused as finding severity."
+    },
+    "confirmation_authority": {
+      "status": "semantic_authority_reviewed",
+      "semantic_authority_refs": [
+        "drupal-update-project-release-semantics",
+        "drupal-update-status-security-semantics",
+        "drupal-update-manager-interface-semantics"
+      ],
+      "required_semantic_authority_category": "official_drupal_release_status_and_update_status_vocabulary_documentation",
+      "semantic_authority_version_scope": {
+        "drupal_core_majors": [
+          "11"
+        ],
+        "basis": "All three semantic authority references are the current Drupal 11 update-module sources pinned at release tag 11.4.5 on the 11.x branch. No other Drupal major has reviewed update-status semantics, so confirmation is authorized for installed Drupal core major 11 only."
+      },
+      "rationale": "Reviewed against pinned Drupal 11.4.5 update-module sources: ProjectRelease::isInsecure() is literally isReleaseType('Insecure') over terms['Release type']; update_calculate_project_update_status() assigns UpdateManagerInterface::NOT_SECURE when the exact installed version matches an insecure release and returns before any later status branch; NOT_SECURE is documented as the project missing security update(s). Confirmation stays bound to these references, never a status flip."
+    },
+    "states": {
+      "term_present_and_context_current": "confirmed",
+      "term_present_and_semantic_authority_version_out_of_scope": "candidate",
+      "term_present_and_context_stale": "historical_candidate",
+      "term_absent_in_matched_row": "not_observed",
+      "applicability_not_definitive": "unknown",
+      "release_not_found": "unknown",
+      "core_version_unknown": "unknown",
+      "context_not_canonical": "unknown",
+      "assessment_invalid": "unknown"
+    },
+    "non_authoritative_signals_ignored": [
+      "branch_listed_in_source_supported_branches",
+      "source_supported_branches_presence_or_absence",
+      "source_security_coverage_text_or_covered_attribute",
+      "release_type_term_security_update",
+      "release_ordering_or_source_order_index",
+      "newer_release_existence"
+    ],
+    "provenance_requirements": [
+      "knowledge_id",
+      "condition_id",
+      "analysis_identity",
+      "core_version_fact_ref",
+      "core_version_evidence_ids",
+      "lifecycle_assessment_id",
+      "lifecycle_context_id",
+      "lifecycle_context_source_snapshot_sha256",
+      "exact_matched_release",
+      "literal_source_term",
+      "context_relation",
+      "applicability_result_identity",
+      "semantic_authority_version_scope",
+      "effective_enforcement",
+      "finding_severity_state"
+    ],
+    "identity": {
+      "algorithm": "sha256_stable_json",
+      "timestamp_allowed": false,
+      "key_fields": [
+        "knowledge_id",
+        "condition_id",
+        "assertion",
+        "analysis_project_id",
+        "analysis_sha256",
+        "core_version_fact_ref",
+        "core_version_evidence_ids",
+        "matched_release_source_version",
+        "lifecycle_context_id",
+        "lifecycle_context_sha256"
+      ],
+      "excluded_fields": [
+        "evaluated_at",
+        "wall_clock_time",
+        "run_id",
+        "hostname",
+        "absolute_paths"
+      ]
+    },
+    "deduplication": {
+      "max_instances": 1,
+      "key_fields": [
+        "knowledge_id",
+        "condition_id",
+        "installed_core_package",
+        "matched_release_source_version"
+      ],
+      "collapsed_read_paths": [
+        "releases[].terms[].value.source_value",
+        "releases[].release_type_source_values[]",
+        "assessment source_attributes.source_release_type_terms",
+        "immutable source snapshot XML occurrences"
+      ]
+    },
+    "term_semantics": {
+      "state": "DRUPAL_UPDATE_STATUS_SEMANTICS_REVIEWED",
+      "meaning_bearing_claims_authorized": true,
+      "authorized_meaning": "For Drupal Update Manager release metadata, a release carrying Release type \"Insecure\" is treated as insecure; when that exact release is installed, Drupal assigns NOT_SECURE status, whose documented meaning is that the project is missing security update(s).",
+      "forbidden_claims": [
+        "release_is_exploitable",
+        "release_has_specific_cve",
+        "release_is_compromised",
+        "severity_is_derivable",
+        "release_is_unsupported",
+        "release_is_obsolete",
+        "release_is_end_of_life",
+        "upgrade_is_mandatory",
+        "attack_feasibility_established"
+      ]
+    },
+    "runtime_status": "executed_by_reviewed_finding_runtime",
+    "notes": "Reviewed semantic authority established from pinned Drupal 11.4.5 update-module sources and explicitly scoped to installed Drupal core major 11; other majors cap at candidate because their update-status semantics are not reviewed. The reviewed finding runtime (scripts/dk_finding_runtime.py, dk.py findings) is the single component that executes this contract; it consumes the neutral release lifecycle assessment and the canonical Applicability Resolver result, requires definitive machine-resolved applicability before any confirmation, never rescans the project, never fetches sources during evaluation, and never emits remediation. Confirmation stays bound to the reviewed semantic authority references, never a status flip."
+  },
+  "enforcement": {
+    "intent": "non_blocking",
+    "rationale": "The record authorizes a literal release-metadata observation only. It establishes no severity, no risk claim, and no blocking authority."
+  },
+  "related": [
+    "drupal.update.core-release-state-update-feed"
+  ]
+}

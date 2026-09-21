@@ -1,0 +1,26 @@
+Introduced in branch/version
+Notice created
+Change
+26-May-2026
+Global class names outside of a namespace need to be references by their namespace
+04-Mar-2026
+Trait names should always have the the suffix "Trait"
+17-Feb-2026
+Doxygen for @var, @param and @return is optional when type and variable name is enough
+20-May-2025
+Data types must be compliant with the PHPDoc Type syntax as documented by PHPStan
+20-May-2025
+Coding standards now require a colon after case statements
+06-Feb-2025
+The "short ternary" operator "?:" must be used where the first operand of a ternary expression matches the condition
+27-Nov-2024
+Use UpperCamelCase for enum and enum case values
+08-May-2024
+Use null coalescing Operator ?? to replace isset with ternary operator
+06-Mar-2024
+Argument lists for function declarations may be split across multiple lines
+11-Dec-2023
+New coding standard: Code style for declare(strict_types=1);
+10.1.x / 10.1.0
+10-Nov-2023
+Comment docblocks for constructors
