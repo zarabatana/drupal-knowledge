@@ -1,0 +1,62 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 646,
+    "added_sample": [
+      "Drupal core - Moderately critical - Third-party libraries - SA-CORE-2026-013",
+      "Project machine name:",
+      "drupal",
+      "Date:",
+      "2026-September-16"
+    ],
+    "changed_region_count": 12,
+    "current_bytes": 34076,
+    "current_line_count": 786,
+    "deterministic": true,
+    "first_changed_line": 9,
+    "method": "normalized_line_diff",
+    "previous_bytes": 6760,
+    "previous_line_count": 140,
+    "removed_line_count": 0,
+    "removed_sample": []
+  },
+  "current_hash": "sha256:feaf4ebad3453894ae600de7730efd6ea31c0ea298e7d3fb145763b2b3697536",
+  "discovered_at": "2026-09-22T11:42:43Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-security-core.24b9342301bad310",
+  "is_knowledge_proposal": false,
+  "kind": "security-source-change",
+  "previous_hash": "sha256:bac9a6c286e56a5c6e66cbeba200e3400fe73fcb5c2d9d5b98e60dd431891c8e",
+  "provenance": {
+    "acquired_at": "2026-09-22T11:42:43Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/security/core",
+    "category": "security",
+    "content_length": 34076,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": {
+      "end": "Pages",
+      "start": "Security advisories for Drupal core"
+    },
+    "etag": "\"1790077370-1\"",
+    "fetch_url": "https://www.drupal.org/security/core",
+    "http_status": 200,
+    "last_modified": "Tue, 22 Sep 2026 11:42:50 GMT",
+    "normalization": "auto",
+    "trust": "authoritative"
+  },
+  "review": null,
+  "review_required": true,
+  "review_state": "pending_review",
+  "run_id": "run.20260922T114243.8345954e",
+  "source_id": "drupal-security-core",
+  "source_url": "https://www.drupal.org/security/core",
+  "status": "review_required",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}
