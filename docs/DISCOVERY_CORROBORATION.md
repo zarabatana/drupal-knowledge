@@ -340,7 +340,9 @@ artifacts, checks every changed path against the allow-list in
 `scripts/dk_automation.py`, and persists the change set on the deterministic
 branch `automation/discovery` as a pull request that later runs update rather
 than duplicate. Nothing is pushed to `main`, nothing is merged automatically,
-and the branch ruleset applies. A discovery signal is review work:
+and the branch ruleset applies; a new snapshot keeps the third-party manifest
+scan red until the reviewer inventories it in `THIRD_PARTY_LICENSES.json`.
+A discovery signal is review work:
 DISCOVERY SIGNAL != TRUSTED KNOWLEDGE, and the workflow has no path that could
 make it otherwise. No daemon, no persistent service, no credential beyond the
 workflow token.

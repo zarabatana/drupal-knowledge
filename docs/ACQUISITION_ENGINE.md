@@ -268,9 +268,13 @@ CI configuration fails the run before anything is committed.
 Nothing is pushed to `main` and nothing is merged automatically. The branch
 ruleset applies to the automation pull request as to any other, so accepting
 an observed change into the repository stays a human act with every required
-check green. A scheduled run that hits a pinned source fails `dk.py validate`
-exactly as a manual run would (see below); the pull request is still opened so
-the change is visible, and the re-review happens in a human commit on it.
+check green. Two checks are expected to be red on such a pull request until
+that act happens, and both are the boundary working: a changed pinned source
+fails `dk.py validate` exactly as a manual run would (see below), and a new
+snapshot fails the third-party manifest scan until the reviewer inventories it
+in `THIRD_PARTY_LICENSES.json` with its SHA-256, licence and evidence.
+Automation never writes that manifest. The pull request is still opened so the
+change is visible, and the re-review happens in a human commit on it.
 
 The run report, `dk.py validate` output and the step summary are published as
 workflow artifacts. There is no daemon, no long-running service, no external

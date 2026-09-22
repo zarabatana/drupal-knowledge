@@ -332,8 +332,12 @@ def pull_request_body(
         "- Merge requires the branch ruleset: every required check green, no auto-merge, no bypass.",
         "- GitHub does not start `push`/`pull_request` workflows for changes made with the workflow token. "
         "To run the required checks on this branch, use **Update branch** or close and reopen the pull request.",
-        "- A red `dk.py validate` means a pinned source changed and its reviewed context must be "
-        "re-normalized by a human in a separate commit; that is the trust boundary working.",
+        "- A red `dk.py validate` (and `test_finding_model_boundaries.py`) means a pinned source changed "
+        "and its reviewed context must be re-normalized by a human in a separate commit; that is the "
+        "trust boundary working.",
+        "- A red `test_community_boundary.py` means new snapshots are not yet inventoried: every "
+        "redistributed snapshot must be listed in `THIRD_PARTY_LICENSES.json` with its SHA-256, licence "
+        "and evidence by the reviewer. Automation never writes that manifest.",
         "",
     ]
     return "\n".join(parts)

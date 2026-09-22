@@ -24,6 +24,9 @@ read in context.
   canonical commands and persists source state, immutable snapshots, review
   candidates and those artifacts on the deterministic branch
   `automation/source-acquisition` as a pull request that later runs update.
+  Such a pull request stays red until a human re-reviews any pinned context
+  and inventories each new snapshot in `THIRD_PARTY_LICENSES.json`; the
+  manifest is never written by automation.
 - Scheduled discovery and review-candidate processing:
   `.github/workflows/scheduled-discovery.yml` runs
   `dk.py discover --trust ecosystem --due` daily and on demand, over

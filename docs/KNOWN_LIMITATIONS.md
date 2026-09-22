@@ -80,7 +80,9 @@ the resulting candidate, re-reviews any pinned context, and merges.
 review work and never mutates knowledge on its own. Scheduling the *fetch* is
 an operational choice; the review step can never be scheduled away, and the
 automation branch may carry evidence, state, candidates and derived artifacts
-only (`scripts/dk_automation.py`).
+only (`scripts/dk_automation.py`). An automation pull request that carries a
+changed pinned source or a new snapshot is red until a human re-reviews the
+pinned context and inventories the snapshot in `THIRD_PARTY_LICENSES.json`.
 
 **Workaround.** Run `dk source-status` to see how stale each source is,
 `dk acquire --due` to refresh due sources locally, and `dk review-candidates`

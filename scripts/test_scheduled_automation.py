@@ -304,6 +304,7 @@ with tempfile.TemporaryDirectory() as workspace:
     assert "validation failed — expected when a pinned source changed" in body
     assert "sources/snapshots/" in body and "knowledge/" not in body.split("### What this pull request may contain")[1].split("### Review")[0]
     assert "close and reopen" in body
+    assert "THIRD_PARTY_LICENSES.json" in body and "Automation never writes that manifest" in body
 
     # The CLI renders the same summary from the report on disk.
     report_path = root / "run.json"
