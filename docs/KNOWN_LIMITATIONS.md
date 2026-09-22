@@ -67,25 +67,28 @@ found nothing rather than returning something adjacent.
 
 **Roadmap candidate.** Yes — this is the primary axis of growth.
 
-## Acquisition is maintainer-driven, not continuous
+## Acquisition and discovery are scheduled, review is not
 
-Registered sources are fetched only when a maintainer runs `dk acquire` or
-`dk discover`. Nothing in the Community repository runs on a schedule, and
-the validation workflow never reaches the network. A source that changed
-yesterday is not reflected until a maintainer acquires it, reviews the
-resulting candidate, and edits the repository.
+Registered sources are fetched by `dk acquire` and `dk discover`, either by a
+maintainer or by the scheduled workflows (`scheduled-acquisition.yml` every
+six hours, `scheduled-discovery.yml` daily). The validation workflow never
+reaches the network. A source that changed is reflected as a pull request on a
+deterministic automation branch, and only there, until a maintainer reviews
+the resulting candidate, re-reviews any pinned context, and merges.
 
-**Why — by design, in part.** The trust model requires that a source change
-creates review work and never mutates knowledge on its own. Scheduling the
-*fetch* is an operational choice; the review step can never be scheduled
-away.
+**Why — by design.** The trust model requires that a source change creates
+review work and never mutates knowledge on its own. Scheduling the *fetch* is
+an operational choice; the review step can never be scheduled away, and the
+automation branch may carry evidence, state, candidates and derived artifacts
+only (`scripts/dk_automation.py`).
 
-**Workaround.** Run `dk source-status` to see how stale each source is and
-`dk acquire --due` to refresh due sources; review candidates with
-`dk review-candidates`.
+**Workaround.** Run `dk source-status` to see how stale each source is,
+`dk acquire --due` to refresh due sources locally, and `dk review-candidates`
+to review. GitHub does not start `push`/`pull_request` workflows for changes
+made with the workflow token, so the required checks on an automation pull
+request are started by a maintainer (Update branch, or close and reopen).
 
-**Roadmap candidate.** A scheduled acquisition workflow that publishes
-artifacts and commits nothing.
+**Roadmap candidate.** None for the fetch; the review step stays human.
 
 ## The project analyzer observes files, not a running site
 

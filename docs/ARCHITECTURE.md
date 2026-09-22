@@ -55,9 +55,12 @@ registered source
 ```
 
 One engine, `scripts/dk_acquisition.py`, orchestrates this for targeted CLI runs,
-`collectors/collect.py` and the scheduled CI job. It writes only source state,
+`collectors/collect.py` and the scheduled workflows. It writes only source state,
 snapshots, and discovery candidates. It does not write `knowledge/`, and it
-verifies the trusted knowledge digest before and after every run.
+verifies the trusted knowledge digest before and after every run. What a
+scheduled run may persist — those paths plus the derived public artifacts
+regenerated from them — is fixed in `scripts/dk_automation.py` and enforced
+before anything is committed to an automation branch; `main` is never written.
 
 A source change never reaches trusted knowledge on its own:
 

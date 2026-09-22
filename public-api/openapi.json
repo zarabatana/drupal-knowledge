@@ -1825,7 +1825,7 @@
     "authentication": "None. Everything served is public-safe and read-only.",
     "cors": "Access-Control-Allow-Origin: * on every endpoint; no credentials accepted.",
     "dataset_schema_version": "0.1",
-    "dk_version": "1.0.0",
+    "dk_version": "1.1.0",
     "excluded_domains": [
       {
         "domain": "discovery_signal",

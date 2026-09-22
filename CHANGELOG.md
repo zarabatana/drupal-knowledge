@@ -11,6 +11,59 @@ Knowledge v1.0.0 release. Its history begins at `1.0.0`; the entries below
 it, so that a record's contract version and a document's references can be
 read in context.
 
+## 1.1.0 — 2026-09-22
+
+### Added
+
+- Scheduled registered-source acquisition:
+  `.github/workflows/scheduled-acquisition.yml` runs
+  `dk.py acquire --trust authoritative --due` every six hours and on demand.
+  The engine's per-source cadence decides what is contacted; `--all` is never
+  used. A run that changed nothing produces no commit and no pull request. A
+  run that observed a change regenerates the derived public artifacts with the
+  canonical commands and persists source state, immutable snapshots, review
+  candidates and those artifacts on the deterministic branch
+  `automation/source-acquisition` as a pull request that later runs update.
+- Scheduled discovery and review-candidate processing:
+  `.github/workflows/scheduled-discovery.yml` runs
+  `dk.py discover --trust ecosystem --due` daily and on demand, over
+  registered signal sources only, persisting signals, corroboration dossiers,
+  snapshots, state and candidates on `automation/discovery` the same way.
+- `scripts/dk_automation.py`: the one place that fixes what a scheduled run
+  may persist. Trusted knowledge, rules, API lifecycle and security records,
+  code, documentation, CI configuration and the source registry are rejected
+  before anything is committed; a report recording a trusted-knowledge
+  mutation is refused; run summaries, commit messages and pull request bodies
+  are rendered from the engine's own report. `scripts/test_scheduled_automation.py`
+  exercises the rejection, the failure semantics (a fetch failure is never
+  "unchanged") and the least-privilege shape of both workflows.
+- Generated-public-output repository identity validation: the public site is
+  built into an isolated directory and every generated file is scanned for any
+  non-canonical repository identity; every rendered page must carry exactly one
+  Repository link, to `github.com/zarabatana/drupal-knowledge`. The public API
+  artifacts and release metadata are scanned the same way.
+- AI-development provenance hygiene guard: `scripts/test_community_boundary.py`
+  rejects development-tool and AI-agent attribution — co-author trailers naming
+  such tools, their no-reply addresses, "generated with" banners, agent
+  instruction files, and any such trailer in the commit at `HEAD`. Product
+  statements about language models and third-party material are not matched.
+
+### Fixed
+
+- Public Repository links are now explicitly validated against the canonical
+  GitHub Community repository on every generated page, not only on the CLI
+  page. The rendered link was already canonical at `1.0.0`; the gap was that
+  nothing proved it for generated output.
+
+### Unchanged by design
+
+- Automation never pushes to `main`, never merges, never bypasses the branch
+  ruleset, holds no credential beyond the workflow token, and has no path to
+  `knowledge/`: SOURCE CHANGE != TRUSTED KNOWLEDGE CHANGE, DISCOVERY SIGNAL !=
+  TRUSTED KNOWLEDGE, and unknown is never `false`.
+- The validation workflow still never acquires or discovers.
+- Every contract version advertised by `dk version --json` is unchanged.
+
 ## 1.0.0 — 2026-09-21
 
 Drupal Knowledge Community v1.0.0: the public Core — evidence-backed Drupal

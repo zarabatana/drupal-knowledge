@@ -154,5 +154,6 @@ jobs:
         with:
           python-version: "3.12"
       - run: python3 scripts/test_community_boundary.py
+      - run: python3 scripts/test_scheduled_automation.py
       - run: python3 scripts/test_supply_chain_security.py
       - run: python3 -m compileall -q scripts collectors dk

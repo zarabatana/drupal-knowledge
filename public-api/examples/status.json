@@ -1,9 +1,9 @@
 {
   "api_contract_version": "1.0",
   "api_version": "1",
-  "dataset_id": "dataset:e290b71c0e26ef1d0067be2f01713b7e",
+  "dataset_id": "dataset:8d38791d9754a4263bd0095b2c0959b9",
   "dataset_schema_version": "0.1",
-  "dk_version": "1.0.0",
+  "dk_version": "1.1.0",
   "query_interface_version": "0.1",
   "request": {
     "operation_id": "getStatus",
@@ -93,11 +93,11 @@
       "trusted_knowledge": 11
     },
     "release": {
-      "dataset_id": "dataset:e290b71c0e26ef1d0067be2f01713b7e",
+      "dataset_id": "dataset:8d38791d9754a4263bd0095b2c0959b9",
       "dataset_schema_version": "0.1",
-      "dk_version": "1.0.0",
+      "dk_version": "1.1.0",
       "query_interface_version": "0.1",
-      "records_digest": "59bb7c7785c24df5"
+      "records_digest": "060280cf8bec9e55"
     },
     "source_freshness_summary": {
       "baselined": 34,
