@@ -1,0 +1,191 @@
+# Scheduled acquisition of due authoritative sources.
+#
+# The same `dk.py acquire` entry point a maintainer runs, on a schedule. The
+# engine decides which registered sources are due (`--due`, per-source cadence
+# from sources/registry.json); only the authoritative trust tier is contacted.
+#
+# The runner is ephemeral, so a run that observed a change is persisted on the
+# deterministic branch automation/source-acquisition and offered as a pull
+# request. Nothing is ever pushed to main; nothing is merged automatically; the
+# branch ruleset applies to the pull request like to any other. A run that
+# changed nothing produces no commit and no pull request.
+#
+# Automation may persist source state, immutable snapshots, review candidates
+# and the derived public artifacts regenerated from them — the allow-list in
+# scripts/dk_automation.py, enforced before anything is committed. It never
+# edits knowledge/, rules, code, documentation or CI configuration:
+# SOURCE CHANGE != TRUSTED KNOWLEDGE CHANGE.
+#
+# No credential beyond the workflow token is used; the sources are public.
+# GitHub does not start push/pull_request workflows for changes made with the
+# workflow token, so the required checks on the automation pull request are
+# started by a maintainer (Update branch, or close and reopen) and must be
+# green before the ruleset lets it merge.
+
+name: scheduled-acquisition
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: scheduled-acquisition
+  cancel-in-progress: false
+
+env:
+  PYTHONDONTWRITEBYTECODE: "1"
+  OPERATION: acquisition
+  AUTOMATION_BRANCH: automation/source-acquisition
+
+jobs:
+  acquire:
+    name: acquire due authoritative sources
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      persist: ${{ steps.decide.outputs.persist }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Continue from the open automation branch when it is still based on main
+        run: |
+          git fetch --quiet origin "+refs/heads/$AUTOMATION_BRANCH:refs/remotes/origin/$AUTOMATION_BRANCH" || true
+          if git show-ref --quiet "refs/remotes/origin/$AUTOMATION_BRANCH"; then
+            if git merge-base --is-ancestor "origin/$AUTOMATION_BRANCH" origin/main; then
+              echo "automation branch already merged; starting from main"
+            elif [ "$(git merge-base "origin/$AUTOMATION_BRANCH" origin/main)" = "$(git rev-parse origin/main)" ]; then
+              python3 scripts/dk_automation.py paths --operation "$OPERATION" | xargs git checkout "origin/$AUTOMATION_BRANCH" --
+              echo "continuing from origin/$AUTOMATION_BRANCH"
+            else
+              echo "main moved since the automation branch was cut; starting from main"
+            fi
+          fi
+      - name: Acquire due authoritative sources
+        id: engine
+        run: |
+          set +e
+          python3 scripts/dk.py acquire --trust authoritative --due --quiet --report acquisition-report/run.json
+          echo "exit=$?" >> "$GITHUB_OUTPUT"
+      - name: Regenerate the derived public artifacts
+        run: |
+          python3 scripts/dk.py public-site build --commit "$GITHUB_SHA"
+          python3 scripts/dk.py api build
+          python3 scripts/dk.py release-meta
+      - name: Validate repository contracts (a pinned-source change fails here by design)
+        id: validate
+        run: |
+          set +e
+          python3 scripts/dk.py validate > acquisition-report/validate.txt 2>&1
+          echo "exit=$?" >> "$GITHUB_OUTPUT"
+          tail -n 3 acquisition-report/validate.txt
+      - name: Enforce the automation path boundary
+        run: git status --porcelain -z | python3 scripts/dk_automation.py check-paths --operation "$OPERATION"
+      - name: Decide whether anything needs persisting
+        id: decide
+        run: |
+          python3 scripts/dk_automation.py paths --operation "$OPERATION" | xargs git add -A --
+          reference=origin/main
+          if git show-ref --quiet "refs/remotes/origin/$AUTOMATION_BRANCH" \
+             && ! git merge-base --is-ancestor "origin/$AUTOMATION_BRANCH" origin/main \
+             && [ "$(git merge-base "origin/$AUTOMATION_BRANCH" origin/main)" = "$(git rev-parse origin/main)" ]; then
+            reference="origin/$AUTOMATION_BRANCH"
+          fi
+          if git diff --cached --quiet "$reference" --; then
+            echo "persist=false" >> "$GITHUB_OUTPUT"
+            echo "no change relative to $reference: no commit, no pull request"
+          else
+            echo "persist=true" >> "$GITHUB_OUTPUT"
+            mkdir -p automation-changes
+            git diff --cached --name-only -z origin/main -- | tar --null --files-from=- -czf automation-changes/changes.tar.gz
+            python3 scripts/dk_automation.py commit-message --operation "$OPERATION" --report acquisition-report/run.json > automation-changes/commit-message.txt
+            python3 scripts/dk_automation.py pr-body --operation "$OPERATION" --report acquisition-report/run.json --validate-exit "${{ steps.validate.outputs.exit }}" --engine-exit "${{ steps.engine.outputs.exit }}" > automation-changes/pr-body.md
+            echo "change set packaged for review"
+          fi
+      - name: Run summary
+        if: always()
+        run: |
+          outcome=no-op
+          [ "${{ steps.decide.outputs.persist }}" = "true" ] && outcome=pending
+          python3 scripts/dk_automation.py summary --operation "$OPERATION" --report acquisition-report/run.json --persistence "$outcome" --validate-exit "${{ steps.validate.outputs.exit }}" --engine-exit "${{ steps.engine.outputs.exit }}" >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: acquisition-report
+          path: acquisition-report/
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: steps.decide.outputs.persist == 'true'
+        with:
+          name: automation-changes
+          path: automation-changes/
+          retention-days: 7
+      - name: Fail the run when the engine reported a source failure or an engine defect
+        if: steps.engine.outputs.exit != '0'
+        run: |
+          echo "engine exit code ${{ steps.engine.outputs.exit }}: a fetch failure is never reported as unchanged"
+          exit "${{ steps.engine.outputs.exit }}"
+
+  persist:
+    name: open or update the review pull request
+    needs: acquire
+    if: needs.acquire.outputs.persist == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          name: automation-changes
+          path: automation-changes/
+      - name: Rebuild the automation branch from main with the change set
+        run: |
+          git fetch --quiet origin "+refs/heads/$AUTOMATION_BRANCH:refs/remotes/origin/$AUTOMATION_BRANCH" || true
+          git checkout -B "$AUTOMATION_BRANCH" origin/main
+          tar -xzf automation-changes/changes.tar.gz
+          git status --porcelain -z | python3 scripts/dk_automation.py check-paths --operation "$OPERATION"
+          python3 scripts/dk_automation.py paths --operation "$OPERATION" | xargs git add -A --
+          git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+            commit --quiet --file automation-changes/commit-message.txt
+      - name: Push the automation branch (lease-protected, never main)
+        run: |
+          if git show-ref --quiet "refs/remotes/origin/$AUTOMATION_BRANCH"; then
+            if git diff --quiet "origin/$AUTOMATION_BRANCH" HEAD --; then
+              echo "automation branch already holds this change set; nothing to push"
+              echo "PUSHED=false" >> "$GITHUB_ENV"
+              exit 0
+            fi
+            expected="$(git rev-parse "refs/remotes/origin/$AUTOMATION_BRANCH")"
+          else
+            expected=""
+          fi
+          git push --force-with-lease="refs/heads/$AUTOMATION_BRANCH:$expected" origin "HEAD:refs/heads/$AUTOMATION_BRANCH"
+          echo "PUSHED=true" >> "$GITHUB_ENV"
+      - name: Open or update the pull request
+        run: |
+          existing="$(gh pr list --head "$AUTOMATION_BRANCH" --base main --state open --json number --jq '.[0].number')"
+          title="$(head -n 1 automation-changes/commit-message.txt)"
+          if [ -n "$existing" ]; then
+            gh pr edit "$existing" --title "$title" --body-file automation-changes/pr-body.md
+            echo "pull request #$existing updated" | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            url="$(gh pr create --base main --head "$AUTOMATION_BRANCH" --title "$title" --body-file automation-changes/pr-body.md)"
+            echo "pull request created: $url" | tee -a "$GITHUB_STEP_SUMMARY"
+          fi

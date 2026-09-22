@@ -643,6 +643,36 @@ for fiction in ("composer require", "npm install", "brew install", "pip install"
 assert "no Composer package" in flat(cli_page_html)
 print("PUBLIC_INSTALLATION_GUIDANCE_TRUTHFUL=PASS")
 
+# --- public repository identity -------------------------------------------------
+
+# Every rendered page names the repository the site is generated from, and the
+# whole generated output — every page, asset and dataset copy — is scanned for
+# any other repository identity. A private or historical repository URL in
+# public output is a boundary breach, so the pattern is broad (any gitlab.com
+# group path, any ssh remote) and the canonical link is asserted exactly, on
+# every page, not only where it is documented.
+CANONICAL_REPOSITORY = "https://github.com/zarabatana/drupal-knowledge"
+PRIVATE_REPOSITORY = re.compile(r"gitlab\.com/[A-Za-z0-9_.-]+/|git@[A-Za-z0-9.-]+:|ssh:/{2}", re.IGNORECASE)
+REPOSITORY_LINK = re.compile(r'<a href="([^"]+)">Repository</a>')
+
+assert R.REPOSITORY_URL == CANONICAL_REPOSITORY, R.REPOSITORY_URL
+private_references = [
+    (name, match.group(0)) for name, text in SITE.items() for match in PRIVATE_REPOSITORY.finditer(text)
+]
+assert not private_references, private_references
+wrong_links = {name: REPOSITORY_LINK.findall(text) for name, text in PAGES.items()}
+wrong_links = {name: links for name, links in wrong_links.items() if links != [CANONICAL_REPOSITORY]}
+assert not wrong_links, f"every page carries exactly one Repository link, to the canonical repository: {wrong_links}"
+# The same scan over the public API artifacts and release metadata in the tree,
+# where a repository identity could also be recorded.
+for artifact in sorted((ROOT / "public-api").rglob("*.json")) + sorted((ROOT / "release").glob("*.json")):
+    text = artifact.read_text(encoding="utf-8")
+    assert not PRIVATE_REPOSITORY.search(text), artifact
+    assert "gitlab.com" not in text.lower(), artifact
+print("PUBLIC_GENERATED_PRIVATE_REPO_REFERENCES=0")
+print(f"PUBLIC_GENERATED_REPOSITORY_LINKS_CHECKED={len(PAGES)}")
+print("PUBLIC_GENERATED_REPOSITORY_LINKS_CANONICAL=PASS")
+
 # The site has no mechanism to accept anything: the only form on the whole site
 # is the search box, and it is a GET against a static page.
 forms = {name: re.findall(r"<form[^>]*>", text) for name, text in PAGES.items()}

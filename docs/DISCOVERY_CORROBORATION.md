@@ -326,12 +326,24 @@ mode. There is deliberately no `--promote-to-knowledge` and no `--trust-this`.
 ## Scheduling
 
 The Community validation workflow never discovers: a pull request cannot reach
-the network on the repository's behalf. When a maintainer schedules discovery
-(a separate workflow, not part of the validation gate), it must drive the same
-`dk.py discover` entry point a human would, with `--trust ecosystem --due` so
-only registered sources past their cadence are contacted, publish signals,
-dossiers and the run report as artifacts, and commit nothing. No daemon, no
-persistent service, no broad crawl.
+the network on the repository's behalf. Scheduled discovery is a separate
+workflow, `.github/workflows/scheduled-discovery.yml`, which runs daily
+(`43 3 * * *` UTC) and on demand. It drives the same `dk.py discover` entry
+point a human would, with `--trust ecosystem --due`, so only registered signal
+sources past their cadence are contacted. Discovery is registry-bound: there is
+no broad crawl and no unregistered URL is ever fetched.
+
+Persistence follows the acquisition workflow's model. A run that changed
+nothing produces no commit and no pull request. A run that recorded signals,
+dossiers, snapshots, state or review candidates regenerates the derived public
+artifacts, checks every changed path against the allow-list in
+`scripts/dk_automation.py`, and persists the change set on the deterministic
+branch `automation/discovery` as a pull request that later runs update rather
+than duplicate. Nothing is pushed to `main`, nothing is merged automatically,
+and the branch ruleset applies. A discovery signal is review work:
+DISCOVERY SIGNAL != TRUSTED KNOWLEDGE, and the workflow has no path that could
+make it otherwise. No daemon, no persistent service, no credential beyond the
+workflow token.
 
 The discovery tests run in the `engines` job of `.github/workflows/community.yml`,
 a required gate on every push and pull request.

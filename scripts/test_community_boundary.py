@@ -6,7 +6,7 @@ may depend on a tagged release of this repository; this repository may never
 depend on it. The dependency points one way, and this test is the place that
 direction is enforced rather than described.
 
-Four scans, all static, all over the whole tracked tree:
+Seven scans, all deterministic, all over the whole tracked tree:
 
 1. Import scan. No module under scripts/ or collectors/ imports a hosted,
    VDA or other private module, by any name and by any import form.
@@ -19,6 +19,14 @@ Four scans, all static, all over the whole tracked tree:
 5. Third-party manifest scan. Every redistributed snapshot is listed in
    THIRD_PARTY_LICENSES.json with its exact SHA-256 and a licence, and the
    manifest lists nothing that is not in the tree.
+6. Generated output scan. The public website is built by the released command
+   into an isolated directory and every generated file is held to scans 3 and
+   4; every rendered page links exactly the canonical repository. The public
+   API artifacts and release metadata are scanned the same way.
+7. Development provenance scan. No tracked file, no agent-instruction file and
+   no commit message at HEAD carries development-tool or AI-agent attribution.
+   Third-party snapshots are never edited to satisfy this; they are excluded,
+   as are negative fixtures inside tests that name the shapes they reject.
 
 Failing any of these is a boundary breach, not a style problem.
 """
@@ -217,6 +225,107 @@ assert not manifest["unresolved"], manifest["unresolved"]
 assert manifest["totals"]["files"] == len(on_disk) == len(listed)
 print("THIRD_PARTY_MANIFEST_COMPLETE=PASS")
 print(f"THIRD_PARTY_SNAPSHOTS_LISTED={len(listed)}")
+
+
+# --- 6. generated output scan ----------------------------------------------------
+
+import subprocess
+import tempfile
+
+CANONICAL_REPOSITORY = "https://github.com/zarabatana/drupal-knowledge"
+# The one historical repository this Community tree came from. Named here, and
+# only here, so the generated output can be checked for it literally.
+HISTORICAL_REPOSITORY = "gitlab.com/itflowing-portugal/drupal-knowledge"
+REPOSITORY_LINK = re.compile(r'<a href="([^"]+)">Repository</a>')
+
+(ROOT / "tmp").mkdir(exist_ok=True)
+with tempfile.TemporaryDirectory(dir=ROOT / "tmp") as scratch:
+    output = Path(scratch) / "site"
+    build = subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "dk.py"), "public-site", "build",
+         "--output", str(output.relative_to(ROOT)), "--built-at", "2026-01-01T00:00:00Z", "--commit", "boundary-scan"],
+        capture_output=True, text=True, cwd=ROOT,
+    )
+    assert build.returncode == 0, build.stderr
+    generated = sorted(path for path in output.rglob("*") if path.is_file())
+    assert len(generated) > 300, len(generated)
+    generated_leaks = []
+    pages = 0
+    for path in generated:
+        text = path.read_text(encoding="utf-8")
+        rel = path.relative_to(output).as_posix()
+        for match in PRIVATE_VOCABULARY.finditer(text):
+            generated_leaks.append(f"{rel}: vocabulary {match.group(0)!r}")
+        for match in PRIVATE_REPO.finditer(text):
+            generated_leaks.append(f"{rel}: private repository reference {match.group(0)!r}")
+        if HISTORICAL_REPOSITORY in text:
+            generated_leaks.append(f"{rel}: historical repository")
+        for match in EMAIL.finditer(text):
+            if not match.group(0).endswith(ALLOWED_EMAIL_DOMAINS):
+                generated_leaks.append(f"{rel}: e-mail {match.group(0)!r}")
+        if path.suffix == ".html":
+            pages += 1
+            if REPOSITORY_LINK.findall(text) != [CANONICAL_REPOSITORY]:
+                generated_leaks.append(f"{rel}: Repository link {REPOSITORY_LINK.findall(text)!r}")
+    assert not generated_leaks, "private identity in generated output:\n  " + "\n  ".join(generated_leaks[:40])
+    assert pages > 300, pages
+for artifact in sorted((ROOT / "public-api").rglob("*.json")) + sorted((ROOT / "release").glob("*.json")):
+    text = artifact.read_text(encoding="utf-8")
+    assert not PRIVATE_REPO.search(text) and HISTORICAL_REPOSITORY not in text, artifact
+print("PUBLIC_GENERATED_PRIVATE_REPO_REFERENCES=0")
+print(f"PUBLIC_GENERATED_PAGES_SCANNED={pages}")
+print("PUBLIC_GENERATED_REPOSITORY_LINKS_CANONICAL=PASS")
+
+
+# --- 7. development provenance scan ------------------------------------------------
+
+# Attribution of development to a tool or an AI agent: co-author trailers naming
+# one, the no-reply addresses such tools sign with, and "generated with" banners.
+# Product statements about language models, and third-party material, are not
+# provenance and are not matched; the pattern is deliberately narrow.
+DEVELOPMENT_PROVENANCE = re.compile(
+    r"co-authored-by:[^\n]*(claude|anthropic|openai|chatgpt|codex|opencode|copilot|gemini|cursor)"
+    r"|noreply@(anthropic|openai)\.com"
+    r"|generated (by|with) \[?(claude|chatgpt|codex|opencode|copilot|gemini|cursor)"
+    r"|🤖 generated with",
+    re.IGNORECASE,
+)
+AGENT_INSTRUCTION_FILES = (
+    "CLAUDE.md", ".claude", "OPENCODE.md", ".opencode", "opencode.json", "CODEX.md", ".codex",
+    "CHATGPT.md", ".chatgpt", "AGENTS.md", ".cursor", ".cursorrules", ".github/copilot-instructions.md",
+)
+
+provenance_leaks = []
+for path in tracked_text_files():
+    rel = path.relative_to(ROOT).as_posix()
+    if rel == "scripts/test_community_boundary.py":
+        continue  # names the shapes it scans for
+    try:
+        text = path.read_text(encoding="utf-8")
+    except UnicodeDecodeError:
+        continue
+    for match in DEVELOPMENT_PROVENANCE.finditer(text):
+        provenance_leaks.append(f"{rel}: {match.group(0)!r}")
+assert not provenance_leaks, "development provenance in the Community tree:\n  " + "\n  ".join(provenance_leaks[:40])
+present = [name for name in AGENT_INSTRUCTION_FILES if (ROOT / name).exists()]
+assert not present, f"agent instruction files in the Community tree: {present}"
+
+# The commit this tree was checked out from. In CI this is the pushed commit or
+# the pull request head; locally it is whatever HEAD is.
+head_message = subprocess.run(
+    ["git", "log", "-1", "--format=%B"], capture_output=True, text=True, cwd=ROOT
+)
+if head_message.returncode == 0:
+    assert not DEVELOPMENT_PROVENANCE.search(head_message.stdout), (
+        "development provenance in the HEAD commit message:\n" + head_message.stdout
+    )
+    assert not re.search(r"^co-authored-by:", head_message.stdout, re.IGNORECASE | re.MULTILINE) or all(
+        not DEVELOPMENT_PROVENANCE.search(line)
+        for line in head_message.stdout.splitlines()
+    )
+    print("HEAD_COMMIT_MESSAGE_PROVENANCE=0")
+print("AI_DEVELOPMENT_PROVENANCE_IN_TREE=0")
+print("AI_PROVENANCE_GUARD=PASS")
 
 print("COMMUNITY_DEPENDS_ON_PRIVATE_CODE=NO")
 print("PRIVATE_DEPENDENCY_GATE=PASS")

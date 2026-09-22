@@ -1,6 +1,6 @@
 # Versioning and Compatibility
 
-What `1.0.0` means, contract by contract. Drupal Knowledge is not one
+What `1.1.0` means, contract by contract. Drupal Knowledge is not one
 version number: it is one product release number and a family of contract
 versions that deliberately move on their own schedules. This document
 enumerates every one of them, states the compatibility promise each carries
@@ -16,7 +16,7 @@ vulnerability or proves an upgrade safe. A `1.0` contract can carry an
 ## The version taxonomy
 
 **The product release version** is the file `VERSION` at the repository
-root — `1.0.0` for this release. It names a released tree: the knowledge
+root — `1.1.0` for this release. It names a released tree: the knowledge
 records, the engines, the schemas and the code that shipped together and
 were validated together. It follows a semantic discipline (major.minor.patch)
 over the release as a whole.
@@ -29,7 +29,7 @@ on purpose: a new engine contract must not force every consumer to change,
 and pinning them all to the release number would force a major version every
 time a security advisory arrives.
 
-The real contracts and their values at `1.0.0`:
+The real contracts and their values at `1.1.0` (unchanged since `1.0.0`):
 
 ### Public surfaces
 

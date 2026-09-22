@@ -246,15 +246,35 @@ continues to work and runs the same engine.
 ## Scheduling
 
 The Community validation workflow never acquires: a pull request cannot reach
-the network on the repository's behalf. When a maintainer schedules acquisition
-(a separate workflow, not part of this repository's validation gate), it must
-call the same `dk.py acquire` entry point as a manual run, target due
-authoritative sources with `--due`, publish the run report, source state,
-snapshots and review candidates as artifacts, and commit nothing.
+the network on the repository's behalf. Scheduled acquisition is a separate
+workflow, `.github/workflows/scheduled-acquisition.yml`, which runs every six
+hours (`17 */6 * * *` UTC) and on demand. It calls the same `dk.py acquire`
+entry point as a manual run with `--trust authoritative --due`, so the engine's
+per-source cadence decides what is contacted; nothing is fetched unnecessarily
+and `--all` is never used.
 
-There is no daemon, no long-running service and no external infrastructure. The
-scheduled job never commits or pushes: a changed source becomes a downloadable,
-reviewable artifact, and accepting it into the repository stays a human act.
+The runner is ephemeral, so what a run observed must not vanish with it. A run
+that changed nothing produces no commit and no pull request. A run that
+observed a change regenerates the derived public artifacts with the canonical
+commands (`public-site build`, `api build`, `release-meta`), checks every
+changed path against the allow-list in `scripts/dk_automation.py`, and
+persists the change set on the deterministic branch
+`automation/source-acquisition` as a pull request against `main`. The pull
+request is updated by later runs rather than duplicated. It carries source
+state, immutable snapshots, review candidates and the derived artifacts, and
+nothing else: an attempt to persist `knowledge/`, rules, code, documentation or
+CI configuration fails the run before anything is committed.
+
+Nothing is pushed to `main` and nothing is merged automatically. The branch
+ruleset applies to the automation pull request as to any other, so accepting
+an observed change into the repository stays a human act with every required
+check green. A scheduled run that hits a pinned source fails `dk.py validate`
+exactly as a manual run would (see below); the pull request is still opened so
+the change is visible, and the re-review happens in a human commit on it.
+
+The run report, `dk.py validate` output and the step summary are published as
+workflow artifacts. There is no daemon, no long-running service, no external
+infrastructure and no credential beyond the workflow token.
 
 ## Accepting an observed change is a separate act
 
