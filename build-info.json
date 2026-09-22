@@ -1,10 +1,10 @@
 {
   "build_schema_version": "0.1",
-  "built_at": "2026-09-22T01:20:13Z",
-  "commit": "04f2869cdcf3e3d150f9e7cc66c13ad38c2fc1f7",
-  "dataset_id": "dataset:e290b71c0e26ef1d0067be2f01713b7e",
+  "built_at": "2026-09-22T02:12:30Z",
+  "commit": "e15bc7f35cfde76c0795e1600446df741b5adb3a",
+  "dataset_id": "dataset:8d38791d9754a4263bd0095b2c0959b9",
   "dataset_schema_version": "0.1",
-  "dk_version": "1.0.0",
+  "dk_version": "1.1.0",
   "page_count": 354,
   "public_domains": [
     "trusted_knowledge",
