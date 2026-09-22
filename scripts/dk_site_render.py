@@ -183,8 +183,8 @@ def page(
       built {esc(built_at)}.
     </p>
     <p>
-      Every page on this site is generated from canonical Drupal Knowledge records.
-      Nothing here is edited by hand, and querying changes nothing.
+      Published pages are generated artifacts. Canonical knowledge and editorial
+      content are maintained and reviewed in the repository; querying changes nothing.
       <a href="{esc(REPOSITORY_URL)}">Repository</a> ·
       <a href="/about/">About</a> ·
       <a href="/trust-model/">Trust model</a>

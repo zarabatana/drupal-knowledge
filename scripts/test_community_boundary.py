@@ -237,6 +237,17 @@ CANONICAL_REPOSITORY = "https://github.com/zarabatana/drupal-knowledge"
 # only here, so the generated output can be checked for it literally.
 HISTORICAL_REPOSITORY = "gitlab.com/itflowing-portugal/drupal-knowledge"
 REPOSITORY_LINK = re.compile(r'<a href="([^"]+)">Repository</a>')
+# Pre-split editorial wording that must never reappear in public output: the
+# previous maintainer's branding, the historical clone instruction, and the
+# claim that this edition has no supported API.
+STALE_PUBLIC_WORDING = (
+    "An independent iTFLOWING knowledge system",
+    "iTFLOWING knowledge system",
+    "Clone gitlab.com",
+    "It is not an API",
+    "a supported API is a separate piece of work",
+)
+ABOUT_REQUIRED = ("Drupal Knowledge Community", "Zarabatana", "github.com/zarabatana/drupal-knowledge", "read-only public API")
 
 (ROOT / "tmp").mkdir(exist_ok=True)
 with tempfile.TemporaryDirectory(dir=ROOT / "tmp") as scratch:
@@ -260,6 +271,13 @@ with tempfile.TemporaryDirectory(dir=ROOT / "tmp") as scratch:
             generated_leaks.append(f"{rel}: private repository reference {match.group(0)!r}")
         if HISTORICAL_REPOSITORY in text:
             generated_leaks.append(f"{rel}: historical repository")
+        for wording in STALE_PUBLIC_WORDING:
+            if wording.lower() in text.lower():
+                generated_leaks.append(f"{rel}: stale wording {wording!r}")
+        if rel == "about/index.html":
+            for required in ABOUT_REQUIRED:
+                if required not in " ".join(text.split()):
+                    generated_leaks.append(f"{rel}: missing {required!r}")
         for match in EMAIL.finditer(text):
             if not match.group(0).endswith(ALLOWED_EMAIL_DOMAINS):
                 generated_leaks.append(f"{rel}: e-mail {match.group(0)!r}")
@@ -275,6 +293,7 @@ for artifact in sorted((ROOT / "public-api").rglob("*.json")) + sorted((ROOT / "
 print("PUBLIC_GENERATED_PRIVATE_REPO_REFERENCES=0")
 print(f"PUBLIC_GENERATED_PAGES_SCANNED={pages}")
 print("PUBLIC_GENERATED_REPOSITORY_LINKS_CANONICAL=PASS")
+print("PUBLIC_GENERATED_STALE_BRANDING=0")
 
 
 # --- 7. development provenance scan ------------------------------------------------

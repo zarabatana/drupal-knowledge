@@ -673,6 +673,42 @@ print("PUBLIC_GENERATED_PRIVATE_REPO_REFERENCES=0")
 print(f"PUBLIC_GENERATED_REPOSITORY_LINKS_CHECKED={len(PAGES)}")
 print("PUBLIC_GENERATED_REPOSITORY_LINKS_CANONICAL=PASS")
 
+# --- public editorial semantics ---------------------------------------------------
+
+# The About page states what this edition is, who maintains it, where the
+# repository is, and that the supported programmatic interface is the read-only
+# public API. Pre-split wording — another maintainer, "not an API", a separate
+# future API — must not survive in any generated file, not only on /about/.
+ABOUT_REQUIRED = (
+    "Drupal Knowledge",
+    "Drupal Knowledge Community",
+    "Zarabatana",
+    "github.com/zarabatana/drupal-knowledge",
+    "read-only public API",
+    "git clone https://github.com/zarabatana/drupal-knowledge.git",
+)
+STALE_PUBLIC_PHRASES = (
+    "It is not an API",
+    "a supported API is a separate piece of work",
+    "separate piece of work",
+    "Clone gitlab.com",
+    "Nothing here is edited by hand",
+)
+OTHER_MAINTAINER = re.compile(r"maintained by (?!Zarabatana\b)[A-Za-z]", re.IGNORECASE)
+about_flat = flat(about)
+for required in ABOUT_REQUIRED:
+    assert required in about_flat, f"/about/ must say {required!r}"
+stale_hits = [
+    (name, phrase) for name, text in SITE.items() for phrase in STALE_PUBLIC_PHRASES if phrase.lower() in text.lower()
+]
+assert not stale_hits, stale_hits
+other_maintainer = [(name, m.group(0)) for name, text in PAGES.items() for m in OTHER_MAINTAINER.finditer(flat(text))]
+assert not other_maintainer, other_maintainer
+assert "maintained by Zarabatana" in flat(PAGES["index.html"]), "the footer names the maintainer on every page"
+assert 'href="/api-docs/"' in about, "/about/ links the API guide"
+print("PUBLIC_EDITORIAL_IDENTITY_CANONICAL=PASS")
+print("PUBLIC_STALE_API_CLAIMS=0")
+
 # The site has no mechanism to accept anything: the only form on the whole site
 # is the search box, and it is a GET against a static page.
 forms = {name: re.findall(r"<form[^>]*>", text) for name, text in PAGES.items()}

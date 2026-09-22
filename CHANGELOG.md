@@ -11,6 +11,37 @@ Knowledge v1.0.0 release. Its history begins at `1.0.0`; the entries below
 it, so that a record's contract version and a document's references can be
 read in context.
 
+## 1.1.1 — 2026-09-22
+
+### Fixed
+
+- Corrected Community public branding and repository references. The About
+  page now states the edition's identity — Drupal Knowledge, maintained by
+  Zarabatana; Drupal Knowledge Community as the public, open-source edition —
+  and lists what the release actually holds. Its clone instruction is the
+  canonical `git clone https://github.com/zarabatana/drupal-knowledge.git`.
+- Updated About content to describe the existing read-only public API
+  accurately. The page no longer says the site "is not an API" or that a
+  supported API is separate future work; it distinguishes the supported,
+  independently versioned public API from the internal JSON build artifacts
+  behind the pages.
+- Described the source-to-knowledge process accurately on the About page and
+  in the site footer: published pages are generated artifacts; canonical
+  knowledge and editorial content are maintained and reviewed in the
+  repository; a source change is not a knowledge change and a discovery
+  signal is not knowledge. The footer no longer claims that nothing on the
+  site is edited by hand while maintained editorial pages exist.
+- Strengthened generated-site regression checks for stale pre-split
+  branding: the isolated site build is scanned for the previous maintainer's
+  branding, the historical clone instruction and the stale API claims, the
+  About page must carry the canonical identity, repository and API wording,
+  and no page may name a maintainer other than Zarabatana.
+
+### Unchanged by design
+
+- Scheduled acquisition and discovery, their persistence boundary and the
+  trust invariants are untouched. Every contract version is unchanged.
+
 ## 1.1.0 — 2026-09-22
 
 ### Added
