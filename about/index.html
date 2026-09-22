@@ -31,23 +31,42 @@
     <article>
     <h1>About Drupal Knowledge</h1>
     <p class="lede">
-      Drupal Knowledge Community: an independent, evidence-backed knowledge
-      system for Drupal, maintained by Zarabatana.
+      Drupal Knowledge is an independent, evidence-backed knowledge system for
+      Drupal, maintained by Zarabatana. Drupal Knowledge Community is the public
+      and open-source edition, and this is its website.
     </p>
+    <section aria-labelledby="holds-heading">
+      <h2 id="holds-heading">What it holds</h2>
+      <ul>
+        <li>Structured Drupal knowledge — reviewed records, each with its sources and its trust class stated.</li>
+        <li>Source provenance — every source-derived record traces back to an immutable snapshot of the exact bytes it came from.</li>
+        <li>Security intelligence — Drupal Security Team advisories with the risk vector, CVEs and fixed releases as published.</li>
+        <li>Upgrade intelligence — upgrade transitions quoted from official Drupal documentation, and compatibility evaluation for a project.</li>
+        <li>API lifecycle information — deprecations and removals from api.drupal.org, and core change records.</li>
+        <li>Implementation guidance — reviewed implementation rules with explicit evidence requirements.</li>
+        <li>Solved cases — solutions proven in one specific context, kept to that context.</li>
+        <li>A command line, this generated website and a <a href="/api-docs/">read-only public API</a>, all reading the same published dataset.</li>
+      </ul>
+    </section>
     <section aria-labelledby="how-heading">
       <h2 id="how-heading">How this site is made</h2>
       <p>
         Every domain page here is generated. Registered Drupal sources are
-        acquired and stored as immutable snapshots; records are projected from
-        those snapshots; one query layer answers questions about them; and this
-        site is a rendering of that query layer's answers. The command line
-        renders the same answers differently and reaches the same conclusions,
-        because both read the same layer rather than the same files.
+        acquired and stored as immutable snapshots; a changed source produces a
+        detected change and a review candidate, never a changed record; records
+        are projected from the snapshots a person has reviewed; one query layer
+        answers questions about them; and this site is a rendering of that query
+        layer's answers. The command line renders the same answers differently
+        and reaches the same conclusions, because both read the same layer rather
+        than the same files.
       </p>
       <p>
-        Nothing on a record page was written by hand. The editorial pages — this
-        one, the trust model and the CLI guide — were, and they contain no record
-        data.
+        Published pages are generated artifacts. Canonical knowledge and the
+        editorial pages — this one, the trust model, the CLI guide and the API
+        guide — are maintained and reviewed in the repository, and the editorial
+        pages contain no record data. Nothing here becomes trusted knowledge on
+        its own: a source change is not a knowledge change, and a discovery
+        signal is not knowledge.
       </p>
     </section>
     <section aria-labelledby="scope-heading">
@@ -55,7 +74,7 @@
       <ul>
         <li>It is not an analysis service. You cannot upload a project, and nothing is stored about you.</li>
         <li>It has no accounts, no login and no comment threads.</li>
-        <li>It is not an API. The JSON files behind this site are build artifacts whose shape may change; a supported API is a separate piece of work.</li>
+        <li>It is not the programmatic interface. Tools should use the supported <a href="/api-docs/">read-only public API</a>, whose contract is versioned on its own; the JSON files behind these pages are internal build artifacts and not part of that contract.</li>
         <li>It does not publish anything observed inside a private project.</li>
       </ul>
     </section>
@@ -73,23 +92,26 @@
     <section aria-labelledby="get-heading">
       <h2 id="get-heading">Getting it</h2>
       <p>
-        The repository is the distribution. Clone
-        <a href="https://github.com/zarabatana/drupal-knowledge">github.com/zarabatana/drupal-knowledge</a>
-        and run <code>./dk status</code>. See <a href="/cli/">the CLI guide</a>.
+        The repository is the distribution:
+        <a href="https://github.com/zarabatana/drupal-knowledge">github.com/zarabatana/drupal-knowledge</a>.
       </p>
+      <pre><code>git clone https://github.com/zarabatana/drupal-knowledge.git
+cd drupal-knowledge
+./dk status</code></pre>
+      <p>See <a href="/cli/">the CLI guide</a> and <a href="/api-docs/">the API guide</a>.</p>
     </section>
     </article>
 
   </main>
   <footer class="site-footer">
     <p>
-      Generated from Drupal Knowledge 1.1.0,
-      dataset <code>dataset:8d38791d9754a4263bd0095b2c0959b9</code>,
-      built 2026-09-22T02:12:30Z.
+      Generated from Drupal Knowledge 1.1.1,
+      dataset <code>dataset:2be29775e48ef9fe544cb891efa8a8a1</code>,
+      built 2026-09-22T02:50:26Z.
     </p>
     <p>
-      Every page on this site is generated from canonical Drupal Knowledge records.
-      Nothing here is edited by hand, and querying changes nothing.
+      Published pages are generated artifacts. Canonical knowledge and editorial
+      content are maintained and reviewed in the repository; querying changes nothing.
       <a href="https://github.com/zarabatana/drupal-knowledge">Repository</a> ·
       <a href="/about/">About</a> ·
       <a href="/trust-model/">Trust model</a>
