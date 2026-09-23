@@ -38,7 +38,7 @@ missing security update(s).
 
 ## Semantic Authority Chain
 
-The meaning above is proven, link by link, from pinned current Drupal 11.4.5
+The meaning above is proven, link by link, from pinned current Drupal 11.4.7
 update-module sources — never inferred from the English word and never from the
 release-history feed, which carries the term without defining it
 (`TERM_MEANING_REQUIRES_ADDITIONAL_AUTHORITY` remains the enforced state for any
@@ -51,7 +51,7 @@ contract without this reviewed authority):
 | `UpdateManagerInterface.php` (`drupal-update-manager-interface-semantics`) | `NOT_SECURE` is documented as "Project is missing security update(s)." |
 
 No link is inferred. Each source is registered as `authoritative`, pinned to the
-immutable release tag `11.4.5` on git.drupalcode.org with an immutable
+immutable release tag `11.4.7` on git.drupalcode.org with an immutable
 content-addressed snapshot, and referenced by the record. With the chain
 reviewed, the record's `term_semantics.state` is
 `DRUPAL_UPDATE_STATUS_SEMANTICS_REVIEWED`; historical Drupal 8 implementations,
@@ -154,7 +154,7 @@ representable and validates.
 
 ## Version-Scoped Semantic Authority
 
-The reviewed meaning is proven from pinned Drupal 11.4.5 update-module sources
+The reviewed meaning is proven from pinned Drupal 11.4.7 update-module sources
 on the 11.x branch, so the contract's
 `confirmation_authority.semantic_authority_version_scope` declares
 `drupal_core_majors: ["11"]`. The validator derives the permissible majors

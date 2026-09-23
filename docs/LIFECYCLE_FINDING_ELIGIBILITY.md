@@ -109,9 +109,12 @@ Normalized representation in the reviewed context, both with `state: present`:
 - `releases[].terms[].value.source_value`
 - `releases[].release_type_source_values[]`
 
-Representative versions carrying the term: `11.4.3`, `11.3.13`, `11.3.12`,
-`10.6.12`, `8.0-alpha2`. Representative versions not carrying it: `11.4.5`,
-`11.4.4`, `11.3.16`, `11.3.14`, `10.6.15`.
+Representative versions carrying the term, as recorded by the 2026-09-07 audit:
+`11.4.3`, `11.3.13`, `11.3.12`, `10.6.12`, `8.0-alpha2`. Representative versions
+not carrying it at that date: `11.4.5`, `11.4.4`, `11.3.16`, `11.3.14`,
+`10.6.15` — all five have since acquired the term, which is recorded in
+`docs/lifecycle-finding-eligibility-review-2026-09-23.json`. A release can
+acquire the term after publication, when a security release supersedes it.
 
 Matching must therefore be literal exact string comparison against the
 normalized source value. There is nothing more stable to match on.
