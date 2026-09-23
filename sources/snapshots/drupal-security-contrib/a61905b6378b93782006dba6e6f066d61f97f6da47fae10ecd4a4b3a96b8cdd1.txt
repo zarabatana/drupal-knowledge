@@ -1,0 +1,748 @@
+Security advisories for contributed projects
+Show advisories for
+only Drupal core
+,
+only
+PSAs
+, or
+all security advisories
+Security advisories for third-party projects that are not part of Drupal core - this includes all modules, themes, and installation profiles that have been contributed by community members.
+Project Browser - Critical - Cross-site request forgery - SA-CONTRIB-2026-178
+Project machine name:
+project_browser
+Date:
+2026-September-23
+Security risk:
+Critical
+15 ∕ 25 AC:Complex/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-96374
+The Project Browser module enables you to apply recipes and enable modules from the web user interface.
+The module doesn't sufficiently validate admin actions to protect against cross-site request forgery attacks (CSRF).
+Read more
+about Project Browser - Critical - Cross-site request forgery - SA-CONTRIB-2026-178
+Cloud - Critical - Remote code execution - SA-CONTRIB-2026-177
+Project machine name:
+cloud
+Date:
+2026-September-23
+Security risk:
+Critical
+15 ∕ 25 AC:Basic/A:Admin/CI:All/II:All/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-96376
+The Cloud module enables users to manage cloud resources through Drupal.
+The module does not sufficiently sanitize user-controlled Git branch and repository URL values before passing them to shell commands in the Kubernetes integration. This vulnerability allows an attacker to execute arbitrary operating-system commands as the web-server user.
+Read more
+about Cloud - Critical - Remote code execution - SA-CONTRIB-2026-177
+Cloud - Critical - Remote code execution - SA-CONTRIB-2026-176
+Project machine name:
+cloud
+Date:
+2026-September-23
+Security risk:
+Critical
+15 ∕ 25 AC:Complex/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-96375
+The Cloud module enables users to manage cloud infrastructure through Drupal.
+The Kubernetes and VMware integrations do not properly validate TLS certificates when connecting to remote API endpoints. An attacker who can intercept these connections may obtain secret tokens or other credentials, potentially allowing unauthorized access to the connected infrastructure.
+Read more
+about Cloud - Critical - Remote code execution - SA-CONTRIB-2026-176
+Webform - Critical - Remote Code Execution - SA-CONTRIB-2026-175
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Critical
+18 ∕ 25 AC:Basic/A:None/CI:All/II:All/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-96355
+The Webform module allows site builders to create forms, collect submissions, and render submitted values in configurable formats.
+Webform does not sufficiently exclude certain format templates from token replacement. This can allow an attacker to submit data that is evaluated as template code when a submission is rendered. Depending on the site configuration and enabled modules, this may lead to information disclosure, stored cross-site scripting, or remote code execution.
+Read more
+about Webform - Critical - Remote Code Execution - SA-CONTRIB-2026-175
+Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-174
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-96356
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data.
+Webform did not sufficiently guard user-specific access rules against a malformed saved configuration. Under certain site-specific conditions, an access rule intended to grant submission access only to selected user accounts could also grant access to anonymous users.
+This vulnerability is mitigated by the fact that the bypass depends on malformed saved access-rule configuration.
+Read more
+about Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-174
+Webform - Less critical - Access bypass - SA-CONTRIB-2026-173
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Less critical
+9 ∕ 25 AC:Basic/A:User/CI:Some/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-96398
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data.
+The module did not sufficiently restrict access to certain submission view modes. Under certain conditions, a user who can view a submission could access a more permissive view mode and see fields that would otherwise be restricted.
+This vulnerability is mitigated by the fact that an attacker must already have access to view the affected submission.
+Read more
+about Webform - Less critical - Access bypass - SA-CONTRIB-2026-173
+Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-172
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-96357
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data. Form submissions may include uploaded files.
+The module does not sufficiently force certain uploaded file types to download when served. Under certan site configurations, a file uploaded through a webform could be rendered inline by a browser, resulting in a cross-site scripting vulnerability.
+Read more
+about Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-172
+Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-171
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Basic/A:None/CI:None/II:Some/E:Exploit/TD:Uncommon
+CVE IDs:
+CVE-2026-96364
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data.
+The Webform Share submodule can expose a webform for embedding on another site.
+Under certain circumstances, submissions for an Ajax-enabled Webform using Webform Share can bypass anti-spam protections.
+Read more
+about Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-171
+Webform - Less critical - Denial of service - SA-CONTRIB-2026-170
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Less critical
+8 ∕ 25 AC:Basic/A:None/CI:None/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-96365
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data. Site builders may also configure handlers for processing submissions. Forms may be displayed in blocks.
+Webform does not sufficiently validate an optional token query value before using it. Under specific configurations where a Webform is rendered for anonymous visitors, a malicious request can cause the request to consume significant resources leading to a Denial of Service.
+Read more
+about Webform - Less critical - Denial of service - SA-CONTRIB-2026-170
+Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-169
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-96366
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data.
+Site builders may also configure handlers for processing submissions, including email handlers that may include uploaded files as attachments.
+In affected configurations, Webform did not sufficiently validate a managed file upload element when processing a new submission. A user with access to submit a vulnerable webform could potentially access other managed files they were not authorized to view.
+Read more
+about Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-169
+Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-168
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Complex/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-96373
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data.
+The module does not sufficiently validate requested filenames when serving generated submission exports. Under certain configurations, a user with permission to view submission results for one webform may be able to access or remove files from the configured export temporary directory that were not generated for that webform.
+Read more
+about Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-168
+Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-167
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-96372
+The Webform module enables site builders to create forms and collect submissions.
+The module does not sufficiently restrict access to configure Remote HTTP Operations handlers. This vulnerability could allow a user with permission to edit a webform to configure a remote HTTP operation.
+The update adds the
+Administer webform remote post URLs
+permission. Review this permission and ensure it is granted only to trusted roles.
+The vulnerability is mitigated by the fact that an attacker must have a role with permission to edit a webform.
+Read more
+about Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-167
+Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-166
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-96371
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data.
+The module does not sufficiently restrict access to raw webform source editing when the Webform UI module is not enabled. This could allow a user with webform creation or editing permissions to enter source configuration that is rendered unsafely.
+This vulnerability is mitigated by the fact that an attacker must have permission to create or edit webforms.
+Read more
+about Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-166
+Webform - Less critical - Access bypass - SA-CONTRIB-2026-165
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Less critical
+8 ∕ 25 AC:Complex/A:User/CI:Some/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-96369
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data.
+When Webform is used with JSON:API enabled, submissions may be cached without varying correctly by the authenticated user. If a webform is configured so that authenticated users can view their own submissions, a request to the JSON:API webform submission collection can return a cached response generated for a different user.
+Read more
+about Webform - Less critical - Access bypass - SA-CONTRIB-2026-165
+Webform - Moderately critical - Access bypass, Server-side request forgery - SA-CONTRIB-2026-164
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-96370
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data.
+The module includes a Webform Submission Export/Import submodule that allows importing submission data from uploaded CSV files or remote URLs.
+The submodule did not sufficiently validate access to export/import functionality. A user who could edit webform submissions and access webform results could also access the import interface, including the remote URL import path, leading to a server-side request forgery vulnerability.
+Read more
+about Webform - Moderately critical - Access bypass, Server-side request forgery - SA-CONTRIB-2026-164
+Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-163
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-96368
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data. Site builders may add tooltips and help text to these forms.
+Some Webform tooltips and help text were not sufficiently sanitized, resulting in possible cross-site scripting (XSS).
+This vulnerability is mitigated by the fact that an attacker must have permission to create or edit affected Webform configuration or content.
+Read more
+about Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-163
+Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-162
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Proof/TD:Uncommon
+CVE IDs:
+CVE-2026-96367
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data.
+The module does not sufficiently restrict access to the custom attributes YAML editor. Users with permission to create or edit webforms (but without permission to edit webform source) may be able to add custom attributes, leading to cross-site scripting.
+This vulnerability is mitigated by the fact that an attacker must have a role with permission to create or edit webforms.
+Read more
+about Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-162
+Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-161
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Complex/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-96363
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data.
+Webform includes a submodule called Webform Entity Print. This submodule doesn't sufficiently limit access to its print templates. When the submodule is enabled, a user with permissions to create a webform can exploit cross-site scripting (XSS) in submodule settings.
+Read more
+about Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-161
+Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-160
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Complex/A:None/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-96362
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data. Site builders may also configure handlers for processing submissions. Remote Post Handlers send webform data to other servers via APIs.
+Read more
+about Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-160
+Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-159
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-96359
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data.
+The module did not sufficiently sanitize attributes used by its color element. Under certain conditions, specially crafted attributes could result in cross-site scripting (XSS) when the element is rendered.
+This vulnerability is mitigated by the fact that an attacker must be able to add a specially crafted link with a specific class to the same page as the affected webform.
+Read more
+about Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-159
+Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-158
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-96358
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data.
+The module includes a rating element, which did not sufficiently validate its data. Under specific circumstances, this could allow cross-site scripting on a page with a rating element.
+This vulnerability is mitigated by the fact that an attacker must be able to place crafted HTML markup on the same page as a Webform rating element.
+Read more
+about Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-158
+Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-155
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-96361
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data.
+The module does not sufficiently sanitize text counter configuration before passing options to the bundled jQuery Text Counter library. Under certain configurations, this can allow markup from counter-related settings to be inserted into the page leading to a cross-site scripting vulnerability.
+Read more
+about Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-155
+Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-154
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Basic/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-96360
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data.
+The module provides JavaScript behaviours for announcing dynamic form updates to assistive technologies.
+In some configurations, due to improper sanitisation, specially crafted announcement text could create a cross-site scripting risk for users interacting with the affected Webform.
+Read more
+about Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-154
+Ultimate Table Field - Critical - Access bypass - SA-CONTRIB-2026-153
+Project machine name:
+ultimate_table_field
+Date:
+2026-September-09
+Security risk:
+Critical
+15 ∕ 25 AC:None/A:None/CI:None/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87955
+The Ultimate Table Field module enables you to store table data in a field and edit each table cell through a dialog, using cell field plugins such as text, link, and file.
+The module doesn't sufficiently protect the route that opens the cell editor dialog. The route is accessible to anonymous users, who can open the dialog for any cell type. The dialog allows uploading files to the server location.
+Read more
+about Ultimate Table Field - Critical - Access bypass - SA-CONTRIB-2026-153
+Taxonomy Term Glossary - Critical - Access bypass - SA-CONTRIB-2026-152
+Project machine name:
+term_glossary
+Date:
+2026-September-09
+Security risk:
+Critical
+15 ∕ 25 AC:None/A:None/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87954
+This module adds automatic highlighting of taxonomy terms in content.
+The module doesn't sufficiently check access on taxonomy terms. As a result, anonymous users can view any of the site's taxonomy terms at the module's JSON endpoint, including taxonomy terms that are unpublished or otherwise restricted.
+Read more
+about Taxonomy Term Glossary - Critical - Access bypass - SA-CONTRIB-2026-152
+SAML SSO - Service Provider - Moderately critical - Server Side Request Forgery - SA-CONTRIB-2026-151
+Project machine name:
+miniorange_saml
+Date:
+2026-September-09
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Complex/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-87953
+This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.
+The module does not sufficiently validate URLs obtained from identity provider metadata. An attacker with the ability to configure identity provider metadata could cause the application to make requests to unintended destinations, potentially allowing access to internal network resources.
+This vulnerability is mitigated by the fact that an attacker must have permission to configure identity provider metadata.
+Read more
+about SAML SSO - Service Provider - Moderately critical - Server Side Request Forgery - SA-CONTRIB-2026-151
+SAML SSO - Service Provider - Moderately critical - Insufficient replay protection - SA-CONTRIB-2026-150
+Project machine name:
+miniorange_saml
+Date:
+2026-September-09
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Complex/A:User/CI:None/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87952
+This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.
+The module does not sufficiently prevent reuse of previously accepted SAML assertions. Under certain circumstances, a valid assertion may be replayed within its validity period, potentially allowing repeated authentication attempts using the same assertion.
+This vulnerability is mitigated by the fact that an attacker must first obtain a valid SAML assertion and can only reuse it during the assertion's validity period.
+Read more
+about SAML SSO - Service Provider - Moderately critical - Insufficient replay protection - SA-CONTRIB-2026-150
+SAML SSO - Service Provider - Moderately critical - Information disclosure - SA-CONTRIB-2026-149
+Project machine name:
+miniorange_saml
+Date:
+2026-September-09
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-87951
+This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.
+The module stores sensitive authentication information in a manner that could allow disclosure to users with access to configuration or related system data.
+This vulnerability is mitigated by the fact that an attacker must first obtain access to configuration or underlying storage mechanisms.
+Read more
+about SAML SSO - Service Provider - Moderately critical - Information disclosure - SA-CONTRIB-2026-149
+SAML SSO - Service Provider - Moderately critical - Embedded credentials - SA-CONTRIB-2026-148
+Project machine name:
+miniorange_saml
+Date:
+2026-September-09
+Security risk:
+Moderately critical
+13 ∕ 25 AC:None/A:None/CI:Some/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-87950
+This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.
+The module contains embedded credentials used by the functionality provided by the module.
+Under certain circumstances, these credentials could allow information about associated services to be disclosed.
+Read more
+about SAML SSO - Service Provider - Moderately critical - Embedded credentials - SA-CONTRIB-2026-148
+SAML SSO - Service Provider - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-147
+Project machine name:
+miniorange_saml
+Date:
+2026-September-09
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Complex/A:Admin/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87949
+This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.
+The module does not sufficiently sanitize certain values derived from SAML assertions before displaying them to users. A malicious identity provider or an attacker able to supply crafted SAML attributes, leading to a cross-site scripting (XSS) vulnerability.
+Read more
+about SAML SSO - Service Provider - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-147
+SAML SSO - Service Provider - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-146
+Project machine name:
+miniorange_saml
+Date:
+2026-September-09
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:Admin/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87948
+This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.
+The module does not sufficiently sanitize user-supplied data before displaying it in generated HTML leading to a cross-site scripting vulnerability (XSS).
+Read more
+about SAML SSO - Service Provider - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-146
+SAML SSO - Service Provider - Moderately critical - Authentication bypass - SA-CONTRIB-2026-145
+Project machine name:
+miniorange_saml
+Date:
+2026-September-09
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Complex/A:None/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-87947
+This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.
+The module does not properly restrict which signature algorithm may be used to validate a SAML assertion, allowing the algorithm to be influenced by the incoming response rather than being tied to the type of key configured for the Identity Provider (IdP).
+The vulnerability is mitigated by the fact that an attacker must be able to submit a crafted SAML response to the affected site.
+Read more
+about SAML SSO - Service Provider - Moderately critical - Authentication bypass - SA-CONTRIB-2026-145
+SAML SSO - Service Provider - Critical - Weak cryptographic practices - SA-CONTRIB-2026-144
+Project machine name:
+miniorange_saml
+Date:
+2026-September-09
+Security risk:
+Critical
+15 ∕ 25 AC:Complex/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87946
+This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.
+The module uses cryptographic constructions that do not align with current security best practices.
+The module performs certain signature comparisons using non constant-time comparison logic and generates SAML request identifiers using predictable values derived from non-cryptographic random number generation.
+Read more
+about SAML SSO - Service Provider - Critical - Weak cryptographic practices - SA-CONTRIB-2026-144
+SAML SSO - Service Provider - Critical - Open redirect - SA-CONTRIB-2026-143
+Project machine name:
+miniorange_saml
+Date:
+2026-September-09
+Security risk:
+Critical
+16 ∕ 25 AC:Basic/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87945
+This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.
+The miniorange_saml module does not sufficiently validate certain user-supplied URLs before performing redirects.
+An attacker could cause users to be redirected to an external website after authentication. This could be used in phishing attacks or to increase the credibility of malicious links.
+Read more
+about SAML SSO - Service Provider - Critical - Open redirect - SA-CONTRIB-2026-143
+SAML SSO - Service Provider - Critical - Improper certificate validation - SA-CONTRIB-2026-142
+Project machine name:
+miniorange_saml
+Date:
+2026-September-09
+Security risk:
+Critical
+15 ∕ 25 AC:Complex/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87944
+This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.
+The module does not properly validate TLS certificates when making outbound HTTPS requests.
+An attacker in a position to intercept network traffic could impersonate a trusted remote service and influence communications performed by the module.
+This vulnerability is mitigated by the fact that an attacker must be able to
+intercept or redirect network traffic originating from the site.
+Read more
+about SAML SSO - Service Provider - Critical - Improper certificate validation - SA-CONTRIB-2026-142
+SAML SSO - Service Provider - Critical - Improper access control - SA-CONTRIB-2026-141
+Project machine name:
+miniorange_saml
+Date:
+2026-September-09
+Security risk:
+Critical
+18 ∕ 25 AC:None/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87943
+This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.
+The miniorange_saml module does not correctly restrict access to certain functionality intended for administrative use. This could allow unauthorized users to access functionality or modify configuration values that should only be available to privileged users.
+Read more
+about SAML SSO - Service Provider - Critical - Improper access control - SA-CONTRIB-2026-141
+SafeDelete - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-140
+Project machine name:
+safedelete
+Date:
+2026-September-09
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-87942
+This module enables you to manage content deletion and provides reports for identifying orphaned content.
+The module doesn't sufficiently sanitize node titles when displaying the orphaned nodes report. This leads to a persistent cross-site scripting vulnerability (XSS).
+This vulnerability is mitigated by the fact that an attacker must have permission to create content of a content type configured for the orphaned nodes report.
+Read more
+about SafeDelete - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-140
+Patreon - Critical - Unsupported - SA-CONTRIB-2026-139
+Project machine name:
+patreon
+Date:
+2026-September-09
+Security risk:
+Critical
+16 ∕ 25 AC:Complex/A:Admin/CI:All/II:All/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87941
+The Drupal Security Team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, read the documentation on
+becoming the maintainer of a project that is unsupported for security reasons
+.
+Read more
+about Patreon - Critical - Unsupported - SA-CONTRIB-2026-139
+Key auth - Moderately critical - Access bypass - SA-CONTRIB-2026-138
+Project machine name:
+key_auth
+Date:
+2026-September-09
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-87940
+This module enables you to add key-based authentication on a per-user
+basis.
+The module doesn't cache per user, potentially allowing an attacker to view another user's authentication keys, if the attacker has the same permissions.
+This vulnerability is mitigated by the fact that the site must have the
+dynamic_page_cache
+module enabled.
+Read more
+about Key auth - Moderately critical - Access bypass - SA-CONTRIB-2026-138
+Feed Block - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-137
+Project machine name:
+feed_block
+Date:
+2026-September-09
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Complex/A:User/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87939
+The Feed Block module provides a block content type that displays items pulled from a remote RSS/Atom feed.
+The module does not sufficiently validate or sanitize the RSS feed it generates, resulting in a stored cross-site scripting (XSS) vulnerability.
+Read more
+about Feed Block - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-137
+CSP log - Critical - SQL Injection - SA-CONTRIB-2026-136
+Project machine name:
+csp_log
+Date:
+2026-September-09
+Security risk:
+Critical
+15 ∕ 25 AC:Basic/A:Admin/CI:All/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87938
+The CSP Log module enhances any module that adds the CSP header to a site, by providing a reporting endpoint, custom storage, and aggregated reports that can be used to trace issues or adapt the CSP headers.
+The module did not sufficiently sanitize user-supplied values used in database queries, resulting in an SQL injection vulnerability.
+This vulnerability is mitigated by the fact that an attacker needs access to an account with the
+Access CSP reports
+permission to exploit the SQL Injection.
+Read more
+about CSP log - Critical - SQL Injection - SA-CONTRIB-2026-136
+Central Authentication System (CAS) Server - Moderately critical - Open redirect - SA-CONTRIB-2026-135
+Project machine name:
+cas_server
+Date:
+2026-September-09
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Basic/A:None/CI:None/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87937
+This module enables you to turn a Drupal install into the Central Authentication System (CAS) Server. It makes your database the primary location for other systems to use for authentication in a SSO environment.
+The module doesn't sufficiently check the service URL used to redirect the user during logout, leading to an open redirect.
+Read more
+about Central Authentication System (CAS) Server - Moderately critical - Open redirect - SA-CONTRIB-2026-135
+amazee.ai Private AI Provider - Critical - SQL injection - SA-CONTRIB-2026-134
+Project machine name:
+ai_provider_amazeeio
+Date:
+2026-September-09
+Security risk:
+Critical
+17 ∕ 25 AC:Complex/A:None/CI:All/II:Some/E:Proof/TD:Default
+CVE IDs:
+CVE-2026-87936
+Update 2026-09-11:
+Increased risk score to reflect publicly documented methods for developing exploits.
+This module integrates amazee.ai's AI services into Drupal, including a Postgres/pgvector vector database backend for use with Search API AI Search.
+The module doesn't sufficiently sanitize filter values before using them to build SQL queries in its Postgres/pgvector backend, allowing SQL injection.
+Read more
+about amazee.ai Private AI Provider - Critical - SQL injection - SA-CONTRIB-2026-134
+Webform Submissions Delete - Moderately critical - Access bypass - SA-CONTRIB-2026-133
+Project machine name:
+webform_submissions_delete
+Date:
+2026-September-02
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:None/CI:None/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-84921
+This module enables you to delete Webform submissions in bulk using a specified date range.
+The module doesn't sufficiently restrict access to the delete form.
+A
+separate PHP fatal error issue
+may prevent exploitation in practice on Drupal 10+.
+Read more
+about Webform Submissions Delete - Moderately critical - Access bypass - SA-CONTRIB-2026-133
+Unpublished Node Permissions - Critical - Access bypass - SA-CONTRIB-2026-132
+Project machine name:
+unpublished_node_permissions
+Date:
+2026-September-02
+Security risk:
+Critical
+15 ∕ 25 AC:None/A:None/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-84920
+This module creates permissions per node content type to control access to unpublished content.
+The module has allowed view access for published content, overriding other access mechanisms that might have been in place.
+Read more
+about Unpublished Node Permissions - Critical - Access bypass - SA-CONTRIB-2026-132
+PhotoSwipe - Responsive JavaScript Modal Image Gallery - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-131
+Project machine name:
+photoswipe
+Date:
+2026-September-02
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-84919
+This module enables you to add dynamic caption support to PhotoSwipe image galleries.
+The module doesn't sufficiently sanitize user-supplied input (such as image alt tags) in its dynamic caption script, leading to a Cross-Site Scripting (XSS) vulnerability.
+This vulnerability is mitigated by the fact that an attacker must have a role that permits them to enter HTML content.
+Read more
+about PhotoSwipe - Responsive JavaScript Modal Image Gallery - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-131
+Monobank payment API - Moderately critical - Access bypass - SA-CONTRIB-2026-130
+Project machine name:
+monobank
+Date:
+2026-September-02
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Complex/A:None/CI:None/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-84918
+The Monobank payment API module provides integration with Monobank acquiring payments.
+The module did not verify the Monobank webhook signature before processing payment status callbacks.
+Read more
+about Monobank payment API - Moderately critical - Access bypass - SA-CONTRIB-2026-130
+Media Library Importer - Moderately critical - Access bypass - SA-CONTRIB-2026-129
+Project machine name:
+media_library_importer
+Date:
+2026-September-02
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Basic/A:User/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-81163
+A module to import media files into media library.
+The import folder is a plain textfield with no validation. Point it at any directory the web user can read, and the importer copies every file whose extension matches a selected media type into the public files directory and publishes it as a Media entity. Files that were deliberately kept outside the webroot, such as a private file store, become downloadable by anonymous visitors at a predictable URL.
+Read more
+about Media Library Importer - Moderately critical - Access bypass - SA-CONTRIB-2026-129
+Mailer Plus Log - Moderately critical - Access bypass - SA-CONTRIB-2026-128
+Project machine name:
+symfony_mailer_log
+Date:
+2026-September-02
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-16648
+This module enables you to log the emails sent by Mailer Plus as content entities, so they can be reviewed at Reports > Mail log.
+The module doesn't sufficiently redact the content of the emails it logs. Account related emails are stored with their one-time login links intact, so any user who can view the log can obtain a one-time login link for any account, including user 1, and use it to log in as that account.
+Read more
+about Mailer Plus Log - Moderately critical - Access bypass - SA-CONTRIB-2026-128
+Jsonapi Role Access - Critical - Access bypass - SA-CONTRIB-2026-127
+Project machine name:
+jsonapi_role_access
+Date:
+2026-September-02
+Security risk:
+Critical
+16 ∕ 25 AC:Basic/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-84917
+This module enables you to restrict access to JSON:API routes based on specific user roles.
+The module doesn't sufficiently enforce access controls under scenarios where a request mimics an XMLHttpRequest.
+Read more
+about Jsonapi Role Access - Critical - Access bypass - SA-CONTRIB-2026-127

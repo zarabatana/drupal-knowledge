@@ -1,0 +1,76 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 5,
+    "added_sample": [
+      "Updated 2026-09-22, 12:00 UTC, to document that the advisories in the release might be possible for more common configurations, and that other projects may have…",
+      "We are announcing this release in advance because the affected contributed module is used on a significant portion of Drupal sites, and the upcoming release wil…",
+      "The advisory with the highest risk score for the release is currently rated as",
+      ". Other, less severe advisories in the release may be accessible to anonymous users, or result from default configurations.",
+      "Other contributed projects may also release advisories on the same date, possibly with more severe vulnerabilities. Drupal core is not affected."
+    ],
+    "changed_region_count": 3,
+    "current_bytes": 6045,
+    "current_line_count": 104,
+    "deterministic": true,
+    "first_changed_line": 12,
+    "method": "normalized_line_diff",
+    "previous_bytes": 5724,
+    "previous_line_count": 105,
+    "removed_line_count": 6,
+    "removed_sample": [
+      "Security risk:",
+      "Critical",
+      "16 ∕ 25 AC:Basic/A:User/CI:All/II:All/E:Theoretical/TD:Uncommon",
+      "We are announcing this release in advance because the affected contributed module is used on a significant portion of Drupal sites, and the upcoming release wil…",
+      "."
+    ]
+  },
+  "current_hash": "sha256:e5beeac60c43ef3e4510d21496ae2fc1cf4d67c71dba288b0d0bdb0a3778ace8",
+  "discovered_at": "2026-09-23T17:04:37Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-security-psa.dfbd517376d6b676",
+  "is_knowledge_proposal": false,
+  "kind": "security-source-change",
+  "previous_hash": "sha256:76fcee8b3779b2cb9d4f176d6f68f238e562bf6c71684caee6d3516503d4cb7a",
+  "provenance": {
+    "acquired_at": "2026-09-23T17:04:37Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/security/psa",
+    "category": "security",
+    "content_length": 6045,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": {
+      "end": "Pages",
+      "start": "Security public service announcements"
+    },
+    "etag": "\"1790182985-1\"",
+    "fetch_url": "https://www.drupal.org/security/psa",
+    "http_status": 200,
+    "last_modified": "Wed, 23 Sep 2026 17:03:05 GMT",
+    "normalization": "html_text",
+    "trust": "authoritative"
+  },
+  "review": {
+    "actor": "Miguel Martins",
+    "authorizes_knowledge_proposal_work": true,
+    "method": "human_security_review",
+    "note": "The standing public service announcement for the 23 September 2026 contributed-project security release was revised upstream on 2026-09-22 at 12:00 UTC. Three substantive edits: the announcement now warns that the advisories may be reachable in more common configurations, that less severe advisories in the release may be accessible to anonymous users or arise from default configuration, and that other contributed projects may publish advisories on the same date, possibly more severe. The published risk-vector line for the announcement was withdrawn from the listing. Drupal core remains stated as not affected and the release remains outside Drupal Steward coverage. This is a real change in authoritative security guidance that Drupal Knowledge does not yet carry as a record; a public service announcement is not a vulnerability record and must not be promoted as one. Separate reviewed work required.",
+    "outcome": "reviewed_requires_knowledge_proposal",
+    "reviewed_at": "2026-09-23T18:37:18Z",
+    "trusted_knowledge_changed": false
+  },
+  "review_required": true,
+  "review_state": "reviewed_requires_knowledge_proposal",
+  "run_id": "run.20260923T170437.31ddcb7e",
+  "source_id": "drupal-security-psa",
+  "source_url": "https://www.drupal.org/security/psa",
+  "status": "reviewed",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}

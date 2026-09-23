@@ -25,8 +25,8 @@ FIXTURES = ROOT / "tests" / "fixtures" / "project-analyzer"
 CONTEXT_PATH = ROOT / "knowledge" / "context" / "drupal-core-release-lifecycle.json"
 # Both pinned to the currently reviewed context. They move only when a human
 # re-reviews the context, never as a side effect of other work.
-EXPECTED_CONTEXT_DIGEST = "8f8942c9259312848c7d8a070a3d1e92db7cab06cc1f9beb47698517ca9746a0"
-EXPECTED_SOURCE_SHA = "sha256:ec1b75d396c803c35bcf27323530acf7bd27b3415513cd51f98d0d58fb93635c"
+EXPECTED_CONTEXT_DIGEST = "c5e574c91b840cc61fa4c8e434ed193881ba0731bb4836d59c6b28741aa7e01c"
+EXPECTED_SOURCE_SHA = "sha256:1fe0ae0f0bcfc7099b8ce95957bd5c27067003fddf4d2b266b25bf056017348a"
 FORBIDDEN_PROJECT_VERDICT_KEYS = {
     "supported",
     "unsupported",
