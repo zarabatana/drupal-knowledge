@@ -1,8 +1,8 @@
 {
   "manifest_version": "1.0",
   "repository": "https://github.com/zarabatana/drupal-knowledge",
-  "dk_version": "1.0.0",
-  "generated_on": "2026-09-21",
+  "dk_version": "1.1.1",
+  "generated_on": "2026-09-23",
   "scope": "Every file under sources/snapshots/. Derived records (security/advisories, api/lifecycle, api/change-records) and reviewed records that quote these snapshots carry the same source terms for the quoted material and cite the snapshot by sha256.",
   "root_license": {
     "spdx": "Apache-2.0",
@@ -24,7 +24,7 @@
       "url": "https://www.gnu.org/licenses/old-licenses/gpl-2.0.html",
       "attribution_required": true,
       "share_alike": true,
-      "notes": "Copyleft: redistribution must preserve the licence and the copyright notice (E4). Stored here as provenance text only — never compiled, imported, executed or modified."
+      "notes": "Copyleft: redistribution must preserve the licence and the copyright notice (E4). Stored here as provenance text only \u2014 never compiled, imported, executed or modified."
     }
   },
   "evidence": [
@@ -56,7 +56,7 @@
       "title": "api.drupal.org site footer, as captured inside this repository's own snapshots",
       "url": "https://api.drupal.org/api/drupal/deprecated/9",
       "read_on": "2026-09-21",
-      "in_repository": "sources/snapshots/drupal-api-deprecated-9-p0/ … -p4 (raw HTML, footer text)",
+      "in_repository": "sources/snapshots/drupal-api-deprecated-9-p0/ \u2026 -p4 (raw HTML, footer text)",
       "quotes": [
         "All source code and documentation on this site is released under the terms of the GNU General Public License, version 2 and later.",
         "Drupal is a registered trademark of Dries Buytaert."
@@ -74,11 +74,11 @@
     },
     {
       "id": "E5",
-      "title": "coding_standards project repository on git.drupalcode.org — no licence file of its own",
+      "title": "coding_standards project repository on git.drupalcode.org \u2014 no licence file of its own",
       "url": "https://git.drupalcode.org/project/coding_standards",
       "read_on": "2026-09-21",
       "observations": [
-        "Repository root contains docs/, README.md, mkdocs.yml, logo.png, .gitlab-ci.yml, .gitignore, .cspell-project-words.txt — no LICENSE file.",
+        "Repository root contains docs/, README.md, mkdocs.yml, logo.png, .gitlab-ci.yml, .gitignore, .cspell-project-words.txt \u2014 no LICENSE file.",
         "GitLab project API reports license: null, license_url: null.",
         "README.md and mkdocs.yml contain no licence or copyright statement.",
         "The rendered pages site (project.pages.drupalcode.org/coding_standards/) carries no licence statement; it is generated from this repository (Material for MkDocs)."
@@ -88,10 +88,10 @@
   ],
   "totals": {
     "families": 34,
-    "files": 37,
-    "bytes": 2018654,
+    "files": 45,
+    "bytes": 2966090,
     "by_license": {
-      "CC-BY-SA-2.0": 26,
+      "CC-BY-SA-2.0": 34,
       "GPL-2.0-or-later": 11
     }
   },
@@ -112,7 +112,7 @@
         "E3",
         "E4"
       ],
-      "attribution": "Drupal — the original authors (Drupal core contributors); published by api.drupal.org (Drupal Association)",
+      "attribution": "Drupal \u2014 the original authors (Drupal core contributors); published by api.drupal.org (Drupal Association)",
       "attribution_required": true,
       "share_alike": true,
       "redistribution_status": "permitted_with_attribution",
@@ -183,6 +183,11 @@
           "path": "sources/snapshots/drupal-core-releases/c7de75d2508c7d134765affdea101e9bc7a4d534d8eaaa97fda3308a14ea0063.txt",
           "sha256": "c7de75d2508c7d134765affdea101e9bc7a4d534d8eaaa97fda3308a14ea0063",
           "bytes": 540265
+        },
+        {
+          "path": "sources/snapshots/drupal-core-releases/ec1b75d396c803c35bcf27323530acf7bd27b3415513cd51f98d0d58fb93635c.txt",
+          "sha256": "ec1b75d396c803c35bcf27323530acf7bd27b3415513cd51f98d0d58fb93635c",
+          "bytes": 546342
         }
       ]
     },
@@ -236,6 +241,11 @@
       "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
       "files": [
         {
+          "path": "sources/snapshots/drupal-core-change-records/555ffb84aad36f17a3af208d2ea940bf67be40d59444b962ca39d5696764cb64.txt",
+          "sha256": "555ffb84aad36f17a3af208d2ea940bf67be40d59444b962ca39d5696764cb64",
+          "bytes": 4362
+        },
+        {
           "path": "sources/snapshots/drupal-core-change-records/5603068ca984c70c41111c670a82d1dda53d07d1a1dc11bb30280d80b901e514.txt",
           "sha256": "5603068ca984c70c41111c670a82d1dda53d07d1a1dc11bb30280d80b901e514",
           "bytes": 4703
@@ -272,6 +282,11 @@
           "path": "sources/snapshots/drupal-security-core/bac9a6c286e56a5c6e66cbeba200e3400fe73fcb5c2d9d5b98e60dd431891c8e.txt",
           "sha256": "bac9a6c286e56a5c6e66cbeba200e3400fe73fcb5c2d9d5b98e60dd431891c8e",
           "bytes": 6760
+        },
+        {
+          "path": "sources/snapshots/drupal-security-core/feaf4ebad3453894ae600de7730efd6ea31c0ea298e7d3fb145763b2b3697536.txt",
+          "sha256": "feaf4ebad3453894ae600de7730efd6ea31c0ea298e7d3fb145763b2b3697536",
+          "bytes": 34076
         }
       ]
     },
@@ -296,6 +311,11 @@
       "redistribution_status": "permitted_with_attribution",
       "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
       "files": [
+        {
+          "path": "sources/snapshots/drupal-security-contrib/d556d9a125aefec4e81b754e28b73caba5f32d760994ee32154e2033a1e10d2b.txt",
+          "sha256": "d556d9a125aefec4e81b754e28b73caba5f32d760994ee32154e2033a1e10d2b",
+          "bytes": 37668
+        },
         {
           "path": "sources/snapshots/drupal-security-contrib/eb46379ccc9af6cdebafdca523d0e6a8158754aed8c8d1b15275c52c095e534e.txt",
           "sha256": "eb46379ccc9af6cdebafdca523d0e6a8158754aed8c8d1b15275c52c095e534e",
@@ -333,6 +353,11 @@
           "path": "sources/snapshots/drupal-security-psa/325d64eb555d4c3bd2d724c22b4b954b45c4328c7e34807d1054d40a7f18ecff.txt",
           "sha256": "325d64eb555d4c3bd2d724c22b4b954b45c4328c7e34807d1054d40a7f18ecff",
           "bytes": 5421
+        },
+        {
+          "path": "sources/snapshots/drupal-security-psa/76fcee8b3779b2cb9d4f176d6f68f238e562bf6c71684caee6d3516503d4cb7a.txt",
+          "sha256": "76fcee8b3779b2cb9d4f176d6f68f238e562bf6c71684caee6d3516503d4cb7a",
+          "bytes": 5724
         }
       ]
     },
@@ -463,7 +488,7 @@
         "E2",
         "E4"
       ],
-      "attribution": "Drupal — the original authors (Drupal core contributors)",
+      "attribution": "Drupal \u2014 the original authors (Drupal core contributors)",
       "attribution_required": true,
       "share_alike": true,
       "redistribution_status": "permitted_with_attribution",
@@ -491,7 +516,7 @@
         "E2",
         "E4"
       ],
-      "attribution": "Drupal — the original authors (Drupal core contributors)",
+      "attribution": "Drupal \u2014 the original authors (Drupal core contributors)",
       "attribution_required": true,
       "share_alike": true,
       "redistribution_status": "permitted_with_attribution",
@@ -519,7 +544,7 @@
         "E2",
         "E4"
       ],
-      "attribution": "Drupal — the original authors (Drupal core contributors)",
+      "attribution": "Drupal \u2014 the original authors (Drupal core contributors)",
       "attribution_required": true,
       "share_alike": true,
       "redistribution_status": "permitted_with_attribution",
@@ -613,6 +638,11 @@
           "path": "sources/snapshots/drupal-security-advisories-core/2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4.txt",
           "sha256": "2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
           "bytes": 154005
+        },
+        {
+          "path": "sources/snapshots/drupal-security-advisories-core/b37d072cc4ce4e706870276008db1cb431afee486417b8661a82a662efdd3b1c.txt",
+          "sha256": "b37d072cc4ce4e706870276008db1cb431afee486417b8661a82a662efdd3b1c",
+          "bytes": 155943
         }
       ]
     },
@@ -637,6 +667,11 @@
       "redistribution_status": "permitted_with_attribution",
       "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
       "files": [
+        {
+          "path": "sources/snapshots/drupal-security-advisories-recent/e3247c4fbfeb97ab42b797d17cd6e8cfc8766e356d3bcaeb9c2dd907a8962fbf.txt",
+          "sha256": "e3247c4fbfeb97ab42b797d17cd6e8cfc8766e356d3bcaeb9c2dd907a8962fbf",
+          "bytes": 95450
+        },
         {
           "path": "sources/snapshots/drupal-security-advisories-recent/ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c.txt",
           "sha256": "ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
@@ -799,7 +834,7 @@
         "E3",
         "E4"
       ],
-      "attribution": "Drupal — the original authors (Drupal core contributors); published by api.drupal.org (Drupal Association)",
+      "attribution": "Drupal \u2014 the original authors (Drupal core contributors); published by api.drupal.org (Drupal Association)",
       "attribution_required": true,
       "share_alike": true,
       "redistribution_status": "permitted_with_attribution",
@@ -827,7 +862,7 @@
         "E3",
         "E4"
       ],
-      "attribution": "Drupal — the original authors (Drupal core contributors); published by api.drupal.org (Drupal Association)",
+      "attribution": "Drupal \u2014 the original authors (Drupal core contributors); published by api.drupal.org (Drupal Association)",
       "attribution_required": true,
       "share_alike": true,
       "redistribution_status": "permitted_with_attribution",
@@ -855,7 +890,7 @@
         "E3",
         "E4"
       ],
-      "attribution": "Drupal — the original authors (Drupal core contributors); published by api.drupal.org (Drupal Association)",
+      "attribution": "Drupal \u2014 the original authors (Drupal core contributors); published by api.drupal.org (Drupal Association)",
       "attribution_required": true,
       "share_alike": true,
       "redistribution_status": "permitted_with_attribution",
@@ -883,7 +918,7 @@
         "E3",
         "E4"
       ],
-      "attribution": "Drupal — the original authors (Drupal core contributors); published by api.drupal.org (Drupal Association)",
+      "attribution": "Drupal \u2014 the original authors (Drupal core contributors); published by api.drupal.org (Drupal Association)",
       "attribution_required": true,
       "share_alike": true,
       "redistribution_status": "permitted_with_attribution",
@@ -911,7 +946,7 @@
         "E3",
         "E4"
       ],
-      "attribution": "Drupal — the original authors (Drupal core contributors); published by api.drupal.org (Drupal Association)",
+      "attribution": "Drupal \u2014 the original authors (Drupal core contributors); published by api.drupal.org (Drupal Association)",
       "attribution_required": true,
       "share_alike": true,
       "redistribution_status": "permitted_with_attribution",
@@ -945,6 +980,11 @@
       "redistribution_status": "permitted_with_attribution",
       "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
       "files": [
+        {
+          "path": "sources/snapshots/drupal-core-change-notices/06569965487c18fffe367af84bc4618f0889ed1be9be8b570c1acbefb6ba5c35.txt",
+          "sha256": "06569965487c18fffe367af84bc4618f0889ed1be9be8b570c1acbefb6ba5c35",
+          "bytes": 67871
+        },
         {
           "path": "sources/snapshots/drupal-core-change-notices/2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb.txt",
           "sha256": "2f00fe48197087de210c09af8fd203f08a62d338889e68875b69ee621bcf44eb",
@@ -1051,7 +1091,7 @@
         "E3",
         "E4"
       ],
-      "attribution": "Drupal — the original authors (Drupal core contributors); published by api.drupal.org (Drupal Association)",
+      "attribution": "Drupal \u2014 the original authors (Drupal core contributors); published by api.drupal.org (Drupal Association)",
       "attribution_required": true,
       "share_alike": true,
       "redistribution_status": "permitted_with_attribution",

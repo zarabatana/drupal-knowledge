@@ -45,13 +45,21 @@
     "normalization": "raw_text",
     "trust": "authoritative"
   },
-  "review": null,
+  "review": {
+    "actor": "Miguel Martins",
+    "authorizes_knowledge_proposal_work": false,
+    "method": "human_source_diff_review",
+    "note": "Feed gained 3 stable releases (11.4.7, 11.3.17, 10.6.17, each Release type 'Security update', security covered) and re-rolled 5 dev snapshots; supported_branches, project_status and every existing release status/security field are unchanged, and the XML field set is unchanged (occurrence counts only). Both dependent records assert feed structure, not an enumeration, so their conclusions stand; the pinned lifecycle context was re-normalized to the new snapshot (556 -> 559 releases).",
+    "outcome": "reviewed_no_knowledge_change",
+    "reviewed_at": "2026-09-23T02:07:53Z",
+    "trusted_knowledge_changed": false
+  },
   "review_required": true,
-  "review_state": "pending_review",
+  "review_state": "reviewed_no_knowledge_change",
   "run_id": "run.20260922T114243.8345954e",
   "source_id": "drupal-core-releases",
   "source_url": "https://www.drupal.org/project/drupal/releases",
-  "status": "review_required",
+  "status": "reviewed",
   "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
   "trust": "authoritative"
 }

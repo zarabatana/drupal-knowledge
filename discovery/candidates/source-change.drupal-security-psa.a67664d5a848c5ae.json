@@ -56,13 +56,21 @@
     "normalization": "html_text",
     "trust": "authoritative"
   },
-  "review": null,
+  "review": {
+    "actor": "Miguel Martins",
+    "authorizes_knowledge_proposal_work": true,
+    "method": "human_security_review",
+    "note": "New PSA-2026-09-21 announcing an upcoming critical contributed-project security release on 2026-09-23, explicitly not covered by Drupal Steward and explicitly stating Drupal core is not affected. An announcement of a future release, not an advisory with affected or fixed versions, so no applicability can be derived yet. PSA-2023-06-07 (Drupal 7 EOL) left the page window and is not retracted.",
+    "outcome": "reviewed_requires_knowledge_proposal",
+    "reviewed_at": "2026-09-23T02:07:53Z",
+    "trusted_knowledge_changed": false
+  },
   "review_required": true,
-  "review_state": "pending_review",
+  "review_state": "reviewed_requires_knowledge_proposal",
   "run_id": "run.20260922T114243.8345954e",
   "source_id": "drupal-security-psa",
   "source_url": "https://www.drupal.org/security/psa",
-  "status": "review_required",
+  "status": "reviewed",
   "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
   "trust": "authoritative"
 }

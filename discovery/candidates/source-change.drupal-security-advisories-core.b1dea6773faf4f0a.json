@@ -45,13 +45,21 @@
     "normalization": "raw_text",
     "trust": "authoritative"
   },
-  "review": null,
+  "review": {
+    "actor": "Miguel Martins",
+    "authorizes_knowledge_proposal_work": true,
+    "method": "human_security_review",
+    "note": "New Drupal core advisory SA-CORE-2026-013 (2026-09-16, Moderately critical, Third-party libraries, CKEditor; AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default). Fixed releases appear in the release feed as 11.4.7 / 11.3.17 / 10.6.17. Warrants ingestion as a source-derived advisory record in separate reviewed work. Three existing advisories changed only administrative fields (coordinator, issue status, vid); no affected or fixed version and no risk vector changed. SA-CORE-2025-001 left the limit=20 window and is NOT retracted; DK keeps its record.",
+    "outcome": "reviewed_requires_knowledge_proposal",
+    "reviewed_at": "2026-09-23T02:07:53Z",
+    "trusted_knowledge_changed": false
+  },
   "review_required": true,
-  "review_state": "pending_review",
+  "review_state": "reviewed_requires_knowledge_proposal",
   "run_id": "run.20260922T114243.8345954e",
   "source_id": "drupal-security-advisories-core",
   "source_url": "https://www.drupal.org/security/core",
-  "status": "review_required",
+  "status": "reviewed",
   "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
   "trust": "authoritative"
 }
