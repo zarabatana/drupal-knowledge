@@ -165,7 +165,9 @@ absent_evaluation = dk_finding_runtime.evaluate_analysis_data(term_absent)
 absent = single_finding(absent_evaluation)
 assert absent["state"] == "not_observed"
 assert absent["observation_key"] == "term_absent_in_matched_row"
-assert absent["provenance"]["exact_matched_release"] == "11.4.5"
+# The "term absent" fixture tracks the reviewed semantic authority release, so
+# it cannot silently become a release that upstream has marked Insecure.
+assert absent["provenance"]["exact_matched_release"] == dk_core.semantic_authority_tag()
 assert absent["provenance"]["literal_source_term"]["present_on_matched_release"] is False
 assert absent["claim"]["meaning_authorized"] is False
 assert absent["claim"]["authorized_meaning"] is None
@@ -176,12 +178,18 @@ assert "not a security pass" in absent["explanation"]["conclusion"].lower()
 
 # A release carrying only the "Security update" term is still not_observed:
 # the non-authoritative signal is ignored.
+# A currently published security release on another supported branch: it
+# carries "Security update" and not the audited term. Taken from the reviewed
+# observation so it cannot silently become a superseded release.
+SECURITY_UPDATE_ONLY_RELEASE = dk_core.read_json(
+    ROOT / "docs" / "lifecycle-finding-eligibility-review-2026-09-23.json"
+)["current_reviewed_observation"]["rows_with_security_update_term_and_without_insecure_term"][1]
 security_update_only = dk_finding_runtime.evaluate_analysis_data(
-    with_core_version(recommended, "11.4.4")
+    with_core_version(recommended, SECURITY_UPDATE_ONLY_RELEASE)
 )
 security_update_finding = single_finding(security_update_only)
 assert security_update_finding["state"] == "not_observed"
-assert security_update_finding["provenance"]["exact_matched_release"] == "11.4.4"
+assert security_update_finding["provenance"]["exact_matched_release"] == SECURITY_UPDATE_ONLY_RELEASE
 
 
 # --- cross-major semantic authority leakage is blocked ------------------------

@@ -1,0 +1,754 @@
+Security advisories for contributed projects
+Show advisories for
+only Drupal core
+,
+only
+PSAs
+, or
+all security advisories
+Security advisories for third-party projects that are not part of Drupal core - this includes all modules, themes, and installation profiles that have been contributed by community members.
+Ultimate Table Field - Critical - Access bypass - SA-CONTRIB-2026-153
+Project machine name:
+ultimate_table_field
+Date:
+2026-September-09
+Security risk:
+Critical
+15 ∕ 25 AC:None/A:None/CI:None/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87955
+The Ultimate Table Field module enables you to store table data in a field and edit each table cell through a dialog, using cell field plugins such as text, link, and file.
+The module doesn't sufficiently protect the route that opens the cell editor dialog. The route is accessible to anonymous users, who can open the dialog for any cell type. The dialog allows uploading files to the server location.
+Read more
+about Ultimate Table Field - Critical - Access bypass - SA-CONTRIB-2026-153
+Taxonomy Term Glossary - Critical - Access bypass - SA-CONTRIB-2026-152
+Project machine name:
+term_glossary
+Date:
+2026-September-09
+Security risk:
+Critical
+15 ∕ 25 AC:None/A:None/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87954
+This module adds automatic highlighting of taxonomy terms in content.
+The module doesn't sufficiently check access on taxonomy terms. As a result, anonymous users can view any of the site's taxonomy terms at the module's JSON endpoint, including taxonomy terms that are unpublished or otherwise restricted.
+Read more
+about Taxonomy Term Glossary - Critical - Access bypass - SA-CONTRIB-2026-152
+SAML SSO - Service Provider - Moderately critical - Server Side Request Forgery - SA-CONTRIB-2026-151
+Project machine name:
+miniorange_saml
+Date:
+2026-September-09
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Complex/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-87953
+This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.
+The module does not sufficiently validate URLs obtained from identity provider metadata. An attacker with the ability to configure identity provider metadata could cause the application to make requests to unintended destinations, potentially allowing access to internal network resources.
+This vulnerability is mitigated by the fact that an attacker must have permission to configure identity provider metadata.
+Read more
+about SAML SSO - Service Provider - Moderately critical - Server Side Request Forgery - SA-CONTRIB-2026-151
+SAML SSO - Service Provider - Moderately critical - Insufficient replay protection - SA-CONTRIB-2026-150
+Project machine name:
+miniorange_saml
+Date:
+2026-September-09
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Complex/A:User/CI:None/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87952
+This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.
+The module does not sufficiently prevent reuse of previously accepted SAML assertions. Under certain circumstances, a valid assertion may be replayed within its validity period, potentially allowing repeated authentication attempts using the same assertion.
+This vulnerability is mitigated by the fact that an attacker must first obtain a valid SAML assertion and can only reuse it during the assertion's validity period.
+Read more
+about SAML SSO - Service Provider - Moderately critical - Insufficient replay protection - SA-CONTRIB-2026-150
+SAML SSO - Service Provider - Moderately critical - Information disclosure - SA-CONTRIB-2026-149
+Project machine name:
+miniorange_saml
+Date:
+2026-September-09
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-87951
+This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.
+The module stores sensitive authentication information in a manner that could allow disclosure to users with access to configuration or related system data.
+This vulnerability is mitigated by the fact that an attacker must first obtain access to configuration or underlying storage mechanisms.
+Read more
+about SAML SSO - Service Provider - Moderately critical - Information disclosure - SA-CONTRIB-2026-149
+SAML SSO - Service Provider - Moderately critical - Embedded credentials - SA-CONTRIB-2026-148
+Project machine name:
+miniorange_saml
+Date:
+2026-September-09
+Security risk:
+Moderately critical
+13 ∕ 25 AC:None/A:None/CI:Some/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-87950
+This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.
+The module contains embedded credentials used by the functionality provided by the module.
+Under certain circumstances, these credentials could allow information about associated services to be disclosed.
+Read more
+about SAML SSO - Service Provider - Moderately critical - Embedded credentials - SA-CONTRIB-2026-148
+SAML SSO - Service Provider - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-147
+Project machine name:
+miniorange_saml
+Date:
+2026-September-09
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Complex/A:Admin/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87949
+This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.
+The module does not sufficiently sanitize certain values derived from SAML assertions before displaying them to users. A malicious identity provider or an attacker able to supply crafted SAML attributes, leading to a cross-site scripting (XSS) vulnerability.
+Read more
+about SAML SSO - Service Provider - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-147
+SAML SSO - Service Provider - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-146
+Project machine name:
+miniorange_saml
+Date:
+2026-September-09
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:Admin/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87948
+This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.
+The module does not sufficiently sanitize user-supplied data before displaying it in generated HTML leading to a cross-site scripting vulnerability (XSS).
+Read more
+about SAML SSO - Service Provider - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-146
+SAML SSO - Service Provider - Moderately critical - Authentication bypass - SA-CONTRIB-2026-145
+Project machine name:
+miniorange_saml
+Date:
+2026-September-09
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Complex/A:None/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-87947
+This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.
+The module does not properly restrict which signature algorithm may be used to validate a SAML assertion, allowing the algorithm to be influenced by the incoming response rather than being tied to the type of key configured for the Identity Provider (IdP).
+The vulnerability is mitigated by the fact that an attacker must be able to submit a crafted SAML response to the affected site.
+Read more
+about SAML SSO - Service Provider - Moderately critical - Authentication bypass - SA-CONTRIB-2026-145
+SAML SSO - Service Provider - Critical - Weak cryptographic practices - SA-CONTRIB-2026-144
+Project machine name:
+miniorange_saml
+Date:
+2026-September-09
+Security risk:
+Critical
+15 ∕ 25 AC:Complex/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87946
+This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.
+The module uses cryptographic constructions that do not align with current security best practices.
+The module performs certain signature comparisons using non constant-time comparison logic and generates SAML request identifiers using predictable values derived from non-cryptographic random number generation.
+Read more
+about SAML SSO - Service Provider - Critical - Weak cryptographic practices - SA-CONTRIB-2026-144
+SAML SSO - Service Provider - Critical - Open redirect - SA-CONTRIB-2026-143
+Project machine name:
+miniorange_saml
+Date:
+2026-September-09
+Security risk:
+Critical
+16 ∕ 25 AC:Basic/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87945
+This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.
+The miniorange_saml module does not sufficiently validate certain user-supplied URLs before performing redirects.
+An attacker could cause users to be redirected to an external website after authentication. This could be used in phishing attacks or to increase the credibility of malicious links.
+Read more
+about SAML SSO - Service Provider - Critical - Open redirect - SA-CONTRIB-2026-143
+SAML SSO - Service Provider - Critical - Improper certificate validation - SA-CONTRIB-2026-142
+Project machine name:
+miniorange_saml
+Date:
+2026-September-09
+Security risk:
+Critical
+15 ∕ 25 AC:Complex/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87944
+This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.
+The module does not properly validate TLS certificates when making outbound HTTPS requests.
+An attacker in a position to intercept network traffic could impersonate a trusted remote service and influence communications performed by the module.
+This vulnerability is mitigated by the fact that an attacker must be able to
+intercept or redirect network traffic originating from the site.
+Read more
+about SAML SSO - Service Provider - Critical - Improper certificate validation - SA-CONTRIB-2026-142
+SAML SSO - Service Provider - Critical - Improper access control - SA-CONTRIB-2026-141
+Project machine name:
+miniorange_saml
+Date:
+2026-September-09
+Security risk:
+Critical
+18 ∕ 25 AC:None/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87943
+This module allows you to configure your Drupal site as a SAML 2.0 Service Provider so that users can authenticate through an external identity provider.
+The miniorange_saml module does not correctly restrict access to certain functionality intended for administrative use. This could allow unauthorized users to access functionality or modify configuration values that should only be available to privileged users.
+Read more
+about SAML SSO - Service Provider - Critical - Improper access control - SA-CONTRIB-2026-141
+SafeDelete - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-140
+Project machine name:
+safedelete
+Date:
+2026-September-09
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-87942
+This module enables you to manage content deletion and provides reports for identifying orphaned content.
+The module doesn't sufficiently sanitize node titles when displaying the orphaned nodes report. This leads to a persistent cross-site scripting vulnerability (XSS).
+This vulnerability is mitigated by the fact that an attacker must have permission to create content of a content type configured for the orphaned nodes report.
+Read more
+about SafeDelete - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-140
+Patreon - Critical - Unsupported - SA-CONTRIB-2026-139
+Project machine name:
+patreon
+Date:
+2026-September-09
+Security risk:
+Critical
+16 ∕ 25 AC:Complex/A:Admin/CI:All/II:All/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87941
+The Drupal Security Team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, read the documentation on
+becoming the maintainer of a project that is unsupported for security reasons
+.
+Read more
+about Patreon - Critical - Unsupported - SA-CONTRIB-2026-139
+Key auth - Moderately critical - Access bypass - SA-CONTRIB-2026-138
+Project machine name:
+key_auth
+Date:
+2026-September-09
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-87940
+This module enables you to add key-based authentication on a per-user
+basis.
+The module doesn't cache per user, potentially allowing an attacker to view another user's authentication keys, if the attacker has the same permissions.
+This vulnerability is mitigated by the fact that the site must have the
+dynamic_page_cache
+module enabled.
+Read more
+about Key auth - Moderately critical - Access bypass - SA-CONTRIB-2026-138
+Feed Block - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-137
+Project machine name:
+feed_block
+Date:
+2026-September-09
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Complex/A:User/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87939
+The Feed Block module provides a block content type that displays items pulled from a remote RSS/Atom feed.
+The module does not sufficiently validate or sanitize the RSS feed it generates, resulting in a stored cross-site scripting (XSS) vulnerability.
+Read more
+about Feed Block - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-137
+CSP log - Critical - SQL Injection - SA-CONTRIB-2026-136
+Project machine name:
+csp_log
+Date:
+2026-September-09
+Security risk:
+Critical
+15 ∕ 25 AC:Basic/A:Admin/CI:All/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87938
+The CSP Log module enhances any module that adds the CSP header to a site, by providing a reporting endpoint, custom storage, and aggregated reports that can be used to trace issues or adapt the CSP headers.
+The module did not sufficiently sanitize user-supplied values used in database queries, resulting in an SQL injection vulnerability.
+This vulnerability is mitigated by the fact that an attacker needs access to an account with the
+Access CSP reports
+permission to exploit the SQL Injection.
+Read more
+about CSP log - Critical - SQL Injection - SA-CONTRIB-2026-136
+Central Authentication System (CAS) Server - Moderately critical - Open redirect - SA-CONTRIB-2026-135
+Project machine name:
+cas_server
+Date:
+2026-September-09
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Basic/A:None/CI:None/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-87937
+This module enables you to turn a Drupal install into the Central Authentication System (CAS) Server. It makes your database the primary location for other systems to use for authentication in a SSO environment.
+The module doesn't sufficiently check the service URL used to redirect the user during logout, leading to an open redirect.
+Read more
+about Central Authentication System (CAS) Server - Moderately critical - Open redirect - SA-CONTRIB-2026-135
+amazee.ai Private AI Provider - Critical - SQL injection - SA-CONTRIB-2026-134
+Project machine name:
+ai_provider_amazeeio
+Date:
+2026-September-09
+Security risk:
+Critical
+17 ∕ 25 AC:Complex/A:None/CI:All/II:Some/E:Proof/TD:Default
+CVE IDs:
+CVE-2026-87936
+Update 2026-09-11:
+Increased risk score to reflect publicly documented methods for developing exploits.
+This module integrates amazee.ai's AI services into Drupal, including a Postgres/pgvector vector database backend for use with Search API AI Search.
+The module doesn't sufficiently sanitize filter values before using them to build SQL queries in its Postgres/pgvector backend, allowing SQL injection.
+Read more
+about amazee.ai Private AI Provider - Critical - SQL injection - SA-CONTRIB-2026-134
+Webform Submissions Delete - Moderately critical - Access bypass - SA-CONTRIB-2026-133
+Project machine name:
+webform_submissions_delete
+Date:
+2026-September-02
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:None/CI:None/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-84921
+This module enables you to delete Webform submissions in bulk using a specified date range.
+The module doesn't sufficiently restrict access to the delete form.
+A
+separate PHP fatal error issue
+may prevent exploitation in practice on Drupal 10+.
+Read more
+about Webform Submissions Delete - Moderately critical - Access bypass - SA-CONTRIB-2026-133
+Unpublished Node Permissions - Critical - Access bypass - SA-CONTRIB-2026-132
+Project machine name:
+unpublished_node_permissions
+Date:
+2026-September-02
+Security risk:
+Critical
+15 ∕ 25 AC:None/A:None/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-84920
+This module creates permissions per node content type to control access to unpublished content.
+The module has allowed view access for published content, overriding other access mechanisms that might have been in place.
+Read more
+about Unpublished Node Permissions - Critical - Access bypass - SA-CONTRIB-2026-132
+PhotoSwipe - Responsive JavaScript Modal Image Gallery - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-131
+Project machine name:
+photoswipe
+Date:
+2026-September-02
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-84919
+This module enables you to add dynamic caption support to PhotoSwipe image galleries.
+The module doesn't sufficiently sanitize user-supplied input (such as image alt tags) in its dynamic caption script, leading to a Cross-Site Scripting (XSS) vulnerability.
+This vulnerability is mitigated by the fact that an attacker must have a role that permits them to enter HTML content.
+Read more
+about PhotoSwipe - Responsive JavaScript Modal Image Gallery - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-131
+Monobank payment API - Moderately critical - Access bypass - SA-CONTRIB-2026-130
+Project machine name:
+monobank
+Date:
+2026-September-02
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Complex/A:None/CI:None/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-84918
+The Monobank payment API module provides integration with Monobank acquiring payments.
+The module did not verify the Monobank webhook signature before processing payment status callbacks.
+Read more
+about Monobank payment API - Moderately critical - Access bypass - SA-CONTRIB-2026-130
+Media Library Importer - Moderately critical - Access bypass - SA-CONTRIB-2026-129
+Project machine name:
+media_library_importer
+Date:
+2026-September-02
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Basic/A:User/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-81163
+A module to import media files into media library.
+The import folder is a plain textfield with no validation. Point it at any directory the web user can read, and the importer copies every file whose extension matches a selected media type into the public files directory and publishes it as a Media entity. Files that were deliberately kept outside the webroot, such as a private file store, become downloadable by anonymous visitors at a predictable URL.
+Read more
+about Media Library Importer - Moderately critical - Access bypass - SA-CONTRIB-2026-129
+Mailer Plus Log - Moderately critical - Access bypass - SA-CONTRIB-2026-128
+Project machine name:
+symfony_mailer_log
+Date:
+2026-September-02
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-16648
+This module enables you to log the emails sent by Mailer Plus as content entities, so they can be reviewed at Reports > Mail log.
+The module doesn't sufficiently redact the content of the emails it logs. Account related emails are stored with their one-time login links intact, so any user who can view the log can obtain a one-time login link for any account, including user 1, and use it to log in as that account.
+Read more
+about Mailer Plus Log - Moderately critical - Access bypass - SA-CONTRIB-2026-128
+Jsonapi Role Access - Critical - Access bypass - SA-CONTRIB-2026-127
+Project machine name:
+jsonapi_role_access
+Date:
+2026-September-02
+Security risk:
+Critical
+16 ∕ 25 AC:Basic/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-84917
+This module enables you to restrict access to JSON:API routes based on specific user roles.
+The module doesn't sufficiently enforce access controls under scenarios where a request mimics an XMLHttpRequest.
+Read more
+about Jsonapi Role Access - Critical - Access bypass - SA-CONTRIB-2026-127
+Islandora - Moderately critical - Access bypass - SA-CONTRIB-2026-126
+Project machine name:
+islandora
+Date:
+2026-September-02
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Complex/A:None/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-84916
+This
+islandora_advanced_search
+sub module enables AJAX updates for advanced search, facet, and search result blocks.
+The module doesn't sufficiently check block access when arbitrary block ID's are submitted to its publicly accessible AJAX endpoint. This may allow an unauthenticated attacker to retrieve restricted block content.
+Read more
+about Islandora - Moderately critical - Access bypass - SA-CONTRIB-2026-126
+Email Verification / SMS Verification / OTP Verification - Critical - Cross Site Scripting - SA-CONTRIB-2026-125
+Project machine name:
+otp_verification
+Date:
+2026-September-02
+Security risk:
+Critical
+16 ∕ 25 AC:Basic/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-84924
+This module enables you to add an extra layer of verification for user registration.
+The module doesn't sufficiently filter user-supplied input before output, resulting in an unauthenticated reflected Cross-site Scripting (XSS) vulnerability.
+Read more
+about Email Verification / SMS Verification / OTP Verification - Critical - Cross Site Scripting - SA-CONTRIB-2026-125
+Email Verification / SMS Verification / OTP Verification - Critical - Access Bypass - SA-CONTRIB-2026-124
+Project machine name:
+otp_verification
+Date:
+2026-September-02
+Security risk:
+Critical
+16 ∕ 25 AC:Basic/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-84923
+This module enables you to add extra layer of verification for user registration.
+The module doesn't sufficiently validate user-supplied input resulting in an account takeover vulnerability.
+Read more
+about Email Verification / SMS Verification / OTP Verification - Critical - Access Bypass - SA-CONTRIB-2026-124
+Component blocks - Moderately critical - Cross site scripting - SA-CONTRIB-2026-123
+Project machine name:
+component_blocks
+Date:
+2026-September-02
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-84915
+This module enables you use UI Patterns with blocks, for use in Layout Builder.
+The module doesn't sufficiently validate user input before passing to token replacement.
+This vulnerability is mitigated by the fact that an attacker must have a role with the ability to edit layout builder layouts.
+Read more
+about Component blocks - Moderately critical - Cross site scripting - SA-CONTRIB-2026-123
+Calculate Working Days - Critical - Access bypass - SA-CONTRIB-2026-122
+Project machine name:
+calculate_working_days
+Date:
+2026-September-02
+Security risk:
+Critical
+15 ∕ 25 AC:None/A:None/CI:None/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-84914
+Calculate Working Days allows you to calculate working days
+between 2 dates.
+This module doesn't sufficiently restrict access to its settings form.
+Read more
+about Calculate Working Days - Critical - Access bypass - SA-CONTRIB-2026-122
+AI translate - Moderately critical - Access Bypass - SA-CONTRIB-2026-121
+Project machine name:
+ai_translate
+Date:
+2026-September-02
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-84913
+This module enables you to automatically translate entities.
+The module doesn't sufficiently check access on the entity to be translated, related fields or referenced entities when performing an AI translation on an entity or when those fields / entities have a different access level than the parent entity. This permission bypass is only applicable to the translate operation - no unwarranted read or update access is granted to the affected entities
+Read more
+about AI translate - Moderately critical - Access Bypass - SA-CONTRIB-2026-121
+AI (Artificial Intelligence) - Moderately critical - Access Bypass - SA-CONTRIB-2026-120
+Project machine name:
+ai
+Date:
+2026-September-02
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-84912
+This submodule AI Translate enables you to automatically translate entities.
+The module doesn't sufficiently check access on the entity to be translated, related fields or referenced entities when performing an AI translation on an entity or when those fields / entities have a different access level than the parent entity. This permission bypass is only applicable to the translate operation - no unwarranted read or update access is granted to the affected entities
+Read more
+about AI (Artificial Intelligence) - Moderately critical - Access Bypass - SA-CONTRIB-2026-120
+AI (Artificial Intelligence) - Moderately critical - Cross site scripting - SA-CONTRIB-2026-119
+Project machine name:
+ai
+Date:
+2026-September-02
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Complex/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-84911
+This AI Chatbot module enables you to have a Chatbot using assistants to help you with your Drupal website.
+The module doesn't sufficiently sanitize for cross site scripting (XSS) when using the structured results using legacy agent setups.
+This vulnerability is mitigated by the fact that an attacker must be able to invoke a prompt injection set via editorial content and the site must have been setup using AI 1.0.x and AI Agents 1.0.x branch using a uncommon configuration. Any configuration setup or updated after these minor versions are not affected.
+Read more
+about AI (Artificial Intelligence) - Moderately critical - Cross site scripting - SA-CONTRIB-2026-119
+Advanced Search - Moderately critical - Access bypass - SA-CONTRIB-2026-118
+Project machine name:
+advanced_search
+Date:
+2026-September-02
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Complex/A:None/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-84910
+This module enables AJAX updates for advanced search, facet, and search result blocks.
+The module doesn’t sufficiently check block access when arbitrary block IDs are submitted to its publicly accessible AJAX endpoint. This may allow an unauthenticated attacker to retrieve restricted block content.
+This vulnerability is mitigated by the fact that an attacker must know or guess a restricted block’s machine ID, and the block must contain sensitive content protected by block access or visibility restrictions.
+Read more
+about Advanced Search - Moderately critical - Access bypass - SA-CONTRIB-2026-118
+Slick Carousel - Moderately critical - Cross Site Scripting - SA-CONTRIB-2026-117
+Project machine name:
+slick
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-81160
+Slick UI, a sub-module of Slick, enables you to add Slick option sets that may contain HTML for carousel buttons.
+Previous releases of the module did not sufficiently validate user input, leading to a Cross Site Scripting (XSS) vulnerability.
+Note: This vulnerability was fixed in 8.x-2.1 but that was not marked as a security release at the time.
+Read more
+about Slick Carousel - Moderately critical - Cross Site Scripting - SA-CONTRIB-2026-117
+Monster Menus - Moderately critical - Cross-site Scripting - SA-CONTRIB-2026-116
+Project machine name:
+monster_menus
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-81201
+This module enables you to create one or more multisites with highly granular page permissions.
+The module doesn't sufficiently sanitize HTML code contained in the page name when displayed in the built-in tree browser. This results in a cross-site scripting vulnerability that may allow attackers to execute arbitrary JavaScript in the context of the user’s session.
+This vulnerability is mitigated by the fact that an attacker must have the ability to create pages whose page title supports HTML.
+Read more
+about Monster Menus - Moderately critical - Cross-site Scripting - SA-CONTRIB-2026-116
+LDAP / Active Directory Integration - Moderately critical - Information Disclosure - SA-CONTRIB-2026-115
+Project machine name:
+ldap_auth
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Proof/TD:All
+CVE IDs:
+CVE-2026-81205
+This module enables users to authenticate using LDAP or Active Directory credentials.
+The module does not sufficiently sanitize user-supplied input before incorporating it into an LDAP search filter. This allows an attacker to discover additional information they should not normally be able to.
+Read more
+about LDAP / Active Directory Integration - Moderately critical - Information Disclosure - SA-CONTRIB-2026-115
+Entity PDF - Moderately critical - Access bypass - SA-CONTRIB-2026-114
+Project machine name:
+entity_pdf
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+13 ∕ 25 AC:None/A:User/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-81164
+The Entity PDF module can create a PDF from any entity based on any View mode.
+This module does not check entity view access when fetching a PDF route. This could result in a user accessing a PDF of an entity that they should not be able to view.
+Read more
+about Entity PDF - Moderately critical - Access bypass - SA-CONTRIB-2026-114
+Entity API - Moderately critical - Information disclosure - SA-CONTRIB-2026-113
+Project machine name:
+entity
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-81158
+The Entity API module extends the Drupal core entity API to provide a unified way to deal with entities and their properties.
+The module doesn't correctly apply access controls for JSON:API entity collection endpoints. This exposes an information disclosure vulnerability.
+This vulnerability is mitigated by the fact that the JSON:API module must be enabled in combination with the Entity API module.
+Read more
+about Entity API - Moderately critical - Information disclosure - SA-CONTRIB-2026-113
+DXPR Builder: The AI Visual Page Builder for Drupal - Moderately critical - Information Disclosure - SA-CONTRIB-2026-112
+Project machine name:
+dxpr_builder
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+14 ∕ 25 AC:None/A:None/CI:Some/II:None/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-81162
+The
+DXPR Builder
+module provides a visual / AI page builder for Drupal. The module uses a JSON Web Token for licensing, user license management, AI services, and subscription metadata.
+The 2.x version of the module does not sufficiently restrict access to API credentials in JavaScript settings. When AI agent features are enabled, the token is exposed to all page visitors (including anonymous users) via
+drupalSettings
+.
+Read more
+about DXPR Builder: The AI Visual Page Builder for Drupal - Moderately critical - Information Disclosure - SA-CONTRIB-2026-112
+Disable Login Page - Moderately critical - Access bypass - SA-CONTRIB-2026-111
+Project machine name:
+disable_login
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+13 ∕ 25 AC:None/A:None/CI:None/II:None/E:Proof/TD:All
+CVE IDs:
+CVE-2026-16647
+This module enables you to disable access to the
+/user/login
+form unless a secret key is provided.
+The module does not invalidate the relevant caches when login page access restrictions are enabled. As a result, previously cached login page responses may remain accessible until caches are cleared. An attacker may continue to access the login page despite the restriction having been enabled.
+Read more
+about Disable Login Page - Moderately critical - Access bypass - SA-CONTRIB-2026-111
+Disable Login Page - Moderately critical - Access bypass - SA-CONTRIB-2026-110
+Project machine name:
+disable_login
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-18260
+This module enables you to disable access to the
+/user/login
+form unless a secret key is provided.
+The module does not sufficiently restrict repeated attempts to guess that key, allowing brute-force attacks against the access-control mechanism.
+Read more
+about Disable Login Page - Moderately critical - Access bypass - SA-CONTRIB-2026-110
+Digital Signage Framework - Moderately critical - Access bypass - SA-CONTRIB-2026-109
+Project machine name:
+digital_signage_framework
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-81166
+The Digital Signage Framework module provides a route that signage devices can call to refresh dynamic blocks on a display.
+The route did not check whether the requester was a signage device, nor whether the requested block was one that the module delivers to displays. As a result, an anonymous visitor could read the rendered content of blocks they were not meant to see.
+This vulnerability is mitigated by the fact that many block plugins perform their own access checks on the content they display, which limits what can be disclosed through this route.
+Read more
+about Digital Signage Framework - Moderately critical - Access bypass - SA-CONTRIB-2026-109
+Data field - Moderately critical - Information disclosure - SA-CONTRIB-2026-108
+Project machine name:
+datafield
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-81269
+This module enables you to store structured data in configurable fields and expose Data Field values through JSON endpoints.
+The module doesn't sufficiently check access when returning Data Field values through its JSON endpoint. This may allow anonymous users to access field values belonging to entities they cannot otherwise view, including unpublished content.
+Read more
+about Data field - Moderately critical - Information disclosure - SA-CONTRIB-2026-108
+Content Moderation Notifications - Moderately critical - Access bypass - SA-CONTRIB-2026-107
+Project machine name:
+content_moderation_notifications
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-81161
+The module provides a permission that allows users to configure email templates containing Twig code. This permission was not marked as restricted.
+A site administrator might inadvertently grant this permission to less-trusted users. This would allow those users to execute Twig within email templates, and to gain access to functionality and information intended only for highly trusted administrators.
+Read more
+about Content Moderation Notifications - Moderately critical - Access bypass - SA-CONTRIB-2026-107
+Commerce CyberSource - Moderately critical - Insufficient input validation - SA-CONTRIB-2026-106
+Project machine name:
+commerce_cybersource
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Complex/A:None/CI:None/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-81159
+This module integrates Drupal Commerce with the CyberSource payment gateway.
+The module does not correctly verify the integrity of data returned by the payment provider. A timing attack could allow an attacker to trick the site into registering that payment has been received even if it hasn't.
+This issue only affects the Secure Acceptance Hosted Checkout gateway integration.
+Read more
+about Commerce CyberSource - Moderately critical - Insufficient input validation - SA-CONTRIB-2026-106
+CAPTCHA Protected Page - Moderately critical - Cookie Forgery - SA-CONTRIB-2026-105
+Project machine name:
+captcha_protected_page
+Date:
+2026-August-26
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Complex/A:None/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-81168
+This module enables site administrators to require CAPTCHA confirmation on specific pages.
+The module does not sufficiently validate its CAPTCHA verification cookies. Under certain circumstances, an unauthenticated user or automated bot can forge the cookie and bypass CAPTCHA verification entirely.
+Read more
+about CAPTCHA Protected Page - Moderately critical - Cookie Forgery - SA-CONTRIB-2026-105
+Blazy - Less critical - Access bypass - SA-CONTRIB-2026-104
+Project machine name:
+blazy
+Date:
+2026-August-26
+Security risk:
+Less critical
+9 ∕ 25 AC:Basic/A:User/CI:Some/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-81165
+This module enables users to display a field of a target entity through a Blazy Filter plugin shortcode.
+The module does not consistently check entity view access. If a user has access to a Blazy-enabled text format, this allows them to render a field from an entity they are not permitted to view.
+The issue is mitigated by the fact that the shortcode does not expose the entire entity. Only fields that the shortcode can render are vulnerable.
+Read more
+about Blazy - Less critical - Access bypass - SA-CONTRIB-2026-104

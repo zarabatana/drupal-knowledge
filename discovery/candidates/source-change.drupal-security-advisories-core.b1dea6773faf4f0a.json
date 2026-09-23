@@ -1,0 +1,65 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 1,
+    "added_sample": [
+      "{\"self\":\"https:\\/\\/www.drupal.org\\/api-d7\\/node?type=sa\\u0026field_project=3060\\u0026sort=created\\u0026direction=DESC\\u0026limit=20\",\"first\":\"https:\\/\\/www.drup…"
+    ],
+    "changed_region_count": 1,
+    "current_bytes": 155943,
+    "current_line_count": 1,
+    "deterministic": true,
+    "first_changed_line": 1,
+    "method": "normalized_line_diff",
+    "previous_bytes": 154005,
+    "previous_line_count": 1,
+    "removed_line_count": 1,
+    "removed_sample": [
+      "{\"self\":\"https:\\/\\/www.drupal.org\\/api-d7\\/node?type=sa\\u0026field_project=3060\\u0026sort=created\\u0026direction=DESC\\u0026limit=20\",\"first\":\"https:\\/\\/www.drup…"
+    ]
+  },
+  "current_hash": "sha256:b37d072cc4ce4e706870276008db1cb431afee486417b8661a82a662efdd3b1c",
+  "discovered_at": "2026-09-22T11:42:43Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-security-advisories-core.b1dea6773faf4f0a",
+  "is_knowledge_proposal": false,
+  "kind": "security-source-change",
+  "previous_hash": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+  "provenance": {
+    "acquired_at": "2026-09-22T11:42:43Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/security/core",
+    "category": "security",
+    "content_length": 155943,
+    "content_type": "application/json",
+    "content_window": null,
+    "etag": null,
+    "fetch_url": "https://www.drupal.org/api-d7/node.json?type=sa&field_project=3060&sort=created&direction=DESC&limit=20",
+    "http_status": 200,
+    "last_modified": null,
+    "normalization": "raw_text",
+    "trust": "authoritative"
+  },
+  "review": {
+    "actor": "Miguel Martins",
+    "authorizes_knowledge_proposal_work": true,
+    "method": "human_security_review",
+    "note": "New Drupal core advisory SA-CORE-2026-013 (2026-09-16, Moderately critical, Third-party libraries, CKEditor; AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default). Fixed releases appear in the release feed as 11.4.7 / 11.3.17 / 10.6.17. Warrants ingestion as a source-derived advisory record in separate reviewed work. Three existing advisories changed only administrative fields (coordinator, issue status, vid); no affected or fixed version and no risk vector changed. SA-CORE-2025-001 left the limit=20 window and is NOT retracted; DK keeps its record.",
+    "outcome": "reviewed_requires_knowledge_proposal",
+    "reviewed_at": "2026-09-23T02:07:53Z",
+    "trusted_knowledge_changed": false
+  },
+  "review_required": true,
+  "review_state": "reviewed_requires_knowledge_proposal",
+  "run_id": "run.20260922T114243.8345954e",
+  "source_id": "drupal-security-advisories-core",
+  "source_url": "https://www.drupal.org/security/core",
+  "status": "reviewed",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}

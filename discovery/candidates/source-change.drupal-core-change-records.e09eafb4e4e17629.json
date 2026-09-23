@@ -1,0 +1,76 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 61,
+    "added_sample": [
+      "12.0.x / 12.0.0",
+      "20-Sep-2026",
+      "The Claro theme is removed",
+      "12.0.x / 12.0.0",
+      "19-Sep-2026"
+    ],
+    "changed_region_count": 4,
+    "current_bytes": 4362,
+    "current_line_count": 153,
+    "deterministic": true,
+    "first_changed_line": 4,
+    "method": "normalized_line_diff",
+    "previous_bytes": 4703,
+    "previous_line_count": 153,
+    "removed_line_count": 61,
+    "removed_sample": [
+      "main / 11.5.0",
+      "12.0.x / 12.0.0",
+      "25-Aug-2026",
+      "Install profiles can opt out of being installed",
+      "12.0.x / 12.0.0"
+    ]
+  },
+  "current_hash": "sha256:555ffb84aad36f17a3af208d2ea940bf67be40d59444b962ca39d5696764cb64",
+  "discovered_at": "2026-09-22T11:42:43Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-core-change-records.e09eafb4e4e17629",
+  "is_knowledge_proposal": false,
+  "kind": "release-source-change",
+  "previous_hash": "sha256:5603068ca984c70c41111c670a82d1dda53d07d1a1dc11bb30280d80b901e514",
+  "provenance": {
+    "acquired_at": "2026-09-22T11:42:43Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/list-changes/drupal",
+    "category": "change-records",
+    "content_length": 4362,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": {
+      "end": "Pages",
+      "start": "Introduced in branch/version"
+    },
+    "etag": "\"1790077365-1\"",
+    "fetch_url": "https://www.drupal.org/list-changes/drupal",
+    "http_status": 200,
+    "last_modified": "Tue, 22 Sep 2026 11:42:45 GMT",
+    "normalization": "auto",
+    "trust": "authoritative"
+  },
+  "review": {
+    "actor": "Miguel Martins",
+    "authorizes_knowledge_proposal_work": true,
+    "method": "human_editorial_review",
+    "note": "Rolling change-record feed rotated in newly published Drupal 12.0.x removals and 11.5.x deprecations (Claro, Olivero, Search and Toolbar removal; Claro/Olivero/Toolbar deprecation; Node.js 24 for core development). Real lifecycle events that warrant API-lifecycle/change-record proposals as separate reviewed work. Items leaving the limit=20 window are outside the window, not retracted upstream.",
+    "outcome": "reviewed_requires_knowledge_proposal",
+    "reviewed_at": "2026-09-23T02:07:53Z",
+    "trusted_knowledge_changed": false
+  },
+  "review_required": true,
+  "review_state": "reviewed_requires_knowledge_proposal",
+  "run_id": "run.20260922T114243.8345954e",
+  "source_id": "drupal-core-change-records",
+  "source_url": "https://www.drupal.org/list-changes/drupal",
+  "status": "reviewed",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}

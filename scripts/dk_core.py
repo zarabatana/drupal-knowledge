@@ -255,6 +255,34 @@ def load_sources(root: Path = ROOT) -> list[dict]:
     return read_json(root / "sources" / "registry.json")
 
 
+SEMANTIC_AUTHORITY_SOURCE_IDS = (
+    "drupal-update-project-release-semantics",
+    "drupal-update-status-security-semantics",
+    "drupal-update-manager-interface-semantics",
+)
+
+
+def semantic_authority_tag(root: Path = ROOT) -> str:
+    """The Drupal core release tag the update-module semantic sources are pinned to.
+
+    One place answers this, so a reviewed advance of the pin cannot leave a
+    second hard-coded copy of the old tag behind in a test or a fixture. The
+    tag is read from the registered fetch URLs and every semantic source must
+    agree on it; disagreement is a registry error, not something to guess past.
+    """
+    tags = set()
+    for source in load_sources(root):
+        if source["id"] not in SEMANTIC_AUTHORITY_SOURCE_IDS:
+            continue
+        match = re.search(r"/-/raw/([^/]+)/", source.get("fetch_url", ""))
+        if not match:
+            raise ValidationError(f"{source['id']} has no pinned release tag in its fetch URL")
+        tags.add(match.group(1))
+    if len(tags) != 1:
+        raise ValidationError(f"semantic authority sources disagree on the pinned tag: {sorted(tags)}")
+    return tags.pop()
+
+
 def load_domains(root: Path = ROOT) -> list[dict]:
     return read_json(root / "taxonomy" / "domains.json")["domains"]
 

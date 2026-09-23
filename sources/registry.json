@@ -34,7 +34,7 @@
     "collection_strategy": "change-detection",
     "check_cadence_days": 30,
     "lifecycle": "active",
-    "content_start": "Each version of Drupal introduces new APIs and keeps only some of the previous major versions’ APIs.",
+    "content_start": "Each version of Drupal introduces new APIs and keeps only some of the previous major versions\u2019 APIs.",
     "content_end": "Related Content",
     "checked_on": "2026-08-30",
     "provenance": "Verified current Drupal.org developer guide page. Records from this source still need source-specific review because Drupal.org docs can evolve.",
@@ -301,7 +301,7 @@
     "id": "drupal-update-project-release-semantics",
     "title": "Drupal 11 ProjectRelease value object",
     "url": "https://api.drupal.org/api/drupal/core%21modules%21update%21src%21ProjectRelease.php/class/ProjectRelease/11.x",
-    "fetch_url": "https://git.drupalcode.org/project/drupal/-/raw/11.4.5/core/modules/update/src/ProjectRelease.php",
+    "fetch_url": "https://git.drupalcode.org/project/drupal/-/raw/11.4.7/core/modules/update/src/ProjectRelease.php",
     "trust": "authoritative",
     "enabled": true,
     "category": "update-status-semantics",
@@ -310,7 +310,7 @@
     "check_cadence_days": 90,
     "lifecycle": "active",
     "checked_on": "2026-09-07",
-    "provenance": "Official Drupal core source at immutable release tag 11.4.5 on git.drupalcode.org, documented on api.drupal.org for 11.x.",
+    "provenance": "Official Drupal core source at immutable release tag 11.4.7 on git.drupalcode.org, documented on api.drupal.org for 11.x.",
     "version_semantics": {
       "drupal_core": [
         "11.4.5",
@@ -323,7 +323,7 @@
     "id": "drupal-update-status-security-semantics",
     "title": "Drupal 11 update status calculation",
     "url": "https://api.drupal.org/api/drupal/core%21modules%21update%21update.compare.inc/function/update_calculate_project_update_status/11.x",
-    "fetch_url": "https://git.drupalcode.org/project/drupal/-/raw/11.4.5/core/modules/update/update.compare.inc",
+    "fetch_url": "https://git.drupalcode.org/project/drupal/-/raw/11.4.7/core/modules/update/update.compare.inc",
     "trust": "authoritative",
     "enabled": true,
     "category": "update-status-semantics",
@@ -332,7 +332,7 @@
     "check_cadence_days": 90,
     "lifecycle": "active",
     "checked_on": "2026-09-07",
-    "provenance": "Official Drupal core source at immutable release tag 11.4.5 on git.drupalcode.org, documented on api.drupal.org for 11.x.",
+    "provenance": "Official Drupal core source at immutable release tag 11.4.7 on git.drupalcode.org, documented on api.drupal.org for 11.x.",
     "version_semantics": {
       "drupal_core": [
         "11.4.5",
@@ -345,7 +345,7 @@
     "id": "drupal-update-manager-interface-semantics",
     "title": "Drupal 11 UpdateManagerInterface status constants",
     "url": "https://api.drupal.org/api/drupal/core%21modules%21update%21src%21UpdateManagerInterface.php/interface/UpdateManagerInterface/11.x",
-    "fetch_url": "https://git.drupalcode.org/project/drupal/-/raw/11.4.5/core/modules/update/src/UpdateManagerInterface.php",
+    "fetch_url": "https://git.drupalcode.org/project/drupal/-/raw/11.4.7/core/modules/update/src/UpdateManagerInterface.php",
     "trust": "authoritative",
     "enabled": true,
     "category": "update-status-semantics",
@@ -354,7 +354,7 @@
     "check_cadence_days": 90,
     "lifecycle": "active",
     "checked_on": "2026-09-07",
-    "provenance": "Official Drupal core source at immutable release tag 11.4.5 on git.drupalcode.org, documented on api.drupal.org for 11.x.",
+    "provenance": "Official Drupal core source at immutable release tag 11.4.7 on git.drupalcode.org, documented on api.drupal.org for 11.x.",
     "version_semantics": {
       "drupal_core": [
         "11.4.5",

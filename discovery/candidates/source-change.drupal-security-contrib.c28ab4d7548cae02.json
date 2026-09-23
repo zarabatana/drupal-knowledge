@@ -1,0 +1,70 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 619,
+    "added_sample": [
+      "Ultimate Table Field - Critical - Access bypass - SA-CONTRIB-2026-153",
+      "Project machine name:",
+      "ultimate_table_field",
+      "Date:",
+      "2026-September-09"
+    ],
+    "changed_region_count": 12,
+    "current_bytes": 37668,
+    "current_line_count": 754,
+    "deterministic": true,
+    "first_changed_line": 10,
+    "method": "normalized_line_diff",
+    "previous_bytes": 6541,
+    "previous_line_count": 135,
+    "removed_line_count": 0,
+    "removed_sample": []
+  },
+  "current_hash": "sha256:d556d9a125aefec4e81b754e28b73caba5f32d760994ee32154e2033a1e10d2b",
+  "discovered_at": "2026-09-22T11:42:43Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-security-contrib.c28ab4d7548cae02",
+  "is_knowledge_proposal": false,
+  "kind": "security-source-change",
+  "previous_hash": "sha256:f389ae0c83baf3301c9f9a1673800cd36ba7d5c687f96a4783ee14263f494d11",
+  "provenance": {
+    "acquired_at": "2026-09-22T11:42:43Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/security/contrib",
+    "category": "security",
+    "content_length": 37668,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": {
+      "end": "Pages",
+      "start": "Security advisories for contributed projects"
+    },
+    "etag": "\"1790077369-1\"",
+    "fetch_url": "https://www.drupal.org/security/contrib",
+    "http_status": 200,
+    "last_modified": "Tue, 22 Sep 2026 11:42:49 GMT",
+    "normalization": "auto",
+    "trust": "authoritative"
+  },
+  "review": {
+    "actor": "Miguel Martins",
+    "authorizes_knowledge_proposal_work": true,
+    "method": "human_security_review",
+    "note": "Rolling advisory feed rotated in SA-CORE-2026-013, PSA-2026-09-21 and new SA-CONTRIB advisories (2026-148 to 2026-153: Ultimate Table Field, Taxonomy Term Glossary, SAML SSO x4). Those contrib advisories concern modules DK holds no records for; they warrant ingestion as source-derived records in separate reviewed work. Advisories leaving the window are outside it, not withdrawn.",
+    "outcome": "reviewed_requires_knowledge_proposal",
+    "reviewed_at": "2026-09-23T02:07:53Z",
+    "trusted_knowledge_changed": false
+  },
+  "review_required": true,
+  "review_state": "reviewed_requires_knowledge_proposal",
+  "run_id": "run.20260922T114243.8345954e",
+  "source_id": "drupal-security-contrib",
+  "source_url": "https://www.drupal.org/security/contrib",
+  "status": "reviewed",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}

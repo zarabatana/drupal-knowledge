@@ -1,0 +1,786 @@
+Security advisories for Drupal core
+Show advisories for
+only contributed projects
+,
+only
+PSAs
+, or
+all security advisories
+Drupal core - Moderately critical - Third-party libraries - SA-CORE-2026-013
+Project machine name:
+drupal
+Date:
+2026-September-16
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+The Drupal project uses the
+CKEditor
+library for WYSIWYG editing. CKEditor has released
+a security update that impacts Drupal
+.
+Read more
+about Drupal core - Moderately critical - Third-party libraries - SA-CORE-2026-013
+Drupal core - Moderately critical - Cross-site scripting - SA-CORE-2026-012
+Project machine name:
+drupal
+Date:
+2026-July-15
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-55805
+The Layout Builder module doesn't sufficiently sanitize block labels in certain scenarios, which can lead to a cross-site scripting (XSS) vulnerability.
+This is mitigated by the fact that both the attacker and the targeted user need to be using the Layout Builder editing interface.
+Read more
+about Drupal core - Moderately critical - Cross-site scripting - SA-CORE-2026-012
+Drupal core - Moderately critical - Cross-site scripting - SA-CORE-2026-011
+Project machine name:
+drupal
+Date:
+2026-July-15
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-15917
+Drupal core 11.2 and above integrate the HTMX JavaScript library.
+Drupal core's XSS filter does not sufficiently sanitize certain HTMX attributes, which can lead to a cross-site scripting (XSS) vulnerability.
+The vulnerability is mitigated by the fact an attacker must be able to insert HTML with specific attributes.
+Read more
+about Drupal core - Moderately critical - Cross-site scripting - SA-CORE-2026-011
+Drupal core - Moderately critical - Information disclosure - SA-CORE-2026-010
+Project machine name:
+drupal
+Date:
+2026-July-15
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Complex/A:None/CI:Some/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-15916
+The Image module allows you to define and configure image fields.
+The module doesn't sufficiently check access to image style derivatives when those files are served via a file stream other than
+private://
+.
+This vulnerability is mitigated by the fact that Drupal must be configured to use a contributed (non-core) file scheme to serve private derived images.
+Read more
+about Drupal core - Moderately critical - Information disclosure - SA-CORE-2026-010
+Drupal core - Moderately critical - Improper validation - SA-CORE-2026-009
+Project machine name:
+drupal
+Date:
+2026-June-17
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Complex/A:User/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-55808
+The JSON:API and REST modules allow you to upload image files to image fields.
+The validation rules check the file extension of the uploaded file but not the file MIME type. This may allow a malicious user to upload a file that is not an image.
+Certain web-server configurations may serve the uploaded file with its actual MIME type rather than an image type. This may lead to cross-site scripting (XSS) or other unexpected behavior.
+Read more
+about Drupal core - Moderately critical - Improper validation - SA-CORE-2026-009
+Drupal core - Moderately critical - Server-side request forgery - SA-CORE-2026-008
+Project machine name:
+drupal
+Date:
+2026-June-17
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Basic/A:User/CI:Some/II:None/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-55807
+The Media module comes with support for oEmbed. The oEmbed specification contains two discovery mechanisms, via
+providers.json
+and via URL discovery.
+The URL discovery code could be leveraged to trick Drupal into making server-side requests to any URL.
+Read more
+about Drupal core - Moderately critical - Server-side request forgery - SA-CORE-2026-008
+Drupal core - Less critical - Cache poisoning and open redirect - SA-CORE-2026-007
+Project machine name:
+drupal
+Date:
+2026-June-17
+Security risk:
+Less critical
+9 ∕ 25 AC:Basic/A:None/CI:None/II:None/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-55806
+Drupal core ships a
+rebuild.php
+front controller that can be used to rebuild Drupal (clearing the caches and rebuilding the container) when the site is in an unexpected condition.
+This script doesn't correctly check the Host header against the list of trusted host patterns. This could result in cache poisoning or a redirect to an attacker-controlled domain.
+Read more
+about Drupal core - Less critical - Cache poisoning and open redirect - SA-CORE-2026-007
+Drupal core - Moderately critical - Gadget chain - SA-CORE-2026-006
+Project machine name:
+drupal
+Date:
+2026-June-17
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Complex/A:Admin/CI:All/II:All/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-55804
+Drupal core contains a chain of methods that could be exploitable when an insecure deserialization vulnerability exists on the site. This so-called "gadget chain" presents no direct threat, but is a vector that can be used to achieve remote code execution or SQL injection if the application deserializes untrusted data due to another vulnerability.
+This issue is not directly exploitable.
+Read more
+about Drupal core - Moderately critical - Gadget chain - SA-CORE-2026-006
+Drupal core - Critical - PHP object injection - SA-CORE-2026-005
+Project machine name:
+drupal
+Date:
+2026-June-17
+Security risk:
+Critical
+18 ∕ 25 AC:None/A:User/CI:All/II:All/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-55803
+SA-CORE-2019-003
+added protection for fields that store serialized data to disallow direct writes via web services.
+The above fix did not cover all potential attack vectors for JSON:API. An attacker with appropriate JSON:API write permission could potentially inject a malicious payload in certain rare circumstances, potentially resulting in PHP Object Injection.
+This vulnerability is mitigated by the fact that in order to be exploitable:
+Read more
+about Drupal core - Critical - PHP object injection - SA-CORE-2026-005
+Drupal core - Highly critical - SQL injection - SA-CORE-2026-004
+Project machine name:
+drupal
+Date:
+2026-May-20
+Security risk:
+Highly critical
+23 ∕ 25 AC:None/A:None/CI:All/II:All/E:Exploit/TD:Uncommon
+CVE IDs:
+CVE-2026-9082
+Drupal core includes a database abstraction API to ensure that queries executed against the database are sanitized to prevent SQL injection attacks.
+A vulnerability in this API allows an attacker to send specially crafted requests, resulting in arbitrary SQL injection for sites using PostgreSQL databases. This can lead to information disclosure, and in some cases privilege escalation, remote code execution, or other attacks.
+This vulnerability can be exploited by anonymous users.
+Read more
+about Drupal core - Highly critical - SQL injection - SA-CORE-2026-004
+Drupal core - Moderately critical - Cross-site scripting - SA-CORE-2026-003
+Project machine name:
+drupal
+Date:
+2026-April-15
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-6367
+Drupal 11.3 comes with support for completing entity suggestions whilst adding a link to CKEditor 5.
+The suggestions aren't sufficiently sanitized and a malicious user could trigger a stored cross site scripting attack against another user.
+Read more
+about Drupal core - Moderately critical - Cross-site scripting - SA-CORE-2026-003
+Drupal core - Moderately critical - Gadget Chain - SA-CORE-2026-002
+Project machine name:
+drupal
+Date:
+2026-April-15
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Complex/A:Admin/CI:All/II:All/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-6366
+Drupal core contains a chain of methods that could be exploitable when an insecure deserialization vulnerability exists on the site. This so-called "gadget chain" presents no direct threat, but is a vector that can be used to achieve remote code execution or SQL injection if the application deserializes untrusted data due to another vulnerability.
+This issue is not directly exploitable.
+Read more
+about Drupal core - Moderately critical - Gadget Chain - SA-CORE-2026-002
+Drupal core - Critical - Cross-site scripting - SA-CORE-2026-001
+Project machine name:
+drupal
+Date:
+2026-April-15
+Security risk:
+Critical
+15 ∕ 25 AC:Complex/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-6365
+Drupal core's jQuery integration for AJAX modal dialog boxes does not sufficiently sanitize certain options, which can lead to a cross-site scripting (XSS) vulnerability.
+Read more
+about Drupal core - Critical - Cross-site scripting - SA-CORE-2026-001
+Drupal core - Moderately critical - Information disclosure - SA-CORE-2025-008
+Project machine name:
+drupal
+Date:
+2025-November-12
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Complex/A:None/CI:Some/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2025-13083
+The core
+system
+module handles downloads of private and temporary files. Contrib modules can define additional kinds of files (schemes) that may also be handled by the
+system
+module.
+In some cases, files may be served with the HTTP header
+Cache-Control: public
+when they should be uncacheable. This can lead to some users getting cached versions of files with information they should not be able to access. For example, files may be cached by Varnish or a CDN.
+Read more
+about Drupal core - Moderately critical - Information disclosure - SA-CORE-2025-008
+Drupal core - Moderately critical - Defacement - SA-CORE-2025-007
+Project machine name:
+drupal
+Date:
+2025-November-12
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Basic/A:None/CI:None/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2025-13082
+By generating and tricking a user into visiting a malicious URL, an attacker can perform site defacement.
+The defacement is not stored and is only present when the URL has been crafted for that purpose. Only the defacement is present, so no other site content (such as branding) is rendered.
+Read more
+about Drupal core - Moderately critical - Defacement - SA-CORE-2025-007
+Drupal core - Moderately critical - Gadget chain - SA-CORE-2025-006
+Project machine name:
+drupal
+Date:
+2025-November-12
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Complex/A:Admin/CI:All/II:All/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2025-13081
+Drupal core contains a chain of methods that is exploitable when an insecure deserialization vulnerability exists on the site. This so-called "gadget chain" presents no direct threat, but is a vector that can be used to achieve remote code execution if the application deserializes untrusted data due to another vulnerability.
+It is not directly exploitable.
+Read more
+about Drupal core - Moderately critical - Gadget chain - SA-CORE-2025-006
+Drupal core - Moderately critical - Denial of Service - SA-CORE-2025-005
+Project machine name:
+drupal
+Date:
+2025-November-12
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:None/CI:None/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2025-13080
+Drupal Core has a rarely used feature, provided by an underlying library, which allows certain attributes of incoming HTTP requests to be overridden.
+This functionality can be abused in a way that may cause Drupal to cache response data that it should not. This can lead to legitimate requests receiving inappropriate cached responses (cache poisoning).
+This could be exploited in various ways:
+Read more
+about Drupal core - Moderately critical - Denial of Service - SA-CORE-2025-005
+Drupal core - Moderately critical - Cross Site Scripting - SA-CORE-2025-004
+Project machine name:
+drupal
+Date:
+2025-March-19
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2025-31675
+Drupal core Link field attributes are not sufficiently sanitized, which can lead to a Cross Site Scripting vulnerability (XSS).
+This vulnerability is mitigated by that fact that an attacker would need to have the ability to add specific attributes to a Link field, which typically requires edit access via core web services, or a contrib or custom module.
+Sites with the Link module disabled or that do not use any link fields are not affected.
+Read more
+about Drupal core - Moderately critical - Cross Site Scripting - SA-CORE-2025-004
+Drupal core - Moderately critical - Gadget Chain - SA-CORE-2025-003
+Project machine name:
+drupal
+Date:
+2025-February-19
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Complex/A:Admin/CI:All/II:All/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2025-31674
+Drupal core contains a potential PHP Object Injection vulnerability that (if combined with another exploit) could lead to Arbitrary File Inclusion. Techniques exist to escalate this attack to Remote Code Execution. It is not directly exploitable.
+This issue is mitigated by the fact that in order for it to be exploitable, a separate vulnerability must be present to allow an attacker to pass unsafe input to
+unserialize()
+. There are no such known exploits in Drupal core.
+Read more
+about Drupal core - Moderately critical - Gadget Chain - SA-CORE-2025-003
+Drupal core - Moderately critical - Access bypass - SA-CORE-2025-002
+Project machine name:
+drupal
+Date:
+2025-February-19
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2025-31673
+Bulk operations allow authorized users to modify several nodes at once from the Content page (
+/admin/content
+). A site builder can also add bulk operations to other pages using Views.
+A bug in the core Actions system allows some users to modify some fields using bulk actions that they do not have permission to modify on individual nodes.
+This vulnerability is mitigated by the fact that an attacker must have permission to access
+/admin/content
+or other, custom views and to edit nodes.
+Read more
+about Drupal core - Moderately critical - Access bypass - SA-CORE-2025-002
+Drupal core - Critical - Cross site scripting - SA-CORE-2025-001
+Project machine name:
+drupal
+Date:
+2025-February-19
+Security risk:
+Critical
+17 ∕ 25 AC:Basic/A:None/CI:Some/II:Some/E:Proof/TD:All
+CVE IDs:
+CVE-2025-3057
+Drupal core doesn't sufficiently filter error messages under certain circumstances, leading to a reflected Cross Site Scripting vulnerability (XSS).
+Sites are encouraged to update. There are not yet public documented steps to exploit this, but there may be soon given the nature of this issue.
+This issue is being protected by
+Drupal Steward
+. Sites that use Drupal Steward are already protected, but are still encouraged to upgrade in the near future.
+Read more
+about Drupal core - Critical - Cross site scripting - SA-CORE-2025-001
+Drupal core - Moderately critical - Gadget chain - SA-CORE-2024-008
+Project machine name:
+drupal
+Date:
+2024-November-20
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Complex/A:Admin/CI:All/II:All/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2024-55638
+Drupal core contains a potential PHP Object Injection vulnerability that (if combined with another exploit) could lead to Remote Code Execution. It is not directly exploitable.
+This issue is mitigated by the fact that in order for it to be exploitable, a separate vulnerability must be present to allow an attacker to pass unsafe input to
+unserialize()
+. There are no such known exploits in Drupal core.
+Read more
+about Drupal core - Moderately critical - Gadget chain - SA-CORE-2024-008
+Drupal core - Moderately critical - Gadget chain - SA-CORE-2024-007
+Project machine name:
+drupal
+Date:
+2024-November-20
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Complex/A:Admin/CI:All/II:All/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2024-55637
+Drupal core contains a potential PHP Object Injection vulnerability that (if combined with another exploit) could lead to Remote Code Execution. It is not directly exploitable.
+This issue is mitigated by the fact that in order for it to be exploitable, a separate vulnerability must be present to allow an attacker to pass unsafe input to
+unserialize()
+. There are no such known exploits in Drupal core.
+Read more
+about Drupal core - Moderately critical - Gadget chain - SA-CORE-2024-007
+Drupal core - Less critical - Gadget chain - SA-CORE-2024-006
+Project machine name:
+drupal
+Date:
+2024-November-20
+Security risk:
+Less critical
+8 ∕ 25 AC:Complex/A:User/CI:None/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2024-55636
+Drupal core contains a potential PHP Object Injection vulnerability that (if combined with another exploit) could lead to Artbitrary File Deletion. It is not directly exploitable.
+This issue is mitigated by the fact that in order to be exploitable, a separate vulnerability must be present that allows an attacker to pass unsafe input to
+unserialize()
+. There are no such known exploits in Drupal core.
+Read more
+about Drupal core - Less critical - Gadget chain - SA-CORE-2024-006
+Drupal core - Critical - Cross Site Scripting - SA-CORE-2024-005
+Project machine name:
+drupal
+Date:
+2024-November-20
+Security risk:
+Critical
+17 ∕ 25 AC:None/A:None/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2024-55635
+Drupal 7 core's Overlay module doesn't safely handle user input, leading to reflected cross-site scripting under certain circumstances.
+Only sites with the Overlay module enabled are affected by this vulnerability.
+Read more
+about Drupal core - Critical - Cross Site Scripting - SA-CORE-2024-005
+Drupal core - Moderately critical - Access bypass - SA-CORE-2024-004
+Project machine name:
+drupal
+Date:
+2024-November-20
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Basic/A:User/CI:None/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2024-55634
+Drupal's uniqueness checking for certain user fields is inconsistent depending on the database engine and its collation.
+As a result, a user may be able to register with the same email address as another user.
+This may lead to data integrity issues.
+Read more
+about Drupal core - Moderately critical - Access bypass - SA-CORE-2024-004
+Drupal core - Moderately critical - Cross Site Scripting - SA-CORE-2024-003
+Project machine name:
+drupal
+Date:
+2024-November-20
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2024-12393
+Drupal uses JavaScript to render status messages in some cases and configurations. In certain situations, the status messages are not adequately sanitized.
+Read more
+about Drupal core - Moderately critical - Cross Site Scripting - SA-CORE-2024-003
+Drupal core - Moderately critical - Improper error handling - SA-CORE-2024-002
+Project machine name:
+drupal
+Date:
+2024-October-16
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:None/CI:None/II:All/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2024-11942
+Under certain uncommon site configurations, a bug in the CKEditor 5 module can cause some image uploads to move the entire webroot to a different location on the file system. This could be exploited by a malicious user to take down a site.
+The issue is mitigated by the fact that several non-default site configurations must exist simultaneously for this to occur.
+Read more
+about Drupal core - Moderately critical - Improper error handling - SA-CORE-2024-002
+Drupal core - Moderately critical - Denial of Service - SA-CORE-2024-001
+Project machine name:
+drupal
+Date:
+2024-January-17
+Security risk:
+Moderately critical
+11 ∕ 25 AC:None/A:None/CI:None/II:None/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2024-11941
+The Comment module allows users to reply to comments. In certain cases, an attacker could make comment reply requests that would trigger a denial of service (DOS).
+Sites that do not use the Comment module are not affected.
+Read more
+about Drupal core - Moderately critical - Denial of Service - SA-CORE-2024-001
+Drupal core - Critical - Cache poisoning - SA-CORE-2023-006
+Project machine name:
+drupal
+Date:
+2023-September-20
+Security risk:
+Critical
+16 ∕ 25 AC:Complex/A:None/CI:All/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2023-5256
+In certain scenarios, Drupal's JSON:API module will output error backtraces. With some configurations, this may cause sensitive information to be cached and made available to anonymous users, leading to privilege escalation.
+This vulnerability only affects sites with the JSON:API module enabled, and can be mitigated by uninstalling JSON:API.
+The core REST and contributed GraphQL modules are not affected.
+Read more
+about Drupal core - Critical - Cache poisoning - SA-CORE-2023-006
+Drupal core - Moderately critical - Access bypass - SA-CORE-2023-005
+Project machine name:
+drupal
+Date:
+2023-April-19
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2023-31250
+The file download facility doesn't sufficiently sanitize file paths in certain situations. This may result in users gaining access to private files that they should not have access to.
+Some sites may require configuration changes following this security release. Review the release notes for your Drupal version if you have issues accessing private files after updating.
+Read more
+about Drupal core - Moderately critical - Access bypass - SA-CORE-2023-005
+Drupal core - Moderately critical - Access bypass - SA-CORE-2023-004
+Project machine name:
+drupal
+Date:
+2023-March-15
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Complex/A:Admin/CI:All/II:All/E:Theoretical/TD:Uncommon
+Drupal core provides a page that outputs the markup from
+phpinfo()
+to assist with diagnosing PHP configuration.
+If an attacker was able to achieve an XSS exploit against a privileged user, they may be able to use the phpinfo page to access sensitive information that could be used to escalate the attack.
+This vulnerability is mitigated by the fact that a successful XSS exploit is required in order to exploit it.
+Read more
+about Drupal core - Moderately critical - Access bypass - SA-CORE-2023-004
+Drupal core - Moderately critical - Information Disclosure - SA-CORE-2023-003
+Project machine name:
+drupal
+Date:
+2023-March-15
+Security risk:
+Moderately critical
+13 ∕ 25 AC:None/A:None/CI:Some/II:None/E:Theoretical/TD:Uncommon
+The language module provides a Language switcher block which can be placed to provide links to quickly switch between different languages.
+The URL of unpublished translations may be disclosed. When used in conjunction with a module like Pathauto, this may reveal the title of unpublished content.
+This advisory is not covered by
+Drupal Steward
+.
+Read more
+about Drupal core - Moderately critical - Information Disclosure - SA-CORE-2023-003
+Drupal core - Moderately critical - Information Disclosure - SA-CORE-2023-002
+Project machine name:
+drupal
+Date:
+2023-March-15
+Security risk:
+Moderately critical
+14 ∕ 25 AC:None/A:None/CI:Some/II:None/E:Theoretical/TD:Default
+The Media module does not properly check entity access in some circumstances. This may result in users seeing thumbnails of media items they do not have access to, including for private files.
+This release was coordinated with
+SA-CONTRIB-2023-010
+.
+This advisory is not covered by
+Drupal Steward
+.
+Read more
+about Drupal core - Moderately critical - Information Disclosure - SA-CORE-2023-002
+Drupal core - Moderately critical - Information Disclosure - SA-CORE-2023-001
+Project machine name:
+drupal
+Date:
+2023-January-18
+Security risk:
+Moderately critical
+12 ∕ 25 AC:None/A:User/CI:Some/II:None/E:Theoretical/TD:Default
+The Media Library module does not properly check entity access in some circumstances. This may result in users with access to edit content seeing metadata about media items they are not authorized to access.
+The vulnerability is mitigated by the fact that the inaccessible media will only be visible to users who can already edit content that includes a media reference field.
+This advisory is not covered by
+Drupal Steward
+.
+Read more
+about Drupal core - Moderately critical - Information Disclosure - SA-CORE-2023-001
+Drupal core - Critical - Multiple vulnerabilities - SA-CORE-2022-016
+Project machine name:
+drupal
+Date:
+2022-September-28
+Security risk:
+Critical
+18 ∕ 25 AC:Basic/A:Admin/CI:All/II:All/E:Proof/TD:All
+CVE IDs:
+CVE-2022-39261
+Drupal uses the
+Twig
+third-party library for content templating and sanitization.
+Twig has released a security update
+that affects Drupal. Twig has rated the vulnerability as high severity.
+Drupal core's code extending Twig has also been updated to mitigate a related vulnerability.
+Read more
+about Drupal core - Critical - Multiple vulnerabilities - SA-CORE-2022-016
+Drupal core - Moderately critical - Multiple vulnerabilities - SA-CORE-2022-015
+Project machine name:
+drupal
+Date:
+2022-July-20
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Complex/A:User/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2022-25276
+The Media oEmbed iframe route does not properly validate the iframe domain setting, which allows embeds to be displayed in the context of the primary domain. Under certain circumstances, this could lead to cross-site scripting, leaked cookies, or other vulnerabilities.
+This advisory is not covered by
+Drupal Steward
+.
+Read more
+about Drupal core - Moderately critical - Multiple vulnerabilities - SA-CORE-2022-015
+Drupal core - Critical - Arbitrary PHP code execution - SA-CORE-2022-014
+Project machine name:
+drupal
+Date:
+2022-July-20
+Security risk:
+Critical
+15 ∕ 25 AC:Basic/A:Admin/CI:All/II:All/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2022-25277
+Updated 2022-07-20 19:45 UTC to indicate that this only affects Apache web servers.
+Drupal core sanitizes filenames with dangerous extensions upon upload (reference:
+SA-CORE-2020-012
+) and strips leading and trailing dots from filenames to prevent uploading server configuration files (reference:
+SA-CORE-2019-010
+).
+Read more
+about Drupal core - Critical - Arbitrary PHP code execution - SA-CORE-2022-014
+Drupal core - Moderately critical - Access Bypass - SA-CORE-2022-013
+Project machine name:
+drupal
+Date:
+2022-July-20
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2022-25278
+Under certain circumstances, the Drupal core form API evaluates form element access incorrectly. This may lead to a user being able to alter data they should not have access to.
+No forms provided by Drupal core are known to be vulnerable. However, forms added through contributed or custom modules or themes may be affected.
+This advisory is not covered by
+Drupal Steward
+.
+Read more
+about Drupal core - Moderately critical - Access Bypass - SA-CORE-2022-013
+Drupal core - Moderately critical - Information Disclosure - SA-CORE-2022-012
+Project machine name:
+drupal
+Date:
+2022-July-20
+Security risk:
+Moderately critical
+13 ∕ 25 AC:None/A:None/CI:Some/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2022-25275
+In some situations, the Image module does not correctly check access to image files not stored in the standard public files directory when generating derivative images using the image styles system.
+Access to a non-public file is checked only if it is stored in the "private" file system. However, some contributed modules provide additional file systems, or schemes, which may lead to this vulnerability.
+Read more
+about Drupal core - Moderately critical - Information Disclosure - SA-CORE-2022-012
+Drupal core - Moderately critical - Third-party libraries - SA-CORE-2022-011
+Project machine name:
+drupal
+Date:
+2022-June-10
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Complex/A:None/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2022-31042
+CVE-2022-31043
+Updated 22:00 UTC 2022-06-10: Added steps to update without
+drupal/core-recommended
+.
+Drupal uses the third-party Guzzle library for handling HTTP requests and responses to external services. Guzzle has released two security advisories:
+Read more
+about Drupal core - Moderately critical - Third-party libraries - SA-CORE-2022-011
+Drupal core - Moderately critical - Third-party libraries - SA-CORE-2022-010
+Project machine name:
+drupal
+Date:
+2022-May-25
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Complex/A:None/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2022-29248
+Drupal uses the third-party Guzzle library for handling HTTP requests and responses to external services.
+Guzzle has released a security update
+which does not affect Drupal core, but may affect some contributed projects or custom code on Drupal sites.
+Read more
+about Drupal core - Moderately critical - Third-party libraries - SA-CORE-2022-010
+Drupal core - Moderately critical - Access bypass - SA-CORE-2022-009
+Project machine name:
+drupal
+Date:
+2022-April-20
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2022-25274
+Drupal 9.3 implemented a generic entity access API for entity revisions. However, this API was not completely integrated with existing permissions, resulting in some possible access bypass for users who have access to use revisions of content generally, but who do not have access to individual items of node and media content.
+This vulnerability only affects sites using Drupal's revision system.
+This advisory is not covered by
+Drupal Steward
+.
+Read more
+about Drupal core - Moderately critical - Access bypass - SA-CORE-2022-009
+Drupal core - Moderately critical - Improper input validation - SA-CORE-2022-008
+Project machine name:
+drupal
+Date:
+2022-April-20
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2022-25273
+Drupal core's form API has a vulnerability where certain contributed or custom modules' forms may be vulnerable to improper input validation. This could allow an attacker to inject disallowed values or overwrite data. Affected forms are uncommon, but in certain cases an attacker could alter critical or sensitive data.
+We do not know of affected forms within core itself, but contributed and custom project forms could be affected. Installing this update will fix those forms.
+This advisory is not covered by
+Drupal Steward
+.
+Read more
+about Drupal core - Moderately critical - Improper input validation - SA-CORE-2022-008
+Drupal core - Moderately critical - Third-party libraries - SA-CORE-2022-006
+Project machine name:
+drupal
+Date:
+2022-March-21
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Complex/A:None/CI:None/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2022-24775
+Drupal uses the third-party Guzzle library for handling HTTP requests and responses to external services.
+Guzzle has released a security update
+which may affect some Drupal sites.
+Read more
+about Drupal core - Moderately critical - Third-party libraries - SA-CORE-2022-006
+Drupal core - Moderately critical - Third-party libraries - SA-CORE-2022-005
+Project machine name:
+drupal
+Date:
+2022-March-16
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2022-24728
+CVE-2022-24729
+The Drupal project uses the
+CKEditor
+library for WYSIWYG editing. CKEditor has released
+a security update that impacts Drupal
+.
+Read more
+about Drupal core - Moderately critical - Third-party libraries - SA-CORE-2022-005
+Drupal core - Moderately critical - Information disclosure - SA-CORE-2022-004
+Project machine name:
+drupal
+Date:
+2022-February-16
+Security risk:
+Moderately critical
+12 ∕ 25 AC:None/A:User/CI:Some/II:None/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2022-25270
+The Quick Edit module does not properly check entity access in some circumstances. This could result in users with the "access in-place editing" permission viewing some content they are are not authorized to access.
+Sites are only affected if the QuickEdit module (which comes with the Standard profile) is installed.
+Also see
+Quick Edit - Moderately critical - Information disclosure - SA-CONTRIB-2022-025
+which addresses the same vulnerability for the contributed module.
+Read more
+about Drupal core - Moderately critical - Information disclosure - SA-CORE-2022-004
+Drupal core - Moderately critical - Improper input validation - SA-CORE-2022-003
+Project machine name:
+drupal
+Date:
+2022-February-16
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Basic/A:None/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2022-25271
+Drupal core's form API has a vulnerability where certain contributed or custom modules' forms may be vulnerable to improper input validation. This could allow an attacker to inject disallowed values or overwrite data. Affected forms are uncommon, but in certain cases an attacker could alter critical or sensitive data.
+This advisory is not covered by
+Drupal Steward
+.
+Read more
+about Drupal core - Moderately critical - Improper input validation - SA-CORE-2022-003
+Drupal core - Moderately critical - Cross site scripting - SA-CORE-2022-002
+Project machine name:
+drupal
+Date:
+2022-January-19
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Proof/TD:Default
+jQuery UI is a third-party library used by Drupal. This library was previously thought to be end-of-life.
+Late in 2021, jQuery UI announced that they would be continuing development, and released a
+jQuery UI 1.13.0
+version. In addition to the issue covered by
+SA-CORE-2022-001
+, further security vulnerabilities disclosed in jQuery UI 1.13.0 may affect Drupal 7 only:
+Read more
+about Drupal core - Moderately critical - Cross site scripting - SA-CORE-2022-002
+Drupal core - Moderately critical - Cross Site Scripting - SA-CORE-2022-001
+Project machine name:
+drupal
+Date:
+2022-January-19
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Proof/TD:Default
+jQuery UI is a third-party library used by Drupal. This library was previously thought to be end-of-life.
+Late in 2021, jQuery UI announced that they would be continuing development, and released a
+jQuery UI 1.13.0
+version. As part of this 1.13.0 update, they disclosed the following security issue that may affect Drupal 9 and 7:
+Read more
+about Drupal core - Moderately critical - Cross Site Scripting - SA-CORE-2022-001

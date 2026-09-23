@@ -288,31 +288,75 @@ assert SOURCE_TERM not in project_terms.values()
 assert structure["attached_to_project_level"] is False
 
 snapshot_text = snapshot_path.read_text(encoding="utf-8")
-assert snapshot_text.count(SOURCE_TERM) == structure["literal_occurrences_in_snapshot"] == 514
-# The frozen audit recorded totals at audit time; the reviewed baseline has
-# since advanced. Frozen and live totals are asserted separately.
+# The frozen 2026-09-07 audit and the live reviewed context are different
+# observations of the same source and are asserted separately. The audit is
+# historical evidence and is never edited to match a later source state; the
+# superseding review records what the current state is and why it differs.
+assert structure["literal_occurrences_in_snapshot"] == 514
 assert structure["release_rows_total"] == 553
-assert context["release_count"] == len(rows) == len(xml_releases) == 556
+assert structure["release_rows_with_term"] == 514
+assert structure["release_rows_without_term"] == 39
+
+review = dk_core.read_json(ROOT / "docs" / "lifecycle-finding-eligibility-review-2026-09-23.json")
+assert review["supersedes"]["artifact"] == "docs/lifecycle-finding-eligibility.json"
+assert review["supersedes"]["audit_date"] == audit["audit_date"]
+assert review["supersedes"]["historical_evidence_mutated"] is False
+live = review["current_reviewed_observation"]
+drift = review["drift_from_frozen_audit"]
+
 carrying = sorted(version for version, row in rows.items() if SOURCE_TERM in term_values(row))
 not_carrying = sorted(version for version, row in rows.items() if SOURCE_TERM not in term_values(row))
-# The insecure population the finding depends on is unchanged by the advance,
-# and the entire advance consisted of releases that do not carry the term.
-assert structure["release_rows_with_term"] == len(carrying) == 514
-assert structure["release_rows_without_term"] == 39
-assert len(not_carrying) == 42
-assert len(rows) - structure["release_rows_total"] == (
-    len(not_carrying) - structure["release_rows_without_term"]
-) == 3
+# Live totals must match the reviewed observation exactly. If the source drifts
+# again, these fail and force another human review rather than silently moving.
+assert snapshot_text.count(SOURCE_TERM) == live["release_rows_with_term"] == len(carrying)
+assert context["release_count"] == len(rows) == len(xml_releases) == live["release_rows_total"]
+assert live["release_rows_without_term"] == len(not_carrying)
+# A published release can acquire the term later, when a security release
+# supersedes it, so an advance is not guaranteed to consist only of rows
+# without the term. The drift is therefore stated as a conservation identity
+# between the frozen audit and the current reviewed observation.
+assert drift["frozen_release_rows_total"] == structure["release_rows_total"]
+assert drift["frozen_release_rows_with_term"] == structure["release_rows_with_term"]
+assert drift["frozen_release_rows_without_term"] == structure["release_rows_without_term"]
+assert drift["rows_added_since_audit"] == len(rows) - structure["release_rows_total"]
+assert drift["rows_newly_carrying_term_since_audit"] == len(carrying) - structure["release_rows_with_term"]
+assert (
+    drift["rows_added_since_audit"] - drift["rows_newly_carrying_term_since_audit"]
+    == len(not_carrying) - structure["release_rows_without_term"]
+)
+assert review["drift_from_frozen_audit"]["superseded_statement"]["true_now"] is False
+assert live["release_rows_newly_carrying_term_since_previous_context"], (
+    "the review must name the releases that newly carry the term"
+)
+for version in live["release_rows_newly_carrying_term_since_previous_context"]:
+    assert SOURCE_TERM in term_values(rows[version]), version
 assert structure["release_rows_without_terms_container"] == sum(
     1 for release in xml_releases if release.find("terms") is None
 ) == 9
 assert structure["duplicate_term_occurrences_within_a_row"] == 0
 assert all(term_values(row).count(SOURCE_TERM) <= 1 for row in rows.values())
 
+# A release that carried the term at audit time never loses it, so the frozen
+# representatives carrying it must still carry it today.
 for version in structure["representative_versions_with_term"]:
     assert SOURCE_TERM in term_values(rows[version]), version
-for version in structure["representative_versions_without_term"]:
+# The reverse does not hold: a release without the term can acquire it later.
+# The frozen list is historical, so it is checked against the superseding
+# review's record of what happened to it, not against today's source.
+assert drift["frozen_representative_versions_without_term"] == structure["representative_versions_without_term"]
+for version in drift["frozen_representative_versions_without_term_now_carrying"]:
+    assert SOURCE_TERM in term_values(rows[version]), version
+for version in drift["frozen_representative_versions_without_term_still_without"]:
     assert SOURCE_TERM not in term_values(rows[version]), version
+assert sorted(
+    drift["frozen_representative_versions_without_term_now_carrying"]
+    + drift["frozen_representative_versions_without_term_still_without"]
+) == sorted(structure["representative_versions_without_term"])
+# Current representatives are asserted against today's source.
+for version in live["representative_versions_without_term"]:
+    assert SOURCE_TERM not in term_values(rows[version]), version
+for version in live["representative_versions_with_term"]:
+    assert SOURCE_TERM in term_values(rows[version]), version
 
 for path in structure["normalized_context_paths"]:
     assert path in {"releases[].terms[].value.source_value", "releases[].release_type_source_values[]"}
@@ -391,7 +435,9 @@ assert matched["release_match"]["source_version"] == matched_version
 assert SOURCE_TERM in matched["source_attributes"]["source_release_type_terms"]
 assert matched["context_freshness"]["relation"] == "current"
 
-clean_version = structure["representative_versions_without_term"][0]
+# A release that is clean *today*, from the superseding review, not one that
+# was clean when the frozen audit was written.
+clean_version = live["representative_versions_without_term"][0]
 clean = evaluator.evaluate_analysis_data(with_core_version(recommended, clean_version))
 assert clean["release_match"]["state"] == "matched"
 assert SOURCE_TERM not in clean["source_attributes"]["source_release_type_terms"]
@@ -469,22 +515,35 @@ for version, row in rows.items():
     listed = token["state"] == "known" and token["source_value"] in supported_values
     has_term = SOURCE_TERM in term_values(row)
     cross[("supported_branch_" if listed else "unsupported_branch_") + ("with_term" if has_term else "without_term")] += 1
-# The audit cross-tabulated against its frozen baseline. After the reviewed
-# advance the term-carrying cells must be identical - the insecure semantics
-# the finding rests on are untouched - and the whole delta must sit in
-# releases that carry no term.
+# The audit cross-tabulated against its frozen baseline. The frozen table is
+# historical and is asserted as recorded; the current table is asserted against
+# the superseding review, and every cell difference must be accounted for by
+# the reviewed delta rather than accepted silently.
 frozen_cross = structure["branch_membership_cross_tabulation"]
-for cell in ("supported_branch_with_term", "unsupported_branch_with_term"):
-    assert frozen_cross[cell] == cross[cell], cell
-assert cross["supported_branch_with_term"] + cross["unsupported_branch_with_term"] == 514
-assert frozen_cross["unsupported_branch_without_term"] == cross["unsupported_branch_without_term"]
-assert cross["supported_branch_without_term"] - frozen_cross["supported_branch_without_term"] == 3
-assert sum(frozen_cross.values()) == 553
-assert sum(cross.values()) == context["release_count"] == 556
+live_cross = live["branch_membership_cross_tabulation"]
+cross_delta = drift["branch_membership_cross_tabulation_delta"]
+assert live_cross == cross, "the reviewed cross-tabulation must match today's source"
+for cell in cross:
+    assert cross[cell] - frozen_cross[cell] == cross_delta[cell], cell
+assert cross["supported_branch_with_term"] + cross["unsupported_branch_with_term"] == len(carrying)
+assert sum(frozen_cross.values()) == structure["release_rows_total"]
+assert sum(cross.values()) == context["release_count"] == live["release_rows_total"]
+# The term-carrying population grew only by releases a later security release
+# superseded, never by the rows the advance itself added.
+assert (
+    cross_delta["supported_branch_with_term"] + cross_delta["unsupported_branch_with_term"]
+    == drift["rows_newly_carrying_term_since_audit"]
+)
 assert cross["supported_branch_with_term"] > 0, "listed branches carry the term"
 assert cross["unsupported_branch_without_term"] > 0, "unlisted branches lack the term"
-assert branch_signal["counter_evidence"]["supported_branch_rows_with_term"] == cross["supported_branch_with_term"]
-assert branch_signal["counter_evidence"]["unsupported_branch_rows_without_term"] == cross["unsupported_branch_without_term"]
+# The audit's counter-evidence counts are frozen observations, so they are
+# checked against the frozen table. What must still hold today is the
+# qualitative claim they were recorded to support: branch membership predicts
+# nothing about the term in either direction.
+assert branch_signal["counter_evidence"]["supported_branch_rows_with_term"] == frozen_cross["supported_branch_with_term"]
+assert branch_signal["counter_evidence"]["unsupported_branch_rows_without_term"] == frozen_cross["unsupported_branch_without_term"]
+assert cross["supported_branch_without_term"] > 0, "listed branches do not all carry the term"
+assert cross["unsupported_branch_with_term"] > 0, "unlisted branches still carry the term"
 assert "branch_only_inference_allowed" in exact_rule and exact_rule["branch_only_inference_allowed"] is False
 
 
@@ -500,16 +559,16 @@ def covered(row: dict[str, Any]) -> bool:
 with_term_covered = sum(1 for row in rows.values() if SOURCE_TERM in term_values(row) and covered(row))
 without_term_covered = sum(1 for row in rows.values() if SOURCE_TERM not in term_values(row) and covered(row))
 assert with_term_covered > 0 and without_term_covered > 0
-# The term-carrying coverage count is unchanged by the reviewed advance, which
-# is the counter-evidence that matters: carrying the term and being covered by
-# the security policy are not mutually exclusive. Only rows without the term
-# grew, so frozen and live are asserted separately.
-assert coverage_signal["counter_evidence"]["rows_with_term_and_covered_attribute"] == with_term_covered == 376
+# The counter-evidence that matters is qualitative and still holds: carrying
+# the term and being covered by the security policy are not mutually exclusive,
+# in either direction. The counts themselves are frozen observations and are
+# asserted against the audit; today's counts come from the superseding review.
+assert coverage_signal["counter_evidence"]["rows_with_term_and_covered_attribute"] == 376
 assert coverage_signal["counter_evidence"]["rows_without_term_and_covered_attribute"] == 9
-assert without_term_covered == 11
-assert structure["rows_with_term_and_security_covered_attribute"] == with_term_covered == 376
+assert structure["rows_with_term_and_security_covered_attribute"] == 376
 assert structure["rows_without_term_and_security_covered_attribute"] == 9
-assert without_term_covered == 11
+assert with_term_covered == live["rows_with_term_and_security_covered_attribute"]
+assert without_term_covered == live["rows_without_term_and_security_covered_attribute"]
 coverage_text = coverage_signal["counter_evidence"]["example_coverage_text"]
 assert coverage_text == "Covered by Drupal's security advisory policy"
 assert any(row["security"].get("text", {}).get("source_value") == coverage_text for row in rows.values())
@@ -524,8 +583,18 @@ security_update_only = sorted(
     if "Security update" in term_values(row) and SOURCE_TERM not in term_values(row)
 )
 assert security_update_only
-assert update_signal["counter_evidence"]["rows_with_security_update_and_without_insecure"] == security_update_only
-assert structure["rows_with_security_update_term_and_without_insecure_term"] == security_update_only
+# "Security update" and "Insecure" are different terms, which is the claim that
+# must still hold. The exact row list is an observation: frozen in the audit,
+# current in the superseding review. A release loses this list only by
+# acquiring the audited term, which the review records explicitly.
+assert update_signal["counter_evidence"]["rows_with_security_update_and_without_insecure"] == structure["rows_with_security_update_term_and_without_insecure_term"]
+assert security_update_only == live["rows_with_security_update_term_and_without_insecure_term"]
+assert sorted(
+    set(structure["rows_with_security_update_term_and_without_insecure_term"])
+    - set(security_update_only)
+) == drift["security_update_only_rows_removed"]
+for version in drift["security_update_only_rows_removed"]:
+    assert SOURCE_TERM in term_values(rows[version]), version
 assert len(update_signal["forbidden_inferences"]) >= 3
 assert "Security update" != SOURCE_TERM
 for version in security_update_only:
@@ -878,7 +947,7 @@ assert len(dk_core.load_sources()) > now["source"]
 # addressable; the live context is separately required to be reviewed and
 # current against its own pinned snapshot.
 assert now["lifecycle_context_releases"] == 553
-assert context["release_count"] == 556
+assert context["release_count"] == live["release_rows_total"]
 assert baseline["lifecycle_context"]["source_snapshot_sha256"] == "sha256:c7de75d2508c7d134765affdea101e9bc7a4d534d8eaaa97fda3308a14ea0063"
 assert dk_core.require_snapshot(
     ROOT, context["source"]["source_id"], baseline["lifecycle_context"]["source_snapshot_sha256"]

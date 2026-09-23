@@ -24,7 +24,7 @@ CONTEXT_PATH = dk_core.ROOT / "knowledge" / "context" / "drupal-core-release-lif
 SCHEMA_PATH = dk_core.ROOT / "schema" / "release-lifecycle-context.schema.json"
 # Date the normalized release-lifecycle context was last reviewed against its
 # pinned source snapshot. It moves only with an explicit human re-review.
-REVIEWED_ON = "2026-09-08"
+REVIEWED_ON = "2026-09-23"
 
 STABLE_VERSION_RE = re.compile(
     r"^(?P<major>0|[1-9][0-9]*)\."

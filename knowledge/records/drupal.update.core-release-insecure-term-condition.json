@@ -108,9 +108,9 @@
         "drupal_core_majors": [
           "11"
         ],
-        "basis": "All three semantic authority references are the current Drupal 11 update-module sources pinned at release tag 11.4.5 on the 11.x branch. No other Drupal major has reviewed update-status semantics, so confirmation is authorized for installed Drupal core major 11 only."
+        "basis": "All three semantic authority references are the current Drupal 11 update-module sources pinned at release tag 11.4.7 on the 11.x branch (advanced from 11.4.5 on 2026-09-23; the three files are byte-identical at both tags, so the reviewed meaning is unchanged). No other Drupal major has reviewed update-status semantics, so confirmation is authorized for installed Drupal core major 11 only."
       },
-      "rationale": "Reviewed against pinned Drupal 11.4.5 update-module sources: ProjectRelease::isInsecure() is literally isReleaseType('Insecure') over terms['Release type']; update_calculate_project_update_status() assigns UpdateManagerInterface::NOT_SECURE when the exact installed version matches an insecure release and returns before any later status branch; NOT_SECURE is documented as the project missing security update(s). Confirmation stays bound to these references, never a status flip."
+      "rationale": "Reviewed against pinned Drupal 11.4.7 update-module sources: ProjectRelease::isInsecure() is literally isReleaseType('Insecure') over terms['Release type']; update_calculate_project_update_status() assigns UpdateManagerInterface::NOT_SECURE when the exact installed version matches an insecure release and returns before any later status branch; NOT_SECURE is documented as the project missing security update(s). Confirmation stays bound to these references, never a status flip."
     },
     "states": {
       "term_present_and_context_current": "confirmed",

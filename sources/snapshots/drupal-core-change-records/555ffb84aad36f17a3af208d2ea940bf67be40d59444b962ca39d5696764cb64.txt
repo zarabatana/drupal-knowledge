@@ -1,0 +1,153 @@
+Introduced in branch/version
+Notice created
+Change
+12.0.x / 12.0.0
+20-Sep-2026
+The Claro theme is removed
+12.0.x / 12.0.0
+19-Sep-2026
+Dangerous characters in filenames are replaced
+12.0.x / 12.0.0
+19-Sep-2026
+The Search module is removed
+12.0.x / 12.0.0
+18-Sep-2026
+The Olivero theme is removed
+11.5.x / 11.5.0
+18-Sep-2026
+Claro theme is deprecated
+12.0.x / 12.0.0
+17-Sep-2026
+Drupal 12.0.0 will require Node.js 24 for core development
+11.5.x / 11.5.0
+16-Sep-2026
+Olivero theme is deprecated
+11.5.x / 11.5.0
+15-Sep-2026
+Toolbar is deprecated
+12.0.x / 12.0.0
+15-Sep-2026
+The Toolbar module removed
+12.0.x / 12.0.0
+15-Sep-2026
+CSSLint and ESLint configuration files are no longer scaffolded
+11.5.x / 11.5.0
+14-Sep-2026
+getModulesToInstall() and getThemesToInstall() added to the installer interfaces
+11.5.x / 11.5.0
+13-Sep-2026
+New API for Design Tokens and CSS variables
+11.5.x / 11.5.0
+11-Sep-2026
+Minimum and Maximum labels are now configurable in Views Numeric-based Filters like Dates
+11.5.x / 11.5.0
+11-Sep-2026
+The User entity 'member_for' extra field is deprecated
+11.5.x / 11.5.0
+11-Sep-2026
+All update_* functions in update.inc are deprecated
+11.5.x / 11.5.0
+11-Sep-2026
+drupal_attach_tabledrag() is deprecated
+11.5.x / 11.5.0
+10-Sep-2026
+Deprecated views_invalidate_cache, new Views plugin postSave API introduced
+11.5.x / 11.5.0
+09-Sep-2026
+locale_get_plural() is deprecated, replaced by PluralIndexInterface service
+11.5.x / 11.5.0
+09-Sep-2026
+Several user functions have been deprecated.
+11.5.x / 11.5.0
+08-Sep-2026
+\Drupal\Core\Recipe\RecipeRunner::isApplying()
+11.5.x / 11.5.0
+07-Sep-2026
+MarkFutureUpdateEquivalent attribute added to register equivalent updates on site install
+11.5.x / 11.5.0
+07-Sep-2026
+user_role_grant_permissions(), user_role_revoke_permissions() and user_role_change_permissions() are deprecated
+11.5.x / 11.5.0
+05-Sep-2026
+View mode dependencies are recalculated
+11.5.x / 11.5.0
+05-Sep-2026
+Search module is deprecated
+11.5.x / 11.5.0
+04-Sep-2026
+Functions in update.compare.inc are deprecated
+11.5.x / 11.5.0
+04-Sep-2026
+ConfigEntityBase now has static helpers for loadOverrideFree and loadMultipleOverrideFree
+11.5.x / 11.5.0
+04-Sep-2026
+Database Schema Definition API now supports creation of generated columns
+12.0.x / 12.0.0
+03-Sep-2026
+PostgreSQL merge query executes as a single native merge query
+11.5.x / 11.5.0
+03-Sep-2026
+PostgreSQL type-casting of fields in raw SQL with LIKE and regex operators is deprecated
+12.0.x / 12.0.0-beta1
+03-Sep-2026
+htmx now uses version 4
+11.5.x / 11.5.0
+02-Sep-2026
+Performance tests can now store expected metrics and queries in separate files and update them
+11.5.x / 11.5.0
+01-Sep-2026
+file_managed_file_save_upload() and _file_save_upload_from_form() are deprecated and replace with a service
+11.5.x / 11.5.0
+01-Sep-2026
+Global constants in locale module are deprecated
+11.5.x / 11.5.0
+31-Aug-2026
+#value_callback now resolved through the callable resolver
+11.5.x / 11.5.0
+31-Aug-2026
+user_picture_enabled is now deprecated.
+11.5.x / 11.5.0
+31-Aug-2026
+ElementInfoManager no longer overwrites a form element's own #value_callback
+11.5.x / 11.5.0
+31-Aug-2026
+Functions in update.module have been deprecated
+11.5.x / 11.5.0
+31-Aug-2026
+Text with summary plugin is deprecated
+11.5.x / 11.5.0
+30-Aug-2026
+Admin compact mode logic has been moved to the frontend
+11.5.x / 11.5.0
+29-Aug-2026
+FileStorageFactory::getSync() replaced with ::get()
+11.5.x / 11.5.0
+28-Aug-2026
+user_logout() and user_login_finalize() are deprecated
+11.5.x / 11.5.0
+27-Aug-2026
+A "cancel" method has been added to Drupal.debounce
+11.5.x / 11.5.0
+27-Aug-2026
+Instant queue runner and QueueProcessTrait
+11.5.x / 11.5.0
+27-Aug-2026
+theme-settings.php for hook_form_system_theme_settings_alter() has been deprecated
+11.5.x / 11.5.0
+27-Aug-2026
+New service UploadedFilesExtractor added to extract the uploaded files from file field
+11.5.x / 11.5.0
+26-Aug-2026
+Several underscore locale functions have been deprecated
+12.0.x / 12.0.0
+26-Aug-2026
+Assigning typed data objects to entity or target_id no longer supported
+12.0.x / 12.0.0
+25-Aug-2026
+Database driver modules and system module are no longer installed by drupal_install_system()
+11.5.x / 11.5.0
+25-Aug-2026
+Several locale functions have been deprecated
+12.0.x / 12.0.0
+25-Aug-2026
+FunctionalTestSetupTrait::installModulesFromClassProperty() is deprecated

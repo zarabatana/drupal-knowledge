@@ -1,0 +1,65 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 1,
+    "added_sample": [
+      "{\"self\":\"https:\\/\\/www.drupal.org\\/api-d7\\/node?type=sa\\u0026sort=created\\u0026direction=DESC\\u0026limit=20\",\"first\":\"https:\\/\\/www.drupal.org\\/api-d7\\/node?typ…"
+    ],
+    "changed_region_count": 1,
+    "current_bytes": 95450,
+    "current_line_count": 1,
+    "deterministic": true,
+    "first_changed_line": 1,
+    "method": "normalized_line_diff",
+    "previous_bytes": 82719,
+    "previous_line_count": 1,
+    "removed_line_count": 1,
+    "removed_sample": [
+      "{\"self\":\"https:\\/\\/www.drupal.org\\/api-d7\\/node?type=sa\\u0026sort=created\\u0026direction=DESC\\u0026limit=20\",\"first\":\"https:\\/\\/www.drupal.org\\/api-d7\\/node?typ…"
+    ]
+  },
+  "current_hash": "sha256:e3247c4fbfeb97ab42b797d17cd6e8cfc8766e356d3bcaeb9c2dd907a8962fbf",
+  "discovered_at": "2026-09-22T11:42:43Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-security-advisories-recent.e2f4d372d7351f99",
+  "is_knowledge_proposal": false,
+  "kind": "security-source-change",
+  "previous_hash": "sha256:ff1e03172279c4ad58d96b45feece3b2d2c931ce6fcb91d975855104b074683c",
+  "provenance": {
+    "acquired_at": "2026-09-22T11:42:43Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/security/contrib",
+    "category": "security",
+    "content_length": 95450,
+    "content_type": "application/json",
+    "content_window": null,
+    "etag": null,
+    "fetch_url": "https://www.drupal.org/api-d7/node.json?type=sa&sort=created&direction=DESC&limit=20",
+    "http_status": 200,
+    "last_modified": null,
+    "normalization": "raw_text",
+    "trust": "authoritative"
+  },
+  "review": {
+    "actor": "Miguel Martins",
+    "authorizes_knowledge_proposal_work": true,
+    "method": "human_security_review",
+    "note": "Rolling advisory feed rotated in SA-CORE-2026-013, PSA-2026-09-21 and new SA-CONTRIB advisories (2026-148 to 2026-153: Ultimate Table Field, Taxonomy Term Glossary, SAML SSO x4). Those contrib advisories concern modules DK holds no records for; they warrant ingestion as source-derived records in separate reviewed work. Advisories leaving the window are outside it, not withdrawn.",
+    "outcome": "reviewed_requires_knowledge_proposal",
+    "reviewed_at": "2026-09-23T02:07:53Z",
+    "trusted_knowledge_changed": false
+  },
+  "review_required": true,
+  "review_state": "reviewed_requires_knowledge_proposal",
+  "run_id": "run.20260922T114243.8345954e",
+  "source_id": "drupal-security-advisories-recent",
+  "source_url": "https://www.drupal.org/security/contrib",
+  "status": "reviewed",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}

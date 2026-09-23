@@ -452,12 +452,13 @@ assert set(confirmation_schema["required"]) == {
     "semantic_authority_refs",
     "required_semantic_authority_category",
 }
-# Semantic authority is version-scoped: the pinned Drupal 11.4.5 sources
-# authorize Drupal core major 11 only, and the scope is evidence-derived from
-# the registered source version pins, never assumed.
+# Semantic authority is version-scoped: the pinned Drupal 11.x update-module
+# sources authorize Drupal core major 11 only, and the scope is evidence-derived
+# from the registered source version pins, never assumed. The basis must name
+# the tag the registry currently pins, so an advance cannot go unrecorded.
 version_scope = confirmation["semantic_authority_version_scope"]
 assert version_scope["drupal_core_majors"] == ["11"]
-assert "11.4.5" in version_scope["basis"]
+assert dk_core.semantic_authority_tag() in version_scope["basis"]
 sources_by_id = {item["id"]: item for item in dk_core.load_sources()}
 for ref in confirmation["semantic_authority_refs"]:
     tokens = sources_by_id[ref]["version_semantics"]["drupal_core"]

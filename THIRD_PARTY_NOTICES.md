@@ -96,8 +96,8 @@ Drupal-related addresses do not all carry the same terms:
 | `git.drupalcode.org/project/drupal` (core source at a pinned tag) | GPL-2.0-or-later | E2, E4 — Drupal core |
 | `project.pages.drupalcode.org/coding_standards` (rendered project docs) | GPL-2.0-or-later | E2, E5 — Drupal Git repository content with no project-level licence of its own |
 
-Totals: 34 source families, 37 files, 2,018,654 bytes —
-26 files CC-BY-SA-2.0, 11 files GPL-2.0-or-later.
+Totals: 34 source families, 45 files, 2,966,090 bytes —
+34 files CC-BY-SA-2.0, 11 files GPL-2.0-or-later.
 
 ### 2.1 Resolved questions
 
@@ -125,12 +125,12 @@ the required and sufficient form, and is what this repository uses.
 |---|---|---|---|---|---:|---:|
 | `drupal-api-11` | api.drupal.org | html / html_text | GPL-2.0-or-later | E3, E4 | 1 | 1,124 |
 | `drupal-apis-guide` | www.drupal.org | html / html_text | CC-BY-SA-2.0 | E1, E2 | 1 | 7,624 |
-| `drupal-core-releases` | updates.drupal.org | xml / raw_text | CC-BY-SA-2.0 | E1, E2 | 2 | 1,083,344 |
+| `drupal-core-releases` | updates.drupal.org | xml / raw_text | CC-BY-SA-2.0 | E1, E2 | 3 | 1,629,686 |
 | `drupal-core-change-record-policy` | www.drupal.org | html / html_text | CC-BY-SA-2.0 | E1, E2 | 1 | 2,795 |
-| `drupal-core-change-records` | www.drupal.org | html / html_text | CC-BY-SA-2.0 | E1, E2 | 2 | 9,352 |
-| `drupal-security-core` | www.drupal.org | html / html_text | CC-BY-SA-2.0 | E1, E2 | 1 | 6,760 |
-| `drupal-security-contrib` | www.drupal.org | html / html_text | CC-BY-SA-2.0 | E1, E2 | 2 | 13,950 |
-| `drupal-security-psa` | www.drupal.org | html / html_text | CC-BY-SA-2.0 | E1, E2 | 1 | 5,421 |
+| `drupal-core-change-records` | www.drupal.org | html / html_text | CC-BY-SA-2.0 | E1, E2 | 3 | 13,714 |
+| `drupal-security-core` | www.drupal.org | html / html_text | CC-BY-SA-2.0 | E1, E2 | 2 | 40,836 |
+| `drupal-security-contrib` | www.drupal.org | html / html_text | CC-BY-SA-2.0 | E1, E2 | 3 | 51,618 |
+| `drupal-security-psa` | www.drupal.org | html / html_text | CC-BY-SA-2.0 | E1, E2 | 2 | 11,145 |
 | `drupal-secure-code` | www.drupal.org | html / html_text | CC-BY-SA-2.0 | E1, E2 | 1 | 5,603 |
 | `drupal-coding-standards-project` | www.drupal.org | html / html_text | CC-BY-SA-2.0 | E1, E2 | 1 | 3,085 |
 | `drupal-coding-standards-current` | project.pages.drupalcode.org | html / html_text | GPL-2.0-or-later | E2, E5 | 1 | 653 |
@@ -140,8 +140,8 @@ the required and sufficient form, and is what this repository uses.
 | `drupal-update-manager-interface-semantics` | git.drupalcode.org | html / html_text | GPL-2.0-or-later | E2, E4 | 1 | 4,814 |
 | `drupal-contrib-token-releases` | updates.drupal.org | xml / raw_text | CC-BY-SA-2.0 | E1, E2 | 1 | 24,195 |
 | `drupal-contrib-pathauto-releases` | updates.drupal.org | xml / raw_text | CC-BY-SA-2.0 | E1, E2 | 1 | 25,638 |
-| `drupal-security-advisories-core` | www.drupal.org | json / raw_text | CC-BY-SA-2.0 | E1, E2 | 1 | 154,005 |
-| `drupal-security-advisories-recent` | www.drupal.org | json / raw_text | CC-BY-SA-2.0 | E1, E2 | 1 | 82,719 |
+| `drupal-security-advisories-core` | www.drupal.org | json / raw_text | CC-BY-SA-2.0 | E1, E2 | 2 | 309,948 |
+| `drupal-security-advisories-recent` | www.drupal.org | json / raw_text | CC-BY-SA-2.0 | E1, E2 | 2 | 178,169 |
 | `drupal-upgrade-process-overview` | www.drupal.org | html / html_text | CC-BY-SA-2.0 | E1, E2 | 1 | 2,439 |
 | `drupal-upgrade-9-to-10` | www.drupal.org | html / html_text | CC-BY-SA-2.0 | E1, E2 | 1 | 11,408 |
 | `drupal-upgrade-10-to-11` | www.drupal.org | html / html_text | CC-BY-SA-2.0 | E1, E2 | 1 | 6,736 |
@@ -152,7 +152,7 @@ the required and sufficient form, and is what this repository uses.
 | `drupal-api-deprecated-9-p2` | api.drupal.org | html / raw_text | GPL-2.0-or-later | E3, E4 | 1 | 80,452 |
 | `drupal-api-deprecated-9-p3` | api.drupal.org | html / raw_text | GPL-2.0-or-later | E3, E4 | 1 | 82,298 |
 | `drupal-api-deprecated-9-p4` | api.drupal.org | html / raw_text | GPL-2.0-or-later | E3, E4 | 1 | 58,250 |
-| `drupal-core-change-notices` | www.drupal.org | json / raw_text | CC-BY-SA-2.0 | E1, E2 | 1 | 73,477 |
+| `drupal-core-change-notices` | www.drupal.org | json / raw_text | CC-BY-SA-2.0 | E1, E2 | 2 | 141,348 |
 | `drupal-trusted-host-settings` | www.drupal.org | html / html_text | CC-BY-SA-2.0 | E1, E2 | 1 | 10,027 |
 | `drupal-internal-page-cache` | www.drupal.org | html / html_text | CC-BY-SA-2.0 | E1, E2 | 1 | 3,903 |
 | `drupal-cache-tags` | www.drupal.org | html / html_text | CC-BY-SA-2.0 | E1, E2 | 1 | 9,711 |
