@@ -1,6 +1,6 @@
 {
   "api_status": "This dataset is the build input for the Drupal Knowledge website. It is not a supported API contract and its shape may change between releases.",
-  "dataset_id": "dataset:1aa4305912b46a11b1fee9870568baaf",
+  "dataset_id": "dataset:3176532632d94abbc8d6ff9b636ba410",
   "dataset_schema_version": "0.1",
   "dk_version": "1.1.3",
   "domains": [
@@ -16,7 +16,7 @@
       "domain": "advisory",
       "file": "domains/security.json",
       "label": "Security",
-      "record_count": 40,
+      "record_count": 61,
       "route": "/security/",
       "trust_class": "source_derived_authoritative"
     },
@@ -85,17 +85,17 @@
   ],
   "generated_by": "drupal-knowledge-public-export",
   "generated_from_release": "1.1.3",
-  "page_count": 354,
+  "page_count": 375,
   "query_interface_version": "0.1",
   "record_counts": {
-    "advisory": 40,
+    "advisory": 61,
     "api_lifecycle": 225,
     "change_record": 20,
     "implementation_rule": 9,
     "solved_case": 1,
     "trusted_knowledge": 11
   },
-  "records_digest": "0f57e0f1c1cdb4c3",
+  "records_digest": "ecb17efe1b9e7534",
   "result_contract_version": "0.1",
   "routes": [
     {
@@ -1575,6 +1575,106 @@
     {
       "domain": "advisory",
       "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-159/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-160/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-161/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-162/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-163/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-164/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-165/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-166/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-167/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-168/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-169/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-170/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-171/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-172/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-173/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-174/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-175/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-176/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-177/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CONTRIB-2026-178/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
       "route": "/security/SA-CORE-2025-001/"
     },
     {
@@ -1671,6 +1771,11 @@
       "domain": "advisory",
       "kind": "detail",
       "route": "/security/SA-CORE-2026-012/"
+    },
+    {
+      "domain": "advisory",
+      "kind": "detail",
+      "route": "/security/SA-CORE-2026-013/"
     },
     {
       "domain": "solved_case",
@@ -1864,7 +1969,7 @@
   ],
   "search_index": {
     "file": "search-index.json",
-    "row_count": 306
+    "row_count": 327
   },
   "source_freshness_summary": {
     "baselined": 34,

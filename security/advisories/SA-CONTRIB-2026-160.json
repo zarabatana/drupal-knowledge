@@ -1,0 +1,119 @@
+{
+  "advisory": {
+    "advisory_number": "160",
+    "canonical_url": "https://www.drupal.org/sa-contrib-2026-160",
+    "description_present": true,
+    "is_psa": false,
+    "kind": "contrib",
+    "published_at": "2026-09-23T16:14:14Z",
+    "title": "Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-160",
+    "updated_at": "2026-09-23T16:46:52Z",
+    "vulnerability_type": "Cross-site scripting",
+    "year": "2026"
+  },
+  "advisory_contract_version": "0.1",
+  "affected_versions": {
+    "clauses": [
+      {
+        "constraints": [
+          {
+            "operator": "lt",
+            "source_value": "<6.2.12",
+            "version": "6.2.12"
+          }
+        ],
+        "source_value": "<6.2.12"
+      },
+      {
+        "constraints": [
+          {
+            "operator": "gte",
+            "source_value": ">=6.3.0",
+            "version": "6.3.0"
+          },
+          {
+            "operator": "lt",
+            "source_value": "<6.3.1",
+            "version": "6.3.1"
+          }
+        ],
+        "source_value": ">=6.3.0 <6.3.1"
+      }
+    ],
+    "parse_method": "drupal_security_advisory_constraint_grammar",
+    "source_value": "<6.2.12 || >=6.3.0 <6.3.1",
+    "state": "parsed"
+  },
+  "cves": {
+    "identifiers": [
+      "CVE-2026-96362"
+    ],
+    "inferred": false,
+    "state": "sourced"
+  },
+  "enforcement": {
+    "automatically_blocking": false,
+    "intent": "guidance",
+    "policy_controlled": true
+  },
+  "engine": {
+    "deterministic": true,
+    "language_model_used": false,
+    "name": "drupal-knowledge-security-engine",
+    "version": "0.1"
+  },
+  "fixed_in": {
+    "release_nids": [
+      "3625365",
+      "3625366"
+    ],
+    "state": "stated",
+    "versions": [
+      "6.2.12",
+      "6.3.1"
+    ]
+  },
+  "id": "SA-CONTRIB-2026-160",
+  "is_general_knowledge_record": false,
+  "is_trusted_knowledge": false,
+  "project": {
+    "composer_package": "drupal/webform",
+    "drupal_project_nid": "7404",
+    "identity_state": "resolved",
+    "machine_name": "webform",
+    "project_type": "project_module",
+    "resolution": "authoritative_project_node",
+    "resolved_from": "https://www.drupal.org/api-d7/node/7404.json"
+  },
+  "provenance": {
+    "acquisition_channel": "external_authoritative_source",
+    "ingest_run_id": "security.20260923T205341.025bb3e5",
+    "ingested_at": "2026-09-23T20:53:41Z",
+    "ingested_by": {
+      "name": "drupal-knowledge-security-engine",
+      "version": "0.1"
+    },
+    "source_id": "drupal-security-advisories-recent",
+    "source_node_id": "3601420",
+    "source_snapshot_sha256": "sha256:7068c45f45bbd0ec53b20e281f0ef732dfe8ce594e433a81744e594adb540143",
+    "source_url": "https://www.drupal.org/sa-contrib-2026-160"
+  },
+  "record_class": "source_derived_authoritative_record",
+  "remediation": {
+    "authored_by_drupal_knowledge": false,
+    "executable": false,
+    "fixed_versions": [
+      "6.2.12",
+      "6.3.1"
+    ],
+    "source_solution_present": true,
+    "state": "sourced"
+  },
+  "severity": {
+    "inferred": false,
+    "risk_vector": "AC:Complex/A:None/CI:Some/II:Some/E:Theoretical/TD:Uncommon",
+    "scored_by_drupal_knowledge": false,
+    "source_field": "field_sa_criticality",
+    "state": "sourced"
+  }
+}
