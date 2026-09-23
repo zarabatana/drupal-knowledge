@@ -18,11 +18,14 @@ They are legitimate answers to a local question and they are never global
 content, so the domains that produce them are excluded here by name, each with
 a stated reason rather than a silent omission.
 
-**Identity is content, not clock.** The dataset carries a ``dataset_id``
-derived from its own canonical bytes, so the same DK release over the same
-records always identifies itself the same way. Anything that changes because
-time passed — how many days old a snapshot is, when a build ran — is volatile
-build metadata and lives outside the committed dataset.
+**Identity is knowledge, not clock and not release.** The dataset carries a
+``dataset_id`` derived from the trusted records alone, so any release over the
+same knowledge identifies itself the same way. Which release built it, how
+fresh each source is and when the build ran are all published here as fact and
+none of them is an input: a re-fetch that proves the knowledge unchanged leaves
+the identity unchanged, and so does a version bump. Anything that changes
+because time passed — how many days old a snapshot is, when a build ran — is
+volatile build metadata and lives outside the committed dataset entirely.
 
 **Absence is deliberate.** Ten discovery signals exist in this repository and
 none of them is published. That is recorded in the manifest as an exclusion with
@@ -590,12 +593,13 @@ def build_dataset(root: Path = dk_core.ROOT) -> dict[str, object]:
         "routes": all_routes,
         "page_count": len(all_routes),
     }
-    # The identity covers everything the dataset asserts, including the manifest
-    # itself minus the field that carries it, so a changed exclusion reason or a
-    # changed route is a changed dataset.
-    manifest["dataset_id"] = "dataset:" + query.digest_hex(
-        stable_json(files), stable_json(manifest)
-    )[:32]
+    # Identity is the trusted knowledge and nothing else, so it is computed at
+    # the query layer over the canonical records rather than over these files.
+    # Everything above that is not knowledge — which release built it, how
+    # fresh each source is, how many rows the search index holds — is published
+    # here as fact and is deliberately not an input: a re-fetch that confirms
+    # the knowledge unchanged must leave the dataset identity unchanged.
+    manifest["dataset_id"] = query.semantic_identity(root)["dataset_id"]
     files[MANIFEST_FILE] = manifest
     assert_public_safe("public manifest", manifest)
     return files

@@ -68,19 +68,26 @@ never had it.
 
 ## Determinism And Staleness
 
-The dataset carries a content-addressed `dataset_id` and no timestamp. The same
-release over the same records produces byte-identical files, so a diff means
-something changed.
+The dataset carries a content-addressed `dataset_id` and no timestamp. Any
+release over the same records produces the same identity, so a moved
+`dataset_id` means the trusted knowledge moved.
 
-Anything that moves because a clock moved — how many days old a snapshot is,
-when a build ran — is volatile build metadata. Source freshness is computed at
-render time from the published `last_observed_at` date, and `build-info.json`
-carries the build timestamp and commit. Neither touches dataset identity.
+`dataset_id` is derived from the trusted records alone. Source freshness,
+snapshot digests, review dates, the build clock and the release version are all
+published here as fact and none of them is an input, so a reviewed re-fetch
+that confirms the knowledge unchanged leaves the identity unchanged. Source
+freshness is computed at render time from the published `last_observed_at`
+date, and `build-info.json` carries the build timestamp and commit. None of it
+touches dataset identity. See
+[Versioning and Compatibility](VERSIONING_AND_COMPATIBILITY.md) for what that
+means for releases.
 
 The manifest records which release produced it, so **a release that bumps
 `VERSION` must republish the dataset in the same commit**. That is the guard
 working rather than a workaround: after a bump the committed manifest no longer
-describes the repository, and only `manifest.json` changes.
+describes the repository, and only `manifest.json` changes — in `dk_version`
+and `generated_from_release`, which are published fact about the release. The
+`dataset_id` in that same file does not move, because the knowledge did not.
 
 Changing a canonical record without rebuilding fails validation:
 
