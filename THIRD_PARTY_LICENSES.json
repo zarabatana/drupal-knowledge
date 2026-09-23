@@ -88,10 +88,10 @@
   ],
   "totals": {
     "families": 34,
-    "files": 45,
-    "bytes": 2966090,
+    "files": 49,
+    "bytes": 3664629,
     "by_license": {
-      "CC-BY-SA-2.0": 34,
+      "CC-BY-SA-2.0": 38,
       "GPL-2.0-or-later": 11
     }
   },
@@ -174,6 +174,11 @@
       "redistribution_status": "permitted_with_attribution",
       "notes": "updates.drupal.org is a drupal.org subdomain service of the same Website; its output is Drupal.org content under E1. The material is predominantly factual release metadata (versions, dates, download URLs, hashes).",
       "files": [
+        {
+          "path": "sources/snapshots/drupal-core-releases/1fe0ae0f0bcfc7099b8ce95957bd5c27067003fddf4d2b266b25bf056017348a.txt",
+          "sha256": "1fe0ae0f0bcfc7099b8ce95957bd5c27067003fddf4d2b266b25bf056017348a",
+          "bytes": 546342
+        },
         {
           "path": "sources/snapshots/drupal-core-releases/2c6302dcfe0d2dd98afb22db753b6ee0761b9440555b71b1af2272b9ba84c2fb.txt",
           "sha256": "2c6302dcfe0d2dd98afb22db753b6ee0761b9440555b71b1af2272b9ba84c2fb",
@@ -312,6 +317,11 @@
       "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
       "files": [
         {
+          "path": "sources/snapshots/drupal-security-contrib/a61905b6378b93782006dba6e6f066d61f97f6da47fae10ecd4a4b3a96b8cdd1.txt",
+          "sha256": "a61905b6378b93782006dba6e6f066d61f97f6da47fae10ecd4a4b3a96b8cdd1",
+          "bytes": 38562
+        },
+        {
           "path": "sources/snapshots/drupal-security-contrib/d556d9a125aefec4e81b754e28b73caba5f32d760994ee32154e2033a1e10d2b.txt",
           "sha256": "d556d9a125aefec4e81b754e28b73caba5f32d760994ee32154e2033a1e10d2b",
           "bytes": 37668
@@ -358,6 +368,11 @@
           "path": "sources/snapshots/drupal-security-psa/76fcee8b3779b2cb9d4f176d6f68f238e562bf6c71684caee6d3516503d4cb7a.txt",
           "sha256": "76fcee8b3779b2cb9d4f176d6f68f238e562bf6c71684caee6d3516503d4cb7a",
           "bytes": 5724
+        },
+        {
+          "path": "sources/snapshots/drupal-security-psa/e5beeac60c43ef3e4510d21496ae2fc1cf4d67c71dba288b0d0bdb0a3778ace8.txt",
+          "sha256": "e5beeac60c43ef3e4510d21496ae2fc1cf4d67c71dba288b0d0bdb0a3778ace8",
+          "bytes": 6045
         }
       ]
     },
@@ -667,6 +682,11 @@
       "redistribution_status": "permitted_with_attribution",
       "notes": "Non-code content of the Drupal.org website is CC BY-SA 2.0 (E1, E2). Where a page embeds sample code, that code is GPL-2.0-or-later (E1).",
       "files": [
+        {
+          "path": "sources/snapshots/drupal-security-advisories-recent/7068c45f45bbd0ec53b20e281f0ef732dfe8ce594e433a81744e594adb540143.txt",
+          "sha256": "7068c45f45bbd0ec53b20e281f0ef732dfe8ce594e433a81744e594adb540143",
+          "bytes": 107590
+        },
         {
           "path": "sources/snapshots/drupal-security-advisories-recent/e3247c4fbfeb97ab42b797d17cd6e8cfc8766e356d3bcaeb9c2dd907a8962fbf.txt",
           "sha256": "e3247c4fbfeb97ab42b797d17cd6e8cfc8766e356d3bcaeb9c2dd907a8962fbf",

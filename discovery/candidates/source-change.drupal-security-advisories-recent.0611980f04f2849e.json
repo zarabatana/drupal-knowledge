@@ -1,0 +1,65 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 1,
+    "added_sample": [
+      "{\"self\":\"https:\\/\\/www.drupal.org\\/api-d7\\/node?type=sa\\u0026sort=created\\u0026direction=DESC\\u0026limit=20\",\"first\":\"https:\\/\\/www.drupal.org\\/api-d7\\/node?typ…"
+    ],
+    "changed_region_count": 1,
+    "current_bytes": 107590,
+    "current_line_count": 1,
+    "deterministic": true,
+    "first_changed_line": 1,
+    "method": "normalized_line_diff",
+    "previous_bytes": 95450,
+    "previous_line_count": 1,
+    "removed_line_count": 1,
+    "removed_sample": [
+      "{\"self\":\"https:\\/\\/www.drupal.org\\/api-d7\\/node?type=sa\\u0026sort=created\\u0026direction=DESC\\u0026limit=20\",\"first\":\"https:\\/\\/www.drupal.org\\/api-d7\\/node?typ…"
+    ]
+  },
+  "current_hash": "sha256:7068c45f45bbd0ec53b20e281f0ef732dfe8ce594e433a81744e594adb540143",
+  "discovered_at": "2026-09-23T17:04:37Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-security-advisories-recent.0611980f04f2849e",
+  "is_knowledge_proposal": false,
+  "kind": "security-source-change",
+  "previous_hash": "sha256:e3247c4fbfeb97ab42b797d17cd6e8cfc8766e356d3bcaeb9c2dd907a8962fbf",
+  "provenance": {
+    "acquired_at": "2026-09-23T17:04:37Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/security/contrib",
+    "category": "security",
+    "content_length": 107590,
+    "content_type": "application/json",
+    "content_window": null,
+    "etag": null,
+    "fetch_url": "https://www.drupal.org/api-d7/node.json?type=sa&sort=created&direction=DESC&limit=20",
+    "http_status": 200,
+    "last_modified": null,
+    "normalization": "raw_text",
+    "trust": "authoritative"
+  },
+  "review": {
+    "actor": "Miguel Martins",
+    "authorizes_knowledge_proposal_work": true,
+    "method": "human_security_review",
+    "note": "The structured most-recent advisory feed rotated its whole twenty-item window. Twenty new advisories numbered SA-CONTRIB-2026-159 to SA-CONTRIB-2026-178 arrived, each carrying its own affected-version expression, fixed release and CVE identifier: Webform advisories state affected versions below 6.2.12 and 6.3.0 up to 6.3.1, Cloud advisories state below 7.0.1, and the Project Browser advisory states below 2.0.3 and 2.1.0 up to 2.1.5. Those expressions are the advisories own and must be recorded verbatim, never widened or re-derived. Twenty entries left the window, among them SA-CORE-2026-013 and the September public service announcement. Leaving a limit-twenty window is not retraction: SA-CORE-2026-013 is still present in the core advisory feed, which this run re-fetched and found unchanged, with its affected range intact. Nothing about the 11.4.7 semantic-authority basis is weakened. The twenty new advisories are new records for the reviewed security ingest.",
+    "outcome": "reviewed_requires_knowledge_proposal",
+    "reviewed_at": "2026-09-23T18:37:35Z",
+    "trusted_knowledge_changed": false
+  },
+  "review_required": true,
+  "review_state": "reviewed_requires_knowledge_proposal",
+  "run_id": "run.20260923T170437.31ddcb7e",
+  "source_id": "drupal-security-advisories-recent",
+  "source_url": "https://www.drupal.org/security/contrib",
+  "status": "reviewed",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}

@@ -49835,7 +49835,7 @@
     },
     {
       "date": {
-        "source_value": "1790024033",
+        "source_value": "1790079330",
         "state": "present"
       },
       "download_link": {
@@ -51691,7 +51691,7 @@
     },
     {
       "date": {
-        "source_value": "1790059472",
+        "source_value": "1790173917",
         "state": "present"
       },
       "download_link": {
@@ -51759,11 +51759,11 @@
   "schema_version": "0.1",
   "source": {
     "current_state_content_length": 546342,
-    "current_state_sha256": "sha256:ec1b75d396c803c35bcf27323530acf7bd27b3415513cd51f98d0d58fb93635c",
+    "current_state_sha256": "sha256:1fe0ae0f0bcfc7099b8ce95957bd5c27067003fddf4d2b266b25bf056017348a",
     "fetch_url": "https://updates.drupal.org/release-history/drupal/current",
     "snapshot_bytes": 546342,
-    "snapshot_path": "sources/snapshots/drupal-core-releases/ec1b75d396c803c35bcf27323530acf7bd27b3415513cd51f98d0d58fb93635c.txt",
-    "snapshot_sha256": "sha256:ec1b75d396c803c35bcf27323530acf7bd27b3415513cd51f98d0d58fb93635c",
+    "snapshot_path": "sources/snapshots/drupal-core-releases/1fe0ae0f0bcfc7099b8ce95957bd5c27067003fddf4d2b266b25bf056017348a.txt",
+    "snapshot_sha256": "sha256:1fe0ae0f0bcfc7099b8ce95957bd5c27067003fddf4d2b266b25bf056017348a",
     "source_id": "drupal-core-releases",
     "state_path": "sources/state/drupal-core-releases.json",
     "state_snapshot_relation": "current",

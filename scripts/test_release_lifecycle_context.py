@@ -22,7 +22,7 @@ ROOT = dk_core.ROOT
 CONTEXT_PATH = ROOT / "knowledge" / "context" / "drupal-core-release-lifecycle.json"
 # Pinned to the currently reviewed snapshot. Advancing this constant is only
 # correct alongside an explicit re-review of the context it describes.
-EXPECTED_SOURCE_SHA = "sha256:ec1b75d396c803c35bcf27323530acf7bd27b3415513cd51f98d0d58fb93635c"
+EXPECTED_SOURCE_SHA = "sha256:1fe0ae0f0bcfc7099b8ce95957bd5c27067003fddf4d2b266b25bf056017348a"
 FORBIDDEN_PROJECT_VERDICT_KEYS = {
     "project_is_outdated",
     "project_is_supported",
