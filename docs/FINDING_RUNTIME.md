@@ -66,7 +66,7 @@ Exactly one reviewed contract exists and is executed:
 | Assertion | `installed_core_release_is_not_secure_per_drupal_update_status` |
 | Evidence domain | `release_lifecycle_assessment` |
 | Literal trigger | `Release type` term value `Insecure` on the exact installed release row |
-| Semantic authority | reviewed Drupal 11.4.5 update-module sources (`isInsecure()` -> `NOT_SECURE` -> "Project is missing security update(s).") |
+| Semantic authority | reviewed Drupal 11.4.7 update-module sources (`isInsecure()` -> `NOT_SECURE` -> "Project is missing security update(s).") |
 
 ## Finding States
 
