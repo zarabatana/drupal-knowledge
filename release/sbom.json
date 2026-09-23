@@ -2,10 +2,10 @@
   "component": {
     "language": "python",
     "name": "drupal-knowledge",
-    "version": "1.1.1"
+    "version": "1.1.2"
   },
   "dependency_policy": "Python standard library only. Verified by an import scan over scripts/ and collectors/ at generation time; a third-party import fails the build.",
-  "dk_version": "1.1.1",
+  "dk_version": "1.1.2",
   "python_dependencies": [],
   "python_stdlib_modules_used": [
     "argparse",

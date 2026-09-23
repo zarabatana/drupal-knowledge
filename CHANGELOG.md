@@ -11,6 +11,49 @@ Knowledge v1.0.0 release. Its history begins at `1.0.0`; the entries below
 it, so that a record's contract version and a document's references can be
 read in context.
 
+## 1.1.2 — 2026-09-23
+
+Publishes the reviewed acquisition evidence from the 2026-09-22 scheduled
+run. No reviewed conclusion about Drupal changed in this release; what
+changed is the evidence those conclusions are pinned to, and the record of
+the human review that accepted it.
+
+### Changed
+
+- Published source provenance now reflects the reviewed acquisition: eight
+  authoritative sources carry new immutable snapshot digests and all twelve
+  contacted sources carry new observation timestamps. Every source's title,
+  trust tier, category, role, licence and lifecycle is unchanged, and no
+  published record content changed — the six domain files and the search
+  index are byte-identical to 1.1.1.
+- The reviewed Drupal core release-lifecycle context was re-normalized onto
+  the new snapshot, 556 to 559 releases. Drupal marked nine previously
+  covered releases `Insecure` after its 2026-09-16 core security release:
+  11.4.6, 11.4.5, 11.4.4, 11.3.16, 11.3.14, 10.6.16, 10.6.15, 10.6.14 and
+  10.6.13, superseded by 11.4.7, 11.3.17 and 10.6.17.
+- The update-module semantic authority advanced from Drupal 11.4.5, which is
+  now one of those insecure releases, to 11.4.7. The three pinned files are
+  byte-identical at both tags, verified by raw fetch and by re-acquisition
+  reporting `unchanged`, so the reviewed meaning is untouched and only the
+  representative release moved. `dk_core.semantic_authority_tag()` is now
+  the single place that answers which release that is.
+
+### Added
+
+- `docs/lifecycle-finding-eligibility-review-2026-09-23.json`, a superseding
+  review that records the current observation, the drift from the frozen
+  2026-09-07 audit as a conservation identity, and why a statement that was
+  true at the audit is no longer true. The 2026-09-07 audit itself is
+  historical evidence and is unchanged.
+
+### Unchanged by design
+
+- No advisory, rule, API lifecycle or knowledge record was added, changed or
+  removed. SA-CORE-2026-013, SA-CONTRIB-2026-148 to 2026-153, PSA-2026-09-21
+  and the Drupal 12.0.x / 11.5.x change records remain review candidates:
+  a source change is not a knowledge change.
+- Every contract version advertised by `dk version --json` is unchanged.
+
 ## 1.1.1 — 2026-09-22
 
 ### Fixed
