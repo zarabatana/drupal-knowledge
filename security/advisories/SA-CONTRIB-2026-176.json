@@ -1,0 +1,101 @@
+{
+  "advisory": {
+    "advisory_number": "176",
+    "canonical_url": "https://www.drupal.org/sa-contrib-2026-176",
+    "description_present": true,
+    "is_psa": false,
+    "kind": "contrib",
+    "published_at": "2026-09-23T16:50:15Z",
+    "title": "Cloud - Critical - Remote code execution - SA-CONTRIB-2026-176",
+    "updated_at": "2026-09-23T16:53:19Z",
+    "vulnerability_type": "Remote code execution",
+    "year": "2026"
+  },
+  "advisory_contract_version": "0.1",
+  "affected_versions": {
+    "clauses": [
+      {
+        "constraints": [
+          {
+            "operator": "lt",
+            "source_value": "<7.0.1",
+            "version": "7.0.1"
+          }
+        ],
+        "source_value": "<7.0.1"
+      }
+    ],
+    "parse_method": "drupal_security_advisory_constraint_grammar",
+    "source_value": "<7.0.1",
+    "state": "parsed"
+  },
+  "cves": {
+    "identifiers": [
+      "CVE-2026-96375"
+    ],
+    "inferred": false,
+    "state": "sourced"
+  },
+  "enforcement": {
+    "automatically_blocking": false,
+    "intent": "guidance",
+    "policy_controlled": true
+  },
+  "engine": {
+    "deterministic": true,
+    "language_model_used": false,
+    "name": "drupal-knowledge-security-engine",
+    "version": "0.1"
+  },
+  "fixed_in": {
+    "release_nids": [
+      "3625372"
+    ],
+    "state": "stated",
+    "versions": [
+      "7.0.1"
+    ]
+  },
+  "id": "SA-CONTRIB-2026-176",
+  "is_general_knowledge_record": false,
+  "is_trusted_knowledge": false,
+  "project": {
+    "composer_package": "drupal/cloud",
+    "drupal_project_nid": "4146",
+    "identity_state": "resolved",
+    "machine_name": "cloud",
+    "project_type": "project_module",
+    "resolution": "authoritative_project_node",
+    "resolved_from": "https://www.drupal.org/api-d7/node/4146.json"
+  },
+  "provenance": {
+    "acquisition_channel": "external_authoritative_source",
+    "ingest_run_id": "security.20260923T205341.025bb3e5",
+    "ingested_at": "2026-09-23T20:53:41Z",
+    "ingested_by": {
+      "name": "drupal-knowledge-security-engine",
+      "version": "0.1"
+    },
+    "source_id": "drupal-security-advisories-recent",
+    "source_node_id": "3622599",
+    "source_snapshot_sha256": "sha256:7068c45f45bbd0ec53b20e281f0ef732dfe8ce594e433a81744e594adb540143",
+    "source_url": "https://www.drupal.org/sa-contrib-2026-176"
+  },
+  "record_class": "source_derived_authoritative_record",
+  "remediation": {
+    "authored_by_drupal_knowledge": false,
+    "executable": false,
+    "fixed_versions": [
+      "7.0.1"
+    ],
+    "source_solution_present": true,
+    "state": "sourced"
+  },
+  "severity": {
+    "inferred": false,
+    "risk_vector": "AC:Complex/A:None/CI:Some/II:Some/E:Theoretical/TD:All",
+    "scored_by_drupal_knowledge": false,
+    "source_field": "field_sa_criticality",
+    "state": "sourced"
+  }
+}

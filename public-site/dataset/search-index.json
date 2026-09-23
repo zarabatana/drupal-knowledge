@@ -7,7 +7,7 @@
     "prefix_id": 600,
     "title_substring": 200
   },
-  "row_count": 306,
+  "row_count": 327,
   "rows": [
     {
       "body": [
@@ -391,6 +391,386 @@
     },
     {
       "body": [
+        "Cross-site scripting"
+      ],
+      "domain": "advisory",
+      "id": "SA-CONTRIB-2026-159",
+      "identity": [
+        "SA-CONTRIB-2026-159"
+      ],
+      "route": "/security/SA-CONTRIB-2026-159/",
+      "structured": [
+        "webform",
+        "drupal/webform",
+        "CVE-2026-96359"
+      ],
+      "summary": "contrib advisory for webform",
+      "title": "Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-159",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "body": [
+        "Cross-site scripting"
+      ],
+      "domain": "advisory",
+      "id": "SA-CONTRIB-2026-160",
+      "identity": [
+        "SA-CONTRIB-2026-160"
+      ],
+      "route": "/security/SA-CONTRIB-2026-160/",
+      "structured": [
+        "webform",
+        "drupal/webform",
+        "CVE-2026-96362"
+      ],
+      "summary": "contrib advisory for webform",
+      "title": "Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-160",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "body": [
+        "Cross-site scripting"
+      ],
+      "domain": "advisory",
+      "id": "SA-CONTRIB-2026-161",
+      "identity": [
+        "SA-CONTRIB-2026-161"
+      ],
+      "route": "/security/SA-CONTRIB-2026-161/",
+      "structured": [
+        "webform",
+        "drupal/webform",
+        "CVE-2026-96363"
+      ],
+      "summary": "contrib advisory for webform",
+      "title": "Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-161",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "body": [
+        "Cross-site scripting"
+      ],
+      "domain": "advisory",
+      "id": "SA-CONTRIB-2026-162",
+      "identity": [
+        "SA-CONTRIB-2026-162"
+      ],
+      "route": "/security/SA-CONTRIB-2026-162/",
+      "structured": [
+        "webform",
+        "drupal/webform",
+        "CVE-2026-96367"
+      ],
+      "summary": "contrib advisory for webform",
+      "title": "Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-162",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "body": [
+        "Cross-site scripting"
+      ],
+      "domain": "advisory",
+      "id": "SA-CONTRIB-2026-163",
+      "identity": [
+        "SA-CONTRIB-2026-163"
+      ],
+      "route": "/security/SA-CONTRIB-2026-163/",
+      "structured": [
+        "webform",
+        "drupal/webform",
+        "CVE-2026-96368"
+      ],
+      "summary": "contrib advisory for webform",
+      "title": "Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-163",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "body": [
+        "Access bypass, Server-side request forgery"
+      ],
+      "domain": "advisory",
+      "id": "SA-CONTRIB-2026-164",
+      "identity": [
+        "SA-CONTRIB-2026-164"
+      ],
+      "route": "/security/SA-CONTRIB-2026-164/",
+      "structured": [
+        "webform",
+        "drupal/webform",
+        "CVE-2026-96370"
+      ],
+      "summary": "contrib advisory for webform",
+      "title": "Webform - Moderately critical - Access bypass, Server-side request forgery - SA-CONTRIB-2026-164",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "body": [
+        "Access bypass"
+      ],
+      "domain": "advisory",
+      "id": "SA-CONTRIB-2026-165",
+      "identity": [
+        "SA-CONTRIB-2026-165"
+      ],
+      "route": "/security/SA-CONTRIB-2026-165/",
+      "structured": [
+        "webform",
+        "drupal/webform",
+        "CVE-2026-96369"
+      ],
+      "summary": "contrib advisory for webform",
+      "title": "Webform - Less critical - Access bypass - SA-CONTRIB-2026-165",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "body": [
+        "Cross-site scripting"
+      ],
+      "domain": "advisory",
+      "id": "SA-CONTRIB-2026-166",
+      "identity": [
+        "SA-CONTRIB-2026-166"
+      ],
+      "route": "/security/SA-CONTRIB-2026-166/",
+      "structured": [
+        "webform",
+        "drupal/webform",
+        "CVE-2026-96371"
+      ],
+      "summary": "contrib advisory for webform",
+      "title": "Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-166",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "body": [
+        "Access bypass"
+      ],
+      "domain": "advisory",
+      "id": "SA-CONTRIB-2026-167",
+      "identity": [
+        "SA-CONTRIB-2026-167"
+      ],
+      "route": "/security/SA-CONTRIB-2026-167/",
+      "structured": [
+        "webform",
+        "drupal/webform",
+        "CVE-2026-96372"
+      ],
+      "summary": "contrib advisory for webform",
+      "title": "Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-167",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "body": [
+        "Access bypass"
+      ],
+      "domain": "advisory",
+      "id": "SA-CONTRIB-2026-168",
+      "identity": [
+        "SA-CONTRIB-2026-168"
+      ],
+      "route": "/security/SA-CONTRIB-2026-168/",
+      "structured": [
+        "webform",
+        "drupal/webform",
+        "CVE-2026-96373"
+      ],
+      "summary": "contrib advisory for webform",
+      "title": "Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-168",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "body": [
+        "Access bypass"
+      ],
+      "domain": "advisory",
+      "id": "SA-CONTRIB-2026-169",
+      "identity": [
+        "SA-CONTRIB-2026-169"
+      ],
+      "route": "/security/SA-CONTRIB-2026-169/",
+      "structured": [
+        "webform",
+        "drupal/webform",
+        "CVE-2026-96366"
+      ],
+      "summary": "contrib advisory for webform",
+      "title": "Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-169",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "body": [
+        "Denial of service"
+      ],
+      "domain": "advisory",
+      "id": "SA-CONTRIB-2026-170",
+      "identity": [
+        "SA-CONTRIB-2026-170"
+      ],
+      "route": "/security/SA-CONTRIB-2026-170/",
+      "structured": [
+        "webform",
+        "drupal/webform",
+        "CVE-2026-96365"
+      ],
+      "summary": "contrib advisory for webform",
+      "title": "Webform - Less critical - Denial of service - SA-CONTRIB-2026-170",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "body": [
+        "Access bypass"
+      ],
+      "domain": "advisory",
+      "id": "SA-CONTRIB-2026-171",
+      "identity": [
+        "SA-CONTRIB-2026-171"
+      ],
+      "route": "/security/SA-CONTRIB-2026-171/",
+      "structured": [
+        "webform",
+        "drupal/webform",
+        "CVE-2026-96364"
+      ],
+      "summary": "contrib advisory for webform",
+      "title": "Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-171",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "body": [
+        "Cross-site scripting"
+      ],
+      "domain": "advisory",
+      "id": "SA-CONTRIB-2026-172",
+      "identity": [
+        "SA-CONTRIB-2026-172"
+      ],
+      "route": "/security/SA-CONTRIB-2026-172/",
+      "structured": [
+        "webform",
+        "drupal/webform",
+        "CVE-2026-96357"
+      ],
+      "summary": "contrib advisory for webform",
+      "title": "Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-172",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "body": [
+        "Access bypass"
+      ],
+      "domain": "advisory",
+      "id": "SA-CONTRIB-2026-173",
+      "identity": [
+        "SA-CONTRIB-2026-173"
+      ],
+      "route": "/security/SA-CONTRIB-2026-173/",
+      "structured": [
+        "webform",
+        "drupal/webform",
+        "CVE-2026-96398"
+      ],
+      "summary": "contrib advisory for webform",
+      "title": "Webform - Less critical - Access bypass - SA-CONTRIB-2026-173",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "body": [
+        "Access bypass"
+      ],
+      "domain": "advisory",
+      "id": "SA-CONTRIB-2026-174",
+      "identity": [
+        "SA-CONTRIB-2026-174"
+      ],
+      "route": "/security/SA-CONTRIB-2026-174/",
+      "structured": [
+        "webform",
+        "drupal/webform",
+        "CVE-2026-96356"
+      ],
+      "summary": "contrib advisory for webform",
+      "title": "Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-174",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "body": [
+        "Remote Code Execution"
+      ],
+      "domain": "advisory",
+      "id": "SA-CONTRIB-2026-175",
+      "identity": [
+        "SA-CONTRIB-2026-175"
+      ],
+      "route": "/security/SA-CONTRIB-2026-175/",
+      "structured": [
+        "webform",
+        "drupal/webform",
+        "CVE-2026-96355"
+      ],
+      "summary": "contrib advisory for webform",
+      "title": "Webform - Critical - Remote Code Execution - SA-CONTRIB-2026-175",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "body": [
+        "Remote code execution"
+      ],
+      "domain": "advisory",
+      "id": "SA-CONTRIB-2026-176",
+      "identity": [
+        "SA-CONTRIB-2026-176"
+      ],
+      "route": "/security/SA-CONTRIB-2026-176/",
+      "structured": [
+        "cloud",
+        "drupal/cloud",
+        "CVE-2026-96375"
+      ],
+      "summary": "contrib advisory for cloud",
+      "title": "Cloud - Critical - Remote code execution - SA-CONTRIB-2026-176",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "body": [
+        "Remote code execution"
+      ],
+      "domain": "advisory",
+      "id": "SA-CONTRIB-2026-177",
+      "identity": [
+        "SA-CONTRIB-2026-177"
+      ],
+      "route": "/security/SA-CONTRIB-2026-177/",
+      "structured": [
+        "cloud",
+        "drupal/cloud",
+        "CVE-2026-96376"
+      ],
+      "summary": "contrib advisory for cloud",
+      "title": "Cloud - Critical - Remote code execution - SA-CONTRIB-2026-177",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "body": [
+        "Cross-site request forgery"
+      ],
+      "domain": "advisory",
+      "id": "SA-CONTRIB-2026-178",
+      "identity": [
+        "SA-CONTRIB-2026-178"
+      ],
+      "route": "/security/SA-CONTRIB-2026-178/",
+      "structured": [
+        "project_browser",
+        "drupal/project_browser",
+        "CVE-2026-96374"
+      ],
+      "summary": "contrib advisory for project_browser",
+      "title": "Project Browser - Critical - Cross-site request forgery - SA-CONTRIB-2026-178",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "body": [
         "Cross site scripting"
       ],
       "domain": "advisory",
@@ -767,6 +1147,24 @@
       ],
       "summary": "core advisory for drupal",
       "title": "Drupal core - Moderately critical - Cross-site scripting - SA-CORE-2026-012",
+      "trust_class": "source_derived_authoritative"
+    },
+    {
+      "body": [
+        "Third-party libraries"
+      ],
+      "domain": "advisory",
+      "id": "SA-CORE-2026-013",
+      "identity": [
+        "SA-CORE-2026-013"
+      ],
+      "route": "/security/SA-CORE-2026-013/",
+      "structured": [
+        "drupal",
+        "drupal/core"
+      ],
+      "summary": "core advisory for drupal",
+      "title": "Drupal core - Moderately critical - Third-party libraries - SA-CORE-2026-013",
       "trust_class": "source_derived_authoritative"
     },
     {

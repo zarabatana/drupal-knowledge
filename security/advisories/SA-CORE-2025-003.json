@@ -7,7 +7,7 @@
     "kind": "core",
     "published_at": "2025-02-19T17:03:28Z",
     "title": "Drupal core - Moderately critical - Gadget Chain - SA-CORE-2025-003",
-    "updated_at": "2025-03-31T21:57:36Z",
+    "updated_at": "2026-09-19T14:41:35Z",
     "vulnerability_type": "Gadget Chain",
     "year": "2025"
   },
@@ -126,15 +126,15 @@
   },
   "provenance": {
     "acquisition_channel": "external_authoritative_source",
-    "ingest_run_id": "security.20260908T185627.fcceb306",
-    "ingested_at": "2026-09-08T18:56:27Z",
+    "ingest_run_id": "security.20260923T205341.025bb3e5",
+    "ingested_at": "2026-09-23T20:53:41Z",
     "ingested_by": {
       "name": "drupal-knowledge-security-engine",
       "version": "0.1"
     },
     "source_id": "drupal-security-advisories-core",
     "source_node_id": "3507831",
-    "source_snapshot_sha256": "sha256:2416cd08628ca6f8dd5dd873feae9ac23bc4bb709630ef87a5430f737c202dc4",
+    "source_snapshot_sha256": "sha256:b37d072cc4ce4e706870276008db1cb431afee486417b8661a82a662efdd3b1c",
     "source_url": "https://www.drupal.org/sa-core-2025-003"
   },
   "record_class": "source_derived_authoritative_record",

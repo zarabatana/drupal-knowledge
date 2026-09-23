@@ -1,0 +1,308 @@
+{
+  "artifact_type": "security-knowledge-proposal-review",
+  "boundary": {
+    "candidate_files_rationale": "A source-change candidate is an observation of a source, permanently. Its schema fixes can_promote_to_knowledge=false, is_knowledge_proposal=false and review.trusted_knowledge_changed=false, and its outcome enum has no value meaning 'proposal work completed'. Rewriting a candidate to record a later knowledge decision would rewrite source-review history, so the decisions of this cycle are recorded here instead and the candidates are left exactly as the acquisition review left them.",
+    "candidate_files_unmodified": true,
+    "source_change_is_not_knowledge_change": true
+  },
+  "decisions": [
+    {
+      "candidate_id": "source-change.drupal-security-advisories-recent.0611980f04f2849e",
+      "candidate_kind": "security-source-change",
+      "decision": "PROMOTE_TO_TRUSTED_KNOWLEDGE",
+      "evidence_references": [
+        "sources/snapshots/drupal-security-advisories-recent/7068c45f45bbd0ec53b20e281f0ef732dfe8ce594e433a81744e594adb540143.txt",
+        "discovery/candidates/source-change.drupal-security-advisories-recent.0611980f04f2849e.json"
+      ],
+      "existing_record_check": "NEW_RECORD",
+      "family": "SECURITY",
+      "next_action": "None. Published in this cycle.",
+      "rationale": "The structured api-d7 advisory feed is the authoritative machine-readable source and this snapshot is the one acquisition accepted. Twenty advisories SA-CONTRIB-2026-159 to 178 are absent from the corpus and each carries its own affected-version expression, fixed release, risk vector and CVE in the source. Four are published Critical and three are Remote code execution. Records were materialized by the existing security engine from this snapshot alone; no field was widened, re-derived or invented.",
+      "records_created": [
+        "SA-CONTRIB-2026-159",
+        "SA-CONTRIB-2026-160",
+        "SA-CONTRIB-2026-161",
+        "SA-CONTRIB-2026-162",
+        "SA-CONTRIB-2026-163",
+        "SA-CONTRIB-2026-164",
+        "SA-CONTRIB-2026-165",
+        "SA-CONTRIB-2026-166",
+        "SA-CONTRIB-2026-167",
+        "SA-CONTRIB-2026-168",
+        "SA-CONTRIB-2026-169",
+        "SA-CONTRIB-2026-170",
+        "SA-CONTRIB-2026-171",
+        "SA-CONTRIB-2026-172",
+        "SA-CONTRIB-2026-173",
+        "SA-CONTRIB-2026-174",
+        "SA-CONTRIB-2026-175",
+        "SA-CONTRIB-2026-176",
+        "SA-CONTRIB-2026-177",
+        "SA-CONTRIB-2026-178"
+      ],
+      "records_updated": [],
+      "source_id": "drupal-security-advisories-recent",
+      "source_snapshot": "sha256:7068c45f45bbd0ec53b20e281f0ef732dfe8ce594e433a81744e594adb540143",
+      "source_trust_class": "authoritative"
+    },
+    {
+      "candidate_id": "source-change.drupal-security-advisories-core.b1dea6773faf4f0a",
+      "candidate_kind": "security-source-change",
+      "decision": "PROMOTE_TO_TRUSTED_KNOWLEDGE",
+      "evidence_references": [
+        "sources/snapshots/drupal-security-advisories-core/b37d072cc4ce4e706870276008db1cb431afee486417b8661a82a662efdd3b1c.txt",
+        "discovery/candidates/source-change.drupal-security-advisories-core.b1dea6773faf4f0a.json"
+      ],
+      "existing_record_check": "NEW_RECORD + UPDATE_EXISTING_RECORD",
+      "family": "SECURITY",
+      "next_action": "None. Published in this cycle.",
+      "rationale": "SA-CORE-2026-013 is new and was materialized from this snapshot. Three advisories already held, SA-CORE-2025-002, -003 and -004, were re-read from the same snapshot: their affected expression, fixed versions, risk vector and CVE are byte-identical to what was already stored and only the advisory's own updated_at moved, which is the administrative edit the acquisition review described. They are recorded as updated rather than rewritten in substance. The remaining sixteen advisories in the window were materially identical and were reused untouched.",
+      "records_created": [
+        "SA-CORE-2026-013"
+      ],
+      "records_updated": [
+        "SA-CORE-2025-002",
+        "SA-CORE-2025-003",
+        "SA-CORE-2025-004"
+      ],
+      "source_id": "drupal-security-advisories-core",
+      "source_snapshot": "sha256:b37d072cc4ce4e706870276008db1cb431afee486417b8661a82a662efdd3b1c",
+      "source_trust_class": "authoritative"
+    },
+    {
+      "candidate_id": "source-change.drupal-security-advisories-recent.e2f4d372d7351f99",
+      "candidate_kind": "security-source-change",
+      "critical_not_promoted": [
+        "SA-CONTRIB-2026-136",
+        "SA-CONTRIB-2026-139",
+        "SA-CONTRIB-2026-141",
+        "SA-CONTRIB-2026-142",
+        "SA-CONTRIB-2026-143",
+        "SA-CONTRIB-2026-144",
+        "SA-CONTRIB-2026-152",
+        "SA-CONTRIB-2026-153"
+      ],
+      "decision": "RETAIN_AS_PROPOSAL",
+      "evidence_references": [
+        "sources/snapshots/drupal-security-advisories-recent/e3247c4fbfeb97ab42b797d17cd6e8cfc8766e356d3bcaeb9c2dd907a8962fbf.txt",
+        "discovery/candidates/source-change.drupal-security-advisories-recent.e2f4d372d7351f99.json"
+      ],
+      "existing_record_check": "NEW_RECORD",
+      "family": "SECURITY",
+      "next_action": "Next cycle: give the security ingest the ability to materialize advisories from any retained snapshot of a registered feed, then promote SA-CONTRIB-2026-136 to 153 from this snapshot.",
+      "observed_not_promoted": [
+        "SA-CONTRIB-2026-136",
+        "SA-CONTRIB-2026-137",
+        "SA-CONTRIB-2026-138",
+        "SA-CONTRIB-2026-139",
+        "SA-CONTRIB-2026-140",
+        "SA-CONTRIB-2026-141",
+        "SA-CONTRIB-2026-142",
+        "SA-CONTRIB-2026-143",
+        "SA-CONTRIB-2026-144",
+        "SA-CONTRIB-2026-145",
+        "SA-CONTRIB-2026-146",
+        "SA-CONTRIB-2026-147",
+        "SA-CONTRIB-2026-148",
+        "SA-CONTRIB-2026-149",
+        "SA-CONTRIB-2026-150",
+        "SA-CONTRIB-2026-151",
+        "SA-CONTRIB-2026-152",
+        "SA-CONTRIB-2026-153"
+      ],
+      "rationale": "This candidate observed the intermediate window of the same rolling feed. Eighteen advisories, SA-CONTRIB-2026-136 to 153, are real, are held immutably in the stored snapshot and are absent from the corpus; eight of them are published Critical and none is Remote code execution. They are not promoted in this cycle because the security ingest engine reads only the snapshot currently accepted in sources/state, and the accepted snapshot has since rotated past this window. Reaching them would require either rewriting accepted acquisition state, which would falsify source freshness, or an engine capability to ingest from a named historical snapshot, which does not exist. Nothing is lost: the snapshot is immutable and in-tree, and the proposal stays open.",
+      "rce_not_promoted": [],
+      "records_created": [],
+      "records_updated": [],
+      "source_id": "drupal-security-advisories-recent",
+      "source_snapshot": "sha256:e3247c4fbfeb97ab42b797d17cd6e8cfc8766e356d3bcaeb9c2dd907a8962fbf",
+      "source_trust_class": "authoritative"
+    },
+    {
+      "candidate_id": "source-change.drupal-security-core.24b9342301bad310",
+      "candidate_kind": "security-source-change",
+      "decision": "DUPLICATE_NO_CHANGE",
+      "evidence_references": [
+        "sources/snapshots/drupal-security-core/feaf4ebad3453894ae600de7730efd6ea31c0ea298e7d3fb145763b2b3697536.txt",
+        "discovery/candidates/source-change.drupal-security-core.24b9342301bad310.json",
+        "security/advisories/SA-CORE-2026-013.json"
+      ],
+      "existing_record_check": "DUPLICATE",
+      "family": "SECURITY",
+      "next_action": "None.",
+      "rationale": "This is the human-facing core advisory listing. The single new advisory it reports, SA-CORE-2026-013, was promoted in this cycle from the structured core feed, which carries the affected-version expression and the resolved fixed releases that this page does not publish. Promoting the same advisory a second time from the weaker evidence would duplicate the record and lose fields. The listing corroborates; it does not add.",
+      "records_created": [],
+      "records_updated": [],
+      "source_id": "drupal-security-core",
+      "source_snapshot": "sha256:feaf4ebad3453894ae600de7730efd6ea31c0ea298e7d3fb145763b2b3697536",
+      "source_trust_class": "authoritative"
+    },
+    {
+      "candidate_id": "source-change.drupal-security-contrib.c70de57ad33fc831",
+      "candidate_kind": "security-source-change",
+      "critical_not_promoted": [],
+      "decision": "RETAIN_AS_PROPOSAL",
+      "evidence_references": [
+        "sources/snapshots/drupal-security-contrib/a61905b6378b93782006dba6e6f066d61f97f6da47fae10ecd4a4b3a96b8cdd1.txt",
+        "discovery/candidates/source-change.drupal-security-contrib.c70de57ad33fc831.json"
+      ],
+      "existing_record_check": "DUPLICATE for the promoted range; NEW_RECORD for the residue",
+      "family": "SECURITY",
+      "next_action": "Next cycle: acquire per-advisory structured nodes for the residue identifiers, then promote.",
+      "observed_not_promoted": [
+        "SA-CONTRIB-2026-134",
+        "SA-CONTRIB-2026-135",
+        "SA-CONTRIB-2026-154",
+        "SA-CONTRIB-2026-155",
+        "SA-CONTRIB-2026-158"
+      ],
+      "rationale": "Twenty of the advisories this listing reports, SA-CONTRIB-2026-159 to 178, were promoted in this cycle from the structured feed. The residue 134, 135, 154, 155 and 158 appears only in this human-facing listing, which publishes severity, risk vector, CVE and project but no affected-version expression and no fixed release. A record built from it would have to leave affected_versions absent while the advisory itself states one, which would record an unknown as a fact. Retained until structured evidence for those identifiers is held.",
+      "rce_not_promoted": [],
+      "records_created": [],
+      "records_updated": [],
+      "source_id": "drupal-security-contrib",
+      "source_snapshot": "sha256:a61905b6378b93782006dba6e6f066d61f97f6da47fae10ecd4a4b3a96b8cdd1",
+      "source_trust_class": "authoritative"
+    },
+    {
+      "candidate_id": "source-change.drupal-security-contrib.c28ab4d7548cae02",
+      "candidate_kind": "security-source-change",
+      "decision": "DUPLICATE_NO_CHANGE",
+      "evidence_references": [
+        "sources/snapshots/drupal-security-contrib/d556d9a125aefec4e81b754e28b73caba5f32d760994ee32154e2033a1e10d2b.txt",
+        "discovery/candidates/source-change.drupal-security-contrib.c28ab4d7548cae02.json"
+      ],
+      "existing_record_check": "DUPLICATE",
+      "family": "SECURITY",
+      "next_action": "Tracked by candidate source-change.drupal-security-advisories-recent.e2f4d372d7351f99.",
+      "rationale": "The superseded window of the same listing. Every advisory it reports that is not already held is contained in the set retained under candidate source-change.drupal-security-advisories-recent.e2f4d372d7351f99, which holds the same advisories with structured fields. Tracking the same residue twice would create two proposals for one body of evidence.",
+      "records_created": [],
+      "records_updated": [],
+      "source_id": "drupal-security-contrib",
+      "source_snapshot": "sha256:d556d9a125aefec4e81b754e28b73caba5f32d760994ee32154e2033a1e10d2b",
+      "source_trust_class": "authoritative"
+    },
+    {
+      "candidate_id": "source-change.drupal-security-psa.a67664d5a848c5ae",
+      "candidate_kind": "security-source-change",
+      "decision": "REJECT_PROPOSAL",
+      "evidence_references": [
+        "sources/snapshots/drupal-security-psa/76fcee8b3779b2cb9d4f176d6f68f238e562bf6c71684caee6d3516503d4cb7a.txt",
+        "discovery/candidates/source-change.drupal-security-psa.a67664d5a848c5ae.json",
+        "knowledge/records/drupal.security.advisory-streams-separated.json"
+      ],
+      "existing_record_check": "NO_TRUSTED_RECORD_REQUIRED",
+      "family": "SECURITY",
+      "next_action": "None. Announcements are not vulnerability records.",
+      "rationale": "PSA-2026-09-21 announced a contributed-project security release that had not yet happened. It names no affected version and no fixed version, so no applicability can be derived from it and it cannot be expressed as an advisory record without inventing the fields the schema requires. The release it announced landed on 2026-09-23 and its advisories are the promotions of this cycle, so the knowledge the announcement pointed at is now held as evidence-backed advisory records. The general distinction it illustrates is already held as trusted knowledge in drupal.security.advisory-streams-separated.",
+      "records_created": [],
+      "records_updated": [],
+      "source_id": "drupal-security-psa",
+      "source_snapshot": "sha256:76fcee8b3779b2cb9d4f176d6f68f238e562bf6c71684caee6d3516503d4cb7a",
+      "source_trust_class": "authoritative"
+    },
+    {
+      "candidate_id": "source-change.drupal-security-psa.dfbd517376d6b676",
+      "candidate_kind": "security-source-change",
+      "decision": "REJECT_PROPOSAL",
+      "evidence_references": [
+        "sources/snapshots/drupal-security-psa/e5beeac60c43ef3e4510d21496ae2fc1cf4d67c71dba288b0d0bdb0a3778ace8.txt",
+        "discovery/candidates/source-change.drupal-security-psa.dfbd517376d6b676.json"
+      ],
+      "existing_record_check": "NO_TRUSTED_RECORD_REQUIRED",
+      "family": "SECURITY",
+      "next_action": "None.",
+      "rationale": "The 2026-09-22 revision of the same announcement. It broadened the warning and withdrew the published risk vector from the listing, which is a real change in authoritative guidance, but it remains an announcement about one release event rather than a vulnerability with an affected or fixed version. Its substance is now carried by the twenty-one advisory records promoted in this cycle, each with its own risk vector and version expressions. Recording the announcement as trusted knowledge would restate a transient notice as a durable Drupal fact.",
+      "records_created": [],
+      "records_updated": [],
+      "source_id": "drupal-security-psa",
+      "source_snapshot": "sha256:e5beeac60c43ef3e4510d21496ae2fc1cf4d67c71dba288b0d0bdb0a3778ace8",
+      "source_trust_class": "authoritative"
+    },
+    {
+      "candidate_id": "source-change.drupal-core-change-notices.511bc8ebc2959a19",
+      "candidate_kind": "release-source-change",
+      "decision": "RETAIN_AS_PROPOSAL",
+      "evidence_references": [
+        "sources/snapshots/drupal-core-change-notices/06569965487c18fffe367af84bc4618f0889ed1be9be8b570c1acbefb6ba5c35.txt",
+        "discovery/candidates/source-change.drupal-core-change-notices.511bc8ebc2959a19.json",
+        "scripts/dk_api_lifecycle.py"
+      ],
+      "existing_record_check": "NEW_RECORD",
+      "family": "API_LIFECYCLE",
+      "next_action": "Next cycle: make change-record ingest accumulate across snapshots for rolling-window feeds, keeping clear-and-replace only for the complete deprecation index, then promote this proposal.",
+      "rationale": "The change-notice feed rotated in genuine Drupal 12.0.x removals and 11.5.x deprecations, which is real lifecycle knowledge and not metadata-only release movement. It is not promoted in this cycle because the only canonical path, the api-lifecycle ingest, clears every change record belonging to the feed before rewriting it from the current window. Measured on this evidence that deletes 19 of the 20 change records already held, because they have scrolled out of the rolling limit=20 window. Upstream retracted none of them. Promoting through that path would retract knowledge, so the proposal is retained intact.",
+      "records_created": [],
+      "records_updated": [],
+      "source_id": "drupal-core-change-notices",
+      "source_snapshot": "sha256:06569965487c18fffe367af84bc4618f0889ed1be9be8b570c1acbefb6ba5c35",
+      "source_trust_class": "authoritative"
+    },
+    {
+      "candidate_id": "source-change.drupal-core-change-records.e09eafb4e4e17629",
+      "candidate_kind": "release-source-change",
+      "decision": "DUPLICATE_NO_CHANGE",
+      "evidence_references": [
+        "sources/snapshots/drupal-core-change-records/555ffb84aad36f17a3af208d2ea940bf67be40d59444b962ca39d5696764cb64.txt",
+        "discovery/candidates/source-change.drupal-core-change-records.e09eafb4e4e17629.json"
+      ],
+      "existing_record_check": "DUPLICATE",
+      "family": "API_LIFECYCLE",
+      "next_action": "Tracked by candidate source-change.drupal-core-change-notices.511bc8ebc2959a19.",
+      "rationale": "The human-facing mirror of the same change-record page observed by the change-notice feed candidate. It reports the same Drupal 12.0.x removals and 11.5.x deprecations and carries no field the structured feed lacks. It is tracked by that candidate rather than separately.",
+      "records_created": [],
+      "records_updated": [],
+      "source_id": "drupal-core-change-records",
+      "source_snapshot": "sha256:555ffb84aad36f17a3af208d2ea940bf67be40d59444b962ca39d5696764cb64",
+      "source_trust_class": "authoritative"
+    }
+  ],
+  "defects_observed": [
+    {
+      "component": "scripts/dk_query.py semantic_records / project_advisory",
+      "id": "identity-moves-on-provenance-only-repin",
+      "impact": "Routine re-acquisition of unchanged advisories can mint a new dataset identity, which is the release pressure the identity refactor set out to remove. It did not distort this cycle: 21 records were genuinely added, so the identity had to move regardless.",
+      "next_action": "Next cycle: decide whether source identity stays in the identity payload while the snapshot digest leaves it, then extend VALID_STATE_PROVENANCE_REFRESH to re-pin a record's own snapshot digest.",
+      "not_fixed_here_because": "Changing what dataset identity is computed over is architecture work on a published API field, and this cycle is frozen to the knowledge-proposal queue. The repository's own precedent is a dedicated branch for identity changes.",
+      "reproduction": "At main 164b3404, take SA-CORE-2025-002, -003 and -004 as re-ingested in this cycle. Their only projected difference from the stored versions is provenance.source_snapshot_sha256; advisory.updated_at also moved but is not projected. Applying only those three records to a clean main tree moves dataset_id from dataset:1aa4305912b46a11b1fee9870568baaf to dataset:895f94cf6868371620669c8be71caea9. Applying only the updated_at change leaves it at dataset:1aa4305912b46a11b1fee9870568baaf; applying only the provenance change moves it. The provenance field alone is the cause.",
+      "severity": "over-signalling, not wrong knowledge",
+      "statement": "The permanent identity rule says snapshot and provenance metadata alone must not change DATASET_ID. It does. semantic_records projects each record's provenance including snapshot_sha256, so re-pinning a record to a newer snapshot of the same evidence changes records_digest and dataset_id even when no projected semantic field moved.",
+      "why_the_suite_did_not_catch_it": "test_semantic_dataset_identity VALID_STATE_PROVENANCE_REFRESH rewrites content_sha256 in sources/state, which no projector reads. The projected field, provenance.source_snapshot_sha256 on a record, is never exercised."
+    },
+    {
+      "component": "scripts/dk_api_lifecycle.py clear_records / ingest",
+      "id": "change-record-ingest-retracts-on-window-rotation",
+      "impact": "The two release-source proposals cannot be promoted through the canonical path without retracting knowledge, so both are retained.",
+      "next_action": "Next cycle: accumulate change records across snapshots for rolling-window feeds and keep clear-and-replace for the complete deprecation index, then promote the retained release proposals.",
+      "reproduction": "On this branch's evidence, running python3 scripts/dk.py api-lifecycle ingest deletes 19 of the 20 stored change records and writes 19 others, keeping 1. Upstream retracted none of the 19. The same run rewrites all 225 lifecycle records with a new ingest_run_id and ingested_at and no substantive change; those two fields are not projected, so they do not move identity.",
+      "severity": "destructive; blocks promotion of the release proposals",
+      "statement": "api-lifecycle ingest clears every record belonging to the sources it is about to re-read, then rewrites them from the current snapshot. That is correct for the deprecation index, which is a complete listing, and wrong for the change-record feed, which is a rolling limit=20 window: records that merely scrolled out of the window are deleted."
+    },
+    {
+      "component": "scripts/dk_security.py ingest",
+      "id": "security-ingest-cannot-reach-a-superseded-snapshot",
+      "impact": "Eight Critical contributed-project advisories remain unpublished. The evidence is retained in-tree.",
+      "next_action": "Next cycle: let security ingest materialize from any retained snapshot of a registered feed, then promote SA-CONTRIB-2026-136 to 153.",
+      "reproduction": "Snapshot e3247c4f of drupal-security-advisories-recent holds SA-CONTRIB-2026-136 to 153, eight of them published Critical and none Remote code execution. None is in the corpus and no supported command can reach them, because the accepted snapshot is now 7068c45f.",
+      "severity": "coverage gap",
+      "statement": "Advisory ingestion reads only the snapshot currently accepted in sources/state. When a rolling advisory feed rotates faster than ingestion runs, advisories observed in a retained intermediate snapshot can never be materialized."
+    }
+  ],
+  "review_cycle": "security-knowledge-2026-09-23",
+  "review_method": "human_security_knowledge_review",
+  "reviewed_on": "2026-09-23",
+  "reviewer": "Miguel Martins",
+  "scope": {
+    "fresh_evidence_fetched": false,
+    "frozen_to": "the knowledge-proposal queue carrying review_state=reviewed_requires_knowledge_proposal at main 164b3404732e63a9ad524351a05d1c538cda52c1",
+    "note": "No source was re-acquired for this cycle. Every promotion reads a snapshot the acquisition engine had already accepted and a human had already reviewed.",
+    "proposals_total": 10,
+    "release_proposals": 2,
+    "security_proposals": 8
+  },
+  "semantic_authority": {
+    "changed_by_this_cycle": false,
+    "evidence": "SA-CORE-2026-013 names 11.4.7 among its fixed versions and its affected expression '>=10.5.0 <10.6.17 || >=11.0.0 <11.3.17 || >=11.4.0 <11.4.7' excludes 11.4.7. The supersession process was therefore not invoked.",
+    "release": "11.4.7"
+  }
+}

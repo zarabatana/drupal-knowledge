@@ -89,6 +89,7 @@ jobs:
       - run: python3 scripts/dk.py security-advisories list --kind core
       - run: python3 scripts/dk.py security-advisories list --kind contrib
       - run: python3 scripts/test_security_remediation.py
+      - run: python3 scripts/test_knowledge_proposal_boundary.py
       - run: python3 scripts/test_upgrade_compatibility.py
       - run: python3 scripts/test_upgrade_authority_boundaries.py
       - run: python3 scripts/test_api_migration.py
