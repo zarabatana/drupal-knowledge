@@ -2,9 +2,9 @@
   "api_contract_version": "1.0",
   "api_version": "1",
   "count": 1,
-  "dataset_id": "dataset:72d529472be0a1208bf7b8dca58d0156",
+  "dataset_id": "dataset:651f8e72bc84bdd62fd2235b3cc2ee49",
   "dataset_schema_version": "0.1",
-  "dk_version": "1.1.1",
+  "dk_version": "1.1.2",
   "provenance": [
     {
       "canonical_url": "https://www.drupal.org/sa-core-2025-001",
