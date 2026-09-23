@@ -32,7 +32,7 @@ it knows, it can show the evidence for; what it does not know, it says.
 
 ## What it knows
 
-At v1.1.2 the repository holds:
+At v1.1.3 the repository holds:
 
 - **Security advisories** — Drupal Security Team advisories projected from
   authoritative structured sources, preserving the risk vector as written,
@@ -303,7 +303,7 @@ they publish.
 
 ## Versioning
 
-`VERSION` is the product release (`1.1.2`). Contract versions — the public API
+`VERSION` is the product release (`1.1.3`). Contract versions — the public API
 contract, the dataset schema and every engine's record schema — are declared
 in code, advertised by `dk version --json` and versioned on their own
 schedules. What each promises through 1.x, and what a consumer should pin, is

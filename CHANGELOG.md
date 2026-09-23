@@ -11,6 +11,45 @@ Knowledge v1.0.0 release. Its history begins at `1.0.0`; the entries below
 it, so that a record's contract version and a document's references can be
 read in context.
 
+## 1.1.3 — 2026-09-23
+
+Publishes the reviewed evidence from the 2026-09-22 scheduled ecosystem
+discovery run. The run found nothing: this release changes what the dataset
+says about when its sources were last looked at, and nothing about Drupal.
+
+### Changed
+
+- Published source provenance now reflects the reviewed discovery run. Both
+  registered ecosystem signal sources — the Pathauto and Token module release
+  histories — were re-contacted and their content was byte-identical to the
+  2026-09-08 observation, so only their `last_observed_at` advanced. Two rows
+  of `sources.json` changed, one field each; no snapshot digest moved, and
+  every source's title, trust tier, category, role, licence and lifecycle is
+  unchanged.
+- The canonical dataset identity is now
+  `dataset:04a485c68fa2ed0e5d928872224f1bd3`. Two things move it: the reviewed
+  freshness above, which is published provenance, and the release version
+  itself, which participates in dataset identity through `records_digest`.
+  Neither is new knowledge. Against the reviewed pre-release tree the only
+  dataset file that changed at all is `manifest.json`, in four derived fields —
+  `dataset_id`, `dk_version`, `generated_from_release` and `records_digest` —
+  and the record counts behind that digest are identical.
+
+### Unchanged by design
+
+- The run produced no new discovery signal, no new candidate, no new
+  corroboration dossier and no new snapshot. The discovery corpus is still ten
+  signals and ten dossiers, every one already reviewed `no_action` /
+  `insufficient_evidence`.
+- Nothing was promoted across a trust boundary. No discovery signal became
+  trusted knowledge, a rule, a finding, a solved case or a generalization: a
+  source being re-observed is not a source changing, and a source changing
+  would still not be a knowledge change.
+- The six semantic domain files and the search index are byte-identical to
+  1.1.2. No advisory, rule, API lifecycle, change record, solved case or
+  knowledge record was added, changed or removed, and every contract version
+  advertised by `dk version --json` is unchanged.
+
 ## 1.1.2 — 2026-09-23
 
 Publishes the reviewed acquisition evidence from the 2026-09-22 scheduled
