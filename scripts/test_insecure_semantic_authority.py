@@ -11,7 +11,11 @@ import dk_core
 
 ROOT = dk_core.ROOT
 RECORD_ID = "drupal.update.core-release-insecure-term-condition"
-PINNED_TAG = "11.4.5"
+# The reviewed semantic authority release is whatever the registry currently
+# pins, never a second hard-coded copy of it. Advancing the pin is a reviewed
+# act (docs/lifecycle-finding-eligibility-review-2026-09-23.json); this test
+# fails again if that release is ever itself marked Insecure upstream.
+PINNED_TAG = dk_core.semantic_authority_tag()
 
 SEMANTIC_SOURCE_IDS = [
     "drupal-update-project-release-semantics",

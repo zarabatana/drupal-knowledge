@@ -22,7 +22,7 @@ ROOT = dk_core.ROOT
 CONTEXT_PATH = ROOT / "knowledge" / "context" / "drupal-core-release-lifecycle.json"
 # Pinned to the currently reviewed snapshot. Advancing this constant is only
 # correct alongside an explicit re-review of the context it describes.
-EXPECTED_SOURCE_SHA = "sha256:2c6302dcfe0d2dd98afb22db753b6ee0761b9440555b71b1af2272b9ba84c2fb"
+EXPECTED_SOURCE_SHA = "sha256:ec1b75d396c803c35bcf27323530acf7bd27b3415513cd51f98d0d58fb93635c"
 FORBIDDEN_PROJECT_VERDICT_KEYS = {
     "project_is_outdated",
     "project_is_supported",
@@ -163,14 +163,14 @@ assert context["authority_layer"] == "TRUSTED_KNOWLEDGE_CONTEXT"
 assert context["review"]["status"] == "reviewed"
 assert context["source"]["source_id"] == "drupal-core-releases"
 assert context["source"]["snapshot_sha256"] == EXPECTED_SOURCE_SHA
-assert context["source"]["snapshot_bytes"] == 543079
+assert context["source"]["snapshot_bytes"] == 546342
 assert context["source"]["state_snapshot_relation"] == "current"
 
 source_ref = dk_release_lifecycle.resolve_current_snapshot("drupal-core-releases")
 assert source_ref.snapshot_sha256 == EXPECTED_SOURCE_SHA
 xml_root = dk_release_lifecycle.parse_snapshot_xml(source_ref)
 source_rows = source_release_rows(xml_root)
-assert len(source_rows) == context["release_count"] == 556
+assert len(source_rows) == context["release_count"] == 559
 assert context["supported_branches"]["source_value"] == child_text(xml_root, "supported_branches")
 # The reviewed baseline now includes the 12.0. branch. Branch membership is a
 # non-authoritative signal, so this records the source value only.
@@ -186,7 +186,7 @@ assert context["supported_branches"]["semantics"] == (
 )
 
 matrix = {row["xml_field"]: row for row in context["feed_structure_audit"]}
-assert matrix["/project/releases/release"]["occurrence_count"] == 556
+assert matrix["/project/releases/release"]["occurrence_count"] == context["release_count"]
 assert matrix["/project/releases/release/security"]["attributes"] == ["covered"]
 assert matrix["/project/releases/release/security"]["normalize_decision"] == "normalized"
 assert matrix["/project/releases/release/files/file/url"]["normalize_decision"] == "audited_not_normalized"
@@ -220,11 +220,16 @@ representatives = {
     ),
     "prerelease": first_matching(source_rows, is_prerelease),
 }
-assert representatives["ordinary_bugfix"] == "11.4.6"
-assert representatives["security_update"] == "11.4.4"
-assert representatives["insecure_term"] == "11.4.3"
-assert representatives["prerelease"] == "12.0.0-alpha1"
+# Exemplars are whichever row heads the feed for each category, so they move
+# when Drupal publishes or supersedes releases. They are asserted against the
+# superseding review rather than hard-coded, and the review explains every
+# move, so a silent change fails here and forces another human review.
+reviewed_exemplars = dk_core.read_json(
+    ROOT / "docs" / "lifecycle-finding-eligibility-review-2026-09-23.json"
+)["current_reviewed_observation"]["release_exemplars"]
+assert representatives == reviewed_exemplars
 assert representatives["ordinary_bugfix"] != representatives["prerelease"]
+assert representatives["security_update"] != representatives["insecure_term"]
 for version in representatives.values():
     assert_release_parity(source_by_version[version], context_by_version[version])
 

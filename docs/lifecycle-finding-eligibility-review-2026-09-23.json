@@ -1,0 +1,176 @@
+{
+  "artifact_type": "lifecycle-finding-eligibility-review",
+  "current_reviewed_observation": {
+    "branch_membership_cross_tabulation": {
+      "supported_branch_with_term": 49,
+      "supported_branch_without_term": 4,
+      "unsupported_branch_with_term": 474,
+      "unsupported_branch_without_term": 32
+    },
+    "lifecycle_context_reviewed_on": "2026-09-23",
+    "lifecycle_context_sha256": "sha256:ec1b75d396c803c35bcf27323530acf7bd27b3415513cd51f98d0d58fb93635c",
+    "published_stable_bugfix_rows_without_insecure_term": 0,
+    "release_exemplars": {
+      "insecure_term": "11.4.6",
+      "ordinary_bugfix": "11.4.x-dev",
+      "prerelease": "12.0.0-alpha1",
+      "security_coverage_metadata": "11.4.7",
+      "security_update": "11.4.7"
+    },
+    "release_exemplars_notes": {
+      "insecure_term": "Advanced from 11.4.3 to 11.4.6, which acquired the term in this transition.",
+      "ordinary_bugfix": "Was 11.4.6, a published stable bugfix release. 11.4.6 now carries 'Insecure', and no published stable release carrying 'Bug fixes' is free of the term: all 249 of them have been superseded on their branch. The first row still matching the predicate is the branch development snapshot 11.4.x-dev, which the exemplar selector does not classify as a prerelease. The exemplar is recorded as observed rather than adjusted, and it repopulates with a published release when Drupal ships a bugfix release that nothing supersedes.",
+      "security_update": "Advanced from 11.4.4 to 11.4.7 with the 2026-09-16 core security release."
+    },
+    "release_rows_added_since_previous_context": [
+      "10.6.17",
+      "11.3.17",
+      "11.4.7"
+    ],
+    "release_rows_newly_carrying_term_since_previous_context": [
+      "10.6.13",
+      "10.6.14",
+      "10.6.15",
+      "10.6.16",
+      "11.3.14",
+      "11.3.16",
+      "11.4.4",
+      "11.4.5",
+      "11.4.6"
+    ],
+    "release_rows_total": 559,
+    "release_rows_with_term": 523,
+    "release_rows_without_term": 36,
+    "representative_versions_with_term": [
+      "11.4.3",
+      "11.3.13",
+      "11.3.12",
+      "10.6.12",
+      "8.0-alpha2"
+    ],
+    "representative_versions_without_term": [
+      "11.4.7",
+      "11.3.17",
+      "10.6.17"
+    ],
+    "rows_with_security_update_term_and_without_insecure_term": [
+      "10.6.17",
+      "11.3.17",
+      "11.4.7",
+      "8.9.20",
+      "9.5.11"
+    ],
+    "rows_with_term_and_security_covered_attribute": 385,
+    "rows_without_term_and_security_covered_attribute": 5
+  },
+  "drift_from_frozen_audit": {
+    "branch_membership_cross_tabulation_delta": {
+      "supported_branch_with_term": 9,
+      "supported_branch_without_term": -3,
+      "unsupported_branch_with_term": 0,
+      "unsupported_branch_without_term": 0
+    },
+    "conservation_identity": "rows_added_since_audit - rows_newly_carrying_term_since_audit == release_rows_without_term - frozen_release_rows_without_term",
+    "frozen_release_rows_total": 553,
+    "frozen_release_rows_with_term": 514,
+    "frozen_release_rows_without_term": 39,
+    "frozen_representative_versions_without_term": [
+      "11.4.5",
+      "11.4.4",
+      "11.3.16",
+      "11.3.14",
+      "10.6.15"
+    ],
+    "frozen_representative_versions_without_term_now_carrying": [
+      "11.4.5",
+      "11.4.4",
+      "11.3.16",
+      "11.3.14",
+      "10.6.15"
+    ],
+    "frozen_representative_versions_without_term_still_without": [],
+    "rows_added_since_audit": 6,
+    "rows_newly_carrying_term_since_audit": 9,
+    "security_update_only_rows_added": [
+      "10.6.17",
+      "11.3.17",
+      "11.4.7"
+    ],
+    "security_update_only_rows_removed": [
+      "10.6.13",
+      "11.3.14",
+      "11.4.4"
+    ],
+    "superseded_statement": {
+      "statement": "the entire advance consisted of releases that do not carry the term",
+      "true_now": false,
+      "true_on": "2026-09-07",
+      "why_not": "Between the audit and this review, 9 already published releases acquired the term because a later security release superseded them. A release row can acquire the term after publication; an advance is therefore not guaranteed to consist only of rows without it."
+    },
+    "term_is_monotonic_once_assigned": {
+      "meaning": "no release that carried the term at audit time has lost it; releases only acquire it when superseded",
+      "observed": true
+    }
+  },
+  "not_promoted": {
+    "items": [
+      "SA-CORE-2026-013",
+      "SA-CONTRIB-2026-148..153",
+      "PSA-2026-09-21",
+      "Drupal 12.0.x / 11.5.x change records"
+    ],
+    "rule": "SOURCE CHANGE != TRUSTED KNOWLEDGE CHANGE",
+    "state": "remain review candidates classified reviewed_requires_knowledge_proposal"
+  },
+  "review_date": "2026-09-23",
+  "review_status": "reviewed",
+  "reviewer": "Miguel Martins",
+  "schema_version": "0.1",
+  "semantic_authority_advance": {
+    "byte_identity_method": "raw fetch of each file at tag 11.4.5 and 11.4.7 compared by sha256, and re-acquisition through the released engine reporting status 'unchanged'",
+    "current_release": "11.4.7",
+    "current_release_covered": "1",
+    "current_release_insecure": false,
+    "current_release_types": [
+      "Security update"
+    ],
+    "previous_release": "11.4.5",
+    "previous_release_covered": "1",
+    "previous_release_now_insecure": true,
+    "semantic_conclusion_changed": false,
+    "semantic_sources": [
+      {
+        "byte_identical_across_tags": true,
+        "content_sha256": "sha256:5ceb699008f74d539aaabed9e02c560071f1d90508023cb1f11735002357cd45",
+        "fetch_url": "https://git.drupalcode.org/project/drupal/-/raw/11.4.7/core/modules/update/src/ProjectRelease.php",
+        "source_id": "drupal-update-project-release-semantics"
+      },
+      {
+        "byte_identical_across_tags": true,
+        "content_sha256": "sha256:8d7431ff04ac7d80d830e60f0dbc8fbfd24ac36c0e16d9966c2ed74782726546",
+        "fetch_url": "https://git.drupalcode.org/project/drupal/-/raw/11.4.7/core/modules/update/update.compare.inc",
+        "source_id": "drupal-update-status-security-semantics"
+      },
+      {
+        "byte_identical_across_tags": true,
+        "content_sha256": "sha256:5076c3ad1871e97b198e7dda5caf20084cf4514403025ea751153ab212b879eb",
+        "fetch_url": "https://git.drupalcode.org/project/drupal/-/raw/11.4.7/core/modules/update/src/UpdateManagerInterface.php",
+        "source_id": "drupal-update-manager-interface-semantics"
+      }
+    ],
+    "what_advanced": "only the representative reviewed release that the semantic authority is pinned to"
+  },
+  "supersedes": {
+    "artifact": "docs/lifecycle-finding-eligibility.json",
+    "artifact_type": "lifecycle-finding-eligibility-audit",
+    "audit_date": "2026-09-07",
+    "historical_evidence_mutated": false,
+    "why": "The 2026-09-07 audit recorded the evidence as it stood on that date and remains accurate for that date. Drupal later changed release status upstream; that is a new observation, not a correction of the audit."
+  },
+  "trigger": {
+    "acquisition_run": "run.20260922T114243.8345954e",
+    "observed": "Drupal marked previously covered core releases with the Release type term 'Insecure' after the 2026-09-16 core security release.",
+    "reevaluation_required_on_context_change": true,
+    "rule": "new authoritative snapshot promoted into a newly reviewed lifecycle context"
+  }
+}

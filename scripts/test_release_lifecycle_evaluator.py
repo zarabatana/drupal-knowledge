@@ -25,8 +25,8 @@ FIXTURES = ROOT / "tests" / "fixtures" / "project-analyzer"
 CONTEXT_PATH = ROOT / "knowledge" / "context" / "drupal-core-release-lifecycle.json"
 # Both pinned to the currently reviewed context. They move only when a human
 # re-reviews the context, never as a side effect of other work.
-EXPECTED_CONTEXT_DIGEST = "4bb06cbfea41f2fb53951b71db9a2c08d0be2efb9bc96041cfc9e2f1f79b2d33"
-EXPECTED_SOURCE_SHA = "sha256:2c6302dcfe0d2dd98afb22db753b6ee0761b9440555b71b1af2272b9ba84c2fb"
+EXPECTED_CONTEXT_DIGEST = "8f8942c9259312848c7d8a070a3d1e92db7cab06cc1f9beb47698517ca9746a0"
+EXPECTED_SOURCE_SHA = "sha256:ec1b75d396c803c35bcf27323530acf7bd27b3415513cd51f98d0d58fb93635c"
 FORBIDDEN_PROJECT_VERDICT_KEYS = {
     "supported",
     "unsupported",
@@ -176,16 +176,27 @@ assert "Insecure" in recommended_assessment["source_attributes"]["source_release
 assert recommended_assessment["source_attributes"]["source_security_coverage"]["covered_attribute"]["source_value"] == "1"
 assert_no_verdict_fields(recommended_assessment)
 
-latest_stable = release_assessment(with_core_version(recommended, "11.4.5"))
-assert_exact_release(latest_stable, "11.4.5", "11.4.", True)
-assert latest_stable["source_attributes"]["source_release_type_terms"] == ["Bug fixes"]
+# The current covered stable release on the supported 11.4 branch. It is the
+# tag the semantic authority is pinned to, so it cannot drift away from the
+# reviewed authority, and it must not carry the insecure term.
+latest_stable_version = dk_core.semantic_authority_tag()
+latest_stable = release_assessment(with_core_version(recommended, latest_stable_version))
+assert_exact_release(latest_stable, latest_stable_version, "11.4.", True)
+assert latest_stable["source_attributes"]["source_release_type_terms"] == ["Security update"]
+assert "Insecure" not in latest_stable["source_attributes"]["source_release_type_terms"]
 assert latest_stable["source_attributes"]["source_security_coverage"]["text"]["source_value"] == (
     "Covered by Drupal's security advisory policy"
 )
 assert_no_verdict_fields(latest_stable)
 
-security_update = release_assessment(with_core_version(recommended, "11.4.4"))
-assert_exact_release(security_update, "11.4.4", "11.4.", True)
+# A security release on another supported branch that has not itself been
+# superseded, taken from the reviewed observation rather than hard-coded, so a
+# later security release cannot leave this case asserting a superseded row.
+security_update_version = dk_core.read_json(
+    ROOT / "docs" / "lifecycle-finding-eligibility-review-2026-09-23.json"
+)["current_reviewed_observation"]["rows_with_security_update_term_and_without_insecure_term"][1]
+security_update = release_assessment(with_core_version(recommended, security_update_version))
+assert_exact_release(security_update, security_update_version, "11.3.", True)
 assert security_update["source_attributes"]["source_release_type_terms"] == ["Security update"]
 assert_no_verdict_fields(security_update)
 
