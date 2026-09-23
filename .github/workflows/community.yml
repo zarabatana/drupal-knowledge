@@ -119,6 +119,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: python3 scripts/test_public_site.py
+      - run: python3 scripts/test_semantic_dataset_identity.py
       - run: python3 scripts/dk.py public-site build --commit "$GITHUB_SHA"
       - run: python3 -c "import sys; sys.path.insert(0, 'scripts'); import dk_core, dk_public; print(*dk_public.validate_public_dataset(dk_core.ROOT), sep='\n')"
       - uses: actions/upload-artifact@v4

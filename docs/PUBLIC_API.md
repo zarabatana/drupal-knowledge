@@ -35,11 +35,14 @@ Two version numbers, on purpose:
 | --- | --- |
 | `api_contract_version` | `1.0` — the shape of requests and responses |
 | `dk_version` | the Drupal Knowledge release that produced the records |
-| `dataset_id` | content-addressed identity of the exact record set |
+| `dataset_id` | content-addressed identity of the trusted knowledge behind them |
 
 A release that ingests new advisories changes `dk_version` and `dataset_id` and
-leaves the contract alone. Routes are versioned in the path (`/api/v1/…`), so a
-future `v2` can exist beside `v1` rather than replacing it.
+leaves the contract alone. A release that fixes the CLI changes `dk_version`
+alone: `dataset_id` covers the trusted records and nothing else, so it does not
+move for a version bump, a source re-fetch or a snapshot digest. Record both if
+you need to reproduce an answer. Routes are versioned in the path (`/api/v1/…`),
+so a future `v2` can exist beside `v1` rather than replacing it.
 
 ## Status
 

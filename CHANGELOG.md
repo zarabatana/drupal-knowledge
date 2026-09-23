@@ -11,6 +11,54 @@ Knowledge v1.0.0 release. Its history begins at `1.0.0`; the entries below
 it, so that a record's contract version and a document's references can be
 read in context.
 
+## Unreleased
+
+Separates the two identities Drupal Knowledge publishes. `VERSION` is the
+release; `dataset_id` is the trusted knowledge that release holds. Until now
+they were entangled, and routine provenance upkeep minted new dataset
+identities that looked like new knowledge.
+
+### Changed
+
+- `dataset_id` and `records_digest` are now derived from the trusted records
+  alone — the six published domains, their content, and which of them exist.
+  The release version, `last_observed_at`, source snapshot digests, review and
+  ingestion timestamps, the build commit and the build clock are no longer
+  inputs, and neither are discovery signals, acquisition candidates or
+  corroboration dossiers, which are untrusted by construction.
+- Because the algorithm itself changed, the identity of unchanged knowledge
+  changes once, here. The live `1.1.3` dataset and the current tree both hold
+  the same trusted records and both now identify as
+  `dataset:1aa4305912b46a11b1fee9870568baaf`, where the previous algorithm gave
+  them `dataset:04a485c68fa2ed0e5d928872224f1bd3` and
+  `dataset:cb0a1ffa3ff8cca4b76fbd5ccdfc8db3` — two identities for one body of
+  knowledge, which is the problem this release fixes. Released datasets keep
+  the identities they were published with; historical identity is historical
+  evidence and is not rewritten.
+- The release policy is now stated in
+  `docs/VERSIONING_AND_COMPATIBILITY.md`: what requires a release, what does
+  not require one on its own, and why a moved `dataset_id` is evidence for that
+  judgement rather than the judgement itself.
+- Dataset identity is no longer memoised per directory. It costs one projection
+  pass to compute, and a memo keyed by path is how a process ends up reporting
+  the identity a tree had before it was edited.
+
+### Unchanged by design
+
+- No schema, field name or field format changed. `dataset_id` is still
+  `dataset:<32 hex>`, `records_digest` is still 16 hex characters, and
+  `dk_version`, `generated_from_release` and `source_freshness_summary` are all
+  still published. No new public identity concept was added.
+- No trusted record changed. Every published domain file is byte-identical to
+  `1.1.3`; only the two identity fields in `manifest.json` moved, and the
+  derived API examples and checksums that carry them.
+- Provenance is untouched. `sources.json` still publishes every source's
+  `last_observed_at` and `snapshot_sha256`, published records still carry the
+  snapshot digests their claims rest on, and snapshots remain immutable. The
+  simplification is that provenance is evidence, not identity.
+- No release is cut here. `VERSION` stays `1.1.3` and the live site is not
+  republished.
+
 ## 1.1.3 — 2026-09-23
 
 Publishes the reviewed evidence from the 2026-09-22 scheduled ecosystem

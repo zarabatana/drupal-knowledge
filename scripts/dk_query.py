@@ -320,20 +320,121 @@ def recursive_strings(value: Any) -> Iterable[str]:
 # ---------------------------------------------------------------------------
 # Dataset identity and freshness
 # ---------------------------------------------------------------------------
+#
+# Two identities, and they answer different questions.
+#
+#     VERSION      which release of the product you are running
+#     dataset_id   which trusted semantic knowledge that release holds
+#
+# They are related by a release and by nothing else. A release may ship a CLI
+# fix over unchanged knowledge, and a source re-fetch may prove the knowledge
+# still current without a release. Neither is required to move the other, so
+# neither is allowed to be an input to the other.
+#
+# What follows is therefore computed from the trusted records alone. Freshness,
+# snapshot digests, review dates, ingestion dates, the build clock and the
+# release version are all real and all preserved elsewhere; none of them is
+# knowledge, so none of them appears here.
 
 
-_DATASET_CACHE: dict[str, dict] = {}
+# The record stores whose contents are trusted public Drupal knowledge. This is
+# the published set of `dk_public.PUBLIC_DOMAINS`, named here because identity
+# is a property of the knowledge and must not wait for a website to exist.
+# `D_DISCOVERY_SIGNAL` is deliberately absent: an untrusted community
+# observation is not knowledge, and counting one would let unreviewed material
+# move the identity of reviewed material.
+SEMANTIC_DOMAINS = (
+    D_KNOWLEDGE,
+    D_ADVISORY,
+    D_API_LIFECYCLE,
+    D_CHANGE_RECORD,
+    D_IMPLEMENTATION_RULE,
+    D_SOLVED_CASE,
+)
+
+# Domain separation, so that two public fields derived from one payload cannot
+# be prefixes of one another and nobody can "verify" one by slicing the other.
+_RECORDS_DIGEST_LABEL = "drupal-knowledge/semantic-records"
+_DATASET_ID_LABEL = "drupal-knowledge/semantic-dataset"
+
+# Deliberately not cached. Identity is cheap to compute (one projection pass)
+# and a memo keyed by directory path is how a process ends up reporting the
+# identity a tree had before it was edited. A wrong identity is worth far more
+# than the milliseconds a cache would save.
+
+
+def semantic_trust(trust: dict) -> dict:
+    """A record's own trust facts, without the shared trust-class prose.
+
+    The class name is knowledge: it says how far the record may be trusted.
+    The paragraph explaining what that class means is product wording, shared
+    by every record of the class, and rewording it changes no Drupal fact — so
+    only what this record says beyond its class is kept.
+    """
+    name = trust.get("class")
+    shared = TRUST_CLASSES.get(name, {})
+    kept = {"class": name}
+    for key, value in trust.items():
+        if key != "class" and (key not in shared or shared[key] != value):
+            kept[key] = value
+    return kept
+
+
+def semantic_records(root: Path = dk_core.ROOT) -> list[dict]:
+    """Every trusted record this release publishes, canonically projected.
+
+    The projection is the one the CLI and the website already answer with, so
+    identity is computed over exactly the knowledge a reader is given, not over
+    a private shadow of it. It is a pure function of the canonical record
+    stores: no clock, no filesystem layout, no registry state.
+
+    Route, label and explanation are excluded on purpose. They are how the
+    knowledge is presented, they move when the product moves, and a reworded
+    explanation is a release, not a new dataset.
+    """
+    payload = []
+    for domain in SEMANTIC_DOMAINS:
+        loader, projector = PROJECTORS[domain]
+        for record in loader(root):
+            item = projector(record)
+            payload.append(
+                {
+                    "domain": domain,
+                    "id": item["id"],
+                    "title": item["title"],
+                    "summary": item["summary"],
+                    "trust": semantic_trust(item["trust"]),
+                    "detail": item["detail"],
+                    "provenance": item["provenance"],
+                    "unknowns": item["unknowns"],
+                }
+            )
+    # Ordering is not knowledge. Two trees holding the same records are the
+    # same dataset however their files happen to be laid out or listed.
+    payload.sort(key=lambda entry: (entry["domain"], entry["id"], stable_json(entry)))
+    return payload
+
+
+def semantic_identity(root: Path = dk_core.ROOT) -> dict:
+    """The identity of the trusted semantic knowledge, and nothing else.
+
+    Recomputed on every call, so a caller that edits a tree and asks again is
+    told what the tree now holds rather than what it held a moment ago.
+    """
+    payload = stable_json(semantic_records(root))
+    return {
+        "records_digest": digest_hex(_RECORDS_DIGEST_LABEL, payload)[:16],
+        "dataset_id": "dataset:" + digest_hex(_DATASET_ID_LABEL, payload)[:32],
+    }
 
 
 def dataset_identity(root: Path = dk_core.ROOT) -> dict:
     """What release and record set this answer came from.
 
-    Cached per root: one project inspection asks several engines a question and
-    should not re-count the repository once per section.
+    `record_counts` still reports the discovery signals held, because a reader
+    of `dk status` should see them. Reporting them is not trusting them: they
+    are not in `records_digest` and never reach dataset identity.
     """
-    key = str(root)
-    if key in _DATASET_CACHE:
-        return _DATASET_CACHE[key]
     version = (root / "VERSION").read_text(encoding="utf-8").strip()
     counts = {
         D_KNOWLEDGE: len(dk_core.iter_json_files(root / "knowledge" / "records")),
@@ -347,9 +448,8 @@ def dataset_identity(root: Path = dk_core.ROOT) -> dict:
     identity = {
         "drupal_knowledge_version": version,
         "record_counts": counts,
-        "records_digest": digest_hex(stable_json(counts), version)[:16],
+        "records_digest": semantic_identity(root)["records_digest"],
     }
-    _DATASET_CACHE[key] = identity
     return identity
 
 
