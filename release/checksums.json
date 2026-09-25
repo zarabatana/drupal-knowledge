@@ -10,7 +10,7 @@
     "public-api/examples/provenance.json": "0e4cda53ac891c505d7171f0a8c2b610a2da36540acfa73dbdd9fb8cd72bfd65",
     "public-api/examples/search-cve.json": "9bdd4dc2c1af05f6476a2199b389ade35e9351d00b2d2688806b256cd83da83a",
     "public-api/examples/search-symbol.json": "c321fe7e17ad7a21588ec71b49bd544c45957c33237b89befce802284c6c6608",
-    "public-api/examples/source-detail.json": "50aea5866324a90ca270c48395990cc8ffb8a09f3fdeaf5d71dff3048c7ef59e",
+    "public-api/examples/source-detail.json": "031c5df9cf840ae3da41e16ce12fc725bb2c8e7d36ef1f87a515523896525995",
     "public-api/examples/status.json": "a2d681352d86756745ed814e52b7e0f80bec5b3661a45570e6177e1048d7e8cd",
     "public-api/openapi.json": "17989a1e6cddefffa0d624074bae1ab3cdfb70d5d068d7b0482a0e23a98766d9",
     "public-site/dataset/domains/api.json": "bd0cae0eff8306008cc4bde3b015b7faff67b0b5aae24b5a1fc09e5bc344fddf",
@@ -21,7 +21,7 @@
     "public-site/dataset/domains/trusted-knowledge.json": "aa810a36deb167c8cd0171f598722ae562557593d58e1cc55367f987b27f7503",
     "public-site/dataset/manifest.json": "2c3d2d1d108ba574ffd9b765397c649409cafbdd06c185fe11dedcccbac2c315",
     "public-site/dataset/search-index.json": "aa9e6d680e3867e6664e6838c03c785510f6453a9116fd3520cb9f03394b130b",
-    "public-site/dataset/sources.json": "88617f7f362326e6739ab3568e3a54f352a8e490ff1fa7d0b01ebe59ccd42526",
+    "public-site/dataset/sources.json": "3bf92fd8472a172e259b53c2934098a8df0cf4a5eb5c51b68833300176ab8394",
     "public/index.html": "db6b50f739a5387eb58fa07a46fb802a67893cbe6ba01a5d465e6b0bfa42fb57",
     "release/sbom.json": "65683e66341f6b9ad32cfc29092b89210732b3600bf48ecdbf3f3fbcddabb675"
   },
