@@ -21,7 +21,7 @@
     "public-site/dataset/domains/trusted-knowledge.json": "aa810a36deb167c8cd0171f598722ae562557593d58e1cc55367f987b27f7503",
     "public-site/dataset/manifest.json": "2c3d2d1d108ba574ffd9b765397c649409cafbdd06c185fe11dedcccbac2c315",
     "public-site/dataset/search-index.json": "aa9e6d680e3867e6664e6838c03c785510f6453a9116fd3520cb9f03394b130b",
-    "public-site/dataset/sources.json": "88617f7f362326e6739ab3568e3a54f352a8e490ff1fa7d0b01ebe59ccd42526",
+    "public-site/dataset/sources.json": "c09364bb5ce9c15135346c9c7a953ebdd393cb1fd23f1a84c01f053bfd8e7cd5",
     "public/index.html": "db6b50f739a5387eb58fa07a46fb802a67893cbe6ba01a5d465e6b0bfa42fb57",
     "release/sbom.json": "65683e66341f6b9ad32cfc29092b89210732b3600bf48ecdbf3f3fbcddabb675"
   },
