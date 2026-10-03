@@ -1,0 +1,68 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 191,
+    "added_sample": [
+      "Diba carousel slider - Moderately critical - Cross Site Scripting (XSS) - SA-CONTRIB-2026-191",
+      "Project machine name:",
+      "diba_carousel",
+      "Date:",
+      "2026-September-23"
+    ],
+    "changed_region_count": 2,
+    "current_bytes": 39084,
+    "current_line_count": 743,
+    "deterministic": true,
+    "first_changed_line": 10,
+    "method": "normalized_line_diff",
+    "previous_bytes": 38562,
+    "previous_line_count": 748,
+    "removed_line_count": 196,
+    "removed_sample": [
+      "Patreon - Critical - Unsupported - SA-CONTRIB-2026-139",
+      "Project machine name:",
+      "patreon",
+      "Date:",
+      "2026-September-09"
+    ]
+  },
+  "current_hash": "sha256:16883c1b8ab7e6eca5ff3e97ad844a5a8cf148777a9909876659ac4b87ced55c",
+  "discovered_at": "2026-09-24T17:14:08Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-security-contrib.a8364f90c9b65679",
+  "is_knowledge_proposal": false,
+  "kind": "security-source-change",
+  "previous_hash": "sha256:a61905b6378b93782006dba6e6f066d61f97f6da47fae10ecd4a4b3a96b8cdd1",
+  "provenance": {
+    "acquired_at": "2026-09-24T17:14:08Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/security/contrib",
+    "category": "security",
+    "content_length": 39084,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": {
+      "end": "Pages",
+      "start": "Security advisories for contributed projects"
+    },
+    "etag": "\"1790270052-1\"",
+    "fetch_url": "https://www.drupal.org/security/contrib",
+    "http_status": 200,
+    "last_modified": "Thu, 24 Sep 2026 17:14:12 GMT",
+    "normalization": "auto",
+    "trust": "authoritative"
+  },
+  "review": null,
+  "review_required": true,
+  "review_state": "pending_review",
+  "run_id": "run.20260924T171408.5a906fff",
+  "source_id": "drupal-security-contrib",
+  "source_url": "https://www.drupal.org/security/contrib",
+  "status": "review_required",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}
