@@ -1,0 +1,748 @@
+Security advisories for contributed projects
+Show advisories for
+only Drupal core
+,
+only
+PSAs
+, or
+all security advisories
+Security advisories for third-party projects that are not part of Drupal core - this includes all modules, themes, and installation profiles that have been contributed by community members.
+Advanced Filesystem - Moderately critical - Cross-Site Request Forgery - SA-CONTRIB-2026-217
+Project machine name:
+advanced_filesystem
+Date:
+2026-October-07
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:None/CI:None/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-107262
+Advanced File System turns Drupal's file storage into a manageable, observable and maintainable subsystem.
+The Advanced Filesystem: Backup submodule does not sufficiently validate certain requests. This may allow an attacker to trick an authenticated user into performing unintended actions through a Cross-Site Request Forgery (CSRF) vulnerability.
+The vulnerability is mitigated by the fact that
+advanced_filesystem_backup
+module must be enabled.
+Read more
+about Advanced Filesystem - Moderately critical - Cross-Site Request Forgery - SA-CONTRIB-2026-217
+Restrict route by IP - Critical - Access bypass - SA-CONTRIB-2026-216
+Project machine name:
+restrict_route_by_ip
+Date:
+2026-October-07
+Security risk:
+Critical
+17 ∕ 25 AC:None/A:None/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-107255
+This module enables you to restrict access to routes by IP address.
+The module doesn't reliably restrict a subset of dynamic routes, leading to an access bypass vulnerability. The impact depends on how a site uses this module and whether it has any routes that are dynamic.
+Read more
+about Restrict route by IP - Critical - Access bypass - SA-CONTRIB-2026-216
+Examples for Developers - Less critical - Allocation of resources without limits or throttling - SA-CONTRIB-2026-215
+Project machine name:
+examples
+Date:
+2026-October-07
+Security risk:
+Less critical
+8 ∕ 25 AC:Basic/A:User/CI:None/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-107312
+The Examples for Developers project aims to provide high-quality, well-documented API examples for a broad range of Drupal core functionality.
+The "Email Example" feature implemented by the email_example submodule can be used to send illegitimate emails to arbitrary email addresses.
+Therefore, the email_example sub-module is being removed from Examples for Developers until a version demonstrating security best practices can be added back in the future. Developers who based a new module on this example should review their code.
+Read more
+about Examples for Developers - Less critical - Allocation of resources without limits or throttling - SA-CONTRIB-2026-215
+Permissions by Term - Moderately critical - Information disclosure - SA-CONTRIB-2026-214
+Project machine name:
+permissions_by_term
+Date:
+2026-October-07
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Complex/A:None/CI:Some/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-107311
+This module enables you to restrict view access to single nodes via taxonomy terms.
+The module doesn't sufficiently check access rights when in "Permission mode" and a node referencing a deleted taxonomy term is accessed via JSON:API.
+This vulnerability is mitigated by the fact that it requires a specific module configuration, references to a deleted term, and access via JSON:API to be present.
+Read more
+about Permissions by Term - Moderately critical - Information disclosure - SA-CONTRIB-2026-214
+Freelinking - Moderately critical - Information Disclosure - SA-CONTRIB-2026-213
+Project machine name:
+freelinking
+Date:
+2026-October-07
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Basic/A:User/CI:Some/II:None/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-107310
+This module enables you to configure a WIKI-like input filter that allows users to create links to site and external content.
+The module doesn’t sufficiently prevent page titles being viewed for certain privately-accessible URLs.
+This vulnerability is mitigated by the fact that an attacker must have access to use a text format with the Freelinking plugin configured to allow privately-accessible external URLs to be crawled. Site administrators may want to disable this functionality to evaluate any risk.
+Read more
+about Freelinking - Moderately critical - Information Disclosure - SA-CONTRIB-2026-213
+Easy Breadcrumb - Moderately critical - Information disclosure - SA-CONTRIB-2026-212
+Project machine name:
+easy_breadcrumb
+Date:
+2026-October-07
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Complex/A:None/CI:Some/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-107309
+This module enables you to show a breadcrumb trail for taxonomy term hierarchies.
+The module doesn't sufficiently check for view access of parent terms before rendering the crumb segment.
+This vulnerability is mitigated by the fact that the setting "Add parent hierarchy" (term_hierarchy) must be enabled, and at least one term has a term in the parent hierarchy that is unpublished.
+Read more
+about Easy Breadcrumb - Moderately critical - Information disclosure - SA-CONTRIB-2026-212
+Country - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-211
+Project machine name:
+country
+Date:
+2026-October-07
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Complex/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-107308
+The module Country provides a dedicated field type for Drupal core's official country list.
+The module does not sufficiently escape user input in its autocomplete widget, which can lead to a cross site scripting vulnerability.
+This vulnerability is mitigated by the fact that it can not occur out of the box with the Country module, additional module(s) or custom code is required.
+Read more
+about Country - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-211
+SmartLinker AI - Moderately critical - Information disclosure - SA-CONTRIB-2026-210
+Project machine name:
+smartlinker_ai
+Date:
+2026-October-07
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Basic/A:User/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-107307
+This module adds a "Generate internal links" action to the AI CKEditor toolbar, letting editors select text and have the module search the site's content for relevant pages to link to.
+The module's search query did not respect entity access when returning results to the browser.
+This vulnerability is mitigated by the fact that an user must have permission to use the AI CKEditor "Generate internal links" feature on a text format.
+Read more
+about SmartLinker AI - Moderately critical - Information disclosure - SA-CONTRIB-2026-210
+Menu Link Attributes - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-209
+Project machine name:
+menu_link_attributes
+Date:
+2026-October-07
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Basic/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-107306
+This module enables you to add HTML attributes to menu links and their container elements (
+<li>
+).
+The module doesn't sufficiently sanitize the attributes it applies to menu link container elements.
+Read more
+about Menu Link Attributes - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-209
+DKAN - Moderately critical - Access bypass - SA-CONTRIB-2026-208
+Project machine name:
+dkan
+Date:
+2026-October-07
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-107267
+The DKAN module enables organizations and individuals to build open data portals in Drupal. The DKAN datastore imports tabular data files into database tables and exposes them for querying with a JSON API.
+The module does not correctly check access for all of its endpoints, leading to a potential access bypass.
+The vulnerability is mitigated by the fact that it is only impactful for sites that do not give "access content" permission to the anonymous role.
+Read more
+about DKAN - Moderately critical - Access bypass - SA-CONTRIB-2026-208
+Two Factor Authentication - TFA / Passwordless Login - Moderately critical - Information disclosure - SA-CONTRIB-2026-207
+Project machine name:
+miniorange_2fa
+Date:
+2026-October-07
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-107268
+This module enables you to add an extra layer of verification for user login flow.
+The Two Factor Authentication - TFA / Passwordless Login module for Drupal contains a vulnerability in the headless login endpoint that can disclose the site's stored miniOrange customer API key to unauthenticated users.
+The vulnerability is mitigated by the fact that Headless 2FA must be turned on by a user with a
+miniorange 2fa headless
+permission, which is a restricted permission.
+Read more
+about Two Factor Authentication - TFA / Passwordless Login - Moderately critical - Information disclosure - SA-CONTRIB-2026-207
+Xray Audit - Moderately critical - Access bypass - SA-CONTRIB-2026-206
+Project machine name:
+xray_audit
+Date:
+2026-October-07
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-96389
+This module enables you to audit a Drupal site by generating reports about its content, entities, display modes and configuration.
+The module doesn't sufficiently check entity access when rendering an entity through the display-mode example route. This allows an attacker to view unpublished or otherwise access-restricted content.
+This vulnerability is mitigated by the fact that field-level access is still enforced, so fields that are themselves access-restricted (for example a user's email or password hash) are not disclosed.
+Read more
+about Xray Audit - Moderately critical - Access bypass - SA-CONTRIB-2026-206
+Views Share - Moderately critical - Access bypass - SA-CONTRIB-2026-205
+Project machine name:
+views_share
+Date:
+2026-October-07
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Basic/A:None/CI:None/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-107266
+This module enables you to "share" a view display within another website via an iframe.
+The module doesn't sufficiently block access to view displays. Although the views data is not displayed, resource-intensive views could still be executed which could affect site performance.
+This vulnerability is mitigated by the fact that an attacker must know the view and display IDs.
+Read more
+about Views Share - Moderately critical - Access bypass - SA-CONTRIB-2026-205
+Leaflet - Moderately critical - Cross site scripting - SA-CONTRIB-2026-204
+Project machine name:
+leaflet
+Date:
+2026-October-07
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-107265
+The Leaflet module provides integration with the Leaflet JS mapping library.
+Under certain circumstances, when the Leaflet field formatter builds a map it does not filter content titles, leading to a stored cross-site scripting vulnerability.
+This vulnerability is mitigated by the fact an attacker needs to have permission to create or edit content that is used in a Leaflet map.
+Read more
+about Leaflet - Moderately critical - Cross site scripting - SA-CONTRIB-2026-204
+Inline Formatter Field - Moderately critical - Server-side template injection - SA-CONTRIB-2026-203
+Project machine name:
+inline_formatter_field
+Date:
+2026-October-07
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-107264
+The Inline Formatter Field module allows site builders to template and style entities with a field.
+This module does not properly protect against template injection when parsing, allowing users to render protected data or execute unsafe Twig commands.
+Read more
+about Inline Formatter Field - Moderately critical - Server-side template injection - SA-CONTRIB-2026-203
+Gutenberg - Moderately critical - Access bypass - SA-CONTRIB-2026-202
+Project machine name:
+gutenberg
+Date:
+2026-October-07
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-107263
+This module provides a new UI experience for node editing using the Gutenberg Editor library.
+The module does not sufficiently check entity access in several editor endpoints.
+This vulnerability is mitigated by the fact that an attacker must have a role with the “use gutenberg” permission.
+Read more
+about Gutenberg - Moderately critical - Access bypass - SA-CONTRIB-2026-202
+Authenticator Login Plus (2FA) - Moderately critical - Improper authentication - SA-CONTRIB-2026-201
+Project machine name:
+auth_login_plus
+Date:
+2026-October-07
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Complex/A:User/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-107261
+This module provides TOTP-based two-factor authentication (2FA) for Drupal, with an optional setting to enforce 2FA for all users site-wide.
+The module may allow a user log in with only a password even when site-wide enforcement of 2FA is turned on.
+Read more
+about Authenticator Login Plus (2FA) - Moderately critical - Improper authentication - SA-CONTRIB-2026-201
+Linked Field - Moderately critical - Server-side template injection - SA-CONTRIB-2026-200
+Project machine name:
+linked_field
+Date:
+2026-October-07
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-107259
+This module enables you to link the output of a field to a URL or to the value of another field.
+The module doesn't sufficiently separate field content from template code when rendering linked field output. Depending on the Twig extensions installed on the site, this can be used to expose site configuration values, which may include sensitive information such as API keys or credentials.
+This vulnerability is mitigated by the fact that an attacker must have a role with permission to create or edit content in a field that has Linked Field enabled in its display settings.
+Read more
+about Linked Field - Moderately critical - Server-side template injection - SA-CONTRIB-2026-200
+Inline Entity Form Dialog - Moderately critical - Access bypass - SA-CONTRIB-2026-199
+Project machine name:
+inline_entity_form_dialog
+Date:
+2026-October-07
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-107258
+This module renders entity add/edit forms inside an AJAX dialog for use with entity reference fields.
+This module relies only on the "access administration pages" permission, without checking whether the current user had create or update access to the entity itself.
+This vulnerability is mitigated by the fact that an attacker must have a role with the permission "access administration pages".
+Read more
+about Inline Entity Form Dialog - Moderately critical - Access bypass - SA-CONTRIB-2026-199
+Actstream - Critical - Access bypass - SA-CONTRIB-2026-198
+Project machine name:
+actstream
+Date:
+2026-October-07
+Security risk:
+Critical
+16 ∕ 25 AC:Basic/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-107257
+Actstream (short for Activity Stream) aggregates a user's activity from external services (RSS feeds, etc.) into per-user activity stream entities.
+The configuration route does not sufficiently check that the user editing it is the account owner (or a user administrator) leading to an access bypass vulnerability.
+Read more
+about Actstream - Critical - Access bypass - SA-CONTRIB-2026-198
+Authenticator Login Plus (2FA) - Critical - Improper authentication - SA-CONTRIB-2026-197
+Project machine name:
+auth_login_plus
+Date:
+2026-October-07
+Security risk:
+Critical
+15 ∕ 25 AC:Complex/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-107254
+This module provides TOTP-based two-factor authentication (2FA) for Drupal.
+The module doesn't enforce the second factor when a user logs in with Drupal core's one-time login link.
+This vulnerability is mitigated by the fact that an attacker must have access to a valid one-time login link for a victim's account.
+Read more
+about Authenticator Login Plus (2FA) - Critical - Improper authentication - SA-CONTRIB-2026-197
+Orphans Media - Critical - Unsupported - SA-CONTRIB-2026-196
+Project machine name:
+orphans_media
+Date:
+2026-October-07
+Security risk:
+Critical
+16 ∕ 25 AC:Complex/A:Admin/CI:All/II:All/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-107253
+The Drupal Security Team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, read the documentation on
+becoming the maintainer of a project that is unsupported for security reasons
+.
+Read more
+about Orphans Media - Critical - Unsupported - SA-CONTRIB-2026-196
+MathJax: LaTeX for Drupal - Critical - Cross site scripting - SA-CONTRIB-2026-195
+Project machine name:
+mathjax
+Date:
+2026-October-07
+Security risk:
+Critical
+15 ∕ 25 AC:Basic/A:None/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-107252
+This module integrates the MathJax library into your Drupal site. MathJax is the modern JavaScript-based LaTeX rendering solution for the Internet.
+The module ships with library configurations that do not escape JavaScript within the TeX it formats.
+Read more
+about MathJax: LaTeX for Drupal - Critical - Cross site scripting - SA-CONTRIB-2026-195
+Entity Reference Manager (Merge entities) - Critical - Access bypass - SA-CONTRIB-2026-194
+Project machine name:
+entity_reference_manager
+Date:
+2026-October-07
+Security risk:
+Critical
+16 ∕ 25 AC:Basic/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-107251
+Entity Reference Manager is an advanced administrative module for Drupal that allows site administrators to identify, analyze, and replace entity references across the system.
+The module does not sufficiently restrict access to all entity management operations. Users who can view content can access the entity merge functionality and delete arbitrary nodes, taxonomy terms, or media entities.
+Read more
+about Entity Reference Manager (Merge entities) - Critical - Access bypass - SA-CONTRIB-2026-194
+ECA Helper - Critical - Unsupported - SA-CONTRIB-2026-193
+Project machine name:
+eca_helper
+Date:
+2026-October-07
+Security risk:
+Critical
+16 ∕ 25 AC:Complex/A:Admin/CI:All/II:All/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-107250
+The Drupal Security Team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, read the documentation on
+becoming the maintainer of a project that is unsupported for security reasons
+.
+Read more
+about ECA Helper - Critical - Unsupported - SA-CONTRIB-2026-193
+Block AJAX - Highly critical - PHP object injection - SA-CONTRIB-2026-192
+Project machine name:
+block_ajax
+Date:
+2026-October-07
+Security risk:
+Highly critical
+20 ∕ 25 AC:Basic/A:None/CI:All/II:All/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-107249
+The Block AJAX module enables you to load blocks asynchronously via Ajax.
+The module doesn't sufficiently validate user-supplied data which is used to construct a block. In the worst case scenario, this can lead to PHP Object Injection and Remote Code Execution.
+The vulnerability is mitigated by the fact that it only affects sites that have Layout Builder enabled (or another block plugin that handles the data this module passes to it in a potentially unsafe way).
+Please see the release notes for details of potentially breaking changes.
+Read more
+about Block AJAX - Highly critical - PHP object injection - SA-CONTRIB-2026-192
+Diba carousel slider - Moderately critical - Cross Site Scripting (XSS) - SA-CONTRIB-2026-191
+Project machine name:
+diba_carousel
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-96382
+The Diba Carousel Slider adds a Bootstrap carousel slider block that can be used directly without creating a View or custom integration.
+When the "Allow HTML description" option is enabled, slide descriptions are rendered using the raw stored field value instead of the field's rendered output. This bypasses Drupal's text format filtering and output sanitization mechanisms.
+This vulnerability affects sites that use a formatted text field as the carousel description source and have enabled the "Allow HTML description" option.
+Read more
+about Diba carousel slider - Moderately critical - Cross Site Scripting (XSS) - SA-CONTRIB-2026-191
+Smart Content - Moderately critical - Access bypass - SA-CONTRIB-2026-190
+Project machine name:
+smart_content
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-96386
+This module enables you to personalize content for anonymous and authenticated users by showing different blocks to visitors based on client-side conditions.
+The Smart Content Block submodule doesn't sufficiently check block access when it renders the blocks of a "Display Blocks" reaction through the module's AJAX endpoint.
+Read more
+about Smart Content - Moderately critical - Access bypass - SA-CONTRIB-2026-190
+CSS Usage Analyzer - Moderately critical - Improper access control - SA-CONTRIB-2026-189
+Project machine name:
+css_usage_analyzer
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:None/CI:None/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-96380
+This module lets a frontend scanner post CSS-usage measurements to the site so admin reports can show real-page statistics.
+This module doesn't sufficiently protect the
+/css-usage-analyzer/save
+endpoint against forged or repeated submissions.
+Read more
+about CSS Usage Analyzer - Moderately critical - Improper access control - SA-CONTRIB-2026-189
+Combined image style - Moderately critical - Improper access control - SA-CONTRIB-2026-188
+Project machine name:
+combined_image_style
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Basic/A:None/CI:None/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-96377
+This module enables you to combine multiple image styles into a single image derivative.
+The module does not sufficiently validate image style names when generating image derivatives. Under certain circumstances, this allows anonymous users to generate image derivatives without a valid token, potentially leading to a denial of service.
+Sites are affected simply by having the module installed, even when no combined image styles are configured or in use.
+Read more
+about Combined image style - Moderately critical - Improper access control - SA-CONTRIB-2026-188
+AI CKEditor - Moderately critical - Code execution via Twig templates - SA-CONTRIB-2026-187
+Project machine name:
+ai_ckeditor
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Basic/A:User/CI:Some/II:None/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-96392
+This module enables you to use AI to fill in or replace text in CKEditor.
+The module doesn't sufficiently mitigate Twig template injections in certain AI CKEditor rules, making it possible to use Twig functions to extract certain confidential system data.
+Read more
+about AI CKEditor - Moderately critical - Code execution via Twig templates - SA-CONTRIB-2026-187
+Webform REST - Less critical - Access bypass - SA-CONTRIB-2026-186
+Project machine name:
+webform_rest
+Date:
+2026-September-23
+Security risk:
+Less critical
+9 ∕ 25 AC:Basic/A:User/CI:Some/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-96391
+This module enables you to retrieve and submit webforms via REST.
+The module doesn't sufficiently check permission to webform and webform submission entities when retrieving webform elements or fields.
+Read more
+about Webform REST - Less critical - Access bypass - SA-CONTRIB-2026-186
+Editoria11y Accessibility Checker - Moderately critical - Access bypass - SA-CONTRIB-2026-185
+Project machine name:
+editoria11y
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Basic/A:User/CI:None/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-96390
+This module runs a client-side accessibility checker that automatically reports results to dashboard views over an API.
+The module incorrectly described a permission as a "view" permission when it grants edit and delete access to module data, resulting in a potential access bypass.
+Read more
+about Editoria11y Accessibility Checker - Moderately critical - Access bypass - SA-CONTRIB-2026-185
+Tawk.to - Live chat application - Critical - Cross Site Request Forgery - SA-CONTRIB-2026-184
+Project machine name:
+tawk_to
+Date:
+2026-September-23
+Security risk:
+Critical
+16 ∕ 25 AC:Basic/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-96388
+This module provides integration of the tawk.to live chat for Drupal sites.
+The module does not sufficiently validate certain requests. This may allow an attacker to trick an authenticated user into performing unintended actions through a Cross-Site Request Forgery (CSRF) vulnerability.
+Read more
+about Tawk.to - Live chat application - Critical - Cross Site Request Forgery - SA-CONTRIB-2026-184
+Stop administrator login - Moderately critical - Access bypass - SA-CONTRIB-2026-183
+Project machine name:
+stop_admin
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:Admin/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-96387
+This module enables sites to block access for the administrative user account (user 1) or users with the administrator role.
+The module does not sufficiently enforce these access restrictions across all supported authentication mechanisms. As a result, a blocked administrative user may still be able to authenticate through certain alternative authentication methods.
+This vulnerability is mitigated by the fact that an attacker must possess valid credentials for a user with the administrator role, and must authenticate using a less commonly used authentication mechanism.
+Read more
+about Stop administrator login - Moderately critical - Access bypass - SA-CONTRIB-2026-183
+REST & JSON API Authentication for Drupal - Moderately critical - Access bypass - SA-CONTRIB-2026-182
+Project machine name:
+rest_api_authentication
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-96385
+This module enables you to add an extra authentication layer to the API.
+The module does not sufficiently validate authentication requirements for all API requests, which can result in an access bypass vulnerability.
+Read more
+about REST & JSON API Authentication for Drupal - Moderately critical - Access bypass - SA-CONTRIB-2026-182
+CookieCuttr - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-181
+Project machine name:
+cookiecuttr
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:Admin/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-96379
+This module enables you to provide information and options about cookie usage.
+The module does not sufficiently filter input submitted through the Cookiecuttr administration form. This could allow specially crafted values to be stored and later rendered without adequate sanitization, resulting in a cross-site scripting (XSS) vulnerability.
+This vulnerability is mitigated by the fact that an attacker must have a role with the permission
+administer cookiecuttr
+.
+Read more
+about CookieCuttr - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-181
+Mermaid Diagram Field - Moderately critical - Access bypass - SA-CONTRIB-2026-180
+Project machine name:
+mermaid_diagram_field
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+13 ∕ 25 AC:None/A:User/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-96384
+This module enables you to add mermaid diagram that displays either inline on an entity or optionally in a modal.
+The module doesn't sufficiently respect default revision behavior and does not properly limit access to the modal content.
+This vulnerability is mitigated by the fact that an attacker must have the modal display option enabled for the field, or otherwise know the route of the modal and entity ID.
+Read more
+about Mermaid Diagram Field - Moderately critical - Access bypass - SA-CONTRIB-2026-180
+Commerce Decoupled Checkout - Moderately critical - Access bypass - SA-CONTRIB-2026-179
+Project machine name:
+commerce_decoupled_checkout
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:None/CI:None/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-96378
+This module enables REST endpoints for a decoupled Commerce experience which allow for remote order creation.
+The module doesn't sufficiently sanitize order data passed into the order creation endpoint, which allows for potentially unsafe order properties to be set on an order.
+Read more
+about Commerce Decoupled Checkout - Moderately critical - Access bypass - SA-CONTRIB-2026-179
+Project Browser - Critical - Cross-site request forgery - SA-CONTRIB-2026-178
+Project machine name:
+project_browser
+Date:
+2026-September-23
+Security risk:
+Critical
+15 ∕ 25 AC:Complex/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-96374
+The Project Browser module enables you to apply recipes and enable modules from the web user interface.
+The module doesn't sufficiently validate admin actions to protect against cross-site request forgery attacks (CSRF).
+Read more
+about Project Browser - Critical - Cross-site request forgery - SA-CONTRIB-2026-178
+Cloud - Critical - Remote code execution - SA-CONTRIB-2026-177
+Project machine name:
+cloud
+Date:
+2026-September-23
+Security risk:
+Critical
+15 ∕ 25 AC:Basic/A:Admin/CI:All/II:All/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-96376
+The Cloud module enables users to manage cloud resources through Drupal.
+The module does not sufficiently sanitize user-controlled Git branch and repository URL values before passing them to shell commands in the Kubernetes integration. This vulnerability allows an attacker to execute arbitrary operating-system commands as the web-server user.
+Read more
+about Cloud - Critical - Remote code execution - SA-CONTRIB-2026-177
+Cloud - Critical - Remote code execution - SA-CONTRIB-2026-176
+Project machine name:
+cloud
+Date:
+2026-September-23
+Security risk:
+Critical
+15 ∕ 25 AC:Complex/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-96375
+The Cloud module enables users to manage cloud infrastructure through Drupal.
+The Kubernetes and VMware integrations do not properly validate TLS certificates when connecting to remote API endpoints. An attacker who can intercept these connections may obtain secret tokens or other credentials, potentially allowing unauthorized access to the connected infrastructure.
+Read more
+about Cloud - Critical - Remote code execution - SA-CONTRIB-2026-176
+Webform - Critical - Remote Code Execution - SA-CONTRIB-2026-175
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Critical
+18 ∕ 25 AC:Basic/A:None/CI:All/II:All/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-96355
+The Webform module allows site builders to create forms, collect submissions, and render submitted values in configurable formats.
+Webform does not sufficiently exclude certain format templates from token replacement. This can allow an attacker to submit data that is evaluated as template code when a submission is rendered. Depending on the site configuration and enabled modules, this may lead to information disclosure, stored cross-site scripting, or remote code execution.
+Read more
+about Webform - Critical - Remote Code Execution - SA-CONTRIB-2026-175
+Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-174
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-96356
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data.
+Webform did not sufficiently guard user-specific access rules against a malformed saved configuration. Under certain site-specific conditions, an access rule intended to grant submission access only to selected user accounts could also grant access to anonymous users.
+This vulnerability is mitigated by the fact that the bypass depends on malformed saved access-rule configuration.
+Read more
+about Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-174
+Webform - Less critical - Access bypass - SA-CONTRIB-2026-173
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Less critical
+9 ∕ 25 AC:Basic/A:User/CI:Some/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-96398
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data.
+The module did not sufficiently restrict access to certain submission view modes. Under certain conditions, a user who can view a submission could access a more permissive view mode and see fields that would otherwise be restricted.
+This vulnerability is mitigated by the fact that an attacker must already have access to view the affected submission.
+Read more
+about Webform - Less critical - Access bypass - SA-CONTRIB-2026-173
+Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-172
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-96357
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data. Form submissions may include uploaded files.
+The module does not sufficiently force certain uploaded file types to download when served. Under certain site configurations, a file uploaded through a webform could be rendered inline by a browser, resulting in a cross-site scripting vulnerability.
+Read more
+about Webform - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-172
+Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-171
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Basic/A:None/CI:None/II:Some/E:Exploit/TD:Uncommon
+CVE IDs:
+CVE-2026-96364
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data.
+The Webform Share submodule can expose a webform for embedding on another site.
+Under certain circumstances, submissions for an Ajax-enabled Webform using Webform Share can bypass anti-spam protections.
+Read more
+about Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-171
+Webform - Less critical - Denial of service - SA-CONTRIB-2026-170
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Less critical
+8 ∕ 25 AC:Basic/A:None/CI:None/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-96365
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data. Site builders may also configure handlers for processing submissions. Forms may be displayed in blocks.
+Webform does not sufficiently validate an optional token query value before using it. Under specific configurations where a Webform is rendered for anonymous visitors, a malicious request can cause the request to consume significant resources leading to a Denial of Service.
+Read more
+about Webform - Less critical - Denial of service - SA-CONTRIB-2026-170
+Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-169
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-96366
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data.
+Site builders may also configure handlers for processing submissions, including email handlers that may include uploaded files as attachments.
+In affected configurations, Webform did not sufficiently validate a managed file upload element when processing a new submission. A user with access to submit a vulnerable webform could potentially access other managed files they were not authorized to view.
+Read more
+about Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-169
+Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-168
+Project machine name:
+webform
+Date:
+2026-September-23
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Complex/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-96373
+The Webform module allows site builders to create forms, collect submissions, and configure access to forms and submission data.
+The module does not sufficiently validate requested filenames when serving generated submission exports. Under certain configurations, a user with permission to view submission results for one webform may be able to access or remove files from the configured export temporary directory that were not generated for that webform.
+Read more
+about Webform - Moderately critical - Access bypass - SA-CONTRIB-2026-168
