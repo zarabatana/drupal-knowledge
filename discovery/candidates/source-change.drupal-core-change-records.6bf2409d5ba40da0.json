@@ -1,0 +1,68 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 18,
+    "added_sample": [
+      "12.0.x",
+      "06-Oct-2026",
+      "Kernel tests can share the test environment",
+      "12.1.x / 12.1.0",
+      "05-Oct-2026"
+    ],
+    "changed_region_count": 2,
+    "current_bytes": 4348,
+    "current_line_count": 153,
+    "deterministic": true,
+    "first_changed_line": 4,
+    "method": "normalized_line_diff",
+    "previous_bytes": 4279,
+    "previous_line_count": 153,
+    "removed_line_count": 18,
+    "removed_sample": [
+      "11.5.x / 11.5.0",
+      "31-Aug-2026",
+      "Text with summary plugin is deprecated",
+      "11.5.x / 11.5.0",
+      "30-Aug-2026"
+    ]
+  },
+  "current_hash": "sha256:209eaeaff80fef5cb04ad4adc900f4b3a75143f5f776c28629859d9e13e7797a",
+  "discovered_at": "2026-10-06T18:24:28Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-core-change-records.6bf2409d5ba40da0",
+  "is_knowledge_proposal": false,
+  "kind": "release-source-change",
+  "previous_hash": "sha256:8516793b994c0f69c7dd3b231815128c1ed11b8d326c61c8c73309e145aeeb6a",
+  "provenance": {
+    "acquired_at": "2026-10-06T18:24:28Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/list-changes/drupal",
+    "category": "change-records",
+    "content_length": 4348,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": {
+      "end": "Pages",
+      "start": "Introduced in branch/version"
+    },
+    "etag": "\"1791311070-1\"",
+    "fetch_url": "https://www.drupal.org/list-changes/drupal",
+    "http_status": 200,
+    "last_modified": "Tue, 06 Oct 2026 18:24:30 GMT",
+    "normalization": "auto",
+    "trust": "authoritative"
+  },
+  "review": null,
+  "review_required": true,
+  "review_state": "pending_review",
+  "run_id": "run.20261006T182428.8ab8516c",
+  "source_id": "drupal-core-change-records",
+  "source_url": "https://www.drupal.org/list-changes/drupal",
+  "status": "review_required",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}
