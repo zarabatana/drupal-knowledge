@@ -1,0 +1,63 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 4,
+    "added_sample": [
+      "<div data-drupal-selector=\"edit-actions\" class=\"form-actions js-form-wrapper form-wrapper\" id=\"edit-actions--2\"><input data-drupal-selector=\"edit-submit\" type=\"…",
+      "<div class=\"views-element-container\"><div class=\"js-view-dom-id-83809aeff20733e6832afd3b1b4e8bc3a8a4810aeebf7253bc5eb06d8cd763b2\">",
+      "<input autocomplete=\"off\" data-drupal-selector=\"form-hagmhxav18xnkbxxksqpzvmsjqh0jc4ka20dqvrdovk\" type=\"hidden\" name=\"form_build_id\" value=\"form-HagMhxAv18XnKbX…",
+      " <script type=\"application/json\" data-drupal-selector=\"drupal-settings-json\">{\"path\":{\"baseUrl\":\"\\/\",\"pathPrefix\":\"\",\"currentPath\":\"api\\/drupal\\/deprecated\\/9\",…"
+    ],
+    "changed_region_count": 4,
+    "current_bytes": 84953,
+    "current_line_count": 979,
+    "deterministic": true,
+    "first_changed_line": 76,
+    "method": "normalized_line_diff",
+    "previous_bytes": 84950,
+    "previous_line_count": 979,
+    "removed_line_count": 4,
+    "removed_sample": [
+      "<div data-drupal-selector=\"edit-actions\" class=\"form-actions js-form-wrapper form-wrapper\" id=\"edit-actions\"><input data-drupal-selector=\"edit-submit\" type=\"sub…",
+      "<div class=\"views-element-container\"><div class=\"js-view-dom-id-aed73b534af1276acd0e3f6a9d2d32acba69b61cd4cd26225b6295885c671f37\">",
+      "<input autocomplete=\"off\" data-drupal-selector=\"form-c-6rcxcyjxcvbzx6wkfj1rop9sn8ql6o0otcz7kifvg\" type=\"hidden\" name=\"form_build_id\" value=\"form-c_6rCXCYJxcvbzx…",
+      " <script type=\"application/json\" data-drupal-selector=\"drupal-settings-json\">{\"path\":{\"baseUrl\":\"\\/\",\"pathPrefix\":\"\",\"currentPath\":\"api\\/drupal\\/deprecated\\/9\",…"
+    ]
+  },
+  "current_hash": "sha256:9c61b7b5189f55234287222c99e99740c2d98c7c3d7119ffbfabc7b5bfc3407e",
+  "discovered_at": "2026-10-08T23:23:07Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-api-deprecated-9-p0.a8be482fbf057eff",
+  "is_knowledge_proposal": false,
+  "kind": "release-source-change",
+  "previous_hash": "sha256:a907598611296099dcb871b719b4476321e94d21c0defa1f45aa4166c2e99607",
+  "provenance": {
+    "acquired_at": "2026-10-08T23:23:07Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://api.drupal.org/api/drupal/deprecated/9",
+    "category": "api-lifecycle",
+    "content_length": 84953,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": null,
+    "etag": null,
+    "fetch_url": "https://api.drupal.org/api/drupal/deprecated/9?page=0",
+    "http_status": 200,
+    "last_modified": null,
+    "normalization": "raw_text",
+    "trust": "authoritative"
+  },
+  "review": null,
+  "review_required": true,
+  "review_state": "pending_review",
+  "run_id": "run.20261008T232307.1b71f964",
+  "source_id": "drupal-api-deprecated-9-p0",
+  "source_url": "https://api.drupal.org/api/drupal/deprecated/9",
+  "status": "review_required",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}
