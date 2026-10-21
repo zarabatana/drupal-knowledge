@@ -1,0 +1,57 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 1,
+    "added_sample": [
+      "<release><name>pathauto 8.x-1.15</name><version>8.x-1.15</version><tag>8.x-1.15</tag><status>published</status><release_link>https://www.drupal.org/project/path…"
+    ],
+    "changed_region_count": 1,
+    "current_bytes": 25638,
+    "current_line_count": 14,
+    "deterministic": true,
+    "first_changed_line": 13,
+    "method": "normalized_line_diff",
+    "previous_bytes": 25638,
+    "previous_line_count": 14,
+    "removed_line_count": 1,
+    "removed_sample": [
+      "<release><name>pathauto 8.x-1.15</name><version>8.x-1.15</version><tag>8.x-1.15</tag><status>published</status><release_link>https://www.drupal.org/project/path…"
+    ]
+  },
+  "current_hash": "sha256:e29fe4333375a24b7e7372858a6dfcffc6009157f599856cc62b61cdf2599b15",
+  "discovered_at": "2026-10-21T08:52:10Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-contrib-pathauto-releases.fab793b1da4afa12",
+  "is_knowledge_proposal": false,
+  "kind": "release-source-change",
+  "previous_hash": "sha256:f887eea8671621502c2fb9f590f2866df2a41facff686ca016d60fa2d7984985",
+  "provenance": {
+    "acquired_at": "2026-10-21T08:52:10Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/project/pathauto/releases",
+    "category": "contrib-releases",
+    "content_length": 25638,
+    "content_type": "text/xml; charset=utf-8",
+    "content_window": null,
+    "etag": null,
+    "fetch_url": "https://updates.drupal.org/release-history/pathauto/current",
+    "http_status": 200,
+    "last_modified": "Mon, 19 Oct 2026 15:31:36 GMT",
+    "normalization": "raw_text",
+    "trust": "ecosystem"
+  },
+  "review": null,
+  "review_required": true,
+  "review_state": "pending_review",
+  "run_id": "discovery.20261021T085210.df2721dc",
+  "source_id": "drupal-contrib-pathauto-releases",
+  "source_url": "https://www.drupal.org/project/pathauto/releases",
+  "status": "review_required",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "ecosystem"
+}
