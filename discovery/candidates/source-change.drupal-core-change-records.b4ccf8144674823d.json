@@ -1,0 +1,68 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 6,
+    "added_sample": [
+      "11.5.x / 11.5.0",
+      "12-Oct-2026",
+      "The .profile file extension has been deprecated",
+      "11.x / 11.5.0",
+      "08-Oct-2026"
+    ],
+    "changed_region_count": 2,
+    "current_bytes": 4314,
+    "current_line_count": 153,
+    "deterministic": true,
+    "first_changed_line": 4,
+    "method": "normalized_line_diff",
+    "previous_bytes": 4348,
+    "previous_line_count": 153,
+    "removed_line_count": 6,
+    "removed_sample": [
+      "11.5.x / 11.5.0",
+      "31-Aug-2026",
+      "ElementInfoManager no longer overwrites a form element's own #value_callback",
+      "11.5.x / 11.5.0",
+      "31-Aug-2026"
+    ]
+  },
+  "current_hash": "sha256:42a214966f8c86058245ed34cf9223cdf69d3fbdc7f8ad550dedcce72d7d0897",
+  "discovered_at": "2026-10-13T22:47:59Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-core-change-records.b4ccf8144674823d",
+  "is_knowledge_proposal": false,
+  "kind": "release-source-change",
+  "previous_hash": "sha256:209eaeaff80fef5cb04ad4adc900f4b3a75143f5f776c28629859d9e13e7797a",
+  "provenance": {
+    "acquired_at": "2026-10-13T22:47:59Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/list-changes/drupal",
+    "category": "change-records",
+    "content_length": 4314,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": {
+      "end": "Pages",
+      "start": "Introduced in branch/version"
+    },
+    "etag": "\"1791931681-1\"",
+    "fetch_url": "https://www.drupal.org/list-changes/drupal",
+    "http_status": 200,
+    "last_modified": "Tue, 13 Oct 2026 22:48:01 GMT",
+    "normalization": "auto",
+    "trust": "authoritative"
+  },
+  "review": null,
+  "review_required": true,
+  "review_state": "pending_review",
+  "run_id": "run.20261013T224759.8e9243bf",
+  "source_id": "drupal-core-change-records",
+  "source_url": "https://www.drupal.org/list-changes/drupal",
+  "status": "review_required",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}
