@@ -1,0 +1,60 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 1,
+    "added_sample": [
+      "The module does not sufficiently force certain uploaded file types to download when served. Under certain site configurations, a file uploaded through a webform…"
+    ],
+    "changed_region_count": 1,
+    "current_bytes": 39085,
+    "current_line_count": 743,
+    "deterministic": true,
+    "first_changed_line": 298,
+    "method": "normalized_line_diff",
+    "previous_bytes": 39084,
+    "previous_line_count": 743,
+    "removed_line_count": 1,
+    "removed_sample": [
+      "The module does not sufficiently force certain uploaded file types to download when served. Under certan site configurations, a file uploaded through a webform …"
+    ]
+  },
+  "current_hash": "sha256:5250e63e27793a995d286599e338f3637313bcf9a2d954312d39a1b218124741",
+  "discovered_at": "2026-09-28T23:18:38Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-security-contrib.9f8ca3706ca638fd",
+  "is_knowledge_proposal": false,
+  "kind": "security-source-change",
+  "previous_hash": "sha256:16883c1b8ab7e6eca5ff3e97ad844a5a8cf148777a9909876659ac4b87ced55c",
+  "provenance": {
+    "acquired_at": "2026-09-28T23:18:38Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/security/contrib",
+    "category": "security",
+    "content_length": 39085,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": {
+      "end": "Pages",
+      "start": "Security advisories for contributed projects"
+    },
+    "etag": "\"1790637498-1\"",
+    "fetch_url": "https://www.drupal.org/security/contrib",
+    "http_status": 200,
+    "last_modified": "Mon, 28 Sep 2026 23:18:18 GMT",
+    "normalization": "auto",
+    "trust": "authoritative"
+  },
+  "review": null,
+  "review_required": true,
+  "review_state": "pending_review",
+  "run_id": "run.20260928T231838.b5cdda28",
+  "source_id": "drupal-security-contrib",
+  "source_url": "https://www.drupal.org/security/contrib",
+  "status": "review_required",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}
