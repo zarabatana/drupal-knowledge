@@ -1,0 +1,61 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 4,
+    "added_sample": [
+      "CVE IDs:",
+      "CVE-2026-118560",
+      "CVE IDs:",
+      "CVE-2026-114547"
+    ],
+    "changed_region_count": 2,
+    "current_bytes": 39037,
+    "current_line_count": 759,
+    "deterministic": true,
+    "first_changed_line": 421,
+    "method": "normalized_line_diff",
+    "previous_bytes": 38987,
+    "previous_line_count": 755,
+    "removed_line_count": 0,
+    "removed_sample": []
+  },
+  "current_hash": "sha256:be1b501762eb3ab87006842a646fb45c060f818e74cc676d1a5c6e2cbe92b73c",
+  "discovered_at": "2026-10-30T05:53:02Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-security-contrib.a467f41306da7bee",
+  "is_knowledge_proposal": false,
+  "kind": "security-source-change",
+  "previous_hash": "sha256:cfca75cb88c2dd7055eda59ced8b82e02fe744fb3fe178c307615658714aabdb",
+  "provenance": {
+    "acquired_at": "2026-10-30T05:53:02Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/security/contrib",
+    "category": "security",
+    "content_length": 39037,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": {
+      "end": "Pages",
+      "start": "Security advisories for contributed projects"
+    },
+    "etag": "\"1793339585-1\"",
+    "fetch_url": "https://www.drupal.org/security/contrib",
+    "http_status": 200,
+    "last_modified": "Fri, 30 Oct 2026 05:53:05 GMT",
+    "normalization": "auto",
+    "trust": "authoritative"
+  },
+  "review": null,
+  "review_required": true,
+  "review_state": "pending_review",
+  "run_id": "run.20261030T055302.f50a00ae",
+  "source_id": "drupal-security-contrib",
+  "source_url": "https://www.drupal.org/security/contrib",
+  "status": "review_required",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}

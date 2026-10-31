@@ -1,0 +1,153 @@
+Introduced in branch/version
+Notice created
+Change
+12.1.x / 12.1.0
+27-Oct-2026
+Limited length in primary and unique keys is forbidden
+12.0.x / 12.0.0
+26-Oct-2026
+StatementPrefetchIterator is deprecated
+12.1.x / 12.1.0
+26-Oct-2026
+hook_system_info_alter has been deprecated
+12.1.x / 12.1.0
+23-Oct-2026
+#file_value_callbacks now enforce TrustedCallbackInterface protections
+10.6.x, 11.3.x / 10.6.0, 11.3.20, 11.4.11
+20-Oct-2026
+Assertions options usage is deprecated
+11.6.x / 11.6.0
+16-Oct-2026
+Form structure of bundle entity delete forms has changed
+11.6.x / 11.6.0
+16-Oct-2026
+New generic BundleEntityDeleteForm class
+11.6.x / 11.6.0
+16-Oct-2026
+form_select_options() and form_get_options() have been deprecated
+12.0.x / 12.0.0
+15-Oct-2026
+robots.txt does not block search pages with query parameters anymore
+12.1.x / 12.1.0
+14-Oct-2026
+getModulesToUninstall() and getThemesToUninstall() added to the installer interfaces
+11.5.x / 11.5.0
+12-Oct-2026
+The .profile file extension has been deprecated
+12.1.x / 12.1.0
+10-Oct-2026
+Extension list command available for the `dr` CLI application
+11.5.x / 11.5.0
+08-Oct-2026
+Database queries can no longer be serialized
+11.5.x / 11.5.0
+06-Oct-2026
+Kernel tests can share the test environment
+12.1.x / 12.1.0
+05-Oct-2026
+Media::getRequestTime() has been deprecated
+11.5.x / 11.5.0
+04-Oct-2026
+TrustedCallbackInterface::TRIGGER_SILENCED_DEPRECATION is deprecated and no longer triggers a deprecation
+12.0.x / 12.0.0-beta2
+03-Oct-2026
+Navigation top bar feature flag removed from core
+12.1.x / 12.1.0
+01-Oct-2026
+New strnatcasecmp function in Drupal\Core\Utility\NaturalSort
+11.4.x / 11.4.9
+29-Sep-2026
+CKEditor 5 AddItemToToolbar now supports adding multiple items
+12.0.x / 12.0.0
+24-Sep-2026
+Block configuration for the syndicate block plugin has been removed
+12.0.x / 12.0.0
+24-Sep-2026
+transliteration library global renamed from transliterate to transliteration.transliterate
+11.5.x / 11.5.0
+23-Sep-2026
+Use of drupal_static() and drupal_static_reset() is deprecated
+12.0.x / 12.0.0
+23-Sep-2026
+Drupal core releases will no longer include tests
+11.5.x / 11.5.0
+22-Sep-2026
+The .module file extension has been deprecated
+11.5.x / 11.5.0
+22-Sep-2026
+Using integer values for database connections keys and targets is deprecated
+12.0.x / 12.0.0
+22-Sep-2026
+Unused SVG icons are deleted
+12.0.x / 12.0.0
+20-Sep-2026
+The Claro theme is removed
+12.0.x / 12.0.0
+19-Sep-2026
+Dangerous characters in filenames are replaced
+12.0.x / 12.0.0
+19-Sep-2026
+The Search module is removed
+12.0.x / 12.0.0
+18-Sep-2026
+The Olivero theme is removed
+11.5.x / 11.5.0
+18-Sep-2026
+Claro theme is deprecated
+12.0.x / 12.0.0
+17-Sep-2026
+Drupal 12.0.0 will require Node.js 24 for core development
+11.5.x / 11.5.0
+16-Sep-2026
+Olivero theme is deprecated
+11.5.x / 11.5.0
+15-Sep-2026
+Toolbar is deprecated
+12.0.x / 12.0.0
+15-Sep-2026
+The Toolbar module removed
+12.0.x / 12.0.0
+15-Sep-2026
+CSSLint and ESLint configuration files are no longer scaffolded
+11.5.x / 11.5.0
+14-Sep-2026
+getModulesToInstall() and getThemesToInstall() added to the installer interfaces
+11.5.x / 11.5.0
+13-Sep-2026
+New API for Design Tokens and CSS variables
+11.5.x / 11.5.0
+11-Sep-2026
+Minimum and Maximum labels are now configurable in Views Numeric-based Filters like Dates
+11.5.x / 11.5.0
+11-Sep-2026
+The User entity 'member_for' extra field is deprecated
+11.5.x / 11.5.0
+11-Sep-2026
+Several update_* functions in update.inc are deprecated
+11.5.x / 11.5.0
+11-Sep-2026
+drupal_attach_tabledrag() is deprecated
+11.5.x / 11.5.0
+10-Sep-2026
+Deprecated views_invalidate_cache, new Views plugin postSave API introduced
+11.5.x / 11.5.0
+09-Sep-2026
+locale_get_plural() is deprecated, replaced by PluralIndexInterface service
+11.5.x / 11.5.0
+09-Sep-2026
+Several user functions have been deprecated.
+11.5.x / 11.5.0
+08-Sep-2026
+\Drupal\Core\Recipe\RecipeRunner::isApplying()
+11.5.x / 11.5.0
+07-Sep-2026
+MarkFutureUpdateEquivalent attribute added to register equivalent updates on site install
+11.5.x / 11.5.0
+07-Sep-2026
+user_role_grant_permissions(), user_role_revoke_permissions() and user_role_change_permissions() are deprecated
+11.5.x / 11.5.0
+05-Sep-2026
+View mode dependencies are recalculated
+11.5.x / 11.5.0
+05-Sep-2026
+Search module is deprecated
