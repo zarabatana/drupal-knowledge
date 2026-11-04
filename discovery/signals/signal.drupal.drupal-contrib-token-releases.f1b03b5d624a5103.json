@@ -1,0 +1,88 @@
+{
+  "acquired_at": "2026-11-04T11:33:33Z",
+  "can_promote_to_knowledge": false,
+  "claim": {
+    "assertion_key": "project.token.release.8.x-1.18.release_type",
+    "assertion_value": "Bug fixes",
+    "evidence": [
+      "version=8.x-1.18",
+      "release_type=Bug fixes",
+      "status=published",
+      "security=Covered by Drupal's security advisory policy",
+      "core_compatibility=^10.3 || ^11 || ^12"
+    ],
+    "extraction": {
+      "deterministic": true,
+      "field_path": "project/releases/release",
+      "strategy": "project_release_xml"
+    },
+    "topic": "project_release_type"
+  },
+  "engine": {
+    "deterministic": true,
+    "language_model_used": false,
+    "name": "drupal-knowledge-discovery-engine",
+    "version": "0.1"
+  },
+  "id": "signal.drupal.drupal-contrib-token-releases.f1b03b5d624a5103",
+  "is_knowledge_proposal": false,
+  "is_trusted_knowledge": false,
+  "item_updated_at": "2026-10-30T10:26:25Z",
+  "kind": "project-release",
+  "observed_at": "2026-11-04T11:33:33Z",
+  "popularity": {
+    "authority_weight": 0,
+    "counts_toward_corroboration": false,
+    "metrics": {}
+  },
+  "provenance": {
+    "acquired_by": {
+      "name": "drupal-knowledge-discovery-engine",
+      "version": "0.1"
+    },
+    "acquisition_run_id": "discovery.20261104T113333.36576fa5",
+    "discovery_channel": "external_discovery_source",
+    "discovery_run_id": "discovery.20261104T113333.36576fa5"
+  },
+  "published_at": "2026-10-30T10:26:25Z",
+  "review": null,
+  "review_required": true,
+  "review_status": "unreviewed",
+  "scope": {
+    "component": {
+      "name": "token",
+      "package": "drupal/token",
+      "type": "module"
+    },
+    "environment": null,
+    "version_scope": {
+      "drupal_core": [
+        "^10.3",
+        "^11",
+        "^12"
+      ],
+      "explicitly_evidenced": true,
+      "project_version": "8.x-1.18"
+    }
+  },
+  "signal_contract_version": "0.2",
+  "source": {
+    "canonical_url": "https://www.drupal.org/project/token/releases/8.x-1.18",
+    "category": "contrib-releases",
+    "derived_from": null,
+    "discovery_channel": "external_discovery_source",
+    "fetch_url": "https://updates.drupal.org/release-history/token/current",
+    "independence_group": "drupal-org-project-token",
+    "item_ref": "release:8.x-1.18",
+    "snapshot_sha256": "sha256:e2f8e9ddd77cc7eb0d406cb8c8a70dee0f9f6c584352c925dcfad14ec718a940",
+    "source_id": "drupal-contrib-token-releases",
+    "trust": "ecosystem"
+  },
+  "staleness": {
+    "age_days": 0,
+    "expected_refresh_days": 30,
+    "stale": false
+  },
+  "status": "insufficient_evidence",
+  "summary": "token release 8.x-1.18 is published as release type 'Bug fixes'."
+}
