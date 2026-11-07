@@ -1,0 +1,755 @@
+Security advisories for contributed projects
+Show advisories for
+only Drupal core
+,
+only
+PSAs
+, or
+all security advisories
+Security advisories for third-party projects that are not part of Drupal core - this includes all modules, themes, and installation profiles that have been contributed by community members.
+Media Alias Display - Moderately critical - Information disclosure - SA-CONTRIB-2026-292
+Project machine name:
+media_alias_display
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Complex/A:None/CI:Some/II:None/E:Proof/TD:Uncommon
+CVE IDs:
+CVE-2026-118571
+This module allows for direct viewing of a file with the URL alias.
+This is a followup advisory to
+SA-CONTRIB-2026-245
+, which did not fully resolve the underlying vulnerability.
+In some cases, files may be served with the HTTP header
+Cache-Control: public
+when they should be uncacheable. This can lead to some users getting cached versions of files with information they should not be able to access.
+This vulnerability is mitigated by the following:
+Read more
+about Media Alias Display - Moderately critical - Information disclosure - SA-CONTRIB-2026-292
+Content Sync (content-sync.io) - Moderately critical - Information disclosure - SA-CONTRIB-2026-291
+Project machine name:
+cms_content_sync
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Complex/A:Admin/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-118568
+This module enables you to share and reuse content across websites.
+The module did not sufficiently encrypt the password of the system user used when synchronizing content. This can potentially allow unprivileged users to view the password.
+This vulnerability is mitigated by the fact that an attacker must have access to a database dump or database read access to the user data table. This vulnerability is not exploitable without prior database access.
+Read more
+about Content Sync (content-sync.io) - Moderately critical - Information disclosure - SA-CONTRIB-2026-291
+OAuth2 Token Manager - Critical - Access bypass - SA-CONTRIB-2026-290
+Project machine name:
+oauth2_token_manager
+Date:
+2026-October-28
+Security risk:
+Critical
+15 ∕ 25 AC:Complex/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-118573
+This module lets you manage system-wide OAuth2 access and refresh tokens for Box, Quip, and Slack integrations through Drush and an OAuth2 validation callback.
+The module doesn't restrict access to its OAuth2 routes, allowing an an anonymous visitor to potentially connect the site's integration to an account they control.
+This vulnerability is mitigated by the fact that an attacker must obtain the OAuth2 state value from a previous system token initialization (for example, from the server access logs).
+Read more
+about OAuth2 Token Manager - Critical - Access bypass - SA-CONTRIB-2026-290
+Field Permissions - Moderately critical - Access bypass - SA-CONTRIB-2026-289
+Project machine name:
+field_permissions
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+13 ∕ 25 AC:None/A:None/CI:Some/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-118584
+The Field Permissions module enables you to set field-level permissions for viewing and editing fields, including a "Private" setting.
+The module does not sufficiently restrict access to "Private" fields on entity types that have no field for an author (user account or owner). As a result, a field configured as "Private" on one of these entities can be viewed. Where the entity is editable, the entity can also be edited by anyone who can view it, including anonymous users.
+Read more
+about Field Permissions - Moderately critical - Access bypass - SA-CONTRIB-2026-289
+Field Permissions - Moderately critical - Access bypass - SA-CONTRIB-2026-288
+Project machine name:
+field_permissions
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Basic/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-118583
+This module enables you to set field-level permissions to create, update or view individual fields.
+The module does not sufficiently verify administrative privileges when checking access to protected fields, potentially allowing users with a role named
+administrator
+to bypass field-level access restrictions and gain unauthorized view and edit access to protected fields.
+Read more
+about Field Permissions - Moderately critical - Access bypass - SA-CONTRIB-2026-288
+OpenID Connect Client - Moderately critical - Improper authentication - SA-CONTRIB-2026-287
+Project machine name:
+oidc
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Basic/A:None/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-118554
+The module enables authentication via the OpenID Connect (oAuth2) protocol.
+When a new user logs in via OpenID Connect, the module tries to link the user to an existing account with the same email address. Doing so it allows to take over any existing Drupal account (except user 1) that has not yet been linked to an OpenID Connect user.
+This vulnerability is mitigated by the fact that the site must be configured to use a provider that doesn't verify the email address of the user.
+Read more
+about OpenID Connect Client - Moderately critical - Improper authentication - SA-CONTRIB-2026-287
+Stage File Proxy - Critical - Cross-site scripting - SA-CONTRIB-2026-286
+Project machine name:
+stage_file_proxy
+Date:
+2026-October-28
+Security risk:
+Critical
+16 ∕ 25 AC:Basic/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-118576
+Stage File Proxy is a general solution for getting production files on a development server on demand.
+It is not intended for usage on production sites.
+The module doesn't sufficiently check file URL for malicious content when attempting to do fallback retrieval leading to a cross-site scripting vulnerability.
+This vulnerability is mitigated by the fact this development module must be enabled on an attacker's target site, and the attacker must be able to upload a malicious file to the "origin" server configured for the module.
+Read more
+about Stage File Proxy - Critical - Cross-site scripting - SA-CONTRIB-2026-286
+Signature pad widget - Critical - Cross-site scripting - SA-CONTRIB-2026-285
+Project machine name:
+sign_widget
+Date:
+2026-October-28
+Security risk:
+Critical
+16 ∕ 25 AC:Basic/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-118575
+This module enables users to create and save signatures as SVG images.
+The module did not sufficiently sanitize user-supplied content before saving it to the public file system. Under certain scenarios, a maliciously crafted file could contain active or otherwise unsafe content and may result in a cross-site scripting (XSS) vulnerability.
+Read more
+about Signature pad widget - Critical - Cross-site scripting - SA-CONTRIB-2026-285
+OAuth Login - OAuth OIDC SSO - Critical - Authentication bypass - SA-CONTRIB-2026-284
+Project machine name:
+oauth_login_oauth2
+Date:
+2026-October-28
+Security risk:
+Critical
+15 ∕ 25 AC:Complex/A:None/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-118572
+This module enables you to log in to your Drupal site using any OAuth 2.0 or OpenID Connect compliant identity provider.
+The module doesn't sufficiently check access on a configuration route, or check whether the identity provider has verified the email address it returns. Together, these let an attacker log in as any existing user whose email address they know.
+Read more
+about OAuth Login - OAuth OIDC SSO - Critical - Authentication bypass - SA-CONTRIB-2026-284
+Bulk Update User Roles - Moderately critical - Incorrect authorization - SA-CONTRIB-2026-280
+Project machine name:
+bulk_update_user_roles
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-118567
+This module provides a bulk form for assigning or removing roles on multiple user accounts at once.
+The bulk update form does not prevent access to users who do not have permission to assign roles.
+This vulnerability is mitigated by the fact that an attacker must have a role with the permission "administer users".
+Read more
+about Bulk Update User Roles - Moderately critical - Incorrect authorization - SA-CONTRIB-2026-280
+S3 File System - Moderately critical - Access bypass - SA-CONTRIB-2026-279
+Project machine name:
+s3fs
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Complex/A:None/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-118574
+S3 File System (s3fs) provides an additional file system to your Drupal site that stores files in Amazon's Simple Storage Service (S3) storage.
+The module doesn't sufficiently isolate upload context between separate object(file) operations in the same request resulting in the potential for objects to be uploaded with incorrect access control list (ACL) entries or corruption through incorrect operation metadata.
+This vulnerability is mitigated by the fact that an attacker must be able to trigger multiple file operations on S3FS.
+Some vectors are mitigated by:
+Read more
+about S3 File System - Moderately critical - Access bypass - SA-CONTRIB-2026-279
+Fasttoggle - Moderately critical - Cross-Site Request Forgery - SA-CONTRIB-2026-283
+Project machine name:
+fasttoggle
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:None/CI:None/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-118570
+This module enables you to quickly toggle the publication status, promotion and stickiness of nodes, and the publication status of comments, from links on the page.
+The module doesn't sufficiently protect against cross-site request forgery (CSRF) on its toggle URL, under the scenario where a user with the "Use Fasttoggle" permission visits a page controlled by an attacker while logged in. This allows the attacker to change the publication status of arbitrary content on behalf of that user.
+Read more
+about Fasttoggle - Moderately critical - Cross-Site Request Forgery - SA-CONTRIB-2026-283
+Fasttoggle - Moderately critical - Access bypass - SA-CONTRIB-2026-282
+Project machine name:
+fasttoggle
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+13 ∕ 25 AC:None/A:User/CI:None/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-118569
+This module enables you to quickly toggle the publication status, promotion and stickiness of nodes, and the publication status of comments, from links on the page.
+The module doesn't sufficiently check access to the entity being toggled, under the scenario where a user with the "Use Fasttoggle" permission submits a request to the toggle URL for any node or comment regardless of their permission to update that entity. For example, such a user could publish an unpublished draft they are not allowed to view.
+Read more
+about Fasttoggle - Moderately critical - Access bypass - SA-CONTRIB-2026-282
+CAPTCHA - Moderately critical - Session Replay (CAPTCHA bypass) - SA-CONTRIB-2026-281
+Project machine name:
+captcha
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:None/CI:None/II:None/E:Exploit/TD:All
+CVE IDs:
+CVE-2026-118582
+The CAPTCHA module places a configurable challenge on forms to block automated submissions. To skip the challenge on later steps of the same multi-step form, the module remembers that a CAPTCHA session has been solved.
+The module does not fully invalidate a solved CAPTCHA session. As a result, a protected form that was already submitted once can be submitted again without solving a new CAPTCHA. This weakens the protection the module provides against automated submissions such as spam registrations, comment spam, and login brute-forcing.
+Read more
+about CAPTCHA - Moderately critical - Session Replay (CAPTCHA bypass) - SA-CONTRIB-2026-281
+GroupEx PRO ( Daxko ) integration - Critical - Unsupported - SA-CONTRIB-2026-278
+Project machine name:
+groupexpro
+Date:
+2026-October-28
+Security risk:
+Critical
+16 ∕ 25 AC:Complex/A:Admin/CI:All/II:All/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-118565
+The Drupal Security Team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, read the documentation on
+becoming the maintainer of a project that is unsupported for security reasons
+.
+Read more
+about GroupEx PRO ( Daxko ) integration - Critical - Unsupported - SA-CONTRIB-2026-278
+PayUmoney for Drupal Commerce - Critical - Unsupported - SA-CONTRIB-2026-277
+Project machine name:
+commerce_payumoney
+Date:
+2026-October-28
+Security risk:
+Critical
+16 ∕ 25 AC:Complex/A:Admin/CI:All/II:All/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-118564
+The Drupal Security Team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, read the documentation on
+becoming the maintainer of a project that is unsupported for security reasons
+.
+Read more
+about PayUmoney for Drupal Commerce - Critical - Unsupported - SA-CONTRIB-2026-277
+CacheFlush - Critical - Unsupported - SA-CONTRIB-2026-276
+Project machine name:
+cacheflush
+Date:
+2026-October-28
+Security risk:
+Critical
+16 ∕ 25 AC:Complex/A:Admin/CI:All/II:All/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-118563
+The Drupal Security Team is marking this project unsupported. There is a known security issue with the project that has not been fixed by the maintainer. If you would like to maintain this project, read the documentation on
+becoming the maintainer of a project that is unsupported for security reasons
+.
+Read more
+about CacheFlush - Critical - Unsupported - SA-CONTRIB-2026-276
+Single Content Sync - Critical - Remote code execution - SA-CONTRIB-2026-275
+Project machine name:
+single_content_sync
+Date:
+2026-October-28
+Security risk:
+Critical
+17 ∕ 25 AC:Basic/A:Admin/CI:All/II:All/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-118562
+Single Content Sync enables exporting and importing content, referenced entities, and files between Drupal sites.
+A maliciously crafted import file can cause untrusted data to be deserialized, potentially leading to remote code execution.
+This vulnerability is mitigated by the fact that an attacker must have a role with the "import single content" permission.
+Read more
+about Single Content Sync - Critical - Remote code execution - SA-CONTRIB-2026-275
+Single Content Sync - Critical - External control of file name or path - SA-CONTRIB-2026-274
+Project machine name:
+single_content_sync
+Date:
+2026-October-28
+Security risk:
+Critical
+17 ∕ 25 AC:Basic/A:Admin/CI:All/II:All/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-118561
+Single Content Sync enables exporting and importing content, referenced entities, and files between Drupal sites.
+The module does not sufficiently validate file sources and destinations during content imports. An attacker can write arbitrary files, disclose sensitive local files accessible to the web server, or cause the server to make requests to internal or external resources. Depending on the server configuration, this may lead to remote code execution.
+Read more
+about Single Content Sync - Critical - External control of file name or path - SA-CONTRIB-2026-274
+AI (Artificial Intelligence) - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-273
+Project machine name:
+ai
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Complex/A:User/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-118553
+The AI module includes a submodule, AI Automator. This submodule allows you to automatically fill out fields using AI, based on other fields.
+The module doesn't sufficiently check access to text formats, allowing users to author field data in text formats they should not have access to.
+Read more
+about AI (Artificial Intelligence) - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-273
+AI (Artificial Intelligence) - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-272
+Project machine name:
+ai
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-118552
+This module provides a framework for integrating AI providers and features into Drupal.
+The module doesn't sufficiently sanitize certain HTMX attributes, which can lead to a cross-site scripting (XSS) vulnerability.
+Read more
+about AI (Artificial Intelligence) - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-272
+AI (Artificial Intelligence) - Less critical - Information Disclosure - SA-CONTRIB-2026-271
+Project machine name:
+ai
+Date:
+2026-October-28
+Security risk:
+Less critical
+8 ∕ 25 AC:Complex/A:User/CI:Some/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-118551
+This module provides a framework for integrating AI providers and features into Drupal.
+Audio for every speech-to-text request is written to the same file in the temporary directory and does not delete it afterwards. As a result, an attacker who can read the site's temporary directory could get the audio that another user sent for transcription.
+Read more
+about AI (Artificial Intelligence) - Less critical - Information Disclosure - SA-CONTRIB-2026-271
+AI (Artificial Intelligence) - Moderately critical - Access bypass - SA-CONTRIB-2026-270
+Project machine name:
+ai
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Complex/A:None/CI:Some/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-118550
+This module provides a framework for integrating Drupal with AI providers. Its AI Search submodule provides a Search API backend that stores content in a vector database for semantic search.
+The AI Search submodule has always been marked as 'experimental' but more importantly is deprecated. You may wish to use this as an opportunity to move to the standalone
+AI Search
+which is a drop-in replacement and target of all new development. It also had the same vulnerability.
+Read more
+about AI (Artificial Intelligence) - Moderately critical - Access bypass - SA-CONTRIB-2026-270
+AI (Artificial Intelligence) - Critical - Cross-site scripting - SA-CONTRIB-2026-269
+Project machine name:
+ai
+Date:
+2026-October-28
+Security risk:
+Critical
+15 ∕ 25 AC:Basic/A:None/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-118549
+This AI module enables you to interact with AI providers. It has a service that helps any consumer of the module to stop cross site scripting elements from appearing.
+The module does not sufficiently validate Markdown links under certain conditions, potentially allowing cross-site scripting (XSS).
+Read more
+about AI (Artificial Intelligence) - Critical - Cross-site scripting - SA-CONTRIB-2026-269
+AI (Artificial Intelligence) - Moderately critical - Information disclosure - SA-CONTRIB-2026-268
+Project machine name:
+ai
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Complex/A:None/CI:Some/II:None/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-118548
+This module enables you to use AI on the website. It also enables you to interact with AI providers.
+The module does not sufficiently validate links under certain conditions, potentially allowing the exfiltration of sensitive information to external sites.
+This vulnerability is mitigated by the fact that an attacker must use untrusted sources when interacting with the AI module in a way that produces rendered HTML.
+Read more
+about AI (Artificial Intelligence) - Moderately critical - Information disclosure - SA-CONTRIB-2026-268
+AI (Artificial Intelligence) - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-267
+Project machine name:
+ai
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-118546
+This module enables you to use AI on the website. It includes an AI Chatbot submodule allows you to setup a chatbot.
+Under certain configurations, the chatbot does not sufficiently filter user input before rendering it, potentially allowing cross-site scripting (XSS).
+This vulnerability is mitigated by the fact that an attacker must have access to administer blocks.
+Read more
+about AI (Artificial Intelligence) - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-267
+AI (Artificial Intelligence) - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-266
+Project machine name:
+ai
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+14 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-118545
+This module enables you to use AI on the website.
+The module does not sufficiently restrict HTML rendering, allowing cross-site scripting (XSS) under certain conditions.
+This vulnerability is mitigated by the fact that an attacker must have access to a text format that can render HTML.
+Read more
+about AI (Artificial Intelligence) - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-266
+Commerce Stripe - Moderately critical - Cross site scripting - SA-CONTRIB-2026-265
+Project machine name:
+commerce_stripe
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Complex/A:Admin/CI:Some/II:Some/E:Theoretical/TD:Default
+This module enables you to use the Stripe Connect API to quickly configure your Drupal Commerce store to take payments via multiple Stripe APIs.
+Under certain rare circumstances, the module may expose a cross-site scripting vulnerability.
+This vulnerability is mitigated by the fact that an attacker must have administrator permissions to configure payment gateways and use the Stripe Connect in conjunction with the compromise of an external service.
+Read more
+about Commerce Stripe - Moderately critical - Cross site scripting - SA-CONTRIB-2026-265
+Commerce Stripe - Moderately critical - Improper verification of cryptographic signature - SA-CONTRIB-2026-264
+Project machine name:
+commerce_stripe
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:None/CI:None/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-118559
+This module enables you to take payments via multiple Stripe APIs.
+The module doesn't sufficiently verify the cryptographic signature of a webhook event when a signing secret has not been properly configured in the payment gateway settings.
+This vulnerability is mitigated by the fact that not all payment gateway plugins in the module utilize webhooks. Furthermore, any payment gateway configuration with any value for its webhook signing secret will prevent inappropriate processing.
+Read more
+about Commerce Stripe - Moderately critical - Improper verification of cryptographic signature - SA-CONTRIB-2026-264
+Commerce Stripe - Critical - Cross-site request forgery - SA-CONTRIB-2026-263
+Project machine name:
+commerce_stripe
+Date:
+2026-October-28
+Security risk:
+Critical
+15 ∕ 25 AC:Basic/A:None/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-118558
+This module enables you to use the Stripe Connect API to quickly configure your Drupal Commerce store to take payments via multiple Stripe APIs.
+When redirecting to Stripe Connect to generate an authorization code, the module does not incorporate a CSRF token into the return URI. This could allow a an attacker to trick an administrator to click a link that bypasses Stripe payment for an order, meaning that the order would be marked as paid without any actual payment.
+Read more
+about Commerce Stripe - Critical - Cross-site request forgery - SA-CONTRIB-2026-263
+Commerce Shipping - Less critical - Access bypass - SA-CONTRIB-2026-262
+Project machine name:
+commerce_shipping
+Date:
+2026-October-28
+Security risk:
+Less critical
+8 ∕ 25 AC:Basic/A:Admin/CI:Some/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-118557
+This module enables you to sell tangible products via Drupal Commerce that are organized into shipments for fulfillment.
+The module doesn't sufficiently check access on the form to resend receipts. Under certain configurations, this allows some users to gain access to receipts and customer information for orders they should not be able to access.
+Read more
+about Commerce Shipping - Less critical - Access bypass - SA-CONTRIB-2026-262
+Commerce Shipping - Moderately critical - Access bypass - SA-CONTRIB-2026-261
+Project machine name:
+commerce_shipping
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Basic/A:None/CI:None/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-118556
+This module enables you to sell tangible products via Drupal Commerce that are organized into shipments for fulfillment.
+The module doesn't sufficiently protect shipment references and shipment entity fields, leading to an access bypass that can result in inappropriately modified shipment states or deleted shipments.
+This vulnerability is mitigated by the fact that an attacker must have a cart with API-based access to manipulate its shipments.
+Read more
+about Commerce Shipping - Moderately critical - Access bypass - SA-CONTRIB-2026-261
+Commerce License - Moderately critical - Access bypass - SA-CONTRIB-2026-260
+Project machine name:
+commerce_license
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-118555
+This module enables you to sell licenses granting access to resources, such as user roles, files, or protected content.
+The module doesn't sufficiently restrict access to license fields for users with the "update own commerce_license" permission. A license owner can change the rights granted by their license and the license state, which can result in privilege escalation, up to the Administrator role for the site.
+Read more
+about Commerce License - Moderately critical - Access bypass - SA-CONTRIB-2026-260
+Commerce Core - Moderately critical - Information disclosure - SA-CONTRIB-2026-259
+Project machine name:
+commerce
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Complex/A:None/CI:Some/II:None/E:Proof/TD:Uncommon
+CVE IDs:
+CVE-2026-118544
+This module enables you to sell goods and services to customers through a shopping cart and checkout form.
+The module doesn't sufficiently restrict the product variations returned by entity queries to the variations the current user can view. When the core JSON:API module is enabled, a visitor can make repeated requests that eventually determine certain field values on an unpublished product variation, or a variation of an unpublished product.
+This vulnerability is mitigated by the fact that the core JSON:API module must be enabled.
+Read more
+about Commerce Core - Moderately critical - Information disclosure - SA-CONTRIB-2026-259
+Commerce Core - Moderately critical - Cross-site request forgery - SA-CONTRIB-2026-258
+Project machine name:
+commerce
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:None/CI:None/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-118543
+This module enables you to sell goods and services to customers through a shopping cart and checkout form. It shows an inbox on the Commerce dashboard with announcements from the Drupal Commerce project, including notices about security updates.
+Read more
+about Commerce Core - Moderately critical - Cross-site request forgery - SA-CONTRIB-2026-258
+Commerce Core - Moderately critical - Access bypass - SA-CONTRIB-2026-257
+Project machine name:
+commerce
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Basic/A:Admin/CI:None/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-118542
+This module enables you to sell goods and services to customers through a shopping cart and checkout form. Sites can also create multiple online stores that are managed by different users.
+The module doesn't check access properly when a store is saved. A user who can either create stores or edit their own store is able to mark their store as the site's default store. This causes their store to get some orders they normally shouldn't.
+Read more
+about Commerce Core - Moderately critical - Access bypass - SA-CONTRIB-2026-257
+Commerce Core - Less critical - Access bypass - SA-CONTRIB-2026-256
+Project machine name:
+commerce
+Date:
+2026-October-28
+Security risk:
+Less critical
+9 ∕ 25 AC:Basic/A:User/CI:None/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-118541
+This module enables you to sell goods and services to customers through a shopping cart and checkout form. It includes a feature to manage promotions and the coupons that apply them.
+The module doesn't sufficiently check access to the relationship between promotions and coupons. A user who is only allowed to manage their own promotions can delete or change coupons that belong to other promotions.
+This vulnerability is mitigated by the fact that the site must accept writes through JSON:API or REST, which is not enabled by default.
+Read more
+about Commerce Core - Less critical - Access bypass - SA-CONTRIB-2026-256
+Commerce Core - Moderately critical - Information disclosure - SA-CONTRIB-2026-255
+Project machine name:
+commerce
+Date:
+2026-October-28
+Security risk:
+Moderately critical
+12 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-118540
+This module enables you to sell goods and services to customers through a shopping cart and checkout form.
+When Drupal Commerce is used with the JSON:API module, it is possible for unpublished product variations to be accessible to users without permission.
+This vulnerability is mitigated by only affecting sites with published products and unpublished product variations.
+Read more
+about Commerce Core - Moderately critical - Information disclosure - SA-CONTRIB-2026-255
+Commerce Core - Highly critical - Access bypass - SA-CONTRIB-2026-254
+Project machine name:
+commerce
+Date:
+2026-October-28
+Security risk:
+Highly critical
+21 ∕ 25 AC:None/A:None/CI:Some/II:Some/E:Exploit/TD:All
+CVE IDs:
+CVE-2026-118539
+This module enables you to sell goods and services to customers through an included shopping cart and checkout form or through decoupled applications via APIs.
+The module doesn't sufficiently protect certain routes and entity fields, leading to an access bypass that may financially impact the vendor.
+This vulnerability is being actively exploited in the wild.
+Read more
+about Commerce Core - Highly critical - Access bypass - SA-CONTRIB-2026-254
+Monster Menus - Critical - PHP object injection - SA-CONTRIB-2026-253
+Project machine name:
+monster_menus
+Date:
+2026-October-21
+Security risk:
+Critical
+16 ∕ 25 AC:Basic/A:User/CI:All/II:All/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-114573
+This module enables you to create one or more multisites with highly granular page permissions. The included RSS Page submodule allows you to create nodes which aggregate one or more RSS feeds.
+When the input of the node creation form is processed, it makes use of PHP's unserialize function. This introduces a PHP object injection vulnerability.
+This vulnerability is mitigated by the fact that the RSS Page submodule must be enabled and an attacker must have a role with the permission "RSS Feed: Create new content".
+Read more
+about Monster Menus - Critical - PHP object injection - SA-CONTRIB-2026-253
+Rabbit Hole - Moderately critical - Access Bypass - SA-CONTRIB-2026-252
+Project machine name:
+rabbit_hole
+Date:
+2026-October-21
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Basic/A:None/CI:None/II:Some/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-114571
+Rabbit Hole lets site builders control what happens when an entity's page is viewed: show it, return an access denied or not found response, or redirect the visitor to another URL.
+The module has two vulnerabilities.
+Rabbit Hole behavior can be skipped with a specific query parameter. In these cases, an affected entity made Rabbit Hole treat the request as an error page and do nothing. An anonymous visitor could view content a site had configured to return an access denied or not found response, or avoid a configured redirect.
+Read more
+about Rabbit Hole - Moderately critical - Access Bypass - SA-CONTRIB-2026-252
+AI File to Text - Moderately critical - Access bypass - SA-CONTRIB-2026-251
+Project machine name:
+ai_file_to_text
+Date:
+2026-October-21
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Basic/A:User/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-114554
+The AI File to Text module extracts text from uploaded documents, including
+Word, PDF, OpenDocument, CSV, Markdown and plain text files, and exposes that extraction to AI agents and automators as a tool.
+The module does not sufficiently check whether the current user is permitted
+to view a file before extracting its contents. This allows the contents of files the user could not otherwise download, including files held in the private file system,
+to be disclosed.
+Read more
+about AI File to Text - Moderately critical - Access bypass - SA-CONTRIB-2026-251
+Data field - Moderately critical - Cross site scripting - SA-CONTRIB-2026-250
+Project machine name:
+datafield
+Date:
+2026-October-21
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:Admin/CI:Some/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-114555
+Data Field allows you to create custom fields with multiple values under the default table form.
+The
+file_uri
+formatter does not properly escape filenames when rendering links to uploaded files.
+This vulnerability is mitigated by the fact that an attacker must have a role with the permission to upload files into a Data Field file subfield.
+Read more
+about Data field - Moderately critical - Cross site scripting - SA-CONTRIB-2026-250
+Domain Login Restrict - Moderately critical - Access bypass - SA-CONTRIB-2026-249
+Project machine name:
+domain_login_restrict
+Date:
+2026-October-21
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:User/CI:Some/II:Some/E:Theoretical/TD:Default
+CVE IDs:
+CVE-2026-114572
+This module enables you to restrict user logins on a multi-domain site built with the Domain module, so that users can only log in on the domains assigned to them.
+The module doesn't sufficiently enforce these restrictions when a user logs in by a method other than the standard login form.
+This vulnerability is mitigated by the fact that an attacker must have a valid user account on the site, and the "Enable restriction" setting must be enabled on the Domain settings page. Users with the "Login to any domain" permission are not affected by the restriction.
+Read more
+about Domain Login Restrict - Moderately critical - Access bypass - SA-CONTRIB-2026-249
+Shield - Moderately critical - Access bypass - SA-CONTRIB-2026-248
+Project machine name:
+shield
+Date:
+2026-October-21
+Security risk:
+Moderately critical
+13 ∕ 25 AC:Basic/A:None/CI:Some/II:None/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-107256
+The Shield module enables you to protect a site behind an HTTP basic authentication prompt, so that an unfinished or non-public site cannot be viewed, crawled or indexed by anonymous visitors.
+The module doesn't sufficiently limit the number of authentication attempts it will evaluate under the scenario where an anonymous visitor repeatedly submits basic authentication credentials.
+Read more
+about Shield - Moderately critical - Access bypass - SA-CONTRIB-2026-248
+ImageAPI Optimize WebP - Moderately critical - Information disclosure - SA-CONTRIB-2026-247
+Project machine name:
+imageapi_optimize_webp
+Date:
+2026-October-21
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Complex/A:None/CI:Some/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-114548
+This module enables you to generate and serve WebP derivatives of image style images, overriding Drupal core's image style download controller to serve them.
+The module serves WebP image derivative responses with the HTTP header
+Cache-Control: public
+for all file schemes other than the private file system, including the temporary file system and access-controlled custom schemes. This can lead to some users getting cached versions of files with information they should not be able to access. For example, files may be cached by Varnish or a CDN.
+Read more
+about ImageAPI Optimize WebP - Moderately critical - Information disclosure - SA-CONTRIB-2026-247
+TinyPNG - Moderately critical - Information disclosure - SA-CONTRIB-2026-246
+Project machine name:
+tinypng
+Date:
+2026-October-21
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Complex/A:None/CI:Some/II:None/E:Theoretical/TD:Uncommon
+TinyPNG uses smart lossy compression techniques to reduce the file size of your PNG files.
+The module doesn't sufficiently check access to image style derivatives when those files are served via a file stream other than
+private://
+.
+This vulnerability is mitigated by the fact that Drupal must be configured to use a contributed (non-core) file scheme to serve private derived images.
+Read more
+about TinyPNG - Moderately critical - Information disclosure - SA-CONTRIB-2026-246
+Media Alias Display - Moderately critical - Information disclosure - SA-CONTRIB-2026-245
+Project machine name:
+media_alias_display
+Date:
+2026-October-21
+Security risk:
+Moderately critical
+10 ∕ 25 AC:Complex/A:None/CI:Some/II:None/E:Theoretical/TD:Uncommon
+CVE IDs:
+CVE-2026-114546
+This module allows for direct viewing of a file with the URL alias.
+In some cases, files may be served with the HTTP header
+Cache-Control: public
+when they should be uncacheable. This can lead to some users getting cached versions of files with information they should not be able to access.
+This vulnerability is mitigated by the following:
+Read more
+about Media Alias Display - Moderately critical - Information disclosure - SA-CONTRIB-2026-245
+Fullcalendar View - Moderately critical - Access bypass - SA-CONTRIB-2026-244
+Project machine name:
+fullcalendar_view
+Date:
+2026-October-21
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Basic/A:User/CI:None/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-114545
+This module provides a View plugin that integrates a calendar view format powered by FullCalendar JavaScript library.
+This module has an access bypass vulnerability which allows to update entity fields without checking field-level access.
+The vulnerability is mitigated by the fact that an attacker must have access to update the entity itself.
+Read more
+about Fullcalendar View - Moderately critical - Access bypass - SA-CONTRIB-2026-244
+Media Bulk Upload - Moderately critical - Access bypass - SA-CONTRIB-2026-243
+Project machine name:
+media_bulk_upload
+Date:
+2026-October-21
+Security risk:
+Moderately critical
+11 ∕ 25 AC:Basic/A:User/CI:None/II:Some/E:Theoretical/TD:All
+CVE IDs:
+CVE-2026-114544
+This module enables users to upload files and create media items in bulk.
+The module doesn't sufficiently check user permission to create specific media types if the bulk upload form is configured for that media type.
+This vulnerability is mitigated by the fact that an attacker must have a role with the permission "bulk upload form".
+Read more
+about Media Bulk Upload - Moderately critical - Access bypass - SA-CONTRIB-2026-243
