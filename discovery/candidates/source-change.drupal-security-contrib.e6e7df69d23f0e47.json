@@ -1,0 +1,68 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 512,
+    "added_sample": [
+      "Monster Menus - Critical - PHP object injection - SA-CONTRIB-2026-253",
+      "Project machine name:",
+      "monster_menus",
+      "Date:",
+      "2026-October-21"
+    ],
+    "changed_region_count": 2,
+    "current_bytes": 38461,
+    "current_line_count": 767,
+    "deterministic": true,
+    "first_changed_line": 10,
+    "method": "normalized_line_diff",
+    "previous_bytes": 37197,
+    "previous_line_count": 751,
+    "removed_line_count": 496,
+    "removed_sample": [
+      "Inline Formatter Field - Moderately critical - Server-side template injection - SA-CONTRIB-2026-203",
+      "Project machine name:",
+      "inline_formatter_field",
+      "Date:",
+      "2026-October-07"
+    ]
+  },
+  "current_hash": "sha256:90dc7a46270ce4ce32a8b2f2ddbca922cb666f2ce0d1fa21e25baef0a6e2892f",
+  "discovered_at": "2026-10-22T11:57:08Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-security-contrib.e6e7df69d23f0e47",
+  "is_knowledge_proposal": false,
+  "kind": "security-source-change",
+  "previous_hash": "sha256:cc848a4fd1a27ec2a3c66e392b9e16836d4022c9b601cb55c516a9500ead2e0e",
+  "provenance": {
+    "acquired_at": "2026-10-22T11:57:08Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/security/contrib",
+    "category": "security",
+    "content_length": 38461,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": {
+      "end": "Pages",
+      "start": "Security advisories for contributed projects"
+    },
+    "etag": "\"1792670232-1\"",
+    "fetch_url": "https://www.drupal.org/security/contrib",
+    "http_status": 200,
+    "last_modified": "Thu, 22 Oct 2026 11:57:12 GMT",
+    "normalization": "auto",
+    "trust": "authoritative"
+  },
+  "review": null,
+  "review_required": true,
+  "review_state": "pending_review",
+  "run_id": "run.20261022T115708.0948160d",
+  "source_id": "drupal-security-contrib",
+  "source_url": "https://www.drupal.org/security/contrib",
+  "status": "review_required",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}
