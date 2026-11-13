@@ -1,0 +1,60 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 1,
+    "added_sample": [
+      "2026-November-02"
+    ],
+    "changed_region_count": 1,
+    "current_bytes": 6965,
+    "current_line_count": 118,
+    "deterministic": true,
+    "first_changed_line": 11,
+    "method": "normalized_line_diff",
+    "previous_bytes": 6964,
+    "previous_line_count": 118,
+    "removed_line_count": 1,
+    "removed_sample": [
+      "2026-October-28"
+    ]
+  },
+  "current_hash": "sha256:ec43118a27bb1a1e4e9c23096d7a97c606b3de2e2bb90b6aec4f128d944b6a71",
+  "discovered_at": "2026-11-05T06:51:25Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-security-psa.f59379b2d5704d0c",
+  "is_knowledge_proposal": false,
+  "kind": "security-source-change",
+  "previous_hash": "sha256:e1f742be13199d4852b2e4648586397685da38f6c6f1553d873abe153eb1f453",
+  "provenance": {
+    "acquired_at": "2026-11-05T06:51:25Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/security/psa",
+    "category": "security",
+    "content_length": 6965,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": {
+      "end": "Pages",
+      "start": "Security public service announcements"
+    },
+    "etag": "\"1793861489-1\"",
+    "fetch_url": "https://www.drupal.org/security/psa",
+    "http_status": 200,
+    "last_modified": "Thu, 05 Nov 2026 06:51:29 GMT",
+    "normalization": "html_text",
+    "trust": "authoritative"
+  },
+  "review": null,
+  "review_required": true,
+  "review_state": "pending_review",
+  "run_id": "run.20261105T065125.9d0e4dd0",
+  "source_id": "drupal-security-psa",
+  "source_url": "https://www.drupal.org/security/psa",
+  "status": "review_required",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}

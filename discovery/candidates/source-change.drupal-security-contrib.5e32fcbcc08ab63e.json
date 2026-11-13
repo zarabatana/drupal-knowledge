@@ -1,0 +1,68 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 356,
+    "added_sample": [
+      "htmLawed - Moderately critical - Cross-site scripting - SA-CONTRIB-2026-315",
+      "Project machine name:",
+      "htmlawed",
+      "Date:",
+      "2026-November-04"
+    ],
+    "changed_region_count": 3,
+    "current_bytes": 38081,
+    "current_line_count": 753,
+    "deterministic": true,
+    "first_changed_line": 10,
+    "method": "normalized_line_diff",
+    "previous_bytes": 39037,
+    "previous_line_count": 759,
+    "removed_line_count": 362,
+    "removed_sample": [
+      "GroupEx PRO ( Daxko ) integration - Critical - Unsupported - SA-CONTRIB-2026-278",
+      "Project machine name:",
+      "groupexpro",
+      "Date:",
+      "2026-October-28"
+    ]
+  },
+  "current_hash": "sha256:7b5705433d05367ba9c8bb3d923f8c30df6c4de82de9384a9e0e059cb315bc84",
+  "discovered_at": "2026-11-05T06:51:25Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-security-contrib.5e32fcbcc08ab63e",
+  "is_knowledge_proposal": false,
+  "kind": "security-source-change",
+  "previous_hash": "sha256:be1b501762eb3ab87006842a646fb45c060f818e74cc676d1a5c6e2cbe92b73c",
+  "provenance": {
+    "acquired_at": "2026-11-05T06:51:25Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/security/contrib",
+    "category": "security",
+    "content_length": 38081,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": {
+      "end": "Pages",
+      "start": "Security advisories for contributed projects"
+    },
+    "etag": "\"1793861488-1\"",
+    "fetch_url": "https://www.drupal.org/security/contrib",
+    "http_status": 200,
+    "last_modified": "Thu, 05 Nov 2026 06:51:28 GMT",
+    "normalization": "auto",
+    "trust": "authoritative"
+  },
+  "review": null,
+  "review_required": true,
+  "review_state": "pending_review",
+  "run_id": "run.20261105T065125.9d0e4dd0",
+  "source_id": "drupal-security-contrib",
+  "source_url": "https://www.drupal.org/security/contrib",
+  "status": "review_required",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}
