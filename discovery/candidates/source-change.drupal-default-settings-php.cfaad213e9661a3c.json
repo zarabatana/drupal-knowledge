@@ -1,0 +1,60 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 1,
+    "added_sample": [
+      "# $settings['maintenance_theme'] = 'default_admin';"
+    ],
+    "changed_region_count": 1,
+    "current_bytes": 35887,
+    "current_line_count": 152,
+    "deterministic": true,
+    "first_changed_line": 78,
+    "method": "normalized_line_diff",
+    "previous_bytes": 35879,
+    "previous_line_count": 152,
+    "removed_line_count": 1,
+    "removed_sample": [
+      "# $settings['maintenance_theme'] = 'claro';"
+    ]
+  },
+  "current_hash": "sha256:71d588e63815651e04da495dd0646b4dc4cd9ca32ff2d8859ee75c9a8f927a38",
+  "discovered_at": "2026-10-09T06:12:47Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-default-settings-php.cfaad213e9661a3c",
+  "is_knowledge_proposal": false,
+  "kind": "source-change",
+  "previous_hash": "sha256:1e2df3981d9cc138fa916171a710909b3e6922ebd978252b453b903e540b4a39",
+  "provenance": {
+    "acquired_at": "2026-10-09T06:12:47Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://api.drupal.org/api/drupal/sites%21default%21default.settings.php/11",
+    "category": "implementation-guidance",
+    "content_length": 35887,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": {
+      "end": "Search drupal 11.x",
+      "start": "<?php"
+    },
+    "etag": "\"1791517772-gzip\"",
+    "fetch_url": "https://api.drupal.org/api/drupal/sites%21default%21default.settings.php/11",
+    "http_status": 200,
+    "last_modified": "Fri, 09 Oct 2026 03:49:32 GMT",
+    "normalization": "auto",
+    "trust": "authoritative"
+  },
+  "review": null,
+  "review_required": true,
+  "review_state": "pending_review",
+  "run_id": "run.20261009T061247.394b3c29",
+  "source_id": "drupal-default-settings-php",
+  "source_url": "https://api.drupal.org/api/drupal/sites%21default%21default.settings.php/11",
+  "status": "review_required",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}

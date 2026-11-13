@@ -1,0 +1,68 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 21,
+    "added_sample": [
+      "Upcoming critical Drupal core release on October 14, 2026 - PSA-2026-10-12",
+      "Date:",
+      "2026-October-12",
+      "Security risk:",
+      "Critical"
+    ],
+    "changed_region_count": 2,
+    "current_bytes": 6834,
+    "current_line_count": 117,
+    "deterministic": true,
+    "first_changed_line": 9,
+    "method": "normalized_line_diff",
+    "previous_bytes": 6045,
+    "previous_line_count": 104,
+    "removed_line_count": 8,
+    "removed_sample": [
+      "Announcement: Drupal core issues with some risk levels may be treated as bugs in the public issue queue, not as private security issues - PSA-2023-07-12",
+      "Date:",
+      "2023-July-11",
+      "Updated 2023-07-14 to reference",
+      "PSA-2023-06-07"
+    ]
+  },
+  "current_hash": "sha256:b997efe9255eb4d7f55ed07fe46b3bd03ba96e46fa9fb1086b3135bc856f892d",
+  "discovered_at": "2026-10-13T22:47:59Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-security-psa.ccdbed91c1469457",
+  "is_knowledge_proposal": false,
+  "kind": "security-source-change",
+  "previous_hash": "sha256:e5beeac60c43ef3e4510d21496ae2fc1cf4d67c71dba288b0d0bdb0a3778ace8",
+  "provenance": {
+    "acquired_at": "2026-10-13T22:47:59Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/security/psa",
+    "category": "security",
+    "content_length": 6834,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": {
+      "end": "Pages",
+      "start": "Security public service announcements"
+    },
+    "etag": "\"1791931685-1\"",
+    "fetch_url": "https://www.drupal.org/security/psa",
+    "http_status": 200,
+    "last_modified": "Tue, 13 Oct 2026 22:48:05 GMT",
+    "normalization": "html_text",
+    "trust": "authoritative"
+  },
+  "review": null,
+  "review_required": true,
+  "review_state": "pending_review",
+  "run_id": "run.20261013T224759.8e9243bf",
+  "source_id": "drupal-security-psa",
+  "source_url": "https://www.drupal.org/security/psa",
+  "status": "review_required",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}
