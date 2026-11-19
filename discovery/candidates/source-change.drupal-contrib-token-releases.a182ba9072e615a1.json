@@ -1,0 +1,57 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 1,
+    "added_sample": [
+      "<release><name>token 8.x-1.18</name><version>8.x-1.18</version><tag>8.x-1.18</tag><status>published</status><release_link>https://www.drupal.org/project/token/r…"
+    ],
+    "changed_region_count": 1,
+    "current_bytes": 25218,
+    "current_line_count": 14,
+    "deterministic": true,
+    "first_changed_line": 13,
+    "method": "normalized_line_diff",
+    "previous_bytes": 24195,
+    "previous_line_count": 14,
+    "removed_line_count": 1,
+    "removed_sample": [
+      "<release><name>token 8.x-1.17</name><version>8.x-1.17</version><tag>8.x-1.17</tag><status>published</status><release_link>https://www.drupal.org/project/token/r…"
+    ]
+  },
+  "current_hash": "sha256:e2f8e9ddd77cc7eb0d406cb8c8a70dee0f9f6c584352c925dcfad14ec718a940",
+  "discovered_at": "2026-11-04T11:33:33Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-contrib-token-releases.a182ba9072e615a1",
+  "is_knowledge_proposal": false,
+  "kind": "release-source-change",
+  "previous_hash": "sha256:9ca94d63792524dc4b3acc5aae8931bec1003d931d0638287a212a9b8cf8f2dc",
+  "provenance": {
+    "acquired_at": "2026-11-04T11:33:33Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/project/token/releases",
+    "category": "contrib-releases",
+    "content_length": 25218,
+    "content_type": "text/xml; charset=utf-8",
+    "content_window": null,
+    "etag": null,
+    "fetch_url": "https://updates.drupal.org/release-history/token/current",
+    "http_status": 200,
+    "last_modified": "Fri, 30 Oct 2026 10:27:05 GMT",
+    "normalization": "raw_text",
+    "trust": "ecosystem"
+  },
+  "review": null,
+  "review_required": true,
+  "review_state": "pending_review",
+  "run_id": "discovery.20261104T113333.36576fa5",
+  "source_id": "drupal-contrib-token-releases",
+  "source_url": "https://www.drupal.org/project/token/releases",
+  "status": "review_required",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "ecosystem"
+}
