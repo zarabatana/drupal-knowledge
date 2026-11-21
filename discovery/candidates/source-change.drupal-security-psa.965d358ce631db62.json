@@ -1,0 +1,61 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 2,
+    "added_sample": [
+      "for Wednesday, October 21, 2026, at 14:00 UTC. Reserve time to update PHP as soon as the release is available. If you manage PHP yourself, you’ll need to apply …",
+      "Updating to a PHP release containing the patch to these vulnerabilities is the only complete mitigation."
+    ],
+    "changed_region_count": 1,
+    "current_bytes": 7071,
+    "current_line_count": 118,
+    "deterministic": true,
+    "first_changed_line": 14,
+    "method": "normalized_line_diff",
+    "previous_bytes": 6880,
+    "previous_line_count": 117,
+    "removed_line_count": 1,
+    "removed_sample": [
+      "for Wednesday, October 21, 2026, at 14:00 UTC. We recommend that all Drupal site owners reserve time to ensure their PHP version is updated as soon as the relea…"
+    ]
+  },
+  "current_hash": "sha256:1b0e34c89f7ebe252f27e610fcda10ba8a21ccba699fc75b6f250cdba8aa1916",
+  "discovered_at": "2026-10-22T11:57:08Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-security-psa.965d358ce631db62",
+  "is_knowledge_proposal": false,
+  "kind": "security-source-change",
+  "previous_hash": "sha256:f7c061ee4b6bec5a3c6d672a5535785e8e8a892a979b8a04e0df0180f74c695a",
+  "provenance": {
+    "acquired_at": "2026-10-22T11:57:08Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/security/psa",
+    "category": "security",
+    "content_length": 7071,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": {
+      "end": "Pages",
+      "start": "Security public service announcements"
+    },
+    "etag": "\"1792670234-1\"",
+    "fetch_url": "https://www.drupal.org/security/psa",
+    "http_status": 200,
+    "last_modified": "Thu, 22 Oct 2026 11:57:14 GMT",
+    "normalization": "html_text",
+    "trust": "authoritative"
+  },
+  "review": null,
+  "review_required": true,
+  "review_state": "pending_review",
+  "run_id": "run.20261022T115708.0948160d",
+  "source_id": "drupal-security-psa",
+  "source_url": "https://www.drupal.org/security/psa",
+  "status": "review_required",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}
