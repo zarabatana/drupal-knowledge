@@ -1,0 +1,57 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 1,
+    "added_sample": [
+      "<release><name>drupal 12.0.0-beta2</name><version>12.0.0-beta2</version><tag>12.0.0-beta2</tag><status>published</status><release_link>https://www.drupal.org/pr…"
+    ],
+    "changed_region_count": 1,
+    "current_bytes": 563459,
+    "current_line_count": 14,
+    "deterministic": true,
+    "first_changed_line": 13,
+    "method": "normalized_line_diff",
+    "previous_bytes": 563459,
+    "previous_line_count": 14,
+    "removed_line_count": 1,
+    "removed_sample": [
+      "<release><name>drupal 12.0.0-beta2</name><version>12.0.0-beta2</version><tag>12.0.0-beta2</tag><status>published</status><release_link>https://www.drupal.org/pr…"
+    ]
+  },
+  "current_hash": "sha256:07d7fe1469e17e1d7da22f112011e3184aa6fe07a86280730dc71b2bf5c5a4e5",
+  "discovered_at": "2026-11-11T06:29:00Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-core-releases.fee0a9460c1664ba",
+  "is_knowledge_proposal": false,
+  "kind": "security-source-change",
+  "previous_hash": "sha256:2ac0f9184ed54a8d488590b6e48a7d95d06f29ff2daa8377f570bc31a5d279fc",
+  "provenance": {
+    "acquired_at": "2026-11-11T06:29:00Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/project/drupal/releases",
+    "category": "core-releases",
+    "content_length": 563459,
+    "content_type": "text/xml; charset=utf-8",
+    "content_window": null,
+    "etag": null,
+    "fetch_url": "https://updates.drupal.org/release-history/drupal/current",
+    "http_status": 200,
+    "last_modified": "Tue, 10 Nov 2026 14:47:20 GMT",
+    "normalization": "raw_text",
+    "trust": "authoritative"
+  },
+  "review": null,
+  "review_required": true,
+  "review_state": "pending_review",
+  "run_id": "run.20261111T062900.db0bfd3e",
+  "source_id": "drupal-core-releases",
+  "source_url": "https://www.drupal.org/project/drupal/releases",
+  "status": "review_required",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}

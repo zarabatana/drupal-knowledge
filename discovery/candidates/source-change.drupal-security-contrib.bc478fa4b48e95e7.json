@@ -1,0 +1,59 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 2,
+    "added_sample": [
+      "CVE IDs:",
+      "CVE-2026-114540"
+    ],
+    "changed_region_count": 1,
+    "current_bytes": 38486,
+    "current_line_count": 769,
+    "deterministic": true,
+    "first_changed_line": 248,
+    "method": "normalized_line_diff",
+    "previous_bytes": 38461,
+    "previous_line_count": 767,
+    "removed_line_count": 0,
+    "removed_sample": []
+  },
+  "current_hash": "sha256:878b1e4275e99a258e9365db68655432aa9a78238599ddf5c9a6268c39f47aff",
+  "discovered_at": "2026-10-23T21:26:36Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-security-contrib.bc478fa4b48e95e7",
+  "is_knowledge_proposal": false,
+  "kind": "security-source-change",
+  "previous_hash": "sha256:90dc7a46270ce4ce32a8b2f2ddbca922cb666f2ce0d1fa21e25baef0a6e2892f",
+  "provenance": {
+    "acquired_at": "2026-10-23T21:26:36Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/security/contrib",
+    "category": "security",
+    "content_length": 38486,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": {
+      "end": "Pages",
+      "start": "Security advisories for contributed projects"
+    },
+    "etag": "\"1792790797-1\"",
+    "fetch_url": "https://www.drupal.org/security/contrib",
+    "http_status": 200,
+    "last_modified": "Fri, 23 Oct 2026 21:26:37 GMT",
+    "normalization": "auto",
+    "trust": "authoritative"
+  },
+  "review": null,
+  "review_required": true,
+  "review_state": "pending_review",
+  "run_id": "run.20261023T212636.ae035f05",
+  "source_id": "drupal-security-contrib",
+  "source_url": "https://www.drupal.org/security/contrib",
+  "status": "review_required",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}

@@ -1,0 +1,57 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 1,
+    "added_sample": [
+      "{\"self\":\"https:\\/\\/www.drupal.org\\/api-d7\\/node?type=sa\\u0026field_project=3060\\u0026sort=created\\u0026direction=DESC\\u0026limit=20\",\"first\":\"https:\\/\\/www.drup…"
+    ],
+    "changed_region_count": 1,
+    "current_bytes": 164215,
+    "current_line_count": 1,
+    "deterministic": true,
+    "first_changed_line": 1,
+    "method": "normalized_line_diff",
+    "previous_bytes": 162197,
+    "previous_line_count": 1,
+    "removed_line_count": 1,
+    "removed_sample": [
+      "{\"self\":\"https:\\/\\/www.drupal.org\\/api-d7\\/node?type=sa\\u0026field_project=3060\\u0026sort=created\\u0026direction=DESC\\u0026limit=20\",\"first\":\"https:\\/\\/www.drup…"
+    ]
+  },
+  "current_hash": "sha256:9e9eac2a55f46692b5434b48ecf64f9eae2b3c8fb1653dd44899d842cb66c745",
+  "discovered_at": "2026-11-18T20:35:14Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-security-advisories-core.b735d603e438d51e",
+  "is_knowledge_proposal": false,
+  "kind": "security-source-change",
+  "previous_hash": "sha256:7cf9c493022d8f11197ff6618fa2123c4c97773c361ea219d3c17a0d62e3a85f",
+  "provenance": {
+    "acquired_at": "2026-11-18T20:35:14Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/security/core",
+    "category": "security",
+    "content_length": 164215,
+    "content_type": "application/json",
+    "content_window": null,
+    "etag": null,
+    "fetch_url": "https://www.drupal.org/api-d7/node.json?type=sa&field_project=3060&sort=created&direction=DESC&limit=20",
+    "http_status": 200,
+    "last_modified": null,
+    "normalization": "raw_text",
+    "trust": "authoritative"
+  },
+  "review": null,
+  "review_required": true,
+  "review_state": "pending_review",
+  "run_id": "run.20261118T203514.6c81473e",
+  "source_id": "drupal-security-advisories-core",
+  "source_url": "https://www.drupal.org/security/core",
+  "status": "review_required",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}
