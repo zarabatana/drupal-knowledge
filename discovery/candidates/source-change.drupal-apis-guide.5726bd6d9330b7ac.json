@@ -1,0 +1,68 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 18,
+    "added_sample": [
+      "Documentation for CKEditor 5 API in Drupal 9.4+",
+      "Command-Line Interface (CLI) API",
+      "Documentation for the command-line interface (CLI) API in Drupal",
+      "CLI API Overview",
+      "Drush command porting guide to the new dr Drupal core CLI"
+    ],
+    "changed_region_count": 6,
+    "current_bytes": 7577,
+    "current_line_count": 244,
+    "deterministic": true,
+    "first_changed_line": 40,
+    "method": "normalized_line_diff",
+    "previous_bytes": 7624,
+    "previous_line_count": 246,
+    "removed_line_count": 20,
+    "removed_sample": [
+      "Documentation for CKEditor 5 API in Drupal 9.",
+      "Static Queries",
+      "Tour API",
+      "Documentation for Tour API in Drupal 8.",
+      "Command-Line Interface (CLI) API"
+    ]
+  },
+  "current_hash": "sha256:0cefdc03b63061909b167d0282c67e5c0a62944145444a038b8730380e4fa758",
+  "discovered_at": "2026-10-08T23:23:07Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-apis-guide.5726bd6d9330b7ac",
+  "is_knowledge_proposal": false,
+  "kind": "source-change",
+  "previous_hash": "sha256:644a9dd934245480ebd33f0c67ad4af0ecfa16db0dab5a90dffb0915fd5e3dfb",
+  "provenance": {
+    "acquired_at": "2026-10-08T23:23:07Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/docs/develop/drupal-apis",
+    "category": "developer-documentation",
+    "content_length": 7577,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": {
+      "end": "Related Content",
+      "start": "Each version of Drupal introduces new APIs and keeps only some of the previous major versions’ APIs."
+    },
+    "etag": "\"1791501787-1\"",
+    "fetch_url": "https://www.drupal.org/docs/develop/drupal-apis",
+    "http_status": 200,
+    "last_modified": "Thu, 08 Oct 2026 23:23:07 GMT",
+    "normalization": "auto",
+    "trust": "authoritative"
+  },
+  "review": null,
+  "review_required": true,
+  "review_state": "pending_review",
+  "run_id": "run.20261008T232307.1b71f964",
+  "source_id": "drupal-apis-guide",
+  "source_url": "https://www.drupal.org/docs/develop/drupal-apis",
+  "status": "review_required",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}

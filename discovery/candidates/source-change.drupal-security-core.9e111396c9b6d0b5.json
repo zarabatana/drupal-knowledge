@@ -1,0 +1,59 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 2,
+    "added_sample": [
+      "Update:",
+      "the Security Team has received a report this was exploited on live sites as early as 2026-11-19 19:00 UTC."
+    ],
+    "changed_region_count": 1,
+    "current_bytes": 34135,
+    "current_line_count": 784,
+    "deterministic": true,
+    "first_changed_line": 33,
+    "method": "normalized_line_diff",
+    "previous_bytes": 34020,
+    "previous_line_count": 782,
+    "removed_line_count": 0,
+    "removed_sample": []
+  },
+  "current_hash": "sha256:8746c19be61df375da0b0bf818ebe2036e3366ccbfeeaa3fa641240bab0c74d1",
+  "discovered_at": "2026-11-22T19:43:45Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-security-core.9e111396c9b6d0b5",
+  "is_knowledge_proposal": false,
+  "kind": "security-source-change",
+  "previous_hash": "sha256:dd56af40bae043adad7918327d07e203f9e7ba74c096514e609ad9fd515d8ab9",
+  "provenance": {
+    "acquired_at": "2026-11-22T19:43:45Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/security/core",
+    "category": "security",
+    "content_length": 34135,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": {
+      "end": "Pages",
+      "start": "Security advisories for Drupal core"
+    },
+    "etag": "\"1795376486-1\"",
+    "fetch_url": "https://www.drupal.org/security/core",
+    "http_status": 200,
+    "last_modified": "Sun, 22 Nov 2026 19:41:26 GMT",
+    "normalization": "auto",
+    "trust": "authoritative"
+  },
+  "review": null,
+  "review_required": true,
+  "review_state": "pending_review",
+  "run_id": "run.20261122T194345.a96bdc1f",
+  "source_id": "drupal-security-core",
+  "source_url": "https://www.drupal.org/security/core",
+  "status": "review_required",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}
