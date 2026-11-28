@@ -1,0 +1,68 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 7,
+    "added_sample": [
+      "Security support for Drupal core minor versions reduced to 8 months - PSA-2026-11-02",
+      "Date:",
+      "2026-October-28",
+      "Background",
+      "Drupal has supported each minor release of Drupal (example: 11.3, 11.4) for 12 months each since the release of Drupal 8.6 in 2018."
+    ],
+    "changed_region_count": 2,
+    "current_bytes": 6964,
+    "current_line_count": 118,
+    "deterministic": true,
+    "first_changed_line": 9,
+    "method": "normalized_line_diff",
+    "previous_bytes": 7071,
+    "previous_line_count": 118,
+    "removed_line_count": 7,
+    "removed_sample": [
+      "Drupal 9 is end of life - PSA-2023-11-01",
+      "Date:",
+      "2023-November-01",
+      "Drupal 9 is end of life as of November 1st, 2023",
+      "Drupal 9 relies on several other software projects, including Symfony, CKEditor, and Twig. With Symfony 4's end of life, CKEditor 4's end of life, and Twig 2's …"
+    ]
+  },
+  "current_hash": "sha256:e1f742be13199d4852b2e4648586397685da38f6c6f1553d873abe153eb1f453",
+  "discovered_at": "2026-11-03T23:25:45Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-security-psa.99fce1b0d146cfa5",
+  "is_knowledge_proposal": false,
+  "kind": "security-source-change",
+  "previous_hash": "sha256:1b0e34c89f7ebe252f27e610fcda10ba8a21ccba699fc75b6f250cdba8aa1916",
+  "provenance": {
+    "acquired_at": "2026-11-03T23:25:45Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/security/psa",
+    "category": "security",
+    "content_length": 6964,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": {
+      "end": "Pages",
+      "start": "Security public service announcements"
+    },
+    "etag": "\"1793748349-1\"",
+    "fetch_url": "https://www.drupal.org/security/psa",
+    "http_status": 200,
+    "last_modified": "Tue, 03 Nov 2026 23:25:49 GMT",
+    "normalization": "html_text",
+    "trust": "authoritative"
+  },
+  "review": null,
+  "review_required": true,
+  "review_state": "pending_review",
+  "run_id": "run.20261103T232545.ba5def2b",
+  "source_id": "drupal-security-psa",
+  "source_url": "https://www.drupal.org/security/psa",
+  "status": "review_required",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}

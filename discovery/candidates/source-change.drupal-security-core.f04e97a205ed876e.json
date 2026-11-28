@@ -1,0 +1,66 @@
+{
+  "affected_knowledge_ids": [],
+  "can_promote_to_knowledge": false,
+  "change_summary": {
+    "added_line_count": 4,
+    "added_sample": [
+      "Drupal core - Highly critical - Remote code execution - SA-CORE-2026-017",
+      "Highly critical",
+      "20 ∕ 25 AC:Complex/A:None/CI:All/II:All/E:Exploit/TD:Uncommon",
+      "about Drupal core - Highly critical - Remote code execution - SA-CORE-2026-017"
+    ],
+    "changed_region_count": 3,
+    "current_bytes": 34020,
+    "current_line_count": 782,
+    "deterministic": true,
+    "first_changed_line": 23,
+    "method": "normalized_line_diff",
+    "previous_bytes": 33997,
+    "previous_line_count": 782,
+    "removed_line_count": 4,
+    "removed_sample": [
+      "Drupal core - Critical - Remote code execution - SA-CORE-2026-017",
+      "Critical",
+      "18 ∕ 25 AC:Complex/A:None/CI:All/II:All/E:Proof/TD:Uncommon",
+      "about Drupal core - Critical - Remote code execution - SA-CORE-2026-017"
+    ]
+  },
+  "current_hash": "sha256:dd56af40bae043adad7918327d07e203f9e7ba74c096514e609ad9fd515d8ab9",
+  "discovered_at": "2026-11-21T07:13:27Z",
+  "engine_version": "0.1",
+  "id": "source-change.drupal-security-core.f04e97a205ed876e",
+  "is_knowledge_proposal": false,
+  "kind": "security-source-change",
+  "previous_hash": "sha256:1a3e90c53d801fa168dd2ca20b71e2c8275d7b77b118bdf81a142fbdb3d34697",
+  "provenance": {
+    "acquired_at": "2026-11-21T07:13:27Z",
+    "acquired_by": {
+      "name": "drupal-knowledge-acquisition-engine",
+      "version": "0.1"
+    },
+    "acquisition_channel": "external_authoritative_source",
+    "canonical_url": "https://www.drupal.org/security/core",
+    "category": "security",
+    "content_length": 34020,
+    "content_type": "text/html; charset=utf-8",
+    "content_window": {
+      "end": "Pages",
+      "start": "Security advisories for Drupal core"
+    },
+    "etag": "\"1795245210-1\"",
+    "fetch_url": "https://www.drupal.org/security/core",
+    "http_status": 200,
+    "last_modified": "Sat, 21 Nov 2026 07:13:30 GMT",
+    "normalization": "auto",
+    "trust": "authoritative"
+  },
+  "review": null,
+  "review_required": true,
+  "review_state": "pending_review",
+  "run_id": "run.20261121T071327.3054e629",
+  "source_id": "drupal-security-core",
+  "source_url": "https://www.drupal.org/security/core",
+  "status": "review_required",
+  "summary": "Registered source content changed. A human review must decide whether trusted Drupal knowledge is affected.",
+  "trust": "authoritative"
+}

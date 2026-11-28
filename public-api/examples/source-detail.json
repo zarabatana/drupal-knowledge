@@ -18,11 +18,11 @@
     "freshness_note": "Stale means nobody has re-read the source recently. It does not mean the source or the records derived from it are wrong.",
     "freshness_state": "observed",
     "href": "/api/v1/sources/drupal-security-advisories-core",
-    "last_observed_at": "2026-09-23T17:04:37Z",
+    "last_observed_at": "2026-11-28T07:53:26Z",
     "lifecycle": "active",
     "role": "Structured SA-CORE advisories from the Drupal.org node API, carrying affected-version expressions, published risk vectors, CVEs and fixed releases.",
     "site_url": "/sources/drupal-security-advisories-core/",
-    "snapshot_sha256": "sha256:b37d072cc4ce4e706870276008db1cb431afee486417b8661a82a662efdd3b1c",
+    "snapshot_sha256": "sha256:a778aa9d55f7d890da4e3a29ae0da459d43edf95b2748e3076fe42d11930bed3",
     "source_id": "drupal-security-advisories-core",
     "title": "Drupal core security advisories (structured)",
     "trust": "authoritative"
